@@ -21,6 +21,7 @@ CREATE TABLE songs (
   audio_versions JSONB,
   author TEXT,
   verified BOOLEAN DEFAULT false,
+  status TEXT DEFAULT 'NOT_DONE' CHECK (status IN ('NOT_DONE', 'IN_PROGRESS', 'COMPLETED')),
   published BOOLEAN DEFAULT true,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
