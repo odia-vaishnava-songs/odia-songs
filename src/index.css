@@ -1,0 +1,78 @@
+:root {
+  --color-saffron: #FF9933;
+  --color-saffron-dark: #cc7a29;
+  --color-cream: #FDFBF7;
+  --color-cream-dark: #f0ebe0;
+  --color-text-main: #1a1a1a;
+  --color-text-light: #666666;
+  --color-border: #e0e0e0;
+  --color-success: #4CAF50;
+  --color-error: #f44336;
+  --color-primary: #8A5082;
+  --color-primary-light: #a6749f;
+  
+  --font-sans: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.page-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
