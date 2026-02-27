@@ -55,6 +55,7 @@ export interface Resource {
     structuredContent?: StructuredSong;
     author?: string;
     verified?: boolean;
+    status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
 }
 
 export interface User {

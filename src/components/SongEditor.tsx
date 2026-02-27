@@ -107,6 +107,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     audio_versions: formData.audioVersions,
                     author: formData.author,
                     verified: formData.verified || false,
+                    status: formData.status || 'NOT_DONE',
                     updated_at: new Date().toISOString()
                 }, { onConflict: 'id' });
 
@@ -140,15 +141,38 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     onChange={e => setFormData({ ...formData, author: e.target.value })}
                     style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
                 />
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem' }}>
-                    <input
-                        type="checkbox"
-                        checked={formData.verified || false}
-                        onChange={e => setFormData({ ...formData, verified: e.target.checked })}
-                        style={{ width: '18px', height: '18px' }}
-                    />
-                    <span style={{ fontSize: '1rem', color: '#333', fontWeight: 500 }}>Mark as Verified (Audited)</span>
-                </label>
+                <div>
+                    <span style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem', display: 'block' }}>Production Status</span>
+                    <div style={{ display: 'flex', gap: '0.75rem' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '8px', background: formData.status === 'NOT_DONE' ? '#fee2e2' : 'white' }}>
+                            <input
+                                type="radio"
+                                name="status"
+                                checked={formData.status === 'NOT_DONE'}
+                                onChange={() => setFormData({ ...formData, status: 'NOT_DONE', verified: false })}
+                            />
+                            <span style={{ color: '#ef4444', fontWeight: 600 }}>🔴 Not Done</span>
+                        </label>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '8px', background: formData.status === 'IN_PROGRESS' ? '#ffedd5' : 'white' }}>
+                            <input
+                                type="radio"
+                                name="status"
+                                checked={formData.status === 'IN_PROGRESS'}
+                                onChange={() => setFormData({ ...formData, status: 'IN_PROGRESS', verified: false })}
+                            />
+                            <span style={{ color: '#f97316', fontWeight: 600 }}>🟠 In Progress</span>
+                        </label>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', border: '1px solid #ddd', borderRadius: '8px', background: (formData.status === 'COMPLETED' || formData.verified) ? '#e6fffa' : 'white' }}>
+                            <input
+                                type="radio"
+                                name="status"
+                                checked={formData.status === 'COMPLETED' || formData.verified}
+                                onChange={() => setFormData({ ...formData, status: 'COMPLETED', verified: true })}
+                            />
+                            <span style={{ color: '#00a38d', fontWeight: 600 }}>🟢 Completed</span>
+                        </label>
+                    </div>
+                </div>
             </div>
 
             <div style={{ marginBottom: '2rem' }}>

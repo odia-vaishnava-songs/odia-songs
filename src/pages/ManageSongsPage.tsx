@@ -3,7 +3,7 @@ import { useSongs } from '../hooks/useSongs';
 import { useAuth } from '../hooks/useAuth';
 import { supabase } from '../supabase/config';
 import { SongEditor } from '../components/SongEditor';
-import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Circle } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Resource } from '../types';
 
@@ -49,17 +49,20 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
-    const handleToggleVerify = async (song: Resource) => {
+    const handleStatusUpdate = async (songId: string, status: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED') => {
         try {
             const { error } = await supabase
                 .from('songs')
-                .update({ verified: !song.verified })
-                .eq('id', song.id);
+                .update({
+                    status,
+                    verified: status === 'COMPLETED'
+                })
+                .eq('id', songId);
 
             if (error) throw error;
         } catch (err) {
             console.error(err);
-            alert("Error updating verification status");
+            alert("Error updating status");
         }
     };
 
@@ -111,12 +114,41 @@ export const ManageSongsPage: React.FC = () => {
                                             <div style={{ fontSize: '0.85rem', color: '#666' }}>{song.author}</div>
                                         </div>
                                         <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                            {/* Status Buttons */}
                                             <button
-                                                onClick={() => handleToggleVerify(song)}
-                                                style={{ padding: '8px', borderRadius: '8px', border: '1px solid #ddd', background: song.verified ? '#e6fffa' : '#f9f9f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                                                title={song.verified ? "Verified" : "Mark as verified"}
+                                                onClick={() => handleStatusUpdate(song.id, 'NOT_DONE')}
+                                                style={{
+                                                    width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
+                                                    background: song.status === 'NOT_DONE' ? '#fee2e2' : '#f9f9f9',
+                                                    color: song.status === 'NOT_DONE' ? '#ef4444' : '#666',
+                                                    fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
+                                                }}
+                                                title="Mark as Not Done"
                                             >
-                                                {song.verified ? <CheckCircle2 size={18} color="#00a38d" /> : <Circle size={18} color="#666" />}
+                                                R
+                                            </button>
+                                            <button
+                                                onClick={() => handleStatusUpdate(song.id, 'IN_PROGRESS')}
+                                                style={{
+                                                    width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
+                                                    background: song.status === 'IN_PROGRESS' ? '#ffedd5' : '#f9f9f9',
+                                                    color: song.status === 'IN_PROGRESS' ? '#f97316' : '#666',
+                                                    fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
+                                                }}
+                                                title="Mark as In Progress"
+                                            >
+                                                O
+                                            </button>
+                                            <button
+                                                onClick={() => handleStatusUpdate(song.id, 'COMPLETED')}
+                                                style={{
+                                                    width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
+                                                    background: song.status === 'COMPLETED' || song.verified ? '#e6fffa' : '#f9f9f9',
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
+                                                }}
+                                                title="Mark as Completed"
+                                            >
+                                                <CheckCircle2 size={18} color={song.status === 'COMPLETED' || song.verified ? "#00a38d" : "#666"} />
                                             </button>
                                             <button
                                                 onClick={() => { setEditingSong(song); setIsEditing(true); }}
