@@ -3,7 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { isValidIndianMobile } from '../utils/validation';
 import { celebrateBlast } from '../utils/celebration';
-import { User, Phone, Mail, MapPin, ArrowRight, Sparkles } from 'lucide-react';
+import { User, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 
 export const SignupPage: React.FC = () => {
     const { registerWithPhone } = useAuth();

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { celebrateBlast } from '../utils/celebration';
-import { isValidIndianMobile } from '../utils/validation';
 import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, Lock, Sparkles, UserPlus } from 'lucide-react';
 
