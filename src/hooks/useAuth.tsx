@@ -6,7 +6,7 @@ import { supabase } from '../supabase/config';
 interface AuthContextType {
     user: User | null;
     loginWithPhone: (phone: string) => Promise<{ success: boolean; error?: string }>;
-    registerWithPhone: (name: string, phone: string) => Promise<void>;
+    registerWithPhone: (name: string, phone: string, email?: string, city?: string) => Promise<void>;
     loginWithEmailPassword: (email: string, password: string) => Promise<void>;
     loginWithGoogle: () => Promise<void>;
     sendMagicLink: (email: string) => Promise<void>;
@@ -159,7 +159,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
     };
 
-    const registerWithPhone = async (name: string, phone: string) => {
+    const registerWithPhone = async (name: string, phone: string, email?: string, city?: string) => {
         const cleanPhone = phone.replace(/\D/g, '');
         const fakeEmail = `${cleanPhone}@odia.app`;
         const staticPassword = 'OdiaSongsUserAuth';
@@ -183,6 +183,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 .upsert({
                     id: authUser.id,
                     name: name,
+                    email: email || '',
+                    city: city || '',
                     role: 'USER', // MUST be uppercase for DB check constraint
                     created_at: new Date().toISOString()
                 });

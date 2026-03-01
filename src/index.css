@@ -10,7 +10,7 @@
   --color-error: #f44336;
   --color-primary: #8A5082;
   --color-primary-light: #a6749f;
-  
+
   --font-sans: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -63,6 +63,34 @@ h3 {
 
 .page-content {
   animation: fadeIn 0.4s ease-out;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-saffron);
+  color: white;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 153, 51, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background-color: var(--color-saffron-dark);
 }
 
 @keyframes fadeIn {

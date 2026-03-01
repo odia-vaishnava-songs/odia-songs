@@ -238,7 +238,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                                 ) : (
                                     <MenuItem
                                         icon={<CircleUser size={20} />}
-                                        label="Admin Sign In"
+                                        label="Sign In / Join"
                                         onClick={() => { navigate('/login'); onClose(); }}
                                     />
                                 )}
