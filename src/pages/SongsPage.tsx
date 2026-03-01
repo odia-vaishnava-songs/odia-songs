@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
+console.log("ODIA_SONGS_APP: COLOR_LOGIC_V2_LOADED");
 import { Search, ArrowLeft, SlidersHorizontal, BookOpen, BookText, BookA, CheckCircle2, Circle } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
