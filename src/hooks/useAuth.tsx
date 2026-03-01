@@ -185,7 +185,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                     name: name,
                     email: email || '',
                     city: city || '',
-                    role: 'USER', // MUST be uppercase for DB check constraint
+                    role: 'user', // MUST match DB lowercase enum
                     created_at: new Date().toISOString()
                 });
 
