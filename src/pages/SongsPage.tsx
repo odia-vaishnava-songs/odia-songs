@@ -2,6 +2,10 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
 import { Search, ArrowLeft, SlidersHorizontal, BookOpen, BookText, BookA, CheckCircle2, Circle } from 'lucide-react';
 import type { Resource } from '../types';
+import { getStatusColor } from '../constants/colors';
+
+
+
 import { AudioPlayer } from '../components/AudioPlayer';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
@@ -170,8 +174,16 @@ export const SongsPage: React.FC = () => {
                         {verses.map((verse, idx) => (
                             <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2rem' }}>
                                 <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.5rem' }}>({verse.id})</div>
-                                <div style={{ whiteSpace: 'pre-wrap', color: '#000', fontSize: '1.15rem', fontWeight: 700 }}>{verse.lyric}</div>
+                                <div style={{
+                                    whiteSpace: 'pre-wrap',
+                                    color: verse.status ? getStatusColor(verse.status) : getStatusColor(selectedSong.status, selectedSong.verified),
+                                    fontSize: '1.15rem',
+
+                                    fontWeight: 700
+                                }}>{verse.lyric}</div>
+
                             </div>
+
                         ))}
                     </div>
                     <div style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #ddd', margin: '0 0.4rem', textAlign: 'center' }}>
@@ -190,13 +202,23 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
                 <div style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', lineHeight: '1.0' }}>{getOdiaTitle(selectedSong.title)}</h1>
-                    <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
+                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0' }}>{getOdiaTitle(selectedSong.title)}</h1>
+                    <div style={{ fontSize: '1.2rem', color: getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
                 </div>
+
                 {verses.map((verse) => (
                     <div key={verse.id} style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: '1px solid #ddd' }}>
                         <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#666', marginBottom: '1.5rem' }}>({verse.id})</div>
-                        <div style={{ whiteSpace: 'pre-wrap', color: '#000', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.5rem' }}>{verse.lyric}</div>
+                        <div style={{
+                            whiteSpace: 'pre-wrap',
+                            color: verse.status ? getStatusColor(verse.status) : getStatusColor(selectedSong.status, selectedSong.verified),
+                            fontSize: '1.15rem',
+
+                            fontWeight: 700,
+                            marginBottom: '1.5rem'
+                        }}>{verse.lyric}</div>
+
+
                         {viewMode === 'word-to-word' && verse.wordMeanings && (
                             <div style={{ margin: '2rem 0', padding: '1.5rem', background: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1' }}>
                                 <div style={{ lineHeight: '1.8', fontSize: '1rem', color: '#334155' }}>
@@ -229,10 +251,11 @@ export const SongsPage: React.FC = () => {
                         <ArrowLeft size={28} strokeWidth={2.5} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem', color: getStatusColor(selectedSong.status, selectedSong.verified) }}>
                             {getOdiaTitle(selectedSong.title)}
                             {selectedSong.verified && <CheckCircle2 size={18} color="#4fd1c5" />}
                         </div>
+
                         <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{selectedSong.author}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -408,10 +431,20 @@ export const SongsPage: React.FC = () => {
                                         }}
                                     >
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                                            <div style={{ fontSize: '1.15rem', fontWeight: 600, color: song.verified ? '#00a38d' : 'var(--color-text-main)' }}>{song.title}</div>
+                                            <div style={{
+                                                fontSize: '1.15rem',
+                                                fontWeight: 600,
+                                                color: getStatusColor(song.status, song.verified)
+                                            }}>{song.title}</div>
+
+
+
                                             {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
                                         </div>
-                                        {song.author && <div style={{ fontSize: '0.9rem', color: 'var(--color-text-light)' }}>{song.author}</div>}
+
+
+                                        {song.author && <div style={{ fontSize: '0.9rem', color: getStatusColor(song.status, song.verified), opacity: 0.8 }}>{song.author}</div>}
+
                                     </div>
                                 ))}
                             </div>

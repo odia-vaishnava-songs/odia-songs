@@ -6,6 +6,9 @@ import { SongEditor } from '../components/SongEditor';
 import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Resource } from '../types';
+import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
+
+
 
 export const ManageSongsPage: React.FC = () => {
     const { songs, loading } = useSongs();
@@ -110,19 +113,23 @@ export const ManageSongsPage: React.FC = () => {
                                 {filteredSongs.map(song => (
                                     <div key={song.id} style={{ background: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
                                         <div>
-                                            <div style={{ fontWeight: 600, color: '#333' }}>{song.title}</div>
-                                            <div style={{ fontSize: '0.85rem', color: '#666' }}>{song.author}</div>
+                                            <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified) }}>{song.title}</div>
+                                            <div style={{ fontSize: '0.85rem', color: getStatusColor(song.status, song.verified) }}>{song.author}</div>
+
                                         </div>
+
+
                                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                                             {/* Status Buttons */}
                                             <button
                                                 onClick={() => handleStatusUpdate(song.id, 'NOT_DONE')}
                                                 style={{
                                                     width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
-                                                    background: song.status === 'NOT_DONE' ? '#fee2e2' : '#f9f9f9',
-                                                    color: song.status === 'NOT_DONE' ? '#ef4444' : '#666',
+                                                    background: song.status === 'NOT_DONE' ? getStatusBackground('NOT_DONE') : '#f9f9f9',
+                                                    color: song.status === 'NOT_DONE' ? STATUS_COLORS.NOT_DONE : '#666',
                                                     fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
                                                 }}
+
                                                 title="Mark as Not Done"
                                             >
                                                 R
@@ -131,10 +138,11 @@ export const ManageSongsPage: React.FC = () => {
                                                 onClick={() => handleStatusUpdate(song.id, 'IN_PROGRESS')}
                                                 style={{
                                                     width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
-                                                    background: song.status === 'IN_PROGRESS' ? '#ffedd5' : '#f9f9f9',
-                                                    color: song.status === 'IN_PROGRESS' ? '#f97316' : '#666',
+                                                    background: song.status === 'IN_PROGRESS' ? getStatusBackground('IN_PROGRESS') : '#f9f9f9',
+                                                    color: song.status === 'IN_PROGRESS' ? STATUS_COLORS.IN_PROGRESS : '#666',
                                                     fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
                                                 }}
+
                                                 title="Mark as In Progress"
                                             >
                                                 O
@@ -143,13 +151,14 @@ export const ManageSongsPage: React.FC = () => {
                                                 onClick={() => handleStatusUpdate(song.id, 'COMPLETED')}
                                                 style={{
                                                     width: '32px', height: '32px', borderRadius: '8px', border: '1px solid #ddd',
-                                                    background: song.status === 'COMPLETED' || song.verified ? '#e6fffa' : '#f9f9f9',
+                                                    background: song.status === 'COMPLETED' || song.verified ? getStatusBackground('COMPLETED') : '#f9f9f9',
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
                                                 }}
                                                 title="Mark as Completed"
                                             >
-                                                <CheckCircle2 size={18} color={song.status === 'COMPLETED' || song.verified ? "#00a38d" : "#666"} />
+                                                <CheckCircle2 size={18} color={song.status === 'COMPLETED' || song.verified ? STATUS_COLORS.COMPLETED : "#666"} />
                                             </button>
+
                                             <button
                                                 onClick={() => { setEditingSong(song); setIsEditing(true); }}
                                                 style={{ padding: '8px', borderRadius: '8px', border: '1px solid #ddd', background: '#f9f9f9' }}

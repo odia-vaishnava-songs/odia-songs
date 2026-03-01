@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabase/config';
 import type { Resource, SongVerse, WordMeaning } from '../types';
-import { X, Save, Trash2 } from 'lucide-react';
+import { X, Save, Trash2, CheckCircle2 } from 'lucide-react';
+import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
+
+
 
 interface SongEditorProps {
     song?: Resource;
@@ -179,16 +182,62 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                 <h4 style={{ marginBottom: '1rem' }}>Verses</h4>
                 {formData.structuredContent?.verses.map((verse) => (
                     <div key={verse.id} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                            <span>Verse {verse.id}</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <span>Verse {verse.id}</span>
+                                <div style={{ display: 'flex', gap: '0.25rem' }}>
+                                    <button
+                                        onClick={() => handleVerseChange(verse.id, 'status', 'NOT_DONE')}
+                                        style={{
+                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                            background: verse.status === 'NOT_DONE' ? getStatusBackground('NOT_DONE') : '#f9f9f9',
+                                            color: verse.status === 'NOT_DONE' ? STATUS_COLORS.NOT_DONE : '#ccc',
+                                            fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
+                                        }}
+                                    >R</button>
+                                    <button
+                                        onClick={() => handleVerseChange(verse.id, 'status', 'IN_PROGRESS')}
+                                        style={{
+                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                            background: verse.status === 'IN_PROGRESS' ? getStatusBackground('IN_PROGRESS') : '#f9f9f9',
+                                            color: verse.status === 'IN_PROGRESS' ? STATUS_COLORS.IN_PROGRESS : '#ccc',
+                                            fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
+                                        }}
+                                    >O</button>
+                                    <button
+                                        onClick={() => handleVerseChange(verse.id, 'status', 'COMPLETED')}
+                                        style={{
+                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                            background: verse.status === 'COMPLETED' ? getStatusBackground('COMPLETED') : '#f9f9f9',
+                                            color: verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : '#ccc',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
+                                        }}
+                                    >
+                                        <CheckCircle2 size={14} color={verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : "#ccc"} />
+                                    </button>
+                                </div>
+                            </div>
                             <button onClick={() => removeVerse(verse.id)} style={{ color: 'red', background: 'none', border: 'none' }}><Trash2 size={16} /></button>
                         </div>
+
                         <textarea
                             placeholder="Lyrics (Odia/Roman)"
                             value={verse.lyric}
                             onChange={e => handleVerseChange(verse.id, 'lyric', e.target.value)}
-                            style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '80px' }}
+                            style={{
+                                width: '100%',
+                                padding: '0.5rem',
+                                marginBottom: '0.5rem',
+                                borderRadius: '4px',
+                                border: '1px solid #ddd',
+                                minHeight: '80px',
+                                color: verse.status ? getStatusColor(verse.status) : getStatusColor(formData.status, formData.verified),
+
+
+                                fontWeight: 700
+                            }}
                         />
+
                         <textarea
                             placeholder="Translation"
                             value={verse.translation}
