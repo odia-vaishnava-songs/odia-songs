@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-console.log("ODIA_SONGS_APP: COLOR_LOGIC_V2_LOADED");
 import { Search, ArrowLeft, SlidersHorizontal, BookOpen, BookText, BookA, CheckCircle2, Circle } from 'lucide-react';
-import type { Resource } from '../types';
+import type { Resource, SongVerse, WordMeaning } from '../types';
 import { getStatusColor } from '../constants/colors';
 
 
@@ -40,7 +39,7 @@ export const SongsPage: React.FC = () => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
             return saved ? JSON.parse(saved) : [];
-        } catch (e) {
+        } catch (e: any) {
             console.error("Error parsing recent-song-ids", e);
             return [];
         }
@@ -55,7 +54,7 @@ export const SongsPage: React.FC = () => {
         if (song.audioUrl || (song.audioVersions && song.audioVersions.length > 0)) {
             selectSong(song);
         }
-        const newRecent = [song.id, ...recentIds.filter(id => id !== song.id)].slice(0, 5);
+        const newRecent = [song.id, ...recentIds.filter((id: string) => id !== song.id)].slice(0, 5);
         setRecentIds(newRecent);
         localStorage.setItem('recent-song-ids', JSON.stringify(newRecent));
     };
@@ -74,13 +73,13 @@ export const SongsPage: React.FC = () => {
         const query = searchQuery.toLowerCase().trim();
         if (!query) return songResources;
 
-        return songResources.filter(s => {
+        return songResources.filter((s: Resource) => {
             const inTitle = s.title.toLowerCase().includes(query);
             const inAuthor = s.author?.toLowerCase().includes(query);
             const inDescription = s.description?.toLowerCase().includes(query);
 
             // Check verses lyrics
-            const inLyrics = s.structuredContent?.verses.some(v =>
+            const inLyrics = s.structuredContent?.verses.some((v: SongVerse) =>
                 v.lyric.toLowerCase().includes(query)
             );
 
@@ -108,7 +107,7 @@ export const SongsPage: React.FC = () => {
 
     const groupedSongs = useMemo(() => {
         const groups: { [key: string]: Resource[] } = {};
-        filteredSongs.forEach(song => {
+        filteredSongs.forEach((song: Resource) => {
             const letter = getCategoryLetter(song.title);
             if (!groups[letter]) groups[letter] = [];
             groups[letter].push(song);
@@ -172,7 +171,7 @@ export const SongsPage: React.FC = () => {
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9 }}>{selectedSong.author}</div>}
                     </div>
                     <div style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #ddd', margin: '0 0.4rem', textAlign: 'center' }}>
-                        {verses.map((verse, idx) => (
+                        {verses.map((verse: SongVerse, idx: number) => (
                             <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2rem' }}>
                                 <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.5rem' }}>({verse.id})</div>
                                 <div style={{
@@ -189,7 +188,7 @@ export const SongsPage: React.FC = () => {
                     </div>
                     <div style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #ddd', margin: '0 0.4rem', textAlign: 'center' }}>
                         <div style={{ fontSize: '1rem', color: '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: '2px solid #f0f0f0', display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
-                        {verses.map((verse, idx) => (
+                        {verses.map((verse: SongVerse, idx: number) => (
                             <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
                                 <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
                                 <div style={{ color: '#444', fontSize: '1.25rem' }}>{verse.translation}</div>
@@ -207,7 +206,7 @@ export const SongsPage: React.FC = () => {
                     <div style={{ fontSize: '1.2rem', color: getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
                 </div>
 
-                {verses.map((verse) => (
+                {verses.map((verse: SongVerse) => (
                     <div key={verse.id} style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: '1px solid #ddd' }}>
                         <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#666', marginBottom: '1.5rem' }}>({verse.id})</div>
                         <div style={{
@@ -223,7 +222,7 @@ export const SongsPage: React.FC = () => {
                         {viewMode === 'word-to-word' && verse.wordMeanings && (
                             <div style={{ margin: '2rem 0', padding: '1.5rem', background: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1' }}>
                                 <div style={{ lineHeight: '1.8', fontSize: '1rem', color: '#334155' }}>
-                                    {verse.wordMeanings.map((wm, i) => (
+                                    {verse.wordMeanings.map((wm: WordMeaning, i: number) => (
                                         <React.Fragment key={i}>
                                             <span style={{ fontWeight: 700, color: '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
                                         </React.Fragment>
@@ -408,7 +407,7 @@ export const SongsPage: React.FC = () => {
                                 borderBottom: '1px solid #eee'
                             }}>{letter}</div>
                             <div style={{ padding: '0.5rem 1rem' }}>
-                                {groupedSongs[letter].map(song => (
+                                {groupedSongs[letter].map((song: Resource) => (
                                     <div
                                         key={song.id}
                                         onClick={() => handleSelectSong(song)}
@@ -422,11 +421,11 @@ export const SongsPage: React.FC = () => {
                                             cursor: 'pointer',
                                             transition: 'transform 0.2s ease, box-shadow 0.2s ease'
                                         }}
-                                        onMouseEnter={(e) => {
+                                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
                                             e.currentTarget.style.transform = 'translateY(-2px)';
                                             e.currentTarget.style.boxShadow = 'var(--shadow-md)';
                                         }}
-                                        onMouseLeave={(e) => {
+                                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
                                             e.currentTarget.style.transform = 'translateY(0)';
                                             e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                                         }}

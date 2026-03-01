@@ -31,6 +31,7 @@ export interface SongVerse {
     lyric: string;
     translation: string;
     wordMeanings?: WordMeaning[];
+    status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
 }
 
 export interface AudioVersion {

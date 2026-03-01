@@ -46,7 +46,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
     const addVerse = () => {
         const verses = [...(formData.structuredContent?.verses || [])];
-        const nextId = verses.length > 0 ? Math.max(...verses.map(v => v.id)) + 1 : 1;
+        const nextId = verses.length > 0 ? Math.max(...verses.map((v: SongVerse) => v.id)) + 1 : 1;
         verses.push({ ...INITIAL_VERSE, id: nextId });
         setFormData({
             ...formData,
@@ -55,7 +55,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
     };
 
     const removeVerse = (id: number) => {
-        const verses = formData.structuredContent?.verses.filter(v => v.id !== id) || [];
+        const verses = formData.structuredContent?.verses.filter((v: SongVerse) => v.id !== id) || [];
         setFormData({
             ...formData,
             structuredContent: { ...formData.structuredContent, verses }
@@ -180,7 +180,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
             <div style={{ marginBottom: '2rem' }}>
                 <h4 style={{ marginBottom: '1rem' }}>Verses</h4>
-                {formData.structuredContent?.verses.map((verse) => (
+                {formData.structuredContent?.verses.map((verse: SongVerse) => (
                     <div key={verse.id} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -247,7 +247,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
                         <div style={{ marginTop: '1rem' }}>
                             <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>Word Meanings</div>
-                            {verse.wordMeanings?.map((wm, wIdx) => (
+                            {verse.wordMeanings?.map((wm: WordMeaning, wIdx: number) => (
                                 <div key={wIdx} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.25rem' }}>
                                     <input placeholder="Word" value={wm.word} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'word', e.target.value)} style={{ flex: 1, padding: '4px' }} />
                                     <input placeholder="Meaning" value={wm.meaning} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'meaning', e.target.value)} style={{ flex: 1, padding: '4px' }} />

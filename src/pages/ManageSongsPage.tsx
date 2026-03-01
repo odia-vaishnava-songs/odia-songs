@@ -69,10 +69,10 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
-    const filteredSongs = songs.filter(s =>
+    const filteredSongs = songs.filter((s: Resource) =>
         s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         s.author?.toLowerCase().includes(searchTerm.toLowerCase())
-    ).sort((a, b) => a.title.localeCompare(b.title));
+    ).sort((a: Resource, b: Resource) => a.title.localeCompare(b.title));
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#FDFBF7' }}>
@@ -110,7 +110,7 @@ export const ManageSongsPage: React.FC = () => {
                             <p>Loading database...</p>
                         ) : (
                             <div style={{ display: 'grid', gap: '1rem' }}>
-                                {filteredSongs.map(song => (
+                                {filteredSongs.map((song: Resource) => (
                                     <div key={song.id} style={{ background: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
                                         <div>
                                             <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified) }}>{song.title}</div>
