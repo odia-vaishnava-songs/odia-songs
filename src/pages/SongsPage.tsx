@@ -401,18 +401,6 @@ export const SongsPage: React.FC = () => {
                 <div style={{ maxWidth: '600px', margin: '0 auto' }}>
                     {sortedGroups.map(letter => (
                         <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }}>
-                            <div style={{
-                                position: 'sticky',
-                                top: '72px',
-                                background: 'rgba(248, 249, 250, 0.95)',
-                                backdropFilter: 'blur(8px)',
-                                padding: '0.5rem 1.5rem',
-                                fontWeight: 800,
-                                color: theme.accent,
-                                fontSize: '1.1rem',
-                                zIndex: 5,
-                                borderBottom: '1px solid #eee'
-                            }}>{letter}</div>
                             <div style={{ padding: '0.5rem 1rem' }}>
                                 {groupedSongs[letter].map(song => (
                                     <div
