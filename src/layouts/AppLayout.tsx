@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { CompactAudioBar } from '../components/CompactAudioBar';
 import { SideDrawer } from '../components/SideDrawer';
 import { useAudio } from '../context/AudioContext';
@@ -8,6 +8,15 @@ import { Menu } from 'lucide-react';
 export const AppLayout: React.FC = () => {
     const { activeSong, isDetailView } = useAudio();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const location = useLocation();
+
+    const isSongsPage = location.pathname === '/';
+
+    React.useEffect(() => {
+        const handleToggle = () => setIsDrawerOpen(prev => !prev);
+        window.addEventListener('toggle-drawer', handleToggle);
+        return () => window.removeEventListener('toggle-drawer', handleToggle);
+    }, []);
 
     return (
         <div style={{
@@ -16,8 +25,8 @@ export const AppLayout: React.FC = () => {
             display: 'flex',
             flexDirection: 'column'
         }}>
-            {/* Unified App Header */}
-            {!isDetailView && (
+            {/* Unified App Header - Hidden on Songs Page to avoid redundancy */}
+            {!isDetailView && !isSongsPage && (
                 <header style={{
                     backgroundColor: 'var(--color-saffron)',
                     color: 'white',
