@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, BookOpen, BookText, BookA, CheckCircle2, Circle } from 'lucide-react';
+import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -344,7 +344,7 @@ export const SongsPage: React.FC = () => {
             `}</style>
             <header style={{
                 background: theme.gradient,
-                padding: '1rem',
+                padding: '1.25rem 1rem',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
@@ -354,6 +354,23 @@ export const SongsPage: React.FC = () => {
                 zIndex: 10,
                 boxShadow: 'var(--shadow-md)'
             }}>
+                <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
+                    style={{
+                        background: 'rgba(255,255,255,0.2)',
+                        color: '#fff',
+                        borderRadius: '12px',
+                        width: '42px',
+                        height: '42px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backdropFilter: 'blur(4px)',
+                        flexShrink: 0
+                    }}
+                >
+                    <Menu size={22} />
+                </button>
                 <div style={{ flex: 1, position: 'relative' }}>
                     {(loading || error) && (
                         <div style={{
