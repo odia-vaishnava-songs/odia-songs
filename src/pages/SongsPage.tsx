@@ -87,7 +87,7 @@ export const SongsPage: React.FC = () => {
         });
     }, [songResources, searchQuery]);
 
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    // Alphabet navigation logic removed unused array
     const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
     const scrollToSection = (letter: string) => {
@@ -295,7 +295,11 @@ export const SongsPage: React.FC = () => {
                         )}
                     </div>
                 </header>
-                <main style={{ flex: 1, overflowY: 'auto', padding: '0.4rem' }}>
+                <main style={{
+                    flex: 1,
+                    overflowY: 'auto',
+                    padding: '0.4rem'
+                }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>{renderSongContent()}</div>
                 </main>
                 <footer style={{ padding: '0.2rem 1rem', backgroundColor: '#fff', borderTop: '1px solid #eee' }}>
@@ -306,7 +310,38 @@ export const SongsPage: React.FC = () => {
     }
 
     return (
-        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'white' }}>
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'white', overflow: 'hidden' }}>
+            <style>{`
+                /* KILL THE BIG DEFAULT BARS Globally */
+                html, body {
+                    overflow: hidden;
+                    height: 100%;
+                    margin: 0;
+                }
+                
+                /* THE "SMALL BAR" (Discrete 2px scrollbar) */
+                * {
+                    scrollbar-width: thin; /* Firefox */
+                    scrollbar-color: #cbd5e1 transparent; /* Firefox thumb & track */
+                }
+                
+                *::-webkit-scrollbar {
+                    width: 2px; /* Very thin - "small bar" */
+                }
+                
+                *::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                
+                *::-webkit-scrollbar-thumb {
+                    background: #cbd5e1; /* Subtle gray thumb as in snap */
+                    border-radius: 10px;
+                }
+                
+                *::-webkit-scrollbar-thumb:hover {
+                    background: ${theme.color}A0;
+                }
+            `}</style>
             <header style={{
                 background: theme.gradient,
                 padding: '1rem',
@@ -397,11 +432,43 @@ export const SongsPage: React.FC = () => {
                     </div>
                 )}
             </header>
-            <main style={{ flex: 1, overflowY: 'auto', padding: '1rem 0' }}>
-                <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <main style={{
+                flex: 1,
+                overflowY: 'auto',
+                padding: '1rem 0'
+            }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
                     {sortedGroups.map(letter => (
-                        <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }}>
-                            <div style={{ padding: '0.5rem 1rem' }}>
+                        <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
+                            {/* Sticky Section Header */}
+                            <div style={{
+                                position: 'sticky',
+                                top: '70px',
+                                zIndex: 5,
+                                display: 'flex',
+                                alignItems: 'center',
+                                padding: '0.5rem 1.25rem',
+                                pointerEvents: 'none'
+                            }}>
+                                <div style={{
+                                    fontSize: '1.1rem',
+                                    fontWeight: 800,
+                                    color: theme.color,
+                                    width: '32px',
+                                    height: '32px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'white',
+                                    borderRadius: '8px',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                    pointerEvents: 'auto'
+                                }}>
+                                    {letter}
+                                </div>
+                            </div>
+
+                            <div style={{ padding: '0 0.5rem' }}>
                                 {groupedSongs[letter].map(song => (
                                     <div
                                         key={song.id}
@@ -431,15 +498,9 @@ export const SongsPage: React.FC = () => {
                                                 fontWeight: 600,
                                                 color: getStatusColor(song.status, song.verified)
                                             }}>{song.title}</div>
-
-
-
                                             {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
                                         </div>
-
-
                                         {song.author && <div style={{ fontSize: '0.9rem', color: getStatusColor(song.status, song.verified), opacity: 0.8 }}>{song.author}</div>}
-
                                     </div>
                                 ))}
                             </div>
@@ -447,8 +508,52 @@ export const SongsPage: React.FC = () => {
                     ))}
                 </div>
             </main>
-            <div style={{ position: 'fixed', right: 0, top: '80px', bottom: '80px', display: 'flex', flexDirection: 'column', padding: '0 4px', fontSize: '0.7rem' }}>
-                {alphabet.map(l => <div key={l} onClick={() => scrollToSection(l)} style={{ cursor: 'pointer', padding: '1px' }}>{l}</div>)}
+            {/* Alphabet Sidebar - Only showing letters with songs for a clean list */}
+            <div style={{
+                position: 'fixed',
+                right: '12px',
+                top: '100px',
+                bottom: '100px',
+                width: '32px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                background: 'transparent',
+                zIndex: 100,
+                pointerEvents: 'auto',
+                gap: '2px'
+            }}>
+                {sortedGroups.map(letter => {
+                    return (
+                        <div
+                            key={letter}
+                            onClick={() => scrollToSection(letter)}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                fontSize: '0.85rem',
+                                fontWeight: 900,
+                                color: currentTheme === 'default' ? '#1e293b' : theme.color,
+                                height: '32px',
+                                transition: 'all 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+                                userSelect: 'none',
+                                opacity: 1
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateX(-6px) scale(1.4)';
+                                e.currentTarget.style.color = theme.color;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateX(0) scale(1)';
+                                e.currentTarget.style.color = currentTheme === 'default' ? '#1e293b' : theme.color;
+                            }}
+                        >
+                            {letter}
+                        </div>
+                    );
+                })}
             </div>
         </div >
     );
