@@ -13,8 +13,7 @@ import { TATTVA_THEMES } from '../constants/themes';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
-const REFERENCE_PAGE_BG = '#6F5F90';
-const REFERENCE_HEADER_BG = '#8A5082';
+
 
 
 export const SongsPage: React.FC = () => {
