@@ -48,7 +48,7 @@ export interface Resource {
     id: string;
     title: string;
     category: string;
-    type: 'video' | 'article' | 'audio' | 'pdf' | 'interactive';
+    type: 'video' | 'article' | 'audio' | 'pdf' | 'interactive' | 'html';
     url?: string;
     audioUrl?: string; // Single/default audio
     audioVersions?: AudioVersion[]; // Multiple versions
