@@ -184,7 +184,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                                 />
 
                                 <MenuItem icon={<Info size={20} />} label="About" onClick={() => alert("Odia Vaishnava Songs v2.0\nDedicated to Srila Prabhupada")} />
-                                <MenuItem icon={<Shield size={20} />} label="Privacy Policy" onClick={() => alert("Privacy Policy:\nWe respect your privacy. All data is stored securely.")} />
+                                <MenuItem icon={<Shield size={20} />} label="Privacy Policy" onClick={() => { navigate('/privacy-policy'); onClose(); }} />
                                 <MenuItem icon={<MessageCircle size={20} />} label="Feedback / Queries" onClick={() => window.location.href = "mailto:support@odia.app"} />
                                 <MenuItem icon={<Heart size={20} />} label="Donate" onClick={() => alert("Donation feature coming soon!")} />
 

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu } from 'lucide-react';
+import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 

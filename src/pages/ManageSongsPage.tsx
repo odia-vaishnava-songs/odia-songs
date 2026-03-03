@@ -3,7 +3,7 @@ import { useSongs } from '../hooks/useSongs';
 import { useAuth } from '../hooks/useAuth';
 import { supabase } from '../supabase/config';
 import { SongEditor } from '../components/SongEditor';
-import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Resource } from '../types';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
@@ -77,7 +77,13 @@ export const ManageSongsPage: React.FC = () => {
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#FDFBF7' }}>
             <header style={{ background: '#8A5082', color: 'white', padding: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', position: 'sticky', top: 0, zIndex: 10 }}>
-                <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: 'white' }}><ArrowLeft size={24} /></button>
+                <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
+                    style={{ background: 'none', border: 'none', color: 'white', padding: '4px', display: 'flex', alignItems: 'center' }}
+                >
+                    <Menu size={24} />
+                </button>
+                <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: 'white', display: 'flex', alignItems: 'center' }}><ArrowLeft size={24} /></button>
                 <h2 style={{ margin: 0, flex: 1 }}>Manage Songs</h2>
                 <button
                     onClick={() => { setEditingSong(undefined); setIsEditing(true); }}
