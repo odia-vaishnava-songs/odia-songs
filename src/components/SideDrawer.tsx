@@ -6,6 +6,7 @@ import {
     Phone, MapPin
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
+import { useAudio } from '../context/AudioContext';
 import { supabase } from '../supabase/config';
 import panchaTattvaImg from '../assets/pancha-tattva.png';
 import type { User } from '../types';
@@ -19,6 +20,7 @@ type DrawerView = 'menu' | 'users';
 
 export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
     const { logout, user } = useAuth();
+    const { theme } = useAudio();
     const navigate = useNavigate();
 
     const [view, setView] = useState<DrawerView>('menu');
@@ -123,7 +125,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                 <div style={{
                     padding: '1rem', borderBottom: '1px solid #eee',
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    backgroundColor: '#FF9933', color: 'white'
+                    background: theme.gradient, color: 'white'
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         {view === 'users' && (

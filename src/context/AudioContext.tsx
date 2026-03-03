@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import type { Resource, AudioVersion } from '../types';
+import { TATTVA_THEMES, DEFAULT_THEME } from '../constants/themes';
+import type { ThemeDefinition } from '../constants/themes';
 
 interface AudioContextType {
     activeSong: Resource | null;
@@ -20,6 +22,9 @@ interface AudioContextType {
     skipBackward: () => void;
     reset: () => void;
     changeVersion: (version: AudioVersion) => void;
+    theme: ThemeDefinition;
+    currentThemeKey: string;
+    setTheme: (themeKey: string) => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -31,7 +36,15 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isDetailView, setIsDetailView] = useState(false);
+    const [currentThemeKey, setCurrentThemeKey] = useState(localStorage.getItem('song-theme') || DEFAULT_THEME);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    const theme = TATTVA_THEMES[currentThemeKey] || TATTVA_THEMES[DEFAULT_THEME];
+
+    const setTheme = (themeKey: string) => {
+        setCurrentThemeKey(themeKey);
+        localStorage.setItem('song-theme', themeKey);
+    };
 
     // Create the audio element on mount
     useEffect(() => {
@@ -135,7 +148,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             skipForward,
             skipBackward,
             reset,
-            changeVersion
+            changeVersion,
+            theme,
+            currentThemeKey,
+            setTheme
         }}>
             {children}
         </AudioContext.Provider>

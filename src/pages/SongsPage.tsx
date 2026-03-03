@@ -11,22 +11,16 @@ import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
 
+import { TATTVA_THEMES } from '../constants/themes';
+
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
 const REFERENCE_PAGE_BG = '#6F5F90';
 const REFERENCE_HEADER_BG = '#8A5082';
 
-const TATTVA_THEMES: { [key: string]: { name: string, color: string, gradient: string, accent: string, text: string } } = {
-    gauranga: { name: 'Gauranga', color: '#8A5082', gradient: 'linear-gradient(135deg, #8A5082 0%, #6F5F90 100%)', accent: '#8A5082', text: '#fff' },
-    nityananda: { name: 'Nityananda', color: '#FF9933', gradient: 'linear-gradient(135deg, #FF9933 0%, #cc7a29 100%)', accent: '#FF9933', text: '#fff' },
-    advaita: { name: 'Advaita', color: '#4CAF50', gradient: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', accent: '#4CAF50', text: '#fff' },
-    gadadhara: { name: 'Gadadhara', color: '#2196F3', gradient: 'linear-gradient(135deg, #2196F3 0%, #1976D2 100%)', accent: '#2196F3', text: '#fff' },
-    srivasa: { name: 'Srivasa', color: '#9C27B0', gradient: 'linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%)', accent: '#9C27B0', text: '#fff' }
-};
-
 
 export const SongsPage: React.FC = () => {
-    const { selectSong, setIsDetailView } = useAudio();
+    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
@@ -34,7 +28,6 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
-    const [currentTheme, setCurrentTheme] = useState(localStorage.getItem('song-theme') || 'gauranga');
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
@@ -45,8 +38,6 @@ export const SongsPage: React.FC = () => {
         }
     });
     const filterMenuRef = useRef<HTMLDivElement>(null);
-
-    const theme = TATTVA_THEMES[currentTheme] || TATTVA_THEMES.gauranga;
 
     const handleSelectSong = (song: Resource) => {
         setSelectedSong(song);
@@ -60,8 +51,7 @@ export const SongsPage: React.FC = () => {
     };
 
     const handleSetTheme = (themeKey: string) => {
-        setCurrentTheme(themeKey);
-        localStorage.setItem('song-theme', themeKey);
+        setTheme(themeKey);
     };
 
     const songResources = useMemo(() => {
@@ -439,8 +429,8 @@ export const SongsPage: React.FC = () => {
                                         height: '36px',
                                         borderRadius: '50%',
                                         background: v.color,
-                                        border: currentTheme === k ? '3px solid white' : '1px solid #ddd',
-                                        boxShadow: currentTheme === k ? `0 0 0 2px ${v.color}` : 'none',
+                                        border: currentThemeKey === k ? '3px solid white' : '1px solid #ddd',
+                                        boxShadow: currentThemeKey === k ? `0 0 0 2px ${v.color}` : 'none',
                                         transition: 'all 0.2s ease'
                                     }}
                                 />
@@ -552,7 +542,7 @@ export const SongsPage: React.FC = () => {
                                 cursor: 'pointer',
                                 fontSize: '0.85rem',
                                 fontWeight: 900,
-                                color: currentTheme === 'default' ? '#1e293b' : theme.color,
+                                color: currentThemeKey === 'default' ? '#1e293b' : theme.color,
                                 height: '32px',
                                 transition: 'all 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
                                 userSelect: 'none',
@@ -564,7 +554,7 @@ export const SongsPage: React.FC = () => {
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = 'translateX(0) scale(1)';
-                                e.currentTarget.style.color = currentTheme === 'default' ? '#1e293b' : theme.color;
+                                e.currentTarget.style.color = currentThemeKey === 'default' ? '#1e293b' : theme.color;
                             }}
                         >
                             {letter}
