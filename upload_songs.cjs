@@ -66,7 +66,7 @@ async function upload() {
                 if (currentVerseId !== null) {
                     verses.push({
                         id: parseInt(currentVerseId.toString().replace(/[୦-୯]/g, m => '0123456789'['୦୧୨୩୪୫୬୭୮୯'.indexOf(m)])),
-                        lyric: currentVerseContent.join('<br/>').trim(),
+                        lyric: currentVerseContent.join('\n').trim(),
                         translation: ''
                     });
                 }
@@ -78,8 +78,8 @@ async function upload() {
         }
         if (currentVerseId !== null) {
             verses.push({
-                id: parseInt(currentVerseId.toString().replace(/[୧୨୩୪୫୬୭୮୯୦]/g, m => '1234567890'['୧୨୩୪୫୬୭୮୯୦'.indexOf(m)])),
-                lyric: currentVerseContent.join('<br/>').trim(),
+                id: parseInt(currentVerseId.toString().replace(/[୦-୯]/g, m => '0123456789'['୦୧୨୩୪୫୬୭୮୯'.indexOf(m)])),
+                lyric: currentVerseContent.join('\n').trim(),
                 translation: ''
             });
         }
