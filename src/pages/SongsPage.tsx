@@ -4,8 +4,6 @@ import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, Boo
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
-
-
 import { AudioPlayer } from '../components/AudioPlayer';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
@@ -124,7 +122,7 @@ export const SongsPage: React.FC = () => {
     useEffect(() => {
         const themeColorMeta = document.querySelector('meta[name="theme-color"]');
         if (themeColorMeta) themeColorMeta.setAttribute('content', theme.color);
-        document.body.style.backgroundColor = selectedSong ? REFERENCE_PAGE_BG : 'var(--color-cream)';
+        document.body.style.backgroundColor = selectedSong ? theme.color : 'var(--color-cream)';
     }, [theme.color, selectedSong]);
 
     const getOdiaTitle = (title: string) => {
@@ -144,16 +142,22 @@ export const SongsPage: React.FC = () => {
     const renderSongContent = () => {
         if (!selectedSong) return null;
 
+        const isNightMode = currentThemeKey === 'advaita';
+        const cardBg = isNightMode ? '#1E1E1E' : '#fff';
+        const textColor = isNightMode ? '#e2e8f0' : '#111';
+        const titleColor = isNightMode ? '#fff' : '#000';
+        const borderColor = isNightMode ? '#334155' : '#ddd';
+
         if (!selectedSong.structuredContent) {
             return (
                 <div style={{
-                    background: '#fff', padding: '3rem 2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                    lineHeight: '1.9', color: '#111', fontFamily: "'Outfit', sans-serif", fontSize: `${fontSize}px`,
-                    border: '1px solid #ddd', margin: '1.5rem 0.4rem', textAlign: 'center'
+                    background: cardBg, padding: '3rem 2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                    lineHeight: '1.9', color: textColor, fontFamily: "'Outfit', sans-serif", fontSize: `${fontSize}px`,
+                    border: `1px solid ${borderColor}`, margin: '1.5rem 0.4rem', textAlign: 'center'
                 }}>
-                    <h1 style={{ fontSize: '2.5rem', color: '#000', margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1' }}>{getOdiaTitle(selectedSong.title)}</h1>
-                    {selectedSong.author && <div style={{ color: '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500 }}>{selectedSong.author}</div>}
-                    <div style={{ whiteSpace: 'pre-wrap', color: '#222' }}>{selectedSong.content}</div>
+                    <h1 style={{ fontSize: '2.5rem', color: titleColor, margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1' }}>{getOdiaTitle(selectedSong.title)}</h1>
+                    {selectedSong.author && <div style={{ color: isNightMode ? '#94a3b8' : '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500 }}>{selectedSong.author}</div>}
+                    <div style={{ whiteSpace: 'pre-wrap', color: textColor }}>{selectedSong.content}</div>
                 </div>
             );
         }
@@ -167,28 +171,25 @@ export const SongsPage: React.FC = () => {
                         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '1rem 0 0.25rem', color: '#fff', lineHeight: '1.1' }}>{getOdiaTitle(selectedSong.title)}</h1>
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9 }}>{selectedSong.author}</div>}
                     </div>
-                    <div style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #ddd', margin: '0 0.4rem', textAlign: 'center' }}>
+                    <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
                         {verses.map((verse, idx) => (
                             <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2rem' }}>
-                                <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.5rem' }}>({verse.id})</div>
+                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.5rem' }}>({verse.id})</div>
                                 <div style={{
                                     whiteSpace: 'pre-wrap',
-                                    color: verse.status ? getStatusColor(verse.status) : getStatusColor(selectedSong.status, selectedSong.verified),
+                                    color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                                     fontSize: '1.15rem',
-
                                     fontWeight: 700
                                 }}>{verse.lyric}</div>
-
                             </div>
-
                         ))}
                     </div>
-                    <div style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #ddd', margin: '0 0.4rem', textAlign: 'center' }}>
-                        <div style={{ fontSize: '1rem', color: '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: '2px solid #f0f0f0', display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
+                    <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '1rem', color: isNightMode ? theme.color : '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: `2px solid ${isNightMode ? '#334155' : '#f0f0f0'}`, display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
                         {verses.map((verse, idx) => (
                             <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
-                                <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
-                                <div style={{ color: '#444', fontSize: '1.25rem' }}>{verse.translation}</div>
+                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
+                                <div style={{ color: textColor, fontSize: '1.25rem' }}>{verse.translation}</div>
                             </div>
                         ))}
                     </div>
@@ -199,35 +200,33 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
                 <div style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0' }}>{getOdiaTitle(selectedSong.title)}</h1>
-                    <div style={{ fontSize: '1.2rem', color: getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
+                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0' }}>{getOdiaTitle(selectedSong.title)}</h1>
+                    <div style={{ fontSize: '1.2rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
                 </div>
 
                 {verses.map((verse) => (
-                    <div key={verse.id} style={{ background: '#fff', padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: '1px solid #ddd' }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#666', marginBottom: '1.5rem' }}>({verse.id})</div>
+                    <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}` }}>
+                        <div style={{ fontSize: '1.1rem', fontWeight: 600, color: isNightMode ? '#94a3b8' : '#666', marginBottom: '1.5rem' }}>({verse.id})</div>
                         <div style={{
                             whiteSpace: 'pre-wrap',
-                            color: verse.status ? getStatusColor(verse.status) : getStatusColor(selectedSong.status, selectedSong.verified),
+                            color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                             fontSize: '1.15rem',
-
                             fontWeight: 700,
                             marginBottom: '1.5rem'
                         }}>{verse.lyric}</div>
 
-
                         {viewMode === 'word-to-word' && verse.wordMeanings && (
-                            <div style={{ margin: '2rem 0', padding: '1.5rem', background: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1' }}>
-                                <div style={{ lineHeight: '1.8', fontSize: '1rem', color: '#334155' }}>
+                            <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
+                                <div style={{ lineHeight: '1.8', fontSize: '1rem', color: isNightMode ? '#cbd5e1' : '#334155' }}>
                                     {verse.wordMeanings.map((wm, i) => (
                                         <React.Fragment key={i}>
-                                            <span style={{ fontWeight: 700, color: '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
+                                            <span style={{ fontWeight: 700, color: isNightMode ? theme.color : '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
                                         </React.Fragment>
                                     ))}
                                 </div>
                             </div>
                         )}
-                        <div style={{ color: '#444', fontSize: '1.2rem', paddingTop: '1.5rem', borderTop: '1px solid #eee' }}>{verse.translation}</div>
+                        <div style={{ color: textColor, fontSize: '1.2rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}` }}>{verse.translation}</div>
                     </div>
                 ))}
             </div>
@@ -242,17 +241,16 @@ export const SongsPage: React.FC = () => {
 
     if (selectedSong) {
         return (
-            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: REFERENCE_PAGE_BG, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
-                <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: REFERENCE_HEADER_BG, color: '#fff' }}>
-                    <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'transparent', color: '#fff', padding: '4px' }}>
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
+                <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
+                    <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex' }}>
                         <ArrowLeft size={28} strokeWidth={2.5} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem', color: getStatusColor(selectedSong.status, selectedSong.verified) }}>
+                        <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}>
                             {getOdiaTitle(selectedSong.title)}
                             {selectedSong.verified && <CheckCircle2 size={18} color="#4fd1c5" />}
                         </div>
-
                         <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{selectedSong.author}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -292,7 +290,7 @@ export const SongsPage: React.FC = () => {
                 }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>{renderSongContent()}</div>
                 </main>
-                <footer style={{ padding: '0.2rem 1rem', backgroundColor: '#fff', borderTop: '1px solid #eee' }}>
+                <footer style={{ padding: '0.2rem 1rem', backgroundColor: currentThemeKey === 'advaita' ? '#1e1e1e' : '#fff', borderTop: `1px solid ${currentThemeKey === 'advaita' ? '#334155' : '#eee'}` }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}><AudioPlayer /></div>
                 </footer>
             </div>
@@ -562,6 +560,6 @@ export const SongsPage: React.FC = () => {
                     );
                 })}
             </div>
-        </div >
+        </div>
     );
 };

@@ -7,11 +7,11 @@ export interface ThemeDefinition {
 }
 
 export const TATTVA_THEMES: { [key: string]: ThemeDefinition } = {
-    gauranga: { name: 'Gauranga', color: '#8A5082', gradient: 'linear-gradient(135deg, #8A5082 0%, #6F5F90 100%)', accent: '#8A5082', text: '#fff' },
-    nityananda: { name: 'Nityananda', color: '#FF9933', gradient: 'linear-gradient(135deg, #FF9933 0%, #cc7a29 100%)', accent: '#FF9933', text: '#fff' },
-    advaita: { name: 'Advaita', color: '#4CAF50', gradient: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', accent: '#4CAF50', text: '#fff' },
-    gadadhara: { name: 'Gadadhara', color: '#2196F3', gradient: 'linear-gradient(135deg, #2196F3 0%, #1976D2 100%)', accent: '#2196F3', text: '#fff' },
-    srivasa: { name: 'Srivasa', color: '#9C27B0', gradient: 'linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%)', accent: '#9C27B0', text: '#fff' }
+    gauranga: { name: 'Gauranga', color: '#F57C00', gradient: 'linear-gradient(135deg, #F57C00 0%, #E65100 100%)', accent: '#F57C00', text: '#fff' },
+    nityananda: { name: 'Nityananda', color: '#3949AB', gradient: 'linear-gradient(135deg, #3949AB 0%, #283593 100%)', accent: '#3949AB', text: '#fff' },
+    advaita: { name: 'Advaita', color: '#121212', gradient: 'linear-gradient(135deg, #121212 0%, #000000 100%)', accent: '#121212', text: '#fff' },
+    gadadhara: { name: 'Gadadhara', color: '#C61B54', gradient: 'linear-gradient(135deg, #C61B54 0%, #9E1546 100%)', accent: '#C61B54', text: '#fff' },
+    srivasa: { name: 'Srivasa', color: '#375B15', gradient: 'linear-gradient(135deg, #375B15 0%, #23400D 100%)', accent: '#375B15', text: '#fff' }
 };
 
 export const DEFAULT_THEME = 'gauranga';
