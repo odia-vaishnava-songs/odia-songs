@@ -55,34 +55,111 @@ async function upload() {
         const baseId = 'song-' + titleStr.toLowerCase().replace(/[^a-z0-9]/g, '');
 
         let verses = [];
-        // very basic parsing for structured content: find lines starting with (୧) or 1.
         let linesArr = s.content.split('\n');
 
         let currentVerseId = null;
         let currentVerseContent = [];
-        for (let l of linesArr) {
-            let match = l.match(/^\s*\(?([୦-୯0-9]+)\)?\s*$/);
-            if (match) {
-                if (currentVerseId !== null) {
-                    verses.push({
+        let isParsingTranslation = false;
+        let currentTranslationLines = [];
+
+        let firstVerseCompleted = false;
+        let wordMeaningsParsed = [];
+
+        for (let i = 0; i < linesArr.length; i++) {
+            let l = linesArr[i];
+
+            // Check for word meanings block (long line with emdashes)
+            if (l.includes(' — ') || l.includes(' - ')) {
+                // Ignore if it's the composer line
+                // Wait, some song lines might have '-' or '—'
+                // Usually word meanings are clustered with multiple em dashes representing word-meaning pairs.
+                let parts = l.split(/ — | - |;| \/ | , /).filter(p => p.trim() !== '');
+                if (parts.length > 4 && l.length > 50) {
+                    // highly likely to be a word meanings block
+                    // very naive parsing: split by ';' or ','
+                    let pairs = l.split(';');
+                    for (let p of pairs) {
+                        let kv = p.split(/—|-/);
+                        if (kv.length === 2) {
+                            wordMeaningsParsed.push({
+                                word: kv[0].trim(),
+                                meaning: kv[1].trim()
+                            });
+                        }
+                    }
+                    continue;
+                }
+            }
+
+            // Look for (୧) or 1.
+            let odiaNumMatch = l.match(/^\s*\(?([୦-୯]+)\)?\s*$/);
+            let engNumMatch = l.match(/^\s*([0-9]+)\.\s*$/);
+
+            if (odiaNumMatch) {
+                if (currentVerseId !== null && !isParsingTranslation) {
+                    let v = {
                         id: parseInt(currentVerseId.toString().replace(/[୦-୯]/g, m => '0123456789'['୦୧୨୩୪୫୬୭୮୯'.indexOf(m)])),
                         lyric: currentVerseContent.join('\n').trim(),
-                        translation: ''
-                    });
+                        translation: '',
+                        wordMeanings: []
+                    };
+                    if (!firstVerseCompleted) {
+                        v.wordMeanings = wordMeaningsParsed; // attach to first verse just in case we processed it early
+                        firstVerseCompleted = true;
+                    }
+                    verses.push(v);
                 }
-                currentVerseId = match[1];
+                currentVerseId = odiaNumMatch[1];
                 currentVerseContent = [];
+                isParsingTranslation = false;
+            } else if (engNumMatch) {
+                let idStr = engNumMatch[1];
+                let verseId = parseInt(idStr);
+                let targetVerse = verses.find(v => v.id === verseId);
+                isParsingTranslation = true;
+                currentTranslationLines = [];
+
+                let j = i + 1;
+                while (j < linesArr.length) {
+                    if (linesArr[j].match(/^\s*([0-9]+)\.\s*$/) || (linesArr[j].includes(' — ') && linesArr[j].length > 50)) {
+                        break;
+                    }
+                    currentTranslationLines.push(linesArr[j]);
+                    j++;
+                }
+                if (targetVerse) {
+                    targetVerse.translation = currentTranslationLines.join('\n').trim();
+                    if (verseId === 1 && wordMeaningsParsed.length > 0) {
+                        targetVerse.wordMeanings = wordMeaningsParsed;
+                    }
+                }
+                i = j - 1;
             } else {
-                currentVerseContent.push(l);
+                if (!isParsingTranslation && currentVerseId !== null) {
+                    currentVerseContent.push(l);
+                }
             }
         }
-        if (currentVerseId !== null) {
-            verses.push({
+
+        if (currentVerseId !== null && !isParsingTranslation) {
+            let v = {
                 id: parseInt(currentVerseId.toString().replace(/[୦-୯]/g, m => '0123456789'['୦୧୨୩୪୫୬୭୮୯'.indexOf(m)])),
                 lyric: currentVerseContent.join('\n').trim(),
-                translation: ''
-            });
+                translation: '',
+                wordMeanings: []
+            };
+            if (!firstVerseCompleted && wordMeaningsParsed.length > 0) {
+                v.wordMeanings = wordMeaningsParsed;
+                firstVerseCompleted = true;
+            }
+            verses.push(v);
         }
+
+        // Attach parsed word meanings to the first verse if it exists and hasn't been set
+        if (verses.length > 0 && verses[0].wordMeanings && verses[0].wordMeanings.length === 0 && wordMeaningsParsed.length > 0) {
+            verses[0].wordMeanings = wordMeaningsParsed;
+        }
+
 
         // This is a naive parse. Content is preserved exactly.
         const dbSong = {
