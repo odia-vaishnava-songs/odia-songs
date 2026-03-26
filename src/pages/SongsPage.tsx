@@ -93,8 +93,14 @@ export const SongsPage: React.FC = () => {
     };
 
     const getCategoryLetter = (song: Resource) => {
-        const textToUse = song.title_english || song.title.match(/\(([^)]+)\)/)?.[1] || song.title;
-        const firstChar = textToUse.trim().charAt(0).toUpperCase();
+        // Now that every song has a title_english, we primarily use that
+        let textToUse = song.title_english || song.title.match(/\(([^)]+)\)/)?.[1] || song.title;
+        
+        // Remove any non-letter characters at the start (e.g. spaces, symbols)
+        const match = textToUse.match(/[a-zA-Z\u00C0-\u017F]/);
+        if (!match) return '#';
+        
+        const firstChar = match[0].toUpperCase();
         const normalized = firstChar.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         return (normalized >= 'A' && normalized <= 'Z') ? normalized : '#';
     };
