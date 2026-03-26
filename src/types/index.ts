@@ -47,6 +47,12 @@ export interface StructuredSong {
 export interface Resource {
     id: string;
     title: string;
+    title_odia?: string;
+    title_english?: string;
+    tags?: string[];
+    views?: number;
+    original_lang?: string;
+    display_order?: number;
     category: string;
     type: 'video' | 'article' | 'audio' | 'pdf' | 'interactive' | 'html';
     url?: string;
@@ -56,6 +62,7 @@ export interface Resource {
     content?: string;
     structuredContent?: StructuredSong;
     author?: string;
+    author_id?: string;
     verified?: boolean;
     status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
 }

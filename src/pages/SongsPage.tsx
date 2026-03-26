@@ -36,7 +36,7 @@ export const SongsPage: React.FC = () => {
     });
     const filterMenuRef = useRef<HTMLDivElement>(null);
 
-    const handleSelectSong = (song: Resource) => {
+    const handleSelectSong = async (song: Resource) => {
         setSelectedSong(song);
         setIsDetailView(true);
         if (song.audioUrl || (song.audioVersions && song.audioVersions.length > 0)) {
@@ -45,6 +45,13 @@ export const SongsPage: React.FC = () => {
         const newRecent = [song.id, ...recentIds.filter(id => id !== song.id)].slice(0, 5);
         setRecentIds(newRecent);
         localStorage.setItem('recent-song-ids', JSON.stringify(newRecent));
+
+        // Increment views in background
+        try {
+            await supabase.rpc('increment_song_views', { song_id: song.id });
+        } catch (e) {
+            console.error("Error incrementing views:", e);
+        }
     };
 
     const handleSetTheme = (themeKey: string) => {
@@ -53,7 +60,7 @@ export const SongsPage: React.FC = () => {
 
     const songResources = useMemo(() => {
         return songs.filter(r => r.category === 'Songs')
-            .sort((a, b) => a.title.localeCompare(b.title));
+            .sort((a, b) => (a.display_order ?? 0) - (b.display_order ?? 0));
     }, [songs]);
 
     const filteredSongs = useMemo(() => {
@@ -61,16 +68,17 @@ export const SongsPage: React.FC = () => {
         if (!query) return songResources;
 
         return songResources.filter(s => {
-            const inTitle = s.title.toLowerCase().includes(query);
+            const inTitle = (s.title_odia || s.title).toLowerCase().includes(query) || (s.title_english || '').toLowerCase().includes(query);
             const inAuthor = s.author?.toLowerCase().includes(query);
             const inDescription = s.description?.toLowerCase().includes(query);
+            const inTags = s.tags?.some(tag => tag.toLowerCase().includes(query));
 
             // Check verses lyrics
             const inLyrics = s.structuredContent?.verses.some(v =>
-                v.lyric.toLowerCase().includes(query)
+                v.lyric.toLowerCase().includes(query) || v.translation.toLowerCase().includes(query)
             );
 
-            return inTitle || inAuthor || inDescription || inLyrics;
+            return inTitle || inAuthor || inDescription || inLyrics || inTags;
         });
     }, [songResources, searchQuery]);
 
@@ -84,9 +92,8 @@ export const SongsPage: React.FC = () => {
         }
     };
 
-    const getCategoryLetter = (title: string) => {
-        const match = title.match(/\(([^)]+)\)/);
-        const textToUse = (match && match[1]) ? match[1] : title;
+    const getCategoryLetter = (song: Resource) => {
+        const textToUse = song.title_english || song.title.match(/\(([^)]+)\)/)?.[1] || song.title;
         const firstChar = textToUse.trim().charAt(0).toUpperCase();
         const normalized = firstChar.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         return (normalized >= 'A' && normalized <= 'Z') ? normalized : '#';
@@ -95,7 +102,7 @@ export const SongsPage: React.FC = () => {
     const groupedSongs = useMemo(() => {
         const groups: { [key: string]: Resource[] } = {};
         filteredSongs.forEach(song => {
-            const letter = getCategoryLetter(song.title);
+            const letter = getCategoryLetter(song);
             if (!groups[letter]) groups[letter] = [];
             groups[letter].push(song);
         });
@@ -124,8 +131,10 @@ export const SongsPage: React.FC = () => {
         document.body.style.backgroundColor = selectedSong ? theme.color : 'var(--color-cream)';
     }, [theme.color, selectedSong]);
 
-    const getOdiaTitle = (title: string) => {
+    const getOdiaTitle = (song: Resource) => {
+        if (song.title_odia) return song.title_odia;
         // Try to find pure Odia text outside parentheses
+        const title = song.title;
         const noParens = title.replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
         if (noParens.match(/[\u0B00-\u0B7F]/)) {
             return noParens;
@@ -154,7 +163,7 @@ export const SongsPage: React.FC = () => {
                     lineHeight: '1.9', color: textColor, fontFamily: "'Outfit', sans-serif", fontSize: `${fontSize}px`,
                     border: `1px solid ${borderColor}`, margin: '1.5rem 0.4rem', textAlign: 'center'
                 }}>
-                    <h1 style={{ fontSize: '2.5rem', color: titleColor, margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1' }}>{getOdiaTitle(selectedSong.title)}</h1>
+                    <h1 style={{ fontSize: '2.5rem', color: titleColor, margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.author && <div style={{ color: isNightMode ? '#94a3b8' : '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500 }}>{selectedSong.author}</div>}
                     <div style={{ whiteSpace: 'pre-wrap', color: textColor }}>{selectedSong.content}</div>
                 </div>
@@ -167,7 +176,7 @@ export const SongsPage: React.FC = () => {
             return (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
                     <div style={{ padding: '0 0.4rem', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '1rem 0 0.25rem', color: '#fff', lineHeight: '1.1' }}>{getOdiaTitle(selectedSong.title)}</h1>
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '1rem 0 0.25rem', color: '#fff', lineHeight: '1.1' }}>{getOdiaTitle(selectedSong)}</h1>
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9 }}>{selectedSong.author}</div>}
                     </div>
                     <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
@@ -199,8 +208,9 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
                 <div style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0' }}>{getOdiaTitle(selectedSong.title)}</h1>
-                    <div style={{ fontSize: '1.2rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
+                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem' }}>{getOdiaTitle(selectedSong)}</h1>
+                    {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
+                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
                 </div>
 
                 {verses.map((verse) => (
@@ -247,10 +257,10 @@ export const SongsPage: React.FC = () => {
                     </button>
                     <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
                         <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}>
-                            {getOdiaTitle(selectedSong.title)}
+                            {getOdiaTitle(selectedSong)}
                             {selectedSong.verified && <CheckCircle2 size={18} color="#4fd1c5" />}
                         </div>
-                        <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{selectedSong.author}</div>
+                        <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{selectedSong.title_english || selectedSong.author}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                         {(user?.role?.toLowerCase() === 'admin' || user?.role?.toLowerCase() === 'subadmin') && (
@@ -496,15 +506,25 @@ export const SongsPage: React.FC = () => {
                                             e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                                         }}
                                     >
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                                            <div style={{
-                                                fontSize: '1.15rem',
-                                                fontWeight: 600,
-                                                color: getStatusColor(song.status, song.verified)
-                                            }}>{song.title}</div>
-                                            {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                <div style={{
+                                                    fontSize: '1.25rem',
+                                                    fontWeight: 700,
+                                                    color: getStatusColor(song.status, song.verified)
+                                                }}>{getOdiaTitle(song)}</div>
+                                                {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                            </div>
+                                            {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                <div style={{
+                                                    fontSize: '0.95rem',
+                                                    color: '#666',
+                                                    fontWeight: 500,
+                                                    fontFamily: "'Outfit', sans-serif"
+                                                }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                            )}
                                         </div>
-                                        {song.author && <div style={{ fontSize: '0.9rem', color: getStatusColor(song.status, song.verified), opacity: 0.8 }}>{song.author}</div>}
+                                        {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: getStatusColor(song.status, song.verified), opacity: 0.7 }}>{song.author}</div>}
                                     </div>
                                 ))}
                             </div>

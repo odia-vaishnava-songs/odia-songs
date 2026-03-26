@@ -14,7 +14,8 @@ export const useSongs = () => {
                 // Use aliasing to match camelCase Resource interface
                 const { data, error } = await supabase
                     .from('songs')
-                    .select('id, title, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status');
+                    .select('id, title, title_odia, title_english, tags, views, original_lang:original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status')
+                    .order('display_order', { ascending: true });
 
                 if (error) throw error;
 

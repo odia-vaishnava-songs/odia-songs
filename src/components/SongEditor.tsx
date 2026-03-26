@@ -100,7 +100,12 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                 .from('songs')
                 .upsert({
                     id,
-                    title: formData.title,
+                    title: formData.title || formData.title_odia || '',
+                    title_odia: formData.title_odia,
+                    title_english: formData.title_english,
+                    tags: formData.tags || [],
+                    original_lang: formData.original_lang || 'Odia',
+                    display_order: formData.display_order || 0,
                     category: formData.category,
                     type: formData.type,
                     description: formData.description,
@@ -132,18 +137,82 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
             </div>
 
             <div style={{ display: 'grid', gap: '1rem', marginBottom: '2rem' }}>
-                <input
-                    placeholder="Song Title (e.g. Jaya Radha Madhava)"
-                    value={formData.title}
-                    onChange={e => setFormData({ ...formData, title: e.target.value })}
-                    style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
-                />
-                <input
-                    placeholder="Author (e.g. Bhaktivinoda Thakura)"
-                    value={formData.author}
-                    onChange={e => setFormData({ ...formData, author: e.target.value })}
-                    style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
-                />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Odia Title</span>
+                        <input
+                            placeholder="ଜୟ ରାଧା-ମାଧବ"
+                            value={formData.title_odia || ''}
+                            onChange={e => setFormData({ ...formData, title_odia: e.target.value })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
+                        />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>English Title</span>
+                        <input
+                            placeholder="Jaya Rādhā-Mādhava"
+                            value={formData.title_english || ''}
+                            onChange={e => setFormData({ ...formData, title_english: e.target.value })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
+                        />
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                    <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Legacy/Full Title</span>
+                    <input
+                        placeholder="Song Title (Internal)"
+                        value={formData.title}
+                        onChange={e => setFormData({ ...formData, title: e.target.value })}
+                        style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', background: '#f9f9f9' }}
+                    />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Author</span>
+                        <input
+                            placeholder="Bhaktivinoda Ṭhākura"
+                            value={formData.author}
+                            onChange={e => setFormData({ ...formData, author: e.target.value })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
+                        />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Original Language</span>
+                        <select
+                            value={formData.original_lang || 'Odia'}
+                            onChange={e => setFormData({ ...formData, original_lang: e.target.value })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', background: 'white' }}
+                        >
+                            <option value="Odia">Odia</option>
+                            <option value="Sanskrit">Sanskrit</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Hindi">Hindi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 120px', gap: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Tags (comma separated)</span>
+                        <input
+                            placeholder="Morning, Arati, Humility"
+                            value={formData.tags?.join(', ') || ''}
+                            onChange={e => setFormData({ ...formData, tags: e.target.value.split(',').map(t => t.trim()).filter(t => t) })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
+                        />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                        <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Display Order</span>
+                        <input
+                            type="number"
+                            value={formData.display_order || 0}
+                            onChange={e => setFormData({ ...formData, display_order: parseInt(e.target.value) || 0 })}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
+                        />
+                    </div>
+                </div>
                 <div>
                     <span style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem', display: 'block' }}>Production Status</span>
                     <div style={{ display: 'flex', gap: '0.75rem' }}>
