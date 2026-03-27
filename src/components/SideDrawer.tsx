@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     X, Share2, HelpCircle, LogOut,
-    CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft, Database,
+    CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft,
     Phone, MapPin
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
@@ -213,11 +213,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                                                     onClick={() => { navigate('/manage-songs'); onClose(); }}
                                                     badge={role === 'admin' ? 'Admin' : 'Editor'}
                                                 />
-                                                <MenuItem
-                                                    icon={<Database size={20} />}
-                                                    label="Migrate Songs"
-                                                    onClick={() => { navigate('/migrate'); onClose(); }}
-                                                />
+
                                             </>
                                         );
                                     }
