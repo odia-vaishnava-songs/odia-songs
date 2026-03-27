@@ -13,6 +13,7 @@ interface AuthContextType {
     logout: () => Promise<void>;
     isAuthenticated: boolean;
     loading: boolean;
+    status: string;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -20,7 +21,9 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    const [status, setStatus] = useState('Initializing...');
     const lastSyncTime = useRef<number>(0);
+    const lastSyncTimestampRef = useRef<number>(0); // Absolute time cooldown
     const mountedRef = useRef<boolean>(true);
     const highestRoleRef = useRef<string>('user'); 
     const hasInitializedRef = useRef<boolean>(false);
@@ -40,6 +43,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         // Supabase v2: onAuthStateChange with INITIAL_SESSION handles the initial check automatically
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             console.log('[Auth] State change:', _event, 'Session user:', session?.user?.id);
+            setStatus(`Auth Event: ${_event}`);
             
             if (!mountedRef.current) return;
 
@@ -73,8 +77,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                     }
                 }
 
-                // Background sync
-                await syncProfile(session.user);
+                // Background sync - THROTTLED to once every 5 seconds per ID
+                const now = Date.now();
+                const timeDiff = now - lastSyncTimestampRef.current;
+                if (timeDiff > 5000) {
+                    setStatus('Syncing Profile...');
+                    await syncProfile(session.user);
+                    lastSyncTimestampRef.current = now;
+                } else {
+                    console.log('[Auth] Sync Throttle: Skipping redundant check.');
+                    setStatus('Stable (Throttled)');
+                }
             }
         });
 
@@ -168,6 +181,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             if (mountedRef.current) {
                 setUser(newUser);
                 setLoading(false);
+                setStatus('Stable');
             }
         } catch (err: any) {
             console.error('[Auth] syncProfile failed (Critical):', err.message);
@@ -337,7 +351,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             sendMagicLink,
             logout,
             isAuthenticated: !!user,
-            loading
+            loading,
+            status
         }}>
             {loading ? (
                 <div style={{
