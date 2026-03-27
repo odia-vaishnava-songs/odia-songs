@@ -20,55 +20,47 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
-    // Flag set to true during manual login so the SIGNED_IN listener event is skipped
-    // (the login function calls syncProfile directly, listener would cause a race condition)
-    const isManualLogin = useRef(false);
+    const lastSyncTime = useRef<number>(0);
+    const mountedRef = useRef<boolean>(true);
 
     useEffect(() => {
-        let mounted = true;
+        mountedRef.current = true;
 
-        // Safety timeout: stop loading after 5 seconds even if something is slow
+        // Safety timeout: stop loading after 8 seconds even if something is slow
         const timeout = setTimeout(() => {
-            if (mounted) {
+            if (mountedRef.current && loading) {
                 console.warn('Auth initialization timed out, forcing loading screen to close');
                 setLoading(false);
             }
-        }, 5000);
+        }, 8000);
+
+        // Check active session immediately on mount
+        const checkInitialSession = async () => {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session && mountedRef.current) {
+                await syncProfile(session.user);
+            } else if (mountedRef.current) {
+                setLoading(false);
+            }
+        };
+
+        checkInitialSession();
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-            console.log('Auth state change event:', _event, '| manualLogin:', isManualLogin.current);
-            try {
-                if (_event === 'SIGNED_OUT') {
-                    if (mounted) setUser(null);
-                } else if (_event === 'SIGNED_IN') {
-                    if (isManualLogin.current) {
-                        // This SIGNED_IN came from our manual login — consume the flag and skip.
-                        // syncProfile was already called directly by the login function.
-                        isManualLogin.current = false;
-                    } else if (session && mounted) {
-                        // SIGNED_IN from page refresh / OAuth redirect — handle normally.
-                        await syncProfile(session.user);
-                    }
-                } else if (_event === 'INITIAL_SESSION') {
-                    if (session && mounted) {
-                        await syncProfile(session.user);
-                    } else if (mounted) {
-                        setUser(null);
-                    }
-                } else if (_event === 'TOKEN_REFRESHED') {
-                    if (session && mounted) {
-                        await syncProfile(session.user);
-                    }
+            console.log('[Auth] State change:', _event);
+            if (_event === 'SIGNED_OUT') {
+                if (mountedRef.current) {
+                    setUser(null);
+                    setLoading(false);
                 }
-            } catch (err) {
-                console.error('Auth state change handler failed:', err);
-            } finally {
-                if (mounted) setLoading(false);
+            } else if (session && mountedRef.current) {
+                // For SIGNED_IN, INITIAL_SESSION, TOKEN_REFRESHED
+                await syncProfile(session.user);
             }
         });
 
         return () => {
-            mounted = false;
+            mountedRef.current = false;
             clearTimeout(timeout);
             subscription.unsubscribe();
         };
@@ -76,33 +68,34 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const syncProfile = async (supabaseUser: any) => {
         if (!supabaseUser) return;
-        console.log('[Auth] Syncing profile for:', supabaseUser.id);
-
-        // Create a timeout promise
-        const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Profile sync timed out after 5s')), 5000)
-        );
+        
+        const syncId = Date.now();
+        lastSyncTime.current = syncId;
+        
+        console.log('[Auth] Syncing profile for:', supabaseUser.id, 'SyncID:', syncId);
 
         try {
-            // Race the profile fetch against the timeout
             const profilePromise = supabase
                 .from('profiles')
                 .select('*')
                 .eq('id', supabaseUser.id)
                 .single();
 
-            const result: any = await Promise.race([profilePromise, timeoutPromise]);
+            // 7 second timeout for profile fetch specifically
+            const fetchTimeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Profile fetch timed out')), 7000)
+            );
+
+            const result: any = await Promise.race([profilePromise, fetchTimeout]);
+            
+            // If another sync started while we were waiting, ignore this results
+            if (lastSyncTime.current !== syncId) return;
+
             const profile = result.data;
             const error = result.error;
 
-            if (error) {
-                if (error.code === 'PGRST116') {
-                    console.log('[Auth] No profile found in profiles table. Using defaults.');
-                } else {
-                    console.warn('[Auth] Profile fetch error:', error.code, error.message);
-                }
-            } else {
-                console.log('[Auth] Profile fetched successfully');
+            if (error && error.code !== 'PGRST116') {
+                console.warn('[Auth] Profile fetch error:', error.code, error.message);
             }
 
             const newUser: User = {
@@ -113,18 +106,27 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 userId: supabaseUser.phone || supabaseUser.email || supabaseUser.id
             };
 
-            console.log('[Auth] Logged in as:', newUser.role, newUser.name);
-            setUser(newUser);
+            console.log('[Auth] Sync complete. Role:', newUser.role, 'Name:', newUser.name);
+            
+            if (mountedRef.current) {
+                setUser(newUser);
+                setLoading(false);
+            }
         } catch (err: any) {
-            console.error('[Auth] syncProfile failed or timed out:', err.message);
-            // Emergency fallback user state
-            setUser({
-                id: supabaseUser.id,
-                name: supabaseUser.user_metadata?.full_name || supabaseUser.phone || supabaseUser.email?.split('@')[0] || 'User',
-                email: supabaseUser.email || '',
-                role: 'user',
-                userId: supabaseUser.id
-            });
+            console.error('[Auth] syncProfile failed:', err.message);
+            if (lastSyncTime.current !== syncId) return;
+
+            if (mountedRef.current) {
+                // Fallback state
+                setUser({
+                    id: supabaseUser.id,
+                    name: supabaseUser.user_metadata?.full_name || supabaseUser.phone || 'User',
+                    email: supabaseUser.email || '',
+                    role: 'user',
+                    userId: supabaseUser.id
+                });
+                setLoading(false);
+            }
         }
     };
 
@@ -133,16 +135,19 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         const fakeEmail = `${cleanPhone}@odia.app`;
         const staticPassword = 'OdiaSongsUserAuth';
 
+    const loginWithPhone = async (phone: string) => {
+        const cleanPhone = phone.replace(/\D/g, '');
+        const fakeEmail = `${cleanPhone}@odia.app`;
+        const staticPassword = 'OdiaSongsUserAuth';
+
         try {
             console.log('Attempting phone login for:', cleanPhone);
-            isManualLogin.current = true;
             const { error: signInError, data: { session } } = await supabase.auth.signInWithPassword({
                 email: fakeEmail,
                 password: staticPassword
             });
 
             if (signInError) {
-                isManualLogin.current = false; // login failed, no SIGNED_IN will fire
                 if (signInError.message.includes('Invalid login credentials') || signInError.message.toLowerCase().includes('not found')) {
                     return { success: false, error: 'User not found. Please sign up first.' };
                 }
@@ -155,10 +160,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
             return { success: false, error: 'Session failed' };
         } catch (error: any) {
-            isManualLogin.current = false; // ensure reset on unexpected error
             console.error('Login error:', error);
             return { success: false, error: error.message };
         }
+    };
     };
 
     const registerWithPhone = async (name: string, phone: string, email?: string, city?: string) => {
@@ -190,7 +195,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                     name: name,
                     email: email || '',
                     city: city || '',
-                    role: 'user', // MUST match DB lowercase enum
+                    role: 'USER', // Match DB Uppercase enum
                     created_at: new Date().toISOString()
                 });
 
@@ -211,27 +216,18 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const loginWithEmailPassword = async (email: string, password: string) => {
         console.log('[Auth] Admin login attempt for:', email);
-        try {
-            isManualLogin.current = true;
-            const { error, data: { session } } = await supabase.auth.signInWithPassword({
-                email,
-                password
-            });
-            if (error) {
-                isManualLogin.current = false; // login failed, no SIGNED_IN will fire
-                console.error('[Auth] Login error:', error.message);
-                throw error;
-            }
-            if (session) {
-                console.log('[Auth] Session created, syncing...');
-                await syncProfile(session.user);
-            }
-        } catch (err) {
-            isManualLogin.current = false; // ensure reset on unexpected error
-            throw err;
+        const { error, data: { session } } = await supabase.auth.signInWithPassword({
+            email,
+            password
+        });
+        if (error) {
+            console.error('[Auth] Login error:', error.message);
+            throw error;
         }
-        // NOTE: isManualLogin is reset inside the SIGNED_IN listener, not here,
-        // because finally runs BEFORE the SIGNED_IN event fires.
+        if (session) {
+            console.log('[Auth] Session created, syncing...');
+            await syncProfile(session.user);
+        }
     };
 
     const loginWithGoogle = async () => {
