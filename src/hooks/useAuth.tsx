@@ -41,10 +41,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 if (_event === 'SIGNED_OUT') {
                     if (mounted) setUser(null);
                 } else if (_event === 'SIGNED_IN') {
-                    // Skip if a login function is already handling this (prevents race condition
-                    // that overwrites admin role). Allow through for OAuth redirects & session
-                    // restoration on page refresh where isManualLogin is false.
-                    if (!isManualLogin.current && session && mounted) {
+                    if (isManualLogin.current) {
+                        // This SIGNED_IN came from our manual login — consume the flag and skip.
+                        // syncProfile was already called directly by the login function.
+                        isManualLogin.current = false;
+                    } else if (session && mounted) {
+                        // SIGNED_IN from page refresh / OAuth redirect — handle normally.
                         await syncProfile(session.user);
                     }
                 } else if (_event === 'INITIAL_SESSION') {
@@ -140,7 +142,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             });
 
             if (signInError) {
-                isManualLogin.current = false;
+                isManualLogin.current = false; // login failed, no SIGNED_IN will fire
                 if (signInError.message.includes('Invalid login credentials') || signInError.message.toLowerCase().includes('not found')) {
                     return { success: false, error: 'User not found. Please sign up first.' };
                 }
@@ -153,10 +155,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
             return { success: false, error: 'Session failed' };
         } catch (error: any) {
+            isManualLogin.current = false; // ensure reset on unexpected error
             console.error('Login error:', error);
             return { success: false, error: error.message };
-        } finally {
-            isManualLogin.current = false;
         }
     };
 
@@ -217,6 +218,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 password
             });
             if (error) {
+                isManualLogin.current = false; // login failed, no SIGNED_IN will fire
                 console.error('[Auth] Login error:', error.message);
                 throw error;
             }
@@ -224,9 +226,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 console.log('[Auth] Session created, syncing...');
                 await syncProfile(session.user);
             }
-        } finally {
-            isManualLogin.current = false;
+        } catch (err) {
+            isManualLogin.current = false; // ensure reset on unexpected error
+            throw err;
         }
+        // NOTE: isManualLogin is reset inside the SIGNED_IN listener, not here,
+        // because finally runs BEFORE the SIGNED_IN event fires.
     };
 
     const loginWithGoogle = async () => {
