@@ -365,6 +365,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         description: 'ଗୁରୁଦେବଙ୍କ ଅପାର କରୁଣାର ବନ୍ଦନା |',
         structuredContent: SONG_GURUDEVABOROKRPADIA_STRUCTURED,
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Gurudeva%21_Boro_Krpa_Kori/Gurudeva%21_Boro_Krpa_Kori_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
