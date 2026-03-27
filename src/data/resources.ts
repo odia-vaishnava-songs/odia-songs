@@ -113,6 +113,14 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         description: 'ସଂସାର ସମୁଦ୍ରରେ ପତିତ ଜୀବର ଉଦ୍ଧାର ପାଇଁ ପ୍ରାର୍ଥନା |',
         structuredContent: SONG_ANADIKARAMAPHALE_STRUCTURED,
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_His_Divine_Grace_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
+        audioVersions: [
+            { label: 'Śrīla Prabhupāda', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_His_Divine_Grace_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3' },
+            { label: 'HG Jai Sachinanadana Prabhu', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3' },
+            { label: 'HG Sivarama Prabhu', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_HG_Sivarama_Prabhu_IDT.mp3' },
+            { label: 'HH Suhotra Swami', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_HH_Suhotra_Swami_IDT.mp3' },
+            { label: 'Odia Recording', url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F29%20Anadi%20Karma%20Phale%20P-63.MP3' }
+        ],
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -149,10 +157,15 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         description: 'ଆତ୍ମସମର୍ପଣ ପରେ ମିଳୁଥିବା ପରମ ଶାନ୍ତି ମହିମା |',
         structuredContent: SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
+        audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Atma_nivedana_tuya_pade.mp3',
+        audioVersions: [
+            { label: 'HH Gour Govinda Swami', url: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Atma_nivedana_tuya_pade.mp3' },
+            { label: 'HG Jai Sachinanadana Prabhu', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Atma_Nivedana_Tuwa_Pade/Atma_Nivedana_Tuwa_Pade_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3' }
+        ],
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-sarvasvatomar',
+        id: 'song-sarvasvotomar',
         title: 'ସର୍ବସ୍ୱ ତୋମାର, ଚରଣେ ସଁପିୟା (Sarvasva tomār, caraṇe saḿpiyā)',
         category: 'Songs',
         type: 'html',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 import type { User } from '../types';
 import { supabase } from '../supabase/config';
@@ -20,28 +20,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    // Flag set to true during manual login so the SIGNED_IN listener event is skipped
+    // (the login function calls syncProfile directly, listener would cause a race condition)
+    const isManualLogin = useRef(false);
 
     useEffect(() => {
         let mounted = true;
-
-        // Check active sessions and sets up the user if it exists
-        const initSession = async () => {
-            try {
-                console.log('Initializing session...');
-                const { data: { session }, error } = await supabase.auth.getSession();
-                if (error) throw error;
-
-                if (session && mounted) {
-                    await syncProfile(session.user);
-                }
-            } catch (err) {
-                console.error('Session initialization failed:', err);
-            } finally {
-                if (mounted) setLoading(false);
-            }
-        };
-
-        initSession();
 
         // Safety timeout: stop loading after 5 seconds even if something is slow
         const timeout = setTimeout(() => {
@@ -51,14 +35,28 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
         }, 5000);
 
-        // Listen for changes on auth state (sign in, sign out, etc.)
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-            console.log('Auth state change event:', _event);
+            console.log('Auth state change event:', _event, '| manualLogin:', isManualLogin.current);
             try {
-                if (session && mounted) {
-                    await syncProfile(session.user);
-                } else if (mounted) {
-                    setUser(null);
+                if (_event === 'SIGNED_OUT') {
+                    if (mounted) setUser(null);
+                } else if (_event === 'SIGNED_IN') {
+                    // Skip if a login function is already handling this (prevents race condition
+                    // that overwrites admin role). Allow through for OAuth redirects & session
+                    // restoration on page refresh where isManualLogin is false.
+                    if (!isManualLogin.current && session && mounted) {
+                        await syncProfile(session.user);
+                    }
+                } else if (_event === 'INITIAL_SESSION') {
+                    if (session && mounted) {
+                        await syncProfile(session.user);
+                    } else if (mounted) {
+                        setUser(null);
+                    }
+                } else if (_event === 'TOKEN_REFRESHED') {
+                    if (session && mounted) {
+                        await syncProfile(session.user);
+                    }
                 }
             } catch (err) {
                 console.error('Auth state change handler failed:', err);
@@ -135,12 +133,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
         try {
             console.log('Attempting phone login for:', cleanPhone);
+            isManualLogin.current = true;
             const { error: signInError, data: { session } } = await supabase.auth.signInWithPassword({
                 email: fakeEmail,
                 password: staticPassword
             });
 
             if (signInError) {
+                isManualLogin.current = false;
                 if (signInError.message.includes('Invalid login credentials') || signInError.message.toLowerCase().includes('not found')) {
                     return { success: false, error: 'User not found. Please sign up first.' };
                 }
@@ -148,7 +148,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
 
             if (session) {
-                // Ensure syncProfile happens but doesn't block forever if it takes too long
                 await syncProfile(session.user);
                 return { success: true };
             }
@@ -156,6 +155,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         } catch (error: any) {
             console.error('Login error:', error);
             return { success: false, error: error.message };
+        } finally {
+            isManualLogin.current = false;
         }
     };
 
@@ -209,17 +210,22 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const loginWithEmailPassword = async (email: string, password: string) => {
         console.log('[Auth] Admin login attempt for:', email);
-        const { error, data: { session } } = await supabase.auth.signInWithPassword({
-            email,
-            password
-        });
-        if (error) {
-            console.error('[Auth] Login error:', error.message);
-            throw error;
-        }
-        if (session) {
-            console.log('[Auth] Session created, syncing...');
-            await syncProfile(session.user);
+        try {
+            isManualLogin.current = true;
+            const { error, data: { session } } = await supabase.auth.signInWithPassword({
+                email,
+                password
+            });
+            if (error) {
+                console.error('[Auth] Login error:', error.message);
+                throw error;
+            }
+            if (session) {
+                console.log('[Auth] Session created, syncing...');
+                await syncProfile(session.user);
+            }
+        } finally {
+            isManualLogin.current = false;
         }
     };
 
