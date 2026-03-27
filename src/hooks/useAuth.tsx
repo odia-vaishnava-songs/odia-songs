@@ -181,7 +181,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             if (mountedRef.current) {
                 setUser(newUser);
                 setLoading(false);
-                setStatus('Stable');
+                const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                setStatus(`Stable (${timeStr})`);
             }
         } catch (err: any) {
             console.error('[Auth] syncProfile failed (Critical):', err.message);
@@ -205,6 +206,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                     userId: supabaseUser.id
                 });
                 setLoading(false);
+                setStatus('Stable (Offline/Timeout)');
             }
         }
     };
