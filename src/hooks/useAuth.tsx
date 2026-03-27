@@ -22,10 +22,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [loading, setLoading] = useState(true);
     const lastSyncTime = useRef<number>(0);
     const mountedRef = useRef<boolean>(true);
+    const highestRoleRef = useRef<string>('user'); 
+    const hasInitializedRef = useRef<boolean>(false);
 
+    // Initial load: restore sticky role from localStorage if possible
     useEffect(() => {
         mountedRef.current = true;
-
+        
         // Safety timeout: stop loading after 8 seconds even if something is slow
         const timeout = setTimeout(() => {
             if (mountedRef.current && loading) {
@@ -43,8 +46,34 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
                 setUser(null);
                 setLoading(false);
+                hasInitializedRef.current = true;
             } else if (session) {
-                // For SIGNED_IN, INITIAL_SESSION with session, TOKEN_REFRESHED
+                // OPTIMISTIC IDENTITY: Try to use cached role while waiting for DB sync
+                const cachedRole = localStorage.getItem(`odia-songs-role-${session.user.id}`);
+                const userEmail = session.user?.email?.toLowerCase().trim();
+                const isAdminEmail = userEmail === 'daitariswain7@gmail.com';
+                
+                if (cachedRole || isAdminEmail) {
+                    const initialRole = isAdminEmail ? 'admin' : (cachedRole as any);
+                    highestRoleRef.current = initialRole;
+                    console.log('[Auth] Optimistic Restore:', isAdminEmail ? 'Admin Email Trust' : 'Cached Role', initialRole);
+                    
+                    setUser({
+                        id: session.user.id,
+                        name: session.user.user_metadata?.full_name || session.user.phone || 'Admin',
+                        email: session.user.email || '',
+                        role: initialRole,
+                        userId: session.user.phone || session.user.id
+                    });
+                    
+                    // Stop the "Loading Flicker" for the routes
+                    if (!hasInitializedRef.current) {
+                        setLoading(false);
+                        hasInitializedRef.current = true;
+                    }
+                }
+
+                // Background sync
                 await syncProfile(session.user);
             }
         });
@@ -86,7 +115,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             // Handle potential race condition where profile is not yet created
             if (error && error.code === 'PGRST116' && retryCount < 2) {
-                console.log('[Auth] Profile not found, retrying in 1s...');
+                console.log('[Auth] Profile record not found, retrying in 1s...');
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 return syncProfile(supabaseUser, retryCount + 1);
             }
@@ -99,22 +128,49 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 }
             }
 
+            // Normalize the role from the profile (database)
+            const dbRole = (profile?.role?.toLowerCase() as any) || 'user';
+            
+            // STICKY / TRUSTED ROLE LOGIC:
+            // High-confidence emails or previous session success
+            const userEmail = supabaseUser.email?.toLowerCase().trim();
+            const isAdminEmail = userEmail === 'daitariswain7@gmail.com';
+            let finalRole = dbRole;
+
+            if (isAdminEmail) {
+                console.log('[Auth] Zero-Bounce Trust: Forcing ADMIN role for known email:', userEmail);
+                finalRole = 'admin';
+            } else if (highestRoleRef.current === 'admin' && dbRole === 'user') {
+                console.log('[Auth] Role Stable: Preventing downgrade from ADMIN to user during re-sync.');
+                finalRole = 'admin';
+            } else if (highestRoleRef.current === 'subadmin' && dbRole === 'user') {
+                console.log('[Auth] Role Stable: Preventing downgrade from SUBADMIN to user during re-sync.');
+                finalRole = 'subadmin';
+            }
+
+            // Persistence Guard: Save to localStorage for next boot
+            localStorage.setItem(`odia-songs-role-${supabaseUser.id}`, finalRole);
+
+            // Update the sticky role reference if we reached a higher privilege level
+            if (finalRole === 'admin') highestRoleRef.current = 'admin';
+            else if (finalRole === 'subadmin' && highestRoleRef.current !== 'admin') highestRoleRef.current = 'subadmin';
+
             const newUser: User = {
                 id: supabaseUser.id,
                 name: profile?.name || supabaseUser.user_metadata?.full_name || supabaseUser.phone || supabaseUser.email?.split('@')[0] || 'User',
                 email: supabaseUser.email || '',
-                role: (profile?.role?.toLowerCase() as any) || 'user',
+                role: finalRole,
                 userId: supabaseUser.phone || supabaseUser.email || supabaseUser.id
             };
 
-            console.log('[Auth] Sync complete. Role:', newUser.role);
+            console.log('[Auth] Sync complete. Result Role:', newUser.role, '(DB Role was:', dbRole, ')');
             
             if (mountedRef.current) {
                 setUser(newUser);
                 setLoading(false);
             }
         } catch (err: any) {
-            console.error('[Auth] syncProfile failed:', err.message);
+            console.error('[Auth] syncProfile failed (Critical):', err.message);
             if (lastSyncTime.current !== syncId) return;
 
             if (retryCount < 2) {
@@ -123,12 +179,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
 
             if (mountedRef.current) {
-                // Fallback state
+                // If we've already been an admin in this session, use that fallback instead of 'user'
+                const fallbackRole = highestRoleRef.current || 'user';
+                console.log('[Auth] Sync failed, using fallback role:', fallbackRole);
+
                 setUser({
                     id: supabaseUser.id,
                     name: supabaseUser.user_metadata?.full_name || supabaseUser.phone || 'User',
                     email: supabaseUser.email || '',
-                    role: 'user',
+                    role: fallbackRole as any,
                     userId: supabaseUser.id
                 });
                 setLoading(false);
@@ -261,6 +320,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const logout = async () => {
         const { error } = await supabase.auth.signOut();
         if (error) throw error;
+        localStorage.clear(); // Clear role cache on logout
+        sessionStorage.clear(); // Clear session cache if any
+        highestRoleRef.current = 'user'; // Reset sticky role on logout
+        hasInitializedRef.current = false; // Allow re-init on next login
         setUser(null);
     };
 
