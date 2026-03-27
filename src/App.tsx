@@ -14,14 +14,14 @@ const AppRoutes = () => {
   const { user, loading } = useAuth();
   const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
 
-  // Wait for auth to fully initialize before deciding where to route.
-  // Without this, user=null during auth transitions causes a premature
-  // redirect to /login which resets the admin role to user.
+  // Wait for auth to fully initialize (including profile sync) before deciding where to route.
+  // This prevents the "identity crisis" where a user is briefly treated as a
+  // normal user before their admin role is confirmed from the database.
   if (loading) {
-    return null; // AuthProvider already shows a loading spinner
+    return null; // AuthProvider shows the devotional loading spinner
   }
 
-  // If not logged in, redirect to login page for the main app
+  // If not logged in at all, redirect to login/signup
   if (!user) {
     return (
       <Routes>

@@ -34,27 +34,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
         }, 8000);
 
-        // Check active session immediately on mount
-        const checkInitialSession = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session && mountedRef.current) {
-                await syncProfile(session.user);
-            } else if (mountedRef.current) {
-                setLoading(false);
-            }
-        };
-
-        checkInitialSession();
-
+        // Supabase v2: onAuthStateChange with INITIAL_SESSION handles the initial check automatically
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-            console.log('[Auth] State change:', _event);
-            if (_event === 'SIGNED_OUT') {
-                if (mountedRef.current) {
-                    setUser(null);
-                    setLoading(false);
-                }
-            } else if (session && mountedRef.current) {
-                // For SIGNED_IN, INITIAL_SESSION, TOKEN_REFRESHED
+            console.log('[Auth] State change:', _event, 'Session user:', session?.user?.id);
+            
+            if (!mountedRef.current) return;
+
+            if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
+                setUser(null);
+                setLoading(false);
+            } else if (session) {
+                // For SIGNED_IN, INITIAL_SESSION with session, TOKEN_REFRESHED
                 await syncProfile(session.user);
             }
         });
@@ -66,13 +56,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         };
     }, []);
 
-    const syncProfile = async (supabaseUser: any) => {
+    const syncProfile = async (supabaseUser: any, retryCount = 0) => {
         if (!supabaseUser) return;
         
         const syncId = Date.now();
         lastSyncTime.current = syncId;
         
-        console.log('[Auth] Syncing profile for:', supabaseUser.id, 'SyncID:', syncId);
+        console.log(`[Auth] Syncing profile (Attempt ${retryCount + 1}) for:`, supabaseUser.id);
 
         try {
             const profilePromise = supabase
@@ -94,8 +84,19 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             const profile = result.data;
             const error = result.error;
 
+            // Handle potential race condition where profile is not yet created
+            if (error && error.code === 'PGRST116' && retryCount < 2) {
+                console.log('[Auth] Profile not found, retrying in 1s...');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                return syncProfile(supabaseUser, retryCount + 1);
+            }
+
             if (error && error.code !== 'PGRST116') {
                 console.warn('[Auth] Profile fetch error:', error.code, error.message);
+                if (retryCount < 2) {
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    return syncProfile(supabaseUser, retryCount + 1);
+                }
             }
 
             const newUser: User = {
@@ -106,7 +107,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 userId: supabaseUser.phone || supabaseUser.email || supabaseUser.id
             };
 
-            console.log('[Auth] Sync complete. Role:', newUser.role, 'Name:', newUser.name);
+            console.log('[Auth] Sync complete. Role:', newUser.role);
             
             if (mountedRef.current) {
                 setUser(newUser);
@@ -115,6 +116,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         } catch (err: any) {
             console.error('[Auth] syncProfile failed:', err.message);
             if (lastSyncTime.current !== syncId) return;
+
+            if (retryCount < 2) {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                return syncProfile(supabaseUser, retryCount + 1);
+            }
 
             if (mountedRef.current) {
                 // Fallback state
@@ -129,11 +135,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
         }
     };
-
-    const loginWithPhone = async (phone: string) => {
-        const cleanPhone = phone.replace(/\D/g, '');
-        const fakeEmail = `${cleanPhone}@odia.app`;
-        const staticPassword = 'OdiaSongsUserAuth';
 
     const loginWithPhone = async (phone: string) => {
         const cleanPhone = phone.replace(/\D/g, '');
@@ -163,7 +164,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             console.error('Login error:', error);
             return { success: false, error: error.message };
         }
-    };
     };
 
     const registerWithPhone = async (name: string, phone: string, email?: string, city?: string) => {
