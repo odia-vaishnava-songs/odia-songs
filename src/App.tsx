@@ -11,8 +11,15 @@ import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 
 const AppRoutes = () => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
+
+  // Wait for auth to fully initialize before deciding where to route.
+  // Without this, user=null during auth transitions causes a premature
+  // redirect to /login which resets the admin role to user.
+  if (loading) {
+    return null; // AuthProvider already shows a loading spinner
+  }
 
   // If not logged in, redirect to login page for the main app
   if (!user) {
