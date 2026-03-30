@@ -736,9 +736,7 @@ export const SongsPage: React.FC = () => {
                     <div style={{ fontSize: '1.25rem', color: '#ffca28', fontWeight: 600, opacity: 0.9, textAlign: 'center', padding: '0 2rem', lineHeight: '1.6' }}>
                         ଦୟାକରି ଗୀତର ନାମ କୁହନ୍ତୁ<br/>
                         <span style={{ fontSize: '0.90rem', color: '#bbb', fontWeight: 400 }}>(Please say the song name)</span>
-                        <div style={{ marginTop: '2rem', fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontWeight: 500 }}>
-                            ଉଦାହରଣ: "ଯଶୋମତି ନନ୍ଦନ" ଗୌରାଙ୍ଗ ଏବଂ
-                        </div>
+
                     </div>
 
                     <button 
