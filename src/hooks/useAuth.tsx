@@ -27,6 +27,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const mountedRef = useRef<boolean>(true);
     const highestRoleRef = useRef<string>('user'); 
     const hasInitializedRef = useRef<boolean>(false);
+    
+    // DEV MODE: Bypass login on localhost
+    const isLocal = typeof window !== 'undefined' && 
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
     // Initial load: restore sticky role from localStorage if possible
     useEffect(() => {
@@ -48,6 +52,19 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             if (!mountedRef.current) return;
 
             if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
+                if (isLocal) {
+                    console.log('[Auth] Localhost detected & no session: Granting Dev Admin access.');
+                    setUser({
+                        id: 'dev-admin-id',
+                        name: 'Local Admin (Dev)',
+                        email: 'admin@localhost',
+                        role: 'admin',
+                        userId: 'dev-admin'
+                    });
+                    setLoading(false);
+                    hasInitializedRef.current = true;
+                    return;
+                }
                 setUser(null);
                 setLoading(false);
                 hasInitializedRef.current = true;

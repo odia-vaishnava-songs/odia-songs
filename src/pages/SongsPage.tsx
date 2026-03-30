@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle } from 'lucide-react';
+import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -25,6 +25,7 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
@@ -59,8 +60,8 @@ export const SongsPage: React.FC = () => {
     };
 
     const songResources = useMemo(() => {
-        return songs.filter(r => r.category === 'Songs')
-            .sort((a, b) => (a.display_order ?? 0) - (b.display_order ?? 0));
+        return songs.filter(r => r.category === 'Songs' || r.category === 'Gītā-māhātmya')
+            .sort((a, b) => (a.display_order ?? 999) - (b.display_order ?? 999));
     }, [songs]);
 
     const filteredSongs = useMemo(() => {
@@ -90,6 +91,47 @@ export const SongsPage: React.FC = () => {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+    };
+
+    const handleVoiceSearch = () => {
+        const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            alert("କ୍ଷମା କରିବେ, ଆପଣଙ୍କ ବ୍ରାଉଜର୍ ରେ ଭଏସ୍ ସର୍ଚ୍ଚ ସପୋର୍ଟ କରୁନାହିଁ | (Voice search is not supported by your browser.)");
+            return;
+        }
+
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'or-IN';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.onstart = () => {
+            setIsListening(true);
+        };
+
+        recognition.onresult = (event: any) => {
+            const transcript = event.results[0][0].transcript;
+            setSearchQuery(transcript);
+            setIsListening(false);
+        };
+
+        recognition.onerror = (event: any) => {
+            console.error("Speech recognition error:", event.error);
+            setIsListening(false);
+            if (event.error === 'not-allowed') {
+                alert("ଦୟାକରି ଭଏସ୍ ସର୍ଚ୍ଚ ପାଇଁ ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ଦିଅନ୍ତୁ | (Please enable microphone access.)");
+            } else if (event.error === 'no-speech') {
+                // Ignore silent timeouts, just close the UI
+            } else {
+                alert("କିଛି ଅସୁବିଧା ହେଲା, ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ | (Something went wrong, please try again.)");
+            }
+        };
+
+        recognition.onend = () => {
+            setIsListening(false);
+        };
+
+        recognition.start();
     };
 
     const getCategoryLetter = (song: Resource) => {
@@ -176,7 +218,7 @@ export const SongsPage: React.FC = () => {
             );
         }
 
-        const { verses } = selectedSong.structuredContent;
+        const { verses, reference_url } = selectedSong.structuredContent;
 
         if (viewMode === 'sequential') {
             return (
@@ -216,7 +258,26 @@ export const SongsPage: React.FC = () => {
                 <div style={{ textAlign: 'center' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
-                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '1.5rem' }}>{selectedSong.author}</div>
+                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.5rem' }}>{selectedSong.author}</div>
+                    {reference_url && (
+                        <a 
+                            href={reference_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ 
+                                display: 'inline-flex', 
+                                alignItems: 'center', 
+                                gap: '6px',
+                                color: isNightMode ? theme.color : '#2563eb',
+                                fontSize: '0.85rem',
+                                textDecoration: 'none',
+                                marginBottom: '1.5rem',
+                                fontWeight: 900
+                            }}
+                        >
+                            <ExternalLink size={16} /> Reference / Source
+                        </a>
+                    )}
                 </div>
 
                 {verses.map((verse) => (
@@ -241,7 +302,7 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             </div>
                         )}
-                        <div style={{ color: textColor, fontSize: '1.2rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}` }}>{verse.translation}</div>
+                        <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}` }}>{verse.translation}</div>
                     </div>
                 ))}
             </div>
@@ -390,20 +451,83 @@ export const SongsPage: React.FC = () => {
                     <Search size={18} style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
                     <input
                         type="text"
-                        placeholder="ଗୀତ ଖୋଜନ୍ତୁ (Search Songs)"
+                        placeholder="ଭଜନ କିମ୍ବା ଗୀତ ଖୋଜନ୍ତୁ..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         style={{
                             width: '100%',
-                            padding: '0.7rem 1rem 0.7rem 2.6rem',
+                            padding: '0.75rem 4.5rem 0.75rem 2.6rem',
                             borderRadius: 'var(--radius-lg)',
-                            border: 'none',
+                            border: '2px solid transparent',
+                            backgroundImage: 'linear-gradient(white, white), linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853)',
+                            backgroundOrigin: 'border-box',
+                            backgroundClip: 'padding-box, border-box',
                             fontSize: '1rem',
-                            backgroundColor: 'white',
-                            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05)',
-                            color: 'var(--color-text-main)'
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                            color: 'var(--color-text-main)',
+                            outline: 'none',
+                            transition: 'all 0.2s ease'
                         }}
                     />
+                    <div style={{
+                        position: 'absolute',
+                        right: '0.6rem',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                    }}>
+                        <button
+                            onClick={handleVoiceSearch}
+                            title="ଭଏସ୍ ସର୍ଚ୍ଚ (Voice Search)"
+                            style={{
+                                background: isListening ? '#fef2f2' : 'transparent',
+                                border: 'none',
+                                color: isListening ? '#ef4444' : '#999',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                padding: '6px',
+                                borderRadius: '50%',
+                                transition: 'all 0.3s ease',
+                                animation: isListening ? 'pulse-mic 1.5s infinite' : 'none'
+                            }}
+                            onMouseEnter={(e) => !isListening && (e.currentTarget.style.backgroundColor = '#f0f0f0')}
+                            onMouseLeave={(e) => !isListening && (e.currentTarget.style.backgroundColor = 'transparent')}
+                        >
+                            <Mic size={18} />
+                        </button>
+                        {searchQuery && (
+                            <button
+                                onClick={() => setSearchQuery('')}
+                                title="ସଫା କରନ୍ତୁ (Clear)"
+                                style={{
+                                    background: 'transparent',
+                                    border: 'none',
+                                    color: '#999',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    padding: '6px',
+                                    borderRadius: '50%'
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f0f0f0')}
+                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                            >
+                                <X size={18} />
+                            </button>
+                        )}
+                    </div>
+                    <style>{`
+                        @keyframes pulse-mic {
+                            0% { transform: translateY(-50%) scale(1); opacity: 0.8; }
+                            50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
+                            100% { transform: translateY(-50%) scale(1); opacity: 0.8; }
+                        }
+                    `}</style>
                 </div>
                 <button onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)} style={{
                     background: 'rgba(255,255,255,0.2)',
@@ -585,6 +709,62 @@ export const SongsPage: React.FC = () => {
                     );
                 })}
             </div>
+
+            {/* FRIENDLY ODIA VOICE SEARCH OVERLAY */}
+            {isListening && (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+                    background: 'rgba(0,0,0,0.85)', color: 'white', display: 'flex', 
+                    flexDirection: 'column', justifyContent: 'center', alignItems: 'center', 
+                    zIndex: 2000, backdropFilter: 'blur(10px)', animation: 'fadeIn 0.3s ease'
+                }}>
+                    <div style={{
+                        width: '130px', height: '130px', borderRadius: '50%', 
+                        background: 'rgba(255,255,255,0.1)', display: 'flex', 
+                        justifyContent: 'center', alignItems: 'center', marginBottom: '2.5rem',
+                        border: '3px solid rgba(255,255,255,0.2)',
+                        animation: 'pulse-mic-glow 1.5s infinite',
+                        boxShadow: '0 0 50px rgba(255,0,0,0.2)'
+                    }}>
+                        <Mic size={56} color="#FF4444" />
+                    </div>
+                    
+                    <div style={{ fontSize: '2.2rem', fontWeight: 900, marginBottom: '1rem', color: '#fff', letterSpacing: '1px' }}>
+                        ଶୁଣୁଛି... (Listening)
+                    </div>
+                    
+                    <div style={{ fontSize: '1.25rem', color: '#ffca28', fontWeight: 600, opacity: 0.9, textAlign: 'center', padding: '0 2rem', lineHeight: '1.6' }}>
+                        ଦୟାକରି ଗୀତର ନାମ କୁହନ୍ତୁ<br/>
+                        <span style={{ fontSize: '0.90rem', color: '#bbb', fontWeight: 400 }}>(Please say the song name)</span>
+                        <div style={{ marginTop: '2rem', fontSize: '1rem', color: 'rgba(255,255,255,0.6)', fontWeight: 500 }}>
+                            ଉଦାହରଣ: "ଯଶୋମତି ନନ୍ଦନ" ଗୌରାଙ୍ଗ ଏବଂ
+                        </div>
+                    </div>
+
+                    <button 
+                        onClick={() => setIsListening(false)}
+                        style={{
+                            marginTop: '4rem', padding: '1rem 3rem', borderRadius: '40px',
+                            background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
+                            color: 'white', fontWeight: 700, cursor: 'pointer', fontSize: '1rem',
+                            transition: 'all 0.2s ease'
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
+                    >
+                        ବାତିଲ୍ କରନ୍ତୁ (Cancel)
+                    </button>
+
+                    <style>{`
+                        @keyframes pulse-mic-glow {
+                            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.5); }
+                            70% { transform: scale(1.1); box-shadow: 0 0 0 40px rgba(255, 68, 68, 0); }
+                            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 68, 68, 0); }
+                        }
+                        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+                    `}</style>
+                </div>
+            )}
         </div>
     );
 };

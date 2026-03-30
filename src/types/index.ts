@@ -42,6 +42,7 @@ export interface AudioVersion {
 
 export interface StructuredSong {
     verses: SongVerse[];
+    reference_url?: string;
 }
 
 export interface Resource {
