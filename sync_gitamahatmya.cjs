@@ -1,13 +1,12 @@
 const { createClient } = require('@supabase/supabase-js');
 
-// Hardcoded keys from .env for this one-time fix
 const SUPABASE_URL = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjc29xaGRrZGZrenFkbHhxbWR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwNzY5ODAsImV4cCI6MjA4NzY1Mjk4MH0.rKZQkigexFy6w1ui99ARuxee6US5hPaTTLRTaASZ2Ec';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const GITA_MAHATMYA_CONTENT = `
-ଗୀତା ମାହାତ୍ମ୍ୟ
+const GITA_MAHATMYA_CONTENT = `ଗୀତା ମାହାତ୍ମ୍ୟ 
+
 (ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ମହିମା)
 
 ୧. ଭୟ ଓ ଶୋକରୁ ମୁକ୍ତି (ପ୍ରଥମ ଶ୍ଳୋକ)
@@ -15,7 +14,7 @@ const GITA_MAHATMYA_CONTENT = `
 ବିଷ୍ଣୋଃ ପଦମବାପ୍ନୋତି ଭୟଶୋକାଦିବର୍ଜିତଃ ॥
 
 ୨. ପାପର ବିନାଶ (ଦ୍ୱିତୀୟ ଶ୍ଳୋକ)
-ଗୀତାଧ୍ୟāୟନଶୀଲସ୍ୟ ପ୍ରାଣାୟାମପରସ୍ୟ ଚ ।
+ଗୀତାଧ୍ୟାୟନଶୀଲସ୍ୟ ପ୍ରାଣାୟାମପରସ୍ୟ ଚ ।
 ନୈବ ସନ୍ତି ହି ପାପାନି ପୂର୍ବଜନ୍ମକୃତାନି ଚ ॥
 
 ୩. ମନର ଶୁଦ୍ଧତା (ତୃତୀୟ ଶ୍ଳୋକ)
@@ -27,7 +26,7 @@ const GITA_MAHATMYA_CONTENT = `
 ୟା ସ୍ଵୟଂ ପଦ୍ମନାଭସ୍ୟ ମୁଖପଦ୍ମାଦ୍ ବିନିଃସୃତା ॥
 
 ୫. ମୁକ୍ତିର ଅମୃତ (ପଞ୍ଚମ ଶ୍ଳୋକ)
-ଭାରତାମୃତସର୍ବସ୍ଵଂ ବିଷ୍ଣୁବକ୍ତ୍ରାଦ୍ ବିନିଃସୃତମ୍ ।
+ଭାରତାମୃତସର୍ବସ୍ଵଂ ବିଷ୍ଣୁବକ୍ତ୍ରାଦ୍ ବିନଃସୃତମ୍ ।
 ଗୀତାଗଙ୍ଗୋଦକଂ ପୀତ୍ଵା ପୁନର୍ଜନ୍ମ ନ ବିଦ୍ୟତେ ॥
 
 ୬. ଦୁଗ୍ଧ ଦୋହନର ରହସ୍ୟ (ଷଷ୍ଠ ଶ୍ଳୋକ)
@@ -35,11 +34,10 @@ const GITA_MAHATMYA_CONTENT = `
 ପାର୍ଥୋ ବତ୍ସଃ ସୁଧୀର୍ଭୋକ୍ତା ଦୁଗ୍ଧଂ ଗୀତାମୃତଂ ମହତ୍ ॥
 
 ୭. ଗୋଟିଏ ସତ୍ୟ (ସପ୍ତମ ଶ୍ଳୋକ)
-ଏକଂ ଶାସ୍ତଂ ଦେବକୀପୁତ୍ରଗୀତମ୍ ।
+ଏକଂ ଶାସ୍ତ୍ରଂ ଦେବକୀପୁତ୍ରଗୀତମ୍ ।
 ଏକୋ ଦେବୋ ଦେବକୀପୁତ୍ର ଏବ ॥
 ଏକୋ ମନ୍ତ୍ରସ୍ତସ୍ୟ ନାମାନି ୟାନି ।
-କମାପ୍ୟେକଂ ତସ୍ୟ ଦେବସ୍ୟ ସେବା ॥
-`;
+କର୍ମାପ୍ୟେକଂ ତସ୍ୟ ଦେବସ୍ୟ ସେବା ॥`;
 
 const GITA_MAHATMYA_STRUCTURED = {
   "verses": [
@@ -124,13 +122,13 @@ const GITA_MAHATMYA_STRUCTURED = {
     },
     {
       "id": 6,
-      "lyric": "ସର୍ବୋପନିଷଦୋ ଗାବୋ ଦୋଗ୍ଧା ଗୋପାଲନନ୍ଦନଃ ।\nପାର୍ଥୋ ବତ୍ସଃ ସୁଧୀର୍ଭୋକ୍ତା ଦୁଗ୍ଧଂ ଗୀତାମୃତଂ ମහତ୍ ॥",
-      "translation": "ସମସ୍ତ ଉପନିଷଦ ଗୋଟିଏ ଗାଈ ପରି, ଏବଂ ଗାଈର ଦୋହନକାରୀ ହେଉଛନ୍ତି ନନ୍ଦଙ୍କ ପୁତ୍ର ଭଗବାନ ଶ୍ରීକୃଷ୍ଣ। ଅର୍ଜୁନ ହେଉଛନ୍ତି ବାଛୁରୀ, ଗୀତାର ସୁନ୍ଦର ଅମୃତ ହେଉଛି କ୍ଷୀର, ଏବଂ ସୂକ୍ଷ୍ମ ଆଧ୍ୟାତ୍ମିକ ବୁଦ୍ଧି ସମ୍ପନ୍ନ ଭାଗ୍ୟବାନ ଭକ୍ତମାନେ ସେହି କ୍ଷୀରର ପାନକାରୀ ଓ ଉପଭୋଗକାରୀ ଅଟନ୍ତି।",
+      "lyric": "ସର୍ବୋପନିଷଦୋ ଗାବୋ ଦୋଗ୍ଧା ଗୋପାଲନନ୍ଦନଃ ।\nପାର୍ଥୋ ବତ୍ସଃ ସୁଧୀର୍ଭୋକ୍ତା ଦୁଗ୍ଧଂ ଗୀତାମୃତଂ ମହତ୍ ॥",
+      "translation": "ସମସ୍ତ ଉପନିଷଦ ଗୋଟିଏ ଗାଈ ପରି, ଏବଂ ଗାଈର ଦୋହନକାରୀ ହେଉଛନ୍ତି ନନ୍ଦଙ୍କ ପୁତ୍ର ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣ। ଅର୍ଜୁନ ହେଉଛନ୍ତି ବାଛୁରୀ, ଗୀତାର ସୁନ୍ଦର ଅମୃତ ହେଉଛି କ୍ଷୀର, ଏବଂ ସୂକ୍ଷ୍ମ ଆଧ୍ୟାତ୍ମିକ ବୁଦ୍ଧି ସମ୍ପନ୍ନ ଭାଗ୍ୟବାନ ଭକ୍ତମାନେ ସେହି କ୍ଷୀରର ପାନକାରୀ ଓ ଉପଭୋଗକାରୀ ଅଟନ୍ତି।",
       "wordMeanings": [
         { "word": "ସର୍ବ-ଉପନିଷଦଃ", "meaning": "ସମସ୍ତ ଉପନିଷଦ" },
         { "word": "ଗାବଃ", "meaning": "ଗାଈମାନେ" },
         { "word": "ଦୋଗ୍ଧା", "meaning": "ଦୁଗ୍ଧ ଦୋହନକାରୀ" },
-        { "word": "ଗୋପାଲ-ନନ୍ଦନଃ", "meaning": "ଶ୍ରීକୃଷ୍ଣ" },
+        { "word": "ଗୋପାଲ-ନନ୍ଦନଃ", "meaning": "ଶ୍ରୀକୃଷ୍ଣ" },
         { "word": "ପାର୍ଥଃ", "meaning": "ଅର୍ଜୁନ" },
         { "word": "ବତ୍ସଃ", "meaning": "ବାଛୁରୀ" },
         { "word": "ସୁ-ଧୀଃ", "meaning": "ଜ୍ଞାନୀମାନେ" },
@@ -142,8 +140,8 @@ const GITA_MAHATMYA_STRUCTURED = {
     },
     {
       "id": 7,
-      "lyric": "ଏକଂ ଶାସ୍ତ୍ରଂ ଦେବକୀପୁତ୍ରଗୀତମ୍ ।\nଏକୋ ଦେବୋ ଦେବକୀପୁତ୍ର ଏବ ॥\nଏକୋ ମନ୍ତସ୍ତସ୍ୟ ନାମାନି ୟାନି ।\nକର୍ମାପ୍ୟେକଂ ତସ୍ୟ ଦେବସ୍ୟ ସେବା ॥",
-      "translation": "କେବଳ ଗୋଟିଏ ପବିତ୍ର ଶାସ୍ତ୍ରର ଆବଶ୍ୟକତା ଅଛି - ଭଗବାନ ଶ୍ରීକୃଷ୍ଣଙ୍କ ଦ୍ଵାରା ଗାନ କରାଯାଇଥିବା ଦୈବୀ ଗୀତା: କେବଳ ଜଣେ ଆରାଧ୍ୟ ପ୍ରଭୁ - ଭଗବାନ ଶ୍ରීକୃଷ୍ଣ: କେବଳ ଗୋଟିଏ ମନ୍ତ୍ର - ତାଙ୍କର ପବିତ୍ର ନାମ: ଏବଂ କେବଳ ଗୋଟିଏ କର୍ତ୍ତବ୍ୟ - ସେହି ପରମ ଆରାଧ୍ୟ ପ୍ରଭୁ ଶ୍ରීକୃଷ୍ଣଙ୍କ ପ୍ରତି ଭକ୍ତିପୂତ ସେବା।",
+      "lyric": "ଏକଂ ଶାସ୍ତ୍ରଂ ଦେବକୀପୁତ୍ରଗୀତମ୍ ।\nଏକୋ ଦେବୋ ଦେବକୀପୁତ୍ର ଏବ ॥\nଏକୋ ମନ୍ତ୍ରସ୍ତସ୍ୟ ନାମାନି ୟାନି ।\nକର୍ମାପ୍ୟେକଂ ତସ୍ୟ ଦେବସ୍ୟ ସେବା ॥",
+      "translation": "କେବଳ ଗୋଟିଏ ପବିତ୍ର ଶାସ୍ତ୍ରର ଆବଶ୍ୟକତା ଅଛି - ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଦ୍ଵାରା ଗାନ କରାଯାଇଥିବା ଦୈବୀ ଗୀତା: କେବଳ ଜଣେ ଆରାଧ୍ୟ ପ୍ରଭୁ - ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣ: କେବଳ ଗୋଟିଏ ମନ୍ତ୍ର - ତାଙ୍କର ପବିତ୍ର ନାମ: ଏବଂ କେବଳ ଗୋଟିଏ କର୍ତ୍ତବ୍ୟ - ସେହି ପରମ ଆରାଧ୍ୟ ପ୍ରଭୁ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ପ୍ରତି ଭକ୍ତିପୂତ ସେବା।",
       "wordMeanings": [
         { "word": "ଏକମ୍", "meaning": "ଗୋଟିଏ" },
         { "word": "ଶାସ୍ତ୍ରମ୍", "meaning": "ଶାସ୍ତ୍ର" },
@@ -164,16 +162,26 @@ const GITA_MAHATMYA_STRUCTURED = {
 };
 
 async function updateGitaMahatmya() {
-  console.log('Starting sync for Gita Mahatmya...');
-  
+  console.log('Signing in as ADMIN...');
+  const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+    email: "daitariswain7@gmail.com",
+    password: "pass-969200"
+  });
+
+  if (authError) {
+    console.error('❌ Authentication failed:', authError.message);
+    process.exit(1);
+  }
+
+  console.log('✅ Authentication successful. Updating song data...');
   const { data, error } = await supabase
     .from('songs')
     .upsert({
       id: 'song-gitamahatmya',
       title: 'ଗୀତା ମାହାତ୍ମ୍ୟ (Gītā Māhātmya)',
-      category: 'Songs',
-      type: 'html',
-      description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ଗୀତା ମାହାତ୍ମ୍ୟ |',
+      title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ',
+      title_english: 'Gita Mahatmya',
+      category: 'Gita',
       content: GITA_MAHATMYA_CONTENT,
       structured_content: GITA_MAHATMYA_STRUCTURED,
       author: 'Adi Shankaracharya',
@@ -182,10 +190,10 @@ async function updateGitaMahatmya() {
     }, { onConflict: 'id' });
 
   if (error) {
-    console.error('❌ Error updating Supabase:', error.message);
+    console.error('❌ Error:', error.message);
     process.exit(1);
   } else {
-    console.log('✅ Successfully updated Gita Mahatmya in Supabase with all 7 stanzas.');
+    console.log('✅ Successfully updated Gita Mahatmya with correct user data.');
     process.exit(0);
   }
 }

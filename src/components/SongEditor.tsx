@@ -144,7 +144,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             placeholder="ଜୟ ରାଧା-ମାଧବ"
                             value={formData.title_odia || ''}
                             onChange={e => setFormData({ ...formData, title_odia: e.target.value })}
-                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)' }}
+                            style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
                         />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
@@ -303,7 +303,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                 color: verse.status ? getStatusColor(verse.status) : getStatusColor(formData.status, formData.verified),
                                 fontFamily: 'var(--font-odia-sans)',
                                 fontSize: '1.2rem',
-                                fontWeight: 500
+                                fontWeight: 600
                             }}
                         />
 
@@ -311,15 +311,15 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             placeholder="Translation"
                             value={verse.translation}
                             onChange={e => handleVerseChange(verse.id, 'translation', e.target.value)}
-                            style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '60px', fontFamily: 'var(--font-odia-sans)' }}
+                            style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '60px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
                         />
 
                         <div style={{ marginTop: '1rem' }}>
                             <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>Word Meanings</div>
                             {verse.wordMeanings?.map((wm, wIdx) => (
                                 <div key={wIdx} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                                    <input placeholder="Word" value={wm.word} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'word', e.target.value)} style={{ flex: 1, padding: '4px', fontFamily: 'var(--font-odia-sans)' }} />
-                                    <input placeholder="Meaning" value={wm.meaning} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'meaning', e.target.value)} style={{ flex: 1, padding: '4px', fontFamily: 'var(--font-odia-sans)' }} />
+                                    <input placeholder="Word" value={wm.word} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'word', e.target.value)} style={{ flex: 1, padding: '4px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }} />
+                                    <input placeholder="Meaning" value={wm.meaning} onChange={e => handleWordMeaningChange(verse.id, wIdx, 'meaning', e.target.value)} style={{ flex: 1, padding: '4px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }} />
                                 </div>
                             ))}
                             <button onClick={() => addWordMeaning(verse.id)} style={{ fontSize: '0.8rem', padding: '4px 8px', marginTop: '0.5rem', background: '#f0f0f0', border: '1px solid #ccc', borderRadius: '4px' }}>+ Add Word</button>

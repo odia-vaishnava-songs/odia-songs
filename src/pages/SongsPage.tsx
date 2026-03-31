@@ -235,7 +235,7 @@ export const SongsPage: React.FC = () => {
                                     whiteSpace: 'pre-wrap',
                                     color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                                     fontSize: '1.35rem',
-                                    fontWeight: 500,
+                                    fontWeight: 600,
                                     fontFamily: 'var(--font-odia-sans)'
                                 }}>{verse.lyric}</div>
                             </div>
@@ -246,7 +246,7 @@ export const SongsPage: React.FC = () => {
                         {verses.map((verse, idx) => (
                             <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
                                 <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
-                                <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)' }}>{verse.translation}</div>
+                                <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
                             </div>
                         ))}
                     </div>
@@ -329,7 +329,7 @@ export const SongsPage: React.FC = () => {
                             whiteSpace: 'pre-wrap',
                             color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                             fontSize: '1.35rem',
-                            fontWeight: 500,
+                            fontWeight: 600,
                             fontFamily: 'var(--font-odia-sans)',
                             marginBottom: '1.5rem'
                         }}>{verse.lyric}</div>
@@ -345,7 +345,7 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             </div>
                         )}
-                        <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)' }}>{verse.translation}</div>
+                        <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
                     </div>
                 ))}
             </div>
