@@ -11,8 +11,8 @@
   --color-primary: #8A5082;
   --color-primary-light: #a6749f;
   
-  --font-sans: 'Outfit', 'Anek Odia', 'Noto Sans Oriya', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --font-odia-sans: 'Anek Odia', sans-serif;
+  --font-sans: 'Outfit', 'Baloo Bhaina 2', 'Anek Odia', 'Noto Sans Oriya', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-odia-sans: 'Baloo Bhaina 2', cursive;
   --font-odia-serif: 'Noto Serif Oriya', serif;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
