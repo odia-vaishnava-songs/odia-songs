@@ -246,7 +246,7 @@ export const SongsPage: React.FC = () => {
                         {verses.map((verse, idx) => (
                             <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
                                 <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
-                                <div style={{ color: textColor, fontSize: '1.25rem' }}>{verse.translation}</div>
+                                <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)' }}>{verse.translation}</div>
                             </div>
                         ))}
                     </div>
@@ -658,7 +658,7 @@ export const SongsPage: React.FC = () => {
                                                 }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                             )}
                                         </div>
-                                        {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: getStatusColor(song.status, song.verified), opacity: 0.7 }}>{song.author}</div>}
+                                        {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: getStatusColor(song.status, song.verified), opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>}
                                     </div>
                                 ))}
                             </div>

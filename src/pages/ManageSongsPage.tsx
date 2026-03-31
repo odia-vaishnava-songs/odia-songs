@@ -120,7 +120,7 @@ export const ManageSongsPage: React.FC = () => {
                                     <div key={song.id} style={{ background: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
                                         <div>
                                             <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.title}</div>
-                                            <div style={{ fontSize: '0.85rem', color: getStatusColor(song.status, song.verified) }}>{song.author}</div>
+                                            <div style={{ fontSize: '0.85rem', color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>
 
                                         </div>
 
