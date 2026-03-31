@@ -60,7 +60,7 @@ export const SongsPage: React.FC = () => {
     };
 
     const songResources = useMemo(() => {
-        return songs.filter(r => r.category === 'Songs' || r.category === 'Gītā-māhātmya')
+        return songs.filter(r => r.category === 'Songs' || r.category === 'G' || r.category === 'Gita' || r.category === 'Gītā-māhātmya')
             .sort((a, b) => (a.display_order ?? 999) - (b.display_order ?? 999));
     }, [songs]);
 
@@ -272,13 +272,54 @@ export const SongsPage: React.FC = () => {
                                 color: isNightMode ? theme.color : '#2563eb',
                                 fontSize: '0.85rem',
                                 textDecoration: 'none',
-                                marginBottom: '1.5rem',
+                                marginBottom: '1rem',
                                 fontWeight: 900
                             }}
                         >
                             <ExternalLink size={16} /> Reference / Source
                         </a>
                     )}
+
+                    {/* Highly Visible View Switcher */}
+                    <div style={{ 
+                        display: 'flex', 
+                        background: isNightMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)', 
+                        padding: '4px', 
+                        borderRadius: '12px', 
+                        margin: '0 auto 1.5rem',
+                        maxWidth: '400px',
+                        justifyContent: 'center'
+                    }}>
+                        {[
+                            { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={16} /> },
+                            { id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={16} /> },
+                            { id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={16} /> }
+                        ].map(mode => (
+                            <button
+                                key={mode.id}
+                                onClick={() => setViewMode(mode.id as ViewMode)}
+                                style={{
+                                    flex: 1,
+                                    padding: '8px 12px',
+                                    borderRadius: '8px',
+                                    border: 'none',
+                                    background: viewMode === mode.id ? (isNightMode ? '#fff' : theme.color) : 'transparent',
+                                    color: viewMode === mode.id ? (isNightMode ? '#000' : '#fff') : (isNightMode ? '#aaa' : '#666'),
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '2px',
+                                    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    cursor: 'pointer',
+                                    fontFamily: 'var(--font-odia-sans)'
+                                }}
+                            >
+                                {mode.icon}
+                                <span style={{ fontSize: '0.75rem', fontWeight: 900 }}>{mode.label}</span>
+                                <span style={{ fontSize: '0.6rem', opacity: 0.8, fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{mode.eng}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {verses.map((verse) => (
