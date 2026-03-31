@@ -213,7 +213,7 @@ export const SongsPage: React.FC = () => {
                 }}>
                     <h1 style={{ fontSize: '2.5rem', color: titleColor, margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.author && <div style={{ color: isNightMode ? '#94a3b8' : '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
-                    <div style={{ whiteSpace: 'pre-wrap', color: textColor, fontFamily: 'var(--font-odia-serif)' }}>{selectedSong.content}</div>
+                    <div style={{ whiteSpace: 'pre-wrap', color: textColor, fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.content}</div>
                 </div>
             );
         }
@@ -236,7 +236,7 @@ export const SongsPage: React.FC = () => {
                                     color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                                     fontSize: '1.35rem',
                                     fontWeight: 500,
-                                    fontFamily: 'var(--font-odia-serif)'
+                                    fontFamily: 'var(--font-odia-sans)'
                                 }}>{verse.lyric}</div>
                             </div>
                         ))}
@@ -289,7 +289,7 @@ export const SongsPage: React.FC = () => {
                             color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
                             fontSize: '1.35rem',
                             fontWeight: 500,
-                            fontFamily: 'var(--font-odia-serif)',
+                            fontFamily: 'var(--font-odia-sans)',
                             marginBottom: '1.5rem'
                         }}>{verse.lyric}</div>
 

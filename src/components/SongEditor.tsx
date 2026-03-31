@@ -301,7 +301,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                 border: '1px solid #ddd',
                                 minHeight: '80px',
                                 color: verse.status ? getStatusColor(verse.status) : getStatusColor(formData.status, formData.verified),
-                                fontFamily: 'var(--font-odia-serif)',
+                                fontFamily: 'var(--font-odia-sans)',
                                 fontSize: '1.2rem',
                                 fontWeight: 500
                             }}
