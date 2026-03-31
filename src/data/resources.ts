@@ -61,7 +61,9 @@ import {
     SONG_KABEGOURAVANE_STRUCTURED,
     SONG_KABESRICAITANYA_STRUCTURED,
     SONG_KRPAKOROVAISNAVA_STRUCTURED,
-    SONG_VIDYARAVILASE_STRUCTURED
+    SONG_VIDYARAVILASE_STRUCTURED,
+    SONG_GITAMAHATMYA_STRUCTURED,
+    GITA_MAHATMYA_ODIA
 } from './songsContent';
 import type { Resource } from '../types';
 
@@ -76,6 +78,16 @@ export const RESOURCES: Resource[] = [
         structuredContent: SONG_JAYARADHAMADHAVA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Jaya_Radha_Madhava/Jaya_Radha_Madhava_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'Bhaktivinoda Ṭhākura'
+    },
+    {
+        id: 'song-gitamahatmya',
+        title: 'ଗୀତା ମାହାତ୍ମ୍ୟ (Gītā Māhātmya)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ଗୀତା ମାହାତ୍ମ୍ୟ |',
+        content: GITA_MAHATMYA_ODIA,
+        structuredContent: SONG_GITAMAHATMYA_STRUCTURED,
+        author: 'Adi Shankaracharya'
     },
     {
         id: 'song-bhuliyatomare',
