@@ -11,7 +11,9 @@
   --color-primary: #8A5082;
   --color-primary-light: #a6749f;
   
-  --font-sans: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-sans: 'Outfit', 'Noto Sans Oriya', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-odia-sans: 'Noto Sans Oriya', sans-serif;
+  --font-odia-serif: 'Noto Serif Oriya', serif;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);

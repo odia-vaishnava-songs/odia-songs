@@ -60,7 +60,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             padding: '0',
             width: '100%',
             color: '#333',
-            fontFamily: "'Outfit', sans-serif"
+            fontFamily: "var(--font-sans)"
         }}>
             {/* Progress Bar Area - Top Aligned */}
             <div style={{ width: '100%', position: 'relative' }}>
