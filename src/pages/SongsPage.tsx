@@ -494,7 +494,7 @@ export const SongsPage: React.FC = () => {
                                     fontFamily: 'var(--font-odia-sans)'
                                 }}>
                                     {SPEAKER_MAP[speakerLine].icon}
-                                    {speakerLine}
+                                    {SPEAKER_MAP[speakerLine].label}
                                 </div>
                             )}
 
