@@ -249,71 +249,45 @@ export const SongsPage: React.FC = () => {
                 
                 <div style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', 
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
                     gap: '12px' 
                 }}>
-                    {gitaChapters.map((chapter) => {
+                    {gitaChapters.map((chapter, index) => {
                         const chNum = chapter.title_english?.match(/\d+/)?.[0] || '';
+                        
+                        // Google Meet participant avatar solid colors
+                        const avatarColors = [
+                            '#e91e63', // Pink
+                            '#9c27b0', // Purple
+                            '#3f51b5', // Indigo
+                            '#03a9f4', // Light Blue
+                            '#009688', // Teal
+                            '#4caf50', // Green
+                            '#ff9800', // Orange
+                            '#f44336'  // Red
+                        ];
+                        
+                        const colorIndex = (parseInt(chNum) || (index + 1)) - 1;
+                        const bgColor = avatarColors[colorIndex % avatarColors.length];
+
                         return (
                             <div 
                                 key={chapter.id}
+                                className="gita-card"
                                 onClick={() => handleSelectSong(chapter)}
-                                style={{
-                                    background: 'white',
-                                    padding: '1.25rem 1rem',
-                                    borderRadius: '16px',
-                                    border: '1px solid #f1f5f9',
-                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '8px',
-                                    position: 'relative',
-                                    overflow: 'hidden'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-4px)';
-                                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
-                                    e.currentTarget.style.borderColor = theme.color + '40';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
-                                    e.currentTarget.style.borderColor = '#f1f5f9';
-                                }}
+                                style={{ background: bgColor }}
                             >
-                                <div style={{ 
-                                    fontSize: '0.75rem', 
-                                    fontWeight: 700, 
-                                    color: theme.color,
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.05em'
-                                }}>Chapter {chNum}</div>
-                                
-                                <div style={{ 
-                                    fontSize: '1.1rem', 
-                                    fontWeight: 800, 
-                                    color: '#0f172a',
-                                    lineHeight: '1.2',
-                                    fontFamily: 'var(--font-odia-sans)'
-                                }}>{chapter.description?.replace(/[()]/g, '') || chapter.title_odia}</div>
-                                
-                                <div style={{ 
-                                    fontSize: '0.8rem', 
-                                    color: '#64748b',
-                                    fontWeight: 500
-                                }}>{chapter.title_english?.split('–')?.[1]?.trim() || chapter.title_english}</div>
-
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: '-10px',
-                                    right: '-10px',
-                                    opacity: 0.05,
-                                    color: theme.color,
-                                    transform: 'rotate(-15deg)'
-                                }}>
-                                    <BookOpen size={64} />
+                                <div className="icon-badge">
+                                    <BookOpen size={22} strokeWidth={2.5} color="#ffffff" />
+                                </div>
+                                <div className="text-content">
+                                    <div className="chapter-overline">CHAPTER {chNum}</div>
+                                    <div className="chapter-title">
+                                        {chapter.description?.replace(/[()]/g, '') || chapter.title_odia}
+                                    </div>
+                                </div>
+                                <div className="arrow-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                             </div>
                         );
@@ -684,6 +658,73 @@ export const SongsPage: React.FC = () => {
                 
                 *::-webkit-scrollbar-thumb:hover {
                     background: ${theme.color}A0;
+                }
+
+                .gita-card {
+                    padding: 1rem 1.25rem 1rem 1rem;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+                    cursor: pointer;
+                    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    border: 1px solid transparent;
+                    position: relative;
+                }
+
+                .gita-card:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                }
+
+                .gita-card .icon-badge {
+                    background: rgba(255, 255, 255, 0.2);
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                }
+
+                .gita-card .text-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                    flex-grow: 1;
+                    min-width: 0;
+                }
+
+                .gita-card .chapter-overline {
+                    font-size: 0.70rem;
+                    font-weight: 800;
+                    color: rgba(255, 255, 255, 0.85);
+                    letter-spacing: 0.05em;
+                }
+
+                .gita-card .chapter-title {
+                    font-size: 1.15rem;
+                    font-weight: 800;
+                    color: #ffffff;
+                    font-family: var(--font-odia-sans);
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    line-height: 1.2;
+                }
+
+                .gita-card .arrow-icon {
+                    flex-shrink: 0;
+                    color: rgba(255, 255, 255, 0.6);
+                    transition: transform 0.2s ease, color 0.2s ease;
+                }
+
+                .gita-card:hover .arrow-icon {
+                    transform: translateX(4px);
+                    color: #ffffff;
                 }
             `}</style>
             <header style={{
