@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -38,6 +38,7 @@ export const SongsPage: React.FC = () => {
         }
     });
     const filterMenuRef = useRef<HTMLDivElement>(null);
+    const mainScrollRef = useRef<HTMLElement>(null);
 
     const handleSelectSong = async (song: Resource) => {
         setSelectedSong(song);
@@ -56,6 +57,16 @@ export const SongsPage: React.FC = () => {
             console.error("Error incrementing views:", e);
         }
     };
+
+    // Hook to instantly scroll to the top over a container element when selecting a new chapter
+    // useLayoutEffect runs before paint, making the jump invisible to the eye
+    useLayoutEffect(() => {
+        if (selectedSong?.id && mainScrollRef.current) {
+            mainScrollRef.current.scrollTop = 0;
+            // Safari/Chrome fallback
+            mainScrollRef.current.scrollTo({ top: 0, left: 0, behavior: 'instant' as any });
+        }
+    }, [selectedSong?.id]);
 
     const handleSetTheme = (themeKey: string) => {
         setTheme(themeKey);
@@ -569,6 +580,74 @@ export const SongsPage: React.FC = () => {
         return <BookText size={24} />;
     };
 
+    const renderChapterNavigation = () => {
+        if (!selectedSong) return null;
+        
+        // Ensure this is a Gita chapter
+        const currentIndex = gitaChapters.findIndex(c => c.id === selectedSong.id);
+        if (currentIndex === -1) return null;
+        
+        const prevChapter = currentIndex > 0 ? gitaChapters[currentIndex - 1] : null;
+        const nextChapter = currentIndex < gitaChapters.length - 1 ? gitaChapters[currentIndex + 1] : null;
+        
+        if (!prevChapter && !nextChapter) return null;
+
+        const handleNav = (chapter: Resource) => {
+            handleSelectSong(chapter);
+        };
+
+        const isNightMode = currentThemeKey === 'advaita';
+        
+        // Match the image's "TEXT" button pagination aesthetic
+        const btnStyleBase: React.CSSProperties = {
+            background: isNightMode ? '#2a2015' : '#e6cbaa',
+            color: isNightMode ? '#eedfc8' : '#221100',
+            border: `1px solid ${isNightMode ? '#463520' : '#d2b694'}`,
+            padding: '8px 14px',
+            borderRadius: '6px',
+            fontSize: '1rem',
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontWeight: 600,
+            cursor: 'pointer',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            transition: 'all 0.2s ease',
+            letterSpacing: '0.5px'
+        };
+
+        return (
+            <div style={{ padding: '2rem 0.5rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                    {prevChapter && (
+                        <button 
+                            onClick={() => handleNav(prevChapter)}
+                            style={btnStyleBase}
+                            onMouseOver={(e) => { e.currentTarget.style.background = isNightMode ? '#3a2b1b' : '#dfc3a1'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.background = String(btnStyleBase.background); }}
+                        >
+                            <ArrowLeft size={18} strokeWidth={2.5} />
+                            CHAPTER {prevChapter.title_english?.match(/\d+/)?.[0] || String(currentIndex)}
+                        </button>
+                    )}
+                </div>
+                <div>
+                    {nextChapter && (
+                        <button 
+                            onClick={() => handleNav(nextChapter)}
+                            style={btnStyleBase}
+                            onMouseOver={(e) => { e.currentTarget.style.background = isNightMode ? '#3a2b1b' : '#dfc3a1'; }}
+                            onMouseOut={(e) => { e.currentTarget.style.background = String(btnStyleBase.background); }}
+                        >
+                            CHAPTER {nextChapter.title_english?.match(/\d+/)?.[0] || String(currentIndex + 2)}
+                            <ArrowRight size={18} strokeWidth={2.5} />
+                        </button>
+                    )}
+                </div>
+            </div>
+        );
+    };
+
     if (selectedSong) {
         return (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -613,12 +692,18 @@ export const SongsPage: React.FC = () => {
                         )}
                     </div>
                 </header>
-                <main style={{
-                    flex: 1,
-                    overflowY: 'auto',
-                    padding: '0.4rem'
-                }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>{renderSongContent()}</div>
+                <main 
+                    ref={mainScrollRef as any}
+                    style={{
+                        flex: 1,
+                        overflowY: 'auto',
+                        padding: '0.4rem'
+                    }}
+                >
+                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        {renderSongContent()}
+                        {renderChapterNavigation()}
+                    </div>
                 </main>
                 <footer style={{ padding: '0.2rem 1rem', backgroundColor: currentThemeKey === 'advaita' ? '#1e1e1e' : '#fff', borderTop: `1px solid ${currentThemeKey === 'advaita' ? '#334155' : '#eee'}` }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}><AudioPlayer /></div>
