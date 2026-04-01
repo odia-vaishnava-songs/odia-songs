@@ -222,6 +222,7 @@ export const SongsPage: React.FC = () => {
         'ଅର୍ଜୁନ ଉବାଚ': { label: 'ଅର୍ଜୁନ ଉବାଚ', icon: <Crosshair size={16} />, color: '#38bdf8' },
         'ସଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
         'ସଂଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
+        'ସମ୍ଭବତଃ ସଂଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
         'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ': { label: 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ', icon: <Users size={16} />, color: '#f87171' }
     };
 
@@ -364,9 +365,20 @@ export const SongsPage: React.FC = () => {
                             const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                             if (firstLineMatch) {
                                 let potentialSpeaker = firstLineMatch[1].trim();
-                                potentialSpeaker = potentialSpeaker.replace(/[\u2014\u2013\-]\s*$/, '').trim();
-                                if (SPEAKER_MAP[potentialSpeaker]) {
-                                    speakerLine = potentialSpeaker;
+                                let detectedKey = '';
+                                
+                                if (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ')) {
+                                    detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
+                                } else if (potentialSpeaker.includes('ଅର୍ଜୁନ')) {
+                                    detectedKey = 'ଅର୍ଜୁନ ଉବାଚ';
+                                } else if (potentialSpeaker.includes('ସଞ୍ଜ')) {
+                                    detectedKey = 'ସଞ୍ଜୟ ଉବାଚ';
+                                } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର')) {
+                                    detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
+                                }
+        
+                                if (detectedKey) {
+                                    speakerLine = detectedKey;
                                     mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
                                 }
                             }
@@ -501,12 +513,21 @@ export const SongsPage: React.FC = () => {
                     const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                     if (firstLineMatch) {
                         let potentialSpeaker = firstLineMatch[1].trim();
+                        let detectedKey = '';
                         
-                        // Clean trailing dashes/hyphens that sometimes appear in the database
-                        potentialSpeaker = potentialSpeaker.replace(/[\u2014\u2013\-]\s*$/, '').trim();
+                        // Robust substring matching bypasses invisible unicode chars and database typos
+                        if (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ')) {
+                            detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
+                        } else if (potentialSpeaker.includes('ଅର୍ଜୁନ')) {
+                            detectedKey = 'ଅର୍ଜୁନ ଉବାଚ';
+                        } else if (potentialSpeaker.includes('ସଞ୍ଜ')) {
+                            detectedKey = 'ସଞ୍ଜୟ ଉବାଚ';
+                        } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର')) {
+                            detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
+                        }
 
-                        if (SPEAKER_MAP[potentialSpeaker]) {
-                            speakerLine = potentialSpeaker;
+                        if (detectedKey) {
+                            speakerLine = detectedKey;
                             mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
                         }
                     }
