@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, ChevronRight } from 'lucide-react';
+import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -66,9 +66,7 @@ export const SongsPage: React.FC = () => {
             .sort((a, b) => (a.display_order ?? 999) - (b.display_order ?? 999));
     }, [songs]);
 
-    const songsOnly = useMemo(() => {
-        return songResources.filter(r => r.category === 'Songs' || r.category === 'G');
-    }, [songResources]);
+    // songsOnly removed since we use songResources everywhere.
 
     const gitaChapters = useMemo(() => {
         return songResources
