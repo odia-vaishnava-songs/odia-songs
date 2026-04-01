@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic } from 'lucide-react';
+import { Search, ArrowLeft, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, ChevronRight } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -26,6 +26,7 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('gita');
     const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
@@ -65,11 +66,30 @@ export const SongsPage: React.FC = () => {
             .sort((a, b) => (a.display_order ?? 999) - (b.display_order ?? 999));
     }, [songs]);
 
+    const songsOnly = useMemo(() => {
+        return songResources.filter(r => r.category === 'Songs' || r.category === 'G');
+    }, [songResources]);
+
+    const gitaChapters = useMemo(() => {
+        return songResources
+            .filter(s => s.category === 'Gita' || s.category === 'Gītā-māhātmya')
+            .sort((a, b) => {
+                const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '999');
+                const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '999');
+                return aNum - bNum;
+            });
+    }, [songResources]);
+
     const filteredSongs = useMemo(() => {
         const query = searchQuery.toLowerCase().trim();
-        if (!query) return songResources;
+        const pool = activeTab === 'gita' ? gitaChapters : songResources;
+        
+        if (!query) {
+            // In the Gita tab, if there is no search, we only want the Card Grid, not the alphabetical list.
+            return activeTab === 'gita' ? [] : pool;
+        }
 
-        return songResources.filter(s => {
+        return pool.filter(s => {
             const inTitle = (s.title_odia || s.title).toLowerCase().includes(query) || (s.title_english || '').toLowerCase().includes(query);
             const inAuthor = s.author?.toLowerCase().includes(query);
             const inDescription = s.description?.toLowerCase().includes(query);
@@ -82,7 +102,7 @@ export const SongsPage: React.FC = () => {
 
             return inTitle || inAuthor || inDescription || inLyrics || inTags;
         });
-    }, [songResources, searchQuery]);
+    }, [songResources, gitaChapters, activeTab, searchQuery]);
 
     // Alphabet navigation logic removed unused array
     const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -194,6 +214,114 @@ export const SongsPage: React.FC = () => {
         if (match && match[1] && match[1].match(/[\u0B00-\u0B7F]/)) return match[1];
 
         return title.replace(/\([^)]*\)/g, '').trim() || title; // fallback to removing parens anyway
+    };
+
+    const SPEAKER_MAP: Record<string, { label: string, icon: React.ReactNode, color: string }> = {
+        'ଶ୍ରୀଭଗବାନୁବାଚ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
+        'ଶ୍ରୀଭଗବାନۇବାଚ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
+        'ଶ୍ରୀଭଗବାନୁବାଚ ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
+        'ଅର୍ଜୁନ ଉବାଚ': { label: 'ଅର୍ଜୁନ ଉବାଚ', icon: <Crosshair size={16} />, color: '#38bdf8' },
+        'ସଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
+        'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ': { label: 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ', icon: <Users size={16} />, color: '#f87171' }
+    };
+
+    const renderGitaDashboard = () => {
+        if (searchQuery || selectedSong || activeTab !== 'gita') return null;
+
+        if (gitaChapters.length === 0) return null;
+
+        return (
+            <div style={{ padding: '0 1rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
+                <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '12px', 
+                    marginBottom: '1.5rem',
+                    padding: '0 0.5rem'
+                }}>
+                    <BookOpen size={24} color={theme.color} />
+                    <h2 style={{ 
+                        fontSize: '1.5rem', 
+                        fontWeight: 800, 
+                        color: '#1e293b',
+                        fontFamily: 'var(--font-odia-sans)'
+                    }}>ଶ୍ରୀମଦ୍ ଭଗବଦ୍ ଗୀତା</h2>
+                </div>
+                
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', 
+                    gap: '12px' 
+                }}>
+                    {gitaChapters.map((chapter) => {
+                        const chNum = chapter.title_english?.match(/\d+/)?.[0] || '';
+                        return (
+                            <div 
+                                key={chapter.id}
+                                onClick={() => handleSelectSong(chapter)}
+                                style={{
+                                    background: 'white',
+                                    padding: '1.25rem 1rem',
+                                    borderRadius: '16px',
+                                    border: '1px solid #f1f5f9',
+                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.2s ease',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '8px',
+                                    position: 'relative',
+                                    overflow: 'hidden'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-4px)';
+                                    e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                                    e.currentTarget.style.borderColor = theme.color + '40';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
+                                    e.currentTarget.style.borderColor = '#f1f5f9';
+                                }}
+                            >
+                                <div style={{ 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 700, 
+                                    color: theme.color,
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.05em'
+                                }}>Chapter {chNum}</div>
+                                
+                                <div style={{ 
+                                    fontSize: '1.1rem', 
+                                    fontWeight: 800, 
+                                    color: '#0f172a',
+                                    lineHeight: '1.2',
+                                    fontFamily: 'var(--font-odia-sans)'
+                                }}>{chapter.description?.replace(/[()]/g, '') || chapter.title_odia}</div>
+                                
+                                <div style={{ 
+                                    fontSize: '0.8rem', 
+                                    color: '#64748b',
+                                    fontWeight: 500
+                                }}>{chapter.title_english?.split('–')?.[1]?.trim() || chapter.title_english}</div>
+
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: '-10px',
+                                    right: '-10px',
+                                    opacity: 0.05,
+                                    color: theme.color,
+                                    transform: 'rotate(-15deg)'
+                                }}>
+                                    <BookOpen size={64} />
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        );
     };
 
     const renderSongContent = () => {
@@ -328,34 +456,75 @@ export const SongsPage: React.FC = () => {
                     </div>
                 </div>
 
-                {verses.map((verse) => (
-                    <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}` }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 700, color: theme.color, marginBottom: '1.5rem', letterSpacing: '1px' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
-                        <div style={{
-                            whiteSpace: 'pre-wrap',
-                            color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                            fontSize: '1.35rem',
-                            fontWeight: 600,
-                            fontFamily: 'var(--font-odia-sans)',
-                            marginBottom: '1.5rem'
-                        }}>{verse.lyric}</div>
+                {verses.map((verse) => {
+                    // Check for speaker
+                    let speakerLine = '';
+                    let mainLyric = verse.lyric;
+                    
+                    const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
+                    if (firstLineMatch) {
+                        const potentialSpeaker = firstLineMatch[1].trim();
+                        if (SPEAKER_MAP[potentialSpeaker]) {
+                            speakerLine = potentialSpeaker;
+                            mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
+                        }
+                    }
 
-                        {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
-                            <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
-                                <div style={{ lineHeight: '1.8', fontSize: '1rem', color: isNightMode ? '#cbd5e1' : '#334155' }}>
-                                    {verse.wordMeanings.map((wm, i) => (
-                                        <React.Fragment key={i}>
-                                            <span style={{ fontWeight: 700, color: isNightMode ? theme.color : '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
-                                        </React.Fragment>
-                                    ))}
-                                </div>
+                    return (
+                        <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}`, position: 'relative' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '1.25rem' }}>
+                                <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
+                                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: theme.color, letterSpacing: '1px', opacity: 0.8 }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
                             </div>
-                        )}
-                        {verse.translation && verse.translation.trim() !== '' && (
-                            <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
-                        )}
-                    </div>
-                ))}
+
+                            {speakerLine && (
+                                <div style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    gap: '8px', 
+                                    padding: '4px 12px', 
+                                    borderRadius: '20px', 
+                                    background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
+                                    color: SPEAKER_MAP[speakerLine].color,
+                                    fontSize: '0.9rem',
+                                    fontWeight: 800,
+                                    marginBottom: '1.5rem',
+                                    border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
+                                    fontFamily: 'var(--font-odia-sans)'
+                                }}>
+                                    {SPEAKER_MAP[speakerLine].icon}
+                                    {speakerLine}
+                                </div>
+                            )}
+
+                            <div style={{
+                                whiteSpace: 'pre-wrap',
+                                color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
+                                fontSize: speakerLine ? '1.5rem' : '1.35rem',
+                                fontWeight: 600,
+                                fontFamily: 'var(--font-odia-sans)',
+                                marginBottom: '1.5rem',
+                                lineHeight: '1.6'
+                            }}>{mainLyric}</div>
+
+                            {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
+                                <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
+                                    <div style={{ lineHeight: '1.8', fontSize: '1rem', color: isNightMode ? '#cbd5e1' : '#334155' }}>
+                                        {verse.wordMeanings.map((wm, i) => (
+                                            <React.Fragment key={i}>
+                                                <span style={{ fontWeight: 700, color: isNightMode ? theme.color : '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            {verse.translation && verse.translation.trim() !== '' && (
+                                <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600, lineHeight: '1.5' }}>{verse.translation}</div>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
         );
     };
@@ -631,8 +800,10 @@ export const SongsPage: React.FC = () => {
             <main style={{
                 flex: 1,
                 overflowY: 'auto',
-                padding: '1rem 0'
+                padding: '1rem 0',
+                paddingBottom: '100px'
             }}>
+                {activeTab === 'gita' && renderGitaDashboard()}
                 <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
                     {sortedGroups.map(letter => (
                         <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
@@ -814,6 +985,64 @@ export const SongsPage: React.FC = () => {
                         }
                         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
                     `}</style>
+                </div>
+            )}
+            {/* Bottom Navigation */}
+            {!selectedSong && (
+                <div style={{
+                    position: 'fixed',
+                    bottom: '24px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(255, 255, 255, 0.85)',
+                    backdropFilter: 'blur(16px)',
+                    padding: '8px',
+                    borderRadius: '24px',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                    display: 'flex',
+                    gap: '8px',
+                    zIndex: 1000,
+                    border: '1px solid rgba(255,255,255,0.5)',
+                    maxWidth: '90vw'
+                }}>
+                    <button
+                        onClick={() => setActiveTab('songs')}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            padding: '10px 20px',
+                            borderRadius: '16px',
+                            border: 'none',
+                            background: activeTab === 'songs' ? theme.color : 'transparent',
+                            color: activeTab === 'songs' ? '#fff' : '#64748b',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            fontFamily: 'var(--font-odia-sans)'
+                        }}
+                    >
+                        <BookText size={20} />
+                        <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ସମସ୍ତ ସଙ୍ଗୀତ</span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('gita')}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            padding: '10px 20px',
+                            borderRadius: '16px',
+                            border: 'none',
+                            background: activeTab === 'gita' ? theme.color : 'transparent',
+                            color: activeTab === 'gita' ? '#fff' : '#64748b',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            fontFamily: 'var(--font-odia-sans)'
+                        }}
+                    >
+                        <BookOpen size={20} />
+                        <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ଭଗବଦ୍ ଗୀତା</span>
+                    </button>
                 </div>
             )}
         </div>
