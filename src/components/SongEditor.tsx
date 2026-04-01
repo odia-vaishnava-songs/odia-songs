@@ -3,6 +3,7 @@ import { supabase } from '../supabase/config';
 import type { Resource, SongVerse, WordMeaning } from '../types';
 import { X, Save, Trash2, CheckCircle2 } from 'lucide-react';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
+import { toOdiaNumber } from '../utils/odia';
 
 
 
@@ -253,7 +254,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     <div key={verse.id} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <span>Verse {verse.id}</span>
+                                <span>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</span>
                                 <div style={{ display: 'flex', gap: '0.25rem' }}>
                                     <button
                                         onClick={() => handleVerseChange(verse.id, 'status', 'NOT_DONE')}

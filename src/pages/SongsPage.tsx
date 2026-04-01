@@ -10,6 +10,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
 
 import { TATTVA_THEMES } from '../constants/themes';
+import { toOdiaNumber } from '../utils/odia';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
@@ -230,7 +231,7 @@ export const SongsPage: React.FC = () => {
                     <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
                         {verses.map((verse, idx) => (
                             <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2rem' }}>
-                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.5rem' }}>({verse.id})</div>
+                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.5rem' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
                                 <div style={{
                                     whiteSpace: 'pre-wrap',
                                     color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
@@ -241,15 +242,17 @@ export const SongsPage: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
-                        <div style={{ fontSize: '1rem', color: isNightMode ? theme.color : '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: `2px solid ${isNightMode ? '#334155' : '#f0f0f0'}`, display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
-                        {verses.map((verse, idx) => (
-                            <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
-                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>({verse.id})</div>
-                                <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
-                            </div>
-                        ))}
-                    </div>
+                    {verses.some(v => v.translation?.trim()) && (
+                        <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
+                            <div style={{ fontSize: '1rem', color: isNightMode ? theme.color : '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: `2px solid ${isNightMode ? '#334155' : '#f0f0f0'}`, display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
+                            {verses.map((verse, idx) => verse.translation?.trim() && (
+                                <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
+                                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                    <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             );
         }
@@ -259,7 +262,10 @@ export const SongsPage: React.FC = () => {
                 <div style={{ textAlign: 'center' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
-                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.5rem' }}>{selectedSong.author}</div>
+                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.25rem' }}>{selectedSong.author}</div>
+                    {selectedSong.description && (
+                        <div style={{ fontSize: '1.2rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.75rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
+                    )}
                     {reference_url && (
                         <a 
                             href={reference_url} 
@@ -292,8 +298,8 @@ export const SongsPage: React.FC = () => {
                     }}>
                         {[
                             { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={16} /> },
-                            { id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={16} /> },
-                            { id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={16} /> }
+                            ...(verses.some(v => v.translation?.trim()) ? [{ id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={16} /> }] : []),
+                            ...(verses.some(v => (v.wordMeanings?.length ?? 0) > 0) ? [{ id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={16} /> }] : [])
                         ].map(mode => (
                             <button
                                 key={mode.id}
@@ -324,7 +330,7 @@ export const SongsPage: React.FC = () => {
 
                 {verses.map((verse) => (
                     <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}` }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 600, color: isNightMode ? '#94a3b8' : '#666', marginBottom: '1.5rem' }}>({verse.id})</div>
+                        <div style={{ fontSize: '1.1rem', fontWeight: 700, color: theme.color, marginBottom: '1.5rem', letterSpacing: '1px' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
                         <div style={{
                             whiteSpace: 'pre-wrap',
                             color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
@@ -334,7 +340,7 @@ export const SongsPage: React.FC = () => {
                             marginBottom: '1.5rem'
                         }}>{verse.lyric}</div>
 
-                        {viewMode === 'word-to-word' && verse.wordMeanings && (
+                        {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
                             <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
                                 <div style={{ lineHeight: '1.8', fontSize: '1rem', color: isNightMode ? '#cbd5e1' : '#334155' }}>
                                     {verse.wordMeanings.map((wm, i) => (
@@ -345,7 +351,9 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             </div>
                         )}
-                        <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
+                        {verse.translation && verse.translation.trim() !== '' && (
+                            <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
+                        )}
                     </div>
                 ))}
             </div>
