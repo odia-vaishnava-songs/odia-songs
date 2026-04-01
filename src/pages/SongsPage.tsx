@@ -219,9 +219,9 @@ export const SongsPage: React.FC = () => {
     const SPEAKER_MAP: Record<string, { label: string, icon: React.ReactNode, color: string }> = {
         'ଶ୍ରୀଭଗବାନୁବାଚ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
         'ଶ୍ରୀଭଗବାନۇବାଚ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
-        'ଶ୍ରୀଭଗବାନୁବାଚ ': { label: 'ଶ୍ରୀଭଗବାନୁବାଚ', icon: <Sparkles size={16} />, color: '#fbbf24' },
         'ଅର୍ଜୁନ ଉବାଚ': { label: 'ଅର୍ଜୁନ ଉବାଚ', icon: <Crosshair size={16} />, color: '#38bdf8' },
         'ସଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
+        'ସଂଞ୍ଜୟ ଉବାଚ': { label: 'ସଞ୍ଜୟ ଉବାଚ', icon: <Eye size={16} />, color: '#a78bfa' },
         'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ': { label: 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ', icon: <Users size={16} />, color: '#f87171' }
     };
 
@@ -357,18 +357,55 @@ export const SongsPage: React.FC = () => {
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
                     </div>
                     <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
-                        {verses.map((verse, idx) => (
-                            <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2rem' }}>
-                                <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.5rem' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                        {verses.map((verse, idx) => {
+                            let speakerLine = '';
+                            let mainLyric = verse.lyric;
+                            
+                            const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
+                            if (firstLineMatch) {
+                                let potentialSpeaker = firstLineMatch[1].trim();
+                                potentialSpeaker = potentialSpeaker.replace(/[\u2014\u2013\-]\s*$/, '').trim();
+                                if (SPEAKER_MAP[potentialSpeaker]) {
+                                    speakerLine = potentialSpeaker;
+                                    mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
+                                }
+                            }
+
+                            return (
+                            <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
+                                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                
+                                {speakerLine && (
+                                    <div style={{ 
+                                        display: 'inline-flex', 
+                                        alignItems: 'center', 
+                                        gap: '8px', 
+                                        padding: '4px 12px', 
+                                        borderRadius: '20px', 
+                                        background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
+                                        color: SPEAKER_MAP[speakerLine].color,
+                                        fontSize: '0.9rem',
+                                        fontWeight: 800,
+                                        marginBottom: '1rem',
+                                        border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
+                                        fontFamily: 'var(--font-odia-sans)'
+                                    }}>
+                                        {SPEAKER_MAP[speakerLine].icon}
+                                        {SPEAKER_MAP[speakerLine].label}
+                                    </div>
+                                )}
+
                                 <div style={{
                                     whiteSpace: 'pre-wrap',
                                     color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                    fontSize: '1.35rem',
+                                    fontSize: speakerLine ? '1.5rem' : '1.35rem',
                                     fontWeight: 600,
-                                    fontFamily: 'var(--font-odia-sans)'
-                                }}>{verse.lyric}</div>
+                                    fontFamily: 'var(--font-odia-sans)',
+                                    lineHeight: '1.6'
+                                }}>{mainLyric}</div>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                     {verses.some(v => v.translation?.trim()) && (
                         <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
@@ -463,7 +500,11 @@ export const SongsPage: React.FC = () => {
                     
                     const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                     if (firstLineMatch) {
-                        const potentialSpeaker = firstLineMatch[1].trim();
+                        let potentialSpeaker = firstLineMatch[1].trim();
+                        
+                        // Clean trailing dashes/hyphens that sometimes appear in the database
+                        potentialSpeaker = potentialSpeaker.replace(/[\u2014\u2013\-]\s*$/, '').trim();
+
                         if (SPEAKER_MAP[potentialSpeaker]) {
                             speakerLine = potentialSpeaker;
                             mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
