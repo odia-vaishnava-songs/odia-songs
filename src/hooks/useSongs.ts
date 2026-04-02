@@ -11,41 +11,34 @@ export const useSongs = () => {
     useEffect(() => {
         const fetchSongs = async () => {
             try {
+                // Increased timeout to 10 seconds for robustness
                 const timeoutPromise = new Promise((_, reject) =>
-                    setTimeout(() => reject(new Error('Database Timeout')), 3000)
+                    setTimeout(() => reject(new Error('Database Timeout')), 10000)
                 );
 
-                // Try with assigned_to first
                 const fetchPromise = supabase
                     .from('songs')
-                    .select('id, title, title_odia, title_english, tags, views, original_lang:original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status, assigned_to')
+                    .select('id, title, title_odia, title_english, tags, views, original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status, assigned_to')
                     .order('display_order', { ascending: true });
 
                 const result: any = await Promise.race([fetchPromise, timeoutPromise]);
                 const { data, error: sbError } = result;
 
-                if (sbError) {
-                    console.warn("Retrying without assigned_to column...");
-                    // Fallback to query without assigned_to
-                    const { data: fallbackData, error: fallbackError } = await supabase
-                        .from('songs')
-                        .select('id, title, title_odia, title_english, tags, views, original_lang:original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status')
-                        .order('display_order', { ascending: true });
-                    
-                    if (fallbackError) throw fallbackError;
-                    processData(fallbackData);
-                } else if (data) {
+                if (sbError) throw sbError;
+                
+                if (data) {
+                    setError(null); // Clear any previous error on success
                     processData(data);
                 }
             } catch (err: any) {
-                console.error("[useSongs] Recovery Triggered:", err.message);
+                console.error("[useSongs] DB Fetch Failed:", err.message);
                 
-                // Show a helpful notice to the user
-                setError("Slow connection detected. Showing saved songs for now.");
-                
-                if (!songs || songs.length === 0 || songs === LOCAL_RESOURCES) {
-                    processData(LOCAL_RESOURCES); // Final fallback to guaranteed data
+                // Only show error if we have to fall back to purely local data
+                if (songs.length <= LOCAL_RESOURCES.length) {
+                    setError("Slow connection detected. Showing saved songs for now.");
                 }
+                
+                processData(LOCAL_RESOURCES);
                 setLoading(false);
             }
         };
