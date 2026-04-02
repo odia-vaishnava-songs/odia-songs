@@ -191,7 +191,16 @@ export const ManageSongsPage: React.FC = () => {
                         )}
 
                         {loading ? (
-                            <p>Loading database...</p>
+                            <div style={{ padding: '2rem', textAlign: 'center' }}>
+                                <p style={{ color: '#8A5082', fontWeight: 600 }}>Loading database...</p>
+                                <div className="spinner" style={{ margin: '1rem auto' }}></div>
+                            </div>
+                        ) : error ? (
+                            <div style={{ padding: '1.5rem', backgroundColor: '#FFF5F5', border: '1px solid #FEB2B2', borderRadius: '12px', marginBottom: '1.5rem' }}>
+                                <p style={{ color: '#C53030', fontWeight: 600, margin: 0 }}>⚠️ Database Error</p>
+                                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.5rem' }}>{error}</p>
+                                <p style={{ fontSize: '0.75rem', color: '#999', marginTop: '1rem' }}>Attempting to use offline data instead...</p>
+                            </div>
                         ) : (
                             <div style={{ display: 'grid', gap: '1rem' }}>
                                 {filteredSongs.map(song => (
