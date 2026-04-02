@@ -400,14 +400,14 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                         {window.innerWidth < 600 ? (
                                             <button
                                                 onClick={() => {
-                                                    const meanings = verse.wordMeanings.filter((_, i) => i !== wIdx);
+                                                    const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
                                                     handleVerseChange(verse.id, 'wordMeanings', meanings);
                                                 }}
                                                 style={{ padding: '4px', color: '#ff4444', background: '#fff5f5', border: '1px solid #ffcccc', borderRadius: '4px', fontSize: '0.8rem' }}
                                             >Remove Word</button>
                                         ) : (
                                             <button onClick={() => {
-                                                const meanings = verse.wordMeanings.filter((_, i) => i !== wIdx);
+                                                const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
                                                 handleVerseChange(verse.id, 'wordMeanings', meanings);
                                             }} style={{ background: 'none', border: 'none', color: '#ff4444' }}><Trash2 size={16} /></button>
                                         )}
