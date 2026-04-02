@@ -305,10 +305,10 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                         <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1rem' }}>
                             <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>Select an Editor (Subadmin) to push this song to:</p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                                {users.filter(u => u.role === 'subadmin').length === 0 ? (
+                                {users.filter(u => u.role?.toLowerCase() === 'subadmin').length === 0 ? (
                                     <p style={{ textAlign: 'center', color: '#999', fontSize: '0.9rem' }}>No Editors found. Grant someone "Sub Admin" role first.</p>
                                 ) : (
-                                    users.filter(u => u.role === 'subadmin').map((u) => (
+                                    users.filter(u => u.role?.toLowerCase() === 'subadmin').map((u) => (
                                         <div key={u.id} style={{
                                             padding: '1rem', backgroundColor: '#f8f9fa',
                                             borderRadius: '12px', border: '1px solid #e9ecef',
