@@ -91,15 +91,16 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
         if (!assigningSongId) return;
         setLoading(true);
         try {
+            const isUnassign = userId === 'null';
             const { error } = await supabase
                 .from('songs')
-                .update({ assigned_to: userId })
+                .update({ assigned_to: isUnassign ? null : userId })
                 .eq('id', assigningSongId);
 
             if (error) throw error;
             onAssigned?.();
             onClose();
-            alert("Song assigned successfully!");
+            alert(isUnassign ? "Assignment cleared!" : "Song assigned successfully!");
         } catch (err) {
             console.error('[Assign] Failed:', err);
             alert("Failed to assign song.");
@@ -303,6 +304,18 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                     ) : view === 'assign' ? (
                         /* ASSIGN SONG VIEW */
                         <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1rem' }}>
+                            <button
+                                onClick={() => handleAssign('null')}
+                                disabled={loading}
+                                style={{
+                                    width: '100%', padding: '0.8rem', marginBottom: '1.5rem',
+                                    backgroundColor: '#fff5f5', color: '#c53030',
+                                    border: '1px dashed #feb2b2', borderRadius: '12px',
+                                    fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer'
+                                }}
+                            >
+                                Clear Assignment (ଅସାଇନ୍ ହଟାନ୍ତୁ)
+                            </button>
                             <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>Select an Editor (Subadmin) to push this song to:</p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                                 {users.filter(u => u.role?.toLowerCase() === 'subadmin').length === 0 ? (

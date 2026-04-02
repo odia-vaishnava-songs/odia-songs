@@ -19,6 +19,7 @@ export const ManageSongsPage: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [assignedUsers, setAssignedUsers] = useState<User[]>([]);
     const [filterByMe, setFilterByMe] = useState(false);
+    const [selectedEditorId, setSelectedEditorId] = useState<string>('all');
 
     const role = user?.role?.toLowerCase();
     const isAdmin = role === 'admin';
@@ -95,8 +96,10 @@ export const ManageSongsPage: React.FC = () => {
             return s.assigned_to === user?.id;
         }
 
-        if (isAdmin && filterByMe) {
-            return s.assigned_to === user?.id;
+        if (isAdmin) {
+            if (filterByMe) return s.assigned_to === user?.id;
+            if (selectedEditorId === 'unassigned') return !s.assigned_to;
+            if (selectedEditorId !== 'all') return s.assigned_to === selectedEditorId;
         }
 
         return true;
@@ -145,25 +148,45 @@ export const ManageSongsPage: React.FC = () => {
                         </div>
 
                         {isAdmin && (
-                            <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                                <button
-                                    onClick={() => setFilterByMe(false)}
-                                    style={{
-                                        flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
-                                        background: !filterByMe ? '#8A5082' : 'white',
-                                        color: !filterByMe ? 'white' : '#8A5082',
-                                        border: '1px solid #8A5082'
-                                    }}
-                                >All Songs</button>
-                                <button
-                                    onClick={() => setFilterByMe(true)}
-                                    style={{
-                                        flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
-                                        background: filterByMe ? '#8A5082' : 'white',
-                                        color: filterByMe ? 'white' : '#8A5082',
-                                        border: '1px solid #8A5082'
-                                    }}
-                                >Assigned to Me</button>
+                            <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                    <button
+                                        onClick={() => { setFilterByMe(false); setSelectedEditorId('all'); }}
+                                        style={{
+                                            flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
+                                            background: !filterByMe && selectedEditorId === 'all' ? '#8A5082' : 'white',
+                                            color: !filterByMe && selectedEditorId === 'all' ? 'white' : '#8A5082',
+                                            border: '1px solid #8A5082'
+                                        }}
+                                    >All Songs</button>
+                                    <button
+                                        onClick={() => setFilterByMe(true)}
+                                        style={{
+                                            flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
+                                            background: filterByMe ? '#8A5082' : 'white',
+                                            color: filterByMe ? 'white' : '#8A5082',
+                                            border: '1px solid #8A5082'
+                                        }}
+                                    >Assigned to Me</button>
+                                </div>
+
+                                {!filterByMe && (
+                                    <select
+                                        value={selectedEditorId}
+                                        onChange={(e) => setSelectedEditorId(e.target.value)}
+                                        style={{
+                                            width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #8A5082',
+                                            backgroundColor: 'white', color: '#8A5082', fontWeight: 600, fontSize: '0.85rem'
+                                        }}
+                                    >
+                                        <option value="all">View All Assignments</option>
+                                        <option value="unassigned">View UNASSIGNED Only</option>
+                                        <hr />
+                                        {assignedUsers.map(editor => (
+                                            <option key={editor.id} value={editor.id}>Filter By: {editor.name}</option>
+                                        ))}
+                                    </select>
+                                )}
                             </div>
                         )}
 
@@ -177,8 +200,17 @@ export const ManageSongsPage: React.FC = () => {
                                             <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.title}</div>
                                             <div style={{ fontSize: '0.85rem', color: '#666', fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>
                                             {isAdmin && song.assigned_to && (
-                                                <div style={{ fontSize: '0.7rem', color: '#8A5082', fontStyle: 'italic', marginTop: '4px' }}>
-                                                    Assigned to: {assignedUsers.find(u => u.id === song.assigned_to)?.name || 'Editor'}
+                                                <div style={{
+                                                    display: 'inline-block',
+                                                    fontSize: '0.65rem',
+                                                    color: '#2D3748',
+                                                    backgroundColor: '#E2E8F0',
+                                                    padding: '2px 8px',
+                                                    borderRadius: '12px',
+                                                    marginTop: '6px',
+                                                    fontWeight: 600
+                                                }}>
+                                                    👤 {assignedUsers.find(u => u.id === song.assigned_to)?.name || 'Editor'}
                                                 </div>
                                             )}
                                         </div>
