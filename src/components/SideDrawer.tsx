@@ -16,11 +16,11 @@ type DrawerView = 'menu' | 'users' | 'assign';
 interface SideDrawerProps {
     isOpen: boolean;
     onClose: () => void;
-    assigningSongId?: string | null;
+    assigningSongIds?: string[] | null;
     onAssigned?: () => void;
 }
 
-export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongId, onAssigned }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongIds, onAssigned }) => {
     const { logout, user } = useAuth();
     const { theme } = useAudio();
     const navigate = useNavigate();
@@ -33,11 +33,11 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
 
     // Reset view when closed
     useEffect(() => {
-        if (isOpen && assigningSongId) {
+        if (isOpen && assigningSongIds && assigningSongIds.length > 0) {
             setView('assign');
             fetchUsers();
         }
-    }, [isOpen, assigningSongId]);
+    }, [isOpen, assigningSongIds]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -88,22 +88,23 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
     };
 
     const handleAssign = async (userId: string) => {
-        if (!assigningSongId) return;
+        if (!assigningSongIds || assigningSongIds.length === 0) return;
         setLoading(true);
         try {
             const isUnassign = userId === 'null';
             const { error } = await supabase
                 .from('songs')
                 .update({ assigned_to: isUnassign ? null : userId })
-                .eq('id', assigningSongId);
+                .in('id', assigningSongIds);
 
             if (error) throw error;
             onAssigned?.();
             onClose();
-            alert(isUnassign ? "Assignment cleared!" : "Song assigned successfully!");
+            const count = assigningSongIds.length;
+            alert(isUnassign ? `${count} assignment(s) cleared!` : `${count} song(s) assigned successfully!`);
         } catch (err) {
             console.error('[Assign] Failed:', err);
-            alert("Failed to assign song.");
+            alert("Failed to assign song(s).");
         } finally {
             setLoading(false);
         }

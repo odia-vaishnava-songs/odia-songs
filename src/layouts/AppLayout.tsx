@@ -7,15 +7,16 @@ import { CompactAudioBar } from '../components/CompactAudioBar';
 export const AppLayout: React.FC = () => {
     const { activeSong, isDetailView } = useAudio();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [assigningSongId, setAssigningSongId] = useState<string | null>(null);
+    const [assigningSongIds, setAssigningSongIds] = useState<string[] | null>(null);
 
     React.useEffect(() => {
         const handleToggle = () => {
             setIsDrawerOpen(prev => !prev);
-            setAssigningSongId(null); // Clear on manual toggle
+            setAssigningSongIds(null); // Clear on manual toggle
         };
         const handleAssign = (e: any) => {
-            setAssigningSongId(e.detail);
+            const detail = e.detail;
+            setAssigningSongIds(Array.isArray(detail) ? detail : [detail]);
             setIsDrawerOpen(true);
         };
 
@@ -43,9 +44,9 @@ export const AppLayout: React.FC = () => {
                 isOpen={isDrawerOpen}
                 onClose={() => {
                     setIsDrawerOpen(false);
-                    setAssigningSongId(null);
+                    setAssigningSongIds(null);
                 }}
-                assigningSongId={assigningSongId}
+                assigningSongIds={assigningSongIds}
                 onAssigned={() => {
                     // Trigger a global refresh if needed
                     window.location.reload(); 
