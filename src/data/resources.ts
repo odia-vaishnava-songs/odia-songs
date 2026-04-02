@@ -542,9 +542,9 @@ export const RESOURCES: Resource[] = [
         title: 'ଭଜ ଭକତବତ୍ସଲ (Bhaja Bhakata Vatsala)',
         category: 'Songs',
         type: 'html',
-        description: 'ଭକ୍ତବତ୍ସଲ ଭଗବାନ ଶ୍ରୀ ଗୌରହରିଙ୍କ ଆରତି ଓ ବନ୍ଦନା |',
+        description: 'ଶ୍ରୀ ଭୋଗ ନିବେଦନ କୀର୍ତ୍ତନ |',
         structuredContent: SONG_BHAJABHAKATAVATSALA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura (ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁରଙ୍କ ରଚନା)'
     },
     {
         id: 'song-bhajarebhajare',

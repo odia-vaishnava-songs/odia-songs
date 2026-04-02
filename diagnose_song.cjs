@@ -1,17 +1,7 @@
-const fs = require('fs');
-const content = fs.readFileSync('odia-songs/APP-Srila Bhaktivinoda Thakura.txt', 'utf8');
-const linesArr = content.split(/\r?\n/);
+const { SONG_BHAJABHAKATAVATSALA_STRUCTURED } = require('./src/data/songsContent');
 
-let songs = [];
-let currentSongTitle = null;
+console.log(`Total Verses: ${SONG_BHAJABHAKATAVATSALA_STRUCTURED.verses.length}`);
 
-for (let i = 0; i < linesArr.length; i++) {
-    let l = linesArr[i];
-
-    // Check if line contains the problem song title
-    if (l.includes('Gurudeva! Boro Krpa Kori')) {
-        console.log('--- FOUND TEXT BOUNDARY (lines ' + i + ' to ' + (i + 40) + ') ---');
-        console.log(linesArr.slice(i, i + 40).join('\n'));
-        break;
-    }
-}
+SONG_BHAJABHAKATAVATSALA_STRUCTURED.verses.forEach(v => {
+    console.log(`Verse ${v.id}: ${v.wordMeanings ? v.wordMeanings.length : 0} word meanings`);
+});

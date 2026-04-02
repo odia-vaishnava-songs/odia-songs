@@ -27,6 +27,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
     const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const [confirmingLogout, setConfirmingLogout] = useState(false);
 
     // Reset view when closed
     useEffect(() => {
@@ -223,16 +224,43 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                                 <div style={{ height: '1px', backgroundColor: '#eee', margin: '0.4rem 0' }} />
 
                                 {user ? (
-                                    <MenuItem
-                                        icon={<LogOut size={20} />}
-                                        label="Logout"
-                                        onClick={() => {
-                                            if (window.confirm("ଆପଣ କ’ଣ ଲଗ୍ ଆଉଟ୍ କରିବାକୁ ଚାହାନ୍ତି? (Logout?)")) {
-                                                logout();
-                                                onClose();
-                                            }
-                                        }}
-                                    />
+                                    <div style={{ marginTop: '0.5rem' }}>
+                                        {!confirmingLogout ? (
+                                            <MenuItem
+                                                icon={<LogOut size={20} />}
+                                                label="Logout (ଲଗ୍ ଆଉଟ୍)"
+                                                onClick={() => setConfirmingLogout(true)}
+                                            />
+                                        ) : (
+                                            <div style={{
+                                                padding: '0.8rem',
+                                                backgroundColor: '#fff5f5',
+                                                borderRadius: '12px',
+                                                border: '1px solid #feb2b2',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                gap: '0.6rem'
+                                            }}>
+                                                <span style={{ fontSize: '0.85rem', color: '#c53030', fontWeight: 600, textAlign: 'center' }}>
+                                                    Logout? (ଲଗ୍ ଆଉଟ୍ କରିବାକୁ ଚାହାନ୍ତି?)
+                                                </span>
+                                                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                                    <button
+                                                        onClick={() => setConfirmingLogout(false)}
+                                                        style={{ flex: 1, padding: '0.5rem', borderRadius: '8px', border: '1px solid #ddd', background: 'white', color: '#666', fontSize: '0.8rem' }}
+                                                    >Cancel</button>
+                                                    <button
+                                                        onClick={() => {
+                                                            logout();
+                                                            onClose();
+                                                            setConfirmingLogout(false);
+                                                        }}
+                                                        style={{ flex: 1, padding: '0.5rem', borderRadius: '8px', border: 'none', background: '#e53e3e', color: 'white', fontWeight: 600, fontSize: '0.8rem' }}
+                                                    >Confirm</button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
                                 ) : (
                                     <MenuItem
                                         icon={<CircleUser size={20} />}

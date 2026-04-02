@@ -74,18 +74,35 @@ export const SongsPage: React.FC = () => {
 
     const songResources = useMemo(() => {
         return songs.filter(r => r.category === 'Songs' || r.category === 'G' || r.category === 'Gita' || r.category === 'Gītā-māhātmya')
-            .sort((a, b) => (a.display_order ?? 999) - (b.display_order ?? 999));
+            .sort((a, b) => {
+                const orderDiff = (a.display_order ?? 999) - (b.display_order ?? 999);
+                if (orderDiff !== 0) return orderDiff;
+
+                // Secondary sort for Gita chapters to ensure 1-18 sequence
+                const isGitaA = a.category === 'Gita' || a.category === 'G' || a.category === 'Gītā-māhātmya';
+                const isGitaB = b.category === 'Gita' || b.category === 'G' || b.category === 'Gītā-māhātmya';
+
+                if (isGitaA && isGitaB) {
+                    const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '999');
+                    const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '999');
+                    if (aNum !== bNum) return aNum - bNum;
+                }
+
+                return (a.title_odia || a.title).localeCompare(b.title_odia || b.title);
+            });
     }, [songs]);
 
     // songsOnly removed since we use songResources everywhere.
 
     const gitaChapters = useMemo(() => {
         return songResources
-            .filter(s => s.category === 'Gita' || s.category === 'Gītā-māhātmya')
+            .filter(s => s.category === 'Gita' || s.category === 'G' || s.category === 'Gītā-māhātmya')
             .sort((a, b) => {
-                const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '999');
-                const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '999');
-                return aNum - bNum;
+                const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '0'); // Mahatmya at start if no number, or adjust to place at end
+                const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '0');
+                
+                if (aNum !== bNum) return aNum - bNum;
+                return (a.title_odia || a.title).localeCompare(b.title_odia || b.title);
             });
     }, [songResources]);
 
