@@ -130,9 +130,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 .eq('id', supabaseUser.id)
                 .single();
 
-            // 7 second timeout for profile fetch specifically
+            // 3 second timeout for profile fetch specifically
             const fetchTimeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Profile fetch timed out')), 7000)
+                setTimeout(() => reject(new Error('Profile fetch timed out')), 3000)
             );
 
             const result: any = await Promise.race([profilePromise, fetchTimeout]);
@@ -205,8 +205,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             console.error('[Auth] syncProfile failed (Critical):', err.message);
             if (lastSyncTime.current !== syncId) return;
 
-            if (retryCount < 2) {
-                await new Promise(resolve => setTimeout(resolve, 2000));
+            if (retryCount < 1) { // Reduce from 2 to 1 retry
+                await new Promise(resolve => setTimeout(resolve, 1000));
                 return syncProfile(supabaseUser, retryCount + 1);
             }
 
