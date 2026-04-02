@@ -283,20 +283,22 @@ export const SongsPage: React.FC = () => {
                     {gitaChapters.map((chapter, index) => {
                         const chNum = chapter.title_english?.match(/\d+/)?.[0] || '';
                         
-                        // Google Meet participant avatar solid colors
+                        // Vibrant, high-contrast palette for maximum variety
                         const avatarColors = [
+                            '#1a73e8', // Google Blue
+                            '#188038', // Google Green
+                            '#ea4335', // Google Red
+                            '#f9ab00', // Google Yellow
+                            '#8a5082', // Deep Purple
+                            '#00acc1', // Cyan
+                            '#7b1fa2', // Dark Purple
+                            '#43a047', // Medium Green
                             '#e91e63', // Pink
-                            '#9c27b0', // Purple
-                            '#3f51b5', // Indigo
-                            '#03a9f4', // Light Blue
-                            '#009688', // Teal
-                            '#4caf50', // Green
-                            '#ff9800', // Orange
-                            '#f44336'  // Red
+                            '#1565c0'  // Deep Blue
                         ];
                         
-                        const colorIndex = (parseInt(chNum) || (index + 1)) - 1;
-                        const bgColor = avatarColors[colorIndex % avatarColors.length];
+                        // Use the loop index to ensure every card has a different color than its neighbor
+                        const bgColor = avatarColors[index % avatarColors.length];
 
                         return (
                             <div 
