@@ -11,7 +11,7 @@ import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants
 
 
 export const ManageSongsPage: React.FC = () => {
-    const { songs, loading } = useSongs();
+    const { songs, loading, error } = useSongs();
     const { user } = useAuth();
     const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(false);
