@@ -168,28 +168,13 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                         )}
                         <div>
                             <h2 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>
-                                {view === 'menu' ? (user ? 'Hare Krishna! 🙏' : 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ') : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
+                                {view === 'menu' ? (user ? 'Hare Krishna!' : 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ') : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
                             </h2>
                             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginTop: '2px' }}>
                                 {user ? (
-                                    <>
-                                        <span style={{ fontSize: '0.9rem', fontWeight: 700, backgroundColor: 'rgba(0,0,0,0.1)', padding: '1px 8px', borderRadius: '12px' }}>
-                                            {user.name || user.email?.split('@')[0]}
-                                        </span>
-                                        {user.role && (
-                                            <span style={{
-                                                fontSize: '0.6rem',
-                                                backgroundColor: 'rgba(255,255,255,0.25)',
-                                                padding: '1px 5px',
-                                                borderRadius: '4px',
-                                                textTransform: 'uppercase',
-                                                fontWeight: 800,
-                                                letterSpacing: '0.5px'
-                                            }}>
-                                                {user.role}
-                                            </span>
-                                        )}
-                                    </>
+                                    <span style={{ fontSize: '0.9rem', fontWeight: 700, backgroundColor: 'rgba(0,0,0,0.1)', padding: '1px 10px', borderRadius: '12px' }}>
+                                        {user.name || user.email?.split('@')[0]}
+                                    </span>
                                 ) : (
                                     <span style={{ fontSize: '0.75rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
                                         {view === 'menu' ? 'ମେନ୍ୟୁ (Menu)' : 'ପରିଚାଳନା (Management)'}
