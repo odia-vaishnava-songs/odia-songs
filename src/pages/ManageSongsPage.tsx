@@ -3,9 +3,9 @@ import { useSongs } from '../hooks/useSongs';
 import { useAuth } from '../hooks/useAuth';
 import { supabase } from '../supabase/config';
 import { SongEditor } from '../components/SongEditor';
-import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu, UserCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import type { Resource } from '../types';
+import type { Resource, User } from '../types';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
 
 
@@ -17,9 +17,23 @@ export const ManageSongsPage: React.FC = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [editingSong, setEditingSong] = useState<Resource | undefined>(undefined);
     const [searchTerm, setSearchTerm] = useState('');
+    const [assignedUsers, setAssignedUsers] = useState<User[]>([]);
+    const [filterByMe, setFilterByMe] = useState(false);
 
     const role = user?.role?.toLowerCase();
-    const isHost = role === 'admin' || role === 'subadmin';
+    const isAdmin = role === 'admin';
+    const isEditor = role === 'subadmin';
+    const isHost = isAdmin || isEditor;
+
+    React.useEffect(() => {
+        if (isAdmin) {
+            const fetchEditors = async () => {
+                const { data } = await supabase.from('profiles').select('*').in('role', ['SUBADMIN', 'subadmin']);
+                if (data) setAssignedUsers(data as User[]);
+            };
+            fetchEditors();
+        }
+    }, [isAdmin]);
 
     if (!isHost && !loading) {
         return (
@@ -69,10 +83,28 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
-    const filteredSongs = songs.filter(s =>
-        s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        s.author?.toLowerCase().includes(searchTerm.toLowerCase())
-    ).sort((a, b) => a.title.localeCompare(b.title));
+    const filteredSongs = songs.filter(s => {
+        // Search filter
+        const matchesSearch = s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            s.author?.toLowerCase().includes(searchTerm.toLowerCase());
+
+        if (!matchesSearch) return false;
+
+        // Role-based visibility
+        if (isEditor) {
+            return s.assigned_to === user?.id;
+        }
+
+        if (isAdmin && filterByMe) {
+            return s.assigned_to === user?.id;
+        }
+
+        return true;
+    }).sort((a, b) => a.title.localeCompare(b.title));
+
+    const handleAssignClick = (songId: string) => {
+        window.dispatchEvent(new CustomEvent('set-assign-song', { detail: songId }));
+    };
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#FDFBF7' }}>
@@ -102,7 +134,7 @@ export const ManageSongsPage: React.FC = () => {
                     />
                 ) : (
                     <>
-                        <div style={{ position: 'relative', marginBottom: '1.5rem' }}>
+                        <div style={{ position: 'relative', marginBottom: '1rem' }}>
                             <Search size={18} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
                             <input
                                 placeholder="Search inventory..."
@@ -112,6 +144,29 @@ export const ManageSongsPage: React.FC = () => {
                             />
                         </div>
 
+                        {isAdmin && (
+                            <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '0.5rem' }}>
+                                <button
+                                    onClick={() => setFilterByMe(false)}
+                                    style={{
+                                        flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
+                                        background: !filterByMe ? '#8A5082' : 'white',
+                                        color: !filterByMe ? 'white' : '#8A5082',
+                                        border: '1px solid #8A5082'
+                                    }}
+                                >All Songs</button>
+                                <button
+                                    onClick={() => setFilterByMe(true)}
+                                    style={{
+                                        flex: 1, padding: '0.5rem', borderRadius: '8px', fontSize: '0.8rem', fontWeight: 600,
+                                        background: filterByMe ? '#8A5082' : 'white',
+                                        color: filterByMe ? 'white' : '#8A5082',
+                                        border: '1px solid #8A5082'
+                                    }}
+                                >Assigned to Me</button>
+                            </div>
+                        )}
+
                         {loading ? (
                             <p>Loading database...</p>
                         ) : (
@@ -120,8 +175,12 @@ export const ManageSongsPage: React.FC = () => {
                                     <div key={song.id} style={{ background: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
                                         <div>
                                             <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.title}</div>
-                                            <div style={{ fontSize: '0.85rem', color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>
-
+                                            <div style={{ fontSize: '0.85rem', color: '#666', fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>
+                                            {isAdmin && song.assigned_to && (
+                                                <div style={{ fontSize: '0.7rem', color: '#8A5082', fontStyle: 'italic', marginTop: '4px' }}>
+                                                    Assigned to: {assignedUsers.find(u => u.id === song.assigned_to)?.name || 'Editor'}
+                                                </div>
+                                            )}
                                         </div>
 
 
@@ -164,6 +223,16 @@ export const ManageSongsPage: React.FC = () => {
                                             >
                                                 <CheckCircle2 size={18} color={song.status === 'COMPLETED' || song.verified ? STATUS_COLORS.COMPLETED : "#666"} />
                                             </button>
+
+                                            {isAdmin && (
+                                                <button
+                                                    onClick={() => handleAssignClick(song.id)}
+                                                    style={{ padding: '8px', borderRadius: '8px', border: '1px solid #ddd', background: song.assigned_to ? '#E8F5E9' : '#f9f9f9' }}
+                                                    title="Assign to Editor"
+                                                >
+                                                    <UserCheck size={18} color={song.assigned_to ? '#2E7D32' : '#666'} />
+                                                </button>
+                                            )}
 
                                             <button
                                                 onClick={() => { setEditingSong(song); setIsEditing(true); }}

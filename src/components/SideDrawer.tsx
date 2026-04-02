@@ -11,14 +11,16 @@ import { supabase } from '../supabase/config';
 import panchaTattvaImg from '../assets/pancha-tattva.png';
 import type { User } from '../types';
 
+type DrawerView = 'menu' | 'users' | 'assign';
+
 interface SideDrawerProps {
     isOpen: boolean;
     onClose: () => void;
+    assigningSongId?: string | null;
+    onAssigned?: () => void;
 }
 
-type DrawerView = 'menu' | 'users';
-
-export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongId, onAssigned }) => {
     const { logout, user } = useAuth();
     const { theme } = useAudio();
     const navigate = useNavigate();
@@ -30,6 +32,13 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
     const [confirmingLogout, setConfirmingLogout] = useState(false);
 
     // Reset view when closed
+    useEffect(() => {
+        if (isOpen && assigningSongId) {
+            setView('assign');
+            fetchUsers();
+        }
+    }, [isOpen, assigningSongId]);
+
     useEffect(() => {
         if (!isOpen) {
             const timer = setTimeout(() => {
@@ -75,6 +84,27 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
         } catch (err) {
             console.error('[Users] Role update failed:', err);
             alert("Failed to update role. Please check connection.");
+        }
+    };
+
+    const handleAssign = async (userId: string) => {
+        if (!assigningSongId) return;
+        setLoading(true);
+        try {
+            const { error } = await supabase
+                .from('songs')
+                .update({ assigned_to: userId })
+                .eq('id', assigningSongId);
+
+            if (error) throw error;
+            onAssigned?.();
+            onClose();
+            alert("Song assigned successfully!");
+        } catch (err) {
+            console.error('[Assign] Failed:', err);
+            alert("Failed to assign song.");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -136,7 +166,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                         )}
                         <div>
                             <h2 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>
-                                {view === 'menu' ? 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ' : 'Registered Users'}
+                                {view === 'menu' ? 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ' : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
                             </h2>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                 <span style={{ fontSize: '0.8rem', opacity: 0.9 }}>
@@ -267,6 +297,45 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                                         label="Sign In / Join"
                                         onClick={() => { navigate('/login'); onClose(); }}
                                     />
+                                )}
+                            </div>
+                        </div>
+                    ) : view === 'assign' ? (
+                        /* ASSIGN SONG VIEW */
+                        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1rem' }}>
+                            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>Select an Editor (Subadmin) to push this song to:</p>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                                {users.filter(u => u.role === 'subadmin').length === 0 ? (
+                                    <p style={{ textAlign: 'center', color: '#999', fontSize: '0.9rem' }}>No Editors found. Grant someone "Sub Admin" role first.</p>
+                                ) : (
+                                    users.filter(u => u.role === 'subadmin').map((u) => (
+                                        <div key={u.id} style={{
+                                            padding: '1rem', backgroundColor: '#f8f9fa',
+                                            borderRadius: '12px', border: '1px solid #e9ecef',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                                        }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                                <CircleUser size={20} color="#8A5082" />
+                                                <span style={{ fontWeight: 600 }}>{u.name}</span>
+                                            </div>
+                                            <button
+                                                onClick={() => handleAssign(u.id)}
+                                                disabled={loading}
+                                                style={{
+                                                    padding: '0.4rem 0.8rem',
+                                                    backgroundColor: '#8A5082',
+                                                    color: 'white',
+                                                    border: 'none',
+                                                    borderRadius: '8px',
+                                                    fontSize: '0.8rem',
+                                                    fontWeight: 600,
+                                                    cursor: 'pointer'
+                                                }}
+                                            >
+                                                Assign
+                                            </button>
+                                        </div>
+                                    ))
                                 )}
                             </div>
                         </div>

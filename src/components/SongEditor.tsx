@@ -153,6 +153,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     author: formData.author,
                     verified: formData.verified || false,
                     status: formData.status || 'NOT_DONE',
+                    assigned_to: formData.assigned_to,
                     updated_at: new Date().toISOString()
                 }, { onConflict: 'id' });
 

@@ -66,6 +66,7 @@ export interface Resource {
     author_id?: string;
     verified?: boolean;
     status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
+    assigned_to?: string;
 }
 
 export interface User {
