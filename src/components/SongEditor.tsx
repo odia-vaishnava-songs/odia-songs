@@ -158,6 +158,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                 }, { onConflict: 'id' });
 
             if (error) throw error;
+            alert("Successfully Saved to Database!");
             onSave();
         } catch (err) {
             console.error(err);
