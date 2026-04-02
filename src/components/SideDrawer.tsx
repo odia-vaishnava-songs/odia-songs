@@ -170,19 +170,36 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                             <h2 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>
                                 {view === 'menu' ? 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ' : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
                             </h2>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <span style={{ fontSize: '0.8rem', opacity: 0.9 }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem' }}>
+                                <span style={{ fontSize: '0.75rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
                                     {view === 'menu' ? 'ମେନ୍ୟୁ (Menu)' : 'ପରିଚାଳନା (Management)'}
                                 </span>
                                 {user?.role && (
                                     <span style={{
                                         fontSize: '0.6rem',
-                                        backgroundColor: 'rgba(255,255,255,0.2)',
-                                        padding: '1px 4px',
+                                        backgroundColor: 'rgba(255,255,255,0.25)',
+                                        padding: '1px 5px',
                                         borderRadius: '4px',
-                                        textTransform: 'uppercase'
+                                        textTransform: 'uppercase',
+                                        fontWeight: 700,
+                                        letterSpacing: '0.5px'
                                     }}>
                                         {user.role}
+                                    </span>
+                                )}
+                                {user?.name && (
+                                    <span style={{ 
+                                        fontSize: '0.75rem', 
+                                        fontWeight: 600, 
+                                        backgroundColor: 'rgba(0,0,0,0.1)', 
+                                        padding: '1px 6px', 
+                                        borderRadius: '12px',
+                                        maxWidth: '120px',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
+                                    }}>
+                                        {user.name}
                                     </span>
                                 )}
                             </div>
