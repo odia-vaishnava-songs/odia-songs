@@ -96,7 +96,12 @@ export const SongsPage: React.FC = () => {
 
     const gitaChapters = useMemo(() => {
         return songResources
-            .filter(s => s.category === 'Gita' || s.category === 'G' || s.category === 'Gītā-māhātmya')
+            .filter(s => {
+                const isGitaCategory = s.category === 'Gita' || s.category === 'G' || s.category === 'Gītā-māହାତ୍ମ୍ୟ';
+                const hasGitaInTitle = (s.title_english || s.title || '').toLowerCase().includes('gita') || 
+                                     (s.title_english || s.title || '').includes('Gītā');
+                return isGitaCategory || hasGitaInTitle;
+            })
             .sort((a, b) => {
                 const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '0'); // Mahatmya at start if no number, or adjust to place at end
                 const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '0');
