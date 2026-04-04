@@ -126,6 +126,19 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
+    const handlePublishToggle = async (songId: string, currentPublished: boolean) => {
+        try {
+            const { error } = await supabase
+                .from('songs')
+                .update({ published: !currentPublished })
+                .eq('id', songId);
+            if (error) throw error;
+        } catch (err) {
+            console.error(err);
+            alert("Error updating publication status");
+        }
+    };
+
     const filteredSongs = songs.filter(s => {
         const matchesSearch = s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             s.author?.toLowerCase().includes(searchTerm.toLowerCase());
@@ -302,7 +315,18 @@ export const ManageSongsPage: React.FC = () => {
                                     borderTop: '3px solid #8A5082', borderRadius: '50%', margin: '1rem auto',
                                     animation: 'spin 1s linear infinite'
                                 }} />
-                                <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+                                <style>{`
+                                    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                                    @keyframes blinkGreen {
+                                        0% { opacity: 1; box-shadow: 0 0 2px #1ed106; }
+                                        50% { opacity: 0.7; box-shadow: 0 0 15px #1ed106; }
+                                        100% { opacity: 1; box-shadow: 0 0 2px #1ed106; }
+                                    }
+                                    @keyframes ripple {
+                                        0% { transform: scale(1); opacity: 0.15; }
+                                        100% { transform: scale(1.6); opacity: 0; }
+                                    }
+                                `}</style>
                             </div>
                         ) : error ? (
                             <div style={{ padding: '1.5rem', backgroundColor: '#FFF5F5', border: '1px solid #FEB2B2', borderRadius: '12px', marginBottom: '1.5rem' }}>
@@ -390,6 +414,35 @@ export const ManageSongsPage: React.FC = () => {
                                                     <UserCheck size={18} color={song.assigned_to ? '#2E7D32' : '#666'} />
                                                 </button>
                                             )}
+                                            
+                                            <button
+                                                onClick={(e) => { e.stopPropagation(); handlePublishToggle(song.id, !!song.published); }}
+                                                style={{ 
+                                                    width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #ddd', 
+                                                    background: song.published ? '#1ed106' : 'white',
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+                                                    animation: song.published ? 'blinkGreen 2s infinite ease-in-out' : 'none',
+                                                    boxShadow: song.published ? '0 0 12px rgba(30, 209, 6, 0.6)' : 'none',
+                                                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                    position: 'relative',
+                                                    marginRight: '0.5rem'
+                                                }}
+                                                title={song.published ? "Active - Click to Hide" : "Inactive - Click to Publish"}
+                                            >
+                                                <div style={{ 
+                                                    width: '14px', height: '14px', borderRadius: '50%', 
+                                                    background: 'white',
+                                                    opacity: song.published ? 1 : 0.4,
+                                                    transition: 'opacity 0.3s ease'
+                                                }} />
+                                                {song.published && (
+                                                    <div style={{
+                                                        position: 'absolute', width: '100%', height: '100%',
+                                                        borderRadius: '50%', border: '2px solid #1ed106',
+                                                        animation: 'ripple 2s infinite'
+                                                    }} />
+                                                )}
+                                            </button>
 
                                             <button
                                                 onClick={(e) => { e.stopPropagation(); setEditingSong(song); setIsEditing(true); }}
