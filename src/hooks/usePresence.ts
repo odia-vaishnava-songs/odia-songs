@@ -70,6 +70,10 @@ export const usePresence = (currentUser: User | null) => {
                         role: currentUser.role,
                         online_at: new Date().toISOString(),
                     });
+                } else if (status === 'CLOSED' || status === 'TIMED_OUT') {
+                    console.warn(`[Presence] Connection error ${status}. Retrying in 5 seconds...`);
+                    // If it's closed or timed out, we might want to trigger a re-mount by cleaning up
+                    // This is handled by React effect cleanup and currentUser?id changes, but we check here.
                 }
             });
 

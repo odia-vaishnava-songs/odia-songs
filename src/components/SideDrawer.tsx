@@ -172,11 +172,28 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                             <h2 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>
                                 {view === 'menu' ? (user ? 'Hare Krishna!' : 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ') : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
                             </h2>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginTop: '2px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', marginTop: '4px' }}>
                                 {user ? (
-                                    <span style={{ fontSize: '0.9rem', fontWeight: 700, backgroundColor: 'rgba(0,0,0,0.1)', padding: '1px 10px', borderRadius: '12px' }}>
-                                        {user.name || user.email?.split('@')[0]}
-                                    </span>
+                                    <>
+                                        <div style={{ fontSize: '0.85rem', fontWeight: 600, opacity: 0.9 }}>
+                                            {user.name || user.email?.split('@')[0]}
+                                        </div>
+                                        {(user.role?.toLowerCase() === 'admin' || user.role?.toLowerCase() === 'subadmin') && (
+                                            <div style={{ 
+                                                fontSize: '0.7rem', 
+                                                fontWeight: 800, 
+                                                backgroundColor: '#FF9933', 
+                                                color: 'white', 
+                                                padding: '2px 14px', 
+                                                borderRadius: '20px',
+                                                boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '0.5px'
+                                            }}>
+                                                {user.role === 'admin' ? 'Admin' : 'Editor'}
+                                            </div>
+                                        )}
+                                    </>
                                 ) : (
                                     <span style={{ fontSize: '0.75rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
                                         {view === 'menu' ? 'ମେନ୍ୟୁ (Menu)' : 'ପରିଚାଳନା (Management)'}

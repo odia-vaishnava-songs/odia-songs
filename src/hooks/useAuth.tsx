@@ -25,17 +25,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const lastSyncTime = useRef<number>(0);
     const lastSyncTimestampRef = useRef<number>(0); // Absolute time cooldown
     const mountedRef = useRef<boolean>(true);
-    const highestRoleRef = useRef<string>('user'); 
+    const highestRoleRef = useRef<string>('user');
     const hasInitializedRef = useRef<boolean>(false);
-    
+
     // DEV MODE: Bypass login on localhost
-    const isLocal = typeof window !== 'undefined' && 
+    const isLocal = typeof window !== 'undefined' &&
         (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
     // Initial load: restore sticky role from localStorage if possible
     useEffect(() => {
         mountedRef.current = true;
-        
+
         // Safety timeout: stop loading after 8 seconds even if something is slow
         const timeout = setTimeout(() => {
             if (mountedRef.current && loading) {
@@ -46,7 +46,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         // DEV BYPASS: Localhost always has Admin status instantly
         if (isLocal && !user) {
             console.log('[Auth] Localhost Bypass Activated (Admin)');
-            
+
             const devUser: User = {
                 id: 'dev-admin',
                 name: 'Dev Admin (Local)',
@@ -67,7 +67,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 setLoading(false);
                 hasInitializedRef.current = true;
             };
-            
+
             registerDev();
             return;
         }
@@ -101,10 +101,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const syncProfile = async (supabaseUser: any, retryCount = 0) => {
         if (!supabaseUser) return;
-        
+
         const syncId = Date.now();
         lastSyncTime.current = syncId;
-        
+
         console.log(`[Auth] Syncing profile (Attempt ${retryCount + 1}) for:`, supabaseUser.id);
 
         try {
@@ -120,7 +120,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             );
 
             const result: any = await Promise.race([profilePromise, fetchTimeout]);
-            
+
             // If another sync started while we were waiting, ignore this results
             if (lastSyncTime.current !== syncId) return;
 
@@ -144,7 +144,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             // Normalize the role from the profile (database)
             const dbRole = (profile?.role?.toLowerCase() as any) || 'user';
-            
+
             // DYNAMIC ROLE: No more "Sticky" logic. 
             // If the DB says 'subadmin', they ARE a subadmin.
             const finalRole = dbRole;
@@ -158,8 +158,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             };
 
             console.log('[Auth] Sync complete. Result Role:', newUser.role, '(DB Role was:', dbRole, ')');
-            
+
             if (mountedRef.current) {
+                // STICKY ROLE: Remember they were an Admin so they don't lose access on slow live connections
+                if (finalRole === 'admin' || finalRole === 'subadmin') {
+                    localStorage.setItem('sticky_role', finalRole);
+                    highestRoleRef.current = finalRole;
+                }
+
                 setUser(newUser);
                 setLoading(false);
                 const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -176,7 +182,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             if (mountedRef.current) {
                 // If we've already been an admin in this session, use that fallback instead of 'user'
-                const fallbackRole = highestRoleRef.current || 'user';
+                const fallbackRole = highestRoleRef.current || localStorage.getItem('sticky_role') || 'user';
                 console.log('[Auth] Sync failed, using fallback role:', fallbackRole);
 
                 setUser({
