@@ -2,11 +2,11 @@ import {
     SONG_BHULIYATOMARE_STRUCTURED,
     SONG_JAYARADHAMADHAVA_STRUCTURED,
     JAYA_RADHA_MADHAVA,
+    GITA_MAHATMYA_ODIA,
     BHULIYA_TOMARE_ODIA,
     SONG_AMARJIVANA_STRUCTURED,
     SONG_AMIJAMUNAPULINE_STRUCTURED,
     SONG_ANADIKARAMAPHALE_STRUCTURED,
-    SONG_ARKENOMAYARJALE_STRUCTURED,
     SONG_APARADHAPHALEMAMA_STRUCTURED,
     SONG_TUWAPADEMINOTIMOR_STRUCTURED,
     SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
@@ -62,9 +62,9 @@ import {
     SONG_KABESRICAITANYA_STRUCTURED,
     SONG_KRPAKOROVAISNAVA_STRUCTURED,
     SONG_VIDYARAVILASE_STRUCTURED,
-    SONG_GITAMAHATMYA_STRUCTURED,
-    GITA_MAHATMYA_ODIA
+    SONG_GITAMAHATMYA_STRUCTURED
 } from './songsContent';
+
 import type { Resource } from '../types';
 
 export const RESOURCES: Resource[] = [
@@ -133,15 +133,6 @@ export const RESOURCES: Resource[] = [
             { label: 'HH Suhotra Swami', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_HH_Suhotra_Swami_IDT.mp3' },
             { label: 'Odia Recording', url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F29%20Anadi%20Karma%20Phale%20P-63.MP3' }
         ],
-        author: 'Bhaktivinoda Ṭhākura'
-    },
-    {
-        id: 'song-arkenomayarjale',
-        title: 'ଆର କେନ ମାୟା-ଜାଲେ (Āra kena māyā-jāle)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ମାୟାର ଜାଲରେ ପଡ଼ିଥିବା ଜୀବକୁ ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଚେତାବନୀ |',
-        structuredContent: SONG_ARKENOMAYARJALE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -267,7 +258,7 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-nadiyagodrume',
+        id: 'song-nadiya-godrume',
         title: 'ନଦୀୟା – ଗୋଦ୍ରୁମେ ନିତ୍ୟାନନ୍ଦ ମହାଜନ (Nadīyā – Godrume Nityānanda Mahājana)',
         category: 'Songs',
         type: 'html',

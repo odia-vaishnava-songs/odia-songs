@@ -55,5 +55,16 @@ CREATE POLICY "Published songs are viewable by everyone"
   ON songs FOR SELECT USING (published = true OR auth.uid() IN (SELECT id FROM profiles WHERE role IN ('SUBADMIN', 'ADMIN')));
 
 DROP POLICY IF EXISTS "Admins can manage songs" ON songs;
-CREATE POLICY "Admins/Subadmins can manage songs" 
-  ON songs FOR ALL USING (auth.uid() IN (SELECT id FROM profiles WHERE role IN ('SUBADMIN', 'ADMIN')));
+DROP POLICY IF EXISTS "Admins/Subadmins can manage songs" ON songs;
+
+-- Allow both Admins and Subadmins to Edit and Add (INSERT/UPDATE)
+CREATE POLICY "Admins/Subadmins can add and edit songs" 
+  ON songs FOR INSERT OR UPDATE WITH CHECK (
+    auth.uid() IN (SELECT id FROM profiles WHERE role IN ('SUBADMIN', 'ADMIN'))
+  );
+
+-- STRICT LOCK: Only the main Admin can Delete
+CREATE POLICY "Only Admins can delete songs" 
+  ON songs FOR DELETE USING (
+    auth.uid() IN (SELECT id FROM profiles WHERE role = 'ADMIN')
+  );

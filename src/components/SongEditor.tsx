@@ -127,13 +127,31 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         }
     };
 
+    const validateHealth = (data: Partial<Resource>): { healthy: boolean; message?: string } => {
+        // App-Health Rule: Missing verse array is a crash-level corruption. 
+        // Missing lyrics or translations are "Healthy" per user request.
+        if (!data.structuredContent?.verses) {
+            return { healthy: false, message: "Critical structure missing (verses array)." };
+        }
+        return { healthy: true };
+    };
+
     const handleSave = async () => {
         if (!formData.title) return alert("Title is required");
+        
+        // --- THE APP-HEALTH GUARD ---
+        const health = validateHealth(formData);
+        if (!health.healthy) {
+            console.error("Health Check Failed:", health.message);
+            return alert("Sorry it is not healthy for app please retry");
+        }
+
         setSaving(true);
         try {
             const id = song?.id || formData.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-            const { error } = await supabase
+            // 1. Save to Cloud (Supabase)
+            const { error: dbError } = await supabase
                 .from('songs')
                 .upsert({
                     id,
@@ -157,12 +175,51 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     updated_at: new Date().toISOString()
                 }, { onConflict: 'id' });
 
-            if (error) throw error;
-            alert("Successfully Saved to Database!");
+            if (dbError) throw dbError;
+
+            // 2. Save to Local Code (Sync Agent)
+            // Derive variable name (SONG_NAME_STRUCTURED)
+            const specialMap: Record<string, string> = {
+                'song-durlabhamanava': 'SONG_DURLABHAMANAVAJANMA_STRUCTURED',
+                'song-gopinatha1': 'SONG_GOPINATHA1_STRUCTURED',
+                'song-gopinatha2': 'SONG_GOPINATHA2_STRUCTURED',
+                'song-gopinatha3': 'SONG_GOPINATHA3_STRUCTURED',
+                'song-doyalnitai': 'SONG_DOYALNITAICAITANYA_STRUCTURED',
+                'song-ohevaisnava': 'SONG_OHEVAISNAVATHAKURA_STRUCTURED',
+                'song-nadiya-godrume': 'SONG_NADIYAGODRUME_STRUCTURED',
+                'song-gurudeva-krpa': 'SONG_GURUDEVAKRPABINDU_STRUCTURED',
+                'song-gurudeva-boro-krpa': 'SONG_GURUDEVABOROKRPADIA_STRUCTURED',
+                'song-jivjago': 'SONG_JIVJAGOJIVJAGO_STRUCTURED',
+                'song-kabesricaitanya': 'SONG_KABESRICAITANYA_STRUCTURED',
+                'song-jayaradhadhava': 'SONG_JAYARADHAMADHAVA_STRUCTURED',
+                'song-bhuliyatomare': 'SONG_BHULIYATOMARE_STRUCTURED',
+                'song-gitamahatmya': 'SONG_GITAMAHATMYA_STRUCTURED',
+                'song-amito-durjana': 'SONG_AMITODURJANA_STRUCTURED'
+            };
+
+            const varName = specialMap[id] || `SONG_${id.toUpperCase().replace('SONG-', '').replace(/-/g, '')}_STRUCTURED`;
+
+            try {
+                const syncResponse = await fetch('/api/sync-song', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ varName, structuredContent: formData.structuredContent })
+                });
+                const syncResult = await syncResponse.json();
+                if (syncResult.success) {
+                    console.log(`✅ Local code sync successful for ${varName}`);
+                } else {
+                    console.warn(`⚠️ Cloud saved, but local sync failed: ${syncResult.error || 'Check guard logs'}`);
+                }
+            } catch (syncErr) {
+                console.error("Local sync endpoint unreachable (this is normal in production):", syncErr);
+            }
+
+            alert("Successful!");
             onSave();
         } catch (err) {
             console.error(err);
-            alert("Error saving song");
+            alert("Error saving song to database");
         } finally {
             setSaving(false);
         }

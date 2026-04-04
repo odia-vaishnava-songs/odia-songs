@@ -39,71 +39,55 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         // Safety timeout: stop loading after 8 seconds even if something is slow
         const timeout = setTimeout(() => {
             if (mountedRef.current && loading) {
-                console.warn('Auth initialization timed out, forcing loading screen to close');
                 setLoading(false);
             }
         }, 8000);
 
-        // Supabase v2: onAuthStateChange with INITIAL_SESSION handles the initial check automatically
-        const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-            console.log('[Auth] State change:', _event, 'Session user:', session?.user?.id);
-            setStatus(`Auth Event: ${_event}`);
+        // DEV BYPASS: Localhost always has Admin status instantly
+        if (isLocal && !user) {
+            console.log('[Auth] Localhost Bypass Activated (Admin)');
             
+            const devUser: User = {
+                id: 'dev-admin',
+                name: 'Dev Admin (Local)',
+                email: 'dev@local.com',
+                role: 'admin',
+                userId: 'dev-admin'
+            };
+
+            // Register this dev identity in the database if it doesn't exist
+            // This ensures RLS policies allow accessing songs locally
+            const registerDev = async () => {
+                await supabase.from('profiles').upsert({
+                    id: 'dev-admin',
+                    name: 'Dev Admin',
+                    role: 'ADMIN' // Uppercase for DB enum
+                });
+                setUser(devUser);
+                setLoading(false);
+                hasInitializedRef.current = true;
+            };
+            
+            registerDev();
+            return;
+        }
+
+        // Supabase auth subscription...
+        const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             if (!mountedRef.current) return;
 
             if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
-                if (isLocal) {
-                    console.log('[Auth] Localhost detected & no session: Granting Dev Admin access.');
-                    setUser({
-                        id: 'dev-admin-id',
-                        name: 'Local Admin (Dev)',
-                        email: 'admin@localhost',
-                        role: 'admin',
-                        userId: 'dev-admin'
-                    });
-                    setLoading(false);
-                    hasInitializedRef.current = true;
-                    return;
-                }
-                setUser(null);
+                if (!isLocal) setUser(null);
                 setLoading(false);
                 hasInitializedRef.current = true;
             } else if (session) {
-                // OPTIMISTIC IDENTITY: Try to use cached role while waiting for DB sync
-                const cachedRole = localStorage.getItem(`odia-songs-role-${session.user.id}`);
-                const userEmail = session.user?.email?.toLowerCase().trim();
-                const isAdminEmail = userEmail === 'daitariswain7@gmail.com';
-                
-                if (cachedRole || isAdminEmail) {
-                    const initialRole = isAdminEmail ? 'admin' : (cachedRole as any);
-                    highestRoleRef.current = initialRole;
-                    console.log('[Auth] Optimistic Restore:', isAdminEmail ? 'Admin Email Trust' : 'Cached Role', initialRole);
-                    
-                    setUser({
-                        id: session.user.id,
-                        name: session.user.user_metadata?.full_name || session.user.phone || 'Admin',
-                        email: session.user.email || '',
-                        role: initialRole,
-                        userId: session.user.phone || session.user.id
-                    });
-                    
-                    // Stop the "Loading Flicker" for the routes
-                    if (!hasInitializedRef.current) {
-                        setLoading(false);
-                        hasInitializedRef.current = true;
-                    }
-                }
-
-                // Background sync - THROTTLED to once every 5 seconds per ID
+                // Background sync
                 const now = Date.now();
-                const timeDiff = now - lastSyncTimestampRef.current;
-                if (timeDiff > 5000) {
-                    setStatus('Syncing Profile...');
+                if (now - lastSyncTimestampRef.current > 5000) {
                     await syncProfile(session.user);
                     lastSyncTimestampRef.current = now;
                 } else {
-                    console.log('[Auth] Sync Throttle: Skipping redundant check.');
-                    setStatus('Stable (Throttled)');
+                    setLoading(false);
                 }
             }
         });
@@ -113,7 +97,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             clearTimeout(timeout);
             subscription.unsubscribe();
         };
-    }, []);
+    }, [isLocal, user]);
 
     const syncProfile = async (supabaseUser: any, retryCount = 0) => {
         if (!supabaseUser) return;
@@ -161,36 +145,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             // Normalize the role from the profile (database)
             const dbRole = (profile?.role?.toLowerCase() as any) || 'user';
             
-            // STICKY / TRUSTED ROLE LOGIC:
-            // High-confidence emails or previous session success
-            const userEmail = supabaseUser.email?.toLowerCase().trim();
-            const isAdminEmail = userEmail === 'daitariswain7@gmail.com';
-            let finalRole = dbRole;
-
-            if (isAdminEmail) {
-                console.log('[Auth] Zero-Bounce Trust: Forcing ADMIN role for known email:', userEmail);
-                finalRole = 'admin';
-            } else if (highestRoleRef.current === 'admin' && dbRole === 'user') {
-                console.log('[Auth] Role Stable: Preventing downgrade from ADMIN to user during re-sync.');
-                finalRole = 'admin';
-            } else if (highestRoleRef.current === 'subadmin' && dbRole === 'user') {
-                console.log('[Auth] Role Stable: Preventing downgrade from SUBADMIN to user during re-sync.');
-                finalRole = 'subadmin';
-            }
-
-            // Persistence Guard: Save to localStorage for next boot
-            localStorage.setItem(`odia-songs-role-${supabaseUser.id}`, finalRole);
-
-            // Update the sticky role reference if we reached a higher privilege level
-            if (finalRole === 'admin') highestRoleRef.current = 'admin';
-            else if (finalRole === 'subadmin' && highestRoleRef.current !== 'admin') highestRoleRef.current = 'subadmin';
+            // DYNAMIC ROLE: No more "Sticky" logic. 
+            // If the DB says 'subadmin', they ARE a subadmin.
+            const finalRole = dbRole;
 
             const newUser: User = {
                 id: supabaseUser.id,
-                name: profile?.name || supabaseUser.user_metadata?.full_name || supabaseUser.phone || supabaseUser.email?.split('@')[0] || 'User',
+                name: profile?.name || supabaseUser.user_metadata?.full_name || 'User',
                 email: supabaseUser.email || '',
                 role: finalRole,
-                userId: supabaseUser.phone || supabaseUser.email || supabaseUser.id
+                userId: supabaseUser.id
             };
 
             console.log('[Auth] Sync complete. Result Role:', newUser.role, '(DB Role was:', dbRole, ')');

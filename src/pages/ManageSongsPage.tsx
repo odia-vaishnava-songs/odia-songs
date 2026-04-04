@@ -20,7 +20,12 @@ export const ManageSongsPage: React.FC = () => {
     const [selectedEditorId, setSelectedEditorId] = useState<string>('all');
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
-    const role = user?.role?.toLowerCase();
+    // Test Mode logic for localhost
+    const debugRole = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+        ? window.localStorage.getItem('debug_role') 
+        : null;
+    
+    const role = (debugRole || user?.role || 'user').toLowerCase();
     const isAdmin = role === 'admin';
     const isEditor = role === 'subadmin';
     const isHost = isAdmin || isEditor;
@@ -154,14 +159,40 @@ export const ManageSongsPage: React.FC = () => {
                 >
                     <Menu size={24} />
                 </button>
-                <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', color: 'white', display: 'flex', alignItems: 'center' }}><ArrowLeft size={24} /></button>
-                <h2 style={{ margin: 0, flex: 1 }}>Manage Songs</h2>
-                <button
-                    onClick={() => { setEditingSong(undefined); setIsEditing(true); }}
-                    style={{ background: 'white', color: '#8A5082', border: 'none', padding: '0.5rem 1rem', borderRadius: '20px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
-                >
-                    <Plus size={18} /> Add Song
-                </button>
+                <button onClick={() => isEditing ? setIsEditing(false) : navigate('/')} style={{ background: 'none', border: 'none', color: 'white', display: 'flex', alignItems: 'center' }}><ArrowLeft size={24} /></button>
+                <h2 style={{ margin: 0, flex: 1, display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                    Manage Songs
+                    <span style={{ 
+                        fontSize: '0.7rem', padding: '4px 12px', borderRadius: '20px',
+                        backgroundColor: isAdmin ? 'rgba(72, 187, 120, 0.25)' : 'rgba(255, 153, 0, 0.25)',
+                        color: isAdmin ? '#22C55E' : '#FF9800', 
+                        border: `2px solid ${isAdmin ? '#22C55E' : '#FF9800'}`,
+                        textTransform: 'uppercase', fontWeight: 900, letterSpacing: '1px'
+                    }}>
+                        {isAdmin ? '🛡️ Admin' : '👤 Editor'}
+                    </span>
+                    {window.location.hostname === 'localhost' && (
+                        <button 
+                            onClick={() => {
+                                // Simple trick to toggle role for testing on localhost
+                                const newRole = isAdmin ? 'subadmin' : 'admin';
+                                window.localStorage.setItem('debug_role', newRole);
+                                window.location.reload();
+                            }}
+                            style={{ fontSize: '0.6rem', padding: '2px 8px', borderRadius: '4px', cursor: 'pointer', opacity: 0.7 }}
+                        >
+                            [Test {isAdmin ? 'Subadmin' : 'Admin'} Mode]
+                        </button>
+                    )}
+                </h2>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button
+                        onClick={() => { setEditingSong(undefined); setIsEditing(true); }}
+                        style={{ background: 'white', color: '#8A5082', border: 'none', padding: '0.5rem 1rem', borderRadius: '20px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                    >
+                        <Plus size={18} /> Add Song
+                    </button>
+                </div>
             </header>
 
             <main style={{ padding: '1rem', maxWidth: '800px', margin: '0 auto' }}>
@@ -266,8 +297,8 @@ export const ManageSongsPage: React.FC = () => {
                         {loading ? (
                             <div style={{ padding: '2rem', textAlign: 'center' }}>
                                 <p style={{ color: '#8A5082', fontWeight: 600 }}>Loading database...</p>
-                                <div style={{ 
-                                    width: '30px', height: '30px', border: '3px solid #f3f3f3', 
+                                <div style={{
+                                    width: '30px', height: '30px', border: '3px solid #f3f3f3',
                                     borderTop: '3px solid #8A5082', borderRadius: '50%', margin: '1rem auto',
                                     animation: 'spin 1s linear infinite'
                                 }} />
@@ -366,12 +397,14 @@ export const ManageSongsPage: React.FC = () => {
                                             >
                                                 <Edit2 size={18} color="#666" />
                                             </button>
-                                            <button
-                                                onClick={(e) => { e.stopPropagation(); handleDelete(song.id); }}
-                                                style={{ padding: '8px', borderRadius: '8px', border: '1px solid #ddd', background: '#fff5f5', cursor: 'pointer' }}
-                                            >
-                                                <Trash2 size={18} color="#ff4444" />
-                                            </button>
+                                            {isAdmin && (
+                                                <button
+                                                    onClick={(e) => { e.stopPropagation(); handleDelete(song.id); }}
+                                                    style={{ padding: '8px', borderRadius: '8px', border: '1px solid #ddd', background: '#fff5f5', cursor: 'pointer' }}
+                                                >
+                                                    <Trash2 size={18} color="#ff4444" />
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 ))}

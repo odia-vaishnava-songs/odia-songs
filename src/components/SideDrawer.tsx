@@ -10,6 +10,7 @@ import { useAudio } from '../context/AudioContext';
 import { supabase } from '../supabase/config';
 import panchaTattvaImg from '../assets/pancha-tattva.png';
 import type { User } from '../types';
+import type { PresenceUser } from '../hooks/usePresence';
 
 type DrawerView = 'menu' | 'users' | 'assign';
 
@@ -18,9 +19,10 @@ interface SideDrawerProps {
     onClose: () => void;
     assigningSongIds?: string[] | null;
     onAssigned?: () => void;
+    onlineUsers?: PresenceUser[];
 }
 
-export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongIds, onAssigned }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongIds, onAssigned, onlineUsers = [] }) => {
     const { logout, user } = useAuth();
     const { theme } = useAudio();
     const navigate = useNavigate();
@@ -247,6 +249,51 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                     }
                                     return null;
                                 })()}
+
+                                {user?.role?.toLowerCase() === 'admin' && (
+                                    <div style={{
+                                        marginTop: '1rem',
+                                        padding: '0.8rem',
+                                        backgroundColor: onlineUsers.length > 0 ? '#F0FDF4' : '#f9f9f9',
+                                        borderRadius: '12px',
+                                        border: `1px solid ${onlineUsers.length > 0 ? '#BBF7D0' : '#eee'}`,
+                                    }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: onlineUsers.length > 0 ? '8px' : 0 }}>
+                                            <div style={{
+                                                width: '8px', height: '8px', borderRadius: '50%',
+                                                backgroundColor: onlineUsers.length > 0 ? '#22C55E' : '#999',
+                                                boxShadow: onlineUsers.length > 0 ? '0 0 0 2px rgba(34, 197, 94, 0.2)' : 'none',
+                                                animation: onlineUsers.length > 0 ? 'pulsePresence 2s infinite' : 'none'
+                                            }} />
+                                            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: onlineUsers.length > 0 ? '#166534' : '#666' }}>
+                                                {onlineUsers.length > 0 ? `Live Now: ${onlineUsers.length} Online` : 'Presence: Connecting...'}
+                                            </span>
+                                        </div>
+                                        {onlineUsers.length > 0 && (
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                                                {onlineUsers.map(u => (
+                                                    <div key={u.id} style={{
+                                                        fontSize: '0.7rem',
+                                                        padding: '2px 8px',
+                                                        backgroundColor: 'white',
+                                                        border: '1px solid #DCFCE7',
+                                                        borderRadius: '8px',
+                                                        color: '#15803D'
+                                                    }}>
+                                                        {u.name}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                        <style>{`
+                                            @keyframes pulsePresence {
+                                                0% { opacity: 1; transform: scale(1); }
+                                                50% { opacity: 0.5; transform: scale(1.2); }
+                                                100% { opacity: 1; transform: scale(1); }
+                                            }
+                                        `}</style>
+                                    </div>
+                                )}
 
                                 <div style={{ height: '1px', backgroundColor: '#eee', margin: '0.4rem 0' }} />
 

@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -36,7 +39,49 @@ export default defineConfig({
           }
         ]
       }
-    })
+    }),
+    {
+      name: 'song-guard-api',
+      configureServer(server) {
+        // --- 1. AUTO-SYNC ON STARTUP ---
+        const { syncCloudToCode } = require('./scripts/sync_cloud_to_code.cjs');
+        console.log('🤖 Auto-Sync: Initializing local code from Cloud...');
+        syncCloudToCode().catch(err => console.error('❌ Auto-Sync failed on startup:', err));
+
+        server.middlewares.use('/api/sync-song', async (req, res) => {
+          if (req.method !== 'POST') return res.end();
+
+          let body = '';
+          req.on('data', chunk => body += chunk);
+          req.on('end', async () => {
+            try {
+              const { varName, structuredContent } = JSON.parse(body);
+              const { updateSong } = require('./song_guard.cjs');
+              const success = updateSong(varName, structuredContent);
+
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success }));
+            } catch (err: any) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ success: false, error: err.message }));
+            }
+          });
+        });
+
+        server.middlewares.use('/api/sync-all', async (req, res) => {
+          if (req.method !== 'POST') return res.end();
+          try {
+            const { syncCloudToCode } = require('./scripts/sync_cloud_to_code.cjs');
+            const success = await syncCloudToCode();
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ success }));
+          } catch (err: any) {
+            res.statusCode = 500;
+            res.end(JSON.stringify({ success: false, error: err.message }));
+          }
+        });
+      }
+    }
   ],
 })
 

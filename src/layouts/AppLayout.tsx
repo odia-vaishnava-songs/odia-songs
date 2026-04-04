@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useAudio } from '../context/AudioContext';
+import { useAuth } from '../hooks/useAuth';
+import { usePresence } from '../hooks/usePresence';
 import { SideDrawer } from '../components/SideDrawer';
 import { CompactAudioBar } from '../components/CompactAudioBar';
 
 export const AppLayout: React.FC = () => {
     const { activeSong, isDetailView } = useAudio();
+    const { user } = useAuth();
+    const { onlineUsers } = usePresence(user);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [assigningSongIds, setAssigningSongIds] = useState<string[] | null>(null);
 
@@ -47,6 +51,7 @@ export const AppLayout: React.FC = () => {
                     setAssigningSongIds(null);
                 }}
                 assigningSongIds={assigningSongIds}
+                onlineUsers={onlineUsers}
                 onAssigned={() => {
                     // Trigger a global refresh if needed
                     window.location.reload(); 
