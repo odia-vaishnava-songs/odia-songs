@@ -361,7 +361,12 @@ export const ManageSongsPage: React.FC = () => {
                                         )}
 
                                         <div style={{ flex: 1 }}>
-                                            <div style={{ fontWeight: 600, color: getStatusColor(song.status, song.verified), fontFamily: 'var(--font-odia-sans)' }}>{song.title}</div>
+                                            <div style={{ 
+                                                fontWeight: 800, 
+                                                color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), 
+                                                fontFamily: 'var(--font-odia-sans)',
+                                                transition: 'color 0.3s ease'
+                                            }}>{song.title}</div>
                                             <div style={{ fontSize: '0.85rem', color: '#666', fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>
                                             {isAdmin && song.assigned_to && (
                                                 <div style={{
