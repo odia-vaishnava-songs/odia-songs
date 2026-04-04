@@ -46,7 +46,7 @@ export default defineConfig({
         // --- 1. AUTO-SYNC ON STARTUP ---
         const { syncCloudToCode } = require('./scripts/sync_cloud_to_code.cjs');
         console.log('🤖 Auto-Sync: Initializing local code from Cloud...');
-        syncCloudToCode().catch(err => console.error('❌ Auto-Sync failed on startup:', err));
+        syncCloudToCode().catch((err: any) => console.error('❌ Auto-Sync failed on startup:', err));
 
         server.middlewares.use('/api/sync-song', async (req, res) => {
           if (req.method !== 'POST') return res.end();

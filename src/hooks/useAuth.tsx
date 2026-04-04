@@ -36,6 +36,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     useEffect(() => {
         mountedRef.current = true;
 
+        const sticky = localStorage.getItem('sticky_role');
+        if (sticky) {
+            console.log('[Auth] Restored sticky role:', sticky);
+            highestRoleRef.current = sticky;
+        }
+
         // Safety timeout: stop loading after 8 seconds even if something is slow
         const timeout = setTimeout(() => {
             if (mountedRef.current && loading) {
