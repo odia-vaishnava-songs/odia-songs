@@ -73,7 +73,7 @@ export const SongsPage: React.FC = () => {
     };
 
     const songResources = useMemo(() => {
-        return songs.filter(r => r.category === 'Songs' || r.category === 'G' || r.category === 'Gita' || r.category === 'Gītā-māhātmya')
+        return songs
             .sort((a, b) => {
                 const orderDiff = (a.display_order ?? 999) - (b.display_order ?? 999);
                 if (orderDiff !== 0) return orderDiff;
