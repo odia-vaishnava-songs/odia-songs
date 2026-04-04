@@ -1066,24 +1066,25 @@ export const SongsPage: React.FC = () => {
                                     >
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                <div style={{
-                                                    fontSize: '1.25rem',
-                                                    fontWeight: 700,
-                                                    color: getStatusColor(song.status, song.verified),
-                                                    fontFamily: 'var(--font-odia-sans)'
-                                                }}>{getOdiaTitle(song)}</div>
-                                                {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
-                                            </div>
-                                            {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
-                                                <div style={{
-                                                    fontSize: '0.95rem',
-                                                    color: '#666',
-                                                    fontWeight: 500,
-                                                    fontFamily: "'Outfit', sans-serif"
-                                                }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
-                                            )}
-                                        </div>
-                                        {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: getStatusColor(song.status, song.verified), opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>}
+                                                        <div style={{
+                                                            fontSize: '1.25rem',
+                                                            fontWeight: 800,
+                                                            color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
+                                                            fontFamily: 'var(--font-odia-sans)',
+                                                            transition: 'color 0.3s ease'
+                                                        }}>{getOdiaTitle(song)}</div>
+                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                                    </div>
+                                                    {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                        <div style={{
+                                                            fontSize: '0.95rem',
+                                                            color: '#666',
+                                                            fontWeight: 500,
+                                                            fontFamily: "'Outfit', sans-serif"
+                                                        }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                                    )}
+                                                </div>
+                                                {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>}
                                     </div>
                                 ))}
                             </div>
