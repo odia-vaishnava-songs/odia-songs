@@ -9,7 +9,7 @@ import type { Resource, User } from '../types';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
 
 export const ManageSongsPage: React.FC = () => {
-    const { songs, loading, error } = useSongs();
+    const { songs, loading, error, refreshSongs } = useSongs();
     const { user } = useAuth();
     const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(false);
@@ -120,6 +120,7 @@ export const ManageSongsPage: React.FC = () => {
                 .eq('id', songId);
 
             if (error) throw error;
+            if (refreshSongs) refreshSongs();
         } catch (err) {
             console.error(err);
             alert("Error updating status");
@@ -133,6 +134,7 @@ export const ManageSongsPage: React.FC = () => {
                 .update({ published: !currentPublished })
                 .eq('id', songId);
             if (error) throw error;
+            if (refreshSongs) refreshSongs();
         } catch (err) {
             console.error(err);
             alert("Error updating publication status");

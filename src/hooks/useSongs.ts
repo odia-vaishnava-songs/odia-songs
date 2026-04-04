@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../supabase/config';
 import type { Resource } from '../types';
 import { RESOURCES as LOCAL_RESOURCES } from '../data/resources';
@@ -8,56 +8,55 @@ export const useSongs = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const fetchSongs = async () => {
-            try {
-                // Increased timeout to 10 seconds for robustness
-                const timeoutPromise = new Promise((_, reject) =>
-                    setTimeout(() => reject(new Error('Database Timeout')), 10000)
-                );
+    const processData = useCallback((supabaseSongs: any[]) => {
+        // Merge local and supabase songs: Prefer supabase
+        const supabaseIds = new Set(supabaseSongs.map(s => s.id));
+        const combined = [...supabaseSongs];
 
-                const fetchPromise = supabase
-                    .from('songs')
-                    .select('id, title, title_odia, title_english, tags, views, original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status, assigned_to, published')
-                    .order('display_order', { ascending: true });
-
-                const result: any = await Promise.race([fetchPromise, timeoutPromise]);
-                const { data, error: sbError } = result;
-
-                if (sbError) throw sbError;
-                
-                if (data) {
-                    setError(null); // Clear any previous error on success
-                    processData(data);
-                }
-            } catch (err: any) {
-                console.error("[useSongs] DB Fetch Failed:", err.message);
-                
-                // Only show error if we have to fall back to purely local data
-                if (songs.length <= LOCAL_RESOURCES.length) {
-                    setError("Slow connection detected. Showing saved songs for now.");
-                }
-                
-                processData(LOCAL_RESOURCES);
-                setLoading(false);
+        LOCAL_RESOURCES.forEach(local => {
+            if (!supabaseIds.has(local.id)) {
+                combined.push(local);
             }
-        };
+        });
 
-        const processData = (supabaseSongs: any[]) => {
-            // Merge local and supabase songs: Prefer supabase
-            const supabaseIds = new Set(supabaseSongs.map(s => s.id));
-            const combined = [...supabaseSongs];
+        setSongs(combined as Resource[]);
+        setLoading(false);
+    }, []);
 
-            LOCAL_RESOURCES.forEach(local => {
-                if (!supabaseIds.has(local.id)) {
-                    combined.push(local);
-                }
-            });
+    const fetchSongs = useCallback(async () => {
+        try {
+            // Increased timeout to 10 seconds for robustness
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Database Timeout')), 10000)
+            );
 
-            setSongs(combined as Resource[]);
+            const fetchPromise = supabase
+                .from('songs')
+                .select('id, title, title_odia, title_english, tags, views, original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, author, verified, status, assigned_to, published')
+                .order('display_order', { ascending: true });
+
+            const result: any = await Promise.race([fetchPromise, timeoutPromise]);
+            const { data, error: sbError } = result;
+
+            if (sbError) throw sbError;
+            
+            if (data) {
+                setError(null);
+                processData(data);
+            }
+        } catch (err: any) {
+            console.error("[useSongs] DB Fetch Failed:", err.message);
+            
+            if (songs.length <= LOCAL_RESOURCES.length) {
+                setError("Slow connection detected. Showing saved songs for now.");
+            }
+            
+            processData(LOCAL_RESOURCES);
             setLoading(false);
-        };
+        }
+    }, [processData, songs.length]);
 
+    useEffect(() => {
         fetchSongs();
 
         // Subscribe to changes
@@ -71,7 +70,7 @@ export const useSongs = () => {
         return () => {
             supabase.removeChannel(channel);
         };
-    }, []);
+    }, [fetchSongs]);
 
-    return { songs, loading, error };
+    return { songs, loading, error, refreshSongs: fetchSongs };
 };
