@@ -1078,13 +1078,24 @@ export const SongsPage: React.FC = () => {
                                                     {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
                                                         <div style={{
                                                             fontSize: '0.95rem',
-                                                            color: '#666',
-                                                            fontWeight: 500,
+                                                            color: song.published ? '#1ed106' : '#666',
+                                                            fontWeight: song.published ? 700 : 500,
                                                             fontFamily: "'Outfit', sans-serif"
                                                         }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                                     )}
                                                 </div>
-                                                {song.author && <div style={{ fontSize: '0.85rem', marginTop: '0.5rem', color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{song.author}</div>}
+                                                {song.author && (
+                                                    <div style={{ 
+                                                        fontSize: '0.85rem', 
+                                                        marginTop: '0.5rem', 
+                                                        color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), 
+                                                        opacity: song.published ? 0.9 : 0.7, 
+                                                        fontFamily: 'var(--font-odia-sans)',
+                                                        fontWeight: song.published ? 600 : 400
+                                                    }}>
+                                                        {song.author}
+                                                    </div>
+                                                )}
                                     </div>
                                 ))}
                             </div>
