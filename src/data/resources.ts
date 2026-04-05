@@ -798,4 +798,15 @@ export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ',
         published: true,
         status: 'COMPLETED'
       },
+      {
+        id: 'song-kijanikibale',
+        title: 'କି ଜାନି କି ବଲେ (Ki Jani Ki Bale)',
+        title_odia: 'କି ଜାନି କି ବଲେ',
+        title_english: 'Ki Jani Ki Bale',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
 ];
