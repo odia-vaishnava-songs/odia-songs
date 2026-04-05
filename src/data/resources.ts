@@ -178,15 +178,7 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
-    {
-        id: 'song-gurudeva-krpa',
-        title: 'ଗୁରୁଦେବ କୃପା ବିନ୍ଦୁ ଦିଆ (Gurudeva Kṛpā Bindu Diyā)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ଗୁରୁଦେବଙ୍କ ଚରଣରେ କୃପା ଭିକ୍ଷା |',
-        structuredContent: (Songs as any).SONG_GURUDEVAKRPABINDU_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
+    
     {
         id: 'song-yasomati-nandana',
         title: 'ଯଶୋମତି ନନ୍ଦନ (Yaśomatī Nandana)',
