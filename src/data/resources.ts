@@ -278,16 +278,7 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
-    {
-        id: 'song-gurudeva-boro-krpa',
-        title: 'ଗୁରୁଦେବ ! ବଡ଼ କୃପା କରି (Gurudeva! Boro Kṛpā Kori)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ଗୁରୁଦେବଙ୍କ ଅପାର କରୁଣାର ବନ୍ଦନା |',
-        structuredContent: (Songs as any).SONG_GURUDEVABOROKRPADIA_STRUCTURED,
-        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Gurudeva%21_Boro_Krpa_Kori/Gurudeva%21_Boro_Krpa_Kori_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
-        author: 'Bhaktivinoda Ṭhākura'
-    },
+    
     {
         id: 'song-ami-to-durjana',
         title: 'ଆମି ତୋ’ ଦୁର୍ଜନ ଅତି (Āmi To’ Durjana Ati)',
@@ -779,6 +770,17 @@ export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ',
         title: 'ଗୁରୁଦେବ କୃପା ବିନ୍ଦୁ ଦିଆ (Gurudev! Krpa Bindu Diya)',
         title_odia: 'ଗୁରୁଦେବ କୃପା ବିନ୍ଦୁ ଦିଆ',
         title_english: 'Gurudev! Krpa Bindu Diya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
+      {
+        id: 'song-gurudevaborokrpakori',
+        title: 'ଗୁରୁଦେବ ବଡ଼ କୃପା କରି (Gurudev! Boro Krpa Kori)',
+        title_odia: 'ଗୁରୁଦେବ ବଡ଼ କୃପା କରି',
+        title_english: 'Gurudev! Boro Krpa Kori',
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Ṭhākura',
