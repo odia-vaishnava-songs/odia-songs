@@ -782,4 +782,15 @@ export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ',
         published: true,
         status: 'COMPLETED'
       },
+      {
+        id: 'song-gurudevakrpabindu',
+        title: 'ଗୁରୁଦେବ କୃପା ବିନ୍ଦୁ ଦିଆ (Gurudev! Krpa Bindu Diya)',
+        title_odia: 'ଗୁରୁଦେବ କୃପା ବିନ୍ଦୁ ଦିଆ',
+        title_english: 'Gurudev! Krpa Bindu Diya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
 ];
