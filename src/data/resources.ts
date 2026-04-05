@@ -787,4 +787,15 @@ export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ',
         published: true,
         status: 'COMPLETED'
       },
+      {
+        id: 'song-kabesrichaitanyamore',
+        title: 'କବେ ଶ୍ରୀ ଚୈତନ୍ୟ ମୋରେ (Kabe Sri Chaitanya More)',
+        title_odia: 'କବେ ଶ୍ରୀ ଚୈତନ୍ୟ ମୋରେ',
+        title_english: 'Kabe Sri Chaitanya More',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
 ];
