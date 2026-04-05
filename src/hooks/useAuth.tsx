@@ -49,34 +49,39 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             }
         }, 8000);
 
-        // DEV BYPASS: Localhost always has Admin status instantly
+        /* 🚀 LOCAL BYPASS TEMPORARILY DISABLED TO ALLOW REAL LOGIN TESTING
         if (isLocal && !user) {
             console.log('[Auth] Localhost Bypass Activated (Admin)');
 
             const devUser: User = {
-                id: 'dev-admin',
+                id: '00000000-0000-0000-0000-000000000000',
                 name: 'Dev Admin (Local)',
                 email: 'dev@local.com',
                 role: 'admin',
-                userId: 'dev-admin'
+                userId: '00000000-0000-0000-0000-000000000000'
             };
 
-            // Register this dev identity in the database if it doesn't exist
-            // This ensures RLS policies allow accessing songs locally
-            const registerDev = async () => {
-                await supabase.from('profiles').upsert({
-                    id: 'dev-admin',
-                    name: 'Dev Admin',
-                    role: 'ADMIN' // Uppercase for DB enum
-                });
-                setUser(devUser);
-                setLoading(false);
-                hasInitializedRef.current = true;
-            };
+            // Background sync dev profile (non-blocking)
+            (async () => {
+                try {
+                    await supabase.from('profiles').upsert({
+                        id: '00000000-0000-0000-0000-000000000000',
+                        name: 'Dev Admin',
+                        role: 'ADMIN' // Uppercase for DB enum
+                    });
+                } catch (err: any) {
+                    console.warn('[Auth] Dev profile sync skipped/failed:', err.message);
+                }
+            })();
 
-            registerDev();
+            setUser(devUser);
+            setLoading(false);
+            hasInitializedRef.current = true;
             return;
+
         }
+        */
+
 
         // Supabase auth subscription...
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {

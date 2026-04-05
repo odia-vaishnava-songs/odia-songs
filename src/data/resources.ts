@@ -1,69 +1,5 @@
-import {
-    SONG_BHULIYATOMARE_STRUCTURED,
-    SONG_JAYARADHAMADHAVA_STRUCTURED,
-    JAYA_RADHA_MADHAVA,
-    GITA_MAHATMYA_ODIA,
-    BHULIYA_TOMARE_ODIA,
-    SONG_AMARJIVANA_STRUCTURED,
-    SONG_AMIJAMUNAPULINE_STRUCTURED,
-    SONG_ANADIKARAMAPHALE_STRUCTURED,
-    SONG_APARADHAPHALEMAMA_STRUCTURED,
-    SONG_TUWAPADEMINOTIMOR_STRUCTURED,
-    SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
-    SONG_SARVASVATOMAR_STRUCTURED,
-    SONG_GOPINATHA1_STRUCTURED,
-    SONG_GOPINATHA2_STRUCTURED,
-    SONG_GOPINATHA3_STRUCTURED,
-    SONG_DOYALNITAICAITANYA_STRUCTURED,
-    SONG_DURLABHAMANAVAJANMA_STRUCTURED,
-    SONG_GAYGORACAND_STRUCTURED,
-    SONG_OHEVAISNAVATHAKURA_STRUCTURED,
-    SONG_NITAINAMHATE_STRUCTURED,
-    SONG_NARADAMUNI_STRUCTURED,
-    SONG_NADIYAGODRUME_STRUCTURED,
-    SONG_GURUDEVAKRPABINDU_STRUCTURED,
-    SONG_YASOMATINANDANA_STRUCTURED,
-    SONG_VIBHAVARISESA_STRUCTURED,
-    SONG_UDILOARUNA_STRUCTURED,
-    SONG_SUDDHABHAKATA_STRUCTURED,
-    SONG_SRIKRSNACAITANYA_STRUCTURED,
-    SONG_RADHAKRSNABOLBOL_STRUCTURED,
-    SONG_MANASADEHAGEHA_STRUCTURED,
-    SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
-    SONG_KIJANIKIBALE_STRUCTURED,
-    SONG_KABEHABEBOLO_STRUCTURED,
-    SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
-    SONG_GURUDEVABOROKRPADIA_STRUCTURED,
-    SONG_AMITODURJANA_STRUCTURED,
-    SONG_ARKENOMAYAJALE_STRUCTURED,
-    SONG_BHALEGAURAGADADHARERARATI_STRUCTURED,
-    SONG_BOLOHARIBOLO_STRUCTURED,
-    SONG_HARIHARIKABEMORA_STRUCTURED,
-    SONG_KABEHABEHENODASA_STRUCTURED,
-    SONG_KABEMUIVAISNAVACINIBO_STRUCTURED,
-    SONG_KALIKUKKURAKADAN_STRUCTURED,
-    SONG_KENOHAREKRSNANAM_STRUCTURED,
-    SONG_KESAVATUWAJAGATA_STRUCTURED,
-    SONG_MAMAMANAMANDIRE_STRUCTURED,
-    SONG_NIJAKARMADOSE_STRUCTURED,
-    SONG_PRAPANCEPORIYA_STRUCTURED,
-    SONG_RADHAKUNDATATA_STRUCTURED,
-    SONG_SRIKRSNAKIRTANE_STRUCTURED,
-    SONG_YADITEHARIPADA_STRUCTURED,
-    SONG_BHAJABHAKATAVATSALA_STRUCTURED,
-    SONG_BHAJAREBHAJARE_STRUCTURED,
-    SONG_BOROSUKHERKHABOR_STRUCTURED,
-    SONG_EKHONABUJHINU_STRUCTURED,
-    SONG_EMONADURMATI_STRUCTURED,
-    SONG_GAYGORAMADHURA_STRUCTURED,
-    SONG_HARIBOLOHARIBOLO_STRUCTURED,
-    SONG_JIVJAGOJIVJAGO_STRUCTURED,
-    SONG_KABEGOURAVANE_STRUCTURED,
-    SONG_KABESRICAITANYA_STRUCTURED,
-    SONG_KRPAKOROVAISNAVA_STRUCTURED,
-    SONG_VIDYARAVILASE_STRUCTURED,
-    SONG_GITAMAHATMYA_STRUCTURED
-} from './songsContent';
+import * as Songs from './songsContent';
+
 
 import type { Resource } from '../types';
 
@@ -74,8 +10,8 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ପ୍ରାତଃକାଳୀନ ଭଜନ |',
-        content: JAYA_RADHA_MADHAVA,
-        structuredContent: SONG_JAYARADHAMADHAVA_STRUCTURED,
+        content: (Songs as any).JAYA_RADHA_MADHAVA,
+        structuredContent: (Songs as any).SONG_JAYARADHAMADHAVA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Jaya_Radha_Madhava/Jaya_Radha_Madhava_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'Bhaktivinoda Ṭhākura'
     },
@@ -85,8 +21,8 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ଗୀତା ମାହାତ୍ମ୍ୟ |',
-        content: GITA_MAHATMYA_ODIA,
-        structuredContent: SONG_GITAMAHATMYA_STRUCTURED,
+        content: (Songs as any).GITA_MAHATMYA_ODIA,
+        structuredContent: (Songs as any).SONG_GITAMAHATMYA_STRUCTURED,
         author: 'Adi Shankaracharya'
     },
     {
@@ -95,8 +31,8 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭୁଲିୟା ତୋମାରେ - ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ପ୍ରସିଦ୍ଧ ଭଜନ |',
-        content: BHULIYA_TOMARE_ODIA,
-        structuredContent: SONG_BHULIYATOMARE_STRUCTURED,
+        content: (Songs as any).BHULIYA_TOMARE_ODIA,
+        structuredContent: (Songs as any).SONG_BHULIYATOMARE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhuliya_Tomare/Bhuliya_Tomare_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'Bhaktivinoda Ṭhākura'
     },
@@ -106,7 +42,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି ବିନମ୍ର ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_AMARJIVANA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_AMARJIVANA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -115,7 +51,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କର ଦିବ୍ୟ ଯମୁନା କୂଳ ଲୀଳା |',
-        structuredContent: SONG_AMIJAMUNAPULINE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_AMIJAMUNAPULINE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -124,7 +60,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ସଂସାର ସମୁଦ୍ରରେ ପତିତ ଜୀବର ଉଦ୍ଧାର ପାଇଁ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_ANADIKARAMAPHALE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_ANADIKARAMAPHALE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_His_Divine_Grace_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         audioVersions: [
             { label: 'Śrīla Prabhupāda', url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Anadi_Karama_Phale/Anadi_Karama_Phale_-_Sung_by_His_Divine_Grace_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3' },
@@ -141,7 +77,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଅପରାଧର ଫଳସ୍ୱରୂପ କଠୋର ହୋଇଥିବା ହୃଦୟ ପାଇଁ ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_APARADHAPHALEMAMA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_APARADHAPHALEMAMA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -150,7 +86,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ଚରଣରେ ଏକ ବିନମ୍ର ନିବେଦନ |',
-        structuredContent: SONG_TUWAPADEMINOTIMOR_STRUCTURED,
+        structuredContent: (Songs as any).SONG_TUWAPADEMINOTIMOR_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -159,7 +95,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଆତ୍ମସମର୍ପଣ ପରେ ମିଳୁଥିବା ପରମ ଶାନ୍ତି ମହିମା |',
-        structuredContent: SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Atma_nivedana_tuya_pade.mp3',
         audioVersions: [
             { label: 'HH Gour Govinda Swami', url: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Atma_nivedana_tuya_pade.mp3' },
@@ -173,43 +109,19 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କୁ ନିଜର ସର୍ବସ୍ୱ ସମର୍ପଣ କରିବାର ଭାବ |',
-        structuredContent: SONG_SARVASVATOMAR_STRUCTURED,
+        structuredContent: (Songs as any).SONG_SARVASVATOMAR_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
-    {
-        id: 'song-gopinatha1',
-        title: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନୋ (Gopinātha Part 1)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ଭଗବାନ ଗୋପୀନାଥଙ୍କୁ ଏକ ଅତି ବିନମ୍ର ନିବେଦନ |',
-        structuredContent: SONG_GOPINATHA1_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
-    {
-        id: 'song-gopinatha2',
-        title: 'ଗୋପୀନାଥ (Part 2): ଘୁଚାଓ ସଂସାର୍ (Gopinātha Part 2)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ସଂସାର ଜ୍ୱାଳାରୁ ମୁକ୍ତି ପାଇଁ ଗୋପୀନାଥଙ୍କୁ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_GOPINATHA2_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
-    {
-        id: 'song-gopinatha3',
-        title: 'ଗୋପୀନାଥ (Part 3): ଆମାର ଉପାୟ ନାହି (Gopinātha Part 3)',
-        category: 'Songs',
-        type: 'html',
-        description: 'ଅସହାୟ ଅବସ୍ଥାରେ ଗୋପୀନାଥଙ୍କୁ ଏକମାତ୍ର ଶରଣ |',
-        structuredContent: SONG_GOPINATHA3_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
+    
+    
+    
     {
         id: 'song-doyalnitai',
         title: 'ଦୟାଲ ନିତାଇ ଚୈତନ୍ୟ (Doyāl Nitāi Caitanya)',
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଶ୍ରୀ ଗୌର ନିତ୍ୟାନନ୍ଦ ବନ୍ଦନା |',
-        structuredContent: SONG_DOYALNITAICAITANYA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_DOYALNITAICAITANYA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -218,7 +130,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମନୁଷ୍ୟ ଜନ୍ମର ଦୁର୍ଲ୍ଲଭତା ଏବଂ ଭଗବାନଙ୍କୁ ଭଜିବା ପାଇଁ ଏକ ଚେତାବନୀ |',
-        structuredContent: SONG_DURLABHAMANAVAJANMA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_DURLABHAMANAVAJANMA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -227,7 +139,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ପ୍ରଭୁ ଗୌରଚନ୍ଦ୍ରଙ୍କ ଦ୍ୱାରା ସଂକୀର୍ତ୍ତନ ମହିମା ପ୍ରଚାର |',
-        structuredContent: SONG_GAYGORACAND_STRUCTURED,
+        structuredContent: (Songs as any).SONG_GAYGORACAND_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -236,7 +148,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ବୈଷ୍ଣବ ଠାକୁରଙ୍କ ଚରଣରେ ଏକ ବିନମ୍ର ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_OHEVAISNAVATHAKURA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_OHEVAISNAVATHAKURA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -245,7 +157,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁଙ୍କ ପ୍ରେମ ହାଟର ମହିମା |',
-        structuredContent: SONG_NITAINAMHATE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_NITAINAMHATE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -254,7 +166,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନାରଦ ମୁନିଙ୍କ ଦ୍ୱାରା ହରିନାମ ସଂକୀର୍ତ୍ତନର ମହିମା |',
-        structuredContent: SONG_NARADAMUNI_STRUCTURED,
+        structuredContent: (Songs as any).SONG_NARADAMUNI_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -263,7 +175,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଗୋଦ୍ରୁମ ଦ୍ୱୀପରେ ନାମହଟ୍ଟର ସ୍ଥାପନା |',
-        structuredContent: SONG_NADIYAGODRUME_STRUCTURED,
+        structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -272,7 +184,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଗୁରୁଦେବଙ୍କ ଚରଣରେ କୃପା ଭିକ୍ଷା |',
-        structuredContent: SONG_GURUDEVAKRPABINDU_STRUCTURED,
+        structuredContent: (Songs as any).SONG_GURUDEVAKRPABINDU_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -281,7 +193,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀକୃଷ୍ଣଙ୍କର ମଧୁର ନାମ ଓ ରୂପର ବନ୍ଦନା |',
-        structuredContent: SONG_YASOMATINANDANA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_YASOMATINANDANA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -290,7 +202,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ପ୍ରଭାତ ସମୟରେ ଭଗବାନଙ୍କ ନିଦ୍ରା ଭଙ୍ଗ ଓ ନାମ ସଂକୀର୍ତ୍ତନ |',
-        structuredContent: SONG_VIBHAVARISESA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_VIBHAVARISESA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -299,7 +211,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଗୌରାଙ୍ଗ ମହାପ୍ରଭୁଙ୍କ ନଗର ସଂକୀର୍ତ୍ତନର ବନ୍ଦନା |',
-        structuredContent: SONG_UDILOARUNA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_UDILOARUNA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -308,7 +220,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭକ୍ତ ଓ ବୈଷ୍ଣବ ସେବାର ମାହାତ୍ମ୍ୟ |',
-        structuredContent: SONG_SUDDHABHAKATA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_SUDDHABHAKATA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -317,7 +229,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ପ୍ରଭୁ ଚୈତନ୍ୟଙ୍କ ଅବତାର ଓ ଶରଣାଗତି ଶିକ୍ଷା |',
-        structuredContent: SONG_SRIKRSNACAITANYA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_SRIKRSNACAITANYA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -326,7 +238,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ରାଧା-କୃଷ୍ଣଙ୍କ ନାମ ଗାନ କରିବା ପାଇଁ ଏକ ସୁନ୍ଦର ଆହ୍ୱାନ |',
-        structuredContent: SONG_RADHAKRSNABOLBOL_STRUCTURED,
+        structuredContent: (Songs as any).SONG_RADHAKRSNABOLBOL_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -335,7 +247,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କୁ ଆତ୍ମନିବେଦନ ଏବଂ ସର୍ବସ୍ୱ ଅର୍ପଣ |',
-        structuredContent: SONG_MANASADEHAGEHA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_MANASADEHAGEHA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -344,7 +256,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ଚରଣରେ ଏକ ନିଷ୍କପଟ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -353,7 +265,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ଚରଣରେ ପୂର୍ଣ୍ଣ ଶରଣାଗତି |',
-        structuredContent: SONG_KIJANIKIBALE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KIJANIKIBALE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -362,7 +274,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶୁଦ୍ଧ ନାମ ଗାନ କରିବା ପାଇଁ ଏକ ବ୍ୟାକୁଳ ନିବେଦନ |',
-        structuredContent: SONG_KABEHABEBOLO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KABEHABEBOLO_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -371,7 +283,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀରାଧା-କୃଷ୍ଣଙ୍କ ଯୁଗଳ ମିଳନର ଆରତି |',
-        structuredContent: SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -380,7 +292,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଗୁରୁଦେବଙ୍କ ଅପାର କରୁଣାର ବନ୍ଦନା |',
-        structuredContent: SONG_GURUDEVABOROKRPADIA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_GURUDEVABOROKRPADIA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Gurudeva%21_Boro_Krpa_Kori/Gurudeva%21_Boro_Krpa_Kori_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
         author: 'Bhaktivinoda Ṭhākura'
     },
@@ -390,7 +302,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନିଜର ଦୀନତା ଓ ଭଗବାନଙ୍କ କୃପାର ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_AMITODURJANA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_AMITODURJANA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -399,7 +311,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମାୟା ଜାଲରୁ ମୁକ୍ତି ଓ ଭଗବାନଙ୍କ ଆଶ୍ରୟ ପାଇଁ ଉପଦେଶ |',
-        structuredContent: SONG_ARKENOMAYAJALE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_ARKENOMAYAJALE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -408,7 +320,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଗୌର-ଗଦାଧରଙ୍କ ଦିବ୍ୟ ଆରତି |',
-        structuredContent: SONG_BHALEGAURAGADADHARERARATI_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BHALEGAURAGADADHARERARATI_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -417,7 +329,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ସର୍ବଦା ହରି ନାମ ଗାନ କରିବା ପାଇଁ ଏକ ପ୍ରେରଣାଦାୟକ ଗୀତ |',
-        structuredContent: SONG_BOLOHARIBOLO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -426,7 +338,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ବୈଷ୍ଣବ ସେବା ଓ ନାମ ପ୍ରତି ରୁଚି ପାଇଁ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_HARIHARIKABEMORA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_HARIHARIKABEMORA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -435,7 +347,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ସଂସାର ବନ୍ଧନରୁ ମୁକ୍ତି ପାଇଁ ବ୍ୟାକୁଳତା |',
-        structuredContent: SONG_KABEHABEHENODASA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KABEHABEHENODASA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -444,7 +356,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ପ୍ରକୃତ ବୈଷ୍ଣବଙ୍କୁ ଚିହ୍ନିବା ଓ ତାଙ୍କ ସେବା କରିବାର ଆକାଂକ୍ଷା |',
-        structuredContent: SONG_KABEMUIVAISNAVACINIBO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KABEMUIVAISNAVACINIBO_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -453,7 +365,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'କଳିଯୁଗର ପ୍ରଭାବରୁ ରକ୍ଷା ପାଇଁ ଗୌର ନାମର ମାହାତ୍ମ୍ୟ |',
-        structuredContent: SONG_KALIKUKKURAKADAN_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KALIKUKKURAKADAN_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -462,7 +374,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନାମ ଗାନ ସମୟରେ ଭାବାବେଶ ନ ହେବାର ଦୁଃଖ |',
-        structuredContent: SONG_KENOHAREKRSNANAM_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KENOHAREKRSNANAM_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -471,7 +383,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ବିଚିତ୍ର ସୃଷ୍ଟି ଓ କର୍ମ ଫଳର ବର୍ଣ୍ଣନା |',
-        structuredContent: SONG_KESAVATUWAJAGATA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KESAVATUWAJAGATA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -480,7 +392,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମନରୂପୀ ମନ୍ଦିରରେ ଭଗବାନଙ୍କୁ ବିରାଜମାନ କରିବାର ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_MAMAMANAMANDIRE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_MAMAMANAMANDIRE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -489,7 +401,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନିଜ କର୍ମ ଫଳରେ ସଂସାର ସମୁଦ୍ରରେ ପତିତ ହେବାର ପଶ୍ଚାତାପ |',
-        structuredContent: SONG_NIJAKARMADOSE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_NIJAKARMADOSE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -498,7 +410,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମାୟିକ ସଂସାରରେ ପଡ଼ି ଭଗବାନଙ୍କ ଶରଣାପନ୍ନ ହେବା |',
-        structuredContent: SONG_PRAPANCEPORIYA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_PRAPANCEPORIYA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -507,7 +419,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ରାଧାକୁଣ୍ଡ ଓ ବ୍ରଜର ପବିତ୍ର ସ୍ଥଳୀର ବନ୍ଦନା |',
-        structuredContent: SONG_RADHAKUNDATATA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_RADHAKUNDATATA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -516,7 +428,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶୁଦ୍ଧ ନାମ କୀର୍ତ୍ତନ ପାଇଁ ଆବଶ୍ୟକୀୟ ଯୋଗ୍ୟତା |',
-        structuredContent: SONG_SRIKRSNAKIRTANE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_SRIKRSNAKIRTANE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -525,7 +437,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ଚରଣରେ ସର୍ବଦା ମଗ୍ନ ରହିବା ପାଇଁ ଶିକ୍ଷା ।',
-        structuredContent: SONG_YADITEHARIPADA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_YADITEHARIPADA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -534,7 +446,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଭୋଗ ନିବେଦନ କୀର୍ତ୍ତନ |',
-        structuredContent: SONG_BHAJABHAKATAVATSALA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BHAJABHAKATAVATSALA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura (ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁରଙ୍କ ରଚନା)'
     },
     {
@@ -543,7 +455,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମନକୁ ଶ୍ରୀ ରାଧାକୃଷ୍ଣଙ୍କ ଭଜନରେ ନିୟୋଜିତ କରିବା ପାଇଁ ଶିକ୍ଷା |',
-        structuredContent: SONG_BHAJAREBHAJARE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BHAJAREBHAJARE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -552,7 +464,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁଙ୍କ ପ୍ରେମ ହାଟର ମହିମାଗାନ |',
-        structuredContent: SONG_BOROSUKHERKHABOR_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BOROSUKHERKHABOR_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -561,7 +473,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭଗବାନଙ୍କ ଚରଣରେ ଶରଣାଗତି ଓ ଅଭୟ ପ୍ରଦାନର ମହିମା |',
-        structuredContent: SONG_EKHONABUJHINU_STRUCTURED,
+        structuredContent: (Songs as any).SONG_EKHONABUJHINU_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -570,25 +482,29 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଦୁଷ୍ଟ ମନ ଓ ସଂସାରରୁ ଉଦ୍ଧାର ପାଇଁ ଏକ କରୁଣ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_EMONADURMATI_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
+        structuredContent: (Songs as any).SONG_EMONADURMATI_STRUCTURED,
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED',
+},
     {
         id: 'song-gaygoramadhura',
         title: 'ଗାୟ ଗୋରା ମଧୁର ସ୍ୱରେ (Gāy Gorā Madhura Sware)',
         category: 'Songs',
         type: 'html',
         description: 'ମଧୁର ସ୍ୱରରେ ଭଗବାନ ଗୌରାଙ୍ଗଙ୍କ ନାମ ସଂକୀର୍ତ୍ତନ |',
-        structuredContent: SONG_GAYGORAMADHURA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
+        structuredContent: (Songs as any).SONG_GAYGORAMADHURA_STRUCTURED,
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED',
+},
     {
         id: 'song-hariboloharibolo',
         title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari Bolo Hari Bolo)',
         category: 'Songs',
         type: 'html',
         description: 'ଗୌର-ନିତାଇଙ୍କ ଦ୍ୱାରା ପ୍ରଦତ୍ତ ହରିନାମର ଜୟଗାନ |',
-        structuredContent: SONG_HARIBOLOHARIBOLO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLO_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -597,7 +513,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ମହାପ୍ରଭୁଙ୍କ ଦ୍ୱାରା ଜୀବମାନଙ୍କୁ ମାୟା ନିଦ୍ରାରୁ ଜାଗ୍ରତ କରିବାର ଆହ୍ୱାନ |',
-        structuredContent: SONG_JIVJAGOJIVJAGO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_JIVJAGOJIVJAGO_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -606,7 +522,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଗୌରଧାମରେ ଭାବାବେଶରେ ବୁଲିବାର ଆଶା ଓ ବ୍ୟାକୁଳତା |',
-        structuredContent: SONG_KABEGOURAVANE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KABEGOURAVANE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -615,7 +531,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଦୟା ପାଇଁ ବ୍ୟାକୁଳ ନିବେଦନ |',
-        structuredContent: SONG_KABESRICAITANYA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KABESRICAITANYA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -624,7 +540,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଶୁଦ୍ଧ ବୈଷ୍ଣବଙ୍କ ଚରଣରେ କୃପା ଓ ବିନମ୍ରତା ପାଇଁ ପ୍ରାର୍ଥନା |',
-        structuredContent: SONG_KRPAKOROVAISNAVA_STRUCTURED,
+        structuredContent: (Songs as any).SONG_KRPAKOROVAISNAVA_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
@@ -633,9 +549,237 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଜଡ଼ ଶିକ୍ଷାର ବୈଫଲ୍ୟ ଓ ଭଗବାନଙ୍କ ଶରଣାଗତି ମାହାତ୍ମ୍ୟ |',
-        structuredContent: SONG_VIDYARAVILASE_STRUCTURED,
+        structuredContent: (Songs as any).SONG_VIDYARAVILASE_STRUCTURED,
         author: 'Bhaktivinoda Ṭhākura'
+    },
+    {
+        id: 'gita-chapter-1',
+        title: 'ଅଧ୍ୟାୟ ୧ - ଅର୍ଜୁନବିଷାଦ ଯୋଗ (Arjuna-viṣāda Yoga)',
+        title_english: 'Chapter 1: Arjuna-viṣāda Yoga',
+        title_odia: 'ଅର୍ଜୁନବିଷାଦ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଅର୍ଜୁନବିଷାଦ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_1_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-2',
+        title: 'ଅଧ୍ୟାୟ ୨ - ସାଂଖ୍ୟ ଯୋଗ (Sāṅkhya Yoga)',
+        title_english: 'Chapter 2: Sāṅkhya Yoga',
+        title_odia: 'ସାଂଖ୍ୟ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ସାଂଖ୍ୟ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_2_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-3',
+        title: 'ଅଧ୍ୟାୟ ୩ - କର୍ମ ଯୋଗ (Karma Yoga)',
+        title_english: 'Chapter 3: Karma Yoga',
+        title_odia: 'କର୍ମ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(କର୍ମ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_3_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-4',
+        title: 'ଅଧ୍ୟାୟ ୪ - ଜ୍ଞାନକର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ (Jñāna-karma-sannyāsa Yoga)',
+        title_english: 'Chapter 4: Jñāna-karma-sannyāsa Yoga',
+        title_odia: 'ଜ୍ଞାନକର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଜ୍ଞାନକର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_4_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-5',
+        title: 'ଅଧ୍ୟାୟ ୫ - କର୍ମସନ୍ନ୍ୟାସ ଯୋଗ (Karma-sannyāsa Yoga)',
+        title_english: 'Chapter 5: Karma-sannyāsa Yoga',
+        title_odia: 'କର୍ମସନ୍ନ୍ୟାସ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(କର୍ମସନ୍ନ୍ୟାସ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_5_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-6',
+        title: 'ଅଧ୍ୟାୟ ୬ - ଆତ୍ମସଂଯମ ଯୋଗ (Aātma-saṃyama Yoga)',
+        title_english: 'Chapter 6: Aātma-saṃyama Yoga',
+        title_odia: 'ଆତ୍ମସଂଯମ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଆତ୍ମସଂଯମ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_6_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-7',
+        title: 'ଅଧ୍ୟାୟ ୭ - ଜ୍ଞାନବିଜ୍ଞାନ ଯୋଗ (Jñāna-vijñāṇa Yoga)',
+        title_english: 'Chapter 7: Jñāna-vijñāṇa Yoga',
+        title_odia: 'ଜ୍ଞାନବିଜ୍ଞାନ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଜ୍ଞାନବିଜ୍ଞାନ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_7_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-8',
+        title: 'ଅଧ୍ୟାୟ ୮ - ଅକ୍ଷରବ୍ରହ୍ମ ଯୋଗ (Akṣara-brahma Yoga)',
+        title_english: 'Chapter 8: Akṣara-brahma Yoga',
+        title_odia: 'ଅକ୍ଷରବ୍ରହ୍ମ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଅକ୍ଷରବ୍ରହ୍ମ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_8_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-9',
+        title: 'ଅଧ୍ୟାୟ ୯ - ରାଜବିଦ୍ୟା ରାଜଗୁହ୍ୟ ଯୋଗ (Rāja-vidyā-rāja-guhya Yoga)',
+        title_english: 'Chapter 9: Rāja-vidyā-rāja-guhya Yoga',
+        title_odia: 'ରାଜବିଦ୍ୟା ରାଜଗୁହ୍ୟ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ରାଜବିଦ୍ୟା ରାଜଗୁହ୍ୟ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_9_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-10',
+        title: 'ଅଧ୍ୟାୟ ୧୦ - ବିଭୂତି ବିସ୍ତାର ଯୋଗ (Vibhūti-vistāra Yoga)',
+        title_english: 'Chapter 10: Vibhūti-vistāra Yoga',
+        title_odia: '비ଭୂତି ବିସ୍ତାର ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(비ଭୂତି ବିସ୍ତାର ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_10_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-11',
+        title: 'ଅଧ୍ୟାୟ ୧୧ - ବିଶ୍ୱରୂପଦର୍ଶନ ଯୋଗ (Viśva-rūpa-darśana Yoga)',
+        title_english: 'Chapter 11: Viśva-rūpa-darśana Yoga',
+        title_odia: '비ଶ୍ୱରୂପଦର୍ଶନ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(비ଶ୍ୱରୂପଦର୍ଶନ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_11_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-12',
+        title: 'ଅଧ୍ୟାୟ ୧୨ - ଭକ୍ତି ଯୋଗ (Bhakti Yoga)',
+        title_english: 'Chapter 12: Bhakti Yoga',
+        title_odia: 'ଭକ୍ତି ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଭକ୍ତି ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_12_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-13',
+        title: 'ଅଧ୍ୟାୟ ୧୩ - କ୍ଷେତ୍ରକ୍ଷେତ୍ରଜ୍ଞବିଭାଗ ଯୋଗ (Kṣetra-kṣetrajña-vibhāga Yoga)',
+        title_english: 'Chapter 13: Kṣetra-kṣetrajña-vibhāga Yoga',
+        title_odia: 'କ୍ଷେତ୍ରକ୍ଷେତ୍ରଜ୍ଞବିଭାଗ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(କ୍ଷେତ୍ରକ୍ଷେତ୍ରଜ୍ଞବିଭାଗ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_13_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-14',
+        title: 'ଅଧ୍ୟାୟ ୧୪ - ଗୁଣତ୍ରୟବିଭାଗ ଯୋଗ (Guṇa-traya-vibhāga Yoga)',
+        title_english: 'Chapter 14: Guṇa-traya-vibhāga Yoga',
+        title_odia: 'ଗୁଣତ୍ରୟବିଭାଗ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଗୁଣତ୍ରୟବିଭାଗ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_14_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-15',
+        title: 'ଅଧ୍ୟାୟ ୧୫ - ପୁରୁଷୋତ୍ତମ ଯୋଗ (Puruṣottama Yoga)',
+        title_english: 'Chapter 15: Puruṣottama Yoga',
+        title_odia: 'ପୁରୁଷୋତ୍ତମ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ପୁରୁଷୋତ୍ତମ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_15_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-16',
+        title: 'ଅଧ୍ୟାୟ ୧୬ - ଦୈବାସୁରସମ୍ପଦବିଭାଗ ଯୋଗ (Daivāsura-saṃpad-vibhāga Yoga)',
+        title_english: 'Chapter 16: Daivāsura-saṃpad-vibhāga Yoga',
+        title_odia: 'ଦୈବାସୁରସମ୍ପଦବିଭାଗ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଦୈବାସୁରସମ୍ପଦବିଭାଗ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_16_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-17',
+        title: 'ଅଧ୍ୟାୟ ୧୭ - ଶ୍ରଦ୍ଧାତ୍ରୟବିଭାଗ ଯୋଗ (Śraddhā-traya-vibhāga Yoga)',
+        title_english: 'Chapter 17: Śraddhā-traya-vibhāga Yoga',
+        title_odia: 'ଶ୍ରଦ୍ଧାତ୍ରୟବିଭାଗ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ଶ୍ରଦ୍ଧାତ୍ରୟବିଭାଗ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_17_STRUCTURED
+    },
+    {
+        id: 'gita-chapter-18',
+        title: 'ଅଧ୍ୟାୟ ୧୮ - ମୋକ୍ଷସନ୍ନ୍ୟାସ ଯୋଗ (Mokṣa-sannyāsa Yoga)',
+        title_english: 'Chapter 18: Mokṣa-sannyāsa Yoga',
+        title_odia: 'ମୋକ୍ଷସନ୍ନ୍ୟାସ ଯୋଗ',
+        category: 'Gita',
+        type: 'html',
+        description: '(ମୋକ୍ଷସନ୍ନ୍ୟାସ ଯୋଗ)',
+        structuredContent: (Songs as any).SONG_GITA_CHAPTER_18_STRUCTURED
     }
 ];
 
-export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ'];
+
+export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ',
+      {
+        id: 'song-gopinatmamanivedana',
+        title: 'ଗୋପୀନାଥ, ମମ ନିବେଦନ ଶୁନ (Gopinath Mama Nivedana Suno)',
+        title_odia: 'ଗୋପୀନାଥ, ମମ ନିବେଦନ ଶୁନ',
+        title_english: 'Gopinath Mama Nivedana Suno',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶୁଣନ୍ତୁ ଏହି ସୁନ୍ଦର ଭଜନ ଯେଉଁଥିରେ ଭକ୍ତିବିନୋଦ ଠାକୁର ଗୋପୀନାଥଙ୍କ ନିକଟରେ ଶରଣାଗତି ପ୍ରକାଶ କରୁଛନ୍ତି।',
+        structuredContent: (Songs as any).SONG_GOPINATHMAMANIVEDANA_STRUCTURED,
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
+      {
+        id: 'song-gopinatmamanivedana',
+        title: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନୋ (Gopinath Part 1)',
+        title_odia: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନୋ',
+        title_english: 'Gopinath Part 1 (Mama Nivedana Suno)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
+      {
+        id: 'song-gopinatpart2',
+        title: 'ଗୋପୀନାଥ (Part 2): ଘୁଚାଓ ସଂସାର୍ (Gopinath Part 2)',
+        title_odia: 'ଗୋପୀନାଥ (Part 2): ଘୁଚାଓ ସଂସାର୍',
+        title_english: 'Gopinath Part 2 (Ghuchao Sansar)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
+      {
+        id: 'song-gopinatpart3',
+        title: 'ଗୋପୀନାଥ (Part 3): ଆମାର ଉପାୟ ନାହି (Gopinath Part 3)',
+        title_odia: 'ଗୋପୀନାଥ (Part 3): ଆମାର ଉପାୟ ନାହି',
+        title_english: 'Gopinath Part 3 (Amar Upaya Nai)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+      },
+];

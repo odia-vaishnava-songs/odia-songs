@@ -102,6 +102,7 @@ export const ManageSongsPage: React.FC = () => {
                     .eq('id', id);
 
                 if (error) throw error;
+                if (refreshSongs) refreshSongs();
             } catch (err) {
                 console.error(err);
                 alert("Error deleting song");

@@ -6345,10 +6345,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଭୁ ଚୈତନ୍ୟ"
                 },
                 {
-                    "word": "ଶ୍ରୀ-ଗୌର-ହରି",
-                    "meaning": "ପ୍ରଭୁ ଚୈତନ୍ୟ"
-                },
-                {
                     "word": "ସୋହି ଗୋଷ୍ଠ-ବିହାରୀ",
                     "meaning": "ଯିଏ ବ୍ରଜରେ ଲୀଳା କରନ୍ତି"
                 },
@@ -6373,7 +6369,7 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
             "wordMeanings": [
                 {
                     "word": "ବେଲା",
-                    "meaning": "비ଳମ୍ବ"
+                    "meaning": "ବିଳମ୍ବ"
                 },
                 {
                     "word": "ହୋଲୋ",
@@ -6439,16 +6435,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ବନ୍ଧୁମାନେ"
                 },
                 {
-                    "word": "ବୈସେ",
-                    "meaning": "ବସନ୍ତି"
-                },
-                {
                     "word": "ସାରି",
                     "meaning": "ଧାଡ଼ି"
-                },
-                {
-                    "word": "ସାରି",
-                    "meaning": "ପରେ ଧାଡ଼ି"
                 }
             ]
         },
@@ -6480,36 +6468,12 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "କୁଷ୍ମାଣ୍ଡ",
                     "meaning": "କଖାରୁ"
-                },
-                {
-                    "word": "ଡାଲି",
-                    "meaning": "ଫଳ ଟୋକେଇ"
-                },
-                {
-                    "word": "ଡାଲନା",
-                    "meaning": "ଡାଲି ବରା"
-                },
-                {
-                    "word": "ଦୁଗ୍ଧ",
-                    "meaning": "କ୍ଷୀରରେ"
-                },
-                {
-                    "word": "ତୁମ୍ବୀ",
-                    "meaning": "ଲାଉ"
-                },
-                {
-                    "word": "ଦଧି",
-                    "meaning": "ଦହି"
-                },
-                {
-                    "word": "ମୋଚା-ଖଣ୍ଡ",
-                    "meaning": "କଦଳୀ ଭଣ୍ଡାରୁ"
                 }
             ]
         },
         {
             "id": 5,
-            "lyric": "ମୁଦ୍ଗବଡ଼ା ମାଷବଡ଼ା ରୋଟିକା ଘୃତାନ୍ନ ।\nଶଷ୍କୁଲୀ ପିଷ୍ଟକ କ୍ଷୀର ପୁଲି ପାୟସାନ୍ନ ।।୫।।",
+            "lyric": "ମୁଦ୍ଗବଡ଼ା ମାଷବଡ଼ା rୋଟିକା ଘୃତାନ୍ନ ।\nଶଷ୍କୁଲୀ ପିଷ୍ଟକ କ୍ଷୀର ପୁଲି ପାୟସାନ୍ନ ।।୫।।",
             "translation": "ମୁଗ ଡାଲି ବରା, ବିରି ଡାଲି ବରା, ରୁଟି, ଘିଅ ଅନ୍ନ, ରାଶି ମିଠା, ପିଠା, କ୍ଷୀର ପୁଡିଙ୍ଗ, କ୍ଷୀରରେ ବୁଡ଼ିଥିବା ପିଠା, କ୍ଷୀରି।",
             "wordMeanings": [
                 {
@@ -6518,7 +6482,7 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ମାଷ-ବୋଡ଼ା",
-                    "meaning": "ବିରି ଡାଲି ବରା"
+                    "meaning": "비ରି ଡାଲି ବରା"
                 },
                 {
                     "word": "ରୋଟିକା",
@@ -6527,26 +6491,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ଘୃତାନ୍ନ",
                     "meaning": "ଘିଅରେ ରନ୍ଧା ଅନ୍ନ"
-                },
-                {
-                    "word": "ଶଷ୍କୁଲୀ",
-                    "meaning": "ରାଶି ମିଠା"
-                },
-                {
-                    "word": "ପିଷ୍ଟକ",
-                    "meaning": "ପିଠା"
-                },
-                {
-                    "word": "କ୍ଷୀର",
-                    "meaning": "କ୍ଷୀର ପୁଡିଙ୍ଗ"
-                },
-                {
-                    "word": "ପୁଲି",
-                    "meaning": "କ୍ଷୀରରେ ବୁଡ଼ିଥିବା ପିଠା"
-                },
-                {
-                    "word": "ପାୟସାନ୍ନ",
-                    "meaning": "କ୍ଷୀରି"
                 }
             ]
         },
@@ -6570,26 +6514,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "କ୍ଷୀର-ସାର",
                     "meaning": "ସର"
-                },
-                {
-                    "word": "ଅମୃତ",
-                    "meaning": "ଅମୃତ"
-                },
-                {
-                    "word": "ରସାଲା",
-                    "meaning": "ଆମ୍ବ"
-                },
-                {
-                    "word": "ଅମ୍ଳ",
-                    "meaning": "ଖଟା"
-                },
-                {
-                    "word": "ଦ୍ୱାଦଶ",
-                    "meaning": "ବାର"
-                },
-                {
-                    "word": "ପ୍ରକାର",
-                    "meaning": "ପ୍ରକାର"
                 }
             ]
         },
@@ -6617,26 +6541,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ରସାବଳୀ",
                     "meaning": "ରସାବଳୀ"
-                },
-                {
-                    "word": "ଭୋଜନ",
-                    "meaning": "ଆହାର"
-                },
-                {
-                    "word": "କୋରେନ",
-                    "meaning": "କରନ୍ତି"
-                },
-                {
-                    "word": "କୃଷ୍ଣ",
-                    "meaning": "କୃଷ୍ଣ"
-                },
-                {
-                    "word": "ହୋଇ",
-                    "meaning": "ଅଟନ୍ତି"
-                },
-                {
-                    "word": "କୁତୂହଳୀ",
-                    "meaning": "ଖୁସି"
                 }
             ]
         },
@@ -6658,38 +6562,18 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅନ୍ନ"
                 },
                 {
-                    "word": "비ବିଧ",
+                    "word": "ବିବିଧ",
                     "meaning": "ବିଭିନ୍ନ"
                 },
                 {
                     "word": "ବ୍ୟଞ୍ଜନ",
                     "meaning": "ପରିବା"
-                },
-                {
-                    "word": "ପରମ",
-                    "meaning": "ବହୁତ"
-                },
-                {
-                    "word": "ଆନନ୍ଦେ",
-                    "meaning": "ଆନନ୍ଦରେ"
-                },
-                {
-                    "word": "କୃଷ୍ଣ",
-                    "meaning": "କୃଷ୍ଣ"
-                },
-                {
-                    "word": "କୋରେନ",
-                    "meaning": "କରନ୍ତି"
-                },
-                {
-                    "word": "ଭୋଜନ",
-                    "meaning": "ଖାଇବା"
                 }
             ]
         },
         {
             "id": 9,
-            "lyric": "ଛଲେ ବଲେ ଲାଡୁ ଖାୟ ଶ୍ରୀମଧୁମଙ୍ਗଲ ।\nବଗଲ ବାଜାୟ ଆର ଦେୟ ହରିବୋଲ ॥୯॥",
+            "lyric": "ଛଲେ ବଲେ ଲାଡୁ ଖାୟ ଶ୍ରୀମଧୁମଙ୍ଗଲ ।\nବଗଲ ବାଜାୟ ଆର ଦେୟ ହରିବୋଲ ॥୯॥",
             "translation": "ଛଳନା କରି କିମ୍ବା ଜବରଦସ୍ତ ଶ୍ରୀ ମଧୁମଙ୍ଗଳ ଲଡୁ ଖାଆନ୍ତି। ତା’ପରେ ସେ ନିଜ କାଖ ବଜାନ୍ତି ଏବଂ \"ହରିବୋଲ!\" ବୋଲି ଡାକନ୍ତି।",
             "wordMeanings": [
                 {
@@ -6711,26 +6595,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ଶ୍ରୀ-ମଧୁମଙ୍ଗଳ",
                     "meaning": "ଶ୍ରୀ ମଧୁମଙ୍ଗଳ"
-                },
-                {
-                    "word": "ବଗଲ",
-                    "meaning": "କାଖ"
-                },
-                {
-                    "word": "ବାଜାୟ",
-                    "meaning": "ବଜାନ୍ତି"
-                },
-                {
-                    "word": "ଆର",
-                    "meaning": "ମଧ୍ୟ"
-                },
-                {
-                    "word": "ଦେୟ",
-                    "meaning": "କରନ୍ତି"
-                },
-                {
-                    "word": "ହରିବୋଲ",
-                    "meaning": "ହରିବୋଲ!"
                 }
             ]
         },
@@ -6742,14 +6606,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ରାଧିକା",
                     "meaning": "ରାଧା"
-                },
-                {
-                    "word": "ଆଦି",
-                    "meaning": "ଆରମ୍ଭ କରି"
-                },
-                {
-                    "word": "ଗଣେ",
-                    "meaning": "ସମୂହ"
                 },
                 {
                     "word": "ହେରି'",
@@ -6766,22 +6622,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ତୃପ୍ତ",
                     "meaning": "ସନ୍ତୁଷ୍ଟ"
-                },
-                {
-                    "word": "ହୋଇ",
-                    "meaning": "ହୋଇ"
-                },
-                {
-                    "word": "ଖାୟ",
-                    "meaning": "ଖାଆନ୍ତି"
-                },
-                {
-                    "word": "କୃଷ୍ଣ",
-                    "meaning": "କୃଷ୍ଣ"
-                },
-                {
-                    "word": "ଯଶୋଦା-ଭବନେ",
-                    "meaning": "ଯଶୋଦାଙ୍କ ଘରେ"
                 }
             ]
         },
@@ -6813,30 +6653,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ବାରି",
                     "meaning": "ଜଳ"
-                },
-                {
-                    "word": "ସବେ",
-                    "meaning": "ସମସ୍ତେ"
-                },
-                {
-                    "word": "ମୁଖ",
-                    "meaning": "ମୁହଁ"
-                },
-                {
-                    "word": "ପ୍ରଖାଲୋୟ",
-                    "meaning": "ଧୁଅନ୍ତି"
-                },
-                {
-                    "word": "ହୋଇ",
-                    "meaning": "ହୋଇ"
-                },
-                {
-                    "word": "ସାରି",
-                    "meaning": "ଧାଡ଼ି"
-                },
-                {
-                    "word": "ସାରି",
-                    "meaning": "ପରେ ଧାଡ଼ି"
                 }
             ]
         },
@@ -6862,22 +6678,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯେଉଁ"
                 },
                 {
-                    "word": "ସଖା-ଗଣେ",
-                    "meaning": "ବନ୍ଧୁମାନେ"
-                },
-                {
-                    "word": "ଆନନ୍ଦେ",
-                    "meaning": "ଖୁସିରେ"
-                },
-                {
-                    "word": "비ଶ୍ରାମ",
-                    "meaning": "비ଶ୍ରାମ"
-                },
-                {
-                    "word": "କୋରେ",
-                    "meaning": "କରନ୍ତି"
-                },
-                {
                     "word": "ବଳଦେବ-ସନେ",
                     "meaning": "ବଳରାମଙ୍କ ସହିତ"
                 }
@@ -6893,28 +6693,12 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଜାମ୍ବୁଳ"
                 },
                 {
-                    "word": "ରସାଲ",
-                    "meaning": "ଏବଂ ରସାଳ"
-                },
-                {
-                    "word": "ଆନେ",
-                    "meaning": "ଆଣନ୍ତି"
-                },
-                {
                     "word": "ତାମ୍ବୁଲ",
                     "meaning": "ପାନ"
                 },
                 {
-                    "word": "ମସାଲା",
-                    "meaning": "ଏବଂ ମସଲା"
-                },
-                {
                     "word": "ତାହା",
                     "meaning": "ତାହା"
-                },
-                {
-                    "word": "ଖେୟେ",
-                    "meaning": "ଚୋବାଇବା"
                 },
                 {
                     "word": "କୃଷ୍ଣଚନ୍ଦ୍ର",
@@ -6923,57 +6707,29 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ସୁଖେ",
                     "meaning": "ଖୁସିରେ"
-                },
-                {
-                    "word": "ନିଦ୍ରା",
-                    "meaning": "ଶୋଇବାକୁ"
-                },
-                {
-                    "word": "ଗେଲା",
-                    "meaning": "ଯାଆନ୍ତି"
                 }
             ]
         },
         {
             "id": 14,
             "lyric": "ବିଶାଲାଖ ଶିଖିପୁଚ୍ଛ ଚାମର ଢୁଲାୟ ।\nଅପୂର୍ବ ଶଯ୍ୟୟ କୃୃଷ୍ଣ ସୁଖେ ନିଦ୍ରାଯାୟ ।।୧୪।।",
-            "translation": "비ଳାସକ ଏକ ମୟୂର ପୁଚ୍ଛ ଚାମର ହଲାଉଥିବା ବେଳେ, କୃଷ୍ଣ ଏକ ଚମତ୍କାର ଶଯ୍ୟାରେ ଖୁସିରେ ଶୁଅନ୍ତି।",
+            "translation": "ବିଶାଳାଖ ଏକ ମୟୂର ପୁଚ୍ଛ ଚାମର ହଲାଉଥିବା ବେଳେ, କୃଷ୍ଣ ଏକ ଚମତ୍କାର ଶଯ୍ୟାରେ ଖୁସିରେ ଶୁଅନ୍ତି।",
             "wordMeanings": [
                 {
-                    "word": "ବିଳାସକ",
-                    "meaning": "비ଳାସକ"
+                    "word": "ବିଶାଳାଖ",
+                    "meaning": "ବିଶାଳାଖ"
                 },
                 {
                     "word": "ଶିଖି-ପୁଚ୍ଛ-ଚାମର",
-                    "meaning": "ଏକ ମୟୂର ପୁଚ୍ଛ ଚାମର"
+                    "meaning": "ମୟୂର ପୁଚ୍ଛ ଚାମର"
                 },
                 {
                     "word": "ଧୁଲାୟ",
                     "meaning": "ହଲାନ୍ତି"
                 },
                 {
-                    "word": "ଅପୂର୍ବ",
-                    "meaning": "ଅତୁଳନୀୟ"
-                },
-                {
                     "word": "ଶଯ୍ୟାୟ",
                     "meaning": "ଶଯ୍ୟା ଉପରେ"
-                },
-                {
-                    "word": "କୃଷ୍ଣ",
-                    "meaning": "କୃଷ୍ଣ"
-                },
-                {
-                    "word": "ସୁଖେ",
-                    "meaning": "ଖୁସିରେ"
-                },
-                {
-                    "word": "ନିଦ୍ରା",
-                    "meaning": "ଶୋଇବାକୁ"
-                },
-                {
-                    "word": "ଯାୟ",
-                    "meaning": "ଯାଆନ୍ତି"
                 }
             ]
         },
@@ -6991,14 +6747,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଦେଶ"
                 },
                 {
-                    "word": "ପେ'ୟେ",
-                    "meaning": "ପାଇ"
-                },
-                {
-                    "word": "ଧନିଷ୍ଠ-ଆନୀତ",
-                    "meaning": "ଧନିଷ୍ଠାଙ୍କ ଦ୍ୱାରա ଅଣାଯାଇଥିବା"
-                },
-                {
                     "word": "ଶ୍ରୀ-କୃଷ୍ଣ",
                     "meaning": "ଶ୍ରୀକୃଷ୍ଣଙ୍କର"
                 },
@@ -7009,18 +6757,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ରାଧା",
                     "meaning": "ରାଧା"
-                },
-                {
-                    "word": "ଭୁଞ୍ଜେ",
-                    "meaning": "ଖାଆନ୍ତି"
-                },
-                {
-                    "word": "ହୋଇ",
-                    "meaning": "ହୋଇ"
-                },
-                {
-                    "word": "ପ୍ରୀତ",
-                    "meaning": "ସନ୍ତୁଷ୍ଟ"
                 }
             ]
         },
@@ -7034,10 +6770,6 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଲଳିତା"
                 },
                 {
-                    "word": "ଆଦି",
-                    "meaning": "ଆରମ୍ଭ କରି"
-                },
-                {
                     "word": "ସଖୀ-ଗଣ",
                     "meaning": "ଗୋପୀମାନେ"
                 },
@@ -7046,24 +6778,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅବଶେଷ"
                 },
                 {
-                    "word": "ପାୟ",
-                    "meaning": "ପାଇ"
-                },
-                {
-                    "word": "ମନେ ମନେ",
-                    "meaning": "ନିଜ ହୃଦୟରେ"
-                },
-                {
-                    "word": "ସୁଖେ",
-                    "meaning": "ଖୁସି"
-                },
-                {
                     "word": "ରାଧା କୃଷ୍ଣ-ଗୁଣ",
                     "meaning": "ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ମହିମା"
-                },
-                {
-                    "word": "ଗାୟ",
-                    "meaning": "ଗାଆନ୍ତି"
                 }
             ]
         },
@@ -7081,32 +6797,12 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଲୀଳା"
                 },
                 {
-                    "word": "ଏକ",
-                    "meaning": "ଏକ"
-                },
-                {
-                    "word": "ମାତ୍ର",
-                    "meaning": "କେବଳ"
-                },
-                {
-                    "word": "ଯାହାର",
-                    "meaning": "ଯାହାଙ୍କର"
-                },
-                {
-                    "word": "ପ୍ରମୋଦ",
-                    "meaning": "ଆନନ୍ଦ"
-                },
-                {
                     "word": "ଭୋଗ",
                     "meaning": "ଆହାରର"
                 },
                 {
                     "word": "ଆରତି",
                     "meaning": "ଆରତି"
-                },
-                {
-                    "word": "ଗାୟ",
-                    "meaning": "ଗାଆନ୍ତି"
                 },
                 {
                     "word": "ଠାକୁର ଭକ୍ତିବିନୋଦ",
@@ -7185,28 +6881,47 @@ export const SONG_EKHONABUJHINU_STRUCTURED: StructuredSong = {
     "verses": [
         {
             "id": 1,
-            "lyric": "ଏଖୋନ ବୁଝିନୁ ପ୍ରଭୁ! ତୋମାର ଚରଣ\nଅଶୋକାଭୟାମୃତ-ପୂର୍ଣ ସର୍ବ-କ୍ଷନ",
-            "translation": "ହେ ପ୍ରଭୁ! ଏବେ ମୁଁ ବୁଝିଲି ଯେ ତୁମର ଚରଣ ସର୍ବଦା ଶୋକହୀନ, ଅଭୟ ଦାନ କରୁଥିବା ଏବଂ ଅମୃତରେ ପୂର୍ଣ୍ଣ।",
+            "lyric": "ଏଖନ ବୁଝିନୁ ପ୍ରଭୁ! ତୋମାର ଚରଣ ।\nଅଶୋକ ଅଭୟ ଅମୃତ ପୂର୍ଣ୍ଣ ସର୍ବ-ଖନ ।।୧।।",
+            "translation": "ହେ ପ୍ରଭୁ! ଏବେ ମୁଁ ବୁଝିପାରିଛି ଯେ ତୁମର ଚରଣ ସବୁ ସମୟରେ ଶୋକହୀନତା, ଭୟହୀନତା ଏବଂ ଅମୃତରେ ପୂର୍ଣ୍ଣ ଅଟେ।",
             "wordMeanings": [
                 {
-                    "word": "ଏଖୋନ",
+                    "word": "ଏଖନ",
                     "meaning": "ଏବେ"
                 },
                 {
                     "word": "ବୁଝିନୁ",
-                    "meaning": "ବୁଝିଲି"
+                    "meaning": "ମୁଁ ବୁଝିପାରିଛି"
                 },
                 {
-                    "word": "ଅଶୋକ",
-                    "meaning": "ଶୋକ ଶୂନ୍ୟ"
+                    "word": "ତୋମାର",
+                    "meaning": "ତୁମର"
                 },
                 {
-                    "word": "ଅଭୟ",
-                    "meaning": "ଭୟ ଶୂନ୍ୟ"
+                    "word": "ଚରଣ",
+                    "meaning": "ଚରଣ/ପାଦ"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "lyric": "ସକଲ ଛାଡ଼ିୟା ତୁୟା ଚରଣ-କମଲେ ।\nପୋଡ଼ିୟାଛି ଆମି ନାଥ! ତବ ପଦ-ତଲେ ।।୨।।",
+            "translation": "ହେ ନାଥ! ସବୁକିଛି ତ୍ୟାଗ କରି ମୁଁ ତୁମର ପାଦପଦ୍ମରେ ପଡ଼ି ରହିଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ସକଲ",
+                    "meaning": "ସବୁକିଛି"
                 },
                 {
-                    "word": "ଅମୃତ-ପୂର୍ଣ",
-                    "meaning": "ଅମୃତରେ ଭରା"
+                    "word": "ଛାଡ଼ିୟା",
+                    "meaning": "ତ୍ୟାଗ କରି"
+                },
+                {
+                    "word": "ନାଥ!",
+                    "meaning": "ହେ ପ୍ରଭୁ!"
+                },
+                {
+                    "word": "ପଦ-ତଲେ",
+                    "meaning": "ପାଦ ତଳେ"
                 }
             ]
         }
@@ -7218,35 +6933,345 @@ export const SONG_EMONADURMATI_STRUCTURED: StructuredSong = {
         {
             "id": 1,
             "lyric": "(ପ୍ରଭୁହେ !)\nଏ ମନ ଦୁର୍ମତି ସଂସାର-ଭିତରେ,\nପଡ଼ିୟା ଆଛିନୁ ଆମି ।\nତବ ନିଜ- ଜନ, କୋନ ମହାଜନେ,\nପାଠାଇୟା ଦିଲେ ତୁମି ||",
-            "translation": "ହେ ପ୍ରଭୁ! ମୁଁ ଏହି ସଂସାର ଭିତରେ ଦୁଷ୍ଟ ମନ ନେଇ ପଡ଼ି ରହିଥିଲି। ତୁମେ ନିଜର ଜଣେ ମହାଜନଙ୍କୁ ମୋତେ ଉଦ୍ଧାର କରିବା ପାଇଁ ପଠାଇ ଦେଲ।",
+            "translation": "ହେ ପ୍ରଭୁ! ମୁଁ ଜଣେ ଅତ୍ୟନ୍ତ ମନ୍ଦ ବୁଦ୍ଧି ସମ୍ପନ୍ନ ବ୍ୟକ୍ତି ଏବଂ ଏହି ସଂସାର ମଧ୍ୟରେ ପଡ଼ି ରହିଛି, କିନ୍ତୁ ତୁମେ ଜଣେ ମହାପୁରୁଷଙ୍କୁ (ତୁମର ନିଜର ପାର୍ଷଦଙ୍କୁ) ମତେ ଉଦ୍ଧାର କରିବା ପାଇଁ ପଠାଇଲ।",
             "wordMeanings": [
                 {
+                    "word": "(ପ୍ରଭୁ ହେ!)",
+                    "meaning": "ହେ ପ୍ରଭୁ!"
+                },
+                {
+                    "word": "ଏମନ",
+                    "meaning": "ଏହିପରି"
+                },
+                {
                     "word": "ଦୁର୍ମତି",
-                    "meaning": "ଦୁଷ୍ଟ ମନ"
+                    "meaning": "ମନ୍ଦ ବୁଦ୍ଧି ସମ୍ପନ୍ନ"
                 },
                 {
-                    "word": "ସଂସାର-ଭିତରେ",
-                    "meaning": "ସଂସାର ମଧ୍ୟରେ"
+                    "word": "ସଂସାର",
+                    "meaning": "ଭୌତିକ ଜଗତ"
                 },
                 {
-                    "word": "ନିଜ- ଜନ",
-                    "meaning": "ନିଜର ଲୋକ"
+                    "word": "ଭିତୋରେ",
+                    "meaning": "ମଧ୍ୟରେ"
+                },
+                {
+                    "word": "ପୋଡ଼ିୟା",
+                    "meaning": "ପଡ଼ି"
+                },
+                {
+                    "word": "ଆଛିନୁ",
+                    "meaning": "ଅଛି"
+                },
+                {
+                    "word": "ଆମି",
+                    "meaning": "ମୁଁ"
+                },
+                {
+                    "word": "ତବ",
+                    "meaning": "ତୁମର"
+                },
+                {
+                    "word": "ନିଜ-ଜନ",
+                    "meaning": "ନିଜର ଆତ୍ମୀୟ/ପାର୍ଷଦ"
+                },
+                {
+                    "word": "କୋନୋ",
+                    "meaning": "କେଉଁ"
                 },
                 {
                     "word": "ମହାଜନେ",
-                    "meaning": "ଭଗବଦ୍ ପ୍ରଚାରକ"
+                    "meaning": "ମହାପୁରୁଷ (ଗୁରୁଦେବ)"
+                },
+                {
+                    "word": "ପାଠାଇୟା",
+                    "meaning": "ପଠାଇ"
+                },
+                {
+                    "word": "ଦିଲେ",
+                    "meaning": "ଦେଲ"
+                },
+                {
+                    "word": "ତୁମି",
+                    "meaning": "ତୁମେ।"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "lyric": "ଦୟା କରିମୋରେ, ପତିତ ଦେଖିୟା,\nକହିଲ ଆମାରେ ଗିୟା ।\nଓହେ ଦୀନଜନ, ଶୁନ ଭାଲ କଥା,\nଉଲ୍ଲସିତ ହ’ବେ ହିୟା ||",
+            "translation": "ମୋର ପତିତ ଅବସ୍ଥା ଦେଖି ସେ ମୋ ଉପରେ ଦୟା କଲେ ଏବଂ ମୋ ପାଖକୁ ଆସି କହିଲେ, “ହେ ଦୀନ ପ୍ରାଣ! ଏହି ଉତ୍ତମ ବାର୍ତ୍ତା ଶୁଣ, ଏହା ଶୁଣିଲେ ତୁମର ହୃଦୟ ଆନନ୍ଦିତ ହୋଇଉଠିବ।",
+            "wordMeanings": [
+                {
+                    "word": "ଦୟା କରି’",
+                    "meaning": "ଦୟା କରି"
+                },
+                {
+                    "word": "ମୋରେ",
+                    "meaning": "ମତେ"
+                },
+                {
+                    "word": "ପତିତ",
+                    "meaning": "ପତିତ/ଅଧମ"
+                },
+                {
+                    "word": "ଦେଖିୟା",
+                    "meaning": "ଦେଖି"
+                },
+                {
+                    "word": "କୋହିଲୋ",
+                    "meaning": "କହିଲେ"
+                },
+                {
+                    "word": "ଆମାରେ",
+                    "meaning": "ମତେ"
+                },
+                {
+                    "word": "ଗିୟା",
+                    "meaning": "ଯାଇ"
+                },
+                {
+                    "word": "ଓହେ",
+                    "meaning": "ଓହୋ!"
+                },
+                {
+                    "word": "ଦୀନ-ଜନ",
+                    "meaning": "ନମ୍ର/ଦୀନ ବ୍ୟକ୍ତି"
+                },
+                {
+                    "word": "ଶୁନୋ",
+                    "meaning": "ଶୁଣ"
+                },
+                {
+                    "word": "ଭାଲୋ କଥା",
+                    "meaning": "ଭଲ କଥା/ଉତ୍ତମ ବାର୍ତ୍ତା"
+                },
+                {
+                    "word": "ଉଲ୍ଲସିତ",
+                    "meaning": "ଆନନ୍ଦିତ"
+                },
+                {
+                    "word": "ହ'ବେ",
+                    "meaning": "ହେବ"
+                },
+                {
+                    "word": "ହିୟା",
+                    "meaning": "ହୃଦୟ।"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "lyric": "ତୋମାରେ ତାରିତେ ଶ୍ରීକୃଷ୍ଣଚୈତନ୍ୟ,\nନବଦ୍ଵୀପେ ଅବତାର ।\nତୋମା ହେନ କତ, ଦୀନହୀନ ଜନେ,\nକରିଲେ ନ ଭବପାର ||",
+            "translation": "“ତୁମକୁ ଉଦ୍ଧାର କରିବା ପାଇଁ ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ନବଦ୍ୱୀପରେ ଅବତାର ଗ୍ରହଣ କରିଛନ୍ତି। ସେ ତୁମ ପରି ଅନେକ ଦୀନହୀନ ଲୋକଙ୍କୁ ଏହି ଭବସାଗରରୁ ସଫଳତାର ସହ ପାର କରିଛନ୍ତି।",
+            "wordMeanings": [
+                {
+                    "word": "ତୋମାରେ",
+                    "meaning": "ତୁମକୁ"
+                },
+                {
+                    "word": "ତାରିତେ",
+                    "meaning": "ଉଦ୍ଧାର କରିବା ପାଇଁ"
+                },
+                {
+                    "word": "ଶ୍ରී-କୃଷ୍ଣ-ଚୈତନ୍ୟ",
+                    "meaning": "ଶ୍ରීକୃଷ୍ଣ ଚୈତନ୍ୟ"
+                },
+                {
+                    "word": "ନବଦ୍ୱୀପେ",
+                    "meaning": "ନବଦ୍ୱୀପରେ"
+                },
+                {
+                    "word": "ଅବତାର",
+                    "meaning": "ଅବତାର ଗ୍ରହଣ କରିଛନ୍ତି"
+                },
+                {
+                    "word": "ତୋମା",
+                    "meaning": "ତୁମ"
+                },
+                {
+                    "word": "ହେନୋ",
+                    "meaning": "ପରି"
+                },
+                {
+                    "word": "କୋତୋ",
+                    "meaning": "କେତେ ଯେ"
+                },
+                {
+                    "word": "ଦୀନ ହୀନ ଜନେ",
+                    "meaning": "ଦୀନହୀନ ଲୋକଙ୍କୁ"
+                },
+                {
+                    "word": "କରିଲେନ",
+                    "meaning": "କଲେ"
+                },
+                {
+                    "word": "ଭବ-ପାର",
+                    "meaning": "ସଂସାରରୁ ପାର।"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "lyric": "ବେଦେର ପ୍ରତିଜ୍ଞା,ରାଖିବାର ତରେ,\nରୁକ୍ମବର୍ଣ୍ଣ ବିପ୍ରସୁତ ।\nମହାପ୍ରଭୁ ନାମେ, ନଦୀୟା ମାତାୟ,\nସଙ୍ଗେ ଭାଇ ଅବଧୂତ ||",
+            "translation": "“ବେଦର ଭବିଷ୍ୟବାଣୀକୁ ସତ୍ୟ କରିବା ପାଇଁ, ସେ ସୁବର୍ଣ୍ଣ ବର୍ଣ୍ଣରେ ଜଣେ ବ୍ରାହ୍ମଣ ପୁତ୍ର ଭାବରେ ଆବିର୍ଭୂତ ହୋଇଛନ୍ତି। ‘ମହାପ୍ରଭୁ’ ନାମ ଧାରଣ କରି ସେ ନିଜ ଭାଇ ନିତ୍ୟାନନ୍ଦଙ୍କ ସହ ମିଶି ସମଗ୍ର ନଦୀୟାକୁ ପ୍ରේମରେ ଉନ୍ମାଦିତ କରିଦେଇଛନ୍ତି।",
+            "wordMeanings": [
+                {
+                    "word": "ବେଦେର",
+                    "meaning": "ବେଦର"
+                },
+                {
+                    "word": "ପ୍ରତିଜ୍ଞା",
+                    "meaning": "ଭବିଷ୍ୟବାଣୀ"
+                },
+                {
+                    "word": "ରାଖିବାର ତରେ",
+                    "meaning": "ରକ୍ଷା କରିବା ପାଇଁ"
+                },
+                {
+                    "word": "ରୁକ୍ମ-ବର୍ଣ୍ଣ",
+                    "meaning": "ସୁବର୍ଣ୍ଣ ବର୍ଣ୍ଣ"
+                },
+                {
+                    "word": "ବିପ୍ର-ସୁତ",
+                    "meaning": "ବ୍ରାହ୍ମଣଙ୍କ ପୁତ୍ର"
+                },
+                {
+                    "word": "ମହାପ୍ରଭୁ",
+                    "meaning": "ମହାପ୍ରଭୁ"
+                },
+                {
+                    "word": "ନାମେ",
+                    "meaning": "ନାମରେ"
+                },
+                {
+                    "word": "ନଦୀୟା",
+                    "meaning": "ନଦୀୟାକୁ"
+                },
+                {
+                    "word": "ମାତାୟ",
+                    "meaning": "ଉନ୍ମାଦିତ କରୁଛନ୍ତି"
+                },
+                {
+                    "word": "ସଙ୍ଗେ",
+                    "meaning": "ସାଥିରେ"
+                },
+                {
+                    "word": "ଭାଇ",
+                    "meaning": "ଭାଇ"
+                },
+                {
+                    "word": "ଅବଧୂତ",
+                    "meaning": "ଅବଧୂତ (ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁ)।"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "lyric": "ନନ୍ଦସୁତ ଯିନି, ଚୈତନ୍ୟ ଗୋସାଇଁ,\nନିଜନାମ କରିଦାନ ॥\nତାରିଲ ଜଗତ, ତୁମିଓ ଯାଇୟା,\nଲହ ନିଜ ପରିତ୍ରାଣ ||",
+            "translation": "“ଶ୍ରୀ ଚୈତନ୍ୟ ଗୋସାଇଁ, ଯିଏ ସ୍ୱୟଂ ନନ୍ଦ-ନନ୍ଦନ କୃଷ୍ଣ, ସେ ନିଜ ନାମ ବିତରଣ କରି ସମଗ୍ର ଜଗତକୁ ଉଦ୍ଧାର କରିଛନ୍ତି। ତୁମେ ମଧ୍ୟ ଯାଇ ତାଙ୍କ ଶରଣାପନ୍ନ ହୋଇ ନିଜର ମୁକ୍ତି ଗ୍ରହଣ କର।”",
+            "wordMeanings": [
+                {
+                    "word": "ନନ୍ଦ-ସୁତ",
+                    "meaning": "ନନ୍ଦଙ୍କ ପୁତ୍ର (କୃଷ୍ଣ)"
+                },
+                {
+                    "word": "ଜିନି",
+                    "meaning": "ଯିଏ"
+                },
+                {
+                    "word": "ଚୈତନ୍ୟ ଗୋସାଇଁ",
+                    "meaning": "ଚୈତନ୍ୟ ମହାପ୍ରଭୁ"
+                },
+                {
+                    "word": "ନିଜ-ନାମ",
+                    "meaning": "ନିଜର ନାମ"
+                },
+                {
+                    "word": "କରି' ଦାନ",
+                    "meaning": "ଦାନ କରି"
+                },
+                {
+                    "word": "ତାରିଲୋ",
+                    "meaning": "ଉଦ୍ଧାର କଲେ"
+                },
+                {
+                    "word": "ଜଗତ",
+                    "meaning": "ଜଗତକୁ"
+                },
+                {
+                    "word": "ତୁମି-ଓ",
+                    "meaning": "ତୁମେ ମଧ୍ୟ"
+                },
+                {
+                    "word": "ଯାଇୟା",
+                    "meaning": "ଯାଇ"
+                },
+                {
+                    "word": "ଲୋହୋ",
+                    "meaning": "ଗ୍ରହଣ କର"
+                },
+                {
+                    "word": "ନିଜ-ପରିତ୍ରାଣ",
+                    "meaning": "ନିଜର ମୁକ୍ତି।"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "lyric": "ସେ କଥା ଶୁନିୟା, ଆସିୟାଛି, ନାଥ,\nତୋମାର ଚରଣ ତଲେ ।\nଭକତିବିନୋଦ, କାଁନ୍ଦିୟା କାଁନ୍ଦିୟା,\nଆପନ-କାହିନୀ ବଲେ ||",
+            "translation": "ହେ ପ୍ରଭୁ! ସେହି କଥା/ବାର୍ତ୍ତା ଶୁଣି ମୁଁ ତୁମ ଚରଣ ତଳକୁ ଆସିଛି। ଭକ୍ତିବିନୋଦ ଅତି ବ୍ୟାକୁଳ ହୋଇ କାନ୍ଦି କାନ୍ଦି ତୁମ ଆଗରେ ନିଜ ଜୀବନର କାହାଣୀ ବ୍ୟକ୍ତ କରୁଛନ୍ତି।",
+            "wordMeanings": [
+                {
+                    "word": "ସେ କଥା",
+                    "meaning": "ସେହି କଥା/ବାର୍ତ୍ତା"
+                },
+                {
+                    "word": "ଶୁନିୟା",
+                    "meaning": "ଶୁଣି"
+                },
+                {
+                    "word": "ଆସିୟାଛି",
+                    "meaning": "ମୁଁ ଆସିଛି"
+                },
+                {
+                    "word": "ନାଥ!",
+                    "meaning": "ହେ ପ୍ରଭୁ!"
+                },
+                {
+                    "word": "ତୋମାର",
+                    "meaning": "ତୁମର"
+                },
+                {
+                    "word": "ଚରଣ-ତଲେ",
+                    "meaning": "ଚରଣ ତଳେ"
+                },
+                {
+                    "word": "ଭକତିବିନୋଦ",
+                    "meaning": "ଭକତିବିନୋଦ"
+                },
+                {
+                    "word": "କାନ୍ଦିୟା କାନ୍ଦିୟା",
+                    "meaning": "କାନ୍ଦି କାନ୍ଦି"
+                },
+                {
+                    "word": "ଆପନ-କାହିନୀ",
+                    "meaning": "ନିଜର କାହାଣୀ"
+                },
+                {
+                    "word": "ବୋଲେ",
+                    "meaning": "କହୁଛନ୍ତି।"
                 }
             ]
         }
     ]
 };
-
 export const SONG_GAYGORAMADHURA_STRUCTURED: StructuredSong = {
     "verses": [
         {
             "id": 1,
             "lyric": "ଗାୟ ଗୋରା ମଧୁର ସ୍ଵରେ ।\nହରେ କୃଷ୍ଣ ହରେ କୃଷ୍ଣ କୃଷ୍ଣ କୃଷ୍ଣ ହରେ ହରେ ।\nହରେ ରାମ ହରେ ରାମ ରାମ ରାମ ହରେ ହରେ ||",
-            "translation": "ଶ୍ରୀ ଗୌରାଙ୍ଗ ମହାପ୍ରଭୁ ଅତି ମଧୁର ସ୍ୱରରେ ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର ଗାନ କରୁଛନ୍ତି।",
+            "translation": "ଭଗବାନ ଗୌରସୁନ୍ଦର ଅତି ମଧୁର ସ୍ୱରରେ ଗାଉଛନ୍ତି, 'ହରେ କୃଷ୍ଣ, ହରେ କୃଷ୍ଣ, କୃଷ୍ଣ କୃଷ୍ଣ, ହରେ ହରେ / ହରେ ରାମ, ହରେ ରାମ, ରାମ ରାମ, ହରେ ହରେ ।'",
             "wordMeanings": [
                 {
                     "word": "ଗାୟ",
@@ -7254,11 +7279,144 @@ export const SONG_GAYGORAMADHURA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଗୋରା",
-                    "meaning": "ଗୌରାଙ୍ଗ"
+                    "meaning": "ଭଗବାନ ଗୌରସୁନ୍ଦର"
                 },
                 {
-                    "word": "ମଧୁର ସ୍ଵରେ",
-                    "meaning": "ମିଠା ସ୍ୱରରେ"
+                    "word": "ମଧୁର ସ୍ୱରରେ",
+                    "meaning": "ଅତି ମଧୁର ସ୍ୱରରେ।"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "lyric": "ଗୃହେ ଥାକ, ବନେ ଥାକ, \nସଦା ‘ହରି’ ବଲେ ଡ଼ାକ,\nସୁଖେ - ଦୁଃଖେ ଭୁଲ ନା’କ, ବଦନେ ହରିନାମ କର ରେ ||",
+            "translation": "ଆପଣ ଗୃହସ୍ଥ ହୁଅନ୍ତୁ ବା ସନ୍ନ୍ୟାସୀ, ସବୁବେଳେ 'ହରି, ହରି!' ବୋଲି ଜପ କରନ୍ତୁ । ସୁଖ ହେଉ କିମ୍ବା ଦୁଃଖ, ଏହି ନାମ ଜପକୁ କେବେବି ଭୁଲନ୍ତୁ ନାହିଁ । କେବଳ ନିଜ ମୁଖକୁ ହରି-ନାମରେ ପୂର୍ଣ୍ଣ କରିଦିଅନ୍ତୁ ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୃହେ ଥାକୋ",
+                    "meaning": "ଘରେ ରୁହ"
+                },
+                {
+                    "word": "ବନେ ଥାକୋ",
+                    "meaning": "କିମ୍ବା ବନରେ ରୁହ"
+                },
+                {
+                    "word": "ସଦା",
+                    "meaning": "ସବୁବେଳେ"
+                },
+                {
+                    "word": "'ହରି'",
+                    "meaning": "ହରିଙ୍କ ପବିତ୍ର ନାମ"
+                },
+                {
+                    "word": "ବୋଲେ' ଡାକୋ",
+                    "meaning": "ଉଚ୍ଚ ସ୍ୱରରେ ଜପ କର"
+                },
+                {
+                    "word": "ସୁଖେ ଦୁଃଖେ",
+                    "meaning": "ସୁଖରେ ହେଉ କିମ୍ବା ଦୁଃଖରେ"
+                },
+                {
+                    "word": "ଭୁଲୋ ନା'କୋ",
+                    "meaning": "ଭୁଲିଯାଅ ନାହିଁ"
+                },
+                {
+                    "word": "ବଦନେ",
+                    "meaning": "ନିଜ ଓଠରେ/ମୁଖରେ"
+                },
+                {
+                    "word": "ହରି-ନାମ",
+                    "meaning": "ପବିତ୍ର ହରି ନାମ"
+                },
+                {
+                    "word": "କୋରୋ ରେ",
+                    "meaning": "ଦୟାକରି ଜପ କର!"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "lyric": "ମାୟାଜାଲେ ବଦ୍ଧ ହ’ୟେ,\nଆଛ ମିଛେ କାଜ ଲ’ୟେ ।\nଏଖନଓ ଚେତନ ପେୟେ, ‘ରାଧା-ମାଧବ’ ନାମ ବଲରେ ||",
+            "translation": "ଆପଣ ମାୟାର ଜାଲରେ ବାନ୍ଧି ହୋଇ ନିଷ୍ଫଳ ପରିଶ୍ରମ କରିବାକୁ ବାଧ୍ୟ ହେଉଛନ୍ତି । ଏବେ ଆପଣ ମନୁଷ୍ୟ ଜନ୍ମରେ ପୂର୍ଣ୍ଣ ଚେତନା ପ୍ରାପ୍ତ କରିଛନ୍ତି, ତେଣୁ ରାଧା-ମାଧବଙ୍କ ନାମ ଜପ କରନ୍ତୁ ।",
+            "wordMeanings": [
+                {
+                    "word": "ମାୟା-ଜାଲେ",
+                    "meaning": "ମାୟାର ଜାଲରେ"
+                },
+                {
+                    "word": "ବଦ୍ଧ ହୋ'ୟେ",
+                    "meaning": "ଆପଣ ବାନ୍ଧି ହୋଇଛନ୍ତି"
+                },
+                {
+                    "word": "ଆଛୋ",
+                    "meaning": "ଆପଣଙ୍କର"
+                },
+                {
+                    "word": "ମିଛେ କାଜ",
+                    "meaning": "ନିଷ୍ଫଳ ପରିଶ୍ରମ"
+                },
+                {
+                    "word": "ଲୋ'ୟେ",
+                    "meaning": "ଗ୍ରହଣ କରି"
+                },
+                {
+                    "word": "ଏଖୋନ",
+                    "meaning": "ଏବେ"
+                },
+                {
+                    "word": "ଚେତନ ପେ'ୟେ",
+                    "meaning": "ପୂର୍ଣ୍ଣ ଚେତନା ପ୍ରାପ୍ତ କରି"
+                },
+                {
+                    "word": "'ରାଧା-ମାଧବ' ନାମ",
+                    "meaning": "ଶ୍ରୀ ଶ୍ରୀ ରାଧା ଏବଂ ମାଧବଙ୍କ ନାମ"
+                },
+                {
+                    "word": "ବୋଲୋ ରେ",
+                    "meaning": "ଜପ କରନ୍ତୁ!"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "lyric": "ଜୀବନ ହଇଲ ଶେଷ,\nନା ଭଜିଲେ ହୃଷିକେଶ,\nଭକ୍ତି ବିନୋଦୋପଦେଶ, ଏକବାର ନାମ ରସେ ମାତରେ ||",
+            "translation": "ଆପଣଙ୍କ ଜୀବନ ଯେକୌଣସି ମୁହୂର୍ତ୍ତରେ ଶେଷ ହୋଇପାରେ, ଏବଂ ଆପଣ ଏପର୍ଯ୍ୟନ୍ତ ଇନ୍ଦ୍ରିୟମାନଙ୍କ ସ୍ୱାମୀ ହୃଷୀକେଶଙ୍କ ସେବା କରିନାହାନ୍ତି । ଭକ୍ତିବିନୋଦଙ୍କ ଏହି ଉପଦେଶ ମାନନ୍ତୁ: \"କେବଳ ଥରେ, ପବିତ୍ର ନାମର ଏହି ଅମୃତ ରସରେ ମତ୍ତ ହୋଇଯାଆନ୍ତୁ!\"",
+            "wordMeanings": [
+                {
+                    "word": "ଜୀବନ",
+                    "meaning": "ଆପଣଙ୍କ ଜୀବନ"
+                },
+                {
+                    "word": "ହୋଇଲୋ ଶେଷ",
+                    "meaning": "ଯେକୌଣସି ମୁହୂର୍ତ୍ତରେ ଶେଷ ହୋଇପାରେ"
+                },
+                {
+                    "word": "ନା ଭଜିଲେ",
+                    "meaning": "ଆପଣ ସେବା କରିନାହାନ୍ତି"
+                },
+                {
+                    "word": "ହୃଷୀକେଶ",
+                    "meaning": "ଇନ୍ଦ୍ରିୟମାନଙ୍କ ପ୍ରଭୁଙ୍କୁ"
+                },
+                {
+                    "word": "ଭକ୍ତିବିନୋଦ-ଉପଦେଶ",
+                    "meaning": "ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏହି ଉପଦେଶ"
+                },
+                {
+                    "word": "ଏକବାର",
+                    "meaning": "କେବଳ ଥରେ"
+                },
+                {
+                    "word": "ନାମ-ରସେ",
+                    "meaning": "ପବିତ୍ର ନାମର ଅମୃତରେ"
+                },
+                {
+                    "word": "ମାତୋ",
+                    "meaning": "ମତ୍ତ ହୋଇଯାଅ"
+                },
+                {
+                    "word": "ରେ",
+                    "meaning": "ଓ!"
                 }
             ]
         }
@@ -7751,40 +7909,634 @@ export const SONG_GITAMAHATMYA_STRUCTURED: StructuredSong = {
     ]
 };
 
-export const JAYA_RADHA_MADHAVA: string = ``;
+// GITA CHAPTER STUBS
+export const SONG_GITA_CHAPTER_1_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_2_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_3_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_4_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_5_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_6_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_7_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_8_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_9_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_10_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_11_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_12_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_13_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_14_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_15_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_16_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_17_STRUCTURED: any = { verses: [] };
+export const SONG_GITA_CHAPTER_18_STRUCTURED: any = { verses: [] };
 
-export const GITA_MAHATMYA_ODIA: string = `ଗୀତା ମାହାତ୍ମ୍ୟ 
 
-(ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ମହିମା)
+export const JAYA_RADHA_MADHAVA: string = '';
+export const GITA_MAHATMYA_ODIA: string = '';
+export const BHULIYA_TOMARE_ODIA: string = '';
 
-୧. ଭୟ ଓ ଶୋକରୁ ମୁକ୍ତି (ପ୍ରଥମ ଶ୍ଳୋକ)
-ଗୀତା-ଶାସ୍ତ୍ରମିଦଂ ପୁଣ୍ୟଂ ଯଃ ପଠେତ୍ ପ୍ରୟତଃ ପୁମାନ୍ ।
-ବିଷ୍ଣୋଃ ପଦମବାପ୍ନୋତି ଭୟଶୋକାଦିବର୍ଜିତଃ ॥
 
-୨. ପାପର ବିନାଶ (ଦ୍ୱିତୀୟ ଶ୍ଳୋକ)
-ଗୀତାଧ୍ୟାୟନଶୀଲସ୍ୟ ପ୍ରାଣାୟାମପରସ୍ୟ ଚ ।
-ନୈବ ସନ୍ତି ହି ପାପାନି ପୂର୍ବଜନ୍ମକୃତାନି ଚ ॥
+import type { StructuredSong } from '../types';
+// AUTO-REPAIRED STUB FILE
 
-୩. ମନର ଶୁଦ୍ଧତା (ତୃତୀୟ ଶ୍ଳୋକ)
-ମଲନିର୍ମୋଚନଂ ପୁଂସାଂ ଜଲସ୍ନାନଂ ଦିନେ ଦିନେ ।
-ସକୃଦ୍ ଗୀତାମୃତସ୍ନାନଂ ସଂସାରମଲନାଶନମ୍ ॥
 
-୪. ଶ୍ରେଷ୍ଠ ଶାସ୍ତ୍ର (ଚତୁର୍ଥ ଶ୍ଳୋକ)
-ଗୀତା ସୁଗୀତା କର୍ତ୍ତବ୍ୟା କିମନ୍ୟୈଃ ଶାସ୍ତ୍ରବିସ୍ତରୈଃ ।
-ୟା ସ୍ଵୟଂ ପଦ୍ମନାଭସ୍ୟ ମୁଖପଦ୍ମାଦ୍ ବିନିଃସୃତା ॥
+export const SONG_GOPINATHPART2_STRUCTURED: StructuredSong = {
+    "verses": [
+        {
+            "id": 1,
+            "lyric": "ଗୋପୀନାଥ, ଘୁଚାଅ ସଂସାର ଜ୍ବାଲା ।\nଅବିଦ୍ୟା-ଯାତନା, ଆର ନାହି ସହେ,\nଜନମ-ମରଣ-ମାଲା ॥୧॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ଦୟାକରି ଏହି ସାଂସାରିକ ଜୀବନର ଜ୍ୱାଳାକୁ ଶାନ୍ତ କରନ୍ତୁ। ମୁଁ ଏହି ଅଜ୍ଞାନତାର ଯନ୍ତ୍ରଣାକୁ ଆଉ ସହିପାରୁ ନାହିଁ। ଜନ୍ମ-ମୃତ୍ୟୁର ଏହି ମାଳା ବା ବୋଝକୁ ବୋହିବା ମୋ ପାଇଁ ଅସହ୍ୟ ହୋଇପଡ଼ିଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଘୁଚାଓ",
+                    "meaning": "ଦୂର କରନ୍ତୁ/비ନାଶ କରନ୍ତୁ"
+                },
+                {
+                    "word": "ସଂସାର-ଜ୍ୱାଳା",
+                    "meaning": "ସାଂସାରିକ ଦୁଃଖର ନିଆଁ"
+                },
+                {
+                    "word": "ଅବିଦ୍ୟା-ଯାତନା",
+                    "meaning": "ଅଜ୍ଞାନତାର କଷ୍ଟ"
+                },
+                {
+                    "word": "ଆର",
+                    "meaning": "ଏବଂ/ଆଉ"
+                },
+                {
+                    "word": "ନାହି ସହେ",
+                    "meaning": "ସହ୍ୟ ହେଉନାହିଁ"
+                },
+                {
+                    "word": "ଜନମ-ମରଣ-ମାଳା",
+                    "meaning": "ଜନ୍ମ-ମୃତ୍ୟୁର ଚକ୍ର (ମାଳା)।"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "lyric": "ଗୋପୀନାଥ, ଆମି ତ’ କାମେର ଦାସ\n비ଷୟ-ବାସନା, ଜାଗିଛେ ହୃଦୟେ,\nଫାନ୍ଦିଛେ କରମ ଫାଁସ ॥୨॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୁଁ ପ୍ରକୃତରେ ବାସନାର ଜଣେ ସେବକ। ମୋ ହୃଦୟରେ ସବୁବେଳେ ସାଂସାରିକ ଭୋଗର ଇଚ୍ଛା ଜାଗ୍ରତ ହେଉଛି। ମୁଁ ନିଜ କର୍ମର ଫାଶରେ ବାନ୍ଧି ହୋଇ ରହିଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଆମି ତୋ'",
+                    "meaning": "ମୁଁ ତ"
+                },
+                {
+                    "word": "କାମେର ଦାସ",
+                    "meaning": "କାମନା ବା ବାସନାର ଦାସ"
+                },
+                {
+                    "word": "비ଷୟ-ବାସନା",
+                    "meaning": "ସାଂସାରିକ ଭୋଗର ଇଚ୍ଛା"
+                },
+                {
+                    "word": "ଜାଗିଛେ",
+                    "meaning": "ଜାଗ୍ରତ ହେଉଛି"
+                },
+                {
+                    "word": "ହୃଦୟେ",
+                    "meaning": "ହୃଦୟରେ"
+                },
+                {
+                    "word": "ଫାନ୍ଦିଛେ",
+                    "meaning": "ଛନ୍ଦି ହୋଇଛି"
+                },
+                {
+                    "word": "କରମ ଫାଂସେ",
+                    "meaning": "କର୍ମର ଫାଶରେ।"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "lyric": "ଗୋପୀନାଥ, କବେ ବା ଜାଗିବ ଆମି ।\nକାମରୂପ ଅରି, ଦୂରେ ତେୟାଗିବ,\nହୃଦୟେ ସ୍ଫୁରିବେ ତୁମି ॥୩॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୁଁ କେବେ ଜାଗ୍ରତ ହେବି? କେବେ ମୁଁ ଏହି କାମନା ରୂପକ ଶତ୍ରୁକୁ ନିଜଠାରୁ ଦୂରେଇ ଦେବି? କେବେ ତୁମେ ମୋ ହୃଦୟରେ ପ୍ରକଟ ହେବ?",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "କବେ ବା",
+                    "meaning": "କେବେ?"
+                },
+                {
+                    "word": "ଜାଗିବୋ",
+                    "meaning": "ଜାଗ୍ରତ ହେବି"
+                },
+                {
+                    "word": "ଆମି",
+                    "meaning": "ମୁଁ"
+                },
+                {
+                    "word": "କାମ-ରୂପ ଅରି",
+                    "meaning": "କାମନା ରୂପକ ଶତ୍ରୁ"
+                },
+                {
+                    "word": "ଦୂରେ ତେୟାଗିବୋ",
+                    "meaning": "ଦୂରକୁ ତ୍ୟାଗ କରିବି"
+                },
+                {
+                    "word": "ହୃଦୟେ",
+                    "meaning": "ହୃଦୟରେ"
+                },
+                {
+                    "word": "ସ୍ଫୁରିବେ",
+                    "meaning": "ପ୍ରକଟ ହେବେ"
+                },
+                {
+                    "word": "ତୁମି",
+                    "meaning": "ତୁମେ।"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "lyric": "ଗୋପୀନାଥ, ଆମି ତ’ ତୋମାର ଜନ ।\nତୋମାରେ ଛାଡ଼ିୟା, ସଂସାର ଭଜିନୁ, \nଭୁଲିୟା ଆପନ-ଧନ ॥୪॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୁଁ ତ ତୁମରି ସେବକ। ମୁଁ ତୁମକୁ ଛାଡ଼ି ଏହି ଜନ୍ମ-ମୃତ୍ୟୁର ସଂସାରକୁ ଆପଣେଇ ନେଲି ଏବଂ ମୋର ପ୍ରକୃତ ସମ୍ପତ୍ତି (ତୁମର ଭକ୍ତି) କୁ ଭୁଲିଗଲି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଆମି ତୋ'",
+                    "meaning": "ମୁଁ ତ"
+                },
+                {
+                    "word": "ତୋମାର ଜନ",
+                    "meaning": "ତୁମର ଲୋକ/ସେବକ"
+                },
+                {
+                    "word": "ତୋମାରେ ଛାଡ଼ିୟା",
+                    "meaning": "ତୁମକୁ ଛାଡ଼ି"
+                },
+                {
+                    "word": "ସଂସାର ଭଜିନୁ",
+                    "meaning": "ସଂସାରକୁ ଆଦରି ନେଲି"
+                },
+                {
+                    "word": "ଭୁଲିୟା",
+                    "meaning": "ଭୁଲିଯାଇ"
+                },
+                {
+                    "word": "ଆପନ ଧନ",
+                    "meaning": "ନିଜର ପ୍ରକୃତ ସମ୍ପତ୍ତି।"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "lyric": "ଗୋପୀନାଥ ତୁମି ତ’ ସକଲି ଜାନ\nଆପନାର ଜନେ, ଦଣ୍ଡିୟା ଏଖନ,\nଶ୍ରୀଚରଣେ ଦେହ ସ୍ଥାନ ॥୫॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ତୁମେ ସବୁକିଛି ଜାଣିଛ। ଦୟାକରି ଏହି ସେବକକୁ ତା'ର ଭୁଲ୍ ପାଇଁ ଦଣ୍ଡ ଦିଅନ୍ତୁ ଏବଂ ତା'ପରେ ନିଜ ଚରଣ ତଳେ ଟିକେ ସ୍ଥାନ ଦିଅନ୍ତୁ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ତୁମି ତୋ'",
+                    "meaning": "ତୁମେ ତ"
+                },
+                {
+                    "word": "ସକଲି ଜାନୋ",
+                    "meaning": "ସବୁକିଛି ଜାଣିଛ"
+                },
+                {
+                    "word": "ଆପନାର ଜନେ",
+                    "meaning": "ନିଜର ସେବକକୁ"
+                },
+                {
+                    "word": "ଦଣ୍ଡିୟା",
+                    "meaning": "ଦଣ୍ଡ ଦେଇ"
+                },
+                {
+                    "word": "ଏଖୋନ",
+                    "meaning": "ଏବେ"
+                },
+                {
+                    "word": "ଶ୍ରୀ-ଚରଣେ",
+                    "meaning": "ଶ୍ରୀଚରଣରେ"
+                },
+                {
+                    "word": "ଦେହୋ ସ୍ଥାନ",
+                    "meaning": "ସ୍ଥାନ ଦିଅନ୍ତୁ।"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "lyric": "ଗୋପୀନାଥ, ଏଇ କି ବିଚାର ତବ ।\n비ମୁଖ ଦେଖିୟା, ଛାଡ଼ ନିଜ-ଜନେ\nନା କର’ କରୁଣା-ଲବ ॥୬॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ଯଦି କୌଣସି ସେବକ ତୁମଠାରୁ ମୁହଁ ବୁଲାଇ ନିଏ, ତେବେ କ'ଣ ତୁମେ ତାକୁ ସମ୍ପୂର୍ଣ୍ଣ ତ୍ୟାଗ କରିଦିଅ? ତାକୁ କ'ଣ ଟିକେ ହେଲେ କରୁଣା ଦିଅ ନାହିଁ? ଏହା କ'ଣ ତୁମର ବିଚାର?",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଏଇ କି",
+                    "meaning": "ଏହା କ'ଣ?"
+                },
+                {
+                    "word": "비ଚାର ତବ",
+                    "meaning": "ତୁମର ବିଚାର"
+                },
+                {
+                    "word": "비ମୁଖ ଦେଖିୟା",
+                    "meaning": "비ମୁଖ (ମୁହଁ ବୁଲାଇବା) ଦେଖି"
+                },
+                {
+                    "word": "ଛାଡ଼ୋ",
+                    "meaning": "ଛାଡ଼ିଦିଅ"
+                },
+                {
+                    "word": "ନିଜ-ଜନେ",
+                    "meaning": "ନିଜ ସେବକକୁ"
+                },
+                {
+                    "word": "ନ କରି'",
+                    "meaning": "ନ କରି"
+                },
+                {
+                    "word": "କରୁଣ-ଲବ",
+                    "meaning": "କରୁଣାର ଏକ କଣିକା।"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "lyric": "ଗୋପୀନାଥ, ଆମି ତ’ ମୂରଖ ଅତି ।\nକିସେ ଭାଲ ହୟ, କଭୁନା ବୁଝିନୁ,\nତାଇ ହେନ ମମଗତି ॥୭॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୁଁ ଜଣେ ବଡ଼ ମୂର୍ଖ। ମୋ ପାଇଁ କ'ଣ ଭଲ, ତାହା ମୁଁ କେବେବି ବୁଝିପାରିଲି ନାହିଁ। ସେଥିପାଇଁ ଆଜି ମୋର ଏଭଳି ଦଶା ହୋଇଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଆମି ତୋ'",
+                    "meaning": "ମୁଁ ତ"
+                },
+                {
+                    "word": "ମୂରଖ ଅତି",
+                    "meaning": "ଅତ୍ୟନ୍ତ ମୂର୍ଖ"
+                },
+                {
+                    "word": "କିସେ ଭାଲୋ ହୋୟ",
+                    "meaning": "କେଉଁଥିରେ ମୋର ଭଲ ହେବ"
+                },
+                {
+                    "word": "କବ୍ହୁ ନା ବୁଝିନୁ",
+                    "meaning": "କେବେବି ବୁଝିଲି ନାହିଁ"
+                },
+                {
+                    "word": "ତାଇ",
+                    "meaning": "ସେଥିପାଇଁ"
+                },
+                {
+                    "word": "ହେନୋ",
+                    "meaning": "ଏହିପରି"
+                },
+                {
+                    "word": "ମମ ଗତି",
+                    "meaning": "ମୋର ଅବସ୍ଥା।"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "lyric": "ଗୋପୀନାଥ, ତୁମି ତ’ ପଣ୍ଡିତବର ।\nମୂଢେର ମଙ୍ଗଲ, ତୁମି ଅନ୍ବେଷିବେ,\nଏ ଦାସେ ନା ଭାବ’ପର ॥୮॥",
+            "translation": "ହେ ଗୋପୀନାଥ, ତୁମେ ପରମ ଜ୍ଞାନୀ। ମୂର୍ଖମାନଙ୍କର କିପରି ମଙ୍ଗଳ ହେବ, ତାହା ତୁମେ ହିଁ ଚିନ୍ତା କର। ଦୟାକରି ଏହି ସେବକକୁ ନିଜର ବୋଲି ଭାବନ୍ତୁ, ପର ବୋଲି ଭାବନ୍ତୁ ନାହିଁ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ତୁମି ତୋ'",
+                    "meaning": "ତୁମେ ତ"
+                },
+                {
+                    "word": "ପଣ୍ଡିତ ବର",
+                    "meaning": "ଶ୍ରେଷ୍ଠ ପଣ୍ଡିତ (ଜ୍ଞାନୀ)"
+                },
+                {
+                    "word": "ମୂଢ଼େର ମଙ୍ଗଳ",
+                    "meaning": "ମୂର୍ଖମାନଙ୍କର ମଙ୍ଗଳ"
+                },
+                {
+                    "word": "ତୁମି ଅନ୍ୱେଷିବେ",
+                    "meaning": "ତୁମେ ଖୋଜିବ"
+                },
+                {
+                    "word": "ଏ ଦାସେ",
+                    "meaning": "ଏହି ଦାସକୁ"
+                },
+                {
+                    "word": "ନା ଭାବୋ' ପର",
+                    "meaning": "ପର ବୋଲି ଭାବନ୍ତୁ ନାହିଁ।"
+                }
+            ]
+        }
+    ]
+};
 
-୫. ମୁକ୍ତିର ଅମୃତ (ପଞ୍ଚମ ଶ୍ଳୋକ)
-ଭାରତାମୃତସର୍ବସ୍ଵଂ ବିଷ୍ଣୁବକ୍ତ୍ରାଦ୍ ବିନଃସୃତମ୍ ।
-ଗୀତାଗଙ୍ଗୋଦକଂ ପୀତ୍ଵା ପୁନର୍ଜନ୍ମ ନ ବିଦ୍ୟତେ ॥
-
-୬. ଦୁଗ୍ଧ ଦୋହନର ରହସ୍ୟ (ଷଷ୍ଠ ଶ୍ଳୋକ)
-ସର୍ବୋପନିଷଦୋ ଗାବୋ ଦୋଗ୍ଧା ଗୋପାଲନନ୍ଦନଃ ।
-ପାର୍ଥୋ ବତ୍ସଃ ସୁଧୀର୍ଭୋକ୍ତା ଦୁଗ୍ଧଂ ଗୀତାମୃତଂ ମହତ୍ ॥
-
-୭. ଗୋଟିଏ ସତ୍ୟ (ସପ୍ତମ ଶ୍ଳୋକ)
-ଏକଂ ଶାସ୍ତ୍ରଂ ଦେବକୀପୁତ୍ରଗୀତମ୍ ।
-ଏକୋ ଦେବୋ ଦେବକୀପୁତ୍ର ଏବ ॥
-ଏକୋ ମନ୍ତ୍ରସ୍ତସ୍ୟ ନାମାନି ୟାନି ।
-କର୍ମାପ୍ୟେକଂ ତସ୍ୟ ଦେବସ୍ୟ ସେବା ॥`;
-
-export const BHULIYA_TOMARE_ODIA: string = ``;
+export const SONG_GOPINATHPART3_STRUCTURED: StructuredSong = {
+    "verses": [
+        {
+            "id": 1,
+            "lyric": "ଗୋପୀନାଥ, ଆମାର ଉପାୟ ନାଇ ।\nତୁମି କୃପା କରି’, ଆମାରେ ଲଇଲେ,\nସଂସାରେ ଉଦ୍ଧାର ପାଇ ||୧||",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୋ ପାଖରେ ଅନ୍ୟ କୌଣସି ଆଶା ବା ଉପାୟ ନାହିଁ। କେବଳ ଯଦି ତୁମେ ଦୟାକରି ମତେ ଗ୍ରହଣ କରିବ, ତେବେ ହିଁ ମୁଁ ଏହି ଜନ୍ମ-ମୃତ୍ୟୁର ସଂସାରରୁ ମୁକ୍ତି ପାଇପାରିବି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଆମାର",
+                    "meaning": "ମୋର"
+                },
+                {
+                    "word": "ଉପାୟ",
+                    "meaning": "ଉପାୟ/ବାଟ"
+                },
+                {
+                    "word": "ନାହି",
+                    "meaning": "ନାହିଁ"
+                },
+                {
+                    "word": "ତୁମି",
+                    "meaning": "ତୁମେ"
+                },
+                {
+                    "word": "କୃପା କରି'",
+                    "meaning": "କୃପା କରି"
+                },
+                {
+                    "word": "ଆମାରେ ଲୋଇଲେ",
+                    "meaning": "ମତେ ଗ୍ରହଣ କଲେ"
+                },
+                {
+                    "word": "ସଂସାରେ",
+                    "meaning": "ସଂସାରରୁ"
+                },
+                {
+                    "word": "ଉଦ୍ଧାର ପାଇ",
+                    "meaning": "ମୁକ୍ତି ପାଇବି।"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "lyric": "ଗୋପୀନାଥ, ପଡ଼େଛି ମାୟାର ଫେରେ ।\nଧନ, ଦାରା, ସୁତ, ଘିରେଛେ ଆମାରେ,\nକାମେତେ ରେଖେଛେ ଜେରେ ||୨||",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୁଁ ମାୟାର ଏକ ବିପଜ୍ଜନକ ଜାଲରେ ପଡ଼ିଯାଇଛି। ଧନ, ପତ୍ନୀ ଏବଂ ସନ୍ତାନମାନେ ମତେ ଚାରିଆଡ଼ୁ ଘେରି ରହିଛନ୍ତି। ଏବେ ମୁଁ ମୋର ସାଂସାରିକ କାମନାର ପରିଣାମ ସ୍ୱରୂପ କଷ୍ଟ ଭୋଗୁଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ପୋଡ଼େଛି",
+                    "meaning": "ମୁଁ ପଡ଼ିଛି"
+                },
+                {
+                    "word": "ମାୟାର ଫେରେ",
+                    "meaning": "ମାୟାର ଜାଲରେ/비ପଦରେ"
+                },
+                {
+                    "word": "ଧନ ଦାରା ସୁତ",
+                    "meaning": "ସମ୍ପତ୍ତି, ପତ୍ନୀ ଏବଂ ପୁତ୍ର"
+                },
+                {
+                    "word": "ଘିରେଛେ",
+                    "meaning": "ଘେରି ରହିଛନ୍ତି"
+                },
+                {
+                    "word": "ଆମାରେ",
+                    "meaning": "ମତେ"
+                },
+                {
+                    "word": "କାମେତେ",
+                    "meaning": "କାମନାରେ"
+                },
+                {
+                    "word": "ରେଖେଛେ ଜେରେ",
+                    "meaning": "ପରିଣାମ ଭୋଗୁଛି।"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "lyric": "ଗୋପୀନାଥ, ମନ ଯେ ପାଗଳ ମୋର ।\nନା ମାନେ ଶାସନ, ସଦା ଅଚେତନ,\n비ଷୟେ ର’ୟେଛେ ଘୋର ||୩||",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୋର ଏହି ପାଗଳ ମନ କେବେବି ଭଲ ଉପଦେଶ ବୁଝେ ନାହିଁ। ଏହା ମତେ ସବୁବେଳେ ମୋହଗ୍ରସ୍ତ କରି ରଖେ ଏବଂ ବିଷୟ-ଭୋଗର ଭୟଙ୍କର ଜାଲରେ ଛନ୍ଦି କରି ରଖିଥାଏ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ମନ ଯେ",
+                    "meaning": "ମନ ଯେଉଁଟା କି"
+                },
+                {
+                    "word": "ପାଗଲ ମୋର",
+                    "meaning": "ମୋର ପାଗଳ"
+                },
+                {
+                    "word": "ନା ମାନେ",
+                    "meaning": "ମାନେ ନାହିଁ"
+                },
+                {
+                    "word": "ଶାସନ",
+                    "meaning": "ଉପଦେଶ/ଶାସନ"
+                },
+                {
+                    "word": "ସଦା",
+                    "meaning": "ସବୁବେଳେ"
+                },
+                {
+                    "word": "ଅଚେତନ",
+                    "meaning": "ଅଚେତନ/ଜଡ଼"
+                },
+                {
+                    "word": "비ଷୟେ",
+                    "meaning": "ଭୋଗ비ଳାସରେ"
+                },
+                {
+                    "word": "ରୋ'ୟେଛେ ଘୋର",
+                    "meaning": "ଭୟଙ୍କର ଭାବେ ମଜ୍ଜି ରହିଛି।"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "lyric": "ଗୋପୀନାଥ, ହାର ଯେ ମେନେଛି ଆମି ।\nଅନେକ ଯତନ, ହଇଲ ବିଫଲ,\nଏଖନ ଭରସା ତୁମି ||୪||",
+            "translation": "ହେ ଗୋପୀନାଥ, ଏବେ ମୁଁ ମୋର ପରାଜୟ ସ୍ୱୀକାର କରିଛି। ମୋର ଅନେକ ଚେଷ୍ଟା ଓ ସଂଘର୍ଷ ସବୁ ବିଫଳ ହେଲା। ଏବେ କେବଳ ତୁମରି ଉପରେ ହିଁ ମୋର ସମ୍ପୂର୍ଣ୍ଣ ଭରସା ଅଛି।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ହାର ଯେ",
+                    "meaning": "ହାର ବା ପରାଜୟ"
+                },
+                {
+                    "word": "ମେନେଛି",
+                    "meaning": "ମାନି ନେଇଛି"
+                },
+                {
+                    "word": "ଆମି",
+                    "meaning": "ମୁଁ"
+                },
+                {
+                    "word": "ଅନେକ ଯତନ",
+                    "meaning": "ଅନେକ ଚେଷ୍ଟା"
+                },
+                {
+                    "word": "ହୋଇଲୋ ବିଫଳ",
+                    "meaning": "비ଫଳ ହେଲା"
+                },
+                {
+                    "word": "ଏଖୋନ",
+                    "meaning": "ଏବେ"
+                },
+                {
+                    "word": "ଭରସା ତୁମି",
+                    "meaning": "ତୁମେ ହିଁ ଭରସା।"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "lyric": "ଗୋପୀନାଥ, କେମନେ ହଇବେ ଗତି ।\nପ୍ରବଳ ଇନ୍ଦ୍ରିୟ, ବଶୀଭୂତ ମନ,\nନା ଛାଡ଼େ ବିଷୟ-ରତି ||୫||",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୋର କି ପରିଣତି ହେବ? ମୋର ମନ ଏହି ଶକ୍ତିଶାଳୀ ଇନ୍ଦ୍ରିୟମାନଙ୍କର ଦାସ ହୋଇଯାଇଛି। ଏହା କୌଣସି ମତେ ସାଂସାରିକ ଭୋଗବିଳାସ ପ୍ରତି ଥିବା ଆସକ୍ତିକୁ ତ୍ୟାଗ କରିପାରୁ ନାହିଁ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "କେମୋନେ",
+                    "meaning": "କିପରି?"
+                },
+                {
+                    "word": "ହୋଇବେ ଗତି",
+                    "meaning": "ଗତି ବା ପରିଣତି ହେବ"
+                },
+                {
+                    "word": "ପ୍ରବଳ ଇନ୍ଦ୍ରିୟା",
+                    "meaning": "ଶକ୍ତିଶାଳୀ ଇନ୍ଦ୍ରିୟମାନେ"
+                },
+                {
+                    "word": "ବଶୀ-ଭୂତ ମନ",
+                    "meaning": "ମନକୁ ବଶ କରିଛନ୍ତି"
+                },
+                {
+                    "word": "ନ ଛାଡ଼େ",
+                    "meaning": "ଛାଡୁ ନାହିଁ"
+                },
+                {
+                    "word": "비ଷୟ-ରତି",
+                    "meaning": "비ଷୟ ପ୍ରତି ଆସକ୍ତି।"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "lyric": "ଗୋପୀନାଥ, ହୃଦୟେ ବସିୟା ମୋର\nମନକେ ଶମିୟା, ଲହ ନିଜ ପାନେ,\nଘୁଚିବେ ବିପଦ ଘୋର ||୬||",
+            "translation": "ହେ ଗୋପୀନାଥ, ଦୟାକରି ମୋ ହୃଦୟରେ ବିରାଜମାନ କରନ୍ତୁ। ମୋର ଏହି ଅଶାନ୍ତ ମନକୁ ଶାନ୍ତ କରି ନିଜ ଆଡ଼କୁ ଆକର୍ଷିତ କରନ୍ତୁ। ତେବେ ହିଁ ମୋର ଏହି ସମସ୍ତ ଭୟଙ୍କର ବିପଦ ଦୂର ହେବ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ହୃଦୟେ ବସିୟା ମୋର",
+                    "meaning": "ମୋ ହୃଦୟରେ ବସି"
+                },
+                {
+                    "word": "ମନକେ ଶମିୟା",
+                    "meaning": "ମନକୁ ଶାନ୍ତ କରି"
+                },
+                {
+                    "word": "ଲୋହୋ ନିଜ ପାନେ",
+                    "meaning": "ନିଜ ଆଡ଼କୁ ନିଅନ୍ତୁ"
+                },
+                {
+                    "word": "ଘୁଚିବେ",
+                    "meaning": "ଦୂର ହେବ"
+                },
+                {
+                    "word": "비ପଦ ଘୋର",
+                    "meaning": "ଭୟଙ୍କର ବିପଦ।"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "lyric": "ଗୋପୀନାଥ, ଅନାଥ ଦେଖିୟା ମୋରେ ।\nତୁମି ହୃଷିକେଶ, ହୃଷିକ ଦମିୟା,\nତାର’ ହେ ସଂସୃତି-ଘୋରେ ||୭||",
+            "translation": "ହେ ଗୋପୀନାଥ, ତୁମେ ହିଁ ଇନ୍ଦ୍ରିୟମାନଙ୍କର ପ୍ରକୃତ ସ୍ୱାମୀ। ମୋର କେହି ରକ୍ଷାକର୍ତ୍ତା ନାହାନ୍ତି ଦେଖି, ଦୟାକରି ମୋର ଇନ୍ଦ୍ରିୟମାନଙ୍କୁ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ ଏବଂ ମତେ ଏହି ଭୟଙ୍କର ଜନ୍ମ-ମୃତ୍ୟୁର ସଂସାରରୁ ଉଦ୍ଧାର କରନ୍ତୁ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଅନାଥ ଦେଖିୟା ମୋରେ",
+                    "meaning": "ମତେ ଅନାଥ ବୋଲି ଦେଖି"
+                },
+                {
+                    "word": "ତୁମି ହୃଷୀକେଶ",
+                    "meaning": "ତୁମେ ଇନ୍ଦ୍ରିୟମାନଙ୍କ ସ୍ୱାମୀ"
+                },
+                {
+                    "word": "ହୃଷୀକ ଦମିୟା",
+                    "meaning": "ଇନ୍ଦ୍ରିୟମାନଙ୍କୁ ଦମନ କରି"
+                },
+                {
+                    "word": "ତାରହେ",
+                    "meaning": "ଉଦ୍ଧାର କରନ୍ତୁ"
+                },
+                {
+                    "word": "ସଂସୃତି-ଘୋରେ",
+                    "meaning": "ଭୟଙ୍କର ସଂସାରରୁ।"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "lyric": "ଗୋପୀନାଥ, ଗଲାୟ ଲେଗେଛେ ଫାସ\nକୃପା-ଅସି ଧରି, ବନ୍ଧନ ଛେଦିୟା,\n비ନୋଦେ କରହ ଦାସ ||୮||",
+            "translation": "ହେ ଗୋପୀନାଥ, ମୋ ବେକରେ ଏବେ ମାୟାର ଫାଶ ଲାଗି ସାରିଛି। ନିଜ କୃପା ରୂପକ ତରବାରି ଧରି ଏହି ବନ୍ଧନକୁ କାଟି ଦିଅନ୍ତୁ ଏବଂ ଏହି ଭକ୍ତିବିନୋଦକୁ ନିଜର ଚିରନ୍ତନ ସେବକ ଭାବରେ ଗ୍ରହଣ କରନ୍ତୁ।",
+            "wordMeanings": [
+                {
+                    "word": "ଗୋପୀନାଥ",
+                    "meaning": "ହେ ଗୋପୀନାଥ"
+                },
+                {
+                    "word": "ଗଳାୟ ଲେଗେଛେ ଫାଂସ",
+                    "meaning": "ବେକରେ ଫାଶ ଲାଗିଛି"
+                },
+                {
+                    "word": "କୃପା-ଅସି ଧରି'",
+                    "meaning": "କୃପା ରୂପକ ଖଡ଼୍ଗ ଧରି"
+                },
+                {
+                    "word": "ବନ୍ଧନ ଛେଦିୟା",
+                    "meaning": "ବନ୍ଧନକୁ କାଟି"
+                },
+                {
+                    "word": "비ନୋଦେ କୋରୋହୋ ଦାସ",
+                    "meaning": "ଭକ୍ତିବିନୋଦକୁ ନିଜର ସେବକ କରନ୍ତୁ।"
+                }
+            ]
+        }
+    ]
+};
