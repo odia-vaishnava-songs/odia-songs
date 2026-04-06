@@ -141,11 +141,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-nadiyagodrume',
-        title: 'ନଦିଆ ଗୋଦ୍ରୁମେ (Nadiyā Godrume)',
+        title: 'ନଦୀୟା – ଗୋଦ୍ରୁମେ (Nadiya Godrume)',
+        title_odia: 'ନଦୀୟା – ଗୋଦ୍ରୁମେ ନିତ୍ୟାନନ୍ଦ ମହାଜନ',
+        title_english: 'Nadiya Godrume Nityananda Mahajana',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-yasomatinandana',
