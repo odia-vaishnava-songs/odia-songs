@@ -355,6 +355,7 @@ export const SongsPage: React.FC = () => {
             );
         }
 
+        const { verses, reference_url } = selectedSong.structuredContent;
         const isGita = selectedSong.category === 'Gita' || selectedSong.category === 'G' || selectedSong.id.startsWith('gita-') || selectedSong.id === 'song-gitamahatmya';
         const verseLabel = isGita ? 'ଶ୍ଲୋକ' : 'ପାଠ';
 
