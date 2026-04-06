@@ -503,6 +503,17 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-manasadehogehoyokichu',
+        title: 'ମାନସ, ଦେହ, ଗେହ (Manasa Deho Geho)',
+        title_odia: 'ମାନସ, ଦେହ, ଗେହ',
+        title_english: 'Manasa Deho Geho Jo Kichu Mor',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
