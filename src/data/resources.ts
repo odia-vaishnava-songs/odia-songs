@@ -217,11 +217,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-prabhutavapadayuge',
-        title: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ (Prabhu Taba Padayuge)',
+        title: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ (Prabhu Tava Pada Yuge)',
+        title_odia: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ',
+        title_english: 'Prabhu Tava Pada Yuge',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'gita-chapter-1',
