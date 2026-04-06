@@ -506,6 +506,17 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-oremanabhalonahilage',
+        title: 'ଓ ରେ ମନ, ଭାଲ ନାହି ଲାଗେ (Ore Mana Bhalonahi Lage)',
+        title_odia: 'ଓ ରେ ମନ, ଭାଲ ନାହି ଲାଗେ ଏ ସଂସାର',
+        title_english: 'Ore Mana Bhalonahi Lage E Samsar',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-mamamanamandire',
         title: 'ମମ ମନ ମନ୍ଦିରେ (Mama Mana Mandire)',
         title_odia: 'ମମ ମନ ମନ୍ଦିରେ',
