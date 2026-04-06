@@ -216,6 +216,17 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
+        id: 'song-sarvasvatomarcarene',
+        title: 'ସର୍ବସ୍ବ ତୋମାର (Sarvasva Tomar Carane)',
+        title_odia: 'ସର୍ବସ୍ବ ତୋମାର, ଚରଣେ',
+        title_english: 'Sarvasva Tomar Carane',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-prabhutavapadayuge',
         title: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ (Prabhu Tava Pada Yuge)',
         title_odia: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ',
