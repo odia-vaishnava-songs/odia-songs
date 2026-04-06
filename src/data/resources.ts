@@ -172,11 +172,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-vibhavarisesa',
-        title: 'ବିଭାବରୀ ଶେଷ (Vibhāvarī Śeṣa)',
+        title: 'ବିଭାବରୀ ଶେଷ (Vibhavari Sesa)',
+        title_odia: 'ବିଭାବରୀ ଶେଷ',
+        title_english: 'Vibhavari Sesa',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_VIBHAVARISESA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-udiloaruna',
