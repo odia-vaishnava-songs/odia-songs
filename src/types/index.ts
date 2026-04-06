@@ -59,7 +59,7 @@ export interface Resource {
     url?: string;
     audioUrl?: string; // Single/default audio
     audioVersions?: AudioVersion[]; // Multiple versions
-    description: string;
+    description?: string;
     content?: string;
     structuredContent?: StructuredSong;
     author?: string;
