@@ -184,12 +184,15 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-suddhabhakata',
-        title: 'ଶୁଦ୍ଧ ଭକତ (Śuddha Bhakata)',
+        id: 'song-suddhabhakatacaranarenu',
+        title: 'ଶୁଦ୍ଧ ଭକତ (Suddha Bhakata Carana Renu)',
+        title_odia: 'ଶୁଦ୍ଧ ଭକତ-ଚରଣ ରେଣୁ',
+        title_english: 'Suddha Bhakata Carana Renu',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_SUDDHABHAKATA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-srikrsnacaitanyaprabhujive',
