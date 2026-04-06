@@ -180,11 +180,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-udiloaruna',
-        title: 'ଉଦିଲ ଅରୁଣ (Udilo Aruṇa)',
+        title: 'ଉଦିଲ ଅରୁଣ (Udilo Aruna)',
+        title_odia: 'ଉଦିଲ ଅରୁଣ ପୂରବ ଭାଗେ',
+        title_english: 'Udilo Aruna Puraba Bhage',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_UDILOARUNA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-suddhabhakatacaranarenu',
