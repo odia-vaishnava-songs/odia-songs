@@ -167,11 +167,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-yasomatinandana',
-        title: 'ଯଶୋମତୀ ନନ୍ଦନ (Yaśomatī Nandana)',
+        title: 'ଯଶୋମତୀ ନନ୍ଦନ (Yasomati Nandana)',
+        title_odia: 'ଯଶୋମତି ନନ୍ଦନ',
+        title_english: 'Yasomati Nandana',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_YASOMATINANDANA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-vibhavarisesa',
