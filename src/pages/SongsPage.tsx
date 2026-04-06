@@ -355,7 +355,8 @@ export const SongsPage: React.FC = () => {
             );
         }
 
-        const { verses, reference_url } = selectedSong.structuredContent;
+        const isGita = selectedSong.category === 'Gita' || selectedSong.category === 'G' || selectedSong.id.startsWith('gita-') || selectedSong.id === 'song-gitamahatmya';
+        const verseLabel = isGita ? 'ଶ୍ଲୋକ' : 'ପାଠ';
 
         if (viewMode === 'sequential') {
             return (
@@ -392,7 +393,7 @@ export const SongsPage: React.FC = () => {
 
                             return (
                             <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
-                                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
                                 
                                 {speakerLine && (
                                     <div style={{ 
@@ -431,7 +432,7 @@ export const SongsPage: React.FC = () => {
                             <div style={{ fontSize: '1rem', color: isNightMode ? theme.color : '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: `2px solid ${isNightMode ? '#334155' : '#f0f0f0'}`, display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
                             {verses.map((verse, idx) => verse.translation?.trim() && (
                                 <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
-                                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
                                     <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
                                 </div>
                             ))}
@@ -543,7 +544,7 @@ export const SongsPage: React.FC = () => {
                         <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}`, position: 'relative' }}>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '1.25rem' }}>
                                 <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
-                                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: theme.color, letterSpacing: '1px', opacity: 0.8 }}>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</div>
+                                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: theme.color, letterSpacing: '1px', opacity: 0.8 }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
                                 <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
                             </div>
 
