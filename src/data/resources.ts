@@ -117,11 +117,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-ohevaisnavathakura',
-        title: 'ଓହେ ବୈଷ୍ଣବ ଠାକୁର (Ohe Vaiṣṇava Ṭhākura)',
+        title: 'ଓହେ ବୈଷ୍ଣବ ଠାକୁର (Ohe Vaisnava Thakura)',
+        title_odia: 'ଓହେ ବୈଷ୍ଣବ ଠାକୁର',
+        title_english: 'Ohe Vaisnava Thakura',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_OHEVAISNAVATHAKURA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-nitainamhate',
