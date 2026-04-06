@@ -125,11 +125,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-nitainamhate',
-        title: 'ନିତାଇ ନାମ ହାଟେ (Nitāi Nām Hāṭe)',
+        title: 'ନିତାଇ ନାମ ହାଟେ (Nitai Nam Hate)',
+        title_odia: 'ନିତାଇ ନାମ ହାଟେ',
+        title_english: 'Nitai Nam Hate O Ke Jabire Bhai',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_NITAINAMHATE_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-naradamuni',
