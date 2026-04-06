@@ -111,12 +111,15 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-gaygoracand',
-        title: 'ଗାୟ ଗୋରାଚାନ୍ଦ (Gāy Gorācānd)',
+        id: 'song-vidyaravilase',
+        title: 'ଵିଦ୍ୟାର ଵିଲାସେ (Vidyara Vilase)',
+        title_odia: 'ଵିଦ୍ୟାର ଵିଲାସେ',
+        title_english: 'Vidyara Vilase',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_GAYGORACAND_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-ohevaisnavathakura',
