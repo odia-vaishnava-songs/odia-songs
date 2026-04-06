@@ -84,12 +84,15 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-sarvasvatomar',
-        title: 'ସର୍ବସ୍ଵ ତୋମାର (Sarvasva Tomār)',
+        id: 'song-tumisarveswaresvaravrajendrakumar',
+        title: 'ତୁମି ସର୍ବେଶ୍ଵରେଶ୍ଵର (Tumi Sarveswareswara)',
+        title_odia: 'ତୁମି ସର୍ବେଶ୍ୱରେଶ୍ବର ବ୍ରଜେନ୍ଦ୍ର କୁମାର',
+        title_english: 'Tumi Sarveswareswara Vrajendra Kumar',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_SARVASVATOMAR_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-doyalnitaicaitanya',
