@@ -492,6 +492,17 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-mamamanamandire',
+        title: 'ମମ ମନ ମନ୍ଦିରେ (Mama Mana Mandire)',
+        title_odia: 'ମମ ମନ ମନ୍ଦିରେ',
+        title_english: 'Mama Mana Mandire',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
