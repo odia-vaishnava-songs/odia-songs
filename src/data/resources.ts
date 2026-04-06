@@ -192,12 +192,15 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-srikrsnacaitanya',
-        title: 'ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ (Śrī Kṛṣṇa Caitanya)',
+        id: 'song-srikrsnacaitanyaprabhujive',
+        title: 'ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ପ୍ରଭୁ (Sri Krsna Caitanya Prabhu)',
+        title_odia: 'ଶ୍ରୀକୃଷ୍ଣଚୈତନ୍ୟ ପ୍ରଭୁ ଜୀବେ ଦୟାକରି',
+        title_english: 'Sri Krsna Caitanya Prabhu Jive Doya Kori',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_SRIKRSNACAITANYA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-radhakrsnabolbol',
