@@ -133,11 +133,14 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-naradamuni',
-        title: 'ନାରଦ ମୁନି ବାଜାୟ ବୀଣା (Nārada Muni Bājāy Vīṇā)',
+        title: 'ନାରଦ ମୁନି (Narada Muni)',
+        title_odia: 'ନାରଦ ମୁନି ବାଜାୟ ବୀଣା',
+        title_english: 'Narada Muni Bajay Vina',
         category: 'Songs',
         type: 'html',
-        structuredContent: (Songs as any).SONG_NARADAMUNI_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-nadiyagodrume',
