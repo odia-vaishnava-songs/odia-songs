@@ -586,6 +586,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-jivjago',
+        title: 'ଜୀବ ଜାଗ ଜୀବ ଜାଗ (Jiv Jago Jiv Jago)',
+        title_odia: 'ଜୀବ ଜାଗ ଜୀବ ଜାଗ',
+        title_english: 'Jiv Jago Jiv Jago',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_JIVJAGO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-jayajayaradhakrsna',
         title: 'ଜୟ ଜୟ ରାଧାକୃଷ୍ଣ (Jaya Jaya Radha Krsna)',
         title_odia: 'ଜୟ ଜୟ ରାଧାକୃଷ୍ଣ',
