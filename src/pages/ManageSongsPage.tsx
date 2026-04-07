@@ -220,12 +220,18 @@ export const ManageSongsPage: React.FC = () => {
                     />
                 ) : (
                     <>
-                        {/* Summary Stats Bar */}
+                        {/* Summary Stats Bar - NOW STICKY */}
                         <div style={{ 
                             display: 'grid', 
                             gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', 
                             gap: '0.8rem', 
-                            marginBottom: '1.5rem' 
+                            marginBottom: '1.5rem',
+                            position: 'sticky',
+                            top: '64px', // Below the main header
+                            padding: '1rem 0',
+                            backgroundColor: '#FDFBF7', // Matches page background
+                            zIndex: 9,
+                            boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)'
                         }}>
                             <div style={{ 
                                 background: '#EBF4FF', padding: '1rem', borderRadius: '12px', 
