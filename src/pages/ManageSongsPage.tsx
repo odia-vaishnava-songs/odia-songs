@@ -247,7 +247,7 @@ export const ManageSongsPage: React.FC = () => {
                                 background: '#E6FFFA', padding: '1rem', borderRadius: '12px', 
                                 border: '1px solid #B2F5EA', textAlign: 'center' 
                             }}>
-                                <div style={{ fontSize: '0.65rem', color: '#2C7A7B', fontWeight: 800, textTransform: 'uppercase' }}>✅ Completed</div>
+                                <div style={{ fontSize: '0.65rem', color: '#2C7A7B', fontWeight: 800, textTransform: 'uppercase' }}>✅ Proofread</div>
                                 <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#00a38d' }}>
                                     {filteredSongs.filter(s => s.status === 'COMPLETED' || s.verified).length}
                                 </div>
@@ -451,7 +451,7 @@ export const ManageSongsPage: React.FC = () => {
                                                     background: song.status === 'COMPLETED' || song.verified ? getStatusBackground('COMPLETED') : '#f9f9f9',
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
                                                 }}
-                                                title="Mark as Completed"
+                                                title="Mark as Complete-Proofread"
                                             >
                                                 <CheckCircle2 size={18} color={song.status === 'COMPLETED' || song.verified ? STATUS_COLORS.COMPLETED : "#666"} />
                                             </button>
