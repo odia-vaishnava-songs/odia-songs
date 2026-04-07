@@ -6,7 +6,7 @@ const OUTPUT_PATH = path.join(__dirname, 'src/data/songsContent.ts');
 
 function repair() {
     const content = fs.readFileSync(RESOURCES_PATH, 'utf-8');
-    const importRegex = /SONG_[A-Z0-9]+_STRUCTURED|JAYA_RADHA_MADHAVA|GITA_MAHATMYA_ODIA|BHULIYA_TOMARE_ODIA/g;
+    const importRegex = /SONG_[A-Z0-9_]+_STRUCTURED|JAYA_RADHA_MADHAVA|GITA_MAHATMYA_ODIA|BHULIYA_TOMARE_ODIA/g;
     const exportsNeeded = Array.from(new Set(content.match(importRegex)));
     
     console.log(`Fixing songsContent.ts - Need ${exportsNeeded.length} exports.`);

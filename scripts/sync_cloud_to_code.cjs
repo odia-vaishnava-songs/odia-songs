@@ -18,7 +18,7 @@ async function syncCloudToCode() {
     const resourcesContent = fs.readFileSync(RESOURCES_PATH, 'utf-8');
     const existingContent = fs.existsSync(OUTPUT_PATH) ? fs.readFileSync(OUTPUT_PATH, 'utf-8') : null;
     
-    const importRegex = /SONG_[A-Z0-9]+_STRUCTURED/g;
+    const importRegex = /SONG_[A-Z0-9_]+_STRUCTURED/g;
     const exportNames = Array.from(new Set(resourcesContent.match(importRegex)));
     console.log(`📡 Found ${exportNames.length} structured song exports required.`);
 
