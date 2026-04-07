@@ -220,6 +220,40 @@ export const ManageSongsPage: React.FC = () => {
                     />
                 ) : (
                     <>
+                        {/* Summary Stats Bar */}
+                        <div style={{ 
+                            display: 'grid', 
+                            gridTemplateColumns: 'repeat(3, 1fr)', 
+                            gap: '0.8rem', 
+                            marginBottom: '1.5rem' 
+                        }}>
+                            <div style={{ 
+                                background: '#EBF4FF', padding: '1rem', borderRadius: '12px', 
+                                border: '1px solid #BEE3F8', textAlign: 'center' 
+                            }}>
+                                <div style={{ fontSize: '0.65rem', color: '#3182CE', fontWeight: 800, textTransform: 'uppercase' }}>Total Songs</div>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#2A4365' }}>{filteredSongs.length}</div>
+                            </div>
+                            <div style={{ 
+                                background: '#F0FFF4', padding: '1rem', borderRadius: '12px', 
+                                border: '1px solid #C6F6D5', textAlign: 'center' 
+                            }}>
+                                <div style={{ fontSize: '0.65rem', color: '#38A169', fontWeight: 800, textTransform: 'uppercase' }}>✅ Completed</div>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#22543D' }}>
+                                    {filteredSongs.filter(s => s.status === 'COMPLETED' || s.verified).length}
+                                </div>
+                            </div>
+                            <div style={{ 
+                                background: '#FFF5F5', padding: '1rem', borderRadius: '12px', 
+                                border: '1px solid #FED7D7', textAlign: 'center' 
+                            }}>
+                                <div style={{ fontSize: '0.65rem', color: '#E53E3E', fontWeight: 800, textTransform: 'uppercase' }}>⏳ Pending</div>
+                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#742A2A' }}>
+                                    {filteredSongs.filter(s => s.status !== 'COMPLETED' && !s.verified).length}
+                                </div>
+                            </div>
+                        </div>
+
                         <div style={{ position: 'relative', marginBottom: '1rem' }}>
                             <Search size={18} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
                             <input

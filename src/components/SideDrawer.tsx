@@ -53,17 +53,36 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
 
     const fetchUsers = async () => {
         setLoading(true);
-        console.log('[Users] Fetching all profiles...');
+        console.log('[Users] Fetching all profiles and song counts...');
         try {
-            const { data, error } = await supabase
+            // 1. Fetch all profiles
+            const { data: profilesData, error: profilesError } = await supabase
                 .from('profiles')
                 .select('*')
                 .order('created_at', { ascending: false });
 
-            if (error) throw error;
-            setUsers(data as User[]);
+            if (profilesError) throw profilesError;
+
+            // 2. Fetch all assigned songs to count them
+            const { data: songsData, error: songsError } = await supabase
+                .from('songs')
+                .select('assigned_to, status, verified');
+
+            if (songsError) throw songsError;
+
+            // 3. Map song counts and status to each user
+            const usersWithSongs = (profilesData as User[]).map(profile => {
+                const userSongs = (songsData || []).filter(s => s.assigned_to === profile.id);
+                return {
+                    ...profile,
+                    assignedSongCount: userSongs.length,
+                    completedSongCount: userSongs.filter((s: any) => s.status === 'COMPLETED' || s.verified).length
+                };
+            });
+
+            setUsers(usersWithSongs);
         } catch (err) {
-            console.error('[Users] Error fetching users:', err);
+            console.error('[Users] Error fetching users data:', err);
         } finally {
             setLoading(false);
         }
@@ -389,7 +408,12 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                         }}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                                                 <CircleUser size={20} color="#8A5082" />
-                                                <span style={{ fontWeight: 600 }}>{u.name}</span>
+                                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                    <span style={{ fontWeight: 600 }}>{u.name}</span>
+                                                    <span style={{ fontSize: '0.7rem', color: '#666' }}>
+                                                        🎶 {u.assignedSongCount || 0} assigned · ✅ {u.completedSongCount || 0} done
+                                                    </span>
+                                                </div>
                                             </div>
                                             <button
                                                 onClick={() => handleAssign(u.id)}
@@ -502,6 +526,20 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                                         <div title="Rounds" style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>📿 <b>0</b></div>
                                                         <div title="Reading Hours" style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>📖 <b>0.0h</b></div>
                                                         <div title="Hearing Hours" style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>🎧 <b>0.0h</b></div>
+                                                        <div style={{ marginLeft: 'auto', display: 'flex', gap: '4px' }}>
+                                                             <div title="Songs Assigned" style={{ 
+                                                                backgroundColor: '#8A5082', color: 'white', 
+                                                                padding: '1px 6px', borderRadius: '4px', fontWeight: 'bold' 
+                                                            }}>
+                                                                🎶 {u.assignedSongCount || 0}
+                                                            </div>
+                                                            <div title="Songs Completed" style={{ 
+                                                                backgroundColor: '#2E7D32', color: 'white', 
+                                                                padding: '1px 6px', borderRadius: '4px', fontWeight: 'bold' 
+                                                            }}>
+                                                                ✅ {u.completedSongCount || 0}
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             ))

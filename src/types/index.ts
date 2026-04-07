@@ -78,4 +78,6 @@ export interface User {
     city?: string;
     userId?: string;
     role: 'user' | 'admin' | 'subadmin';
+    assignedSongCount?: number;
+    completedSongCount?: number;
 }
