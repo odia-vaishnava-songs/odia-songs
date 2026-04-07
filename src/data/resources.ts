@@ -620,6 +620,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KABEGOURABANE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-kabehabebolo',
+        title: 'କବେ ହ’ବେ ବୋଲୋ (Kabe Ha\' be Bolo)',
+        title_odia: 'କବେ ହ’ବେ ବୋଲୋ',
+        title_english: 'Kabe Ha\' be Bolo',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KABEHABEBOLO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

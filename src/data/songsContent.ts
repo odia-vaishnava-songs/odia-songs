@@ -3774,3 +3774,8 @@ export const JAYA_RADHA_MADHAVA: string = "";
 export const GITA_MAHATMYA_ODIA: string = "";
 export const BHULIYA_TOMARE_ODIA: string = "";
 export const SONG_KABEGOURABANE_STRUCTURED: StructuredSong = { verses: [] };
+
+import type { StructuredSong } from '../types';
+// AUTO-REPAIRED STUB FILE
+
+export const SONG_KABEHABEBOLO_STRUCTURED: StructuredSong = { verses: [] };
