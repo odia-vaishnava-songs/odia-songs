@@ -608,6 +608,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-kabegourabane',
+        title: 'କବେ ଗୌର ବନେ (Kabe Goura Bane)',
+        title_odia: 'କବେ ଗୌର ବନେ',
+        title_english: 'Kabe Goura Bane',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KABEGOURABANE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
