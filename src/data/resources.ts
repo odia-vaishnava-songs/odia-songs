@@ -593,7 +593,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Ṭhākura',
-        structuredContent: (Songs as any).SONG_JIVJAGO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_JIVJAGOJIVJAGO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
