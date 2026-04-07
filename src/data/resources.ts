@@ -572,6 +572,18 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-hariboloharibolo',
+        title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
+        title_odia: 'ହରି ବୋଲ ହରି ବୋଲ',
+        title_english: 'Hari bolo Hari bolo',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
