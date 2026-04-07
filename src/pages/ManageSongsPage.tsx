@@ -258,7 +258,7 @@ export const ManageSongsPage: React.FC = () => {
                             }}>
                                 <div style={{ fontSize: '0.65rem', color: '#E53E3E', fontWeight: 800, textTransform: 'uppercase' }}>⏳ Pending</div>
                                 <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#742A2A' }}>
-                                    {filteredSongs.filter(s => !s.published && (s.status !== 'COMPLETED' && !s.verified)).length}
+                                    {filteredSongs.length - filteredSongs.filter(s => s.published).length}
                                 </div>
                             </div>
                         </div>
