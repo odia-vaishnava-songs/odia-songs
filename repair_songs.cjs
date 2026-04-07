@@ -16,11 +16,12 @@ function repair() {
         existing = fs.readFileSync(OUTPUT_PATH, 'utf-8');
     }
     
-    const lines = [
-        "import type { StructuredSong } from '../types';",
-        "// AUTO-REPAIRED STUB FILE",
-        ""
-    ];
+    const lines = [];
+    if (!existing.includes("import type { StructuredSong }")) {
+        lines.push("import type { StructuredSong } from '../types';");
+        lines.push("// AUTO-REPAIRED STUB FILE");
+        lines.push("");
+    }
     
     exportsNeeded.forEach(name => {
         if (existing.includes(`export const ${name}:`)) {
