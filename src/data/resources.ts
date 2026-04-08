@@ -632,6 +632,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KABEHABEBOLO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-amitodurjanaati',
+        title: 'ଆମି ତୋ\' ଦୁର୍ଜନ ଅତି (Ami To\' Durjana Ati)',
+        title_odia: 'ଆମି ତୋ\' ଦୁର୍ଜନ ଅତି',
+        title_english: 'Ami To\' Durjana Ati',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_AMITODURJANAATI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
