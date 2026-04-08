@@ -3030,7 +3030,28 @@ export const SONG_MANASADEHAGEHA_STRUCTURED: StructuredSong = {
     ]
 };
 
-export const SONG_GITA_CHAPTER_1_STRUCTURED: StructuredSong = { verses: [] };
+export const SONG_GITA_CHAPTER_1_STRUCTURED: StructuredSong = {
+    "verses": [
+        {
+            "id": 12,
+            "lyric": "ସଞ୍ଜୟ ଉବାଚ\nତସ୍ୟ ସଞ୍ଜନୟନ୍ ହର୍ଷଂ କୁରୁବୃଦ୍ଧଃ ପିତାମହଃ |\nସିଂହନାଦଂ ବିନଦ୍ୟୋଚ୍ଚୈଃ ଶଙ୍ଖଂ ଦଧ୍ମୌ ପ୍ରତାପବାନ୍ || ୧୨ ||",
+            "translation": "ଏହାପରେ କୁରୁବଂଶର ବୃଦ୍ଧ ଏବଂ ଅତ୍ୟନ୍ତ ପ୍ରତାପଶାଳୀ ପିତାମହ ଭୀଷ୍ମ, ଦୁର୍ଯ୍ୟୋଧନଙ୍କୁ ଆନନ୍ଦିତ କରିବା ପାଇଁ ସିଂହ ଗର୍ଜନ ପରି ଉଚ୍ଚ ସ୍ୱରରେ ଶଙ୍ଖ ବଜାଇଲେ।",
+            "wordMeanings": [
+                { "word": "ତସ୍ୟ", "meaning": "ତାଙ୍କର (ଦୁର୍ଯ୍ୟୋଧନଙ୍କ)" },
+                { "word": "ସଞ୍ଜନୟନ୍", "meaning": "ଉତ୍ପନ୍ନ କରୁଥିବା" },
+                { "word": "ହର୍ଷଂ", "meaning": "ଆନନ୍ଦ" },
+                { "word": "କୁରୁ-ବୃଦ୍ଧଃ", "meaning": "କୁରୁବଂଶର ବୃଦ୍ଧ (ଭୀଷ୍ମ)" },
+                { "word": "ପିତାମହଃ", "meaning": "ପିତାମହ" },
+                { "word": "ସିଂହ-ନାଦଂ", "meaning": "ସିଂହର ଗର୍ଜନ ପରି" },
+                { "word": "ବିନଦ୍ୟ", "meaning": "ଶବ୍ଦ କରି" },
+                { "word": "ଉଚ୍ଚୈଃ", "meaning": "ଉଚ୍ଚ ସ୍ୱରରେ" },
+                { "word": "ଶଙ୍ଖଂ", "meaning": "ଶଙ୍ଖ" },
+                { "word": "ଦଧ୍ମୌ", "meaning": "ବଜାଇଲେ" },
+                { "word": "ପ୍ରତାପବାନ୍", "meaning": "ପ୍ରତାପଶାଳୀ / ପରାକ୍ରମୀ" }
+            ]
+        }
+    ]
+};
 
 export const SONG_GITA_CHAPTER_2_STRUCTURED: StructuredSong = { verses: [] };
 
