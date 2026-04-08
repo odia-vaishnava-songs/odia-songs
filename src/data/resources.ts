@@ -644,6 +644,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_AMITODURJANAATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-arkenomayajale',
+        title: 'ଆର କେନୋ ମାୟା-ଜାଲେ (Ar Keno Maya Jale)',
+        title_odia: 'ଆର କେନୋ ମାୟା-ଜାଲେ',
+        title_english: 'Ar Keno Maya Jale',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_ARKENOMAYAJALE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
