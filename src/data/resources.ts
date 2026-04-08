@@ -597,7 +597,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-
+    {
+        id: 'song-jayajayaradhakrsna',
+        title: 'ଜୟ ଜୟ ରାଧାକୃଷ୍ଣ (Jaya Jaya Radha Krsna)',
+        title_odia: 'ଜୟ ଜୟ ରାଧାକୃଷ୍ଣ',
+        title_english: 'Jaya Jaya Radha Krsna',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
     {
         id: 'song-kabegourabane',
         title: 'କବେ ଗୌର ବନେ (Kabe Goura Bane)',
