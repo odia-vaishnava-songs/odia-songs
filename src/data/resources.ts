@@ -438,30 +438,8 @@ export const RESOURCES: Resource[] = [
         description: '(ମୋକ୍ଷସନ୍ନ୍ୟାସ ଯୋଗ)',
         structuredContent: (Songs as any).SONG_GITA_CHAPTER_18_STRUCTURED
     },
-    {
-        id: 'song-gopinatmamanivedana',
-        title: 'ଗୋପୀନାଥ, ମମ ନିବେଦନ ଶୁନ (Gopinath Mama Nivedana Suno)',
-        title_odia: 'ଗୋପୀନାଥ, ମମ ନିବେଦନ ଶୁନ',
-        title_english: 'Gopinath Mama Nivedana Suno',
-        category: 'Songs',
-        type: 'html',
-        description: 'ଶୁଣନ୍ତୁ ଏହି ସୁନ୍ଦର ଭଜନ ଯେଉଁଥିରେ ଭକ୍ତିବିନୋଦ ଠାକୁର ଗୋପୀନାଥଙ୍କ ନିକଟରେ ଶରଣାଗତି ପ୍ରକାଶ କରୁଛନ୍ତି।',
-        structuredContent: (Songs as any).SONG_GOPINATHMAMANIVEDANA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-gopinatpart1',
-        title: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନୋ (Gopinath Part 1)',
-        title_odia: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନୋ',
-        title_english: 'Gopinath Part 1 (Mama Nivedana Suno)',
-        category: 'Songs',
-        type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
-        published: true,
-        status: 'COMPLETED'
-    },
+
+
     {
         id: 'song-gopinatpart2',
         title: 'ଗୋପୀନାଥ (Part 2): ଘୁଚାଓ ସଂସାର୍ (Gopinath Part 2)',
