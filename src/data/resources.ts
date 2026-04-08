@@ -656,6 +656,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ARKENOMAYAJALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-asalokathabolte',
+        title: 'ଆସଲୋ କଥା ବୋଲ୍ତେ (Asalo Katha Bolte)',
+        title_odia: 'ଆସଲୋ କଥା ବୋଲ୍ତେ',
+        title_english: 'Asalo Katha Bolte',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_ASALOKATHABOLTE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
