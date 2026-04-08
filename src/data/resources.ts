@@ -646,6 +646,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ASALOKATHABOLTE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-bhalegauragadadhara',
+        title: 'ଭାଲେ ଗୌରା-ଗଦାଧରୈର ଆରତି (Bhale Gaura Gadadharer Arati)',
+        title_odia: 'ଭାଲେ ଗୌରା-ଗଦାଧରୈର ଆରତି',
+        title_english: 'Bhale Gaura Gadadharer Arati',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_BHALEGAURAGADADHARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
