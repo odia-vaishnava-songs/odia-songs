@@ -3845,7 +3845,7 @@ export const SONG_JIVJAGOJIVJAGO_STRUCTURED: StructuredSong = {
     ]
 };
 
-export const SONG_JAYAJAYARADHAKRSNA_STRUCTURED: StructuredSong = { verses: [] };
+
 
 export const SONG_KABEGOURABANE_STRUCTURED: StructuredSong = {
     "verses": [
