@@ -376,13 +376,13 @@ export const SongsPage: React.FC = () => {
                                 let potentialSpeaker = firstLineMatch[1].trim();
                                 let detectedKey = '';
                                 
-                                if (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ')) {
+                                if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                                     detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
-                                } else if (potentialSpeaker.includes('ଅର୍ଜୁନ')) {
+                                } else if (potentialSpeaker.includes('ଅର୍ଜୁନ ଉବାଚ') || potentialSpeaker === 'ଅର୍ଜୁନ' || potentialSpeaker === 'ଅର୍ଜୁନ ଉବାଚ') {
                                     detectedKey = 'ଅର୍ଜୁନ ଉବାଚ';
-                                } else if (potentialSpeaker.includes('ସଞ୍ଜ')) {
+                                } else if (potentialSpeaker.includes('ସଞ୍ଜୟ ଉବାଚ') || potentialSpeaker === 'ସଞ୍ଜୟ' || (potentialSpeaker.includes('ସଞ୍ଜୟ') && potentialSpeaker.includes('ଉବାଚ'))) {
                                     detectedKey = 'ସଞ୍ଜୟ ଉବାଚ';
-                                } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର')) {
+                                } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର ଉବାଚ') || (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର') && potentialSpeaker.includes('ଉବାଚ'))) {
                                     detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
                                 }
         
@@ -525,13 +525,13 @@ export const SongsPage: React.FC = () => {
                         let detectedKey = '';
                         
                         // Robust substring matching bypasses invisible unicode chars and database typos
-                        if (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ')) {
+                        if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                             detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
-                        } else if (potentialSpeaker.includes('ଅର୍ଜୁନ')) {
+                        } else if (potentialSpeaker.includes('ଅର୍ଜୁନ ଉବାଚ') || potentialSpeaker === 'ଅର୍ଜୁନ' || potentialSpeaker === 'ଅର୍ଜୁନ ଉବାଚ') {
                             detectedKey = 'ଅର୍ଜୁନ ଉବାଚ';
-                        } else if (potentialSpeaker.includes('ସଞ୍ଜ')) {
+                        } else if (potentialSpeaker.includes('ସଞ୍ଜୟ ଉବାଚ') || potentialSpeaker === 'ସଞ୍ଜୟ' || (potentialSpeaker.includes('ସଞ୍ଜୟ') && potentialSpeaker.includes('ଉବାଚ'))) {
                             detectedKey = 'ସଞ୍ଜୟ ଉବାଚ';
-                        } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର')) {
+                        } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର ଉବାଚ') || (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର') && potentialSpeaker.includes('ଉବାଚ'))) {
                             detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
                         }
 
