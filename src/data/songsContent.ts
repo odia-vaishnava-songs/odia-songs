@@ -3087,8 +3087,6 @@ export const SONG_GITA_CHAPTER_17_STRUCTURED: StructuredSong = { verses: [] };
 
 export const SONG_GITA_CHAPTER_18_STRUCTURED: StructuredSong = { verses: [] };
 
-export const SONG_GOPINATHMAMANIVEDANA_STRUCTURED: StructuredSong = { verses: [] };
-
 export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
     "verses": [
         {
@@ -3865,6 +3863,7 @@ export const SONG_JIVJAGOJIVJAGO_STRUCTURED: StructuredSong = {
         }
     ]
 };
+
 export const SONG_JAYAJAYARADHAKRSNA_STRUCTURED: StructuredSong = {
     "verses": [
         {
@@ -3960,6 +3959,7 @@ export const SONG_JAYAJAYARADHAKRSNA_STRUCTURED: StructuredSong = {
         }
     ]
 };
+
 export const SONG_KABEGOURABANE_STRUCTURED: StructuredSong = {
     "verses": [
         {
