@@ -559,7 +559,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Ṭhākura',
-        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLO_STRUCTURED,
+        structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED_FIX,
         published: true,
         status: 'COMPLETED'
     },
@@ -656,6 +656,66 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Bhaktivinoda Ṭhākura',
         structuredContent: (Songs as any).SONG_BHALEGAURAGADADHARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gurudevevrajavane',
+        title: 'ଗୁରୁଦେବେ ବ୍ରଜ-ବନେ (Gurudeve Vraja Vane)',
+        title_odia: 'ଗୁରୁଦେବେ ବ୍ରଜ-ବନେ',
+        title_english: 'Gurudeve Vraja Vane',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_GURUDEVEVRAJAVANE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-hariharikabemora',
+        title: 'ହରି ହରି କବେ ମୋର (Hari Hari Kabe Mora)',
+        title_odia: 'ହରି ହରି କବେ ମୋର',
+        title_english: 'Hari Hari Kabe Mora',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_HARIHARIKABEMORA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-kabehabehenodasa',
+        title: 'କବେ ହ’ବେ ହେନୋ ଦଶା (Kabe Habe Heno Dasa)',
+        title_odia: 'କବେ ହ’ବେ ହେନୋ ଦଶା',
+        title_english: 'Kabe Habe Heno Dasa',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KABEHABEHENODASA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-kabemuivaishnava',
+        title: 'କବେ ମୁଇ ବୈଷ୍ଣବ ଚିନିବୋ (Kabe Mui Vaishnava Cinibo)',
+        title_odia: 'କବେ ମୁଇ ବୈଷ୍ଣବ ଚିନିବୋ',
+        title_english: 'Kabe Mui Vaishnava Cinibo',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KABEMUIVAISHNAVA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-kalikukkurakadan',
+        title: 'କଳି କୁକ୍କୁର କଦନ (Kali Kukkura Kadan)',
+        title_odia: 'କଳି କୁକ୍କୁର କଦନ',
+        title_english: 'Kali Kukkura Kadan',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KALIKUKKURAKADAN_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     }
