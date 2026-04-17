@@ -730,6 +730,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KENOHAREKRSNANAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-kesavatuwajagata',
+        title: 'କେଶବ! ତୁୱା ଜଗତ ବିଚିତ୍ର (Kesava Tuwa Jagata Vicitra)',
+        title_odia: 'କେଶବ! ତୁୱା ଜଗତ ବିଚିତ୍ର',
+        title_english: 'Kesava Tuwa Jagata Vicitra',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KESAVATUWAJAGATA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
