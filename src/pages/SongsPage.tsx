@@ -1369,11 +1369,28 @@ export const SongsPage: React.FC = () => {
                         <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {authorStats.map((stat, idx) => (
-                                    <div key={idx} style={{
-                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                        padding: '1rem', backgroundColor: '#FFF8F1', borderRadius: '16px',
-                                        border: '1px solid #FFE7D1',
-                                    }}>
+                                    <div 
+                                        key={idx} 
+                                        onClick={() => {
+                                            setSearchQuery(stat.author);
+                                            setIsStatsOpen(false);
+                                            mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
+                                        style={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                            padding: '1.1rem', backgroundColor: '#FFF8F1', borderRadius: '16px',
+                                            border: '1px solid #FFE7D1', cursor: 'pointer',
+                                            transition: 'transform 0.2s, background-color 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.backgroundColor = '#FFF1E0';
+                                            e.currentTarget.style.transform = 'scale(1.02)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.backgroundColor = '#FFF8F1';
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                        }}
+                                    >
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                             <div style={{ 
                                                 backgroundColor: '#FF9933', color: 'white', width: '28px', height: '28px', 
@@ -1381,8 +1398,8 @@ export const SongsPage: React.FC = () => {
                                                 fontSize: '0.8rem', fontWeight: 800
                                             }}>{idx + 1}</div>
                                             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                                <span style={{ fontWeight: 600, color: '#4A2B0F' }}>{stat.author}</span>
-                                                <span style={{ fontSize: '0.7rem', color: '#915926' }}>Total Songs</span>
+                                                <span style={{ fontWeight: 700, color: '#4A2B0F' }}>{stat.author}</span>
+                                                <span style={{ fontSize: '0.7rem', color: '#915926' }}>Click to view all songs</span>
                                             </div>
                                         </div>
                                         <div style={{ 
