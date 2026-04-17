@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3 } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -1006,6 +1006,35 @@ export const SongsPage: React.FC = () => {
                                 />
                             ))}
                         </div>
+                        
+                        <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />
+                        
+                        <button 
+                            onClick={() => {
+                                setIsFilterMenuOpen(false);
+                                window.dispatchEvent(new CustomEvent('open-stats'));
+                            }}
+                            style={{
+                                width: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                padding: '0.75rem',
+                                backgroundColor: '#FFF8F1',
+                                border: '1px solid #FFE7D1',
+                                borderRadius: '12px',
+                                color: '#4A2B0F',
+                                fontWeight: 600,
+                                fontSize: '0.9rem',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <BarChart3 size={18} color="#FF9933" />
+                                <span>Library Stats</span>
+                            </div>
+                            <span style={{ fontSize: '0.7rem', backgroundColor: '#FF9933', color: 'white', padding: '2px 6px', borderRadius: '4px' }}>{songs.length}</span>
+                        </button>
                     </div>
                 )}
             </header>

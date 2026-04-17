@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
     X, Share2, HelpCircle, LogOut,
     CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft,
-    Phone, MapPin
+    Phone, MapPin, BarChart3
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useAudio } from '../context/AudioContext';
@@ -12,7 +12,7 @@ import panchaTattvaImg from '../assets/pancha-tattva.png';
 import type { User } from '../types';
 import type { PresenceUser } from '../hooks/usePresence';
 
-type DrawerView = 'menu' | 'users' | 'assign';
+type DrawerView = 'menu' | 'users' | 'assign' | 'stats';
 
 interface SideDrawerProps {
     isOpen: boolean;
@@ -32,6 +32,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [confirmingLogout, setConfirmingLogout] = useState(false);
+    const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
 
     // Reset view when closed
     useEffect(() => {
@@ -50,6 +51,18 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
             return () => clearTimeout(timer);
         }
     }, [isOpen]);
+
+    useEffect(() => {
+        const handleOpenStats = () => {
+            setView('stats');
+            fetchAuthorStats();
+            // We need to tell the parent (AppLayout) to open the drawer
+            window.dispatchEvent(new CustomEvent('toggle-drawer'));
+        };
+
+        window.addEventListener('open-stats', handleOpenStats);
+        return () => window.removeEventListener('open-stats', handleOpenStats);
+    }, []);
 
     const fetchUsers = async () => {
         setLoading(true);
@@ -131,6 +144,33 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
         }
     };
 
+    const fetchAuthorStats = async () => {
+        setLoading(true);
+        try {
+            const { data, error } = await supabase
+                .from('songs')
+                .select('author');
+
+            if (error) throw error;
+
+            const counts: Record<string, number> = {};
+            data.forEach(s => {
+                const a = s.author || 'Unknown Author';
+                counts[a] = (counts[a] || 0) + 1;
+            });
+
+            const sorted = Object.entries(counts)
+                .map(([author, count]) => ({ author, count }))
+                .sort((a, b) => b.count - a.count);
+
+            setAuthorStats(sorted);
+        } catch (err) {
+            console.error('[Stats] Error fetching author stats:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const handleShare = async () => {
         if (navigator.share) {
             try {
@@ -182,14 +222,14 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                     background: theme.gradient, color: 'white'
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        {view === 'users' && (
+                        {(view === 'users' || view === 'stats') && (
                             <button onClick={() => setView('menu')} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', padding: 0, display: 'flex' }}>
                                 <ArrowLeft size={24} />
                             </button>
                         )}
                         <div>
                             <h2 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>
-                                {view === 'menu' ? (user ? 'Hare Krishna!' : 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ') : (view === 'assign' ? 'Assign To Editor' : 'Registered Users')}
+                                {view === 'menu' ? (user ? 'Hare Krishna!' : 'ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ') : (view === 'assign' ? 'Assign To Editor' : (view === 'stats' ? 'Author Statistics' : 'Registered Users'))}
                             </h2>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px', marginTop: '4px' }}>
                                 {user ? (
@@ -197,7 +237,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                         <div style={{ fontSize: '0.85rem', fontWeight: 600, opacity: 0.9 }}>
                                             {user.name || user.email?.split('@')[0]}
                                         </div>
-                                        {(user.role?.toLowerCase() === 'admin' || user.role?.toLowerCase() === 'subadmin') && (
+                                        {(user.role?.toLowerCase() === 'admin' || user.role?.toLowerCase() === 'subadmin') && view === 'menu' && (
                                             <div style={{ 
                                                 fontSize: '0.7rem', 
                                                 fontWeight: 800, 
@@ -215,7 +255,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                     </>
                                 ) : (
                                     <span style={{ fontSize: '0.75rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
-                                        {view === 'menu' ? 'ମେନ୍ୟୁ (Menu)' : 'ପରିଚାଳନା (Management)'}
+                                        {view === 'menu' ? 'ମେନ୍ୟୁ (Menu)' : (view === 'stats' ? 'ଲେଖକ ପରିସଂଖ୍ୟାନ' : 'ପରିଚାଳନା (Management)')}
                                     </span>
                                 )}
                             </div>
@@ -249,6 +289,16 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                     icon={<HelpCircle size={20} />}
                                     label="Help & Install"
                                     onClick={() => { navigate('/guide'); onClose(); }}
+                                />
+
+                                <MenuItem 
+                                    icon={<BarChart3 size={20} />} 
+                                    label="Library Stats (ଲେଖକ ପରିସଂଖ୍ୟାନ)" 
+                                    onClick={() => {
+                                        setView('stats');
+                                        fetchAuthorStats();
+                                    }} 
+                                    badge="NEW"
                                 />
 
                                 <MenuItem icon={<Info size={20} />} label="About" onClick={() => alert("Odia Vaishnava Songs v2.0\nDedicated to Srila Prabhupada")} />
@@ -435,6 +485,75 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                     ))
                                 )}
                             </div>
+                        </div>
+                    ) : view === 'stats' ? (
+                        /* AUTHOR STATISTICS VIEW */
+                        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1rem' }}>
+                            {loading ? (
+                                <p style={{ textAlign: 'center', color: '#666', marginTop: '2rem' }}>Loading statistics...</p>
+                            ) : (
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                    {authorStats.map((stat, idx) => (
+                                        <div key={idx} style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                            padding: '1rem',
+                                            backgroundColor: '#FFF8F1',
+                                            borderRadius: '12px',
+                                            border: '1px solid #FFE7D1',
+                                        }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                                <div style={{ 
+                                                    backgroundColor: '#FF9933', 
+                                                    color: 'white', 
+                                                    width: '32px', 
+                                                    height: '32px', 
+                                                    borderRadius: '8px', 
+                                                    display: 'flex', 
+                                                    alignItems: 'center', 
+                                                    justifyContent: 'center',
+                                                    fontSize: '0.9rem',
+                                                    fontWeight: 'bold'
+                                                }}>
+                                                    {idx + 1}
+                                                </div>
+                                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                    <span style={{ fontWeight: 600, color: '#4A2B0F', fontSize: '1rem' }}>{stat.author}</span>
+                                                    <span style={{ fontSize: '0.75rem', color: '#915926' }}>Total Published Songs</span>
+                                                </div>
+                                            </div>
+                                            <div style={{ 
+                                                backgroundColor: 'white', 
+                                                padding: '4px 12px', 
+                                                borderRadius: '20px', 
+                                                fontWeight: 800, 
+                                                color: '#FF9933',
+                                                border: '1.5px solid #FF9933',
+                                                minWidth: '30px',
+                                                textAlign: 'center'
+                                            }}>
+                                                {stat.count}
+                                            </div>
+                                        </div>
+                                    ))}
+                                    
+                                    <div style={{ 
+                                        marginTop: '1rem', 
+                                        padding: '1.25rem', 
+                                        background: theme.gradient, 
+                                        borderRadius: '16px', 
+                                        color: 'white',
+                                        textAlign: 'center',
+                                        boxShadow: '0 4px 12px rgba(255, 153, 51, 0.3)'
+                                    }}>
+                                        <div style={{ fontSize: '0.9rem', opacity: 0.9, marginBottom: '4px' }}>Combined Library Size</div>
+                                        <div style={{ fontSize: '2rem', fontWeight: 800 }}>
+                                            {authorStats.reduce((acc, curr) => acc + curr.count, 0)} Songs
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     ) : (
                         /* USERS LIST VIEW */
