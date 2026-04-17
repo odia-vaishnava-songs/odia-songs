@@ -8,8 +8,8 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 async function checkSongs() {
     const { data, error } = await supabase
         .from('songs')
-        .select('id, title, category, published, status')
-        .filter('id', 'in', '("song-gopinatmamanivedana", "song-gopinatpart2", "song-gopinatpart3")');
+        .select('id, title')
+        .ilike('title', '%Bolo Hari Bolo%');
 
     if (error) {
         console.error('❌ Supabase Error:', error);

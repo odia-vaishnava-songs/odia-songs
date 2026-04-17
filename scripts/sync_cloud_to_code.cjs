@@ -63,7 +63,8 @@ async function syncCloudToCode() {
         'song-jayaradhadhava': 'SONG_JAYARADHAMADHAVA_STRUCTURED',
         'song-bhuliyatomare': 'SONG_BHULIYATOMARE_STRUCTURED',
         'song-gitamahatmya': 'SONG_GITAMAHATMYA_STRUCTURED',
-        'song-amito-durjana': 'SONG_AMITODURJANA_STRUCTURED'
+        'song-amito-durjana': 'SONG_AMITODURJANA_STRUCTURED',
+        'song-hariboloharibolo': 'SONG_BOLOHARIBOLO_STRUCTURED'
     };
 
     const extractFromExisting = (exportName) => {

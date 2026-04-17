@@ -559,7 +559,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Ṭhākura',
-        structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED_FIX,
+        structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
