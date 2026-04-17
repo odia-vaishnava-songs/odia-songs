@@ -8,8 +8,8 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 async function checkSongs() {
     const { data, error } = await supabase
         .from('songs')
-        .select('id, title')
-        .ilike('title', '%Bolo Hari Bolo%');
+        .select('id, title, structured_content')
+        .eq('id', 'song-kesavatuwajagata');
 
     if (error) {
         console.error('❌ Supabase Error:', error);
@@ -18,7 +18,13 @@ async function checkSongs() {
 
     if (data && data.length > 0) {
         console.log('✅ DATABASE HAS THE DATA:');
-        data.forEach(song => console.log(`- ${song.title} (ID: ${song.id}, Status: ${song.status}, Published: ${song.published})`));
+        data.forEach(song => {
+            console.log(`- ${song.title} (ID: ${song.id})`);
+            console.log(`  - Has Structured Content: ${!!song.structured_content}`);
+            if (song.structured_content) {
+                console.log(`  - Verses: ${song.structured_content.verses?.length || 0}`);
+            }
+        });
     } else {
         console.log('⚠️ DATABASE IS RETURNING ZERO SONGS FOR THESE IDs.');
     }
