@@ -3,7 +3,7 @@ const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
 
 async function dumpIds() {
     try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/songs?select=id,title`, {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/songs?select=id,title&limit=1000`, {
             method: 'GET',
             headers: { 'apikey': ANON_KEY }
         });
