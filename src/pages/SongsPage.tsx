@@ -26,6 +26,9 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [isStatsOpen, setIsStatsOpen] = useState(false);
+    const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
+    const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('gita');
     const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -70,6 +73,34 @@ export const SongsPage: React.FC = () => {
 
     const handleSetTheme = (themeKey: string) => {
         setTheme(themeKey);
+    };
+
+    const fetchAuthorStats = async () => {
+        setStatsLoading(true);
+        try {
+            const { data, error } = await supabase
+                .from('songs')
+                .select('author');
+
+            if (error) throw error;
+
+            const counts: Record<string, number> = {};
+            data.forEach(s => {
+                const a = s.author || 'Unknown Author';
+                counts[a] = (counts[a] || 0) + 1;
+            });
+
+            const sorted = Object.entries(counts)
+                .map(([author, count]) => ({ author, count }))
+                .sort((a, b) => b.count - a.count);
+
+            setAuthorStats(sorted);
+            setIsStatsOpen(true);
+        } catch (err) {
+            console.error('[Stats] Error:', err);
+        } finally {
+            setStatsLoading(false);
+        }
     };
 
     const songResources = useMemo(() => {
@@ -1012,8 +1043,9 @@ export const SongsPage: React.FC = () => {
                         <button 
                             onClick={() => {
                                 setIsFilterMenuOpen(false);
-                                window.dispatchEvent(new CustomEvent('open-stats'));
+                                fetchAuthorStats();
                             }}
+                            disabled={statsLoading}
                             style={{
                                 width: '100%',
                                 display: 'flex',
@@ -1026,12 +1058,13 @@ export const SongsPage: React.FC = () => {
                                 color: '#4A2B0F',
                                 fontWeight: 600,
                                 fontSize: '0.9rem',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                opacity: statsLoading ? 0.7 : 1
                             }}
                         >
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <BarChart3 size={18} color="#FF9933" />
-                                <span>Library Stats</span>
+                                <span>{statsLoading ? 'Loading...' : 'Library Stats'}</span>
                             </div>
                             <span style={{ fontSize: '0.7rem', backgroundColor: '#FF9933', color: 'white', padding: '2px 6px', borderRadius: '4px' }}>{songs.length}</span>
                         </button>
@@ -1296,6 +1329,87 @@ export const SongsPage: React.FC = () => {
                         <BookOpen size={20} />
                         <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ଭଗବଦ୍ ଗୀତା</span>
                     </button>
+                </div>
+            )}
+            {/* Statistics Modal */}
+            {isStatsOpen && (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)',
+                    zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    padding: '20px'
+                }}>
+                    <div style={{
+                        backgroundColor: 'white', width: '100%', maxWidth: '450px',
+                        maxHeight: '85vh', borderRadius: '24px', overflow: 'hidden',
+                        display: 'flex', flexDirection: 'column', boxShadow: '0 20px 50px rgba(0,0,0,0.2)',
+                        animation: 'modalSlideUp 0.3s ease-out'
+                    }}>
+                        {/* Modal Header */}
+                        <div style={{
+                            padding: '1.25rem', background: theme.gradient, color: 'white',
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                        }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <BarChart3 size={24} />
+                                <div>
+                                    <h3 style={{ margin: 0, fontSize: '1.1rem' }}>Author Statistics</h3>
+                                    <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>ଲେଖକ ପରିସଂଖ୍ୟାନ</div>
+                                </div>
+                            </div>
+                            <button 
+                                onClick={() => setIsStatsOpen(false)}
+                                style={{ background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', padding: '8px', borderRadius: '50%', cursor: 'pointer' }}
+                            >
+                                <X size={20} />
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                {authorStats.map((stat, idx) => (
+                                    <div key={idx} style={{
+                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                        padding: '1rem', backgroundColor: '#FFF8F1', borderRadius: '16px',
+                                        border: '1px solid #FFE7D1',
+                                    }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <div style={{ 
+                                                backgroundColor: '#FF9933', color: 'white', width: '28px', height: '28px', 
+                                                borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                fontSize: '0.8rem', fontWeight: 800
+                                            }}>{idx + 1}</div>
+                                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                <span style={{ fontWeight: 600, color: '#4A2B0F' }}>{stat.author}</span>
+                                                <span style={{ fontSize: '0.7rem', color: '#915926' }}>Total Songs</span>
+                                            </div>
+                                        </div>
+                                        <div style={{ 
+                                            backgroundColor: 'white', padding: '4px 10px', borderRadius: '20px', 
+                                            fontWeight: 800, color: '#FF9933', border: '1.5px solid #FF9933', fontSize: '0.9rem'
+                                        }}>{stat.count}</div>
+                                    </div>
+                                ))}
+
+                                <div style={{ 
+                                    marginTop: '1rem', padding: '1.5rem', background: 'linear-gradient(135deg, #FF9933, #FFCC33)', 
+                                    borderRadius: '20px', color: 'white', textAlign: 'center', boxShadow: '0 10px 20px rgba(255, 153, 51, 0.2)'
+                                }}>
+                                    <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Combined Library Size</div>
+                                    <div style={{ fontSize: '2.2rem', fontWeight: 900 }}>
+                                        {authorStats.reduce((acc, curr) => acc + curr.count, 0)} <span style={{ fontSize: '1rem', fontWeight: 400 }}>Songs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <style>{`
+                        @keyframes modalSlideUp {
+                            from { transform: translateY(20px); opacity: 0; }
+                            to { transform: translateY(0); opacity: 1; }
+                        }
+                    `}</style>
                 </div>
             )}
         </div>
