@@ -718,6 +718,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KALIKUKKURAKADAN_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-kenoharekrsnanam',
+        title: 'କେନୋ ହରେ କୃଷ୍ଣ ନାମ (Keno Hare Krsna Nam)',
+        title_odia: 'କେନୋ ହରେ କୃଷ୍ଣ ନାମ',
+        title_english: 'Keno Hare Krsna Nam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_KENOHAREKRSNANAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
