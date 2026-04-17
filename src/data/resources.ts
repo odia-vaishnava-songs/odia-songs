@@ -742,6 +742,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KESAVATUWAJAGATA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-nijakarmadosephale',
+        title: 'ନିଜ କର୍ମ ଦୋଷ ଫଲେ (Nija Karma Dose Phale)',
+        title_odia: 'ନିଜ କର୍ମ ଦୋଷ ଫଲେ',
+        title_english: 'Nija Karma Dose Phale',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_NIJAKARMADOSEPHALE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
