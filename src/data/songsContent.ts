@@ -7549,6 +7549,7 @@ export const SONG_KESAVATUWAJAGATA_STRUCTURED: StructuredSong = {
                 "word": "ସାର (ସର୍ବସ୍ଵ)",
                 "meaning": "ସର୍ବସ୍ଵ (ଶେଷ ଲକ୍ଷ୍ୟ)"
             }
-        }
+        ]
+    }
     ]
 };
