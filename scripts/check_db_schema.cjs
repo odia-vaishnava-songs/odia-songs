@@ -1,30 +1,19 @@
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config();
 
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjc29xaGRrZGZrenFkbHhxbWR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwNzY5ODAsImV4cCI6MjA4NzY1Mjk4MH0.rKZQkigexFy6w1ui99ARuxee6US5hPaTTLRTaASZ2Ec';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 async function checkSchema() {
-    const { data: tables, error } = await supabase
-        .from('pg_catalog.pg_tables')
-        .select('tablename')
-        .eq('schemaname', 'public');
-
+    console.log('Fetching first row from songs table...');
+    const { data, error } = await supabase.from('songs').select('*').limit(1);
     if (error) {
         console.error('Error:', error);
-        // Fallback: try to select from a non-existent table to see error or just list common table names
-        const { error: error2 } = await supabase.from('verses').select('id').limit(1);
-        if (error2) console.log('Verses table status:', error2.message);
-        else console.log('Verses table exists!');
-        
-        const { error: error3 } = await supabase.from('chapters').select('id').limit(1);
-        if (error3) console.log('Chapters table status:', error3.message);
-        else console.log('Chapters table exists!');
-        return;
+    } else {
+        console.log('Columns in songs table:');
+        console.log(Object.keys(data[0]));
     }
-
-    console.log('Tables:', tables);
 }
 
 checkSchema();
