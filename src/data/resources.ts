@@ -229,14 +229,6 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Ṭhākura'
     },
     {
-        id: 'song-manasadehageha',
-        title: 'ମାନସ ଦେହ ଗେହ (Mānasa Deha Geha)',
-        category: 'Songs',
-        type: 'html',
-        structuredContent: (Songs as any).SONG_MANASADEHAGEHA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
-    },
-    {
         id: 'song-sarvasvatomarcarene',
         title: 'ସର୍ବସ୍ବ ତୋମାର (Sarvasva Tomar Carane)',
         title_odia: 'ସର୍ବସ୍ବ ତୋମାର, ଚରଣେ',
