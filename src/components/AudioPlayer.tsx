@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Repeat, Download, UserPlus, Repeat1, Clock } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Repeat, Download, UserPlus, Repeat1 } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
 export const AudioPlayer: React.FC = () => {

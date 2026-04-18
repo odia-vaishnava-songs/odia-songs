@@ -44,7 +44,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [sleepTimer, setSleepTimer] = useState<number | null>(null);
     const [currentThemeKey, setCurrentThemeKey] = useState(localStorage.getItem('song-theme') || DEFAULT_THEME);
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const sleepTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const sleepTimerRef = useRef<any>(null);
     const repeatModeRef = useRef<'none' | 'one'>(repeatMode);
 
     const theme = TATTVA_THEMES[currentThemeKey] || TATTVA_THEMES[DEFAULT_THEME];
