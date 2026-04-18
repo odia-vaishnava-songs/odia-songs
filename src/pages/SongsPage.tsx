@@ -64,6 +64,26 @@ export const SongsPage: React.FC = () => {
         (window as any)._activeSongId = song.id;
     };
 
+    const songResources = useMemo(() => {
+        return songs
+            .sort((a, b) => {
+                const orderDiff = (a.display_order ?? 999) - (b.display_order ?? 999);
+                if (orderDiff !== 0) return orderDiff;
+
+                // Secondary sort for Gita chapters to ensure 1-18 sequence
+                const isGitaA = a.category === 'Gita' || a.category === 'G' || a.category === 'Gītā-māhātmya';
+                const isGitaB = b.category === 'Gita' || b.category === 'G' || b.category === 'Gītā-māhātmya';
+
+                if (isGitaA && isGitaB) {
+                    const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '999');
+                    const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '999');
+                    if (aNum !== bNum) return aNum - bNum;
+                }
+
+                return (a.title_odia || a.title).localeCompare(b.title_odia || b.title);
+            });
+    }, [songs]);
+
     // Register song pool for Auto-Next
     useEffect(() => {
         if (songResources.length > 0) {
@@ -75,9 +95,7 @@ export const SongsPage: React.FC = () => {
     useEffect(() => {
         const handleAutoNext = (e: any) => {
             // Logic to find current song, then play next
-            // Handled mostly by AudioContext broadcasting this event
-            // But we can trigger handleSelectSong(nextSong) here
-            const currentSongId = (window as any)._activeSongId; // We'll set this below
+            const currentSongId = (window as any)._activeSongId;
             const currentIndex = songResources.findIndex(s => s.id === currentSongId);
             if (currentIndex !== -1 && currentIndex < songResources.length - 1) {
                 const nextSong = songResources[currentIndex + 1];
@@ -129,26 +147,6 @@ export const SongsPage: React.FC = () => {
             setStatsLoading(false);
         }
     };
-
-    const songResources = useMemo(() => {
-        return songs
-            .sort((a, b) => {
-                const orderDiff = (a.display_order ?? 999) - (b.display_order ?? 999);
-                if (orderDiff !== 0) return orderDiff;
-
-                // Secondary sort for Gita chapters to ensure 1-18 sequence
-                const isGitaA = a.category === 'Gita' || a.category === 'G' || a.category === 'Gītā-māhātmya';
-                const isGitaB = b.category === 'Gita' || b.category === 'G' || b.category === 'Gītā-māhātmya';
-
-                if (isGitaA && isGitaB) {
-                    const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '999');
-                    const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '999');
-                    if (aNum !== bNum) return aNum - bNum;
-                }
-
-                return (a.title_odia || a.title).localeCompare(b.title_odia || b.title);
-            });
-    }, [songs]);
 
     // songsOnly removed since we use songResources everywhere.
 
