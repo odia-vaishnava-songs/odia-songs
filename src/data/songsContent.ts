@@ -4,7 +4,19 @@ import type { StructuredSong } from '../types';
 // DO NOT MANUALLY EDIT - USE THE MANAGE SONGS DASHBOARD IN THE APP.
 
 export const SONG_JAYARADHAMADHAVA_STRUCTURED: StructuredSong = {
-    "verses": []
+    "verses": [
+        {
+            "id": 1,
+            "lyric": "ଜୟ ରାଧା-ମାଧବ (ଜୟ) କୁଞ୍ଜ-ବିହାରୀ",
+            "translation": "Jaya Rādhā Mādhava (jaya) Kuñja Bihārī",
+            "wordMeanings": [
+                {
+                    "word": "ଜୟ",
+                    "meaning": "ଜୟ ବା ସମସ୍ତ ମହିମା; ରାଧା-ମାଧବ — ଶ୍ରୀରାଧା ଏବଂ ମାଧୁର୍ଯ୍ୟର ସ୍ଵାମୀ ଶ୍ରୀକୃଷ୍ଣ; କୁଞ୍ଜ-ବିହାରୀ — ଯିଏ ବୃନ୍ଦାବନର ନିକୁଞ୍ଜରେ ପ୍ରେମ ଲୀଳା କରନ୍ତି; ଗୋପୀ-ଜନ-ବଲ୍ଲଭ — ବ୍ରଜର ଗୋପାଳୁଣୀ (ଗୋପୀ) ମାନଙ୍କର ପ୍ରିୟତମ; ଗିରି-ବର-ଧାରୀ — ଗୋବର୍ଦ୍ଧନ ପରି ଶ୍ରେଷ୍ଠ ପର୍ବତକୁ ଧାରଣ କରିଥିବା ପ୍ରଭୁ; ଯଶୋଦା-ନନ୍ଦନ — ମାତା ଯଶୋଦାଙ୍କ ପ୍ରିୟ ପୁତ୍ର; ବ୍ରଜ-ଜନ-ରଞ୍ଜନ — ବ୍ରଜବାସୀମାନଙ୍କୁ ଆନନ୍ଦ ପ୍ରଦାନକାରୀ; ଯାମୁନ-ତୀର-ବନ-ଚାରୀ — ଯିଏ ଯମୁନା ନଦୀ କୂଳରେ ଥିବା ବନରେ ବିଚରଣ କରନ୍ତି।"
+                }
+            ]
+        }
+    ]
 };
 
 export const SONG_GITAMAHATMYA_STRUCTURED: StructuredSong = {
