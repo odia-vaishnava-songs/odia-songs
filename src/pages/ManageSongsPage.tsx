@@ -159,7 +159,19 @@ export const ManageSongsPage: React.FC = () => {
         }
 
         return true;
-    }).sort((a, b) => a.title.localeCompare(b.title));
+    }).sort((a, b) => {
+        // First try sorting by category (Gita first)
+        if (a.category === 'Gita' && b.category !== 'Gita') return -1;
+        if (a.category !== 'Gita' && b.category === 'Gita') return 1;
+
+        // Then try sorting by display_order
+        if ((a.display_order || 0) !== (b.display_order || 0)) {
+            return (a.display_order || 0) - (b.display_order || 0);
+        }
+
+        // Fallback to natural alphanumeric sort for titles
+        return a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' });
+    });
 
     const handleAssignClick = (songId: string) => {
         setSelectedIds([songId]);
