@@ -757,19 +757,25 @@ export const SongsPage: React.FC = () => {
                         padding: '0.4rem'
                     }}
                 >
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '20px' }}>
                         {renderSongContent()}
                         {renderChapterNavigation()}
                     </div>
                 </main>
-                <footer style={{ 
-                    padding: '0 0.5rem 1rem', 
-                    backgroundColor: 'transparent', 
+                <div style={{ 
+                    height: '110px', 
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    paddingBottom: '16px',
                     position: 'relative',
-                    zIndex: 1001
+                    zIndex: 1001,
+                    background: currentThemeKey === 'advaita' ? '#111' : (selectedSong ? theme.color : '#fff' )
                 }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto' }}><AudioPlayer /></div>
-                </footer>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+                        <AudioPlayer />
+                    </div>
+                </div>
             </div>
         );
     }

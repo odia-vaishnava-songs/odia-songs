@@ -51,13 +51,14 @@ export const AudioPlayer: React.FC = () => {
     return (
         <div className={`player-glass ${isNightMode ? 'dark' : ''}`} style={{
             position: 'relative',
-            borderRadius: '24px',
-            padding: '12px 20px',
-            margin: '0 8px 12px',
+            borderRadius: '20px',
+            padding: '10px 16px',
+            margin: '0 12px 16px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
-            overflow: 'visible'
+            gap: '6px',
+            overflow: 'visible',
+            zIndex: 2000
         }}>
             {/* Progress Slider Overlay */}
             <div style={{
@@ -88,46 +89,47 @@ export const AudioPlayer: React.FC = () => {
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
                 {/* Left: Info Section */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, minWidth: 0 }}>
                     <div style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: '12px',
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '10px',
                         background: 'var(--player-gradient)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         color: 'white',
-                        boxShadow: '0 4px 12px rgba(66, 133, 244, 0.3)',
+                        boxShadow: '0 4px 10px rgba(66, 133, 244, 0.25)',
                         flexShrink: 0
                     }}>
-                        <Music size={24} />
+                        <Music size={20} />
                     </div>
                     <div style={{ minWidth: 0 }}>
                         <div style={{ 
-                            fontSize: '1rem', 
+                            fontSize: '0.95rem', 
                             fontWeight: 800, 
                             color: isNightMode ? '#fff' : '#1e293b',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            fontFamily: 'var(--font-odia-sans)'
+                            fontFamily: 'var(--font-odia-sans)',
+                            lineHeight: 1.2
                         }}>
                             {activeSong.title_odia || activeSong.title}
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                             {isPlaying && (
-                                <div style={{ display: 'flex', gap: '2px', height: '10px', alignItems: 'flex-end', marginBottom: '2px' }}>
-                                    <div className="wave-bar" style={{ animationDelay: '0s' }} />
-                                    <div className="wave-bar" style={{ animationDelay: '0.2s' }} />
-                                    <div className="wave-bar" style={{ animationDelay: '0.4s' }} />
+                                <div style={{ display: 'flex', gap: '2px', height: '8px', alignItems: 'flex-end', marginBottom: '1px' }}>
+                                    <div className="wave-bar" style={{ animationDelay: '0s', width: '2px' }} />
+                                    <div className="wave-bar" style={{ animationDelay: '0.2s', width: '2px' }} />
+                                    <div className="wave-bar" style={{ animationDelay: '0.4s', width: '2px' }} />
                                 </div>
                             )}
                             <div style={{ 
-                                fontSize: '0.75rem', 
+                                fontSize: '0.7rem', 
                                 fontWeight: 700, 
                                 color: '#4285F4',
-                                opacity: 0.9
+                                opacity: 0.8
                             }}>
                                 {currentLabel}
                             </div>
@@ -136,34 +138,32 @@ export const AudioPlayer: React.FC = () => {
                 </div>
 
                 {/* Center: Controls */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <button onClick={skipBackward} style={iconBtnStyle(isNightMode)}>
-                        <SkipBack size={20} fill="currentColor" />
+                        <SkipBack size={18} fill="currentColor" />
                     </button>
                     
                     <button
                         onClick={togglePlay}
                         style={{
-                            width: '52px',
-                            height: '52px',
+                            width: '46px',
+                            height: '46px',
                             borderRadius: '50%',
                             background: 'var(--player-gradient)',
                             color: 'white',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            boxShadow: '0 6px 20px rgba(66, 133, 244, 0.4)',
+                            boxShadow: '0 4px 15px rgba(66, 133, 244, 0.3)',
                             transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
                             cursor: 'pointer'
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
                     >
-                        {isPlaying ? <Pause size={28} fill="white" /> : <Play size={28} fill="white" style={{ marginLeft: '4px' }} />}
+                        {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" style={{ marginLeft: '3px' }} />}
                     </button>
 
                     <button onClick={skipForward} style={iconBtnStyle(isNightMode)}>
-                        <SkipForward size={20} fill="currentColor" />
+                        <SkipForward size={18} fill="currentColor" />
                     </button>
                 </div>
 
