@@ -418,20 +418,20 @@ export const SongsPage: React.FC = () => {
         if (viewMode === 'sequential') {
             return (
                 <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
-                    <div style={{ padding: '0 0.4rem', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '1rem 0 0.25rem', color: '#fff', lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                        {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
-                    </div>
-                    <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
+                    <div style={{ background: cardBg, padding: '2.5rem 1.5rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '0 0 0.25rem', color: titleColor, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
+                        {selectedSong.author && <div style={{ fontSize: '1.2rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '2.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
+                        
+                        <div style={{ height: '1px', background: isNightMode ? '#334155' : '#eee', margin: '1rem 0 3rem' }} />
+
                         {verses.map((verse, idx) => {
                             let speakerLine = '';
                             let mainLyric = verse.lyric;
-
+                            // ... parsing logic remained the same ...
                             const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                             if (firstLineMatch) {
                                 let potentialSpeaker = firstLineMatch[1].trim();
                                 let detectedKey = '';
-
                                 if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                                     detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
                                 } else if (potentialSpeaker.includes('ଅର୍ଜୁନ ଉବାଚ') || potentialSpeaker === 'ଅର୍ଜୁନ' || potentialSpeaker === 'ଅର୍ଜୁନ ଉବାଚ') {
@@ -441,7 +441,6 @@ export const SongsPage: React.FC = () => {
                                 } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର ଉବାଚ') || (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର') && potentialSpeaker.includes('ଉବାଚ'))) {
                                     detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
                                 }
-
                                 if (detectedKey) {
                                     speakerLine = detectedKey;
                                     mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
@@ -451,7 +450,6 @@ export const SongsPage: React.FC = () => {
                             return (
                                 <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
                                     <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
-
                                     {speakerLine && (
                                         <div style={{
                                             display: 'inline-flex',
@@ -471,7 +469,6 @@ export const SongsPage: React.FC = () => {
                                             {SPEAKER_MAP[speakerLine].label}
                                         </div>
                                     )}
-
                                     <div style={{
                                         whiteSpace: 'pre-wrap',
                                         color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
