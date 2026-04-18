@@ -802,6 +802,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_YADITEHARIPADA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-borosukherkhabar',
+        title: 'ବଡ଼ ସୁଖେର ଖବର ଗାଇ (Boro Sukher Khabor Gai)',
+        title_odia: 'ବଡ଼ ସୁଖେର ଖବର ଗାଇ',
+        title_english: 'Boro Sukher Khabor Gai',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_BOROSUKHERKHABAR_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
