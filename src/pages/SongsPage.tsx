@@ -763,11 +763,11 @@ export const SongsPage: React.FC = () => {
                     </div>
                 </main>
                 <div style={{ 
-                    height: '110px', 
+                    height: '180px', 
                     width: '100%',
                     display: 'flex',
                     alignItems: 'flex-end',
-                    paddingBottom: '16px',
+                    paddingBottom: '8px',
                     position: 'relative',
                     zIndex: 1001,
                     background: currentThemeKey === 'advaita' ? '#111' : (selectedSong ? theme.color : '#fff' )
