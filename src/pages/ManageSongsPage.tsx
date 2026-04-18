@@ -160,16 +160,18 @@ export const ManageSongsPage: React.FC = () => {
 
         return true;
     }).sort((a, b) => {
-        // First try sorting by category (Gita first)
+        // 1. Group by Category (Gita always at the top)
         if (a.category === 'Gita' && b.category !== 'Gita') return -1;
         if (a.category !== 'Gita' && b.category === 'Gita') return 1;
 
-        // Then try sorting by display_order
-        if ((a.display_order || 0) !== (b.display_order || 0)) {
-            return (a.display_order || 0) - (b.display_order || 0);
+        // 2. Within Gita, use display_order (Chapter 1, 2...)
+        if (a.category === 'Gita' && b.category === 'Gita') {
+            if ((a.display_order || 0) !== (b.display_order || 0)) {
+                return (a.display_order || 0) - (b.display_order || 0);
+            }
         }
 
-        // Fallback to natural alphanumeric sort for titles
+        // 3. For all other songs, sort alphabetically by Title
         return a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' });
     });
 
