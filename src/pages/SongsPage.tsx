@@ -762,7 +762,12 @@ export const SongsPage: React.FC = () => {
                         {renderChapterNavigation()}
                     </div>
                 </main>
-                <footer style={{ padding: '0.2rem 1rem', backgroundColor: currentThemeKey === 'advaita' ? '#1e1e1e' : '#fff', borderTop: `1px solid ${currentThemeKey === 'advaita' ? '#334155' : '#eee'}` }}>
+                <footer style={{ 
+                    padding: '0 0.5rem 1rem', 
+                    backgroundColor: 'transparent', 
+                    position: 'relative',
+                    zIndex: 1001
+                }}>
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}><AudioPlayer /></div>
                 </footer>
             </div>
