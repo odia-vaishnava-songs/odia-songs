@@ -778,6 +778,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_RADHAKUNDATATA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-srikrsnakirtane',
+        title: 'ଶ୍ରୀ-କୃଷ୍ଣ-କୀର୍ତ୍ତନେ ଯଦି ମାନସ ତୋହାର (Sri Krsna Kirtane Jadi Manasa Tohar)',
+        title_odia: 'ଶ୍ରୀ-କୃଷ୍ଣ-କୀର୍ତ୍ତନେ ଯଦି ମାନସ ତୋହାର',
+        title_english: 'Sri Krsna Kirtane Jadi Manasa Tohar',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_SRIKRSNAKIRTANE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
