@@ -3,7 +3,6 @@ import { supabase } from '../supabase/config';
 import type { Resource, SongVerse, WordMeaning } from '../types';
 import { X, Save, Trash2, CheckCircle2 } from 'lucide-react';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
-import { toOdiaNumber } from '../utils/odia';
 
 
 
@@ -32,11 +31,29 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         }
     );
     const [saving, setSaving] = useState(false);
+    const [isRawMode, setIsRawMode] = useState(false);
+    const [rawJson, setRawJson] = useState('');
 
-    const handleVerseChange = (verseId: number, field: keyof SongVerse, value: any) => {
+    const toggleRawMode = () => {
+        if (!isRawMode) {
+            // Entering Raw Mode: Convert current state to string
+            setRawJson(JSON.stringify(formData.structuredContent, null, 2));
+        } else {
+            // Exiting Raw Mode: Parse logic
+            try {
+                const parsed = JSON.parse(rawJson);
+                setFormData({ ...formData, structuredContent: parsed });
+            } catch (e) {
+                alert("Invalid JSON format. Please fix the text before switching back.");
+                return;
+            }
+        }
+        setIsRawMode(!isRawMode);
+    };
+
+    const handleVerseChangeByIndex = (index: number, field: keyof SongVerse, value: any) => {
         const verses = [...(formData.structuredContent?.verses || [])];
-        const index = verses.findIndex(v => v.id === verseId);
-        if (index !== -1) {
+        if (verses[index]) {
             verses[index] = { ...verses[index], [field]: value };
             setFormData({
                 ...formData,
@@ -63,10 +80,9 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         });
     };
 
-    const handleWordMeaningChange = (verseId: number, wordIdx: number, field: keyof WordMeaning, value: string) => {
+    const handleWordMeaningChangeByIndex = (vIdx: number, wordIdx: number, field: keyof WordMeaning, value: string) => {
         const verses = [...(formData.structuredContent?.verses || [])];
-        const vIdx = verses.findIndex(v => v.id === verseId);
-        if (vIdx !== -1) {
+        if (verses[vIdx]) {
             const meanings = [...(verses[vIdx].wordMeanings || [])];
             meanings[wordIdx] = { ...meanings[wordIdx], [field]: value };
             verses[vIdx] = { ...verses[vIdx], wordMeanings: meanings };
@@ -77,13 +93,8 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         }
     };
 
-    const parseBulkVerse = (verseId: number, rawText: string) => {
+    const parseBulkVerseByIndex = (vIdx: number, rawText: string) => {
         if (!rawText.trim()) return;
-
-        // Simple parser logic:
-        // Line 1: Lyrics
-        // Line 2: Translation
-        // Remaining: Word Meanings (Word — Meaning)
         const lines = rawText.split('\n').map(l => l.trim()).filter(l => l);
         if (lines.length < 2) return alert("Please provide at least Lyrics and Translation on separate lines.");
 
@@ -103,8 +114,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         }
 
         const verses = [...(formData.structuredContent?.verses || [])];
-        const vIdx = verses.findIndex(v => v.id === verseId);
-        if (vIdx !== -1) {
+        if (verses[vIdx]) {
             verses[vIdx] = { ...verses[vIdx], lyric, translation, wordMeanings };
             setFormData({
                 ...formData,
@@ -113,10 +123,9 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         }
     };
 
-    const addWordMeaning = (verseId: number) => {
+    const addWordMeaningByIndex = (vIdx: number) => {
         const verses = [...(formData.structuredContent?.verses || [])];
-        const vIdx = verses.findIndex(v => v.id === verseId);
-        if (vIdx !== -1) {
+        if (verses[vIdx]) {
             const meanings = [...(verses[vIdx].wordMeanings || [])];
             meanings.push({ word: '', meaning: '' });
             verses[vIdx] = { ...verses[vIdx], wordMeanings: meanings };
@@ -351,15 +360,59 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
             </div>
 
             <div style={{ marginBottom: '2rem' }}>
-                <h4 style={{ marginBottom: '1rem' }}>Verses</h4>
-                {formData.structuredContent?.verses.map((verse) => (
-                    <div key={verse.id} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                    <h4 style={{ margin: 0 }}>Verses</h4>
+                    <button 
+                        onClick={toggleRawMode}
+                        style={{ 
+                            fontSize: '0.75rem', 
+                            padding: '6px 12px', 
+                            borderRadius: '8px', 
+                            border: '1px solid #8A5082',
+                            background: isRawMode ? '#8A5082' : 'white',
+                            color: isRawMode ? 'white' : '#8A5082',
+                            fontWeight: 700,
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {isRawMode ? 'Back to Form View' : 'Edit as Raw JSON'}
+                    </button>
+                </div>
+
+                {isRawMode ? (
+                    <div style={{ background: '#1e1e1e', padding: '1rem', borderRadius: '8px' }}>
+                        <div style={{ color: '#aaa', fontSize: '0.75rem', marginBottom: '0.5rem' }}>Pro Tip: Find "id": 100 and change it to "id": 36 below.</div>
+                        <textarea
+                            value={rawJson}
+                            onChange={(e) => setRawJson(e.target.value)}
+                            style={{ 
+                                width: '100%', 
+                                minHeight: '500px', 
+                                background: 'transparent', 
+                                color: '#4fd1c5', 
+                                border: 'none', 
+                                fontFamily: 'monospace',
+                                fontSize: '14px',
+                                outline: 'none'
+                            }}
+                        />
+                    </div>
+                ) : (
+                    <>
+                        {formData.structuredContent?.verses.map((verse, vIdx) => (
+                    <div key={vIdx} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <span>ଶ୍ଲୋକ {toOdiaNumber(verse.id)}</span>
+                                <span>ଶ୍ଲୋକ</span>
+                                <input
+                                    placeholder="Verse #"
+                                    value={verse.id || ''}
+                                    onChange={e => handleVerseChangeByIndex(vIdx, 'id', parseInt(e.target.value) || 0)}
+                                    style={{ width: '80px', padding: '6px', borderRadius: '4px', border: '1px solid #ddd', fontWeight: 900, textAlign: 'center' }}
+                                />
                                 <div style={{ display: 'flex', gap: '0.25rem' }}>
                                     <button
-                                        onClick={() => handleVerseChange(verse.id, 'status', 'NOT_DONE')}
+                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'NOT_DONE')}
                                         style={{
                                             width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
                                             background: verse.status === 'NOT_DONE' ? getStatusBackground('NOT_DONE') : '#f9f9f9',
@@ -368,7 +421,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                         }}
                                     >R</button>
                                     <button
-                                        onClick={() => handleVerseChange(verse.id, 'status', 'IN_PROGRESS')}
+                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'IN_PROGRESS')}
                                         style={{
                                             width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
                                             background: verse.status === 'IN_PROGRESS' ? getStatusBackground('IN_PROGRESS') : '#f9f9f9',
@@ -377,7 +430,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                         }}
                                     >O</button>
                                     <button
-                                        onClick={() => handleVerseChange(verse.id, 'status', 'COMPLETED')}
+                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'COMPLETED')}
                                         style={{
                                             width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
                                             background: verse.status === 'COMPLETED' ? getStatusBackground('COMPLETED') : '#f9f9f9',
@@ -396,7 +449,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             <div style={{ fontSize: '0.75rem', color: '#666', marginBottom: '0.4rem', fontWeight: 600 }}>Bulk Paste (Lyric, Trans, W—M...)</div>
                             <textarea
                                 placeholder="Paste Verse Data here..."
-                                onBlur={(e) => parseBulkVerse(verse.id, e.target.value)}
+                                onBlur={(e) => parseBulkVerseByIndex(vIdx, e.target.value)}
                                 style={{ width: '100%', fontSize: '0.85rem', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '60px' }}
                             />
                         </div>
@@ -406,7 +459,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             <textarea
                                 placeholder="Lyrics (Odia/Roman)"
                                 value={verse.lyric}
-                                onChange={e => handleVerseChange(verse.id, 'lyric', e.target.value)}
+                                onChange={e => handleVerseChangeByIndex(vIdx, 'lyric', e.target.value)}
                                 style={{
                                     width: '100%',
                                     padding: '0.75rem',
@@ -426,7 +479,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             <textarea
                                 placeholder="Translation"
                                 value={verse.translation}
-                                onChange={e => handleVerseChange(verse.id, 'translation', e.target.value)}
+                                onChange={e => handleVerseChangeByIndex(vIdx, 'translation', e.target.value)}
                                 style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', minHeight: '80px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
                             />
                         </div>
@@ -447,37 +500,39 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                         <input
                                             placeholder="Word"
                                             value={wm.word}
-                                            onChange={e => handleWordMeaningChange(verse.id, wIdx, 'word', e.target.value)}
+                                            onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'word', e.target.value)}
                                             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
                                         />
                                         <textarea
                                             placeholder="Meaning"
                                             value={wm.meaning}
-                                            onChange={e => handleWordMeaningChange(verse.id, wIdx, 'meaning', e.target.value)}
+                                            onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'meaning', e.target.value)}
                                             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600, minHeight: '40px' }}
                                         />
                                         {window.innerWidth < 600 ? (
                                             <button
                                                 onClick={() => {
                                                     const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
-                                                    handleVerseChange(verse.id, 'wordMeanings', meanings);
+                                                    handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
                                                 }}
                                                 style={{ padding: '4px', color: '#ff4444', background: '#fff5f5', border: '1px solid #ffcccc', borderRadius: '4px', fontSize: '0.8rem' }}
                                             >Remove Word</button>
                                         ) : (
                                             <button onClick={() => {
                                                 const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
-                                                handleVerseChange(verse.id, 'wordMeanings', meanings);
+                                                handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
                                             }} style={{ background: 'none', border: 'none', color: '#ff4444' }}><Trash2 size={16} /></button>
                                         )}
                                     </div>
                                 ))}
                             </div>
-                            <button onClick={() => addWordMeaning(verse.id)} style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: '#f0f0f0', border: '1px dashed #ccc', borderRadius: '8px', fontWeight: 600 }}>+ Add Word</button>
+                            <button onClick={() => addWordMeaningByIndex(vIdx)} style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: '#f0f0f0', border: '1px dashed #ccc', borderRadius: '8px', fontWeight: 600 }}>+ Add Word</button>
                         </div>
                     </div>
                 ))}
-                <button onClick={addVerse} style={{ width: '100%', padding: '1rem', background: '#f8f8f8', border: '2px dashed #ddd', borderRadius: '12px', fontWeight: 600, color: '#8A5082' }}>+ Add Verse</button>
+                        <button onClick={addVerse} style={{ width: '100%', padding: '1rem', background: '#f8f8f8', border: '2px dashed #ddd', borderRadius: '12px', fontWeight: 600, color: '#8A5082' }}>+ Add Verse</button>
+                    </>
+                )}
             </div>
 
             <div style={{

@@ -11,9 +11,10 @@
     "sync": "node scripts/sync_cloud_to_code.cjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
     "canvas-confetti": "^1.9.4",
     "date-fns": "^4.1.0",
-    "@supabase/supabase-js": "^2.48.1",
+    "dotenv": "^17.4.2",
     "lucide-react": "^0.575.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
