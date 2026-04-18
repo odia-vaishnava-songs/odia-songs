@@ -129,14 +129,14 @@ export const SongsPage: React.FC = () => {
         return songResources
             .filter(s => {
                 const isGitaCategory = s.category === 'Gita' || s.category === 'G' || s.category === 'Gītā-māହାତ୍ମ୍ୟ';
-                const hasGitaInTitle = (s.title_english || s.title || '').toLowerCase().includes('gita') || 
-                                     (s.title_english || s.title || '').includes('Gītā');
+                const hasGitaInTitle = (s.title_english || s.title || '').toLowerCase().includes('gita') ||
+                    (s.title_english || s.title || '').includes('Gītā');
                 return isGitaCategory || hasGitaInTitle;
             })
             .sort((a, b) => {
                 const aNum = parseInt(a.title_english?.match(/\d+/)?.[0] || '0'); // Mahatmya at start if no number, or adjust to place at end
                 const bNum = parseInt(b.title_english?.match(/\d+/)?.[0] || '0');
-                
+
                 if (aNum !== bNum) return aNum - bNum;
                 return (a.title_odia || a.title).localeCompare(b.title_odia || b.title);
             });
@@ -145,7 +145,7 @@ export const SongsPage: React.FC = () => {
     const filteredSongs = useMemo(() => {
         const query = searchQuery.toLowerCase().trim();
         const pool = activeTab === 'gita' ? gitaChapters : songResources;
-        
+
         if (!query) {
             // In the Gita tab, if there is no search, we only want the Card Grid, not the alphabetical list.
             return activeTab === 'gita' ? [] : pool;
@@ -220,11 +220,11 @@ export const SongsPage: React.FC = () => {
     const getCategoryLetter = (song: Resource) => {
         // Now that every song has a title_english, we primarily use that
         let textToUse = song.title_english || song.title.match(/\(([^)]+)\)/)?.[1] || song.title;
-        
+
         // Remove any non-letter characters at the start (e.g. spaces, symbols)
         const match = textToUse.match(/[a-zA-Z\u00C0-\u017F]/);
         if (!match) return '#';
-        
+
         const firstChar = match[0].toUpperCase();
         const normalized = firstChar.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         return (normalized >= 'A' && normalized <= 'Z') ? normalized : '#';
@@ -295,30 +295,30 @@ export const SongsPage: React.FC = () => {
 
         return (
             <div style={{ padding: '0 1rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '12px', 
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
                     marginBottom: '1.5rem',
                     padding: '0 0.5rem'
                 }}>
                     <BookOpen size={24} color={theme.color} />
-                    <h2 style={{ 
-                        fontSize: '1.5rem', 
-                        fontWeight: 800, 
+                    <h2 style={{
+                        fontSize: '1.5rem',
+                        fontWeight: 800,
                         color: '#1e293b',
                         fontFamily: 'var(--font-odia-sans)'
                     }}>ଶ୍ରୀମଦ୍ ଭଗବଦ୍ ଗୀତା</h2>
                 </div>
-                
-                <div style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
-                    gap: '12px' 
+
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                    gap: '12px'
                 }}>
                     {gitaChapters.map((chapter, index) => {
                         const chNum = chapter.title_english?.match(/\d+/)?.[0] || '';
-                        
+
                         // Vibrant, high-contrast palette for maximum variety
                         const avatarColors = [
                             '#1a73e8', // Google Blue
@@ -332,12 +332,12 @@ export const SongsPage: React.FC = () => {
                             '#e91e63', // Pink
                             '#1565c0'  // Deep Blue
                         ];
-                        
+
                         // Use the loop index to ensure every card has a different color than its neighbor
                         const bgColor = avatarColors[index % avatarColors.length];
 
                         return (
-                            <div 
+                            <div
                                 key={chapter.id}
                                 className="gita-card"
                                 onClick={() => handleSelectSong(chapter)}
@@ -353,7 +353,7 @@ export const SongsPage: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="arrow-icon">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                                 </div>
                             </div>
                         );
@@ -401,12 +401,12 @@ export const SongsPage: React.FC = () => {
                         {verses.map((verse, idx) => {
                             let speakerLine = '';
                             let mainLyric = verse.lyric;
-                            
+
                             const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                             if (firstLineMatch) {
                                 let potentialSpeaker = firstLineMatch[1].trim();
                                 let detectedKey = '';
-                                
+
                                 if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                                     detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
                                 } else if (potentialSpeaker.includes('ଅର୍ଜୁନ ଉବାଚ') || potentialSpeaker === 'ଅର୍ଜୁନ' || potentialSpeaker === 'ଅର୍ଜୁନ ଉବାଚ') {
@@ -416,7 +416,7 @@ export const SongsPage: React.FC = () => {
                                 } else if (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର ଉବାଚ') || (potentialSpeaker.includes('ଧୃତରାଷ୍ଟ୍ର') && potentialSpeaker.includes('ଉବାଚ'))) {
                                     detectedKey = 'ଧୃତରାଷ୍ଟ୍ର ଉବାଚ';
                                 }
-        
+
                                 if (detectedKey) {
                                     speakerLine = detectedKey;
                                     mainLyric = verse.lyric.substring(firstLineMatch[0].length).trim();
@@ -424,38 +424,38 @@ export const SongsPage: React.FC = () => {
                             }
 
                             return (
-                            <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
-                                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
-                                
-                                {speakerLine && (
-                                    <div style={{ 
-                                        display: 'inline-flex', 
-                                        alignItems: 'center', 
-                                        gap: '8px', 
-                                        padding: '4px 12px', 
-                                        borderRadius: '20px', 
-                                        background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
-                                        color: SPEAKER_MAP[speakerLine].color,
-                                        fontSize: '0.9rem',
-                                        fontWeight: 800,
-                                        marginBottom: '1rem',
-                                        border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
-                                        fontFamily: 'var(--font-odia-sans)'
-                                    }}>
-                                        {SPEAKER_MAP[speakerLine].icon}
-                                        {SPEAKER_MAP[speakerLine].label}
-                                    </div>
-                                )}
+                                <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
+                                    <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
 
-                                <div style={{
-                                    whiteSpace: 'pre-wrap',
-                                    color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                    fontSize: speakerLine ? '1.5rem' : '1.35rem',
-                                    fontWeight: 600,
-                                    fontFamily: 'var(--font-odia-sans)',
-                                    lineHeight: '1.6'
-                                }}>{mainLyric}</div>
-                            </div>
+                                    {speakerLine && (
+                                        <div style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '8px',
+                                            padding: '4px 12px',
+                                            borderRadius: '20px',
+                                            background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
+                                            color: SPEAKER_MAP[speakerLine].color,
+                                            fontSize: '0.9rem',
+                                            fontWeight: 800,
+                                            marginBottom: '1rem',
+                                            border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
+                                            fontFamily: 'var(--font-odia-sans)'
+                                        }}>
+                                            {SPEAKER_MAP[speakerLine].icon}
+                                            {SPEAKER_MAP[speakerLine].label}
+                                        </div>
+                                    )}
+
+                                    <div style={{
+                                        whiteSpace: 'pre-wrap',
+                                        color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
+                                        fontSize: speakerLine ? '1.5rem' : '1.35rem',
+                                        fontWeight: 600,
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        lineHeight: '1.6'
+                                    }}>{mainLyric}</div>
+                                </div>
                             );
                         })}
                     </div>
@@ -484,13 +484,13 @@ export const SongsPage: React.FC = () => {
                         <div style={{ fontSize: '1.2rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.75rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
                     )}
                     {reference_url && (
-                        <a 
-                            href={reference_url} 
-                            target="_blank" 
+                        <a
+                            href={reference_url}
+                            target="_blank"
                             rel="noopener noreferrer"
-                            style={{ 
-                                display: 'inline-flex', 
-                                alignItems: 'center', 
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
                                 gap: '6px',
                                 color: isNightMode ? theme.color : '#2563eb',
                                 fontSize: '0.85rem',
@@ -504,11 +504,11 @@ export const SongsPage: React.FC = () => {
                     )}
 
                     {/* Highly Visible View Switcher */}
-                    <div style={{ 
-                        display: 'flex', 
-                        background: isNightMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)', 
-                        padding: '4px', 
-                        borderRadius: '12px', 
+                    <div style={{
+                        display: 'flex',
+                        background: isNightMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+                        padding: '4px',
+                        borderRadius: '12px',
                         margin: '0 auto 1.5rem',
                         maxWidth: '400px',
                         justifyContent: 'center'
@@ -549,12 +549,12 @@ export const SongsPage: React.FC = () => {
                     // Check for speaker
                     let speakerLine = '';
                     let mainLyric = verse.lyric;
-                    
+
                     const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                     if (firstLineMatch) {
                         let potentialSpeaker = firstLineMatch[1].trim();
                         let detectedKey = '';
-                        
+
                         // Robust substring matching bypasses invisible unicode chars and database typos
                         if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                             detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
@@ -581,12 +581,12 @@ export const SongsPage: React.FC = () => {
                             </div>
 
                             {speakerLine && (
-                                <div style={{ 
-                                    display: 'inline-flex', 
-                                    alignItems: 'center', 
-                                    gap: '8px', 
-                                    padding: '4px 12px', 
-                                    borderRadius: '20px', 
+                                <div style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    padding: '4px 12px',
+                                    borderRadius: '20px',
                                     background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
                                     color: SPEAKER_MAP[speakerLine].color,
                                     fontSize: '0.9rem',
@@ -639,14 +639,14 @@ export const SongsPage: React.FC = () => {
 
     const renderChapterNavigation = () => {
         if (!selectedSong) return null;
-        
+
         // Ensure this is a Gita chapter
         const currentIndex = gitaChapters.findIndex(c => c.id === selectedSong.id);
         if (currentIndex === -1) return null;
-        
+
         const prevChapter = currentIndex > 0 ? gitaChapters[currentIndex - 1] : null;
         const nextChapter = currentIndex < gitaChapters.length - 1 ? gitaChapters[currentIndex + 1] : null;
-        
+
         if (!prevChapter && !nextChapter) return null;
 
         const handleNav = (chapter: Resource) => {
@@ -654,7 +654,7 @@ export const SongsPage: React.FC = () => {
         };
 
         const isNightMode = currentThemeKey === 'advaita';
-        
+
         // Match the image's "TEXT" button pagination aesthetic
         const btnStyleBase: React.CSSProperties = {
             background: isNightMode ? '#2a2015' : '#e6cbaa',
@@ -677,7 +677,7 @@ export const SongsPage: React.FC = () => {
             <div style={{ padding: '2rem 0.5rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                     {prevChapter && (
-                        <button 
+                        <button
                             onClick={() => handleNav(prevChapter)}
                             style={btnStyleBase}
                             onMouseOver={(e) => { e.currentTarget.style.background = isNightMode ? '#3a2b1b' : '#dfc3a1'; }}
@@ -690,7 +690,7 @@ export const SongsPage: React.FC = () => {
                 </div>
                 <div>
                     {nextChapter && (
-                        <button 
+                        <button
                             onClick={() => handleNav(nextChapter)}
                             style={btnStyleBase}
                             onMouseOver={(e) => { e.currentTarget.style.background = isNightMode ? '#3a2b1b' : '#dfc3a1'; }}
@@ -749,7 +749,7 @@ export const SongsPage: React.FC = () => {
                         )}
                     </div>
                 </header>
-                <main 
+                <main
                     ref={mainScrollRef as any}
                     style={{
                         flex: 1,
@@ -757,22 +757,21 @@ export const SongsPage: React.FC = () => {
                         padding: '0.4rem'
                     }}
                 >
-                    <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '20px' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '160px' }}>
                         {renderSongContent()}
                         {renderChapterNavigation()}
                     </div>
                 </main>
                 <div style={{ 
-                    height: '180px', 
+                    height: '110px', 
                     width: '100%',
                     display: 'flex',
                     alignItems: 'flex-end',
-                    paddingBottom: '8px',
                     position: 'relative',
                     zIndex: 1001,
-                    background: currentThemeKey === 'advaita' ? '#111' : (selectedSong ? theme.color : '#fff' )
+                    background: 'transparent'
                 }}>
-                    <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+                    <div style={{ margin: '0 auto', width: '100%' }}>
                         <AudioPlayer />
                     </div>
                 </div>
@@ -1048,10 +1047,10 @@ export const SongsPage: React.FC = () => {
                                 />
                             ))}
                         </div>
-                        
+
                         <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />
-                        
-                        <button 
+
+                        <button
                             onClick={() => {
                                 setIsFilterMenuOpen(false);
                                 fetchAuthorStats();
@@ -1146,36 +1145,36 @@ export const SongsPage: React.FC = () => {
                                     >
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                        <div style={{
-                                                            fontSize: '1.25rem',
-                                                            fontWeight: 800,
-                                                            color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
-                                                            fontFamily: 'var(--font-odia-sans)',
-                                                            transition: 'color 0.3s ease'
-                                                        }}>{getOdiaTitle(song)}</div>
-                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
-                                                    </div>
-                                                    {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
-                                                        <div style={{
-                                                            fontSize: '0.95rem',
-                                                            color: song.published ? '#1ed106' : '#666',
-                                                            fontWeight: song.published ? 700 : 500,
-                                                            fontFamily: "'Outfit', sans-serif"
-                                                        }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
-                                                    )}
-                                                </div>
-                                                {song.author && (
-                                                    <div style={{ 
-                                                        fontSize: '0.85rem', 
-                                                        marginTop: '0.5rem', 
-                                                        color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), 
-                                                        opacity: song.published ? 0.9 : 0.7, 
-                                                        fontFamily: 'var(--font-odia-sans)',
-                                                        fontWeight: song.published ? 600 : 400
-                                                    }}>
-                                                        {song.author}
-                                                    </div>
-                                                )}
+                                                <div style={{
+                                                    fontSize: '1.25rem',
+                                                    fontWeight: 800,
+                                                    color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
+                                                    fontFamily: 'var(--font-odia-sans)',
+                                                    transition: 'color 0.3s ease'
+                                                }}>{getOdiaTitle(song)}</div>
+                                                {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                            </div>
+                                            {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                <div style={{
+                                                    fontSize: '0.95rem',
+                                                    color: song.published ? '#1ed106' : '#666',
+                                                    fontWeight: song.published ? 700 : 500,
+                                                    fontFamily: "'Outfit', sans-serif"
+                                                }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                            )}
+                                        </div>
+                                        {song.author && (
+                                            <div style={{
+                                                fontSize: '0.85rem',
+                                                marginTop: '0.5rem',
+                                                color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
+                                                opacity: song.published ? 0.9 : 0.7,
+                                                fontFamily: 'var(--font-odia-sans)',
+                                                fontWeight: song.published ? 600 : 400
+                                            }}>
+                                                {song.author}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -1235,13 +1234,13 @@ export const SongsPage: React.FC = () => {
             {isListening && (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-                    background: 'rgba(0,0,0,0.85)', color: 'white', display: 'flex', 
-                    flexDirection: 'column', justifyContent: 'center', alignItems: 'center', 
+                    background: 'rgba(0,0,0,0.85)', color: 'white', display: 'flex',
+                    flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
                     zIndex: 2000, backdropFilter: 'blur(10px)', animation: 'fadeIn 0.3s ease'
                 }}>
                     <div style={{
-                        width: '130px', height: '130px', borderRadius: '50%', 
-                        background: 'rgba(255,255,255,0.1)', display: 'flex', 
+                        width: '130px', height: '130px', borderRadius: '50%',
+                        background: 'rgba(255,255,255,0.1)', display: 'flex',
                         justifyContent: 'center', alignItems: 'center', marginBottom: '2.5rem',
                         border: '3px solid rgba(255,255,255,0.2)',
                         animation: 'pulse-mic-glow 1.5s infinite',
@@ -1249,18 +1248,18 @@ export const SongsPage: React.FC = () => {
                     }}>
                         <Mic size={56} color="#FF4444" />
                     </div>
-                    
+
                     <div style={{ fontSize: '2.2rem', fontWeight: 900, marginBottom: '1rem', color: '#fff', letterSpacing: '1px' }}>
                         ଶୁଣୁଛି... (Listening)
                     </div>
-                    
+
                     <div style={{ fontSize: '1.25rem', color: '#ffca28', fontWeight: 600, opacity: 0.9, textAlign: 'center', padding: '0 2rem', lineHeight: '1.6' }}>
-                        ଦୟାକରି ଗୀତର ନାମ କୁହନ୍ତୁ<br/>
+                        ଦୟାକରି ଗୀତର ନାମ କୁହନ୍ତୁ<br />
                         <span style={{ fontSize: '0.90rem', color: '#bbb', fontWeight: 400 }}>(Please say the song name)</span>
 
                     </div>
 
-                    <button 
+                    <button
                         onClick={() => setIsListening(false)}
                         style={{
                             marginTop: '4rem', padding: '1rem 3rem', borderRadius: '40px',
@@ -1368,7 +1367,7 @@ export const SongsPage: React.FC = () => {
                                     <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>ଲେଖକ ପରିସଂଖ୍ୟାନ</div>
                                 </div>
                             </div>
-                            <button 
+                            <button
                                 onClick={() => setIsStatsOpen(false)}
                                 style={{ background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', padding: '8px', borderRadius: '50%', cursor: 'pointer' }}
                             >
@@ -1380,8 +1379,8 @@ export const SongsPage: React.FC = () => {
                         <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {authorStats.map((stat, idx) => (
-                                    <div 
-                                        key={idx} 
+                                    <div
+                                        key={idx}
                                         onClick={() => {
                                             setSearchQuery(stat.author);
                                             setIsStatsOpen(false);
@@ -1403,8 +1402,8 @@ export const SongsPage: React.FC = () => {
                                         }}
                                     >
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                            <div style={{ 
-                                                backgroundColor: '#FF9933', color: 'white', width: '28px', height: '28px', 
+                                            <div style={{
+                                                backgroundColor: '#FF9933', color: 'white', width: '28px', height: '28px',
                                                 borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                                 fontSize: '0.8rem', fontWeight: 800
                                             }}>{idx + 1}</div>
@@ -1413,15 +1412,15 @@ export const SongsPage: React.FC = () => {
                                                 <span style={{ fontSize: '0.7rem', color: '#915926' }}>Click to view all songs</span>
                                             </div>
                                         </div>
-                                        <div style={{ 
-                                            backgroundColor: 'white', padding: '4px 10px', borderRadius: '20px', 
+                                        <div style={{
+                                            backgroundColor: 'white', padding: '4px 10px', borderRadius: '20px',
                                             fontWeight: 800, color: '#FF9933', border: '1.5px solid #FF9933', fontSize: '0.9rem'
                                         }}>{stat.count}</div>
                                     </div>
                                 ))}
 
-                                <div style={{ 
-                                    marginTop: '1rem', padding: '1.5rem', background: 'linear-gradient(135deg, #FF9933, #FFCC33)', 
+                                <div style={{
+                                    marginTop: '1rem', padding: '1.5rem', background: 'linear-gradient(135deg, #FF9933, #FFCC33)',
                                     borderRadius: '20px', color: 'white', textAlign: 'center', boxShadow: '0 10px 20px rgba(255, 153, 51, 0.2)'
                                 }}>
                                     <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Combined Library Size</div>

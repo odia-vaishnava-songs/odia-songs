@@ -25,6 +25,10 @@ interface AudioContextType {
     theme: ThemeDefinition;
     currentThemeKey: string;
     setTheme: (themeKey: string) => void;
+    repeatMode: 'none' | 'one';
+    toggleRepeat: () => void;
+    sleepTimer: number | null; // minutes remaining
+    setSleepTimer: (minutes: number | null) => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -36,8 +40,12 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isDetailView, setIsDetailView] = useState(false);
+    const [repeatMode, setRepeatMode] = useState<'none' | 'one'>('none');
+    const [sleepTimer, setSleepTimer] = useState<number | null>(null);
     const [currentThemeKey, setCurrentThemeKey] = useState(localStorage.getItem('song-theme') || DEFAULT_THEME);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const sleepTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const repeatModeRef = useRef<'none' | 'one'>(repeatMode);
 
     const theme = TATTVA_THEMES[currentThemeKey] || TATTVA_THEMES[DEFAULT_THEME];
 
@@ -53,7 +61,14 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
         const updateTime = () => setCurrentTime(audio.currentTime);
         const updateDuration = () => setDuration(audio.duration);
-        const onEnded = () => setIsPlaying(false);
+        const onEnded = () => {
+            if (repeatModeRef.current === 'one') {
+                audio.currentTime = 0;
+                audio.play().catch(console.error);
+            } else {
+                setIsPlaying(false);
+            }
+        };
 
         audio.addEventListener('timeupdate', updateTime);
         audio.addEventListener('loadedmetadata', updateDuration);
@@ -104,6 +119,11 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             audioRef.current.pause();
             audioRef.current.src = '';
         }
+        if (sleepTimerRef.current) {
+            clearInterval(sleepTimerRef.current);
+            sleepTimerRef.current = null;
+        }
+        setSleepTimer(null);
         setActiveSong(null);
         setCurrentVersion(null);
         setIsPlaying(false);
@@ -112,6 +132,12 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const togglePlay = () => {
         if (isPlaying) pauseSong();
         else resumeSong();
+    };
+
+    const toggleRepeat = () => {
+        const nextMode = repeatMode === 'none' ? 'one' : 'none';
+        setRepeatMode(nextMode);
+        repeatModeRef.current = nextMode;
     };
 
     const seek = (time: number) => {
@@ -128,6 +154,28 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const changeVersion = (version: AudioVersion) => {
         setCurrentVersion(version);
     };
+
+    // Sleep Timer Logic
+    useEffect(() => {
+        if (sleepTimer !== null && sleepTimer > 0) {
+            if (sleepTimerRef.current) clearInterval(sleepTimerRef.current);
+            sleepTimerRef.current = setInterval(() => {
+                setSleepTimer(prev => {
+                    if (prev === null || prev <= 1) {
+                        stopAudio();
+                        return null;
+                    }
+                    return prev - 1;
+                });
+            }, 60000); // Check every minute
+        } else if (sleepTimer === 0) {
+            stopAudio();
+        }
+
+        return () => {
+            if (sleepTimerRef.current) clearInterval(sleepTimerRef.current);
+        };
+    }, [sleepTimer]);
 
     return (
         <AudioContext.Provider value={{
@@ -151,7 +199,11 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             changeVersion,
             theme,
             currentThemeKey,
-            setTheme
+            setTheme,
+            repeatMode,
+            toggleRepeat,
+            sleepTimer,
+            setSleepTimer
         }}>
             {children}
         </AudioContext.Provider>

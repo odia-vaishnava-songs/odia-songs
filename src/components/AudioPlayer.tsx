@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, SkipBack, SkipForward, ChevronUp, Music, Volume2 } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Repeat, Download, UserPlus, Repeat1, Clock } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
 export const AudioPlayer: React.FC = () => {
@@ -14,17 +14,30 @@ export const AudioPlayer: React.FC = () => {
         skipForward,
         skipBackward,
         changeVersion,
-        currentThemeKey
+        currentThemeKey,
+        theme,
+        repeatMode,
+        toggleRepeat,
+        sleepTimer,
+        setSleepTimer
     } = useAudio();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSleepMenuOpen, setIsSleepMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const sleepMenuRef = useRef<HTMLDivElement>(null);
     const isNightMode = currentThemeKey === 'advaita';
+
+    const primaryColor = theme.color;
+    const accentShadow = `rgba(${hexToRgb(primaryColor)}, 0.4)`;
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setIsMenuOpen(false);
+            }
+            if (sleepMenuRef.current && !sleepMenuRef.current.contains(event.target as Node)) {
+                setIsSleepMenuOpen(false);
             }
         };
         document.addEventListener('mousedown', handleClickOutside);
@@ -49,173 +62,239 @@ export const AudioPlayer: React.FC = () => {
     };
 
     return (
-        <div className={`player-glass ${isNightMode ? 'dark' : ''}`} style={{
-            position: 'relative',
-            borderRadius: '20px',
-            padding: '12px 16px',
-            margin: '0 12px 16px',
+        <div style={{
+            background: isNightMode ? '#1e1e1e' : '#f8f9fa',
             display: 'flex',
             flexDirection: 'column',
-            gap: '10px',
-            overflow: 'visible',
-            zIndex: 2000
+            width: '100%',
+            fontFamily: 'system-ui, -apple-system, sans-serif'
         }}>
-            {/* Top Row: Song Info + Version Picker */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: 1 }}>
-                    <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '10px',
-                        background: 'var(--player-gradient)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        flexShrink: 0
-                    }}>
-                        <Music size={20} />
-                    </div>
-                    <div style={{ minWidth: 0 }}>
-                        <div style={{ 
-                            fontSize: '0.9rem', 
-                            fontWeight: 800, 
-                            color: isNightMode ? '#fff' : '#1e293b',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            fontFamily: 'var(--font-odia-sans)',
-                            lineHeight: 1.1
-                        }}>
-                            {activeSong.title_odia || activeSong.title}
-                        </div>
-                        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#4285F4', opacity: 0.8 }}>
-                            {currentLabel}
-                        </div>
-                    </div>
-                </div>
+            {/* Top Row: Progress Slider */}
+            <div style={{ padding: '0 8px', marginTop: '6px' }}>
+                <input
+                    type="range"
+                    min="0"
+                    max={duration || 0}
+                    value={currentTime}
+                    onChange={handleProgressChange}
+                    style={{
+                        width: '100%',
+                        height: '4px',
+                        cursor: 'pointer',
+                        background: `linear-gradient(to right, ${primaryColor} ${progress}%, #cbd5e1 ${progress}%)`,
+                        appearance: 'none',
+                        borderRadius: '2px',
+                        outline: 'none',
+                        margin: 0
+                    }}
+                />
+            </div>
 
-                {/* Version Selector Pill */}
-                <div ref={menuRef} style={{ position: 'relative' }}>
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '6px',
-                            padding: '6px 10px',
-                            background: isNightMode ? 'rgba(255,255,255,0.1)' : '#f1f5f9',
-                            border: `1px solid ${isNightMode ? 'rgba(255,255,255,0.1)' : '#e2e8f0'}`,
-                            color: isNightMode ? '#e2e8f0' : '#475569',
-                            fontSize: '0.75rem',
-                            fontWeight: 800,
-                            cursor: 'pointer',
-                            borderRadius: '12px'
-                        }}
+            {/* Middle Row: Times & Singer Name */}
+            <div style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center', 
+                padding: '4px 12px',
+                fontSize: '0.8rem',
+                color: isNightMode ? '#e2e8f0' : '#334155',
+                fontWeight: 600
+            }}>
+                <span style={{ width: '40px' }}>{formatTime(currentTime)}</span>
+                <span style={{ flex: 1, textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 8px' }}>
+                    {currentLabel}
+                </span>
+                <span style={{ width: '40px', textAlign: 'right' }}>{formatTime(duration)}</span>
+            </div>
+
+            {/* Bottom Row: 7 Buttons Grid */}
+            <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(7, 1fr)', 
+                gap: '6px', 
+                padding: '2px 8px 10px' 
+            }}>
+                
+                {/* BUTTON 1: SINGER LIST */}
+                <div ref={menuRef} style={{ width: '100%', position: 'relative' }}>
+                    <button 
+                         onClick={() => setIsMenuOpen(!isMenuOpen)}
+                         style={pillBtnStyle(primaryColor, isMenuOpen)}
                     >
-                        <Volume2 size={14} />
-                        <span style={{ maxWidth: '60px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                            {currentLabel}
-                        </span>
-                        <ChevronUp size={14} style={{ transform: isMenuOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+                         <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                            <path d="M12 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                         </svg>
+                         {versions.length > 1 && (
+                            <div style={{
+                                position: 'absolute', top: '4px', right: '4px', background: '#FF4444',
+                                color: 'white', fontSize: '9px', width: '14px', height: '14px', borderRadius: '50%',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900,
+                                border: '1.5px solid white'
+                            }}>{versions.length}</div>
+                         )}
                     </button>
-
+                    
                     {isMenuOpen && (
                         <div style={{
-                            position: 'absolute',
-                            bottom: 'calc(100% + 12px)',
-                            right: 0,
-                            width: '200px',
-                            maxHeight: '250px',
-                            overflowY: 'auto',
-                            background: isNightMode ? '#1e293b' : 'white',
-                            borderRadius: '12px',
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
-                            padding: '6px',
-                            zIndex: 1000
+                            position: 'absolute', bottom: 'calc(100% + 12px)', left: 0, width: '220px',
+                            background: isNightMode ? '#2d2d2d' : 'white', borderRadius: '16px',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.25)', zIndex: 3000, padding: '8px',
+                            border: `1px solid ${isNightMode ? '#3f3f3f' : '#efefef'}`,
+                            animation: 'slideUp 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)'
                         }}>
-                            {versions.length > 0 ? versions.map((v) => (
+                             <div style={{ padding: '8px 12px', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>Choose Singer</div>
+                            {versions.map((v) => (
                                 <button
                                     key={v.url}
-                                    onClick={() => {
-                                        changeVersion(v);
-                                        setIsMenuOpen(false);
-                                    }}
+                                    onClick={() => { changeVersion(v); setIsMenuOpen(false); }}
                                     style={{
-                                        width: '100%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '8px',
-                                        padding: '8px 10px',
-                                        borderRadius: '8px',
-                                        background: currentVersion?.url === v.url ? 'rgba(66, 133, 244, 0.1)' : 'transparent',
-                                        color: currentVersion?.url === v.url ? '#4285F4' : (isNightMode ? '#e2e8f0' : '#1e293b'),
-                                        fontSize: '0.8rem',
-                                        fontWeight: 600,
-                                        textAlign: 'left',
-                                        border: 'none',
-                                        marginBottom: '2px'
+                                        width: '100%', padding: '12px', textAlign: 'left', background: currentVersion?.url === v.url ? `${primaryColor}15` : 'transparent',
+                                        border: 'none', fontSize: '0.85rem', color: currentVersion?.url === v.url ? primaryColor : (isNightMode ? '#e2e2e2' : '#1e293b'),
+                                        fontWeight: currentVersion?.url === v.url ? 800 : 500, borderRadius: '10px',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2px'
                                     }}
                                 >
                                     {v.label}
                                 </button>
-                            )) : null}
+                            ))}
                         </div>
                     )}
                 </div>
-            </div>
 
-            {/* Middle Row: Progress Slider */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', width: '30px' }}>{formatTime(currentTime)}</span>
-                <div style={{ flex: 1, height: '20px', display: 'flex', alignItems: 'center', position: 'relative' }}>
-                    <input
-                        type="range"
-                        min="0"
-                        max={duration || 0}
-                        value={currentTime}
-                        onChange={handleProgressChange}
+                {/* BUTTON 2: REPEAT & SLEEP TIMER COMBO */}
+                <div ref={sleepMenuRef} style={{ width: '100%', position: 'relative' }}>
+                    <button 
+                        onClick={() => setIsSleepMenuOpen(!isSleepMenuOpen)}
+                        onDoubleClick={toggleRepeat}
                         style={{
-                            width: '100%',
-                            height: '4px',
-                            cursor: 'pointer',
-                            background: `linear-gradient(to right, #4285F4 ${progress}%, ${isNightMode ? '#334155' : '#e2e8f0'} ${progress}%)`,
-                            appearance: 'none',
-                            borderRadius: '2px',
-                            outline: 'none'
+                             ...pillBtnStyle(primaryColor),
+                             background: (repeatMode === 'one' || sleepTimer !== null) ? 'white' : primaryColor,
+                             color: (repeatMode === 'one' || sleepTimer !== null) ? primaryColor : 'white',
+                             border: (repeatMode === 'one' || sleepTimer !== null) ? `2px solid ${primaryColor}` : 'none'
                         }}
-                    />
-                </div>
-                <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', width: '30px', textAlign: 'right' }}>{formatTime(duration)}</span>
-            </div>
+                        title="Repeat (Double Tap) / Sleep Timer (Click)"
+                    >
+                        {sleepTimer !== null ? (
+                            <div style={{ fontSize: '10px', fontWeight: 900 }}>{sleepTimer}m</div>
+                        ) : (
+                            repeatMode === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />
+                        )}
+                    </button>
 
-            {/* Bottom Row: Controls */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '30px' }}>
-                <button onClick={skipBackward} style={{ background: 'transparent', color: isNightMode ? '#94a3b8' : '#475569' }}>
-                    <SkipBack size={24} fill="currentColor" />
-                </button>
+                    {isSleepMenuOpen && (
+                        <div style={{
+                            position: 'absolute', bottom: 'calc(100% + 12px)', left: '-40px', width: '180px',
+                            background: isNightMode ? '#2d2d2d' : 'white', borderRadius: '16px',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.25)', zIndex: 3000, padding: '8px',
+                            border: `1px solid ${isNightMode ? '#3f3f3f' : '#efefef'}`,
+                            animation: 'slideUp 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)'
+                        }}>
+                             <div style={{ padding: '8px 12px', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>Options</div>
+                             <button
+                                onClick={toggleRepeat}
+                                style={{
+                                    width: '100%', padding: '10px', textAlign: 'left', background: 'transparent',
+                                    border: 'none', fontSize: '0.9rem', color: repeatMode === 'one' ? primaryColor : (isNightMode ? '#e2e2e2' : '#334155'),
+                                    fontWeight: 700, borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '10px'
+                                }}
+                             >
+                                {repeatMode === 'one' ? <Repeat1 size={18} /> : <Repeat size={18} />}
+                                {repeatMode === 'one' ? 'Repeat: ON' : 'Repeat: OFF'}
+                             </button>
+                             <div style={{ height: '1px', background: '#eee', margin: '4px 8px' }} />
+                             <div style={{ padding: '8px 12px', fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8' }}>SLEEP TIMER</div>
+                             {[15, 30, 45, 60].map(mins => (
+                                 <button
+                                    key={mins}
+                                    onClick={() => { setSleepTimer(mins); setIsSleepMenuOpen(false); }}
+                                    style={{
+                                        width: '100%', padding: '10px', textAlign: 'left', background: sleepTimer === mins ? `${primaryColor}15` : 'transparent',
+                                        border: 'none', fontSize: '0.9rem', color: sleepTimer === mins ? primaryColor : (isNightMode ? '#e2e2e2' : '#334155'),
+                                        fontWeight: 700, borderRadius: '10px'
+                                    }}
+                                 >
+                                    {mins} Minutes
+                                 </button>
+                             ))}
+                             {sleepTimer !== null && (
+                                 <button
+                                    onClick={() => { setSleepTimer(null); setIsSleepMenuOpen(false); }}
+                                    style={{
+                                        width: '100%', padding: '10px', textAlign: 'left', background: 'transparent',
+                                        border: 'none', fontSize: '0.8rem', color: '#FF4444', fontWeight: 700
+                                    }}
+                                 >
+                                    Cancel Timer
+                                 </button>
+                             )}
+                        </div>
+                    )}
+                </div>
+
+                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)}><SkipBack size={18} fill="white" /></button>
                 
                 <button
                     onClick={togglePlay}
                     style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: '50%',
-                        background: 'var(--player-gradient)',
-                        color: 'white',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        boxShadow: '0 4px 15px rgba(66, 133, 244, 0.3)'
+                        ...pillBtnStyle(primaryColor),
+                        background: getDarker(primaryColor),
+                        boxShadow: `0 4px 12px ${accentShadow}, inset 0 1px 1px rgba(255,255,255,0.3)`,
+                        transform: 'scale(1.05)',
+                        zIndex: 2
                     }}
                 >
-                    {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" style={{ marginLeft: '4px' }} />}
+                    {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" style={{ marginLeft: '2px' }} />}
                 </button>
 
-                <button onClick={skipForward} style={{ background: 'transparent', color: isNightMode ? '#94a3b8' : '#475569' }}>
-                    <SkipForward size={24} fill="currentColor" />
-                </button>
+                <button onClick={skipForward} style={pillBtnStyle(primaryColor)}><SkipForward size={18} fill="white" /></button>
+                <button style={pillBtnStyle(primaryColor)}><Download size={18} /></button>
+                <button style={pillBtnStyle(primaryColor)}><UserPlus size={18} /></button>
             </div>
+            <style>{`
+                 @keyframes slideUp {
+                    from { transform: translateY(10px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                 }
+                 input[type='range']::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 12px;
+                    height: 12px;
+                    background: white;
+                    border: 2px solid ${primaryColor};
+                    border-radius: 50%;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                }
+            `}</style>
         </div>
     );
 };
+
+const pillBtnStyle = (color: string, active?: boolean): React.CSSProperties => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: active ? getDarker(color) : color,
+    color: 'white',
+    border: 'none',
+    borderRadius: '16px',
+    height: '46px',
+    width: '100%',
+    cursor: 'pointer',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.1)',
+    position: 'relative'
+});
+
+function hexToRgb(hex: string) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `${r}, ${g}, ${b}`;
+}
+
+function getDarker(hex: string) {
+    const r = Math.max(0, parseInt(hex.slice(1, 3), 16) - 20);
+    const g = Math.max(0, parseInt(hex.slice(3, 5), 16) - 20);
+    const b = Math.max(0, parseInt(hex.slice(5, 7), 16) - 20);
+    return `rgb(${r}, ${g}, ${b})`;
+}
