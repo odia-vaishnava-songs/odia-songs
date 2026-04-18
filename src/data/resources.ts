@@ -95,7 +95,7 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-doyalnitaicaitanya',
+        id: 'DOYALNITAICAITANYA',
         title: 'ଦୟାଲ ନିତାଇ ଚୈତନ୍ୟ (Doyāl Nitāi Caitanya)',
         category: 'Songs',
         type: 'html',
