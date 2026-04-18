@@ -171,10 +171,10 @@ export const ManageSongsPage: React.FC = () => {
             }
         }
 
-        // 3. For all other songs, sort alphabetically by Title (trimmed)
-        const titleA = (a.title || '').trim();
-        const titleB = (b.title || '').trim();
-        return titleA.localeCompare(titleB, 'or-IN', { numeric: true, sensitivity: 'base' });
+        // 3. For all other songs, sort alphabetically by English Title (prefer title_english)
+        const titleA = (a.title_english || a.title || '').trim().toLowerCase();
+        const titleB = (b.title_english || b.title || '').trim().toLowerCase();
+        return titleA.localeCompare(titleB, 'en', { numeric: true });
     });
 
     const handleAssignClick = (songId: string) => {
