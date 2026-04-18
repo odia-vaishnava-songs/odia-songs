@@ -4,14 +4,17 @@ import type { Resource } from '../types';
 export const RESOURCES: Resource[] = [
     {
         id: 'song-jayaradhadhava',
-        title: 'ଜୟ ରାଧା-ମାଧବ (Jaya Rādhā-Mādhava)',
+        title: 'ଜୟ ରାଧା-ମାଧବ (Jaya Rādhā Mādhava)',
+        title_odia: 'ଜୟ ରାଧା-ମାଧବ',
+        title_english: 'Jaya Radha Madhava',
         category: 'Songs',
         type: 'html',
-        description: 'ପ୍ରାତଃକାଳୀନ ଭଜନ |',
-        content: (Songs as any).JAYA_RADHA_MADHAVA,
+        description: 'ପ୍ରାତଃକାଳୀନ ଭଜନ',
         structuredContent: (Songs as any).SONG_JAYARADHAMADHAVA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Jaya_Radha_Madhava/Jaya_Radha_Madhava_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'Bhaktivinoda Ṭhākura',
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-gitamahatmya',
