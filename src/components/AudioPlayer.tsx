@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Repeat, Download, UserPlus, Repeat1 } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Repeat, Download, UserPlus, Repeat1, ListMusic } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
 export const AudioPlayer: React.FC = () => {
@@ -19,7 +19,9 @@ export const AudioPlayer: React.FC = () => {
         repeatMode,
         toggleRepeat,
         sleepTimer,
-        setSleepTimer
+        setSleepTimer,
+        autoNext,
+        toggleAutoNext
     } = useAudio();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -161,35 +163,50 @@ export const AudioPlayer: React.FC = () => {
                     )}
                 </div>
 
-                {/* BUTTON 2: REPEAT & SLEEP TIMER COMBO */}
+                {/* BUTTON 2: OPTIONS COMBO (Repeat / Sleep Timer) */}
                 <div ref={sleepMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button 
                         onClick={() => setIsSleepMenuOpen(!isSleepMenuOpen)}
                         onDoubleClick={toggleRepeat}
                         style={{
                              ...pillBtnStyle(primaryColor),
-                             background: (repeatMode === 'one' || sleepTimer !== null) ? 'white' : primaryColor,
-                             color: (repeatMode === 'one' || sleepTimer !== null) ? primaryColor : 'white',
-                             border: (repeatMode === 'one' || sleepTimer !== null) ? `2px solid ${primaryColor}` : 'none'
+                             background: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? 'white' : primaryColor,
+                             color: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? primaryColor : 'white',
+                             border: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? `2px solid ${primaryColor}` : 'none'
                         }}
-                        title="Repeat (Double Tap) / Sleep Timer (Click)"
+                        title="Repeat (Double Tap) / Options (Click)"
                     >
                         {sleepTimer !== null ? (
                             <div style={{ fontSize: '10px', fontWeight: 900 }}>{sleepTimer}m</div>
                         ) : (
-                            repeatMode === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />
+                            autoNext ? <ListMusic size={20} /> : (repeatMode === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />)
                         )}
                     </button>
 
                     {isSleepMenuOpen && (
                         <div style={{
-                            position: 'absolute', bottom: 'calc(100% + 12px)', left: '-40px', width: '180px',
+                            position: 'absolute', bottom: 'calc(100% + 12px)', left: '-40px', width: '200px',
                             background: isNightMode ? '#2d2d2d' : 'white', borderRadius: '16px',
                             boxShadow: '0 10px 30px rgba(0,0,0,0.25)', zIndex: 3000, padding: '8px',
                             border: `1px solid ${isNightMode ? '#3f3f3f' : '#efefef'}`,
                             animation: 'slideUp 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)'
                         }}>
                              <div style={{ padding: '8px 12px', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>Options</div>
+                             
+                             {/* AUTO NEXT TOGGLE */}
+                             <button
+                                onClick={toggleAutoNext}
+                                style={{
+                                    width: '100%', padding: '10px', textAlign: 'left', background: 'transparent',
+                                    border: 'none', fontSize: '0.9rem', color: autoNext ? primaryColor : (isNightMode ? '#e2e2e2' : '#334155'),
+                                    fontWeight: 700, borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '10px'
+                                }}
+                             >
+                                <ListMusic size={18} />
+                                {autoNext ? 'Auto-Next: ON' : 'Auto-Next: OFF'}
+                             </button>
+
+                             {/* REPEAT TOGGLE */}
                              <button
                                 onClick={toggleRepeat}
                                 style={{
@@ -201,6 +218,7 @@ export const AudioPlayer: React.FC = () => {
                                 {repeatMode === 'one' ? <Repeat1 size={18} /> : <Repeat size={18} />}
                                 {repeatMode === 'one' ? 'Repeat: ON' : 'Repeat: OFF'}
                              </button>
+
                              <div style={{ height: '1px', background: '#eee', margin: '4px 8px' }} />
                              <div style={{ padding: '8px 12px', fontSize: '0.7rem', fontWeight: 800, color: '#94a3b8' }}>SLEEP TIMER</div>
                              {[15, 30, 45, 60].map(mins => (

@@ -18,7 +18,7 @@ type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
 
 export const SongsPage: React.FC = () => {
-    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey } = useAudio();
+    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs, playSong } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
@@ -59,7 +59,34 @@ export const SongsPage: React.FC = () => {
         } catch (e) {
             console.error("Error incrementing views:", e);
         }
+        
+        // Track ID for Auto-Next
+        (window as any)._activeSongId = song.id;
     };
+
+    // Register song pool for Auto-Next
+    useEffect(() => {
+        if (songResources.length > 0) {
+            setSongs(songResources);
+        }
+    }, [songResources, setSongs]);
+
+    // Global listener for seamless Auto-Next transitions
+    useEffect(() => {
+        const handleAutoNext = (e: any) => {
+            // Logic to find current song, then play next
+            // Handled mostly by AudioContext broadcasting this event
+            // But we can trigger handleSelectSong(nextSong) here
+            const currentSongId = (window as any)._activeSongId; // We'll set this below
+            const currentIndex = songResources.findIndex(s => s.id === currentSongId);
+            if (currentIndex !== -1 && currentIndex < songResources.length - 1) {
+                const nextSong = songResources[currentIndex + 1];
+                handleSelectSong(nextSong);
+            }
+        };
+        window.addEventListener('play-next-song', handleAutoNext);
+        return () => window.removeEventListener('play-next-song', handleAutoNext);
+    }, [songResources]);
 
     // Hook to instantly scroll to the top over a container element when selecting a new chapter
     // useLayoutEffect runs before paint, making the jump invisible to the eye

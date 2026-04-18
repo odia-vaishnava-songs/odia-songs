@@ -29,6 +29,9 @@ interface AudioContextType {
     toggleRepeat: () => void;
     sleepTimer: number | null; // minutes remaining
     setSleepTimer: (minutes: number | null) => void;
+    autoNext: boolean;
+    toggleAutoNext: () => void;
+    setSongs: (songs: Resource[]) => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -42,10 +45,15 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [isDetailView, setIsDetailView] = useState(false);
     const [repeatMode, setRepeatMode] = useState<'none' | 'one'>('none');
     const [sleepTimer, setSleepTimer] = useState<number | null>(null);
+    const [autoNext, setAutoNext] = useState(false);
+    const [allSongs, setAllSongs] = useState<Resource[]>([]);
     const [currentThemeKey, setCurrentThemeKey] = useState(localStorage.getItem('song-theme') || DEFAULT_THEME);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const sleepTimerRef = useRef<any>(null);
     const repeatModeRef = useRef<'none' | 'one'>(repeatMode);
+    const autoNextRef = useRef<boolean>(autoNext);
+    const allSongsRef = useRef<Resource[]>([]);
+    const activeSongRef = useRef<Resource | null>(null);
 
     const theme = TATTVA_THEMES[currentThemeKey] || TATTVA_THEMES[DEFAULT_THEME];
 
@@ -65,6 +73,17 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             if (repeatModeRef.current === 'one') {
                 audio.currentTime = 0;
                 audio.play().catch(console.error);
+            } else if (autoNextRef.current && allSongsRef.current.length > 0 && activeSongRef.current) {
+                const currentIndex = allSongsRef.current.findIndex(s => s.id === activeSongRef.current?.id);
+                if (currentIndex !== -1 && currentIndex < allSongsRef.current.length - 1) {
+                    const nextSong = allSongsRef.current[currentIndex + 1];
+                    // We need a way to trigger playSong, but since we're in an effect, we'll manually update source
+                    // or better, trigger a re-render by calling the exposed functions if possible
+                    // For now, let's use a simpler approach: trigger a custom event that SongsPage can hear
+                    window.dispatchEvent(new CustomEvent('play-next-song'));
+                } else {
+                    setIsPlaying(false);
+                }
             } else {
                 setIsPlaying(false);
             }
@@ -97,6 +116,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const selectSong = (song: Resource, version?: AudioVersion) => {
         setActiveSong(song);
+        activeSongRef.current = song;
         const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: 'Default', url: song.audioUrl || '' });
         setCurrentVersion(targetVersion);
         setIsPlaying(false);
@@ -104,6 +124,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const playSong = (song: Resource, version?: AudioVersion) => {
         setActiveSong(song);
+        activeSongRef.current = song;
         const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: 'Default', url: song.audioUrl || '' });
         setCurrentVersion(targetVersion);
         setIsPlaying(true);
@@ -155,6 +176,17 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setCurrentVersion(version);
     };
 
+    const toggleAutoNext = () => {
+        const nextState = !autoNext;
+        setAutoNext(nextState);
+        autoNextRef.current = nextState;
+    };
+
+    const setSongs = (songs: Resource[]) => {
+        setAllSongs(songs);
+        allSongsRef.current = songs;
+    };
+
     // Sleep Timer Logic
     useEffect(() => {
         if (sleepTimer !== null && sleepTimer > 0) {
@@ -203,7 +235,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             repeatMode,
             toggleRepeat,
             sleepTimer,
-            setSleepTimer
+            setSleepTimer,
+            autoNext,
+            toggleAutoNext,
+            setSongs
         }}>
             {children}
         </AudioContext.Provider>
