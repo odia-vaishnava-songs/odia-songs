@@ -166,16 +166,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
-        status: 'COMPLETED',
-        audioVersions: [
-            { label: "HG Agnidev Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Agnidev_Prabhu_IDT.mp3" },
-            { label: "HG Badahari Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Badahari_Prabhu_IDT.mp3" },
-            { label: "HG Jai Sachinandana Prabhu (A)", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Badahari_Prabhu_IDT.mp3" },
-            { label: "HG Vaiyasaki Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3" },
-            { label: "HH Radhanath Swami", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HH_Radhanath_Swami_IDT.mp3" },
-            { label: "HG Radheshyam Prabhu", url: "https://pub-4f8c24b1c935435d9e3b959e0886ebf6.r2.dev/uploads%2FBoro%20sukher%20khabor%20gai.mp3" },
-            { label: "HG Jai Sachinandana Prabhu (B)", url: "https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F42%20Boro%20Sukher%20khabor%20P-80.MP3" }
-        ]
+        status: 'COMPLETED'
     },
     {
         id: 'song-yasomatinandana',
@@ -817,7 +808,16 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_BOROSUKHERKHABAR_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioVersions: [
+            { label: "HG Agnidev Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Agnidev_Prabhu_IDT.mp3" },
+            { label: "HG Badahari Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Badahari_Prabhu_IDT.mp3" },
+            { label: "HG Jai Sachinandana Prabhu (A)", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Badahari_Prabhu_IDT.mp3" },
+            { label: "HG Vaiyasaki Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3" },
+            { label: "HH Radhanath Swami", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Boro_Sukher_Khabor_Gai/Boro_Sukher_Khabor_Gai_-_Sung_by_HH_Radhanath_Swami_IDT.mp3" },
+            { label: "HG Radheshyam Prabhu", url: "https://pub-4f8c24b1c935435d9e3b959e0886ebf6.r2.dev/uploads%2FBoro%20sukher%20khabor%20gai.mp3" },
+            { label: "HG Jai Sachinandana Prabhu (B)", url: "https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F42%20Boro%20Sukher%20khabor%20P-80.MP3" }
+        ]
     }
 ];
 
