@@ -790,6 +790,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_SRIKRSNAKIRTANE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-yaditeharipada',
+        title: 'ଯଦି ତେ ହରି-ପାଦ-ସରୋଜ-ସୁଧା (Yadi Te Hari Pada Saroja Sudha)',
+        title_odia: 'ଯଦି ତେ ହରି-ପାଦ-ସରୋଜ-ସୁଧା',
+        title_english: 'Yadi Te Hari Pada Saroja Sudha',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_YADITEHARIPADA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
