@@ -18,7 +18,7 @@ type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
 
 export const SongsPage: React.FC = () => {
-    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs, playSong } = useAudio();
+    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
@@ -93,7 +93,7 @@ export const SongsPage: React.FC = () => {
 
     // Global listener for seamless Auto-Next transitions
     useEffect(() => {
-        const handleAutoNext = (e: any) => {
+        const handleAutoNext = () => {
             // Logic to find current song, then play next
             const currentSongId = (window as any)._activeSongId;
             const currentIndex = songResources.findIndex(s => s.id === currentSongId);

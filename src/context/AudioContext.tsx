@@ -46,7 +46,6 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [repeatMode, setRepeatMode] = useState<'none' | 'one'>('none');
     const [sleepTimer, setSleepTimer] = useState<number | null>(null);
     const [autoNext, setAutoNext] = useState(false);
-    const [allSongs, setAllSongs] = useState<Resource[]>([]);
     const [currentThemeKey, setCurrentThemeKey] = useState(localStorage.getItem('song-theme') || DEFAULT_THEME);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const sleepTimerRef = useRef<any>(null);
@@ -76,7 +75,6 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             } else if (autoNextRef.current && allSongsRef.current.length > 0 && activeSongRef.current) {
                 const currentIndex = allSongsRef.current.findIndex(s => s.id === activeSongRef.current?.id);
                 if (currentIndex !== -1 && currentIndex < allSongsRef.current.length - 1) {
-                    const nextSong = allSongsRef.current[currentIndex + 1];
                     // We need a way to trigger playSong, but since we're in an effect, we'll manually update source
                     // or better, trigger a re-render by calling the exposed functions if possible
                     // For now, let's use a simpler approach: trigger a custom event that SongsPage can hear
@@ -183,7 +181,6 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     const setSongs = (songs: Resource[]) => {
-        setAllSongs(songs);
         allSongsRef.current = songs;
     };
 
