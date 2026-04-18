@@ -29,7 +29,7 @@ export const SongsPage: React.FC = () => {
     const [isStatsOpen, setIsStatsOpen] = useState(false);
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
     const [statsLoading, setStatsLoading] = useState(false);
-    const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('gita');
+    const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
