@@ -754,6 +754,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_NIJAKARMADOSEPHALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-prapanceporiyagati',
+        title: 'ହରି ହେ! ପ୍ରପଞ୍ଚେ ପୋଡ଼ିୟା (Prapance Poriya Agati)',
+        title_odia: 'ହରି ହେ! ପ୍ରପଞ୍ଚେ ପୋଡ଼ିୟା',
+        title_english: 'Prapance Poriya Agati',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_PRAPANCEPORIYAGATI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
