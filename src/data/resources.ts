@@ -766,6 +766,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_PRAPANCEPORIYAGATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-radhakundatata',
+        title: 'ରାଧା-କୁଣ୍ଡ-ତଟ-କୁଞ୍ଜ-କୁଟୀର (Radha Kunda Tata Kunja Kutir)',
+        title_odia: 'ରାଧା-କୁଣ୍ଡ-ତଟ-କୁଞ୍ଜ-କୁଟୀର',
+        title_english: 'Radha Kunda Tata Kunja Kutir',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Ṭhākura',
+        structuredContent: (Songs as any).SONG_RADHAKUNDATATA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
