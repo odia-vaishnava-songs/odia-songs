@@ -26,6 +26,7 @@ export const AudioPlayer: React.FC = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSleepMenuOpen, setIsSleepMenuOpen] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const sleepMenuRef = useRef<HTMLDivElement>(null);
     const isNightMode = currentThemeKey === 'advaita';
@@ -61,6 +62,36 @@ export const AudioPlayer: React.FC = () => {
         const mins = Math.floor(time / 60);
         const secs = Math.floor(time % 60);
         return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // DOWNLOAD LOGIC
+    const handleDownload = async () => {
+        if (!currentVersion?.url) return;
+        
+        setIsDownloading(true);
+        try {
+            const response = await fetch(currentVersion.url);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            
+            // Clean filename: "Song Title - Singer Name.mp3"
+            const fileName = `${activeSong.title_english || activeSong.title} - ${currentVersion.label}.mp3`.replace(/[/\\?%*:|"<>]/g, '-');
+            
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } catch (error) {
+            console.error("Download failed:", error);
+            // Fallback: Open in new tab if blob fails
+            window.open(currentVersion.url, '_blank');
+        } finally {
+            setIsDownloading(false);
+        }
     };
 
     return (
@@ -163,7 +194,7 @@ export const AudioPlayer: React.FC = () => {
                     )}
                 </div>
 
-                {/* BUTTON 2: OPTIONS COMBO (Repeat / Sleep Timer) */}
+                {/* BUTTON 2: OPTIONS COMBO (Repeat / Sleep Timer / Auto Next) */}
                 <div ref={sleepMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button 
                         onClick={() => setIsSleepMenuOpen(!isSleepMenuOpen)}
@@ -174,7 +205,7 @@ export const AudioPlayer: React.FC = () => {
                              color: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? primaryColor : 'white',
                              border: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? `2px solid ${primaryColor}` : 'none'
                         }}
-                        title="Repeat (Double Tap) / Options (Click)"
+                        title="Options / Double Tap for Repeat"
                     >
                         {sleepTimer !== null ? (
                             <div style={{ fontSize: '10px', fontWeight: 900 }}>{sleepTimer}m</div>
@@ -193,7 +224,6 @@ export const AudioPlayer: React.FC = () => {
                         }}>
                              <div style={{ padding: '8px 12px', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>Options</div>
                              
-                             {/* AUTO NEXT TOGGLE */}
                              <button
                                 onClick={toggleAutoNext}
                                 style={{
@@ -206,7 +236,6 @@ export const AudioPlayer: React.FC = () => {
                                 {autoNext ? 'Auto-Next: ON' : 'Auto-Next: OFF'}
                              </button>
 
-                             {/* REPEAT TOGGLE */}
                              <button
                                 onClick={toggleRepeat}
                                 style={{
@@ -234,17 +263,6 @@ export const AudioPlayer: React.FC = () => {
                                     {mins} Minutes
                                  </button>
                              ))}
-                             {sleepTimer !== null && (
-                                 <button
-                                    onClick={() => { setSleepTimer(null); setIsSleepMenuOpen(false); }}
-                                    style={{
-                                        width: '100%', padding: '10px', textAlign: 'left', background: 'transparent',
-                                        border: 'none', fontSize: '0.8rem', color: '#FF4444', fontWeight: 700
-                                    }}
-                                 >
-                                    Cancel Timer
-                                 </button>
-                             )}
                         </div>
                     )}
                 </div>
@@ -265,14 +283,32 @@ export const AudioPlayer: React.FC = () => {
                 </button>
 
                 <button onClick={skipForward} style={pillBtnStyle(primaryColor)}><SkipForward size={18} fill="white" /></button>
-                <button style={pillBtnStyle(primaryColor)}><Download size={18} /></button>
+                
+                {/* BUTTON 6: DOWNLOAD CURRENT AUDIO */}
+                <button 
+                    onClick={handleDownload}
+                    style={{
+                        ...pillBtnStyle(primaryColor),
+                        opacity: isDownloading ? 0.7 : 1
+                    }}
+                    disabled={isDownloading}
+                    title="Download Current Singer"
+                >
+                    {isDownloading ? (
+                        <div style={{
+                            width: '18px', height: '18px', border: '2.5px solid rgba(255,255,255,0.3)',
+                            borderTop: '2.5px solid white', borderRadius: '50%', animation: 'spin 0.8s linear infinite'
+                        }} />
+                    ) : (
+                        <Download size={18} />
+                    )}
+                </button>
+
                 <button style={pillBtnStyle(primaryColor)}><UserPlus size={18} /></button>
             </div>
             <style>{`
-                 @keyframes slideUp {
-                    from { transform: translateY(10px); opacity: 0; }
-                    to { transform: translateY(0); opacity: 1; }
-                 }
+                 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                 @keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
                  input[type='range']::-webkit-slider-thumb {
                     appearance: none;
                     width: 12px;
