@@ -12,7 +12,7 @@ export const RESOURCES: Resource[] = [
         description: 'ପ୍ରାତଃକାଳୀନ ଭଜନ',
         structuredContent: (Songs as any).SONG_JAYARADHAMADHAVA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Jaya_Radha_Madhava/Jaya_Radha_Madhava_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -35,7 +35,7 @@ export const RESOURCES: Resource[] = [
         content: (Songs as any).BHULIYA_TOMARE_ODIA,
         structuredContent: (Songs as any).SONG_BHULIYATOMARE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhuliya_Tomare/Bhuliya_Tomare_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-amarjivana',
@@ -44,7 +44,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         description: 'ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି ବିନମ୍ର ପ୍ରାର୍ଥନା |',
         structuredContent: (Songs as any).SONG_AMARJIVANA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-amijamunapuline',
@@ -52,7 +52,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_AMIJAMUNAPULINE_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-anadikaramaphale',
@@ -60,7 +60,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_ANADIKARAMAPHALE_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-aparadhaphalemama',
@@ -68,7 +68,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_APARADHAPHALEMAMA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-tuwapademinotimor',
@@ -76,7 +76,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_TUWAPADEMINOTIMOR_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-atmanivedanatuwapade',
@@ -84,7 +84,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_ATMANIVEDANATUWAPADE_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-tumisarveswaresvaravrajendrakumar',
@@ -93,7 +93,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Tumi Sarveswareswara Vrajendra Kumar',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -103,7 +103,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_DOYALNITAICAITANYA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-durlabhamanavajanma',
@@ -111,7 +111,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_DURLABHAMANAVAJANMA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-vidyaravilase',
@@ -120,7 +120,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Vidyara Vilase',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -131,7 +131,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Ohe Vaisnava Thakura',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -142,7 +142,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Nitai Nam Hate O Ke Jabire Bhai',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -153,7 +153,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Narada Muni Bajay Vina',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -164,7 +164,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Nadiya Godrume Nityananda Mahajana',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -175,7 +175,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Yasomati Nandana',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -186,7 +186,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Vibhavari Sesa',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -197,7 +197,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Udilo Aruna Puraba Bhage',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -208,7 +208,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Suddha Bhakata Carana Renu',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -219,7 +219,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Sri Krsna Caitanya Prabhu Jive Doya Kori',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -229,7 +229,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_RADHAKRSNBOLBOL_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura'
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
         id: 'song-sarvasvatomarcarene',
@@ -238,7 +238,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Sarvasva Tomar Carane',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -249,7 +249,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Prabhu Tava Pada Yuge',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -442,7 +442,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Gopinath Part 2 (Ghuchao Sansar)',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -453,7 +453,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Gopinath Part 3 (Amar Upaya Nai)',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -464,7 +464,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Gurudev! Krpa Bindu Diya',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -475,7 +475,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Gurudev! Boro Krpa Kori',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -486,7 +486,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kabe Sri Chaitanya More',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -497,7 +497,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Ki Jani Ki Bale',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -509,7 +509,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_BHAJABHAKATAVATSALA_STRUCTURED,
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -520,7 +520,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Ore Mana Bhalonahi Lage E Samsar',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -531,7 +531,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Mama Mana Mandire',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -542,7 +542,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Manasa Deho Geho Jo Kichu Mor',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
         status: 'COMPLETED'
     },
@@ -553,7 +553,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Hari bolo Hari bolo',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -565,7 +565,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Jiv Jago Jiv Jago',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_JIVJAGOJIVJAGO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -577,7 +577,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Jaya Jaya Radha Krsna',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_JAYAJAYARADHAKRSNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -589,7 +589,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kabe Goura Bane',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KABEGOURABANE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -601,7 +601,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kabe Ha\' be Bolo',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KABEHABEBOLO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -613,7 +613,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Ami To\' Durjana Ati',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_AMITODURJANAATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -625,7 +625,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Ar Keno Maya Jale',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_ARKENOMAYAJALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -637,7 +637,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Asalo Katha Bolte',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_ASALOKATHABOLTE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -649,7 +649,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Bhale Gaura Gadadharer Arati',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_BHALEGAURAGADADHARA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -661,7 +661,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Gurudeve Vraja Vane',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_GURUDEVEVRAJAVANE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -673,7 +673,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Hari Hari Kabe Mora',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_HARIHARIKABEMORA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -685,7 +685,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kabe Habe Heno Dasa',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KABEHABEHENODASA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -697,7 +697,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kabe Mui Vaishnava Cinibo',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KABEMUIVAISHNAVA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -709,7 +709,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kali Kukkura Kadan',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KALIKUKKURAKADAN_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -721,7 +721,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Keno Hare Krsna Nam',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KENOHAREKRSNANAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -733,7 +733,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Kesava Tuwa Jagata Vicitra',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_KESAVATUWAJAGATA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -745,7 +745,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Nija Karma Dose Phale',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_NIJAKARMADOSEPHALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -757,7 +757,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Prapance Poriya Agati',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_PRAPANCEPORIYAGATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -769,7 +769,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Radha Kunda Tata Kunja Kutir',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_RADHAKUNDATATA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -781,7 +781,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Sri Krsna Kirtane Jadi Manasa Tohar',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_SRIKRSNAKIRTANE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -793,7 +793,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Yadi Te Hari Pada Saroja Sudha',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_YADITEHARIPADA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -805,7 +805,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Boro Sukher Khabor Gai',
         category: 'Songs',
         type: 'html',
-        author: 'Bhaktivinoda Ṭhākura',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_BOROSUKHERKHABAR_STRUCTURED,
         published: true,
         status: 'COMPLETED'
