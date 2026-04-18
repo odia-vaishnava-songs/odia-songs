@@ -399,7 +399,7 @@ export const SongsPage: React.FC = () => {
 
         if (!selectedSong.structuredContent) {
             return (
-                <div style={{
+                <div id="song-content" style={{
                     background: cardBg, padding: '3rem 2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
                     lineHeight: '1.9', color: textColor, fontFamily: "var(--font-odia-sans)", fontSize: `${fontSize}px`,
                     border: `1px solid ${borderColor}`, margin: '1.5rem 0.4rem', textAlign: 'center'
@@ -417,7 +417,7 @@ export const SongsPage: React.FC = () => {
 
         if (viewMode === 'sequential') {
             return (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
+                <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
                     <div style={{ padding: '0 0.4rem', textAlign: 'center' }}>
                         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '1rem 0 0.25rem', color: '#fff', lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: '#fff', opacity: 0.9, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
@@ -500,7 +500,7 @@ export const SongsPage: React.FC = () => {
         }
 
         return (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
+            <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
                 <div style={{ textAlign: 'center' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
