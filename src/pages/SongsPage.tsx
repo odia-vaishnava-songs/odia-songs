@@ -18,11 +18,18 @@ type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
 
 export const SongsPage: React.FC = () => {
-    const { selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
+    const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSong, setSelectedSong] = useState<Resource | null>(null);
+
+    // Sync local selectedSong with Context's activeSong when returning to detail view from the mini-bar
+    useEffect(() => {
+        if (isDetailView && !selectedSong && activeSong) {
+            setSelectedSong(activeSong);
+        }
+    }, [isDetailView, selectedSong, activeSong]);
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
