@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Repeat, Download, Sparkles, Repeat1, ListMusic, FileText, Image as ImageIcon } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
+import { useAuth } from '../hooks/useAuth';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import type { AudioVersion, Resource } from '../types';
@@ -27,6 +28,8 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
         autoNext,
         toggleAutoNext
     } = useAudio();
+
+    const { user } = useAuth();
 
     // Determine which song and state to show
     const isShowingOverride = songOverride && (!activeSong || activeSong.id !== songOverride.id);
@@ -110,15 +113,49 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
             // Target the specific song content container
             const element = document.getElementById('song-content') || document.querySelector('main') || document.body;
             
+            // 🏷️ BRAND LABELING: Create temporary footer for export
+            const footer = document.createElement('div');
+            footer.id = 'export-footer-temp';
+            footer.style.cssText = `
+                padding: 15px 20px;
+                margin-top: 20px;
+                border-top: 1px solid ${isNightMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)'};
+                text-align: center;
+                font-family: 'Outfit', sans-serif;
+                background: ${isNightMode ? '#1e1e1e' : '#fDFBF7'};
+                color: ${isNightMode ? '#94a3b8' : '#64748b'};
+                font-size: 11px;
+                line-height: 1.5;
+            `;
+            
+            const timestamp = new Date().toLocaleString('en-IN', { 
+                day: '2-digit', month: 'short', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', hour12: true 
+            });
+            const downloaderName = user?.name || 'Guest User';
+            
+            footer.innerHTML = `
+                <div style="font-weight: 800; color: #FF9933; margin-bottom: 3px; font-size: 13px;">ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ (Odia Vaishnava Songs)</div>
+                <div>Downloaded by: <strong>${downloaderName}</strong> | Date: ${timestamp}</div>
+                <div style="opacity: 0.8;">© odia-songs.vercel.app</div>
+            `;
+            
+            element.appendChild(footer);
+
             // Temporary style to ensure high quality capture
             const canvas = await html2canvas(element, {
                 scale: 2, // Double resolution
                 useCORS: true,
-                backgroundColor: isNightMode ? '#1e1e1e' : '#f8f9fa',
+                backgroundColor: isNightMode ? '#1e1e1e' : '#fDFBF7',
                 logging: false,
                 windowWidth: element.scrollWidth,
                 windowHeight: element.scrollHeight
             });
+
+            // Cleanup: remove temporary footer after capture
+            if (element.contains(footer)) {
+                element.removeChild(footer);
+            }
 
             const fileName = `${displaySong.title_english || displaySong.title}`.replace(/[/\\?%*:|"<>]/g, '-');
 
