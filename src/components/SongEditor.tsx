@@ -192,6 +192,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     verified: formData.verified || false,
                     status: formData.status || 'NOT_DONE',
                     assigned_to: formData.assigned_to,
+                    published: true, // Always keep it public as requested
                     updated_at: new Date().toISOString()
                 }, { onConflict: 'id' });
 
