@@ -1206,8 +1206,8 @@ export const SongsPage: React.FC = () => {
                                             {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
                                                 <div style={{
                                                     fontSize: '0.95rem',
-                                                    color: song.published ? '#1ed106' : '#666',
-                                                    fontWeight: song.published ? 700 : 500,
+                                                    color: (song.status === 'COMPLETED' || song.verified) ? '#1ed106' : '#666',
+                                                    fontWeight: (song.status === 'COMPLETED' || song.verified) ? 700 : 500,
                                                     fontFamily: "'Outfit', sans-serif"
                                                 }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                             )}
@@ -1216,10 +1216,10 @@ export const SongsPage: React.FC = () => {
                                             <div style={{
                                                 fontSize: '0.85rem',
                                                 marginTop: '0.5rem',
-                                                color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
-                                                opacity: song.published ? 0.9 : 0.7,
+                                                color: getStatusColor(song.status, song.verified),
+                                                opacity: 0.8,
                                                 fontFamily: 'var(--font-odia-sans)',
-                                                fontWeight: song.published ? 600 : 400
+                                                fontWeight: (song.status === 'COMPLETED' || song.verified) ? 600 : 400
                                             }}>
                                                 {song.author}
                                             </div>
