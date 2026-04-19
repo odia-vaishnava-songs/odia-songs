@@ -12,16 +12,24 @@ DROP TABLE IF EXISTS songs;
 CREATE TABLE songs (
   id TEXT PRIMARY KEY, -- Using the string ID from resources.ts (e.g., 'song-guruvastaka')
   title TEXT NOT NULL,
+  title_odia TEXT,
+  title_english TEXT,
   category TEXT,
-  type TEXT DEFAULT 'article',
+  type TEXT DEFAULT 'interactive',
   description TEXT,
   content TEXT, -- HTML content
   structured_content JSONB,
   audio_url TEXT,
   audio_versions JSONB,
+  vocalist TEXT,
+  audio_source TEXT,
+  tags TEXT[] DEFAULT '{}',
+  original_lang TEXT DEFAULT 'Odia',
+  display_order INTEGER DEFAULT 0,
   author TEXT,
   verified BOOLEAN DEFAULT false,
   status TEXT DEFAULT 'NOT_DONE' CHECK (status IN ('NOT_DONE', 'IN_PROGRESS', 'COMPLETED')),
+  assigned_to TEXT,
   published BOOLEAN DEFAULT true,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
