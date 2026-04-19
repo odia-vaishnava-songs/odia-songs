@@ -147,7 +147,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
     const handleSave = async () => {
         if (!formData.title) return alert("Title is required");
-        
+
         // --- THE APP-HEALTH GUARD ---
         const health = validateHealth(formData);
         if (!health.healthy) {
@@ -428,12 +428,12 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
             <div style={{ marginBottom: '2rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                     <h4 style={{ margin: 0 }}>Verses</h4>
-                    <button 
+                    <button
                         onClick={toggleRawMode}
-                        style={{ 
-                            fontSize: '0.75rem', 
-                            padding: '6px 12px', 
-                            borderRadius: '8px', 
+                        style={{
+                            fontSize: '0.75rem',
+                            padding: '6px 12px',
+                            borderRadius: '8px',
                             border: '1px solid #8A5082',
                             background: isRawMode ? '#8A5082' : 'white',
                             color: isRawMode ? 'white' : '#8A5082',
@@ -451,12 +451,12 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                         <textarea
                             value={rawJson}
                             onChange={(e) => setRawJson(e.target.value)}
-                            style={{ 
-                                width: '100%', 
-                                minHeight: '500px', 
-                                background: 'transparent', 
-                                color: '#4fd1c5', 
-                                border: 'none', 
+                            style={{
+                                width: '100%',
+                                minHeight: '500px',
+                                background: 'transparent',
+                                color: '#4fd1c5',
+                                border: 'none',
                                 fontFamily: 'monospace',
                                 fontSize: '14px',
                                 outline: 'none'
@@ -466,136 +466,136 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                 ) : (
                     <>
                         {formData.structuredContent?.verses.map((verse, vIdx) => (
-                    <div key={vIdx} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <span>ଶ୍ଲୋକ</span>
-                                <input
-                                    placeholder="Verse #"
-                                    value={verse.id || ''}
-                                    onChange={e => handleVerseChangeByIndex(vIdx, 'id', parseInt(e.target.value) || 0)}
-                                    style={{ width: '80px', padding: '6px', borderRadius: '4px', border: '1px solid #ddd', fontWeight: 900, textAlign: 'center' }}
-                                />
-                                <div style={{ display: 'flex', gap: '0.25rem' }}>
-                                    <button
-                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'NOT_DONE')}
+                            <div key={vIdx} style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', alignItems: 'center' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <span>ଶ୍ଲୋକ</span>
+                                        <input
+                                            placeholder="Verse #"
+                                            value={verse.id || ''}
+                                            onChange={e => handleVerseChangeByIndex(vIdx, 'id', parseInt(e.target.value) || 0)}
+                                            style={{ width: '80px', padding: '6px', borderRadius: '4px', border: '1px solid #ddd', fontWeight: 900, textAlign: 'center' }}
+                                        />
+                                        <div style={{ display: 'flex', gap: '0.25rem' }}>
+                                            <button
+                                                onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'NOT_DONE')}
+                                                style={{
+                                                    width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                                    background: verse.status === 'NOT_DONE' ? getStatusBackground('NOT_DONE') : '#f9f9f9',
+                                                    color: verse.status === 'NOT_DONE' ? STATUS_COLORS.NOT_DONE : '#ccc',
+                                                    fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
+                                                }}
+                                            >R</button>
+                                            <button
+                                                onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'IN_PROGRESS')}
+                                                style={{
+                                                    width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                                    background: verse.status === 'IN_PROGRESS' ? getStatusBackground('IN_PROGRESS') : '#f9f9f9',
+                                                    color: verse.status === 'IN_PROGRESS' ? STATUS_COLORS.IN_PROGRESS : '#ccc',
+                                                    fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
+                                                }}
+                                            >O</button>
+                                            <button
+                                                onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'COMPLETED')}
+                                                style={{
+                                                    width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
+                                                    background: verse.status === 'COMPLETED' ? getStatusBackground('COMPLETED') : '#f9f9f9',
+                                                    color: verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : '#ccc',
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
+                                                }}
+                                            >
+                                                <CheckCircle2 size={14} color={verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : "#ccc"} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button onClick={() => removeVerse(verse.id)} style={{ color: 'red', background: 'none', border: 'none' }}><Trash2 size={16} /></button>
+                                </div>
+
+                                <div style={{ background: '#f9f9f9', padding: '0.75rem', borderRadius: '8px', marginBottom: '1rem' }}>
+                                    <div style={{ fontSize: '0.75rem', color: '#666', marginBottom: '0.4rem', fontWeight: 600 }}>Bulk Paste (Lyric, Trans, W—M...)</div>
+                                    <textarea
+                                        placeholder="Paste Verse Data here..."
+                                        onBlur={(e) => parseBulkVerseByIndex(vIdx, e.target.value)}
+                                        style={{ width: '100%', fontSize: '0.85rem', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '60px' }}
+                                    />
+                                </div>
+
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
+                                    <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Lyrics</span>
+                                    <textarea
+                                        placeholder="Lyrics (Odia/Roman)"
+                                        value={verse.lyric}
+                                        onChange={e => handleVerseChangeByIndex(vIdx, 'lyric', e.target.value)}
                                         style={{
-                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
-                                            background: verse.status === 'NOT_DONE' ? getStatusBackground('NOT_DONE') : '#f9f9f9',
-                                            color: verse.status === 'NOT_DONE' ? STATUS_COLORS.NOT_DONE : '#ccc',
-                                            fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
+                                            width: '100%',
+                                            padding: '0.75rem',
+                                            borderRadius: '8px',
+                                            border: '1px solid #ddd',
+                                            minHeight: '100px',
+                                            color: verse.status ? getStatusColor(verse.status) : getStatusColor(formData.status, formData.verified),
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            fontSize: '1.2rem',
+                                            fontWeight: 600
                                         }}
-                                    >R</button>
-                                    <button
-                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'IN_PROGRESS')}
-                                        style={{
-                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
-                                            background: verse.status === 'IN_PROGRESS' ? getStatusBackground('IN_PROGRESS') : '#f9f9f9',
-                                            color: verse.status === 'IN_PROGRESS' ? STATUS_COLORS.IN_PROGRESS : '#ccc',
-                                            fontSize: '0.7rem', fontWeight: 'bold', cursor: 'pointer'
-                                        }}
-                                    >O</button>
-                                    <button
-                                        onClick={() => handleVerseChangeByIndex(vIdx, 'status', 'COMPLETED')}
-                                        style={{
-                                            width: '24px', height: '24px', borderRadius: '4px', border: '1px solid #ddd',
-                                            background: verse.status === 'COMPLETED' ? getStatusBackground('COMPLETED') : '#f9f9f9',
-                                            color: verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : '#ccc',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
-                                        }}
-                                    >
-                                        <CheckCircle2 size={14} color={verse.status === 'COMPLETED' ? STATUS_COLORS.COMPLETED : "#ccc"} />
-                                    </button>
+                                    />
+                                </div>
+
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
+                                    <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Translation</span>
+                                    <textarea
+                                        placeholder="Translation"
+                                        value={verse.translation}
+                                        onChange={e => handleVerseChangeByIndex(vIdx, 'translation', e.target.value)}
+                                        style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', minHeight: '80px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
+                                    />
+                                </div>
+
+                                <div style={{ marginTop: '1rem' }}>
+                                    <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>Word Meanings</div>
+                                    <div style={{ display: 'grid', gap: '0.75rem' }}>
+                                        {verse.wordMeanings?.map((wm, wIdx) => (
+                                            <div key={wIdx} style={{
+                                                display: 'grid',
+                                                gridTemplateColumns: window.innerWidth < 600 ? '1fr' : '1fr 1fr 40px',
+                                                gap: '0.5rem',
+                                                padding: '0.5rem',
+                                                background: '#fff',
+                                                border: '1px solid #eee',
+                                                borderRadius: '8px'
+                                            }}>
+                                                <input
+                                                    placeholder="Word"
+                                                    value={wm.word}
+                                                    onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'word', e.target.value)}
+                                                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
+                                                />
+                                                <textarea
+                                                    placeholder="Meaning"
+                                                    value={wm.meaning}
+                                                    onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'meaning', e.target.value)}
+                                                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600, minHeight: '40px' }}
+                                                />
+                                                {window.innerWidth < 600 ? (
+                                                    <button
+                                                        onClick={() => {
+                                                            const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
+                                                            handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
+                                                        }}
+                                                        style={{ padding: '4px', color: '#ff4444', background: '#fff5f5', border: '1px solid #ffcccc', borderRadius: '4px', fontSize: '0.8rem' }}
+                                                    >Remove Word</button>
+                                                ) : (
+                                                    <button onClick={() => {
+                                                        const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
+                                                        handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
+                                                    }} style={{ background: 'none', border: 'none', color: '#ff4444' }}><Trash2 size={16} /></button>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button onClick={() => addWordMeaningByIndex(vIdx)} style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: '#f0f0f0', border: '1px dashed #ccc', borderRadius: '8px', fontWeight: 600 }}>+ Add Word</button>
                                 </div>
                             </div>
-                            <button onClick={() => removeVerse(verse.id)} style={{ color: 'red', background: 'none', border: 'none' }}><Trash2 size={16} /></button>
-                        </div>
-
-                        <div style={{ background: '#f9f9f9', padding: '0.75rem', borderRadius: '8px', marginBottom: '1rem' }}>
-                            <div style={{ fontSize: '0.75rem', color: '#666', marginBottom: '0.4rem', fontWeight: 600 }}>Bulk Paste (Lyric, Trans, W—M...)</div>
-                            <textarea
-                                placeholder="Paste Verse Data here..."
-                                onBlur={(e) => parseBulkVerseByIndex(vIdx, e.target.value)}
-                                style={{ width: '100%', fontSize: '0.85rem', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd', minHeight: '60px' }}
-                            />
-                        </div>
-
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
-                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Lyrics</span>
-                            <textarea
-                                placeholder="Lyrics (Odia/Roman)"
-                                value={verse.lyric}
-                                onChange={e => handleVerseChangeByIndex(vIdx, 'lyric', e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    border: '1px solid #ddd',
-                                    minHeight: '100px',
-                                    color: verse.status ? getStatusColor(verse.status) : getStatusColor(formData.status, formData.verified),
-                                    fontFamily: 'var(--font-odia-sans)',
-                                    fontSize: '1.2rem',
-                                    fontWeight: 600
-                                }}
-                            />
-                        </div>
-
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
-                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Translation</span>
-                            <textarea
-                                placeholder="Translation"
-                                value={verse.translation}
-                                onChange={e => handleVerseChangeByIndex(vIdx, 'translation', e.target.value)}
-                                style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd', minHeight: '80px', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
-                            />
-                        </div>
-
-                        <div style={{ marginTop: '1rem' }}>
-                            <div style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>Word Meanings</div>
-                            <div style={{ display: 'grid', gap: '0.75rem' }}>
-                                {verse.wordMeanings?.map((wm, wIdx) => (
-                                    <div key={wIdx} style={{
-                                        display: 'grid',
-                                        gridTemplateColumns: window.innerWidth < 600 ? '1fr' : '1fr 1fr 40px',
-                                        gap: '0.5rem',
-                                        padding: '0.5rem',
-                                        background: '#fff',
-                                        border: '1px solid #eee',
-                                        borderRadius: '8px'
-                                    }}>
-                                        <input
-                                            placeholder="Word"
-                                            value={wm.word}
-                                            onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'word', e.target.value)}
-                                            style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}
-                                        />
-                                        <textarea
-                                            placeholder="Meaning"
-                                            value={wm.meaning}
-                                            onChange={e => handleWordMeaningChangeByIndex(vIdx, wIdx, 'meaning', e.target.value)}
-                                            style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd', fontFamily: 'var(--font-odia-sans)', fontWeight: 600, minHeight: '40px' }}
-                                        />
-                                        {window.innerWidth < 600 ? (
-                                            <button
-                                                onClick={() => {
-                                                    const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
-                                                    handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
-                                                }}
-                                                style={{ padding: '4px', color: '#ff4444', background: '#fff5f5', border: '1px solid #ffcccc', borderRadius: '4px', fontSize: '0.8rem' }}
-                                            >Remove Word</button>
-                                        ) : (
-                                            <button onClick={() => {
-                                                const meanings = (verse.wordMeanings || []).filter((_, i) => i !== wIdx);
-                                                handleVerseChangeByIndex(vIdx, 'wordMeanings', meanings);
-                                            }} style={{ background: 'none', border: 'none', color: '#ff4444' }}><Trash2 size={16} /></button>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                            <button onClick={() => addWordMeaningByIndex(vIdx)} style={{ width: '100%', padding: '0.75rem', marginTop: '0.75rem', background: '#f0f0f0', border: '1px dashed #ccc', borderRadius: '8px', fontWeight: 600 }}>+ Add Word</button>
-                        </div>
-                    </div>
-                ))}
+                        ))}
                         <button onClick={addVerse} style={{ width: '100%', padding: '1rem', background: '#f8f8f8', border: '2px dashed #ddd', borderRadius: '12px', fontWeight: 600, color: '#8A5082' }}>+ Add Verse</button>
                     </>
                 )}
