@@ -5,6 +5,7 @@ import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
 import { AudioPlayer } from '../components/AudioPlayer';
+import { CompactAudioBar } from '../components/CompactAudioBar';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
@@ -50,12 +51,15 @@ export const SongsPage: React.FC = () => {
     const filterMenuRef = useRef<HTMLDivElement>(null);
     const mainScrollRef = useRef<HTMLElement>(null);
 
-    const handleSelectSong = async (song: Resource) => {
+    const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
         setIsDetailView(true);
-        if (song.audioUrl || (song.audioVersions && song.audioVersions.length > 0)) {
+        
+        // Only trigger selectSong if nothing is playing OR if we explicitly want to change the audio (Auto-Next)
+        if (forcePlay || (!activeSong && (song.audioUrl || (song.audioVersions && song.audioVersions.length > 0)))) {
             selectSong(song);
         }
+
         const newRecent = [song.id, ...recentIds.filter(id => id !== song.id)].slice(0, 5);
         setRecentIds(newRecent);
         localStorage.setItem('recent-song-ids', JSON.stringify(newRecent));
@@ -106,7 +110,7 @@ export const SongsPage: React.FC = () => {
             const currentIndex = songResources.findIndex(s => s.id === currentSongId);
             if (currentIndex !== -1 && currentIndex < songResources.length - 1) {
                 const nextSong = songResources[currentIndex + 1];
-                handleSelectSong(nextSong);
+                handleSelectSong(nextSong, true); // Force play for Auto-Next
             }
         };
         window.addEventListener('play-next-song', handleAutoNext);
@@ -800,8 +804,24 @@ export const SongsPage: React.FC = () => {
                     zIndex: 1001,
                     background: 'transparent'
                 }}>
-                    <div style={{ margin: '0 auto', width: '100%' }}>
-                        <AudioPlayer />
+                    <div style={{ margin: '0 auto', width: '100%', position: 'relative' }}>
+                        {/* 1. Background Music Popup (Higher float) */}
+                        {activeSong && selectedSong?.id !== activeSong.id && (
+                            <div style={{ 
+                                position: 'fixed', 
+                                bottom: '150px', 
+                                left: '50%', 
+                                transform: 'translateX(-50%)', 
+                                width: '92%', 
+                                maxWidth: '500px', 
+                                zIndex: 1002 
+                            }}>
+                                <CompactAudioBar />
+                            </div>
+                        )}
+
+                        {/* 2. Original Song Bar (Fixed Bottom) */}
+                        <AudioPlayer songOverride={selectedSong || undefined} />
                     </div>
                 </div>
             </div>

@@ -3,16 +3,18 @@ import { Play, Pause, SkipBack, SkipForward, Repeat, Download, Sparkles, Repeat1
 import { useAudio } from '../context/AudioContext';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
+import type { AudioVersion } from '../types';
 
-export const AudioPlayer: React.FC = () => {
+export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverride }) => {
     const {
         activeSong,
-        currentVersion,
-        isPlaying,
-        currentTime,
-        duration,
+        currentVersion: contextVersion,
+        isPlaying: contextPlaying,
+        currentTime: contextTime,
+        duration: contextDuration,
         togglePlay,
         seek,
+        playSong,
         skipForward,
         skipBackward,
         changeVersion,
@@ -25,6 +27,16 @@ export const AudioPlayer: React.FC = () => {
         autoNext,
         toggleAutoNext
     } = useAudio();
+
+    // Determine which song and state to show
+    const isShowingOverride = songOverride && (!activeSong || activeSong.id !== songOverride.id);
+    const displaySong = isShowingOverride ? songOverride : activeSong;
+    
+    // If we're showing an override, we show it at 0:00 and not playing
+    const isPlaying = isShowingOverride ? false : contextPlaying;
+    const currentTime = isShowingOverride ? 0 : contextTime;
+    const duration = isShowingOverride ? 0 : contextDuration;
+    const currentVersion = isShowingOverride ? (songOverride.audioVersions?.[0] || { label: 'Default', url: songOverride.audioUrl || '' }) : contextVersion;
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSleepMenuOpen, setIsSleepMenuOpen] = useState(false);
@@ -50,14 +62,14 @@ export const AudioPlayer: React.FC = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    if (!activeSong) return null;
+    if (!displaySong) return null;
 
-    const versions = activeSong.audioVersions || [];
+    const versions = displaySong.audioVersions || [];
     const currentLabel = currentVersion?.label || 'Default';
     const progress = (currentTime / (duration || 1)) * 100;
 
     const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        seek(parseFloat(e.target.value));
+        if (!isShowingOverride) seek(parseFloat(e.target.value));
     };
 
     const formatTime = (time: number) => {
@@ -76,7 +88,7 @@ export const AudioPlayer: React.FC = () => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            const fileName = `${activeSong.title_english || activeSong.title} - ${currentVersion.label}.mp3`.replace(/[/\\?%*:|"<>]/g, '-');
+            const fileName = `${displaySong.title_english || displaySong.title} - ${currentVersion.label}.mp3`.replace(/[/\\?%*:|"<>]/g, '-');
             a.download = fileName;
             document.body.appendChild(a);
             a.click();
@@ -108,7 +120,7 @@ export const AudioPlayer: React.FC = () => {
                 windowHeight: element.scrollHeight
             });
 
-            const fileName = `${activeSong.title_english || activeSong.title}`.replace(/[/\\?%*:|"<>]/g, '-');
+            const fileName = `${displaySong.title_english || displaySong.title}`.replace(/[/\\?%*:|"<>]/g, '-');
 
             if (type === 'jpg') {
                 const imgData = canvas.toDataURL('image/jpeg', 0.9);
@@ -131,6 +143,14 @@ export const AudioPlayer: React.FC = () => {
             alert("Export failed. Please try again.");
         } finally {
             setIsExporting(false);
+        }
+    };
+
+    const handlePlayClick = () => {
+        if (isShowingOverride) {
+            playSong(songOverride!);
+        } else {
+            togglePlay();
         }
     };
 
@@ -175,7 +195,7 @@ export const AudioPlayer: React.FC = () => {
                     </button>
                     {isMenuOpen && <div style={dropdownStyle(isNightMode)}>
                         <div style={dropdownTitleStyle}>Choose Singer</div>
-                        {versions.map(v => (
+                        {versions.map((v: AudioVersion) => (
                             <button key={v.url} onClick={() => { changeVersion(v); setIsMenuOpen(false); }}
                                 style={dropdownItemStyle(currentVersion?.url === v.url, primaryColor, isNightMode)}>
                                 {v.label}
@@ -201,11 +221,11 @@ export const AudioPlayer: React.FC = () => {
                     </div>}
                 </div>
 
-                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)}><SkipBack size={20} fill="white" /></button>
+                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipBack size={20} fill="white" /></button>
                 
                 {/* 4: PLAY/PAUSE (The "Glow" Button) */}
                 <button 
-                    onClick={togglePlay} 
+                    onClick={handlePlayClick} 
                     style={{ 
                         ...pillBtnStyle(primaryColor), 
                         background: isPlaying ? getDarker(primaryColor) : primaryColor, 
@@ -217,7 +237,7 @@ export const AudioPlayer: React.FC = () => {
                     {isPlaying ? <Pause size={28} fill="white" /> : <Play size={28} fill="white" style={{ marginLeft: '4px' }} />}
                 </button>
 
-                <button onClick={skipForward} style={pillBtnStyle(primaryColor)}><SkipForward size={20} fill="white" /></button>
+                <button onClick={skipForward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipForward size={20} fill="white" /></button>
                 
                 {/* 6: AUDIO DOWNLOAD */}
                 <button onClick={handleDownloadAudio} style={{ ...pillBtnStyle(primaryColor), opacity: isDownloading ? 0.7 : 1 }} disabled={isDownloading}>

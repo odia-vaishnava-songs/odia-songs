@@ -2,7 +2,7 @@ import React from 'react';
 import { Play, Pause, X } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
-export const CompactAudioBar: React.FC = () => {
+export const CompactAudioBar: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
     const { activeSong, currentVersion, isPlaying, togglePlay, stopAudio, currentTime, duration, setIsDetailView, theme } = useAudio();
 
     if (!activeSong) return null;
@@ -32,7 +32,8 @@ export const CompactAudioBar: React.FC = () => {
                 border: '1px solid rgba(255, 255, 255, 0.4)',
                 cursor: 'pointer',
                 overflow: 'hidden',
-                animation: 'slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                animation: 'slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                ...style
             }}
         >
             {/* Thumbnail with rotating animation if playing */}
