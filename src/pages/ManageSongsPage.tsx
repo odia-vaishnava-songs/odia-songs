@@ -129,11 +129,11 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
-    const handlePublishToggle = async (songId: string) => {
+    const handlePublishToggle = async (songId: string, currentPublished: boolean) => {
         try {
             const { error } = await supabase
                 .from('songs')
-                .update({ published: true }) // Force it to stay true
+                .update({ published: !currentPublished })
                 .eq('id', songId);
             if (error) throw error;
             if (refreshSongs) refreshSongs();
@@ -488,7 +488,7 @@ export const ManageSongsPage: React.FC = () => {
                                                 </button>
                                             )}
                                                                <button
-                                                onClick={(e) => { e.stopPropagation(); handlePublishToggle(song.id); }}
+                                                onClick={(e) => { e.stopPropagation(); handlePublishToggle(song.id, !!song.published); }}
                                                 style={{ 
                                                     width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #ddd', 
                                                     background: song.published ? '#1ed106' : 'white',
@@ -499,7 +499,7 @@ export const ManageSongsPage: React.FC = () => {
                                                     position: 'relative',
                                                     marginRight: '0.5rem'
                                                 }}
-                                                title="Published (Click to ensure LIVE status)"
+                                                title={song.published ? "Active - Click to Hide" : "Inactive - Click to Publish"}
                                             >
                                                 <div style={{ 
                                                     width: '14px', height: '14px', borderRadius: '50%', 
