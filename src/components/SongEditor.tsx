@@ -177,6 +177,8 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     structured_content: formData.structuredContent,
                     audio_url: formData.audioUrl,
                     audio_versions: formData.audioVersions,
+                    vocalist: formData.vocalist,
+                    audio_source: formData.audio_source,
                     author: formData.author,
                     verified: formData.verified || false,
                     status: formData.status || 'NOT_DONE',
@@ -323,6 +325,61 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                             onChange={e => setFormData({ ...formData, display_order: parseInt(e.target.value) || 0 })}
                             style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
                         />
+                    </div>
+                </div>
+
+                {/* 🎵 AUDIO MANAGEMENT SECTION */}
+                <div style={{ padding: '1rem', background: '#f8f9fa', borderRadius: '12px', border: '1px solid #e9ecef' }}>
+                    <h4 style={{ margin: '0 0 1rem 0', color: '#8A5082', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        Audio Management
+                    </h4>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Audio MP3 URL</span>
+                            <input
+                                placeholder="https://..."
+                                value={formData.audioUrl || ''}
+                                onChange={e => setFormData({ ...formData, audioUrl: e.target.value })}
+                                style={{ padding: '0.65rem', borderRadius: '8px', border: '1px solid #ddd', fontSize: '0.85rem' }}
+                            />
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Singer / Vocalist</span>
+                            <input
+                                placeholder="Singer Name"
+                                value={formData.vocalist || ''}
+                                onChange={e => setFormData({ ...formData, vocalist: e.target.value })}
+                                style={{ padding: '0.65rem', borderRadius: '8px', border: '1px solid #ddd', fontSize: '0.85rem' }}
+                            />
+                        </div>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Audio Source</span>
+                            <input
+                                placeholder="Drive / Cloudinary"
+                                value={formData.audio_source || ''}
+                                onChange={e => setFormData({ ...formData, audio_source: e.target.value })}
+                                style={{ padding: '0.65rem', borderRadius: '8px', border: '1px solid #ddd', fontSize: '0.85rem' }}
+                            />
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: 600 }}>Multiple Versions (JSON)</span>
+                            <input
+                                placeholder='[{"label":"Singer","url":"..."}]'
+                                value={typeof formData.audioVersions === 'string' ? formData.audioVersions : JSON.stringify(formData.audioVersions || [])}
+                                onChange={e => {
+                                    try {
+                                        const parsed = JSON.parse(e.target.value);
+                                        setFormData({ ...formData, audioVersions: parsed });
+                                    } catch {
+                                        // Keep as string if invalid until it's fixed
+                                        setFormData({ ...formData, audioVersions: e.target.value as any });
+                                    }
+                                }}
+                                style={{ padding: '0.65rem', borderRadius: '8px', border: '1px solid #ddd', fontSize: '0.85rem', fontFamily: 'monospace' }}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div>
