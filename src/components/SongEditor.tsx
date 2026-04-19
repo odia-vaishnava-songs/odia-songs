@@ -157,7 +157,16 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
         setSaving(true);
         try {
-            const id = song?.id || formData.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            // 🆔 SMART SLUG GENERATOR: Prioritize English title for cleaner URLs
+            const baseForId = formData.title_english || formData.title || 'untitled';
+            const cleanSlug = baseForId
+                .toLowerCase()
+                .trim()
+                .replace(/[^\w\s-]/g, '') // Remove special chars
+                .replace(/[\s_-]+/g, '-')  // Replace spaces/underscores with single dash
+                .replace(/^-+|-+$/g, '');  // Trim dashes from ends
+
+            const id = song?.id || `song-${cleanSlug}`;
 
             // 1. Save to Cloud (Supabase)
             const { error: dbError } = await supabase
