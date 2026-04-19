@@ -3,7 +3,7 @@ import { Play, Pause, SkipBack, SkipForward, Repeat, Download, Sparkles, Repeat1
 import { useAudio } from '../context/AudioContext';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-import type { AudioVersion } from '../types';
+import type { AudioVersion, Resource } from '../types';
 
 export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverride }) => {
     const {
