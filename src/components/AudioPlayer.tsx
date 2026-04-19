@@ -136,29 +136,34 @@ export const AudioPlayer: React.FC = () => {
 
     return (
         <div style={{
-            background: isNightMode ? '#1e1e1e' : '#f8f9fa',
+            background: isNightMode ? 'rgba(30, 30, 30, 0.85)' : 'rgba(248, 249, 250, 0.85)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
             display: 'flex',
-            flexDirection: 'column', width: '100%', fontFamily: 'system-ui, -apple-system, sans-serif'
+            flexDirection: 'column', width: '100%', 
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            borderTop: `1px solid ${isNightMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)'}`,
+            paddingTop: '4px'
         }}>
             {/* Top Row: Progress Slider */}
-            <div style={{ padding: '0 8px', marginTop: '6px' }}>
+            <div style={{ padding: '0 12px', marginTop: '6px' }}>
                 <input type="range" min="0" max={duration || 0} value={currentTime} onChange={handleProgressChange}
                     style={{
-                        width: '100%', height: '4px', cursor: 'pointer', outline: 'none', appearance: 'none', borderRadius: '2px',
-                        background: `linear-gradient(to right, ${primaryColor} ${progress}%, #cbd5e1 ${progress}%)`,
+                        width: '100%', height: '5px', cursor: 'pointer', outline: 'none', appearance: 'none', borderRadius: '10px',
+                        background: `linear-gradient(to right, ${primaryColor} ${progress}%, ${isNightMode ? '#334155' : '#e2e8f0'} ${progress}%)`,
                     }}
                 />
             </div>
 
             {/* Middle Row: Times & Singer Name */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '4px 12px', fontSize: '0.8rem', color: isNightMode ? '#e2e8f0' : '#334155', fontWeight: 600 }}>
-                <span style={{ width: '40px' }}>{formatTime(currentTime)}</span>
-                <span style={{ flex: 1, textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 8px' }}>{currentLabel}</span>
-                <span style={{ width: '40px', textAlign: 'right' }}>{formatTime(duration)}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 16px', fontSize: '0.75rem', color: isNightMode ? '#94a3b8' : '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <span style={{ width: '45px' }}>{formatTime(currentTime)}</span>
+                <span style={{ flex: 1, textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 12px', color: isNightMode ? '#e2e8f0' : '#1e293b' }}>{currentLabel}</span>
+                <span style={{ width: '45px', textAlign: 'right' }}>{formatTime(duration)}</span>
             </div>
 
             {/* Bottom Row: 7 Buttons Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '6px', padding: '2px 8px 10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '8px', padding: '4px 12px 14px' }}>
                 
                 {/* 1: SINGER LIST */}
                 <div ref={menuRef} style={{ width: '100%', position: 'relative' }}>
@@ -182,7 +187,7 @@ export const AudioPlayer: React.FC = () => {
                 {/* 2: OPTIONS (Repeat/Timer) */}
                 <div ref={sleepMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsSleepMenuOpen(!isSleepMenuOpen)} onDoubleClick={toggleRepeat}
-                        style={{ ...pillBtnStyle(primaryColor), background: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? 'white' : primaryColor, color: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? primaryColor : 'white', border: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? `2px solid ${primaryColor}` : 'none' }}>
+                        style={{ ...pillBtnStyle(primaryColor), background: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? 'white' : primaryColor, color: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? primaryColor : 'white', border: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? `2.5px solid ${primaryColor}` : 'none' }}>
                         {sleepTimer !== null ? <div style={{ fontSize: '10px', fontWeight: 900 }}>{sleepTimer}m</div> : 
                         (autoNext ? <ListMusic size={20} /> : (repeatMode === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />))}
                     </button>
@@ -190,25 +195,39 @@ export const AudioPlayer: React.FC = () => {
                         <div style={dropdownTitleStyle}>Options</div>
                         <button onClick={toggleAutoNext} style={dropdownItemStyle(autoNext, primaryColor, isNightMode)}><ListMusic size={16} /> Auto-Next: {autoNext ? 'ON' : 'OFF'}</button>
                         <button onClick={toggleRepeat} style={dropdownItemStyle(repeatMode === 'one', primaryColor, isNightMode)}>{repeatMode === 'one' ? <Repeat1 size={16} /> : <Repeat size={16} />} Repeat: {repeatMode === 'one' ? 'ON' : 'OFF'}</button>
-                        <div style={{ height: '1px', background: '#eee', margin: '4px 8px' }} />
+                        <div style={{ height: '1px', background: isNightMode ? '#3f3f3f' : '#eee', margin: '4px 8px' }} />
                         <div style={dropdownTitleStyle}>Sleep Timer</div>
                         {[15, 30, 45, 60].map(mins => <button key={mins} onClick={() => { setSleepTimer(mins); setIsSleepMenuOpen(false); }} style={dropdownItemStyle(sleepTimer === mins, primaryColor, isNightMode)}>{mins} Minutes</button>)}
                     </div>}
                 </div>
 
-                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)}><SkipBack size={18} fill="white" /></button>
-                <button onClick={togglePlay} style={{ ...pillBtnStyle(primaryColor), background: getDarker(primaryColor), transform: 'scale(1.05)', zIndex: 2 }}>{isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" style={{ marginLeft: '2px' }} />}</button>
-                <button onClick={skipForward} style={pillBtnStyle(primaryColor)}><SkipForward size={18} fill="white" /></button>
+                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)}><SkipBack size={20} fill="white" /></button>
+                
+                {/* 4: PLAY/PAUSE (The "Glow" Button) */}
+                <button 
+                    onClick={togglePlay} 
+                    style={{ 
+                        ...pillBtnStyle(primaryColor), 
+                        background: isPlaying ? getDarker(primaryColor) : primaryColor, 
+                        transform: 'scale(1.15)', 
+                        zIndex: 2,
+                        boxShadow: `0 8px 24px ${primaryColor}60, inset 0 1px 1px rgba(255,255,255,0.3)`
+                    }}
+                >
+                    {isPlaying ? <Pause size={28} fill="white" /> : <Play size={28} fill="white" style={{ marginLeft: '4px' }} />}
+                </button>
+
+                <button onClick={skipForward} style={pillBtnStyle(primaryColor)}><SkipForward size={20} fill="white" /></button>
                 
                 {/* 6: AUDIO DOWNLOAD */}
                 <button onClick={handleDownloadAudio} style={{ ...pillBtnStyle(primaryColor), opacity: isDownloading ? 0.7 : 1 }} disabled={isDownloading}>
-                    {isDownloading ? <div style={spinnerStyle} /> : <Download size={18} />}
+                    {isDownloading ? <div style={spinnerStyle} /> : <Download size={20} />}
                 </button>
 
                 {/* 7: PAGE EXPORT (PHOTO/PDF) */}
                 <div ref={exportMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsExportMenuOpen(!isExportMenuOpen)} style={pillBtnStyle(primaryColor, isExportMenuOpen)} disabled={isExporting}>
-                        {isExporting ? <div style={spinnerStyle} /> : <Sparkles size={18} />}
+                        {isExporting ? <div style={spinnerStyle} /> : <Sparkles size={20} />}
                     </button>
                     {isExportMenuOpen && <div style={dropdownStyle(isNightMode, '-120px')}>
                         <div style={dropdownTitleStyle}>Export Page</div>
@@ -227,8 +246,11 @@ export const AudioPlayer: React.FC = () => {
             </div>
             <style>{`
                  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-                 @keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-                 input[type='range']::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; background: white; border: 2px solid ${primaryColor}; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+                 @keyframes slideUp { from { transform: translateY(12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+                 input[type='range']::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; background: white; border: 3px solid ${primaryColor}; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.1s ease; }
+                 input[type='range']::-webkit-slider-thumb:hover { transform: scale(1.2); }
+                 button { transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+                 button:active { transform: scale(0.9) !important; }
             `}</style>
         </div>
     );
@@ -237,27 +259,35 @@ export const AudioPlayer: React.FC = () => {
 // --- STYLES ---
 const pillBtnStyle = (color: string, active?: boolean): React.CSSProperties => ({
     display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: active ? getDarker(color) : color, color: 'white', border: 'none', borderRadius: '16px',
-    height: '46px', width: '100%', cursor: 'pointer', transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.1)', position: 'relative'
+    background: active ? getDarker(color) : color, color: 'white', border: 'none', borderRadius: '14px',
+    height: '46px', width: '100%', cursor: 'pointer',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.1)', position: 'relative'
 });
 
 const dropdownStyle = (isNight: boolean, left = '0'): React.CSSProperties => ({
-    position: 'absolute', bottom: 'calc(100% + 12px)', left, width: '220px',
-    background: isNight ? '#2d2d2d' : 'white', borderRadius: '16px', padding: '8px', zIndex: 3000,
-    boxShadow: '0 10px 30px rgba(0,0,0,0.25)', border: `1px solid ${isNight ? '#3f3f3f' : '#efefef'}`,
+    position: 'absolute', bottom: 'calc(100% + 14px)', left, width: '230px',
+    background: isNight ? 'rgba(45, 45, 45, 0.95)' : 'rgba(255, 255, 255, 0.95)', 
+    backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+    borderRadius: '18px', padding: '8px', zIndex: 3000,
+    boxShadow: '0 12px 40px rgba(0,0,0,0.3)', border: `1px solid ${isNight ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'}`,
     animation: 'slideUp 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)'
 });
 
 const dropdownItemStyle = (active: boolean, color: string, isNight: boolean): React.CSSProperties => ({
-    width: '100%', padding: '12px', textAlign: 'left', background: active ? `${color}15` : 'transparent',
-    border: 'none', fontSize: '0.85rem', color: active ? color : (isNight ? '#e2e2e2' : '#1e293b'),
-    fontWeight: active ? 800 : 500, borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2px', cursor: 'pointer'
+    width: '100%', padding: '12px 14px', textAlign: 'left', background: active ? `${color}20` : 'transparent',
+    border: 'none', fontSize: '0.9rem', color: active ? color : (isNight ? '#e2e2e2' : '#1e293b'),
+    fontWeight: active ? 800 : 600, borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px', cursor: 'pointer'
 });
 
-const dropdownTitleStyle: React.CSSProperties = { padding: '8px 12px', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' };
-const badgeStyle: React.CSSProperties = { position: 'absolute', top: '4px', right: '4px', background: '#FF4444', color: 'white', fontSize: '9px', width: '14px', height: '14px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, border: '1.5px solid white' };
-const spinnerStyle: React.CSSProperties = { width: '18px', height: '18px', border: '2.5px solid rgba(255,255,255,0.3)', borderTop: '2.5px solid white', borderRadius: '50%', animation: 'spin 0.8s linear infinite' };
+const dropdownTitleStyle: React.CSSProperties = { padding: '8px 14px', fontSize: '0.7rem', fontWeight: 900, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' };
+const badgeStyle: React.CSSProperties = { position: 'absolute', top: '2px', right: '2px', background: '#FF4444', color: 'white', fontSize: '9px', width: '16px', height: '16px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, border: '2px solid white', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' };
+const spinnerStyle: React.CSSProperties = { width: '20px', height: '20px', border: '3px solid rgba(255,255,255,0.3)', borderTop: '3px solid white', borderRadius: '50%', animation: 'spin 0.8s linear infinite' };
 
 
-function getDarker(hex: string) { const r = Math.max(0, parseInt(hex.slice(1, 3), 16) - 20); const g = Math.max(0, parseInt(hex.slice(3, 5), 16) - 20); const b = Math.max(0, parseInt(hex.slice(5, 7), 16) - 20); return `rgb(${r}, ${g}, ${b})`; }
+function getDarker(hex: string) { 
+    if (!hex) return '#333';
+    const r = Math.max(0, parseInt(hex.slice(1, 3), 16) - 30); 
+    const g = Math.max(0, parseInt(hex.slice(3, 5), 16) - 30); 
+    const b = Math.max(0, parseInt(hex.slice(5, 7), 16) - 30); 
+    return `rgb(${r}, ${g}, ${b})`; 
+}
