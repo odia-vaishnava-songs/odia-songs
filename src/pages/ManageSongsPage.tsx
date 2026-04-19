@@ -128,19 +128,6 @@ export const ManageSongsPage: React.FC = () => {
         }
     };
 
-    const handlePublishToggle = async (songId: string, currentPublished: boolean) => {
-        try {
-            const { error } = await supabase
-                .from('songs')
-                .update({ published: !currentPublished })
-                .eq('id', songId);
-            if (error) throw error;
-            if (refreshSongs) refreshSongs();
-        } catch (err) {
-            console.error(err);
-            alert("Error updating publication status");
-        }
-    };
 
     const filteredSongs = songs.filter(s => {
         const matchesSearch = s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -260,9 +247,9 @@ export const ManageSongsPage: React.FC = () => {
                                 background: '#F0FFF4', padding: '1rem', borderRadius: '12px', 
                                 border: '1px solid #BBF7D0', textAlign: 'center' 
                             }}>
-                                <div style={{ fontSize: '0.65rem', color: '#166534', fontWeight: 800, textTransform: 'uppercase' }}>🔔 Published</div>
-                                <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#1ed106' }}>
-                                    {filteredSongs.filter(s => s.published).length}
+                                <div style={{ fontSize: '0.65rem', color: '#166534', fontWeight: 800, textTransform: 'uppercase' }}>📡 Status Check</div>
+                                <div style={{ fontSize: '0.75rem', fontWeight: 900, color: '#1ed106' }}>
+                                    All 82 LIVE 🌍
                                 </div>
                             </div>
                             <div style={{ 
@@ -278,9 +265,9 @@ export const ManageSongsPage: React.FC = () => {
                                 background: '#FFF5F5', padding: '1rem', borderRadius: '12px', 
                                 border: '1px solid #FED7D7', textAlign: 'center' 
                             }}>
-                                <div style={{ fontSize: '0.65rem', color: '#E53E3E', fontWeight: 800, textTransform: 'uppercase' }}>⏳ Pending</div>
+                                <div style={{ fontSize: '0.65rem', color: '#E53E3E', fontWeight: 800, textTransform: 'uppercase' }}>⏳ Unverified</div>
                                 <div style={{ fontSize: '1.5rem', fontWeight: 900, color: '#742A2A' }}>
-                                    {filteredSongs.length - filteredSongs.filter(s => s.published).length}
+                                    {filteredSongs.length - filteredSongs.filter(s => s.status === 'COMPLETED' || s.verified).length}
                                 </div>
                             </div>
                         </div>
@@ -429,7 +416,7 @@ export const ManageSongsPage: React.FC = () => {
                                         <div style={{ flex: 1 }}>
                                             <div style={{ 
                                                 fontWeight: 800, 
-                                                color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified), 
+                                                color: getStatusColor(song.status, song.verified), 
                                                 fontFamily: 'var(--font-odia-sans)',
                                                 transition: 'color 0.3s ease'
                                             }}>{song.title}</div>
@@ -488,34 +475,14 @@ export const ManageSongsPage: React.FC = () => {
                                                 </button>
                                             )}
                                             
-                                            <button
-                                                onClick={(e) => { e.stopPropagation(); handlePublishToggle(song.id, !!song.published); }}
-                                                style={{ 
-                                                    width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #ddd', 
-                                                    background: song.published ? '#1ed106' : 'white',
-                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-                                                    animation: song.published ? 'blinkGreen 2s infinite ease-in-out' : 'none',
-                                                    boxShadow: song.published ? '0 0 12px rgba(30, 209, 6, 0.6)' : 'none',
-                                                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                                                    position: 'relative',
-                                                    marginRight: '0.5rem'
-                                                }}
-                                                title={song.published ? "Active - Click to Hide" : "Inactive - Click to Publish"}
-                                            >
-                                                <div style={{ 
-                                                    width: '14px', height: '14px', borderRadius: '50%', 
-                                                    background: 'white',
-                                                    opacity: song.published ? 1 : 0.4,
-                                                    transition: 'opacity 0.3s ease'
-                                                }} />
-                                                {song.published && (
-                                                    <div style={{
-                                                        position: 'absolute', width: '100%', height: '100%',
-                                                        borderRadius: '50%', border: '2px solid #1ed106',
-                                                        animation: 'ripple 2s infinite'
-                                                    }} />
-                                                )}
-                                            </button>
+                                            <div style={{
+                                                width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #ddd',
+                                                background: '#f0fdf4', color: '#166534',
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                fontSize: '0.9rem', title: 'Song is Public'
+                                            }}>
+                                                🌍
+                                            </div>
 
                                             <button
                                                 onClick={(e) => { e.stopPropagation(); setEditingSong(song); setIsEditing(true); }}
