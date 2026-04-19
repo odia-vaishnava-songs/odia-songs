@@ -58,6 +58,8 @@ export interface Resource {
     type: 'video' | 'article' | 'audio' | 'pdf' | 'interactive' | 'html';
     url?: string;
     audioUrl?: string; // Single/default audio
+    vocalist?: string; // Label for the main audio
+    audio_source?: string; // Source of the file (Google Drive, Cloudinary, etc)
     audioVersions?: AudioVersion[]; // Multiple versions
     description?: string;
     content?: string;

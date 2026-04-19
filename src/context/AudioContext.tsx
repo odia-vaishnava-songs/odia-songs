@@ -115,7 +115,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const selectSong = (song: Resource, version?: AudioVersion) => {
         setActiveSong(song);
         activeSongRef.current = song;
-        const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: 'Default', url: song.audioUrl || '' });
+        const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: song.vocalist || 'Default', url: song.audioUrl || '' });
         setCurrentVersion(targetVersion);
         setIsPlaying(false);
     };
@@ -123,7 +123,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const playSong = (song: Resource, version?: AudioVersion) => {
         setActiveSong(song);
         activeSongRef.current = song;
-        const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: 'Default', url: song.audioUrl || '' });
+        const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: song.vocalist || 'Default', url: song.audioUrl || '' });
         setCurrentVersion(targetVersion);
         setIsPlaying(true);
         if (audioRef.current) {
