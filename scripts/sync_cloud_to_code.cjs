@@ -121,7 +121,7 @@ async function syncCloudToCode() {
 
     Object.keys(legacyMap).forEach(exportName => {
         const songId = legacyMap[exportName];
-        if (idToSong[songId]) {
+        if (idToSong[songId] && idToSong[songId].content) {
             outputLines.push(`export const ${exportName}: string = \`${idToSong[songId].content.replace(/`/g, '\\`').replace(/\$\{/g, '\\${')}\`;`);
             outputLines.push("");
         }

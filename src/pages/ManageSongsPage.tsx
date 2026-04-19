@@ -487,19 +487,19 @@ export const ManageSongsPage: React.FC = () => {
                                                     <UserCheck size={18} color={song.assigned_to ? '#2E7D32' : '#666'} />
                                                 </button>
                                             )}
-                                            
-                                            <div
+                                                               <button
+                                                onClick={(e) => { e.stopPropagation(); handlePublishToggle(song.id); }}
                                                 style={{ 
                                                     width: '36px', height: '36px', borderRadius: '50%', border: '1px solid #ddd', 
                                                     background: song.published ? '#1ed106' : 'white',
-                                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
                                                     animation: song.published ? 'blinkGreen 2s infinite ease-in-out' : 'none',
                                                     boxShadow: song.published ? '0 0 12px rgba(30, 209, 6, 0.6)' : 'none',
                                                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                                                     position: 'relative',
                                                     marginRight: '0.5rem'
                                                 }}
-                                                title={song.published ? "Active - Click to Hide" : "Inactive - Click to Publish"}
+                                                title="Published (Click to ensure LIVE status)"
                                             >
                                                 <div style={{ 
                                                     width: '14px', height: '14px', borderRadius: '50%', 
