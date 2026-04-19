@@ -796,7 +796,7 @@ export const SongsPage: React.FC = () => {
                     </div>
                 </main>
                 <div style={{ 
-                    height: '110px', 
+                    height: '90px', 
                     width: '100%',
                     display: 'flex',
                     alignItems: 'flex-end',

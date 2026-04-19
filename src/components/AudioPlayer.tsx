@@ -166,29 +166,29 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
             paddingTop: '4px'
         }}>
             {/* Top Row: Progress Slider */}
-            <div style={{ padding: '0 12px', marginTop: '6px' }}>
+            <div style={{ padding: '0 12px', marginTop: '4px' }}>
                 <input type="range" min="0" max={duration || 0} value={currentTime} onChange={handleProgressChange}
                     style={{
-                        width: '100%', height: '5px', cursor: 'pointer', outline: 'none', appearance: 'none', borderRadius: '10px',
+                        width: '100%', height: '4px', cursor: 'pointer', outline: 'none', appearance: 'none', borderRadius: '10px',
                         background: `linear-gradient(to right, ${primaryColor} ${progress}%, ${isNightMode ? '#334155' : '#e2e8f0'} ${progress}%)`,
                     }}
                 />
             </div>
 
             {/* Middle Row: Times & Singer Name */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 16px', fontSize: '0.75rem', color: isNightMode ? '#94a3b8' : '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '2px 16px', fontSize: '0.7rem', color: isNightMode ? '#94a3b8' : '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 <span style={{ width: '45px' }}>{formatTime(currentTime)}</span>
                 <span style={{ flex: 1, textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', padding: '0 12px', color: isNightMode ? '#e2e8f0' : '#1e293b' }}>{currentLabel}</span>
                 <span style={{ width: '45px', textAlign: 'right' }}>{formatTime(duration)}</span>
             </div>
 
             {/* Bottom Row: 7 Buttons Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '8px', padding: '4px 12px 14px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '6px', padding: '4px 10px 10px' }}>
                 
                 {/* 1: SINGER LIST */}
                 <div ref={menuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} style={pillBtnStyle(primaryColor, isMenuOpen)}>
-                         <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                         <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
                             <path d="M12 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                          </svg>
                          {versions.length > 1 && <div style={badgeStyle}>{versions.length}</div>}
@@ -208,8 +208,8 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
                 <div ref={sleepMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsSleepMenuOpen(!isSleepMenuOpen)} onDoubleClick={toggleRepeat}
                         style={{ ...pillBtnStyle(primaryColor), background: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? 'white' : primaryColor, color: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? primaryColor : 'white', border: (repeatMode === 'one' || sleepTimer !== null || autoNext) ? `2.5px solid ${primaryColor}` : 'none' }}>
-                        {sleepTimer !== null ? <div style={{ fontSize: '10px', fontWeight: 900 }}>{sleepTimer}m</div> : 
-                        (autoNext ? <ListMusic size={20} /> : (repeatMode === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />))}
+                        {sleepTimer !== null ? <div style={{ fontSize: '9px', fontWeight: 900 }}>{sleepTimer}m</div> : 
+                        (autoNext ? <ListMusic size={18} /> : (repeatMode === 'one' ? <Repeat1 size={18} /> : <Repeat size={18} />))}
                     </button>
                     {isSleepMenuOpen && <div style={dropdownStyle(isNightMode, '-40px')}>
                         <div style={dropdownTitleStyle}>Options</div>
@@ -221,7 +221,7 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
                     </div>}
                 </div>
 
-                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipBack size={20} fill="white" /></button>
+                <button onClick={skipBackward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipBack size={18} fill="white" /></button>
                 
                 {/* 4: PLAY/PAUSE (The "Glow" Button) */}
                 <button 
@@ -229,25 +229,25 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
                     style={{ 
                         ...pillBtnStyle(primaryColor), 
                         background: isPlaying ? getDarker(primaryColor) : primaryColor, 
-                        transform: 'scale(1.15)', 
+                        transform: 'scale(1.1)', 
                         zIndex: 2,
-                        boxShadow: `0 8px 24px ${primaryColor}60, inset 0 1px 1px rgba(255,255,255,0.3)`
+                        boxShadow: `0 6px 20px ${primaryColor}50, inset 0 1px 1px rgba(255,255,255,0.3)`
                     }}
                 >
-                    {isPlaying ? <Pause size={28} fill="white" /> : <Play size={28} fill="white" style={{ marginLeft: '4px' }} />}
+                    {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" style={{ marginLeft: '3px' }} />}
                 </button>
 
-                <button onClick={skipForward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipForward size={20} fill="white" /></button>
+                <button onClick={skipForward} style={pillBtnStyle(primaryColor)} disabled={isShowingOverride}><SkipForward size={18} fill="white" /></button>
                 
                 {/* 6: AUDIO DOWNLOAD */}
                 <button onClick={handleDownloadAudio} style={{ ...pillBtnStyle(primaryColor), opacity: isDownloading ? 0.7 : 1 }} disabled={isDownloading}>
-                    {isDownloading ? <div style={spinnerStyle} /> : <Download size={20} />}
+                    {isDownloading ? <div style={spinnerStyle} /> : <Download size={18} />}
                 </button>
 
                 {/* 7: PAGE EXPORT (PHOTO/PDF) */}
                 <div ref={exportMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsExportMenuOpen(!isExportMenuOpen)} style={pillBtnStyle(primaryColor, isExportMenuOpen)} disabled={isExporting}>
-                        {isExporting ? <div style={spinnerStyle} /> : <Sparkles size={20} />}
+                        {isExporting ? <div style={spinnerStyle} /> : <Sparkles size={18} />}
                     </button>
                     {isExportMenuOpen && <div style={dropdownStyle(isNightMode, '-120px')}>
                         <div style={dropdownTitleStyle}>Export Page</div>
@@ -279,9 +279,9 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
 // --- STYLES ---
 const pillBtnStyle = (color: string, active?: boolean): React.CSSProperties => ({
     display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: active ? getDarker(color) : color, color: 'white', border: 'none', borderRadius: '14px',
-    height: '46px', width: '100%', cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.1)', position: 'relative'
+    background: active ? getDarker(color) : color, color: 'white', border: 'none', borderRadius: '12px',
+    height: '40px', width: '100%', cursor: 'pointer',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.1)', position: 'relative'
 });
 
 const dropdownStyle = (isNight: boolean, left = '0'): React.CSSProperties => ({
