@@ -64,9 +64,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Create the audio element on mount
     useEffect(() => {
         const audio = new Audio();
-        // ISKCON Desire Tree often blocks requests with a referrer. 
-        // Setting no-referrer usually bypasses this.
+        // ISKCON Desire Tree and other external servers often block requests with a referrer.
         audio.setAttribute('referrerpolicy', 'no-referrer');
+        
         audioRef.current = audio;
 
         const updateTime = () => setCurrentTime(audio.currentTime);
@@ -95,6 +95,15 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         audio.addEventListener('ended', onEnded);
         audio.addEventListener('play', () => setIsPlaying(true));
         audio.addEventListener('pause', () => setIsPlaying(false));
+        audio.addEventListener('error', () => {
+            const error = audio.error;
+            console.error("[Audio Engine Error]:", {
+                code: error?.code,
+                message: error?.message,
+                src: audio.src
+            });
+            setIsPlaying(false);
+        });
 
         return () => {
             audio.removeEventListener('timeupdate', updateTime);
