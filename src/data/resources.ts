@@ -71,14 +71,6 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
-        id: 'song-tuwapademinotimor',
-        title: 'ତୁୟା ପଦେ ମିନତି ମୋର (Tuwā Pade Minoti Mor)',
-        category: 'Songs',
-        type: 'html',
-        structuredContent: (Songs as any).SONG_TUWAPADEMINOTIMOR_STRUCTURED,
-        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
-    },
-    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',
