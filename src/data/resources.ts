@@ -810,6 +810,95 @@ export const RESOURCES: Resource[] = [
             { label: "HG Radheshyam Prabhu", url: "https://pub-4f8c24b1c935435d9e3b959e0886ebf6.r2.dev/uploads%2FBoro%20sukher%20khabor%20gai.mp3" },
             { label: "HG Jai Sachinandana Prabhu (B)", url: "https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F42%20Boro%20Sukher%20khabor%20P-80.MP3" }
         ]
+    },
+    {
+        id: 'song-tuwapademinotimor',
+        title: 'ତୁମ ପଦ ପଲ୍ଲବ (Tuwa Pade Minoti Mor)',
+        title_odia: 'ତୁମ ପଦ ପଲ୍ଲବ',
+        title_english: 'Tuwa Pade Minoti Mor',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_TUWAPADEMINOTIMOR_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gopinatpart1',
+        title: 'ଗୋପୀନାଥ (Part 1) - Gopinath Part 1',
+        title_odia: 'ଗୋପୀନାଥ (Part 1)',
+        title_english: 'Gopinath Part 1',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-damodarashtakam',
+        title: 'ଦାମୋଦରାଷ୍ଟକମ୍ (Damodarashtakam)',
+        title_odia: 'ଦାମୋଦରାଷ୍ଟକମ୍',
+        title_english: 'Damodarashtakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Satyavrata Muni',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-guruvastakam',
+        title: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍ (Guruvastakam)',
+        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍',
+        title_english: 'Guruvastakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Visvanatha Cakravarti Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-narasimhapranama',
+        title: 'ଶ୍ରୀ ନୃସିଂହ ପ୍ରଣାମ (Narasimha Pranama)',
+        title_odia: 'ଶ୍ରୀ ନୃସିଂହ ପ୍ରଣାମ',
+        title_english: 'Narasimha Pranama',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-jayaradhajayamadhava',
+        title: 'ଜୟ ରାଧା ଜୟ ମାଧବ (Jaya Radha Jaya Madhava)',
+        title_odia: 'ଜୟ ରାଧା ଜୟ ମାଧବ',
+        title_english: 'Jaya Radha Jaya Madhava',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gurupuja',
+        title: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ (Guru Puja)',
+        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ',
+        title_english: 'Sri Guru Carana Padma',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sritakamala',
+        title: 'ଶ୍ରିତ କମଳା (Srita Kamala)',
+        title_odia: 'ଶ୍ରିତ କମଳା',
+        title_english: 'Srita Kamala',
+        category: 'Songs',
+        type: 'html',
+        author: 'Jayadeva Goswami',
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
