@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
     X, Share2, HelpCircle, LogOut,
     CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft,
-    Phone, MapPin
+    Phone, MapPin, Zap
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useAudio } from '../context/AudioContext';
@@ -285,6 +285,20 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                                     onClick={() => { navigate('/manage-songs'); onClose(); }}
                                                     badge={role === 'admin' ? 'Admin' : 'Editor'}
                                                 />
+                                                {role === 'admin' && (
+                                                    <MenuItem
+                                                        icon={<Zap size={20} />}
+                                                        label="VsNectar Sync"
+                                                        onClick={() => {
+                                                            const confirmed = window.confirm("This will open VsNectar to start the Auto-Sync process. Ready?");
+                                                            if (confirmed) {
+                                                                window.open('https://vsnectar.web.app/home', '_blank');
+                                                                alert("Once VsNectar opens, run the 'Master Scraper' code to begin syncing.");
+                                                            }
+                                                        }}
+                                                        badge="Bot"
+                                                    />
+                                                )}
 
                                             </>
                                         );
