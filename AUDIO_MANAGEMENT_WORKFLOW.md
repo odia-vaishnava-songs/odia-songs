@@ -34,3 +34,4 @@ WHERE id = 'SONG_ID';
 2. Ohe Vaisnava Thakura (done)
 3. Manasa Deho Geho (done)
 4. Gurudev! Krpa Bindu Diya (Pending execution)
+5. Bhaja Re Bhaja Re Amar (done)

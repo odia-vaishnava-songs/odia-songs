@@ -842,6 +842,15 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Bhajare_Bhajare.mp3',
+        vocalist: 'HH Gour Govinda Swami',
+        audioVersions: [
+            { label: "HH Gour Govinda Swami", url: "https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Bhajare_Bhajare.mp3" },
+            { label: "HH Gour Govinda Swami (V2)", url: "https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Bhajare_bhajare_amar_mana.mp3" },
+            { label: "HH Bhakti Caru Swami", url: "https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_A_to_C/His_Holiness_Bhakti_Charu_Swami/Bhajans/Vaishnava_Bhajans/BCS_Bhajans_-_Bhaja_Re_Bhaja_Amar.mp3" },
+            { label: "HG Jai Sachinanadana Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhaja_Re_Bhaja_Re_Amara_Mana/Bhaja_Re_Bhaja_Re_Amara_Mana_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3" },
+            { label: "HG Vaisesika Prabhu", url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhaja_Re_Bhaja_Re_Amara_Mana/Bhaja_Re_Bhaja_Re_Amara_Mana_-_Sung_by_HG_Vaisesika_Prabhu_IDT.mp3" }
+        ],
         published: true,
         status: 'COMPLETED'
     },
