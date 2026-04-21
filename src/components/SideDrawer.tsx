@@ -288,15 +288,16 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                                 {role === 'admin' && (
                                                     <div className="mt-4 pt-4 border-t border-gray-100">
                                                         <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                                                            Database Automations
+                                                            Library Sync
                                                         </p>
                                                         <MenuItem
-                                                            icon={<Zap size={20} className="text-yellow-500" />}
-                                                            label="Sync with VsNectar"
+                                                            icon={<Zap size={20} className="text-blue-500" />}
+                                                            label="Sync VsNectar Library"
                                                             onClick={() => {
-                                                                const confirmed = window.confirm("Requesting Master Sync from Bot. This will take several minutes to process the entire library. Proceed?");
+                                                                const confirmed = window.confirm("Ready to start the Master Sync? This will open VsNectar in a new tab.");
                                                                 if (confirmed) {
-                                                                    alert("Sync Request Sent to Bot! Please inform me in the chat: 'Start the Full Sync now'.");
+                                                                    window.open('https://vsnectar.web.app/home', '_blank');
+                                                                    alert("Once the page opens, run the 'Master Scraper' script in the console to populate your database.");
                                                                 }
                                                             }}
                                                             badge="Admin"
