@@ -286,18 +286,22 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                                     badge={role === 'admin' ? 'Admin' : 'Editor'}
                                                 />
                                                 {role === 'admin' && (
-                                                    <MenuItem
-                                                        icon={<Zap size={20} />}
-                                                        label="VsNectar Sync"
-                                                        onClick={() => {
-                                                            const confirmed = window.confirm("This will open VsNectar to start the Auto-Sync process. Ready?");
-                                                            if (confirmed) {
-                                                                window.open('https://vsnectar.web.app/home', '_blank');
-                                                                alert("Once VsNectar opens, run the 'Master Scraper' code to begin syncing.");
-                                                            }
-                                                        }}
-                                                        badge="Bot"
-                                                    />
+                                                    <div className="mt-4 pt-4 border-t border-gray-100">
+                                                        <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                                                            Database Automations
+                                                        </p>
+                                                        <MenuItem
+                                                            icon={<Zap size={20} className="text-yellow-500" />}
+                                                            label="Sync with VsNectar"
+                                                            onClick={() => {
+                                                                const confirmed = window.confirm("Requesting Master Sync from Bot. This will take several minutes to process the entire library. Proceed?");
+                                                                if (confirmed) {
+                                                                    alert("Sync Request Sent to Bot! Please inform me in the chat: 'Start the Full Sync now'.");
+                                                                }
+                                                            }}
+                                                            badge="Admin"
+                                                        />
+                                                    </div>
                                                 )}
 
                                             </>
