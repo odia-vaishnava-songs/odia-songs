@@ -11,12 +11,13 @@ const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-function normalize(str) {
-    if (!str) return "";
+function getWords(str) {
+    if (!str) return [];
     return str.toLowerCase()
-              .replace(/h/g, '') 
-              .replace(/[aeiouy]/g, '') 
-              .replace(/[^a-z]/g, ''); 
+              .replace(/h/g, '')
+              .replace(/[aeiouy]/g, '')
+              .split(/[^a-z0-9]/)
+              .filter(w => w.length >= 3);
 }
 
 const server = http.createServer(async (req, res) => {
@@ -36,10 +37,9 @@ const server = http.createServer(async (req, res) => {
                 console.log(`\n📦 Syncing: "${searchTitle}"`);
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchNorm = normalize(searchTitle);
+                const searchWords = getWords(searchTitle);
                 
                 let songId = null;
-                // Split by song blocks instead of lines for better context
                 const blocks = resources.split('{');
                 
                 for (let block of blocks) {
@@ -47,15 +47,15 @@ const server = http.createServer(async (req, res) => {
                     if (!idMatch) continue;
                     
                     const blockId = idMatch[1];
-                    // Extract all values inside single quotes in this block
-                    const values = block.match(/'([^']*)'/g) || [];
+                    const valuesInBlock = block.match(/'([^']*)'/g) || [];
                     
-                    for (let val of values) {
+                    for (let val of valuesInBlock) {
                         const cleanVal = val.replace(/'/g, '');
-                        if (cleanVal.length < 5) continue;
+                        const valWords = getWords(cleanVal);
                         
-                        const valNorm = normalize(cleanVal);
-                        if (valNorm.length > 5 && (searchNorm.includes(valNorm) || valNorm.includes(searchNorm))) {
+                        // If we have strong word overlap (at least 2 matching significant words)
+                        const common = searchWords.filter(w => valWords.includes(w));
+                        if (common.length >= 2 || (searchWords.length === 1 && common.length === 1)) {
                             songId = blockId; break;
                         }
                     }
@@ -81,7 +81,7 @@ const server = http.createServer(async (req, res) => {
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
-                console.log(`✅ Local Status Synced.`);
+                console.log(`✅ Status COMPLETED.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true, id: songId }));
@@ -94,4 +94,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V5 (Ultra-Smart Block Search) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V6 (Word-Based Matching) on ${PORT}`));
