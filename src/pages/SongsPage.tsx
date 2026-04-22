@@ -1192,24 +1192,41 @@ export const SongsPage: React.FC = () => {
                                             e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                                         }}
                                     >
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                <div style={{
-                                                    fontSize: '1.25rem',
-                                                    fontWeight: 800,
-                                                    color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
-                                                    fontFamily: 'var(--font-odia-sans)',
-                                                    transition: 'color 0.3s ease'
-                                                }}>{getOdiaTitle(song)}</div>
-                                                {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1 }}>
+                                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                    <div style={{
+                                                        fontSize: '1.25rem',
+                                                        fontWeight: 800,
+                                                        color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
+                                                        fontFamily: 'var(--font-odia-sans)',
+                                                        transition: 'color 0.3s ease'
+                                                    }}>{getOdiaTitle(song)}</div>
+                                                    {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                                </div>
+                                                {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                    <div style={{
+                                                        fontSize: '0.95rem',
+                                                        color: (song.status === 'COMPLETED' || song.verified) ? '#1ed106' : '#666',
+                                                        fontWeight: (song.status === 'COMPLETED' || song.verified) ? 700 : 500,
+                                                        fontFamily: "'Outfit', sans-serif"
+                                                    }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                                )}
                                             </div>
-                                            {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
-                                                <div style={{
-                                                    fontSize: '0.95rem',
-                                                    color: (song.status === 'COMPLETED' || song.verified) ? '#1ed106' : '#666',
-                                                    fontWeight: (song.status === 'COMPLETED' || song.verified) ? 700 : 500,
-                                                    fontFamily: "'Outfit', sans-serif"
-                                                }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                            {user?.role?.toLowerCase() === 'admin' && (song.audioVersions?.length > 0 || song.audioUrl) && (
+                                                <div style={{ 
+                                                    marginLeft: '1rem',
+                                                    padding: '8px',
+                                                    borderRadius: '12px',
+                                                    backgroundColor: '#F3E8FF',
+                                                    color: '#7E22CE',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    boxShadow: 'inset 0 0 0 1px rgba(126, 34, 206, 0.1)'
+                                                }} title={song.audioVersions?.length > 1 ? `${song.audioVersions.length} Singers Sync'd` : "Audio Sync'd"}>
+                                                    <Mic size={18} strokeWidth={2.5} />
+                                                </div>
                                             )}
                                         </div>
                                         {song.author && (
