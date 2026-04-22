@@ -13,12 +13,13 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function getWords(str) {
     if (!str) return [];
+    // Only keep English alpha-numeric for matching
     return str.toLowerCase()
-              .replace(/v/g, 'b') // Normalize V to B (very common)
-              .replace(/sh/g, 's') // Normalize SH to S
+              .replace(/v/g, 'b') 
+              .replace(/sh/g, 's')
               .replace(/[aeiouy]/g, '')
               .split(/[^a-z0-9]/)
-              .filter(w => w.length >= 1);
+              .filter(w => w.length >= 1 && /^[a-z0-9]+$/.test(w));
 }
 
 const server = http.createServer(async (req, res) => {
@@ -35,13 +36,13 @@ const server = http.createServer(async (req, res) => {
             try {
                 const data = JSON.parse(body);
                 const searchTitle = data.title || data.songTitle || "";
-                console.log(`\n📦 Syncing: "${searchTitle}"`);
+                console.log(`\n🔍 FORENSIC SEARCH: "${searchTitle}"`);
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
                 const searchWords = getWords(searchTitle);
+                console.log(`📡 Search Tokens: [${searchWords.join(', ')}]`);
                 
-                let bestMatch = null;
-                let maxCommon = 0;
+                let matches = [];
                 const blocks = resources.split('{');
                 
                 for (let block of blocks) {
@@ -51,24 +52,30 @@ const server = http.createServer(async (req, res) => {
                     const blockId = idMatch[1];
                     const valuesInBlock = block.match(/'([^']*)'/g) || [];
                     
+                    let blockMaxScore = 0;
                     for (let val of valuesInBlock) {
                         const cleanVal = val.replace(/'/g, '');
                         const valWords = getWords(cleanVal);
+                        if (valWords.length === 0) continue;
+
                         const common = searchWords.filter(w => valWords.includes(w));
-                        
-                        const matchScore = common.length;
-                        if (matchScore >= 3 && matchScore > maxCommon) {
-                            maxCommon = matchScore;
-                            bestMatch = blockId;
-                        } else if (matchScore === searchWords.length && matchScore >= 2 && matchScore > maxCommon) {
-                            maxCommon = matchScore;
-                            bestMatch = blockId;
-                        }
+                        if (common.length > blockMaxScore) blockMaxScore = common.length;
+                    }
+                    
+                    if (blockMaxScore >= 1) {
+                        matches.push({ id: blockId, score: blockMaxScore });
                     }
                 }
 
-                if (!bestMatch) throw new Error(`Could not find ID for "${searchTitle}"`);
-                console.log(`🎯 Matched: ${bestMatch} (Score: ${maxCommon})`);
+                matches.sort((a,b) => b.score - a.score);
+                
+                console.log("📊 Top 5 Candidates:");
+                matches.slice(0, 5).forEach(m => console.log(`   - ${m.id}: ${m.score}`));
+
+                const bestMatch = matches[0];
+                if (!bestMatch || bestMatch.score < 2) throw new Error(`Could not find a confident match for "${searchTitle}"`);
+
+                console.log(`🎯 SELECTED: ${bestMatch.id}`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -76,20 +83,19 @@ const server = http.createServer(async (req, res) => {
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', bestMatch);
+                }).eq('id', bestMatch.id);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${bestMatch}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${bestMatch.id}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
-                console.log(`✅ Status COMPLETED.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: bestMatch }));
+                res.end(JSON.stringify({ success: true, id: bestMatch.id }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -99,4 +105,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V10 (Smart Transliteration) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V12 (Forensic Matcher) on ${PORT}`));
