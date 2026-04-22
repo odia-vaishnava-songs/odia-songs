@@ -11,15 +11,21 @@ const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+function normalize(str) {
+    if (!str) return "";
+    return str.toLowerCase()
+              .replace(/h/g, '') // ignore 'h' differences
+              .replace(/[aeiouy]/g, '') // ignore vowels
+              .replace(/[^a-z]/g, ''); // ignore symbols/spaces
+}
+
 const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
-        res.writeHead(204);
-        res.end();
-        return;
+        res.writeHead(204); res.end(); return;
     }
 
     if (req.method === 'POST' && req.url === '/sync') {
@@ -31,10 +37,9 @@ const server = http.createServer(async (req, res) => {
                 const searchTitle = data.title || data.songTitle || "";
                 console.log(`\n📦 Syncing: "${searchTitle}"`);
                 
-                // 1. Load resources.ts
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
+                const searchNorm = normalize(searchTitle);
                 
-                // 2. SMART SEARCH: Try to find ID based on English or Odia title
                 let songId = null;
                 const lines = resources.split('\n');
                 let currentId = null;
@@ -43,42 +48,32 @@ const server = http.createServer(async (req, res) => {
                     const idMatch = lines[i].match(/id:\s*'([^']*)'/);
                     if (idMatch) currentId = idMatch[1];
                     
-                    if (currentId && (lines[i].toLowerCase().includes(searchTitle.toLowerCase()))) {
-                        songId = currentId;
-                        break;
+                    if (currentId && normalize(lines[i]).includes(searchNorm) && searchNorm.length > 3) {
+                        songId = currentId; break;
                     }
                 }
 
                 if (!songId) {
-                    // Last resort: Slug match
-                    const slug = searchTitle.toLowerCase().replace(/[^a-z]/g, '');
-                    const slugMatch = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${slug.substring(0, 5)}))'`, 'i'));
-                    if (slugMatch) songId = slugMatch[1];
+                    // Slug match fallback
+                    const idSlug = searchTitle.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 8);
+                    const match = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${idSlug}))'`, 'i'));
+                    if (match) songId = match[1];
                 }
 
                 if (!songId) throw new Error(`Could not find ID for "${searchTitle}"`);
-
                 console.log(`🎯 Matched ID: ${songId}`);
 
-                // 3. Prepare JSONB
-                const audioVersions = data.versions.map(v => ({
-                    label: v.singer,
-                    url: v.url
-                }));
+                const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
-                const { error } = await supabase
-                    .from('songs')
-                    .update({
-                        audio_url: audioVersions[0].url,
-                        audio_versions: audioVersions,
-                        updated_at: new Date().toISOString()
-                    })
-                    .eq('id', songId);
+                const { error } = await supabase.from('songs').update({
+                    audio_url: audioVersions[0].url,
+                    audio_versions: audioVersions,
+                    updated_at: new Date().toISOString()
+                }).eq('id', songId);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
-                // 4. Update status surgically
                 const updated = resources.replace(
                     new RegExp(`(id:\\s*'${songId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
@@ -97,4 +92,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V2 Live on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V3 Live (Ultra-Robust Search) on ${PORT}`));
