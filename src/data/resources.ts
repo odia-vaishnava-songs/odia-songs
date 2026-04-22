@@ -986,6 +986,18 @@ export const RESOURCES: Resource[] = [
         author: 'Jayadeva Goswami',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-hariboloharibolobhaire',
+        title: 'ହରି ବୋଲ ହରି ବୋଲ ହରି ବୋଲ ଭାଇ ରେ (Hari Bolo Hari Bolo Hari Bolo Bhai Re)',
+        title_odia: 'ହରି ବୋଲ ହରି ବୋଲ ହରି ବୋଲ ଭାଇ ରେ',
+        title_english: 'Hari Bolo Hari Bolo Hari Bolo Bhai Re',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLOBHAIRE_STRUCTURED,
+        published: true,
+        status: 'NOT_DONE'
     }
 ];
 
