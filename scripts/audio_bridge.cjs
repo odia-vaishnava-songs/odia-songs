@@ -2,7 +2,6 @@ const http = require('http');
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 // --- CONFIGURATION ---
 const SUPABASE_URL = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
@@ -12,9 +11,7 @@ const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// --- SERVER LOGIC ---
 const server = http.createServer(async (req, res) => {
-    // Enable CORS for the browser console
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -31,81 +28,73 @@ const server = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 const data = JSON.parse(body);
-                console.log(`\n📦 Received payload for: "${data.songTitle}"`);
+                const searchTitle = data.title || data.songTitle || "";
+                console.log(`\n📦 Syncing: "${searchTitle}"`);
                 
-                // 1. Find the Song ID in resources.ts
+                // 1. Load resources.ts
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                // Escape title for regex
-                const escapedTitle = data.songTitle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                const idMatch = resources.match(new RegExp(`id:\\s*'([^']*)'[^}]*title:[^']*${escapedTitle}`, 'i'));
                 
+                // 2. SMART SEARCH: Try to find ID based on English or Odia title
                 let songId = null;
-                if (idMatch) {
-                    songId = idMatch[1];
-                } else {
-                    console.log(`⚠️ Exact title match failed. Searching for ID containing title parts...`);
-                    const slug = data.songTitle.toLowerCase().replace(/[^a-z0-9]/g, '');
-                    const looseMatch = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${slug.substring(0, 5)}|${slug.slice(-5)}))'`, 'i'));
-                    if (looseMatch) songId = looseMatch[1];
+                const lines = resources.split('\n');
+                let currentId = null;
+                
+                for (let i = 0; i < lines.length; i++) {
+                    const idMatch = lines[i].match(/id:\s*'([^']*)'/);
+                    if (idMatch) currentId = idMatch[1];
+                    
+                    if (currentId && (lines[i].toLowerCase().includes(searchTitle.toLowerCase()))) {
+                        songId = currentId;
+                        break;
+                    }
                 }
 
                 if (!songId) {
-                    console.error(`❌ ERROR: Could not find a Song ID for "${data.songTitle}" in resources.ts`);
-                    res.writeHead(404, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: 'Song ID not found in resources.ts' }));
-                    return;
+                    // Last resort: Slug match
+                    const slug = searchTitle.toLowerCase().replace(/[^a-z]/g, '');
+                    const slugMatch = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${slug.substring(0, 5)}))'`, 'i'));
+                    if (slugMatch) songId = slugMatch[1];
                 }
 
-                console.log(`🎯 Identified Song ID: ${songId}`);
+                if (!songId) throw new Error(`Could not find ID for "${searchTitle}"`);
 
-                // 2. Prepare JSONB for Supabase
+                console.log(`🎯 Matched ID: ${songId}`);
+
+                // 3. Prepare JSONB
                 const audioVersions = data.versions.map(v => ({
                     label: v.singer,
                     url: v.url
                 }));
 
-                const primaryUrl = audioVersions[0]?.url || '';
-                const primaryVocalist = audioVersions.length > 1 ? 'Various Artistes' : (audioVersions[0]?.label || '');
-
-                // 3. Update Supabase
                 const { error } = await supabase
                     .from('songs')
                     .update({
-                        audio_url: primaryUrl,
+                        audio_url: audioVersions[0].url,
                         audio_versions: audioVersions,
-                        vocalist: primaryVocalist,
                         updated_at: new Date().toISOString()
                     })
                     .eq('id', songId);
 
                 if (error) throw error;
-                console.log(`✅ Supabase Updated successfully.`);
+                console.log(`✅ Supabase Updated.`);
 
-                // 4. Update status in resources.ts (surgical edit)
-                let updatedResources = resources.replace(
+                // 4. Update status surgically
+                const updated = resources.replace(
                     new RegExp(`(id:\\s*'${songId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
-                fs.writeFileSync(RESOURCES_PATH, updatedResources);
-                console.log(`✅ Local resources.ts updated to COMPLETED.`);
+                fs.writeFileSync(RESOURCES_PATH, updated);
+                console.log(`✅ Status set to COMPLETED.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, songId }));
-                console.log(`🌟 FINISHED: "${data.songTitle}" is now live with ${audioVersions.length} versions.\n`);
-
+                res.end(JSON.stringify({ success: true, id: songId }));
             } catch (err) {
-                console.error(`❌ Sync Error:`, err.message);
+                console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: err.message }));
+                res.end(JSON.stringify({ success: false, error: err.message }));
             }
         });
-    } else {
-        res.writeHead(404);
-        res.end();
     }
 });
 
-server.listen(PORT, () => {
-    console.log(`🚀 Audio Bridge is running on http://localhost:${PORT}`);
-    console.log(`Ready for data from VsNectar DevTools...\n`);
-});
+server.listen(PORT, () => console.log(`🚀 Bridge V2 Live on ${PORT}`));
