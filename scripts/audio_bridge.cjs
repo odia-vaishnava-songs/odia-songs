@@ -35,7 +35,11 @@ const server = http.createServer(async (req, res) => {
             try {
                 const data = JSON.parse(body);
                 const title = data.title || data.songTitle || "";
-                console.log(`\n🕵️‍♂️ SNIPER SYNC: "${title}"`);
+                console.log(`\n🕵️‍♂️ SNIPER V20: "${title}"`);
+
+                if (!data.versions || data.versions.length === 0) {
+                    throw new Error("No singers selected. Please click on singer names to add them to the sync list.");
+                }
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
                 const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
@@ -54,28 +58,21 @@ const server = http.createServer(async (req, res) => {
                     let blockBestSim = 0;
                     for (let val of values) {
                         const cleanVal = val.replace(/'/g, '');
-                        if (cleanVal.length < 3) continue;
-                        
                         const valWords = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song');
                         const valTokens = valWords.map(normalize).filter(w => w.length > 0);
                         
-                        // ABSOLUTE PRECISION: Check word count exactness
                         if (valTokens.length !== searchTokens.length) continue;
-
-                        // Check token overlap
                         const overlap = searchTokens.filter((st, idx) => valTokens[idx] === st).length;
                         const sim = overlap / searchTokens.length;
                         if (sim > blockBestSim) blockBestSim = sim;
                     }
 
                     if (blockBestSim >= 0.8) {
-                        matches.push({ id: blockId, score: blockBestSim });
+                         matches.push({ id: blockId, score: blockBestSim });
                     }
                 }
 
-                // If No matches with exact word count, fallback to slightly fuzzy but still strict
                 if (matches.length === 0) {
-                    console.log("No exact word-count match, falling back to 1-word variance...");
                     for (let block of blocks) {
                          const idMatch = block.match(/id:\s*'([^']*)'/);
                          if (!idMatch) continue;
@@ -83,7 +80,6 @@ const server = http.createServer(async (req, res) => {
                          const values = block.match(/'([^']*)'/g) || [];
                          for (let val of values) {
                              const cleanVal = val.replace(/'/g, '');
-                             if (cleanVal.length < 3) continue;
                              const valTokens = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song').map(normalize).filter(w => w.length > 0);
                              if (Math.abs(valTokens.length - searchTokens.length) <= 1) {
                                  const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
@@ -97,9 +93,10 @@ const server = http.createServer(async (req, res) => {
                 matches.sort((a,b) => b.score - a.score);
                 const bestMatch = matches[0];
 
-                if (!bestMatch) throw new Error(`Precision Sniper failed for "${title}". Try manual ID or verify spelling.`);
+                if (!bestMatch) throw new Error(`Precision Sniper failed for "${title}". No match in library.`);
                 console.log(`🎯 Matched: ${bestMatch.id}`);
 
+                // Map versions properly - note: harvester sends {singer, url}
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
                 const { error } = await supabase.from('songs').update({
@@ -128,4 +125,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V19 (Sniper Mode) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V20 (Safety First) on ${PORT}`));
