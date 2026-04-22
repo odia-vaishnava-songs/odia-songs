@@ -13,8 +13,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function getWords(str) {
     if (!str) return [];
-    // Don't remove 'h' - it's too risky for short words like 'Hari'
     return str.toLowerCase()
+              .replace(/v/g, 'b') // Normalize V to B (very common)
+              .replace(/sh/g, 's') // Normalize SH to S
               .replace(/[aeiouy]/g, '')
               .split(/[^a-z0-9]/)
               .filter(w => w.length >= 1);
@@ -66,7 +67,7 @@ const server = http.createServer(async (req, res) => {
                     }
                 }
 
-                if (!bestMatch) throw new Error(`Could not find a confident match for "${searchTitle}"`);
+                if (!bestMatch) throw new Error(`Could not find ID for "${searchTitle}"`);
                 console.log(`🎯 Matched: ${bestMatch} (Score: ${maxCommon})`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
@@ -85,6 +86,7 @@ const server = http.createServer(async (req, res) => {
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
+                console.log(`✅ Status COMPLETED.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true, id: bestMatch }));
@@ -97,4 +99,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V9 (Total Word Integrity) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V10 (Smart Transliteration) on ${PORT}`));
