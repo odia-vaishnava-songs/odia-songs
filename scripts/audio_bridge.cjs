@@ -14,9 +14,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 function normalize(str) {
     if (!str) return "";
     return str.toLowerCase()
+              .replace(/['’]/g, '') // Remove apostrophes immediately
               .replace(/h/g, '') 
               .replace(/v/g, 'b') 
-              .replace(/sh/g, 's')
               .replace(/[aeiouy]/g, '')
               .replace(/[^a-z0-9]/g, '');
 }
@@ -35,10 +35,10 @@ const server = http.createServer(async (req, res) => {
             try {
                 const data = JSON.parse(body);
                 const title = data.title || data.songTitle || "";
-                console.log(`\n🕵️‍♂️ CONFIDENCE CHECK: "${title}"`);
+                console.log(`\n🕵️‍♂️ Syncing: "${title}"`);
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchWords = title.split(' ').filter(w => w.length >= 2).map(normalize);
+                const searchWords = title.split(/[\s-]+/).map(normalize).filter(w => w.length >= 1);
                 
                 let matches = [];
                 const blocks = resources.split('{');
@@ -53,14 +53,14 @@ const server = http.createServer(async (req, res) => {
                     let blockOverlap = 0;
                     for (let val of values) {
                         const cleanVal = val.replace(/'/g, '');
-                        const valWords = cleanVal.split(/[^a-zA-Z0-9]/).map(normalize).filter(w => w.length > 0);
+                        // Tokenize by space AND dash AND quote
+                        const valWords = cleanVal.split(/[\s-]/).map(normalize).filter(w => w.length > 0);
                         const overlap = searchWords.filter(sw => valWords.includes(sw)).length;
                         if (overlap > blockOverlap) blockOverlap = overlap;
                     }
 
-                    // CALC CONFIDENCE RATIO
                     const confidence = blockOverlap / searchWords.length;
-                    if (confidence >= 0.75 || (blockOverlap >= 3)) {
+                    if (confidence >= 0.6 || blockOverlap >= 3) {
                         matches.push({ id: blockId, score: confidence, overlap: blockOverlap });
                     }
                 }
@@ -68,9 +68,8 @@ const server = http.createServer(async (req, res) => {
                 matches.sort((a,b) => b.score - a.score);
                 const bestMatch = matches[0];
 
-                if (!bestMatch) throw new Error(`Confidence too low for "${title}". No certain match found.`);
-                
-                console.log(`🎯 Confidence High: ${bestMatch.id} (${Math.round(bestMatch.score*100)}%)`);
+                if (!bestMatch) throw new Error(`Could not find a confident match for "${title}"`);
+                console.log(`🎯 Matched: ${bestMatch.id} (${Math.round(bestMatch.score*100)}%)`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -100,4 +99,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V15 (High Confidence Only) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V16 (Apostrophe Fix) on ${PORT}`));
