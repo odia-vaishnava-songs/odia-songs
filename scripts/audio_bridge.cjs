@@ -35,10 +35,11 @@ const server = http.createServer(async (req, res) => {
             try {
                 const data = JSON.parse(body);
                 const title = data.title || data.songTitle || "";
-                console.log(`\n🕵️‍♂️ PRECISION-SMART SYNC: "${title}"`);
+                console.log(`\n🕵️‍♂️ SNIPER SYNC: "${title}"`);
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchWords = title.split(/[\s-]+/).map(normalize).filter(w => w.length >= 1);
+                const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
+                const searchTokens = searchWords.map(normalize);
                 
                 let matches = [];
                 const blocks = resources.split('{');
@@ -50,37 +51,53 @@ const server = http.createServer(async (req, res) => {
                     const blockId = idMatch[1];
                     const values = block.match(/'([^']*)'/g) || [];
                     
-                    let blockOverlap = 0;
-                    let blockMainWordCount = 0;
+                    let blockBestSim = 0;
                     for (let val of values) {
                         const cleanVal = val.replace(/'/g, '');
                         if (cleanVal.length < 3) continue;
                         
-                        // Ignore standard 'song-' prefix in count
-                        const valTokens = cleanVal.split(/[\s-]/)
-                                           .filter(t => t.toLowerCase() !== 'song')
-                                           .map(normalize)
-                                           .filter(w => w.length > 0);
+                        const valWords = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song');
+                        const valTokens = valWords.map(normalize).filter(w => w.length > 0);
                         
-                        const overlap = searchWords.filter(sw => valTokens.includes(sw)).length;
-                        if (overlap > blockOverlap) {
-                            blockOverlap = overlap;
-                            blockMainWordCount = valTokens.length;
-                        }
+                        // ABSOLUTE PRECISION: Check word count exactness
+                        if (valTokens.length !== searchTokens.length) continue;
+
+                        // Check token overlap
+                        const overlap = searchTokens.filter((st, idx) => valTokens[idx] === st).length;
+                        const sim = overlap / searchTokens.length;
+                        if (sim > blockBestSim) blockBestSim = sim;
                     }
 
-                    const confidence = blockOverlap / searchWords.length;
-                    const wordCountRatio = Math.min(blockMainWordCount, searchWords.length) / Math.max(blockMainWordCount, searchWords.length);
-                    
-                    if (confidence >= 0.8 && wordCountRatio > 0.8) {
-                        matches.push({ id: blockId, score: confidence });
+                    if (blockBestSim >= 0.8) {
+                        matches.push({ id: blockId, score: blockBestSim });
+                    }
+                }
+
+                // If No matches with exact word count, fallback to slightly fuzzy but still strict
+                if (matches.length === 0) {
+                    console.log("No exact word-count match, falling back to 1-word variance...");
+                    for (let block of blocks) {
+                         const idMatch = block.match(/id:\s*'([^']*)'/);
+                         if (!idMatch) continue;
+                         const blockId = idMatch[1];
+                         const values = block.match(/'([^']*)'/g) || [];
+                         for (let val of values) {
+                             const cleanVal = val.replace(/'/g, '');
+                             if (cleanVal.length < 3) continue;
+                             const valTokens = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song').map(normalize).filter(w => w.length > 0);
+                             if (Math.abs(valTokens.length - searchTokens.length) <= 1) {
+                                 const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
+                                 const sim = overlap / Math.max(valTokens.length, searchTokens.length);
+                                 if (sim >= 0.85) matches.push({ id: blockId, score: sim });
+                             }
+                         }
                     }
                 }
 
                 matches.sort((a,b) => b.score - a.score);
                 const bestMatch = matches[0];
 
-                if (!bestMatch) throw new Error(`Precision check failed for "${title}". No exact match found.`);
+                if (!bestMatch) throw new Error(`Precision Sniper failed for "${title}". Try manual ID or verify spelling.`);
                 console.log(`🎯 Matched: ${bestMatch.id}`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
@@ -111,4 +128,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V18 (Precision-Smart) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V19 (Sniper Mode) on ${PORT}`));

@@ -538,18 +538,7 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-    {
-        id: 'song-hariboloharibolo',
-        title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
-        title_odia: 'ହରି ବୋଲ ହରି ବୋଲ',
-        title_english: 'Hari bolo Hari bolo',
-        category: 'Songs',
-        type: 'html',
-        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
-        structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED,
-        published: true,
-        status: 'NOT_DONE'
-    },
+    
     {
         id: 'song-jivjago',
         title: 'ଜୀବ ଜାଗ ଜୀବ ଜାଗ (Jiv Jago Jiv Jago)',
@@ -997,7 +986,7 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLOBHAIRE_STRUCTURED,
         published: true,
-        status: 'NOT_DONE'
+        status: 'COMPLETED'
     }
 ];
 
