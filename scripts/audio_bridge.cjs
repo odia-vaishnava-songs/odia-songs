@@ -2,6 +2,7 @@ const http = require('http');
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // --- CONFIGURATION ---
 const SUPABASE_URL = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
@@ -10,17 +11,6 @@ const PORT = 3456;
 const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-function getWords(str) {
-    if (!str) return [];
-    // Only keep English alpha-numeric for matching
-    return str.toLowerCase()
-              .replace(/v/g, 'b') 
-              .replace(/sh/g, 's')
-              .replace(/[aeiouy]/g, '')
-              .split(/[^a-z0-9]/)
-              .filter(w => w.length >= 1 && /^[a-z0-9]+$/.test(w));
-}
 
 const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -35,47 +25,41 @@ const server = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 const data = JSON.parse(body);
-                const searchTitle = data.title || data.songTitle || "";
-                console.log(`\n🔍 FORENSIC SEARCH: "${searchTitle}"`);
+                const title = data.title || data.songTitle || "";
+                console.log(`\n🕵️‍♂️ Syncing: "${title}"`);
                 
+                // 1. DIRECT SEARCH: Use grep-like logic to find the ID
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchWords = getWords(searchTitle);
-                console.log(`📡 Search Tokens: [${searchWords.join(', ')}]`);
+                const lines = resources.split('\n');
+                let songId = null;
                 
-                let matches = [];
-                const blocks = resources.split('{');
+                // Extract core search words (at least 5 characters)
+                const coreWords = title.split(' ').filter(w => w.length >= 4);
                 
-                for (let block of blocks) {
-                    const idMatch = block.match(/id:\s*'([^']*)'/);
-                    if (!idMatch) continue;
-                    
-                    const blockId = idMatch[1];
-                    const valuesInBlock = block.match(/'([^']*)'/g) || [];
-                    
-                    let blockMaxScore = 0;
-                    for (let val of valuesInBlock) {
-                        const cleanVal = val.replace(/'/g, '');
-                        const valWords = getWords(cleanVal);
-                        if (valWords.length === 0) continue;
-
-                        const common = searchWords.filter(w => valWords.includes(w));
-                        if (common.length > blockMaxScore) blockMaxScore = common.length;
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    // If this line contains our title
+                    if (coreWords.every(w => line.includes(w))) {
+                        // Look back for the ID
+                        for (let j = i; j >= Math.max(0, i - 10); j--) {
+                            const idMatch = lines[j].match(/id:\s*'([^']*)'/);
+                            if (idMatch) {
+                                songId = idMatch[1];
+                                break;
+                            }
+                        }
                     }
-                    
-                    if (blockMaxScore >= 1) {
-                        matches.push({ id: blockId, score: blockMaxScore });
-                    }
+                    if (songId) break;
                 }
 
-                matches.sort((a,b) => b.score - a.score);
-                
-                console.log("📊 Top 5 Candidates:");
-                matches.slice(0, 5).forEach(m => console.log(`   - ${m.id}: ${m.score}`));
+                if (!songId) {
+                    // Fallback to simpler fuzzy
+                    const parts = title.split(' ');
+                    songId = lines.find(l => parts.some(p => p.length > 5 && l.includes(p)))?.match(/id:\s*'([^']*)'/)?. [1];
+                }
 
-                const bestMatch = matches[0];
-                if (!bestMatch || bestMatch.score < 2) throw new Error(`Could not find a confident match for "${searchTitle}"`);
-
-                console.log(`🎯 SELECTED: ${bestMatch.id}`);
+                if (!songId) throw new Error(`Could not find ID for "${title}"`);
+                console.log(`🎯 Matched ID: ${songId}`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -83,19 +67,19 @@ const server = http.createServer(async (req, res) => {
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', bestMatch.id);
+                }).eq('id', songId);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${bestMatch.id}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${songId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: bestMatch.id }));
+                res.end(JSON.stringify({ success: true, id: songId }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -105,4 +89,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V12 (Forensic Matcher) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V13 (Grep Machine) on ${PORT}`));
