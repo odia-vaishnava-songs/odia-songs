@@ -480,7 +480,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
-        status: 'NOT_DONE'
+        status: 'COMPLETED'
     },
     {
         id: 'song-kijanikibale',

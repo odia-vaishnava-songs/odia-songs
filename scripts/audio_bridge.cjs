@@ -2,7 +2,6 @@ const http = require('http');
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 // --- CONFIGURATION ---
 const SUPABASE_URL = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
@@ -11,6 +10,16 @@ const PORT = 3456;
 const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function normalize(str) {
+    if (!str) return "";
+    return str.toLowerCase()
+              .replace(/h/g, '') // Ignore 'h' differences (Chaitanya vs Caitanya)
+              .replace(/v/g, 'b') // Ignore v/b
+              .replace(/sh/g, 's')
+              .replace(/[aeiouy]/g, '')
+              .replace(/[^a-z0-9]/g, '');
+}
 
 const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -28,38 +37,37 @@ const server = http.createServer(async (req, res) => {
                 const title = data.title || data.songTitle || "";
                 console.log(`\n🕵️‍♂️ Syncing: "${title}"`);
                 
-                // 1. DIRECT SEARCH: Use grep-like logic to find the ID
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const lines = resources.split('\n');
-                let songId = null;
+                const searchWords = title.split(' ').filter(w => w.length >= 3).map(normalize);
                 
-                // Extract core search words (at least 5 characters)
-                const coreWords = title.split(' ').filter(w => w.length >= 4);
+                let bestMatch = null;
+                let maxWords = 0;
+                const blocks = resources.split('{');
                 
-                for (let i = 0; i < lines.length; i++) {
-                    const line = lines[i];
-                    // If this line contains our title
-                    if (coreWords.every(w => line.includes(w))) {
-                        // Look back for the ID
-                        for (let j = i; j >= Math.max(0, i - 10); j--) {
-                            const idMatch = lines[j].match(/id:\s*'([^']*)'/);
-                            if (idMatch) {
-                                songId = idMatch[1];
-                                break;
-                            }
-                        }
+                for (let block of blocks) {
+                    const idMatch = block.match(/id:\s*'([^']*)'/);
+                    if (!idMatch) continue;
+                    
+                    const blockId = idMatch[1];
+                    const values = block.match(/'([^']*)'/g) || [];
+                    
+                    let blockOverlap = 0;
+                    for (let val of values) {
+                        const cleanVal = val.replace(/'/g, '');
+                        const valWords = cleanVal.split(/[^a-zA-Z0-9]/).map(normalize).filter(w => w.length > 0);
+                        
+                        const overlap = searchWords.filter(sw => valWords.includes(sw)).length;
+                        if (overlap > blockOverlap) blockOverlap = overlap;
                     }
-                    if (songId) break;
+
+                    if (blockOverlap > maxWords) {
+                        maxWords = blockOverlap;
+                        bestMatch = blockId;
+                    }
                 }
 
-                if (!songId) {
-                    // Fallback to simpler fuzzy
-                    const parts = title.split(' ');
-                    songId = lines.find(l => parts.some(p => p.length > 5 && l.includes(p)))?.match(/id:\s*'([^']*)'/)?. [1];
-                }
-
-                if (!songId) throw new Error(`Could not find ID for "${title}"`);
-                console.log(`🎯 Matched ID: ${songId}`);
+                if (!bestMatch || maxWords < 2) throw new Error(`Could not find ID for "${title}"`);
+                console.log(`🎯 Matched ID: ${bestMatch} (Words: ${maxWords})`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -67,19 +75,19 @@ const server = http.createServer(async (req, res) => {
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', songId);
+                }).eq('id', bestMatch);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${songId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${bestMatch}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: songId }));
+                res.end(JSON.stringify({ success: true, id: bestMatch }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -89,4 +97,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V13 (Grep Machine) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V14 (Transliteration Master) on ${PORT}`));
