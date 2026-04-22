@@ -87,7 +87,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
-        status: 'COMPLETED'
+        status: ''
     },
     {
         id: 'DOYALNITAICAITANYA',

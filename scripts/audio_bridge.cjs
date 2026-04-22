@@ -14,8 +14,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 function normalize(str) {
     if (!str) return "";
     return str.toLowerCase()
-              .replace(/h/g, '') // Ignore 'h' differences (Chaitanya vs Caitanya)
-              .replace(/v/g, 'b') // Ignore v/b
+              .replace(/h/g, '') 
+              .replace(/v/g, 'b') 
               .replace(/sh/g, 's')
               .replace(/[aeiouy]/g, '')
               .replace(/[^a-z0-9]/g, '');
@@ -35,13 +35,12 @@ const server = http.createServer(async (req, res) => {
             try {
                 const data = JSON.parse(body);
                 const title = data.title || data.songTitle || "";
-                console.log(`\n🕵️‍♂️ Syncing: "${title}"`);
+                console.log(`\n🕵️‍♂️ CONFIDENCE CHECK: "${title}"`);
                 
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchWords = title.split(' ').filter(w => w.length >= 3).map(normalize);
+                const searchWords = title.split(' ').filter(w => w.length >= 2).map(normalize);
                 
-                let bestMatch = null;
-                let maxWords = 0;
+                let matches = [];
                 const blocks = resources.split('{');
                 
                 for (let block of blocks) {
@@ -55,19 +54,23 @@ const server = http.createServer(async (req, res) => {
                     for (let val of values) {
                         const cleanVal = val.replace(/'/g, '');
                         const valWords = cleanVal.split(/[^a-zA-Z0-9]/).map(normalize).filter(w => w.length > 0);
-                        
                         const overlap = searchWords.filter(sw => valWords.includes(sw)).length;
                         if (overlap > blockOverlap) blockOverlap = overlap;
                     }
 
-                    if (blockOverlap > maxWords) {
-                        maxWords = blockOverlap;
-                        bestMatch = blockId;
+                    // CALC CONFIDENCE RATIO
+                    const confidence = blockOverlap / searchWords.length;
+                    if (confidence >= 0.75 || (blockOverlap >= 3)) {
+                        matches.push({ id: blockId, score: confidence, overlap: blockOverlap });
                     }
                 }
 
-                if (!bestMatch || maxWords < 2) throw new Error(`Could not find ID for "${title}"`);
-                console.log(`🎯 Matched ID: ${bestMatch} (Words: ${maxWords})`);
+                matches.sort((a,b) => b.score - a.score);
+                const bestMatch = matches[0];
+
+                if (!bestMatch) throw new Error(`Confidence too low for "${title}". No certain match found.`);
+                
+                console.log(`🎯 Confidence High: ${bestMatch.id} (${Math.round(bestMatch.score*100)}%)`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -75,19 +78,19 @@ const server = http.createServer(async (req, res) => {
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', bestMatch);
+                }).eq('id', bestMatch.id);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${bestMatch}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${bestMatch.id}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: bestMatch }));
+                res.end(JSON.stringify({ success: true, id: bestMatch.id }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -97,4 +100,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V14 (Transliteration Master) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V15 (High Confidence Only) on ${PORT}`));
