@@ -34,88 +34,75 @@ const server = http.createServer(async (req, res) => {
         req.on('end', async () => {
             try {
                 const data = JSON.parse(body);
-                const title = data.title || data.songTitle || "";
-                console.log(`\n🕵️‍♂️ SNIPER V20: "${title}"`);
-
-                if (!data.versions || data.versions.length === 0) {
-                    throw new Error("No singers selected. Please click on singer names to add them to the sync list.");
-                }
+                let targetId = data.forceId; // Option 1: Manual ID
+                const title = data.title || ""; // Option 2: Auto Match
                 
+                console.log(`\n📡 RECEIVING SYNC FOR: "${title || targetId}"`);
+
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
-                const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
-                const searchTokens = searchWords.map(normalize);
-                
-                let matches = [];
-                const blocks = resources.split('{');
-                
-                for (let block of blocks) {
-                    const idMatch = block.match(/id:\s*'([^']*)'/);
-                    if (!idMatch) continue;
-                    
-                    const blockId = idMatch[1];
-                    const values = block.match(/'([^']*)'/g) || [];
-                    
-                    let blockBestSim = 0;
-                    for (let val of values) {
-                        const cleanVal = val.replace(/'/g, '');
-                        const valWords = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song');
-                        const valTokens = valWords.map(normalize).filter(w => w.length > 0);
-                        
-                        if (valTokens.length !== searchTokens.length) continue;
-                        const overlap = searchTokens.filter((st, idx) => valTokens[idx] === st).length;
-                        const sim = overlap / searchTokens.length;
-                        if (sim > blockBestSim) blockBestSim = sim;
-                    }
 
-                    if (blockBestSim >= 0.8) {
-                         matches.push({ id: blockId, score: blockBestSim });
-                    }
-                }
-
-                if (matches.length === 0) {
+                if (!targetId && title) {
+                    // SNIPER MATCHING LOGIC
+                    const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
+                    const searchTokens = searchWords.map(normalize);
+                    let matches = [];
+                    const blocks = resources.split('{');
+                    
                     for (let block of blocks) {
-                         const idMatch = block.match(/id:\s*'([^']*)'/);
-                         if (!idMatch) continue;
-                         const blockId = idMatch[1];
-                         const values = block.match(/'([^']*)'/g) || [];
-                         for (let val of values) {
-                             const cleanVal = val.replace(/'/g, '');
-                             const valTokens = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song').map(normalize).filter(w => w.length > 0);
-                             if (Math.abs(valTokens.length - searchTokens.length) <= 1) {
-                                 const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
-                                 const sim = overlap / Math.max(valTokens.length, searchTokens.length);
-                                 if (sim >= 0.85) matches.push({ id: blockId, score: sim });
-                             }
-                         }
+                        const idMatch = block.match(/id:\s*'([^']*)'/);
+                        if (!idMatch) continue;
+                        const blockId = idMatch[1];
+                        const values = block.match(/'([^']*)'/g) || [];
+                        let blockBestSim = 0;
+                        for (let val of values) {
+                            const cleanVal = val.replace(/'/g, '');
+                            const valWords = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song');
+                            const valTokens = valWords.map(normalize).filter(w => w.length > 0);
+                            if (valTokens.length !== searchTokens.length) continue;
+                            const overlap = searchTokens.filter((st, idx) => valTokens[idx] === st).length;
+                            const sim = overlap / searchTokens.length;
+                            if (sim > blockBestSim) blockBestSim = sim;
+                        }
+                        if (blockBestSim >= 0.8) matches.push({ id: blockId, score: blockBestSim });
+                    }
+                    if (matches.length > 0) {
+                        matches.sort((a,b) => b.score - a.score);
+                        targetId = matches[0].id;
                     }
                 }
 
-                matches.sort((a,b) => b.score - a.score);
-                const bestMatch = matches[0];
+                if (!targetId) throw new Error(`Could not find a match for "${title}". Use Manual ID.`);
+                console.log(`🎯 TARGET ID: ${targetId}`);
 
-                if (!bestMatch) throw new Error(`Precision Sniper failed for "${title}". No match in library.`);
-                console.log(`🎯 Matched: ${bestMatch.id}`);
+                // Fix potential arg swap in user's script
+                const audioVersions = data.versions.map(v => {
+                    // If singer looks like a URL, swap them
+                    if (v.singer.startsWith('http')) {
+                        return { label: v.url, url: v.singer };
+                    }
+                    return { label: v.singer, url: v.url };
+                });
 
-                // Map versions properly - note: harvester sends {singer, url}
-                const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
-
+                // 1. Update Supabase
                 const { error } = await supabase.from('songs').update({
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', bestMatch.id);
+                }).eq('id', targetId);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
+                // 2. Update Local resources.ts
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${bestMatch.id}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${targetId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
+                console.log(`✅ Local file updated.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: bestMatch.id }));
+                res.end(JSON.stringify({ success: true, id: targetId }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -125,4 +112,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V20 (Safety First) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V22 (V6 Compatible) on ${PORT}`));
