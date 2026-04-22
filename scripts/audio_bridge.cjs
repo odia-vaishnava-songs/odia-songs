@@ -14,9 +14,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 function normalize(str) {
     if (!str) return "";
     return str.toLowerCase()
-              .replace(/h/g, '') // ignore 'h' differences
-              .replace(/[aeiouy]/g, '') // ignore vowels
-              .replace(/[^a-z]/g, ''); // ignore symbols/spaces
+              .replace(/h/g, '') 
+              .replace(/[aeiouy]/g, '') 
+              .replace(/[^a-z]/g, ''); 
 }
 
 const server = http.createServer(async (req, res) => {
@@ -24,9 +24,7 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    if (req.method === 'OPTIONS') {
-        res.writeHead(204); res.end(); return;
-    }
+    if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
 
     if (req.method === 'POST' && req.url === '/sync') {
         let body = '';
@@ -48,13 +46,16 @@ const server = http.createServer(async (req, res) => {
                     const idMatch = lines[i].match(/id:\s*'([^']*)'/);
                     if (idMatch) currentId = idMatch[1];
                     
-                    if (currentId && normalize(lines[i]).includes(searchNorm) && searchNorm.length > 3) {
-                        songId = currentId; break;
+                    if (currentId && searchNorm.length > 5) {
+                        const lineNorm = normalize(lines[i]);
+                        // Permissive check: Does the search contain the line, or vice versa?
+                        if (lineNorm.length > 5 && (searchNorm.includes(lineNorm) || lineNorm.includes(searchNorm))) {
+                            songId = currentId; break;
+                        }
                     }
                 }
 
                 if (!songId) {
-                    // Slug match fallback
                     const idSlug = searchTitle.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 8);
                     const match = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${idSlug}))'`, 'i'));
                     if (match) songId = match[1];
@@ -92,4 +93,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V3 Live (Ultra-Robust Search) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V4 (Super-Permissive Search) on ${PORT}`));
