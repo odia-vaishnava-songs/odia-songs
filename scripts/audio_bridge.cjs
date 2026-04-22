@@ -13,11 +13,11 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function getWords(str) {
     if (!str) return [];
+    // Don't remove 'h' - it's too risky for short words like 'Hari'
     return str.toLowerCase()
-              .replace(/h/g, '')
               .replace(/[aeiouy]/g, '')
               .split(/[^a-z0-9]/)
-              .filter(w => w.length >= 2);
+              .filter(w => w.length >= 1);
 }
 
 const server = http.createServer(async (req, res) => {
@@ -55,19 +55,19 @@ const server = http.createServer(async (req, res) => {
                         const valWords = getWords(cleanVal);
                         const common = searchWords.filter(w => valWords.includes(w));
                         
-                        // Strict check: At least 3 words matching OR at least 60% of search words
                         const matchScore = common.length;
-                        const matchRatio = matchScore / searchWords.length;
-
-                        if ((matchScore >= 3 || matchScore === searchWords.length) && matchScore > maxCommon) {
+                        if (matchScore >= 3 && matchScore > maxCommon) {
+                            maxCommon = matchScore;
+                            bestMatch = blockId;
+                        } else if (matchScore === searchWords.length && matchScore >= 2 && matchScore > maxCommon) {
                             maxCommon = matchScore;
                             bestMatch = blockId;
                         }
                     }
                 }
 
-                if (!bestMatch) throw new Error(`Searching for "${searchTitle}" but no certain match found.`);
-                console.log(`🎯 Best Match: ${bestMatch} (Score: ${maxCommon})`);
+                if (!bestMatch) throw new Error(`Could not find a confident match for "${searchTitle}"`);
+                console.log(`🎯 Matched: ${bestMatch} (Score: ${maxCommon})`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -97,4 +97,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V8 (Max-Score Strict Match) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V9 (Total Word Integrity) on ${PORT}`));
