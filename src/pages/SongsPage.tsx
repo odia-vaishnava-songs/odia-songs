@@ -1213,7 +1213,7 @@ export const SongsPage: React.FC = () => {
                                                     }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                                 )}
                                             </div>
-                                            {user?.role?.toLowerCase() === 'admin' && (song.audioVersions?.length > 0 || song.audioUrl) && (
+                                            {user?.role?.toLowerCase() === 'admin' && ((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
                                                 <div style={{ 
                                                     marginLeft: '1rem',
                                                     padding: '8px',
@@ -1224,7 +1224,7 @@ export const SongsPage: React.FC = () => {
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
                                                     boxShadow: 'inset 0 0 0 1px rgba(126, 34, 206, 0.1)'
-                                                }} title={song.audioVersions?.length > 1 ? `${song.audioVersions.length} Singers Sync'd` : "Audio Sync'd"}>
+                                                }} title={(song.audioVersions?.length ?? 0) > 1 ? `${song.audioVersions?.length} Singers Sync'd` : "Audio Sync'd"}>
                                                     <Mic size={18} strokeWidth={2.5} />
                                                 </div>
                                             )}
