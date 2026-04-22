@@ -87,7 +87,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         published: true,
-        status: 'NOT_DONE'
+        status: 'COMPLETED'
     },
     {
         id: 'DOYALNITAICAITANYA',
@@ -812,7 +812,7 @@ export const RESOURCES: Resource[] = [
         ]
     },
     {
-        id: 'song-tuwapademinotimor',
+        id: 'song-atmanivedanatuwapade',
         title: 'ତୁମ ପଦ ପଲ୍ଲବ (Tuwa Pade Minoti Mor)',
         title_odia: 'ତୁମ ପଦ ପଲ୍ଲବ',
         title_english: 'Tuwa Pade Minoti Mor',
