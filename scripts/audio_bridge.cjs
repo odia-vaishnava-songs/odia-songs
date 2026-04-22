@@ -17,7 +17,7 @@ function getWords(str) {
               .replace(/h/g, '')
               .replace(/[aeiouy]/g, '')
               .split(/[^a-z0-9]/)
-              .filter(w => w.length >= 3);
+              .filter(w => w.length >= 2); // Lowered to 2 to catch short words
 }
 
 const server = http.createServer(async (req, res) => {
@@ -53,9 +53,9 @@ const server = http.createServer(async (req, res) => {
                         const cleanVal = val.replace(/'/g, '');
                         const valWords = getWords(cleanVal);
                         
-                        // If we have strong word overlap (at least 2 matching significant words)
+                        // Strong word overlap check
                         const common = searchWords.filter(w => valWords.includes(w));
-                        if (common.length >= 2 || (searchWords.length === 1 && common.length === 1)) {
+                        if (common.length >= 2) {
                             songId = blockId; break;
                         }
                     }
@@ -81,7 +81,7 @@ const server = http.createServer(async (req, res) => {
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
-                console.log(`✅ Status COMPLETED.`);
+                console.log(`✅ Local Status Synced.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true, id: songId }));
@@ -94,4 +94,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V6 (Word-Based Matching) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V7 (Enhanced Word Match) on ${PORT}`));
