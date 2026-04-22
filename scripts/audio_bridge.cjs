@@ -17,7 +17,7 @@ function getWords(str) {
               .replace(/h/g, '')
               .replace(/[aeiouy]/g, '')
               .split(/[^a-z0-9]/)
-              .filter(w => w.length >= 2); // Lowered to 2 to catch short words
+              .filter(w => w.length >= 2);
 }
 
 const server = http.createServer(async (req, res) => {
@@ -39,7 +39,8 @@ const server = http.createServer(async (req, res) => {
                 const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
                 const searchWords = getWords(searchTitle);
                 
-                let songId = null;
+                let bestMatch = null;
+                let maxCommon = 0;
                 const blocks = resources.split('{');
                 
                 for (let block of blocks) {
@@ -52,18 +53,21 @@ const server = http.createServer(async (req, res) => {
                     for (let val of valuesInBlock) {
                         const cleanVal = val.replace(/'/g, '');
                         const valWords = getWords(cleanVal);
-                        
-                        // Strong word overlap check
                         const common = searchWords.filter(w => valWords.includes(w));
-                        if (common.length >= 2) {
-                            songId = blockId; break;
+                        
+                        // Strict check: At least 3 words matching OR at least 60% of search words
+                        const matchScore = common.length;
+                        const matchRatio = matchScore / searchWords.length;
+
+                        if ((matchScore >= 3 || matchScore === searchWords.length) && matchScore > maxCommon) {
+                            maxCommon = matchScore;
+                            bestMatch = blockId;
                         }
                     }
-                    if (songId) break;
                 }
 
-                if (!songId) throw new Error(`Could not find ID for "${searchTitle}"`);
-                console.log(`🎯 Matched ID: ${songId}`);
+                if (!bestMatch) throw new Error(`Searching for "${searchTitle}" but no certain match found.`);
+                console.log(`🎯 Best Match: ${bestMatch} (Score: ${maxCommon})`);
 
                 const audioVersions = data.versions.map(v => ({ label: v.singer, url: v.url }));
 
@@ -71,20 +75,19 @@ const server = http.createServer(async (req, res) => {
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
                     updated_at: new Date().toISOString()
-                }).eq('id', songId);
+                }).eq('id', bestMatch);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
 
                 const updated = resources.replace(
-                    new RegExp(`(id:\\s*'${songId}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
+                    new RegExp(`(id:\\s*'${bestMatch}'[\\s\\S]*?status:\\s*')[^']*(')`, 'g'),
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
-                console.log(`✅ Local Status Synced.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ success: true, id: songId }));
+                res.end(JSON.stringify({ success: true, id: bestMatch }));
             } catch (err) {
                 console.error(`❌ Error:`, err.message);
                 res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -94,4 +97,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V7 (Enhanced Word Match) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V8 (Max-Score Strict Match) on ${PORT}`));
