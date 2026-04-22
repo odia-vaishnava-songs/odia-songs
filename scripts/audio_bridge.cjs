@@ -39,26 +39,27 @@ const server = http.createServer(async (req, res) => {
                 const searchNorm = normalize(searchTitle);
                 
                 let songId = null;
-                const lines = resources.split('\n');
-                let currentId = null;
+                // Split by song blocks instead of lines for better context
+                const blocks = resources.split('{');
                 
-                for (let i = 0; i < lines.length; i++) {
-                    const idMatch = lines[i].match(/id:\s*'([^']*)'/);
-                    if (idMatch) currentId = idMatch[1];
+                for (let block of blocks) {
+                    const idMatch = block.match(/id:\s*'([^']*)'/);
+                    if (!idMatch) continue;
                     
-                    if (currentId && searchNorm.length > 5) {
-                        const lineNorm = normalize(lines[i]);
-                        // Permissive check: Does the search contain the line, or vice versa?
-                        if (lineNorm.length > 5 && (searchNorm.includes(lineNorm) || lineNorm.includes(searchNorm))) {
-                            songId = currentId; break;
+                    const blockId = idMatch[1];
+                    // Extract all values inside single quotes in this block
+                    const values = block.match(/'([^']*)'/g) || [];
+                    
+                    for (let val of values) {
+                        const cleanVal = val.replace(/'/g, '');
+                        if (cleanVal.length < 5) continue;
+                        
+                        const valNorm = normalize(cleanVal);
+                        if (valNorm.length > 5 && (searchNorm.includes(valNorm) || valNorm.includes(searchNorm))) {
+                            songId = blockId; break;
                         }
                     }
-                }
-
-                if (!songId) {
-                    const idSlug = searchTitle.toLowerCase().replace(/[^a-z0-9]/g, '').substring(0, 8);
-                    const match = resources.match(new RegExp(`id:\\s*'(song-[^']*(?:${idSlug}))'`, 'i'));
-                    if (match) songId = match[1];
+                    if (songId) break;
                 }
 
                 if (!songId) throw new Error(`Could not find ID for "${searchTitle}"`);
@@ -80,7 +81,7 @@ const server = http.createServer(async (req, res) => {
                     `$1COMPLETED$2`
                 );
                 fs.writeFileSync(RESOURCES_PATH, updated);
-                console.log(`✅ Status set to COMPLETED.`);
+                console.log(`✅ Local Status Synced.`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true, id: songId }));
@@ -93,4 +94,4 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(PORT, () => console.log(`🚀 Bridge V4 (Super-Permissive Search) on ${PORT}`));
+server.listen(PORT, () => console.log(`🚀 Bridge V5 (Ultra-Smart Block Search) on ${PORT}`));
