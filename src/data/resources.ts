@@ -548,7 +548,7 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         structuredContent: (Songs as any).SONG_BOLOHARIBOLO_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'NOT_DONE'
     },
     {
         id: 'song-jivjago',
