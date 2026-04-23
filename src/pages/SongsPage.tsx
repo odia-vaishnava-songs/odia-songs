@@ -1,22 +1,6 @@
-import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
-import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
-import type { Resource } from '../types';
-import { getStatusColor } from '../constants/colors';
+import * as GitaIcons from '../components/GitaIcons';
 
-import { AudioPlayer } from '../components/AudioPlayer';
-import { CompactAudioBar } from '../components/CompactAudioBar';
-import { useAudio } from '../context/AudioContext';
-import { useAuth } from '../hooks/useAuth';
-import { useSongs } from '../hooks/useSongs';
-
-import { TATTVA_THEMES } from '../constants/themes';
-import { toOdiaNumber } from '../utils/odia';
-
-type ViewMode = 'combined' | 'sequential' | 'word-to-word';const getArtifactPath = (name: string) => {
-    if (name === 'placeholder') return '';
-    return `/artwork/${name}.png`;
-};
+type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
 
 export const SongsPage: React.FC = () => {
