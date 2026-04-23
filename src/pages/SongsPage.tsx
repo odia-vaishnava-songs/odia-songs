@@ -482,73 +482,59 @@ export const SongsPage: React.FC = () => {
                                     display: 'flex', 
                                     flexDirection: 'column', 
                                     alignItems: 'center', 
-                                    gap: '12px',
-                                    minWidth: '180px',
-                                    padding: '16px',
-                                    background: `linear-gradient(135deg, ${sec.color}10, ${sec.color}20)`,
-                                    borderRadius: '24px',
-                                    border: `1.5px solid ${sec.color}15`,
+                                    minWidth: '110px',
+                                    padding: '12px 8px',
+                                    background: `linear-gradient(135deg, ${sec.color}08, ${sec.color}15)`,
+                                    borderRadius: '16px',
+                                    border: `1px solid ${sec.color}10`,
                                     cursor: 'pointer',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
+                                    transition: 'all 0.3s ease',
                                     position: 'relative',
-                                    textAlign: 'center'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
-                                    e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.12)';
-                                    e.currentTarget.style.borderColor = `${sec.color}40`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.05)';
-                                    e.currentTarget.style.borderColor = `${sec.color}15`;
+                                    textAlign: 'center',
+                                    height: '140px',
+                                    justifyContent: 'space-between'
                                 }}
                             >
                                 <div style={{ 
-                                    fontSize: '0.95rem', 
-                                    fontWeight: 900, 
-                                    color: '#0f172a', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 800, 
+                                    color: '#334155', 
                                     fontFamily: 'var(--font-odia-sans)',
                                     lineHeight: 1.2,
-                                    padding: '0 4px',
                                     height: '2.4rem',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>{sec.label}</div>
 
-                                {/* Artwork Frame (Now purely Icon-based for lightweight speed) */}
+                                {/* Apollo-style Compact Icon Box */}
                                 <div style={{ 
-                                    width: '100%', 
-                                    aspectRatio: '1', 
-                                    borderRadius: '16px', 
-                                    overflow: 'hidden',
-                                    background: 'var(--color-bg-paper)',
-                                    boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.03)',
+                                    width: '70px', 
+                                    height: '70px', 
+                                    borderRadius: '14px', 
+                                    background: 'white',
                                     display: 'flex', 
                                     alignItems: 'center', 
                                     justifyContent: 'center',
                                     color: 'var(--color-maroon)',
-                                    border: '1px solid var(--color-maroon)15'
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+                                    border: '1px solid var(--color-maroon)08'
                                 }}>
-                                    <sec.icon size={60} />
+                                    <sec.icon size={40} />
                                 </div>
-
 
                                 {sec.id === 'gita-chapter-1' && (
                                     <div style={{
                                         position: 'absolute',
-                                        top: '12px',
-                                        right: '12px',
+                                        top: '4px',
+                                        right: '4px',
                                         background: '#EF4444',
                                         color: 'white',
-                                        fontSize: '0.6rem',
+                                        fontSize: '0.55rem',
                                         fontWeight: 900,
-                                        padding: '2px 8px',
-                                        borderRadius: '6px',
-                                        letterSpacing: '0.5px',
-                                        boxShadow: '0 4px 10px rgba(239, 68, 68, 0.4)'
+                                        padding: '1px 4px',
+                                        borderRadius: '4px',
+                                        boxShadow: '0 2px 6px rgba(239, 68, 68, 0.3)'
                                     }}>NEW</div>
                                 )}
                             </div>
