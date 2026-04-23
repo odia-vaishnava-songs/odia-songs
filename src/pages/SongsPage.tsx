@@ -37,6 +37,9 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [isStatsOpen, setIsStatsOpen] = useState(false);
+    const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
+    const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -129,6 +132,34 @@ export const SongsPage: React.FC = () => {
 
     const handleSetTheme = (themeKey: string) => {
         setTheme(themeKey);
+    };
+
+    const fetchAuthorStats = async () => {
+        setStatsLoading(true);
+        try {
+            const { data, error } = await supabase
+                .from('songs')
+                .select('author');
+
+            if (error) throw error;
+
+            const counts: Record<string, number> = {};
+            data.forEach(s => {
+                const a = (s as any).author || 'Unknown Author';
+                counts[a] = (counts[a] || 0) + 1;
+            });
+
+            const sorted = Object.entries(counts)
+                .map(([author, count]) => ({ author, count }))
+                .sort((a, b) => b.count - a.count);
+
+            setAuthorStats(sorted);
+            setIsStatsOpen(true);
+        } catch (err) {
+            console.error('[Stats] Error:', err);
+        } finally {
+            setStatsLoading(false);
+        }
     };
 
 
@@ -1572,7 +1603,7 @@ export const SongsPage: React.FC = () => {
                         {/* Modal Body */}
                         <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                {authorStats.map((stat, idx) => (
+                                {authorStats.map((stat: { author: string; count: number }, idx: number) => (
                                     <div
                                         key={idx}
                                         onClick={() => {
@@ -1619,7 +1650,7 @@ export const SongsPage: React.FC = () => {
                                 }}>
                                     <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Combined Library Size</div>
                                     <div style={{ fontSize: '2.2rem', fontWeight: 900 }}>
-                                        {authorStats.reduce((acc, curr) => acc + curr.count, 0)} <span style={{ fontSize: '1rem', fontWeight: 400 }}>Songs</span>
+                                        {authorStats.reduce((acc: number, curr: { count: number }) => acc + curr.count, 0)} <span style={{ fontSize: '1rem', fontWeight: 400 }}>Songs</span>
                                     </div>
                                 </div>
                             </div>
