@@ -893,39 +893,6 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-damodarashtakam',
-        title: 'ଦାମୋଦରାଷ୍ଟକମ୍ (Damodarashtakam)',
-        title_odia: 'ଦାମୋଦରାଷ୍ଟକମ୍',
-        title_english: 'Damodarashtakam',
-        category: 'Songs',
-        type: 'html',
-        author: 'Satyavrata Muni',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-guruvastakam',
-        title: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍ (Guruvastakam)',
-        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍',
-        title_english: 'Guruvastakam',
-        category: 'Songs',
-        type: 'html',
-        author: 'Srila Visvanatha Cakravarti Thakura',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-narasimhapranama',
-        title: 'ଶ୍ରୀ ନୃସିଂହ ପ୍ରଣାମ (Narasimha Pranama)',
-        title_odia: 'ଶ୍ରୀ ନୃସିଂହ ପ୍ରଣାମ',
-        title_english: 'Narasimha Pranama',
-        category: 'Songs',
-        type: 'html',
-        author: 'Traditional',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
         id: 'song-jayaradhajayamadhava',
         title: 'ଜୟ ରାଧା ଜୟ ମାଧବ (Jaya Radha Jaya Madhava)',
         title_odia: 'ଜୟ ରାଧା ଜୟ ମାଧବ',
@@ -936,40 +903,6 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-    {
-        id: 'song-gurupuja',
-        title: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ (Guru Puja)',
-        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ',
-        title_english: 'Sri Guru Carana Padma',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-sritakamala',
-        title: 'ଶ୍ରିତ କମଳା (Srita Kamala)',
-        title_odia: 'ଶ୍ରିତ କମଳା',
-        title_english: 'Srita Kamala',
-        category: 'Songs',
-        type: 'html',
-        author: 'Jayadeva Goswami',
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-hariboloharibolobhaire',
-        title: 'ହରି ବୋଲ ହରି ବୋଲ ହରି ବୋଲ ଭାଇ ରେ (Hari Bolo Hari Bolo Hari Bolo Bhai Re)',
-        title_odia: 'ହରି ବୋଲ ହରି ବୋଲ ହରି ବୋଲ ଭାଇ ରେ',
-        title_english: 'Hari Bolo Hari Bolo Hari Bolo Bhai Re',
-        category: 'Songs',
-        type: 'html',
-        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
-        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLOBHAIRE_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    }
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
