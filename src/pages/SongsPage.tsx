@@ -495,15 +495,8 @@ export const SongsPage: React.FC = () => {
                                         fontWeight: 800, 
                                         color: '#1e293b', 
                                         fontFamily: 'var(--font-odia-sans)',
-                                        lineHeight: 1.2,
-                                        marginBottom: '2px'
+                                        lineHeight: 1.2
                                     }}>{sec.label}</div>
-                                    <div style={{ 
-                                        fontSize: '0.65rem', 
-                                        color: '#64748b', 
-                                        fontWeight: 700, 
-                                        letterSpacing: '0.2px' 
-                                    }}>{sec.eng}</div>
                                 </div>
                                 {sec.id === 'gita-chapter-1' && (
                                     <div style={{
