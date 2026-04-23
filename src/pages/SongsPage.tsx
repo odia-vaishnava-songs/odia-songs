@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Swords, Brain, Hammer, Sun, Anchor, Moon, Zap, Infinity, Crown, Star, Globe, Heart, Map, Layers, Compass, ShieldCheck, Flame, Key, User } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -359,25 +359,25 @@ export const SongsPage: React.FC = () => {
         });
         const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
 
-        const GITA_CHAPTER_NAMES: Record<string, { odia: string, icon: React.ReactNode, color: string }> = {
-            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', icon: <Swords size={40} />, color: '#F59E0B' },
-            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', icon: <Brain size={40} />, color: '#3B82F6' },
-            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', icon: <Hammer size={40} />, color: '#10B981' },
-            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', icon: <Sun size={40} />, color: '#8B5CF6' },
-            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', icon: <Anchor size={40} />, color: '#EC4899' },
-            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', icon: <Moon size={40} />, color: '#059669' },
-            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', icon: <Zap size={40} />, color: '#EAB308' },
-            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', icon: <Infinity size={40} />, color: '#F97316' },
-            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', icon: <Crown size={40} />, color: '#6366F1' },
-            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', icon: <Star size={40} />, color: '#D97706' },
-            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', icon: <Globe size={40} />, color: '#7E22CE' },
-            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', icon: <Heart size={40} />, color: '#BE185D' },
-            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', icon: <Map size={40} />, color: '#0369A1' },
-            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', icon: <Layers size={40} />, color: '#4338CA' },
-            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', icon: <Compass size={40} />, color: '#15803D' },
-            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', icon: <ShieldCheck size={40} />, color: '#B91C1C' },
-            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', icon: <Flame size={40} />, color: '#0E7490' },
-            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', icon: <Key size={40} />, color: '#C2410C' }
+        const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, icon: React.ReactNode, color: string }> = {
+            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', eng: 'Arjuna Vishada Yoga', icon: <GitaIcons.GitaCh1Icon />, color: '#64748b' },
+            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', eng: 'Sankhya Yoga', icon: <GitaIcons.GitaCh2Icon />, color: '#64748b' },
+            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', eng: 'Karma Yoga', icon: <GitaIcons.GitaCh3Icon />, color: '#64748b' },
+            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', eng: 'Jnana Yoga', icon: <GitaIcons.GitaCh4Icon />, color: '#64748b' },
+            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', eng: 'Karma Sannyasa Yoga', icon: <GitaIcons.GitaCh5Icon />, color: '#64748b' },
+            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', eng: 'Dhyana Yoga', icon: <GitaIcons.GitaCh6Icon />, color: '#64748b' },
+            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', eng: 'Jnana Vijnana Yoga', icon: <GitaIcons.GitaCh7Icon />, color: '#64748b' },
+            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', eng: 'Akshara Brahma Yoga', icon: <GitaIcons.GitaCh8Icon />, color: '#64748b' },
+            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', eng: 'Raja Vidya Yoga', icon: <GitaIcons.GitaCh9Icon />, color: '#64748b' },
+            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', icon: <GitaIcons.GitaCh10Icon />, color: '#64748b' },
+            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', eng: 'Vishvarupa Darshana Yoga', icon: <GitaIcons.GitaCh11Icon />, color: '#64748b' },
+            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: 'Bhakti Yoga', icon: <GitaIcons.GitaCh12Icon />, color: '#64748b' },
+            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: 'Kshetra Kshetrajna Yoga', icon: <GitaIcons.GitaCh13Icon />, color: '#64748b' },
+            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Gunatraya Vibhaga Yoga', icon: <GitaIcons.GitaCh14Icon />, color: '#64748b' },
+            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: 'Purushottama Yoga', icon: <GitaIcons.GitaCh15Icon />, color: '#64748b' },
+            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: 'Daivasura Sampad Yoga', icon: <GitaIcons.GitaCh16Icon />, color: '#64748b' },
+            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Shraddhatraya Vibhaga Yoga', icon: <GitaIcons.GitaCh17Icon />, color: '#64748b' },
+            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Moksha Sannyasa Yoga', icon: <GitaIcons.GitaCh18Icon />, color: '#64748b' }
         };
 
         const seenIds = new Set();
@@ -399,10 +399,11 @@ export const SongsPage: React.FC = () => {
             if (seenIds.has(ch.id)) return;
             seenIds.add(ch.id);
 
-            const names = GITA_CHAPTER_NAMES[ch.id] || { odia: ch.title_odia || 'Chapter', icon: <BookOpen size={40} />, color: '#6366F1' };
+            const names = GITA_CHAPTER_NAMES[ch.id] || { odia: ch.title_odia || 'Chapter', eng: 'Chapter', icon: <BookOpen size={24} />, color: '#64748b' };
             allGitaSections.push({
                 id: ch.id,
                 label: names.odia,
+                eng: names.eng,
                 icon: names.icon,
                 color: names.color
             });
@@ -513,23 +514,21 @@ export const SongsPage: React.FC = () => {
                                     justifyContent: 'center'
                                 }}>{sec.label}</div>
 
-                                {/* Artwork Frame (Lighter Icon version) */}
+                                {/* Artwork Frame (Now purely Icon-based for lightweight speed) */}
                                 <div style={{ 
                                     width: '100%', 
                                     aspectRatio: '1', 
                                     borderRadius: '16px', 
                                     overflow: 'hidden',
+                                    background: 'var(--color-bg-paper)',
+                                    boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.03)',
                                     display: 'flex', 
                                     alignItems: 'center', 
                                     justifyContent: 'center',
-                                    background: `${sec.color}10`,
-                                    boxShadow: `inset 0 0 20px ${sec.color}05`,
-                                    position: 'relative',
-                                    border: `1px solid ${sec.color}20`
+                                    color: 'var(--color-maroon)',
+                                    border: '1px solid var(--color-maroon)15'
                                 }}>
-                                    <div style={{ color: sec.color }}>
-                                        {sec.icon}
-                                    </div>
+                                    {React.cloneElement(sec.icon as React.ReactElement, { size: 80 })}
                                 </div>
 
 
