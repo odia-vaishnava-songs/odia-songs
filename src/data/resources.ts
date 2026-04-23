@@ -248,7 +248,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-1',
         title: 'ଅଧ୍ୟାୟ ୧ – ଅର୍ଜୁନବିଷାଦଯୋଗ',
-        title_odia: 'ଅର୍ଜୁନବିଷାଦଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧ – ଅର୍ଜୁନବିଷାଦଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଅର୍ଜୁନବିଷାଦଯୋଗ)',
@@ -257,7 +257,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-2',
         title: 'ଅଧ୍ୟାୟ ୨ – ସାଂଖ୍ୟଯୋଗ',
-        title_odia: 'ସାଂଖ୍ୟଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୨ – ସାଂଖ୍ୟଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ସାଂଖ୍ୟଯୋଗ)',
@@ -266,7 +266,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-3',
         title: 'ଅଧ୍ୟାୟ ୩ - କର୍ମଯୋଗ',
-        title_odia: 'କର୍ମଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୩ - କର୍ମଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(କର୍ମଯୋଗ)',
@@ -275,7 +275,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-4',
         title: 'ଅଧ୍ୟାୟ ୪ - ଦିବ୍ୟଜ୍ଞାନଯୋଗ',
-        title_odia: 'ଦିବ୍ୟଜ୍ଞାନଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୪ - ଦିବ୍ୟଜ୍ଞାନଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଦିବ୍ୟଜ୍ଞାନଯୋଗ)',
@@ -284,7 +284,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-5',
         title: 'ଅଧ୍ୟାୟ ୫ - କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)',
-        title_odia: 'କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)',
+        title_odia: 'ଅଧ୍ୟାୟ ୫ - କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)',
         category: 'Gita',
         type: 'html',
         description: '(କୃଷ୍ଣଚେତନାରେ କର୍ମ)',
@@ -293,7 +293,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-6',
         title: 'ଅଧ୍ୟାୟ ୬ - ଧ୍ୟାନଯୋଗ',
-        title_odia: 'ଧ୍ୟାନଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୬ - ଧ୍ୟାନଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଧ୍ୟାନଯୋଗ)',
@@ -302,7 +302,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-7',
         title: 'ଅଧ୍ୟାୟ ୭ - ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ',
-        title_odia: 'ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୭ - ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ)',
@@ -320,7 +320,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-9',
         title: 'ଅଧ୍ୟାୟ ୯ - ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ',
-        title_odia: 'ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୯ - ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ)',
@@ -329,7 +329,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-10',
         title: 'ଅଧ୍ୟାୟ ୧୦ - ବିଭୂତି ଯୋଗ',
-        title_odia: 'ବିଭୂତି ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୦ - ବିଭୂତି ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ବିଭୂତି ଯୋଗ)',
@@ -338,7 +338,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-11',
         title: 'ଅଧ୍ୟାୟ ୧୧ - ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
-        title_odia: 'ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୧ - ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ)',
@@ -347,7 +347,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-12',
         title: 'ଅଧ୍ୟାୟ ୧୨ - ଭକ୍ତି ଯୋଗ',
-        title_odia: 'ଭକ୍ତି ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୨ - ଭକ୍ତି ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଭକ୍ତି ଯୋଗ)',
@@ -356,7 +356,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-13',
         title: 'ଅଧ୍ୟାୟ ୧୩- କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ',
-        title_odia: 'କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୩- କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ)',
@@ -365,7 +365,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-14',
         title: 'ଅଧ୍ୟାୟ ୧୪-ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ',
-        title_odia: 'ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୪-ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ)',
@@ -373,8 +373,8 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'gita-chapter-15',
-        title: 'ଅଧ୍ୟାୟ ୧୫- ପୁରୁଷୋତ୍ତମ ଯୋଗ',
-        title_odia: 'ପୁରୁଷୋତ୍ତମ ଯୋଗ',
+        title: 'ଅଧ୍ୟାୟ ୧୫-ପୁରୁଷୋତ୍ତମ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୫-ପୁରୁଷୋତ୍ତମ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ପୁରୁଷୋତ୍ତମ ଯୋଗ)',
@@ -382,8 +382,8 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'gita-chapter-16',
-        title: 'ଅଧ୍ୟାୟ ୧୬- ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
-        title_odia: 'ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
+        title: 'ଅଧ୍ୟାୟ ୧୬-ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୬-ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ)',
@@ -391,8 +391,8 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'gita-chapter-17',
-        title: 'ଅଧ୍ୟାୟ ୧୭- ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ',
-        title_odia: 'ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ',
+        title: 'ଅଧ୍ୟାୟ ୧୭-ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୭-ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ)',
@@ -401,7 +401,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-18',
         title: 'ଅଧ୍ୟାୟ ୧୮- ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ',
-        title_odia: 'ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ',
+        title_odia: 'ଅଧ୍ୟାୟ ୧୮- ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ)',
