@@ -402,7 +402,7 @@ export const SongsPage: React.FC = () => {
                         position: 'relative', 
                         marginBottom: '1rem',
                         padding: '0 4px',
-                        zIndex: 10
+                        zIndex: 500
                     }}
                     onMouseEnter={() => setIsSliderInteracting(true)}
                     onMouseLeave={() => setIsSliderInteracting(false)}
@@ -419,24 +419,25 @@ export const SongsPage: React.FC = () => {
                         className="slider-nav-popup"
                         style={{
                             position: 'absolute',
-                            left: '8px',
+                            left: '20px',
                             top: '50%',
-                            zIndex: 100,
-                            background: '#fff',
+                            zIndex: 600,
+                            background: 'rgba(255, 255, 255, 0.2)',
+                            backdropFilter: 'blur(12px)',
                             color: 'var(--color-maroon)',
-                            border: '2px solid var(--color-maroon)',
-                            width: '44px',
-                            height: '44px',
+                            border: '1.5px solid var(--color-maroon)30',
+                            width: '48px',
+                            height: '48px',
                             borderRadius: '50%',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             cursor: 'pointer',
-                            boxShadow: '0 8px 20px rgba(0,0,0,0.22)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
                             touchAction: 'none'
                         }}
                     >
-                        <ChevronLeft size={26} />
+                        <ChevronLeft size={32} />
                     </button>
 
                     <div 
@@ -533,24 +534,25 @@ export const SongsPage: React.FC = () => {
                         className="slider-nav-popup"
                         style={{
                             position: 'absolute',
-                            right: '8px',
+                            right: '20px',
                             top: '50%',
-                            zIndex: 100,
-                            background: '#fff',
+                            zIndex: 600,
+                            background: 'rgba(255, 255, 255, 0.2)',
+                            backdropFilter: 'blur(12px)',
                             color: 'var(--color-maroon)',
-                            border: '2px solid var(--color-maroon)',
-                            width: '44px',
-                            height: '44px',
+                            border: '1.5px solid var(--color-maroon)30',
+                            width: '48px',
+                            height: '48px',
                             borderRadius: '50%',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             cursor: 'pointer',
-                            boxShadow: '0 8px 20px rgba(0,0,0,0.22)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
                             touchAction: 'none'
                         }}
                     >
-                        <ChevronRight size={26} />
+                        <ChevronRight size={32} />
                     </button>
                 </div>
 
