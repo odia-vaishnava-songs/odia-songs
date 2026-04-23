@@ -338,7 +338,7 @@ export const RESOURCES: Resource[] = [
     {
         id: 'gita-chapter-11',
         title: 'ଅଧ୍ୟାୟ ୧୧ - ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
-        title_odia: '비ଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
+        title_odia: 'ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ',
         category: 'Gita',
         type: 'html',
         description: '(ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ)',
@@ -382,11 +382,11 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'gita-chapter-16',
-        title: 'ଅଧ୍ୟାୟ ୧୬- ଦୈବାସୁର ସମଦ ବିଭାଗ ଯୋଗ',
-        title_odia: 'ଦୈବାସୁର ସମଦ ବିଭାଗ ଯୋଗ',
+        title: 'ଅଧ୍ୟାୟ ୧୬- ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
+        title_odia: 'ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ',
         category: 'Gita',
         type: 'html',
-        description: '(ଦୈବାସୁର ସମଦ ବିଭାଗ ଯୋଗ)',
+        description: '(ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ)',
         structuredContent: (Songs as any).SONG_GITA_CHAPTER_16_STRUCTURED
     },
     {
