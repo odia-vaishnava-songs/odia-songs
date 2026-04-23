@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3 } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -24,6 +24,9 @@ export const SongsPage: React.FC = () => {
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSong, setSelectedSong] = useState<Resource | null>(null);
+    const [isSliderInteracting, setIsSliderInteracting] = useState(false);
+    const gitaSliderRef = useRef<HTMLDivElement>(null);
+    const sliderInteractionTimeout = useRef<NodeJS.Timeout | null>(null);
 
     // Sync local selectedSong with Context's activeSong when returning to detail view from the mini-bar
     useEffect(() => {
@@ -157,6 +160,32 @@ export const SongsPage: React.FC = () => {
         } finally {
             setStatsLoading(false);
         }
+    };
+
+    const handleStatsClick = async () => {
+        if (isStatsOpen) {
+            setIsStatsOpen(false);
+            return;
+        }
+        await fetchAuthorStats();
+    };
+
+    const scrollGitaSlider = (direction: 'left' | 'right') => {
+        if (gitaSliderRef.current) {
+            const scrollAmount = window.innerWidth < 768 ? 200 : 400;
+            gitaSliderRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const handleSliderInteraction = () => {
+        setIsSliderInteracting(true);
+        if (sliderInteractionTimeout.current) clearTimeout(sliderInteractionTimeout.current);
+        sliderInteractionTimeout.current = setTimeout(() => {
+            setIsSliderInteracting(false);
+        }, 3000);
     };
 
     // songsOnly removed since we use songResources everywhere.
@@ -329,72 +358,209 @@ export const SongsPage: React.FC = () => {
 
         if (gitaChapters.length === 0) return null;
 
+        const gitaChaps = songResources.filter(r => r.category === 'Gita').sort((a, b) => {
+            const numA = parseInt(a.id?.split('-').pop() || '0');
+            const numB = parseInt(b.id?.split('-').pop() || '0');
+            return numA - numB;
+        });
+        const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
+
+        const palette = [
+            '#F57C00', '#F44336', '#3949AB', '#00796B', '#8E24AA', 
+            '#1E88E5', '#43A047', '#E91E63', '#673AB7', '#00ACC1',
+            '#D81B60', '#5E35B1', '#039BE5', '#00897B', '#7CB342',
+            '#FDD835', '#FB8C00', '#6D4C41', '#546E7A'
+        ];
+
+        const seenIds = new Set();
+        const allGitaSections = [];
+        
+        if (mahatmya) {
+            allGitaSections.push({
+                id: mahatmya.id,
+                label: 'ମାହାତ୍ମ୍ୟ',
+                eng: 'Mahatmya',
+                icon: <Sparkles size={24} />,
+                color: '#FF9933'
+            });
+            seenIds.add(mahatmya.id);
+        }
+
+        gitaChaps.forEach((ch, idx) => {
+            if (seenIds.has(ch.id)) return;
+            seenIds.add(ch.id);
+
+            const chNum = ch.title_english?.match(/\d+/)?.[0] || (idx + 1).toString();
+            allGitaSections.push({
+                id: ch.id,
+                label: `ଅଧ୍ୟାୟ ${chNum}`,
+                eng: `Chapter ${chNum}`,
+                icon: <BookOpen size={24} />,
+                color: palette[idx % palette.length]
+            });
+        });
+
         return (
-            <div style={{ padding: '0 1rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    marginBottom: '1.5rem',
-                    padding: '0 0.5rem'
-                }}>
-                    <BookOpen size={24} color={theme.color} />
-                    <h2 style={{
-                        fontSize: '1.5rem',
-                        fontWeight: 800,
-                        color: '#1e293b',
-                        fontFamily: 'var(--font-odia-sans)'
-                    }}>ଶ୍ରୀମଦ୍ ଭଗବଦ୍ ଗୀତା</h2>
-                </div>
+            <div style={{ padding: '0 0 2rem', maxWidth: '1000px', margin: '0 auto' }}>
+                {/* 🚀 QUICK NAVIGATION SLIDER (Requested) */}
+                <div 
+                    className={isSliderInteracting ? 'interacting' : ''}
+                    style={{ 
+                        position: 'relative', 
+                        marginBottom: '1rem',
+                        padding: '0 4px',
+                        zIndex: 10
+                    }}
+                    onMouseEnter={() => setIsSliderInteracting(true)}
+                    onMouseLeave={() => setIsSliderInteracting(false)}
+                    onTouchStart={handleSliderInteraction}
+                >
+                    {/* Left Navigation Arrow (Popup on Interaction) */}
+                    <button 
+                        onPointerDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            scrollGitaSlider('left');
+                            handleSliderInteraction();
+                        }}
+                        className="slider-nav-popup"
+                        style={{
+                            position: 'absolute',
+                            left: '8px',
+                            top: '50%',
+                            zIndex: 100,
+                            background: '#fff',
+                            color: 'var(--color-maroon)',
+                            border: '2px solid var(--color-maroon)',
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            boxShadow: '0 8px 20px rgba(0,0,0,0.22)',
+                            touchAction: 'none'
+                        }}
+                    >
+                        <ChevronLeft size={26} />
+                    </button>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: '12px'
-                }}>
-                    {gitaChapters.map((chapter, index) => {
-                        const chNum = chapter.title_english?.match(/\d+/)?.[0] || '';
-
-                        // Vibrant, high-contrast palette for maximum variety
-                        const avatarColors = [
-                            '#1a73e8', // Google Blue
-                            '#188038', // Google Green
-                            '#ea4335', // Google Red
-                            '#f9ab00', // Google Yellow
-                            '#8a5082', // Deep Purple
-                            '#00acc1', // Cyan
-                            '#7b1fa2', // Dark Purple
-                            '#43a047', // Medium Green
-                            '#e91e63', // Pink
-                            '#1565c0'  // Deep Blue
-                        ];
-
-                        // Use the loop index to ensure every card has a different color than its neighbor
-                        const bgColor = avatarColors[index % avatarColors.length];
-
-                        return (
-                            <div
-                                key={chapter.id}
-                                className="gita-card"
-                                onClick={() => handleSelectSong(chapter)}
-                                style={{ background: bgColor }}
+                    <div 
+                        ref={gitaSliderRef}
+                        className="horizontal-scroll-container" 
+                        style={{ 
+                            padding: '4px 0',
+                            scrollPadding: '0 20px',
+                            position: 'relative',
+                            zIndex: 5
+                        }}
+                        onScroll={handleSliderInteraction}
+                    >
+                        {allGitaSections.map((sec) => (
+                            <div 
+                                key={sec.id}
+                                onClick={() => {
+                                    const song = songResources.find(s => s.id === sec.id);
+                                    if (song) handleSelectSong(song);
+                                }}
+                                style={{ 
+                                    display: 'flex', 
+                                    flexDirection: 'column', 
+                                    alignItems: 'flex-start', 
+                                    gap: '12px',
+                                    minWidth: '105px',
+                                    padding: '14px',
+                                    background: `linear-gradient(135deg, ${sec.color}08, ${sec.color}15)`,
+                                    borderRadius: '16px',
+                                    border: `1px solid ${sec.color}15`,
+                                    cursor: 'pointer',
+                                    transition: 'all 0.2s ease',
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                                    position: 'relative'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'}
+                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                             >
-                                <div className="icon-badge">
-                                    <BookOpen size={22} strokeWidth={2.5} color="#ffffff" />
+                                <div style={{ 
+                                    width: '42px', 
+                                    height: '42px', 
+                                    borderRadius: '12px', 
+                                    background: '#fff',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: sec.color,
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+                                }}>
+                                    {sec.icon}
                                 </div>
-                                <div className="text-content">
-                                    <div className="chapter-overline">CHAPTER {chNum}</div>
-                                    <div className="chapter-title">
-                                        {chapter.description?.replace(/[()]/g, '') || chapter.title_odia}
-                                    </div>
+                                <div>
+                                    <div style={{ 
+                                        fontSize: '0.88rem', 
+                                        fontWeight: 800, 
+                                        color: '#1e293b', 
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        lineHeight: 1.2,
+                                        marginBottom: '2px'
+                                    }}>{sec.label}</div>
+                                    <div style={{ 
+                                        fontSize: '0.65rem', 
+                                        color: '#64748b', 
+                                        fontWeight: 700, 
+                                        letterSpacing: '0.2px' 
+                                    }}>{sec.eng}</div>
                                 </div>
-                                <div className="arrow-icon">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                                </div>
+                                {sec.id === 'gita-chapter-1' && (
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: '8px',
+                                        right: '8px',
+                                        background: '#EF4444',
+                                        color: 'white',
+                                        fontSize: '0.55rem',
+                                        fontWeight: 900,
+                                        padding: '1px 5px',
+                                        borderRadius: '4px',
+                                        letterSpacing: '0.5px'
+                                    }}>NEW</div>
+                                )}
                             </div>
-                        );
-                    })}
+                        ))}
+                    </div>
+
+                    {/* Right Navigation Arrow (Popup on Interaction) */}
+                    <button 
+                        onPointerDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            scrollGitaSlider('right');
+                            handleSliderInteraction();
+                        }}
+                        className="slider-nav-popup"
+                        style={{
+                            position: 'absolute',
+                            right: '8px',
+                            top: '50%',
+                            zIndex: 100,
+                            background: '#fff',
+                            color: 'var(--color-maroon)',
+                            border: '2px solid var(--color-maroon)',
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            boxShadow: '0 8px 20px rgba(0,0,0,0.22)',
+                            touchAction: 'none'
+                        }}
+                    >
+                        <ChevronRight size={26} />
+                    </button>
                 </div>
+
             </div>
         );
     };
@@ -1356,15 +1522,15 @@ export const SongsPage: React.FC = () => {
                     bottom: '24px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: 'rgba(255, 255, 255, 0.85)',
+                    background: 'var(--color-cream)',
                     backdropFilter: 'blur(16px)',
                     padding: '8px',
                     borderRadius: '24px',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                    boxShadow: '0 8px 32px rgba(128, 0, 0, 0.15)',
                     display: 'flex',
                     gap: '8px',
                     zIndex: 1000,
-                    border: '1px solid rgba(255,255,255,0.5)',
+                    border: '1px solid var(--color-maroon)20',
                     maxWidth: '90vw'
                 }}>
                     <button

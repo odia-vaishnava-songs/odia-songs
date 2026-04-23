@@ -1,15 +1,18 @@
 :root {
   --color-saffron: #FF9933;
   --color-saffron-dark: #cc7a29;
+  --color-maroon: #800000;
+  --color-maroon-dark: #4A0E0E;
   --color-cream: #FDFBF7;
   --color-cream-dark: #f0ebe0;
+  --color-parchment: #f4ecd8;
   --color-text-main: #1a1a1a;
   --color-text-light: #666666;
   --color-border: #e0e0e0;
   --color-success: #4CAF50;
   --color-error: #f44336;
-  --color-primary: #8A5082;
-  --color-primary-light: #a6749f;
+  --color-primary: #FF9933; /* Default to Saffron */
+  --color-primary-light: #ffb366;
   
   --font-sans: 'Outfit', 'Kalinga', 'Segoe UI Oriya', 'Baloo Bhaina 2', 'Anek Odia', 'Noto Sans Oriya', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-odia-sans: 'Anek Odia', 'Kalinga', 'Segoe UI Oriya', 'Baloo Bhaina 2', sans-serif;
@@ -24,8 +27,22 @@
   --glass-bg-dark: rgba(15, 23, 42, 0.8);
   --glass-border: rgba(255, 255, 255, 0.3);
   --glass-border-dark: rgba(255, 255, 255, 0.1);
-  --player-gradient: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
-  --player-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --player-gradient: linear-gradient(135deg, #FF9933 0%, #800000 100%);
+  --player-shadow: 0 8px 32px 0 rgba(128, 0, 0, 0.15);
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 8px 4px 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 .player-glass {
@@ -136,4 +153,29 @@ h3 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hide-on-mobile {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .hide-on-mobile {
+    display: flex !important;
+  }
+  .hide-on-laptop {
+    display: none !important;
+  }
+}
+
+.interacting .slider-nav-popup {
+  transform: translateY(-50%) scale(1) !important;
+  opacity: 1 !important;
+}
+
+.slider-nav-popup {
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  pointer-events: auto !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
