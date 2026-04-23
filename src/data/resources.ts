@@ -914,6 +914,54 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_AREBHAIBHAJAMORA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-dhanamornityananda',
+        title: 'ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ (Dhana Mor Nityananda)',
+        title_odia: 'ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ',
+        title_english: 'Dhana Mor Nityananda',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_DHANAMORNITYANANDA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-eibarokarunakoro',
+        title: 'ଏଇ ବାର କରୁଣା କର (Ei Baro Karuna Koro)',
+        title_odia: 'ଏଇ ବାର କରୁଣା କର',
+        title_english: 'Ei Baro Karuna Koro',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_EIBAROKARUNAKORO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gaurangakarunakoro',
+        title: 'ଗୌରାଙ୍ଗ କରୁଣା କର (Gauranga Karuna Koro)',
+        title_odia: 'ଗୌରାଙ୍ଗ କରୁଣା କର',
+        title_english: 'Gauranga Karuna Koro',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_GAURANGAKARUNAKORO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gaurangerdutipada',
+        title: 'ଗୌରାଙ୍ଗେର ଦୁ’ଟି ପଦ (Gauranger Duti Pada)',
+        title_odia: 'ଗୌରାଙ୍ଗେର ଦୁ’ଟି ପଦ',
+        title_english: 'Gauranger Duti Pada',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_GAURANGERDUTIPADA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
