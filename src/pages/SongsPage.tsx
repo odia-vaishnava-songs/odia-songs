@@ -209,14 +209,14 @@ export const SongsPage: React.FC = () => {
         }
 
         return pool.filter(s => {
-            const inTitle = (s.title_odia || s.title).toLowerCase().includes(query) || (s.title_english || '').toLowerCase().includes(query);
+            const inTitle = (s.title_odia || s.title || '').toLowerCase().includes(query) || (s.title_english || '').toLowerCase().includes(query);
             const inAuthor = s.author?.toLowerCase().includes(query);
             const inDescription = s.description?.toLowerCase().includes(query);
-            const inTags = s.tags?.some(tag => tag.toLowerCase().includes(query));
+            const inTags = s.tags?.some(tag => tag?.toLowerCase().includes(query));
 
             // Check verses lyrics
             const inLyrics = s.structuredContent?.verses.some(v =>
-                v.lyric.toLowerCase().includes(query) || v.translation.toLowerCase().includes(query)
+                (v.lyric || '').toLowerCase().includes(query) || (v.translation || '').toLowerCase().includes(query)
             );
 
             return inTitle || inAuthor || inDescription || inLyrics || inTags;

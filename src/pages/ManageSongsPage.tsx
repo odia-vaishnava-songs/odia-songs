@@ -143,7 +143,7 @@ export const ManageSongsPage: React.FC = () => {
     };
 
     const filteredSongs = songs.filter(s => {
-        const matchesSearch = s.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        const matchesSearch = (s.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
             s.author?.toLowerCase().includes(searchTerm.toLowerCase());
 
         if (!matchesSearch) return false;
