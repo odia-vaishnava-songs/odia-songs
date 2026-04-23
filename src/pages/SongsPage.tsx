@@ -26,7 +26,7 @@ export const SongsPage: React.FC = () => {
     const [selectedSong, setSelectedSong] = useState<Resource | null>(null);
     const [isSliderInteracting, setIsSliderInteracting] = useState(false);
     const gitaSliderRef = useRef<HTMLDivElement>(null);
-    const sliderInteractionTimeout = useRef<NodeJS.Timeout | null>(null);
+    const sliderInteractionTimeout = useRef<any>(null);
 
     // Sync local selectedSong with Context's activeSong when returning to detail view from the mini-bar
     useEffect(() => {
@@ -37,9 +37,6 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
-    const [isStatsOpen, setIsStatsOpen] = useState(false);
-    const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
-    const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -134,41 +131,6 @@ export const SongsPage: React.FC = () => {
         setTheme(themeKey);
     };
 
-    const fetchAuthorStats = async () => {
-        setStatsLoading(true);
-        try {
-            const { data, error } = await supabase
-                .from('songs')
-                .select('author');
-
-            if (error) throw error;
-
-            const counts: Record<string, number> = {};
-            data.forEach(s => {
-                const a = s.author || 'Unknown Author';
-                counts[a] = (counts[a] || 0) + 1;
-            });
-
-            const sorted = Object.entries(counts)
-                .map(([author, count]) => ({ author, count }))
-                .sort((a, b) => b.count - a.count);
-
-            setAuthorStats(sorted);
-            setIsStatsOpen(true);
-        } catch (err) {
-            console.error('[Stats] Error:', err);
-        } finally {
-            setStatsLoading(false);
-        }
-    };
-
-    const handleStatsClick = async () => {
-        if (isStatsOpen) {
-            setIsStatsOpen(false);
-            return;
-        }
-        await fetchAuthorStats();
-    };
 
     const scrollGitaSlider = (direction: 'left' | 'right') => {
         if (gitaSliderRef.current) {
