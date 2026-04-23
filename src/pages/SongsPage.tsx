@@ -532,7 +532,7 @@ export const SongsPage: React.FC = () => {
                                     color: 'var(--color-maroon)',
                                     border: '1px solid var(--color-maroon)15'
                                 }}>
-                                    <sec.icon size={80} />
+                                    <sec.icon size={60} />
                                 </div>
 
 
