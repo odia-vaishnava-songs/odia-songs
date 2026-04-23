@@ -13,9 +13,18 @@ import { useSongs } from '../hooks/useSongs';
 import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber } from '../utils/odia';
 
-type ViewMode = 'combined' | 'sequential' | 'word-to-word';
-
-
+type ViewMode = 'combined' | 'sequential' | 'word-to-word';const getArtifactPath = (name: string) => {
+    const mapping: Record<string, string> = {
+        'gita_ch1_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch1_artwork_1776935214051.png',
+        'gita_ch2_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch2_artwork_1776935254024.png',
+        'gita_ch3_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch3_artwork_1776935280956.png',
+        'gita_ch4_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch4_artwork_1776935309450.png',
+        'gita_ch5_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch5_artwork_1776935335753.png',
+        'gita_ch6_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch6_artwork_1776935363802.png',
+        'gita_ch7_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch7_artwork_1776935634835.png'
+    };
+    return mapping[name] || '';
+};
 
 
 export const SongsPage: React.FC = () => {
@@ -358,12 +367,26 @@ export const SongsPage: React.FC = () => {
         });
         const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
 
-        const palette = [
-            '#F57C00', '#F44336', '#3949AB', '#00796B', '#8E24AA', 
-            '#1E88E5', '#43A047', '#E91E63', '#673AB7', '#00ACC1',
-            '#D81B60', '#5E35B1', '#039BE5', '#00897B', '#7CB342',
-            '#FDD835', '#FB8C00', '#6D4C41', '#546E7A'
-        ];
+        const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, img: string, color: string }> = {
+            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନ ବିଷାଦ ଯୋଗ', eng: 'Arjuna Vishada Yoga', img: 'gita_ch1_artwork', color: '#F59E0B' },
+            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟ ଯୋଗ', eng: 'Sankhya Yoga', img: 'gita_ch2_artwork', color: '#3B82F6' },
+            'gita-chapter-3': { odia: '୩. କର୍ମ ଯୋଗ', eng: 'Karma Yoga', img: 'gita_ch3_artwork', color: '#10B981' },
+            'gita-chapter-4': { odia: '୪. ଜ୍ଞାନ କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Jnana Karma Sannyasa Yoga', img: 'gita_ch4_artwork', color: '#8B5CF6' },
+            'gita-chapter-5': { odia: '୫. କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Karma Sannyasa Yoga', img: 'gita_ch5_artwork', color: '#EC4899' },
+            'gita-chapter-6': { odia: '୬. ଆତ୍ମ ସଂଯମ ଯୋଗ', eng: 'Atma Samyama Yoga', img: 'gita_ch6_artwork', color: '#059669' },
+            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନ ବିଜ୍ଞାନ ଯୋଗ', eng: 'Jnana Vijnana Yoga', img: 'gita_ch7_artwork', color: '#3B82F6' },
+            'gita-chapter-8': { odia: '୮. ଅକ୍ଷର ବ୍ରହ୍ମ ଯୋଗ', eng: 'Akshara Brahma Yoga', img: 'placeholder', color: '#F97316' },
+            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା ରାଜଗୁହ୍ୟ ଯୋଗ', eng: 'Rajavidya Rajaguhya Yoga', img: 'placeholder', color: '#6366F1' },
+            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', img: 'placeholder', color: '#D97706' },
+            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ଵରୂପ ଦର୍ଶନ ଯୋଗ', eng: 'Vishvarupa Darshana Yoga', img: 'placeholder', color: '#7E22CE' },
+            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: 'Bhakti Yoga', img: 'placeholder', color: '#BE185D' },
+            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: 'Kshetra Kshetrajna Vibhaga Yoga', img: 'placeholder', color: '#0369A1' },
+            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Gunatraya Vibhaga Yoga', img: 'placeholder', color: '#4338CA' },
+            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: 'Purushottama Yoga', img: 'placeholder', color: '#15803D' },
+            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: 'Daivasura Sampad Vibhaga Yoga', img: 'placeholder', color: '#B91C1C' },
+            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Shraddhatraya Vibhaga Yoga', img: 'placeholder', color: '#0E7490' },
+            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Moksha Sannyasa Yoga', img: 'placeholder', color: '#C2410C' }
+        };
 
         const seenIds = new Set();
         const allGitaSections = [];
@@ -371,25 +394,27 @@ export const SongsPage: React.FC = () => {
         if (mahatmya) {
             allGitaSections.push({
                 id: mahatmya.id,
-                label: 'ମାହାତ୍ମ୍ୟ',
-                eng: 'Mahatmya',
+                label: 'ଶ୍ରୀ ଗୀତା ମାହାତ୍ମ୍ୟ',
+                eng: 'Gita Mahatmya',
                 icon: <Sparkles size={24} />,
-                color: '#FF9933'
+                color: '#FF9933',
+                img: 'placeholder'
             });
             seenIds.add(mahatmya.id);
         }
 
-        gitaChaps.forEach((ch, idx) => {
+        gitaChaps.forEach((ch) => {
             if (seenIds.has(ch.id)) return;
             seenIds.add(ch.id);
 
-            const chNum = ch.title_english?.match(/\d+/)?.[0] || (idx + 1).toString();
+            const names = GITA_CHAPTER_NAMES[ch.id] || { odia: ch.title_odia || 'Chapter', eng: 'Chapter', img: 'placeholder', color: '#6366F1' };
             allGitaSections.push({
                 id: ch.id,
-                label: `ଅଧ୍ୟାୟ ${chNum}`,
-                eng: `Chapter ${chNum}`,
+                label: names.odia,
+                eng: names.eng,
                 icon: <BookOpen size={24} />,
-                color: palette[idx % palette.length]
+                color: names.color,
+                img: names.img
             });
         });
 
@@ -461,55 +486,91 @@ export const SongsPage: React.FC = () => {
                                 style={{ 
                                     display: 'flex', 
                                     flexDirection: 'column', 
-                                    alignItems: 'flex-start', 
+                                    alignItems: 'center', 
                                     gap: '12px',
-                                    minWidth: '105px',
-                                    padding: '14px',
-                                    background: `linear-gradient(135deg, ${sec.color}08, ${sec.color}15)`,
-                                    borderRadius: '16px',
-                                    border: `1px solid ${sec.color}15`,
+                                    minWidth: '180px',
+                                    padding: '16px',
+                                    background: `linear-gradient(135deg, ${sec.color}10, ${sec.color}20)`,
+                                    borderRadius: '24px',
+                                    border: `1.5px solid ${sec.color}15`,
                                     cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
-                                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
-                                    position: 'relative'
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
+                                    position: 'relative',
+                                    textAlign: 'center'
                                 }}
-                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'}
-                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+                                    e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.12)';
+                                    e.currentTarget.style.borderColor = `${sec.color}40`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.05)';
+                                    e.currentTarget.style.borderColor = `${sec.color}15`;
+                                }}
                             >
                                 <div style={{ 
-                                    width: '42px', 
-                                    height: '42px', 
-                                    borderRadius: '12px', 
-                                    background: '#fff',
+                                    fontSize: '0.95rem', 
+                                    fontWeight: 900, 
+                                    color: '#0f172a', 
+                                    fontFamily: 'var(--font-odia-sans)',
+                                    lineHeight: 1.2,
+                                    padding: '0 4px',
+                                    height: '2.4rem',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: sec.color,
-                                    boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+                                    justifyContent: 'center'
+                                }}>{sec.label}</div>
+
+                                {/* Artwork Frame */}
+                                <div style={{ 
+                                    width: '100%', 
+                                    aspectRatio: '1', 
+                                    borderRadius: '16px', 
+                                    overflow: 'hidden',
+                                    background: '#fff',
+                                    boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
+                                    position: 'relative'
                                 }}>
-                                    {sec.icon}
+                                    {sec.img !== 'placeholder' ? (
+                                        <img 
+                                            src={getArtifactPath(sec.img)} 
+                                            alt={sec.eng} 
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        />
+                                    ) : (
+                                        <div style={{ 
+                                            width: '100%', height: '100%', 
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: sec.color, background: `${sec.color}10`
+                                        }}>
+                                            {sec.icon}
+                                        </div>
+                                    )}
                                 </div>
-                                <div>
-                                    <div style={{ 
-                                        fontSize: '0.88rem', 
-                                        fontWeight: 800, 
-                                        color: '#1e293b', 
-                                        fontFamily: 'var(--font-odia-sans)',
-                                        lineHeight: 1.2
-                                    }}>{sec.label}</div>
-                                </div>
+
+                                <div style={{ 
+                                    fontSize: '0.75rem', 
+                                    color: '#64748b', 
+                                    fontWeight: 700, 
+                                    letterSpacing: '0.3px',
+                                    fontFamily: "'Outfit', sans-serif"
+                                }}>{sec.eng}</div>
+
                                 {sec.id === 'gita-chapter-1' && (
                                     <div style={{
                                         position: 'absolute',
-                                        top: '8px',
-                                        right: '8px',
+                                        top: '12px',
+                                        right: '12px',
                                         background: '#EF4444',
                                         color: 'white',
-                                        fontSize: '0.55rem',
+                                        fontSize: '0.6rem',
                                         fontWeight: 900,
-                                        padding: '1px 5px',
-                                        borderRadius: '4px',
-                                        letterSpacing: '0.5px'
+                                        padding: '2px 8px',
+                                        borderRadius: '6px',
+                                        letterSpacing: '0.5px',
+                                        boxShadow: '0 4px 10px rgba(239, 68, 68, 0.4)'
                                     }}>NEW</div>
                                 )}
                             </div>
