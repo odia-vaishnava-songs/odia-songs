@@ -15,6 +15,9 @@ import { toOdiaNumber } from '../utils/odia';
 import * as GitaIcons from '../components/GitaIcons';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
+
+
+export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
