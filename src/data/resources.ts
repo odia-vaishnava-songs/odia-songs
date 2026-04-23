@@ -903,6 +903,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-arebhaibhajamora',
+        title: 'ଆରେ ଭାଇ ! ଭଜ ମୋର (Are Bhai Bhaja Mora)',
+        title_odia: 'ଆରେ ଭାଇ ! ଭଜ ମୋର',
+        title_english: 'Are Bhai Bhaja Mora',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_AREBHAIBHAJAMORA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    }
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
