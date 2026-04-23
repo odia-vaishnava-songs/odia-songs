@@ -1,9 +1,20 @@
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
+import { supabase } from '../supabase/config';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
+import type { Resource } from '../types';
+import { getStatusColor } from '../constants/colors';
+
+import { AudioPlayer } from '../components/AudioPlayer';
+import { CompactAudioBar } from '../components/CompactAudioBar';
+import { useAudio } from '../context/AudioContext';
+import { useAuth } from '../hooks/useAuth';
+import { useSongs } from '../hooks/useSongs';
+
+import { TATTVA_THEMES } from '../constants/themes';
+import { toOdiaNumber } from '../utils/odia';
 import * as GitaIcons from '../components/GitaIcons';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
-
-
-export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const { songs, loading, error } = useSongs();
