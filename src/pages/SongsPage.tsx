@@ -542,13 +542,6 @@ export const SongsPage: React.FC = () => {
                                     )}
                                 </div>
 
-                                <div style={{ 
-                                    fontSize: '0.75rem', 
-                                    color: '#64748b', 
-                                    fontWeight: 700, 
-                                    letterSpacing: '0.3px',
-                                    fontFamily: "'Outfit', sans-serif"
-                                }}>{sec.eng}</div>
 
                                 {sec.id === 'gita-chapter-1' && (
                                     <div style={{
