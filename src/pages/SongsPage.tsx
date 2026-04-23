@@ -14,16 +14,8 @@ import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber } from '../utils/odia';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';const getArtifactPath = (name: string) => {
-    const mapping: Record<string, string> = {
-        'gita_ch1_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch1_artwork_1776935214051.png',
-        'gita_ch2_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch2_artwork_1776935254024.png',
-        'gita_ch3_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch3_artwork_1776935280956.png',
-        'gita_ch4_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch4_artwork_1776935309450.png',
-        'gita_ch5_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch5_artwork_1776935335753.png',
-        'gita_ch6_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch6_artwork_1776935363802.png',
-        'gita_ch7_artwork': 'file:///C:/Users/Admin/.gemini/antigravity/brain/53f0a08f-f855-402c-8e5c-c16e5fad8ec0/gita_ch7_artwork_1776935634835.png'
-    };
-    return mapping[name] || '';
+    if (name === 'placeholder') return '';
+    return `/artwork/${name}.png`;
 };
 
 
@@ -368,13 +360,13 @@ export const SongsPage: React.FC = () => {
         const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
 
         const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, img: string, color: string }> = {
-            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନ ବିଷାଦ ଯୋଗ', eng: 'Arjuna Vishada Yoga', img: 'gita_ch1_artwork', color: '#F59E0B' },
-            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟ ଯୋଗ', eng: 'Sankhya Yoga', img: 'gita_ch2_artwork', color: '#3B82F6' },
-            'gita-chapter-3': { odia: '୩. କର୍ମ ଯୋଗ', eng: 'Karma Yoga', img: 'gita_ch3_artwork', color: '#10B981' },
-            'gita-chapter-4': { odia: '୪. ଜ୍ଞାନ କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Jnana Karma Sannyasa Yoga', img: 'gita_ch4_artwork', color: '#8B5CF6' },
-            'gita-chapter-5': { odia: '୫. କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Karma Sannyasa Yoga', img: 'gita_ch5_artwork', color: '#EC4899' },
-            'gita-chapter-6': { odia: '୬. ଆତ୍ମ ସଂଯମ ଯୋଗ', eng: 'Atma Samyama Yoga', img: 'gita_ch6_artwork', color: '#059669' },
-            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନ ବିଜ୍ଞାନ ଯୋଗ', eng: 'Jnana Vijnana Yoga', img: 'gita_ch7_artwork', color: '#3B82F6' },
+            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନ ବିଷାଦ ଯୋଗ', eng: 'Arjuna Vishada Yoga', img: 'gita_ch1', color: '#F59E0B' },
+            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟ ଯୋଗ', eng: 'Sankhya Yoga', img: 'gita_ch2', color: '#3B82F6' },
+            'gita-chapter-3': { odia: '୩. କର୍ମ ଯୋଗ', eng: 'Karma Yoga', img: 'gita_ch3', color: '#10B981' },
+            'gita-chapter-4': { odia: '୪. ଜ୍ଞାନ କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Jnana Karma Sannyasa Yoga', img: 'gita_ch4', color: '#8B5CF6' },
+            'gita-chapter-5': { odia: '୫. କର୍ମ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Karma Sannyasa Yoga', img: 'gita_ch5', color: '#EC4899' },
+            'gita-chapter-6': { odia: '୬. ଆତ୍ମ ସଂଯମ ଯୋଗ', eng: 'Atma Samyama Yoga', img: 'gita_ch6', color: '#059669' },
+            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନ ବିଜ୍ଞାନ ଯୋଗ', eng: 'Jnana Vijnana Yoga', img: 'gita_ch7', color: '#3B82F6' },
             'gita-chapter-8': { odia: '୮. ଅକ୍ଷର ବ୍ରହ୍ମ ଯୋଗ', eng: 'Akshara Brahma Yoga', img: 'placeholder', color: '#F97316' },
             'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା ରାଜଗୁହ୍ୟ ଯୋଗ', eng: 'Rajavidya Rajaguhya Yoga', img: 'placeholder', color: '#6366F1' },
             'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', img: 'placeholder', color: '#D97706' },
