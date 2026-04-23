@@ -357,38 +357,44 @@ export const SongsPage: React.FC = () => {
         });
         const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
 
-        const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, icon: React.ReactNode, color: string }> = {
-            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', eng: 'Arjuna Vishada Yoga', icon: <GitaIcons.GitaCh1Icon />, color: '#64748b' },
-            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', eng: 'Sankhya Yoga', icon: <GitaIcons.GitaCh2Icon />, color: '#64748b' },
-            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', eng: 'Karma Yoga', icon: <GitaIcons.GitaCh3Icon />, color: '#64748b' },
-            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', eng: 'Jnana Yoga', icon: <GitaIcons.GitaCh4Icon />, color: '#64748b' },
-            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', eng: 'Karma Sannyasa Yoga', icon: <GitaIcons.GitaCh5Icon />, color: '#64748b' },
-            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', eng: 'Dhyana Yoga', icon: <GitaIcons.GitaCh6Icon />, color: '#64748b' },
-            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', eng: 'Jnana Vijnana Yoga', icon: <GitaIcons.GitaCh7Icon />, color: '#64748b' },
-            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', eng: 'Akshara Brahma Yoga', icon: <GitaIcons.GitaCh8Icon />, color: '#64748b' },
-            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', eng: 'Raja Vidya Yoga', icon: <GitaIcons.GitaCh9Icon />, color: '#64748b' },
-            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', icon: <GitaIcons.GitaCh10Icon />, color: '#64748b' },
-            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', eng: 'Vishvarupa Darshana Yoga', icon: <GitaIcons.GitaCh11Icon />, color: '#64748b' },
-            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: 'Bhakti Yoga', icon: <GitaIcons.GitaCh12Icon />, color: '#64748b' },
-            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: 'Kshetra Kshetrajna Yoga', icon: <GitaIcons.GitaCh13Icon />, color: '#64748b' },
-            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Gunatraya Vibhaga Yoga', icon: <GitaIcons.GitaCh14Icon />, color: '#64748b' },
-            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: 'Purushottama Yoga', icon: <GitaIcons.GitaCh15Icon />, color: '#64748b' },
-            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: 'Daivasura Sampad Yoga', icon: <GitaIcons.GitaCh16Icon />, color: '#64748b' },
-            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Shraddhatraya Vibhaga Yoga', icon: <GitaIcons.GitaCh17Icon />, color: '#64748b' },
-            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Moksha Sannyasa Yoga', icon: <GitaIcons.GitaCh18Icon />, color: '#64748b' }
+        const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, icon: React.ElementType, color: string }> = {
+            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', eng: 'Arjuna Vishada Yoga', icon: GitaIcons.GitaCh1Icon, color: '#64748b' },
+            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', eng: 'Sankhya Yoga', icon: GitaIcons.GitaCh2Icon, color: '#64748b' },
+            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', eng: 'Karma Yoga', icon: GitaIcons.GitaCh3Icon, color: '#64748b' },
+            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', eng: 'Jnana Yoga', icon: GitaIcons.GitaCh4Icon, color: '#64748b' },
+            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', eng: 'Karma Sannyasa Yoga', icon: GitaIcons.GitaCh5Icon, color: '#64748b' },
+            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', eng: 'Dhyana Yoga', icon: GitaIcons.GitaCh6Icon, color: '#64748b' },
+            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', eng: 'Jnana Vijnana Yoga', icon: GitaIcons.GitaCh7Icon, color: '#64748b' },
+            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', eng: 'Akshara Brahma Yoga', icon: GitaIcons.GitaCh8Icon, color: '#64748b' },
+            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', eng: 'Raja Vidya Yoga', icon: GitaIcons.GitaCh9Icon, color: '#64748b' },
+            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', icon: GitaIcons.GitaCh10Icon, color: '#64748b' },
+            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', eng: 'Vishvarupa Darshana Yoga', icon: GitaIcons.GitaCh11Icon, color: '#64748b' },
+            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: 'Bhakti Yoga', icon: GitaIcons.GitaCh12Icon, color: '#64748b' },
+            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: 'Kshetra Kshetrajna Yoga', icon: GitaIcons.GitaCh13Icon, color: '#64748b' },
+            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Gunatraya Vibhaga Yoga', icon: GitaIcons.GitaCh14Icon, color: '#64748b' },
+            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: 'Purushottama Yoga', icon: GitaIcons.GitaCh15Icon, color: '#64748b' },
+            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: 'Daivasura Sampad Yoga', icon: GitaIcons.GitaCh16Icon, color: '#64748b' },
+            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Shraddhatraya Vibhaga Yoga', icon: GitaIcons.GitaCh17Icon, color: '#64748b' },
+            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Moksha Sannyasa Yoga', icon: GitaIcons.GitaCh18Icon, color: '#64748b' }
         };
 
         const seenIds = new Set();
-        const allGitaSections = [];
+        interface GitaSection {
+            id: string;
+            label: string;
+            eng: string;
+            icon: React.ElementType;
+            color: string;
+        }
+        const allGitaSections: GitaSection[] = [];
         
         if (mahatmya) {
             allGitaSections.push({
                 id: mahatmya.id,
                 label: 'ଶ୍ରୀ ଗୀତା ମାହାତ୍ମ୍ୟ',
                 eng: 'Gita Mahatmya',
-                icon: <Sparkles size={24} />,
-                color: '#FF9933',
-                img: 'placeholder'
+                icon: Sparkles,
+                color: '#FF9933'
             });
             seenIds.add(mahatmya.id);
         }
@@ -397,7 +403,7 @@ export const SongsPage: React.FC = () => {
             if (seenIds.has(ch.id)) return;
             seenIds.add(ch.id);
 
-            const names = GITA_CHAPTER_NAMES[ch.id] || { odia: ch.title_odia || 'Chapter', eng: 'Chapter', icon: <BookOpen size={24} />, color: '#64748b' };
+            const names = GITA_CHAPTER_NAMES[ch.id] || { odia: ch.title_odia || 'Chapter', eng: 'Chapter', icon: BookOpen, color: '#64748b' };
             allGitaSections.push({
                 id: ch.id,
                 label: names.odia,
@@ -526,7 +532,7 @@ export const SongsPage: React.FC = () => {
                                     color: 'var(--color-maroon)',
                                     border: '1px solid var(--color-maroon)15'
                                 }}>
-                                    {React.cloneElement(sec.icon as React.ReactElement, { size: 80 })}
+                                    <sec.icon size={80} />
                                 </div>
 
 
