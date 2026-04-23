@@ -360,24 +360,24 @@ export const SongsPage: React.FC = () => {
         const mahatmya = songResources.find(r => r.id === 'song-gitamahatmya');
 
         const GITA_CHAPTER_NAMES: Record<string, { odia: string, eng: string, img: string, color: string }> = {
-            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', eng: 'Arjuna Vishada Yoga', img: 'gita_ch1', color: '#F59E0B' },
-            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', eng: 'Sankhya Yoga', img: 'gita_ch2', color: '#3B82F6' },
-            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', eng: 'Karma Yoga', img: 'gita_ch3', color: '#10B981' },
-            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', eng: 'Jnana Karma Sannyasa Yoga', img: 'gita_ch4', color: '#8B5CF6' },
-            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', eng: 'Karma Sannyasa Yoga', img: 'gita_ch5', color: '#EC4899' },
-            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', eng: 'Atma Samyama Yoga', img: 'gita_ch6', color: '#059669' },
-            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', eng: 'Jnana Vijnana Yoga', img: 'gita_ch7', color: '#3B82F6' },
-            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', eng: 'Akshara Brahma Yoga', img: 'placeholder', color: '#F97316' },
-            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', eng: 'Rajavidya Rajaguhya Yoga', img: 'placeholder', color: '#6366F1' },
-            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: 'Vibhuti Yoga', img: 'placeholder', color: '#D97706' },
-            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', eng: 'Vishvarupa Darshana Yoga', img: 'placeholder', color: '#7E22CE' },
-            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: 'Bhakti Yoga', img: 'placeholder', color: '#BE185D' },
-            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: 'Kshetra Kshetrajna Vibhaga Yoga', img: 'placeholder', color: '#0369A1' },
-            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Gunatraya Vibhaga Yoga', img: 'placeholder', color: '#4338CA' },
-            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: 'Purushottama Yoga', img: 'placeholder', color: '#15803D' },
-            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: 'Daivasura Sampad Vibhaga Yoga', img: 'placeholder', color: '#B91C1C' },
-            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: 'Shraddhatraya Vibhaga Yoga', img: 'placeholder', color: '#0E7490' },
-            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: 'Moksha Sannyasa Yoga', img: 'placeholder', color: '#C2410C' }
+            'gita-chapter-1': { odia: '୧. ଅର୍ଜୁନବିଷାଦଯୋଗ', eng: '', img: 'gita_ch1', color: '#F59E0B' },
+            'gita-chapter-2': { odia: '୨. ସାଂଖ୍ୟଯୋଗ', eng: '', img: 'gita_ch2', color: '#3B82F6' },
+            'gita-chapter-3': { odia: '୩. କର୍ମଯୋଗ', eng: '', img: 'gita_ch3', color: '#10B981' },
+            'gita-chapter-4': { odia: '୪. ଦିବ୍ୟଜ୍ଞାନଯୋଗ', eng: '', img: 'gita_ch4', color: '#8B5CF6' },
+            'gita-chapter-5': { odia: '୫. କର୍ମଯୋଗ (କୃଷ୍ଣଚେତନାରେ କର୍ମ)', eng: '', img: 'gita_ch5', color: '#EC4899' },
+            'gita-chapter-6': { odia: '୬. ଧ୍ୟାନଯୋଗ', eng: '', img: 'gita_ch6', color: '#059669' },
+            'gita-chapter-7': { odia: '୭. ଜ୍ଞାନବିଜ୍ଞାନଯୋଗ', eng: '', img: 'gita_ch7', color: '#3B82F6' },
+            'gita-chapter-8': { odia: '୮. ଅକ୍ଷରବ୍ରହ୍ମଯୋଗ', eng: '', img: 'placeholder', color: '#F97316' },
+            'gita-chapter-9': { odia: '୯. ରାଜବିଦ୍ୟା-ରାଜଗୁହ୍ୟଯୋଗ', eng: '', img: 'placeholder', color: '#6366F1' },
+            'gita-chapter-10': { odia: '୧୦. ବିଭୂତି ଯୋଗ', eng: '', img: 'placeholder', color: '#D97706' },
+            'gita-chapter-11': { odia: '୧୧. ବିଶ୍ୱରୂପ ଦର୍ଶନ ଯୋଗ', eng: '', img: 'placeholder', color: '#7E22CE' },
+            'gita-chapter-12': { odia: '୧୨. ଭକ୍ତି ଯୋଗ', eng: '', img: 'placeholder', color: '#BE185D' },
+            'gita-chapter-13': { odia: '୧୩. କ୍ଷେତ୍ର-କ୍ଷେତ୍ରଜ୍ଞ ବିଭାଗ ଯୋଗ', eng: '', img: 'placeholder', color: '#0369A1' },
+            'gita-chapter-14': { odia: '୧୪. ଗୁଣତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: '', img: 'placeholder', color: '#4338CA' },
+            'gita-chapter-15': { odia: '୧୫. ପୁରୁଷୋତ୍ତମ ଯୋଗ', eng: '', img: 'placeholder', color: '#15803D' },
+            'gita-chapter-16': { odia: '୧୬. ଦୈବାସୁର ସମ୍ପଦ ବିଭାଗ ଯୋଗ', eng: '', img: 'placeholder', color: '#B91C1C' },
+            'gita-chapter-17': { odia: '୧୭. ଶ୍ରଦ୍ଧାତ୍ରୟ ବିଭାଗ ଯୋଗ', eng: '', img: 'placeholder', color: '#0E7490' },
+            'gita-chapter-18': { odia: '୧୮. ମୋକ୍ଷ ସନ୍ନ୍ୟାସ ଯୋଗ', eng: '', img: 'placeholder', color: '#C2410C' }
         };
 
         const seenIds = new Set();
