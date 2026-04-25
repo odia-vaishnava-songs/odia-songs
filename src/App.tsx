@@ -8,6 +8,7 @@ import { LoginPage } from './pages/LoginPage';
 import { ManageSongsPage } from './pages/ManageSongsPage';
 import { SignupPage } from './pages/SignupPage';
 import { MigrateSongsPage } from './pages/MigrateSongsPage';
+import { AssignmentDashboard } from './pages/AssignmentDashboard';
 import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 
@@ -129,6 +130,14 @@ const AppRoutes = () => {
           element={
             <ProtectedAdminRoute>
               <MigrateSongsPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedAdminRoute>
+              <AssignmentDashboard />
             </ProtectedAdminRoute>
           }
         />

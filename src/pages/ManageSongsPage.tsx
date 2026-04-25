@@ -233,6 +233,14 @@ export const ManageSongsPage: React.FC = () => {
                     )}
                 </h2>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    {isAdmin && (
+                        <button
+                            onClick={() => navigate('/dashboard')}
+                            style={{ background: 'rgba(255,255,255,0.15)', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '20px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                        >
+                            <BarChart3 size={18} /> Stats
+                        </button>
+                    )}
                     <button
                         onClick={() => { setEditingSong(undefined); setIsEditing(true); }}
                         style={{ background: 'white', color: '#8A5082', border: 'none', padding: '0.5rem 1rem', borderRadius: '20px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
