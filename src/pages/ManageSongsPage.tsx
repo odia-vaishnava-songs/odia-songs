@@ -3,7 +3,7 @@ import { useSongs } from '../hooks/useSongs';
 import { useAuth } from '../hooks/useAuth';
 import { supabase } from '../supabase/config';
 import { SongEditor } from '../components/SongEditor';
-import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu, UserCheck } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu, UserCheck, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Resource, User } from '../types';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
