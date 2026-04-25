@@ -1001,7 +1001,7 @@ export const RESOURCES: Resource[] = [
             ]
         },
         published: true,
-        status: 'NOT_DONE'
+        status: 'COMPLETED'
     }
 ];
 
