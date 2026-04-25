@@ -42,6 +42,7 @@ export const SongsPage: React.FC = () => {
     const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
+    const [readingSongId, setReadingSongId] = useState<string | null>(null);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
@@ -1528,18 +1529,22 @@ export const SongsPage: React.FC = () => {
                                                     }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                                 )}
                                             </div>
-                                            {user?.role?.toLowerCase() === 'admin' && ((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
-                                                <div style={{ 
-                                                    marginLeft: '1rem',
-                                                    padding: '8px',
-                                                    borderRadius: '12px',
-                                                    backgroundColor: '#F3E8FF',
-                                                    color: '#7E22CE',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    boxShadow: 'inset 0 0 0 1px rgba(126, 34, 206, 0.1)'
-                                                }} title={(song.audioVersions?.length ?? 0) > 1 ? `${song.audioVersions?.length} Singers Sync'd` : "Audio Sync'd"}>
+                                            {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
+                                                <div 
+                                                    style={{ 
+                                                        marginLeft: '1rem',
+                                                        padding: '8px',
+                                                        borderRadius: '12px',
+                                                        backgroundColor: '#F3E8FF',
+                                                        color: '#7E22CE',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        boxShadow: 'inset 0 0 0 1px rgba(126, 34, 206, 0.1)',
+                                                        pointerEvents: 'none'
+                                                    }} 
+                                                    title={(song.audioVersions?.length ?? 0) > 1 ? `${song.audioVersions?.length} Singers Sync'd` : "Audio Available"}
+                                                >
                                                     <Mic size={18} strokeWidth={2.5} />
                                                 </div>
                                             )}
