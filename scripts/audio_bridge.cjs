@@ -61,14 +61,19 @@ const server = http.createServer(async (req, res) => {
                             
                             if (valTokens.length === 0 || searchTokens.length === 0) continue;
                             
-                            // Calculate overlap based on the shorter length to be safe
-                            const minLen = Math.min(valTokens.length, searchTokens.length);
                             const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
                             const sim = overlap / Math.max(valTokens.length, searchTokens.length);
                             
-                            if (sim > blockBestSim) blockBestSim = sim;
+                            if (sim > blockBestSim) {
+                                blockBestSim = sim;
+                                // log(`DEBUG: Found sim ${sim} for block ${blockId} using word "${cleanVal}"`);
+                            }
                         }
-                        if (blockBestSim >= 0.75) matches.push({ id: blockId, score: blockBestSim });
+                        if (blockBestSim >= 0.5) matches.push({ id: blockId, score: blockBestSim });
+                    }
+                    
+                    if (matches.length === 0) {
+                        console.log(`🔎 Match Fail: No block reached threshold. Input Tokens: [${searchTokens.join(', ')}]`);
                     }
                     if (matches.length > 0) {
                         matches.sort((a,b) => b.score - a.score);
