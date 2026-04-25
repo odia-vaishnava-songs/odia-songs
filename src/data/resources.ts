@@ -1106,18 +1106,7 @@ export const RESOURCES: Resource[] = [
 
 
 
-    {
-        id: 'song-krppbsb',
-        title: 'Ki Rupe Paibo Seva',
-        title_english: 'Ki Rupe Paibo Seva',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        published: true,
-        status: 'COMPLETED',
-        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Ki_Rupe_Paiba_Seba/Ki_Rupe_Paiba_Seba_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
-        vocalist: 'HG Jai Sachinandana Prabhu'
-    },
+
     {
         id: 'song-vrndavanaramyasthana',
         title: 'ବୃନ୍ଦାବନ ରମ୍ୟ ସ୍ଥାନ (Vrndavana Ramya Sthana)',
