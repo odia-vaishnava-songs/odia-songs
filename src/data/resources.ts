@@ -889,17 +889,7 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-    {
-        id: 'song-jayaradhajayamadhava',
-        title: 'ଜୟ ରାଧା ଜୟ ମାଧବ (Jaya Radha Jaya Madhava)',
-        title_odia: 'ଜୟ ରାଧା ଜୟ ମାଧବ',
-        title_english: 'Jaya Radha Jaya Madhava',
-        category: 'Songs',
-        type: 'html',
-        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
-        published: true,
-        status: 'COMPLETED'
-    },
+
     {
         id: 'song-arebhaibhajamora',
         title: 'ଆରେ ଭାଇ ! ଭଜ ମୋର (Are Bhai Bhaja Mora)',
