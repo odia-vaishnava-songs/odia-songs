@@ -18,6 +18,7 @@ export const ManageSongsPage: React.FC = () => {
     const [assignedUsers, setAssignedUsers] = useState<User[]>([]);
     const [filterByMe, setFilterByMe] = useState(false);
     const [selectedEditorId, setSelectedEditorId] = useState<string>('all');
+    const [selectedAuthor, setSelectedAuthor] = useState<string>('all');
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
     // Test Mode logic for localhost
@@ -39,6 +40,14 @@ export const ManageSongsPage: React.FC = () => {
             fetchEditors();
         }
     }, [isAdmin]);
+
+    const uniqueAuthors = React.useMemo(() => {
+        const set = new Set<string>();
+        songs.forEach(s => {
+            if (s.author) set.add(s.author);
+        });
+        return Array.from(set).sort();
+    }, [songs]);
 
     if (!isHost && !loading) {
         return (
@@ -143,10 +152,16 @@ export const ManageSongsPage: React.FC = () => {
     };
 
     const filteredSongs = songs.filter(s => {
-        const matchesSearch = (s.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-            s.author?.toLowerCase().includes(searchTerm.toLowerCase());
+        const q = searchTerm.toLowerCase().trim();
+        const matchesSearch = 
+            (s.title || '').toLowerCase().includes(q) ||
+            (s.title_odia || '').toLowerCase().includes(q) ||
+            (s.title_english || '').toLowerCase().includes(q) ||
+            s.author?.toLowerCase().includes(q);
 
         if (!matchesSearch) return false;
+
+        if (selectedAuthor !== 'all' && s.author !== selectedAuthor) return false;
 
         if (isEditor) {
             return s.assigned_to === user?.id;
@@ -356,21 +371,37 @@ export const ManageSongsPage: React.FC = () => {
                                 </div>
 
                                 {!filterByMe && (
-                                    <select
-                                        value={selectedEditorId}
-                                        onChange={(e) => setSelectedEditorId(e.target.value)}
-                                        style={{
-                                            width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #8A5082',
-                                            backgroundColor: 'white', color: '#8A5082', fontWeight: 600, fontSize: '0.85rem'
-                                        }}
-                                    >
-                                        <option value="all">View All Assignments</option>
-                                        <option value="unassigned">View UNASSIGNED Only</option>
-                                        <hr />
-                                        {assignedUsers.map(editor => (
-                                            <option key={editor.id} value={editor.id}>By Editor: {editor.name}</option>
-                                        ))}
-                                    </select>
+                                    <div style={{ display: 'flex', gap: '0.8rem', flexDirection: 'column' }}>
+                                        <select
+                                            value={selectedEditorId}
+                                            onChange={(e) => setSelectedEditorId(e.target.value)}
+                                            style={{
+                                                width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #8A5082',
+                                                backgroundColor: 'white', color: '#8A5082', fontWeight: 600, fontSize: '0.85rem'
+                                            }}
+                                        >
+                                            <option value="all">View All Assignments</option>
+                                            <option value="unassigned">View UNASSIGNED Only</option>
+                                            <hr />
+                                            {assignedUsers.map(editor => (
+                                                <option key={editor.id} value={editor.id}>By Editor: {editor.name}</option>
+                                            ))}
+                                        </select>
+
+                                        <select
+                                            value={selectedAuthor}
+                                            onChange={(e) => setSelectedAuthor(e.target.value)}
+                                            style={{
+                                                width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #00a38d',
+                                                backgroundColor: 'white', color: '#00a38d', fontWeight: 600, fontSize: '0.85rem'
+                                            }}
+                                        >
+                                            <option value="all">View All Authors</option>
+                                            {uniqueAuthors.map(author => (
+                                                <option key={author} value={author}>Authored by: {author}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                                 )}
                             </div>
                         )}
