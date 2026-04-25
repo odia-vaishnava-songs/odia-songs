@@ -520,7 +520,7 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-    
+
     {
         id: 'song-jivjago',
         title: 'ଜୀବ ଜାଗ ଜୀବ ଜାଗ (Jiv Jago Jiv Jago)',
@@ -913,7 +913,9 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_AREBHAIBHAJAMORA_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Are_Bhai_Bhaja_Mora_Gauranga_Carana/Are_Bhai_Bhaja_Mora_Gauranga_Carana_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        vocalist: 'HG Jai Sachinanadana Prabhu'
     },
     {
         id: 'song-dhanamornityananda',
@@ -925,7 +927,9 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_DHANAMORNITYANANDA_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Dhana_Mora_Nityanand/Dhana_Mora_Nityanand_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        vocalist: 'HG Jai Sachinanadana Prabhu'
     },
     {
         id: 'song-eibarokarunakoro',
@@ -937,7 +941,9 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_EIBAROKARUNAKORO_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Ei_baro_Karuna_Koro/Ei_baro_Karuna_Koro_-_Sung_by_HG_Agnidev_Prabhu_IDT.mp3',
+        vocalist: 'HG Agnidev Prabhu'
     },
     {
         id: 'song-gaurangakarunakoro',
@@ -949,7 +955,9 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_GAURANGAKARUNAKORO_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Gauranga_Karuna_Koro/Gauranga_Karuna_Koro_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        vocalist: 'HG Jai Sachinanadana Prabhu'
     },
     {
         id: 'song-gaurangerdutipada',
@@ -961,7 +969,39 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_GAURANGERDUTIPADA_STRUCTURED,
         published: true,
-        status: 'COMPLETED'
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Gaurangera_Duti_Pada/Gaurangera_Duti_Pada_-_Sung_by_HG_Agnidev_Prabhu_IDT.mp3',
+        vocalist: 'HG Agnidev Prabhu'
+    },
+    {
+        id: 'song-gaurangabolitehabe',
+        title: 'ଗୌରାଙ୍ଗ ବୋଲିତେ ହବେ (Gauranga Bolite Habe)',
+        title_odia: 'ଗୌରାଙ୍ଗ ବୋଲିତେ ହବେ',
+        title_english: 'Gauranga Bolite Habe',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: {
+            verses: [
+                {
+                    id: 1,
+                    lyric: "'ଗୌରାଙ୍ଗ' ବୋଲିତେ ହବେ ପୁଲକ-ଶରୀର\n'ହରି ହରି' ବୋଲିତେ ନୟନେ ବ'ବେ ନୀର ।।୧।।",
+                    translation: "କେବେ ସେହି ଶୁଭ ମୁହୂର୍ତ୍ତ ଆସିବ, ଯେତେବେଳେ ଶ୍ରୀଗୌରାଙ୍ଗ ମହାପ୍ରଭୁଙ୍କ ନାମ ଉଚ୍ଚାରଣ ମାତ୍ରେ ମୋର ଶରୀର ପୁଲକିତ ହୋଇ ରୋମାଞ୍ଚିତ ହେବ? ଯେତେବେଳେ ମୁଁ 'ହରି ହରି' କହିବି, ମୋର ଆଖିରୁ ପ୍ରେମ ଅଶ୍ରୁ ବହି ଚାଲିବ?",
+                },
+                {
+                    id: 2,
+                    lyric: "ଆର କବେ ନିତାଈ-ଚାଁଦେର କରୁଣା ହଇବେ\nସଂସାର-ବାସନା ମୋର କବେ ତୁଚ୍ଛ ହ'ବେ ।।୨।।",
+                    translation: "ପରମ ଦୟାଳୁ ଭଗବାନ ନିତ୍ୟାନନ୍ଦ ଚନ୍ଦ୍ରଙ୍କର କରୁଣା ମୋ' ଉପରେ କେବେ ହେବ? ତାଙ୍କ କୃପାରୁ ଏହି ସଂସାରର ସମସ୍ତ ବିଷୟ ବାସନା କେବେ ମୋ' ପାଇଁ ତୁଚ୍ଛ ବା ମୂଲ୍ୟହୀନ ହୋଇଯିବ?",
+                },
+                {
+                    id: 3,
+                    lyric: "ବିଷୟ ଛାଡ଼ିୟା କବେ ଶୁଦ୍ଧ ହବେ ମନ\nକବେ ହାମ ହେରବ ଶ୍ରୀ-ବୃନ୍ଦାବନ ।।୩।।",
+                    translation: "ସାଂସାରିକ ବିଷୟ ଆସକ୍ତିରୁ ମୁକ୍ତ ହୋଇ ମୋର ମନ କେବେ ସମ୍ପୂର୍ଣ୍ଣ ଶୁଦ୍ଧ ଓ ନିର୍ମଳ ହେବ? କେବେ ମୁଁ ଏହି ଚର୍ମ ଚକ୍ଷୁରେ ପବିତ୍ର ଶ୍ରୀବୃନ୍ଦାବନ ଧାମର ଅପ୍ରାକୃତ ରୂପ ଦର୍ଶନ କରିପାରିବି?",
+                }
+            ]
+        },
+        published: true,
+        status: 'NOT_DONE'
     }
 ];
 
