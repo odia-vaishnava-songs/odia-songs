@@ -27,7 +27,7 @@ export interface WordMeaning {
 }
 
 export interface SongVerse {
-    id: number;
+    id: number | string;
     lyric: string;
     translation: string;
     wordMeanings?: WordMeaning[];

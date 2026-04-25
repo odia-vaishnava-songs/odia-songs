@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -34,8 +34,9 @@ export const SongsPage: React.FC = () => {
         }
     }, [isDetailView, selectedSong, activeSong]);
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
-    const [fontSize] = useState(18);
+    const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [isToolbeltExpanded, setIsToolbeltExpanded] = useState(false);
     const [isStatsOpen, setIsStatsOpen] = useState(false);
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
     const [statsLoading, setStatsLoading] = useState(false);
@@ -52,6 +53,27 @@ export const SongsPage: React.FC = () => {
     });
     const filterMenuRef = useRef<HTMLDivElement>(null);
     const mainScrollRef = useRef<HTMLElement>(null);
+
+    const toolbeltTimerRef = useRef<any>(null);
+    const menuTimerRef = useRef<any>(null);
+    useEffect(() => {
+        // Auto-hide Toolbelt (3s)
+        if (isToolbeltExpanded) {
+            if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
+            toolbeltTimerRef.current = setTimeout(() => setIsToolbeltExpanded(false), 3000);
+        }
+        
+        // Auto-hide Main Menu (5s)
+        if (isFilterMenuOpen) {
+            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
+            menuTimerRef.current = setTimeout(() => setIsFilterMenuOpen(false), 5000);
+        }
+
+        return () => {
+            if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
+            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
+        };
+    }, [isToolbeltExpanded, isFilterMenuOpen, fontSize, currentThemeKey]);
 
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
@@ -662,7 +684,7 @@ export const SongsPage: React.FC = () => {
                                     <div style={{
                                         whiteSpace: 'pre-wrap',
                                         color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                        fontSize: speakerLine ? '1.5rem' : '1.35rem',
+                                        fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
                                         fontWeight: 600,
                                         fontFamily: 'var(--font-odia-sans)',
                                         lineHeight: '1.6'
@@ -677,7 +699,7 @@ export const SongsPage: React.FC = () => {
                             {verses.map((verse, idx) => verse.translation?.trim() && (
                                 <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
                                     <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
-                                    <div style={{ color: textColor, fontSize: '1.25rem', fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
+                                    <div style={{ color: textColor, fontSize: `${fontSize}px`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
                                 </div>
                             ))}
                         </div>
@@ -815,7 +837,7 @@ export const SongsPage: React.FC = () => {
                             <div style={{
                                 whiteSpace: 'pre-wrap',
                                 color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                fontSize: speakerLine ? '1.5rem' : '1.35rem',
+                                fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
                                 fontWeight: 600,
                                 fontFamily: 'var(--font-odia-sans)',
                                 marginBottom: '1.5rem',
@@ -824,7 +846,7 @@ export const SongsPage: React.FC = () => {
 
                             {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
                                 <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
-                                    <div style={{ lineHeight: '1.8', fontSize: '1rem', color: isNightMode ? '#cbd5e1' : '#334155' }}>
+                                    <div style={{ lineHeight: '1.8', fontSize: `${fontSize * 0.85}px`, color: isNightMode ? '#cbd5e1' : '#334155' }}>
                                         {verse.wordMeanings.map((wm, i) => (
                                             <React.Fragment key={i}>
                                                 <span style={{ fontWeight: 700, color: isNightMode ? theme.color : '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
@@ -834,7 +856,7 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             )}
                             {verse.translation && verse.translation.trim() !== '' && (
-                                <div style={{ color: textColor, fontSize: '1.25rem', paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600, lineHeight: '1.5' }}>{verse.translation}</div>
+                                <div style={{ color: textColor, fontSize: `${fontSize}px`, paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600, lineHeight: '1.5' }}>{verse.translation}</div>
                             )}
                         </div>
                     );
@@ -843,11 +865,7 @@ export const SongsPage: React.FC = () => {
         );
     };
 
-    const getViewModeIcon = () => {
-        if (viewMode === 'combined') return <BookOpen size={24} />;
-        if (viewMode === 'word-to-word') return <BookA size={24} />;
-        return <BookText size={24} />;
-    };
+
 
     const renderChapterNavigation = () => {
         if (!selectedSong) return null;
@@ -917,9 +935,110 @@ export const SongsPage: React.FC = () => {
         );
     };
 
+    const renderReaderToolbelt = () => {
+        const isNightMode = currentThemeKey === 'advaita';
+        const glassBg = isNightMode ? 'rgba(15, 23, 42, 0.7)' : 'rgba(255, 255, 255, 0.6)';
+        const glassBorder = isNightMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+        const textColor = isNightMode ? '#fff' : '#1e293b';
+
+        return (
+            <div 
+                style={{
+                    position: 'fixed',
+                    right: '12px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '12px',
+                    zIndex: 2000,
+                    padding: isToolbeltExpanded ? '12px 6px' : '6px',
+                    background: isToolbeltExpanded ? glassBg : 'transparent',
+                    backdropFilter: isToolbeltExpanded ? 'blur(16px)' : 'none',
+                    WebkitBackdropFilter: isToolbeltExpanded ? 'blur(16px)' : 'none',
+                    borderRadius: '30px',
+                    border: isToolbeltExpanded ? `1px solid ${glassBorder}` : 'none',
+                    boxShadow: isToolbeltExpanded ? '0 12px 40px rgba(0,0,0,0.15)' : 'none',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1)',
+                    width: isToolbeltExpanded ? '50px' : '44px',
+                }}
+            >
+                {/* Font Icon Toggle */}
+                <button 
+                    onClick={() => setIsToolbeltExpanded(!isToolbeltExpanded)}
+                    style={{
+                        background: 'transparent',
+                        color: textColor,
+                        width: '32px',
+                        height: '32px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'all 0.3s ease',
+                        textShadow: isToolbeltExpanded ? 'none' : '0 1px 4px rgba(0,0,0,0.3)'
+                    }}
+                >
+                    <Type size={20} />
+                </button>
+
+                {isToolbeltExpanded && (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                        <button 
+                            onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
+                            style={{ 
+                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff', 
+                                color: textColor, 
+                                width: '32px',
+                                height: '32px',
+                                borderRadius: '50%', 
+                                border: `1px solid ${glassBorder}`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                            }}
+                        >
+                            <Plus size={16} />
+                        </button>
+                        
+                        <div style={{ 
+                            color: textColor, 
+                            fontWeight: 900, 
+                            fontSize: '0.85rem',
+                            fontFamily: 'var(--font-odia-sans)'
+                        }}>
+                            {toOdiaNumber(fontSize)}
+                        </div>
+                        
+                        <button 
+                            onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
+                            style={{ 
+                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff', 
+                                color: textColor, 
+                                width: '32px',
+                                height: '32px',
+                                borderRadius: '50%', 
+                                border: `1px solid ${glassBorder}`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                            }}
+                        >
+                            <Minus size={16} />
+                        </button>
+                    </div>
+                )}
+            </div>
+        );
+    };
+
     if (selectedSong) {
         return (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
+                {renderReaderToolbelt()}
                 <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
                     <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex' }}>
                         <ArrowLeft size={28} strokeWidth={2.5} />
@@ -952,11 +1071,6 @@ export const SongsPage: React.FC = () => {
                                 title={selectedSong.verified ? "Verified" : "Mark as verified"}
                             >
                                 {selectedSong.verified ? <CheckCircle2 size={24} /> : <Circle size={24} />}
-                            </button>
-                        )}
-                        {selectedSong.structuredContent && (
-                            <button onClick={() => setViewMode(viewMode === 'combined' ? 'word-to-word' : viewMode === 'word-to-word' ? 'sequential' : 'combined')} style={{ background: 'transparent', color: '#fff' }}>
-                                {getViewModeIcon()}
                             </button>
                         )}
                     </div>
@@ -1274,6 +1388,28 @@ export const SongsPage: React.FC = () => {
                                     }}
                                 />
                             ))}
+                        </div>
+
+                        <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />
+                        
+                        <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-text-light)', marginBottom: '0.75rem' }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f8fafc', padding: '8px 12px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                            <button 
+                                onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
+                                style={{ background: '#fff', border: '1px solid #cbd5e1', padding: '6px', borderRadius: '8px', cursor: 'pointer', display: 'flex', color: '#64748b' }}
+                            >
+                                <Minus size={16} />
+                            </button>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#334155' }}>
+                                <Type size={16} />
+                                <span style={{ fontWeight: 800, fontSize: '0.95rem' }}>{toOdiaNumber(fontSize)}</span>
+                            </div>
+                            <button 
+                                onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
+                                style={{ background: '#fff', border: '1px solid #cbd5e1', padding: '6px', borderRadius: '8px', cursor: 'pointer', display: 'flex', color: '#64748b' }}
+                            >
+                                <Plus size={16} />
+                            </button>
                         </div>
 
                         <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />

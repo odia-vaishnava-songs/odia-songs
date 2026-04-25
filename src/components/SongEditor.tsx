@@ -64,7 +64,16 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
 
     const addVerse = () => {
         const verses = [...(formData.structuredContent?.verses || [])];
-        const nextId = verses.length > 0 ? Math.max(...verses.map(v => v.id)) + 1 : 1;
+        const lastId = verses[verses.length - 1]?.id;
+        let nextId: string | number = 1;
+        if (typeof lastId === 'number') {
+            nextId = lastId + 1;
+        } else if (typeof lastId === 'string') {
+            const num = parseInt(lastId.split('-').pop() || '0');
+            nextId = num ? num + 1 : verses.length + 1;
+        } else {
+            nextId = verses.length + 1;
+        }
         verses.push({ ...INITIAL_VERSE, id: nextId });
         setFormData({
             ...formData,
@@ -72,7 +81,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
         });
     };
 
-    const removeVerse = (id: number) => {
+    const removeVerse = (id: string | number) => {
         const verses = formData.structuredContent?.verses.filter(v => v.id !== id) || [];
         setFormData({
             ...formData,
@@ -474,7 +483,11 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                                         <input
                                             placeholder="Verse #"
                                             value={verse.id || ''}
-                                            onChange={e => handleVerseChangeByIndex(vIdx, 'id', parseInt(e.target.value) || 0)}
+                                            onChange={e => {
+                                                const val = e.target.value;
+                                                const num = parseInt(val);
+                                                handleVerseChangeByIndex(vIdx, 'id', isNaN(num) || val.includes('-') ? val : num);
+                                            }}
                                             style={{ width: '80px', padding: '6px', borderRadius: '4px', border: '1px solid #ddd', fontWeight: 900, textAlign: 'center' }}
                                         />
                                         <div style={{ display: 'flex', gap: '0.25rem' }}>

@@ -1,0 +1,36 @@
+const fs = require('fs');
+
+let c = fs.readFileSync('scripts/sync_cloud_to_code.cjs', 'utf-8');
+c = c.replace(/const specialMap = \{[\s\S]*?\};/, `const specialMap = {
+    'song-durlabhamanava': 'SONG_DURLABHAMANAVAJANMA_STRUCTURED',
+    'song-gopinatha1': 'SONG_GOPINATHA1_STRUCTURED',
+    'song-gopinatha2': 'SONG_GOPINATHA2_STRUCTURED',
+    'song-gopinatha3': 'SONG_GOPINATHA3_STRUCTURED',
+    'song-doyalnitai': 'SONG_DOYALNITAICAITANYA_STRUCTURED',
+    'song-ohevaisnava': 'SONG_OHEVAISNAVATHAKURA_STRUCTURED',
+    'song-nadiya-godrume': 'SONG_NADIYAGODRUME_STRUCTURED',
+    'song-gurudeva-krpa': 'SONG_GURUDEVAKRPABINDU_STRUCTURED',
+    'song-gurudeva-boro-krpa': 'SONG_GURUDEVABOROKRPADIA_STRUCTURED',
+    'song-krppbsb': 'SONG_KIRUPEPAIBOSEVA_STRUCTURED',
+    'song-pradyumnakrpasindhu': 'SONG_PRADAYUMNAKRPASINDHU_STRUCTURED',
+    'song-sriyugalakisorarupa': 'SONG_SRIYUGALAKISORARUPA_STRUCTURED',
+    'gita-chapter-1': 'SONG_GITA_CHAPTER_1_STRUCTURED',
+    'gita-chapter-2': 'SONG_GITA_CHAPTER_2_STRUCTURED',
+    'gita-chapter-3': 'SONG_GITA_CHAPTER_3_STRUCTURED',
+    'gita-chapter-4': 'SONG_GITA_CHAPTER_4_STRUCTURED',
+    'gita-chapter-5': 'SONG_GITA_CHAPTER_5_STRUCTURED',
+    'gita-chapter-6': 'SONG_GITA_CHAPTER_6_STRUCTURED',
+    'gita-chapter-7': 'SONG_GITA_CHAPTER_7_STRUCTURED',
+    'gita-chapter-8': 'SONG_GITA_CHAPTER_8_STRUCTURED',
+    'gita-chapter-9': 'SONG_GITA_CHAPTER_9_STRUCTURED',
+    'gita-chapter-10': 'SONG_GITA_CHAPTER_10_STRUCTURED',
+    'gita-chapter-11': 'SONG_GITA_CHAPTER_11_STRUCTURED',
+    'gita-chapter-12': 'SONG_GITA_CHAPTER_12_STRUCTURED',
+    'gita-chapter-13': 'SONG_GITA_CHAPTER_13_STRUCTURED',
+    'gita-chapter-14': 'SONG_GITA_CHAPTER_14_STRUCTURED',
+    'gita-chapter-15': 'SONG_GITA_CHAPTER_15_STRUCTURED',
+    'gita-chapter-16': 'SONG_GITA_CHAPTER_16_STRUCTURED',
+    'gita-chapter-17': 'SONG_GITA_CHAPTER_17_STRUCTURED',
+    'gita-chapter-18': 'SONG_GITA_CHAPTER_18_STRUCTURED',
+};`);
+fs.writeFileSync('scripts/sync_cloud_to_code.cjs', c);
