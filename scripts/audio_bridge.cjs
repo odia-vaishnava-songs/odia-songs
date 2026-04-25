@@ -126,13 +126,14 @@ const server = http.createServer(async (req, res) => {
                 console.log(`🎯 TARGET ID: ${targetId}`);
 
                 // 1. Update Supabase
-                const { error } = await supabase.from('songs').upsert({
-                    id: targetId,
-                    audio_url: audioVersions[0].url,
-                    audio_versions: audioVersions,
-                    status: 'COMPLETED',
-                    updated_at: new Date().toISOString()
-                }, { onConflict: 'id' });
+                const { error } = await supabase.from('songs')
+                    .update({
+                        audio_url: audioVersions[0].url,
+                        audio_versions: audioVersions,
+                        status: 'COMPLETED',
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('id', targetId);
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);

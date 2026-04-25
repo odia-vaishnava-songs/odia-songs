@@ -1118,6 +1118,116 @@ export const RESOURCES: Resource[] = [
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Ki_Rupe_Paiba_Seba/Ki_Rupe_Paiba_Seba_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
         vocalist: 'HG Jai Sachinandana Prabhu'
     },
+    {
+        id: 'song-vrndavanaramyasthana',
+        title: 'ବୃନ୍ଦାବନ ରମ୍ୟ ସ୍ଥାନ (Vrndavana Ramya Sthana)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_VRNDAVANARAMYASTHANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-thakuravaisnavagana',
+        title: 'ଠାକୁର ବୈଷ୍ଣବଗଣ (Thakura Vaisnava Gana)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_THAKURAVAISNAVAGANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-hariboloharibolo',
+        title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_HARIBOLOHARIBOLO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-kirupepaiboseva',
+        title: 'କିରୂପେ ପାଇବ ସେବା (Ki Rupe Paibo Seva)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_KIRUPEPAIBOSEVA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-kusumitavrndavane',
+        title: 'କୁସୁମିତ ବୃନ୍ଦାବନେ (Kusumita Vrndavane)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_KUSUMITAVRNDAVANE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-nitaipadakamala',
+        title: 'ନିତାଇ ପଦକମଲ (Nitai Pada Kamala)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_NITAIPADAKAMALA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-radhakrsnapranamora',
+        title: 'ରାଧାକୃଷ୍ଣ ପ୍ରାଣ ମୋର (Radha Krsna Prana Mora)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_RADHAKRSNAPRANAMORA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-srikrsnacaitanyaprabhu',
+        title: 'ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ପ୍ରଭୁ ଦୟା କର ମୋରେ (Sri Krsna Caitanya Prabhu)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_SRIKRSNACAITANYAPRABHU_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-srirupamanjaripada',
+        title: 'ଶ୍ରୀରୂପ ମଞ୍ଜରୀ ପଦ (Sri Rupa Manjari Pada)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_SRIRUPAMANJARIPADA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-suniyachisadhumukhe',
+        title: 'ଶୁନିୟାଛି ସାଧୁ ମୁଖେ ବୋଲେ (Suniyachi Sadhu Mukhe)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_SUNIYACHISADHUMUKHE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-thakuravaisnavapada',
+        title: 'ଠାକୁର ବୈଷ୍ଣବ ପଦ (Thakura Vaisnava Pada)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_THAKURAVAISNAVAPADA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
