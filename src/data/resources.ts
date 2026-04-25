@@ -38,6 +38,14 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
     },
     {
+        id: 'song-jeanilopremadhana',
+        title: 'ଯେ ଅନିଲୋ ପ୍ରେମ ଧନ (Je Anilo Prema Dhana)',
+        category: 'Songs',
+        type: 'html',
+        structuredContent: (Songs as any).SONG_JEANILOPREMADHANA_STRUCTURED,
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
@@ -1072,6 +1080,31 @@ export const RESOURCES: Resource[] = [
                     id: 2,
                     lyric: "ଗୋଲୋକେର ପ୍ରେମଧନ ହରିନାମ-ସଂକୀର୍ତ୍ତନ\nରତି ନା ଜନ୍ମିଲ କେନ ତାୟ\nସଂସାର-ବିଷାନଲେ ଦିବାନିଶି ହିୟା ଜ୍ଵଳେ\nଜୁଡ଼ାଇତେ ନା କୈନୁ ଉପାୟ ।।୨।।",
                     translation: "ଶ୍ରୀହରିନାମ-ସଂକୀର୍ତ୍ତନ ହେଉଛି ଗୋଲୋକ ବୃନ୍ଦାବନର ଶ୍ରେଷ୍ଠ ପ୍ରେମଧନ, କିନ୍ତୁ ଏହା ପ୍ରତି ମୋର କୌଣସି ଅନୁରାଗ ଜନ୍ମିଲା ନାହିଁ। ଏହି ସଂସାରର ବିଷାକ୍ତ ଅଗ୍ନିରେ ମୋର ହୃଦୟ ଦିନରାତି ଜଳୁଛି, କିନ୍ତୁ ଏଥିରୁ ଶାନ୍ତି ପାଇବାର କୌଣସି ଉପାୟ ମୁଁ କଲିନାହିଁ।",
+                }
+            ]
+        },
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-jeanilopremadhana',
+        title: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ (Je Anilo Prema Dhana)',
+        title_odia: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ',
+        title_english: 'Je Anilo Prema Dhana',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: {
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ଯେ ଆନିଲ ପ୍ରେମ-ଧନ କରୁଣା ପ୍ରଚୁର\nହେନ ପ୍ରଭୁ କୋଥା ଗେଲ ଆଚାର୍ଯ୍ୟ-ଠାକୁର ।।୧।।",
+                    translation: "ଯିଏ ନିଜର ଅପାର କରୁଣା ବଳରେ ଗୋଲୋକ ରୂପକ ଶ୍ରେଷ୍ଠ ପ୍ରେମଧନ ଏହି ଜଗତକୁ ଆଣିଥିଲେ, ସେହି ପରମ ଦୟାଳୁ ଆଚାର୍ଯ୍ୟ-ଠାକୁର (ଶ୍ରୀ ନରୋତ୍ତମ ଦାସ ଠାକୁର) ଏବେ କୁଆଡ଼େ ଚାଲିଗଲେ?",
+                },
+                {
+                    id: 2,
+                    lyric: "କାଁହା ମୋର ସ୍ଵରୂପ ରୂପ କାଁହା ସନାତନ\nକାଁହା ଦାସ ରଘୁନାଥ ପତିତ-ପାବନ ।।୨।।",
+                    translation: "ମୋର ପ୍ରିୟ ସ୍ୱରୂପ ଦାମୋଦର ଏବଂ ରୂପ ଗୋସ୍ୱାମୀ କେଉଁଠାରେ ଅଛନ୍ତି? ସନାତନ ଗୋସ୍ୱାମୀ କେଉଁଠାରେ? ଆଉ ସେହି ପତିତ-ପାବନ ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀ ବା ଏବେ କୁଆଡ଼େ ଗଲେ?",
                 }
             ]
         },

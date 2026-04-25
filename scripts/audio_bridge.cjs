@@ -46,13 +46,19 @@ const server = http.createServer(async (req, res) => {
                     const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
                     const searchTokens = searchWords.map(normalize).filter(t => t.length > 0);
                     let matches = [];
-                    const blocks = resources.split('{');
+                    
+                    // IMPROVED BLOCK SPLITTING: Split by 'id:' but keep it in the block
+                    const blocks = resources.split(/(?=id:\s*')/);
                     
                     for (let block of blocks) {
                         const idMatch = block.match(/id:\s*'([^']*)'/);
                         if (!idMatch) continue;
                         const blockId = idMatch[1];
-                        const values = block.match(/'([^']*)'/g) || [];
+                        
+                        // Only check strings in the header part of the object (before structured content)
+                        const header = block.split('structuredContent')[0];
+                        const values = header.match(/'([^']*)'/g) || [];
+                        
                         let blockBestSim = 0;
                         for (let val of values) {
                             const cleanVal = val.replace(/'/g, '');
@@ -64,12 +70,9 @@ const server = http.createServer(async (req, res) => {
                             const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
                             const sim = overlap / Math.max(valTokens.length, searchTokens.length);
                             
-                            if (sim > blockBestSim) {
-                                blockBestSim = sim;
-                                // log(`DEBUG: Found sim ${sim} for block ${blockId} using word "${cleanVal}"`);
-                            }
+                            if (sim > blockBestSim) blockBestSim = sim;
                         }
-                        if (blockBestSim >= 0.5) matches.push({ id: blockId, score: blockBestSim });
+                        if (blockBestSim >= 0.70) matches.push({ id: blockId, score: blockBestSim });
                     }
                     
                     if (matches.length === 0) {
