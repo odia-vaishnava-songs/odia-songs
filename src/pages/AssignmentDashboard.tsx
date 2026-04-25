@@ -69,26 +69,31 @@ export const AssignmentDashboard: React.FC = () => {
 
     const handleCopyAll = () => {
         const date = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-        let text = `📊 *VAISHNAVA SONGS PROGRESS (${date})*\n\n`;
+        let text = `*VAISHNAVA SONGS PROGRESS (${date})\n\n`;
+        text += `Dear devotees, please accept my humble pranams \n\n`;
+        text += `By the mercy of Radhamadhav and Vaishnavas and srila prabhupad, here is the current progress of our Vaishnava song seva:\n\n`;
         
         stats.forEach(([_, data]) => {
             const percent = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
-            text += `👤 *${data.name}*\n`;
-            text += `✅ Done: ${data.completed} | ⏳ Todo: ${data.not_done}\n`;
+            text += `👤 ${data.name}\n`;
+            text += `✅ Completed: ${data.completed} | ⏳ Remaining: ${data.not_done}\n`;
             text += `📈 Progress: ${percent}%\n\n`;
         });
         
-        text += `📚 *Total Library: ${overall.percent}% Completed*`;
+        text += `📚 Overall Library Completion: ${overall.percent}%\n\n`;
+        text += `Kindly requesting all matajis/Prabhujis to please continue this valuable seva at your convenience. If there is any difficulty, please feel free to share.\n\n`;
+        text += `Let us all try to serve together with sincerity for the pleasure of Guru and Gauranga \n\n`;
+        text += `Hare Krishna `;
         
         navigator.clipboard.writeText(text);
-        alert('Full progress report copied to clipboard! (WhatsApp ready)');
+        alert('Devotional progress report copied to clipboard! 🙏');
     };
 
     const handleCopyIndividual = (data: any) => {
         const percent = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
-        const text = `🎵 *SONG SYNC UPDATE*\nEditor: *${data.name}*\n✅ Completed: ${data.completed}\n⏳ To-Do: ${data.not_done}\n📈 Score: ${percent}%`;
+        const text = `🙏 Hare Krishna! Here is your service update:\n\n👤 *${data.name}*\n✅ Completed: ${data.completed}\n⏳ Remaining: ${data.not_done}\n📈 Progress: ${percent}%`;
         navigator.clipboard.writeText(text);
-        alert(`Stats for ${data.name} copied!`);
+        alert(`Devotional update for ${data.name} copied!`);
     };
 
     if (loading || songsLoading) {
