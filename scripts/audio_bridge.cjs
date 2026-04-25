@@ -84,9 +84,6 @@ const server = http.createServer(async (req, res) => {
                     }
                 }
 
-                if (!targetId) throw new Error(`Could not find a match for "${title}". Use Manual ID.`);
-                console.log(`🎯 TARGET ID: ${targetId}`);
-
                 // Fix potential arg swap in user's script
                 const audioVersions = data.versions.map(v => {
                     // If singer looks like a URL, swap them
