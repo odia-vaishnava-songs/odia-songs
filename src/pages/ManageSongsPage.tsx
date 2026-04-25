@@ -153,11 +153,13 @@ export const ManageSongsPage: React.FC = () => {
 
     const filteredSongs = songs.filter(s => {
         const q = searchTerm.toLowerCase().trim();
+        const assignedUserName = assignedUsers.find(u => u.id === s.assigned_to)?.name || '';
         const matchesSearch = 
             (s.title || '').toLowerCase().includes(q) ||
             (s.title_odia || '').toLowerCase().includes(q) ||
             (s.title_english || '').toLowerCase().includes(q) ||
-            s.author?.toLowerCase().includes(q);
+            s.author?.toLowerCase().includes(q) ||
+            assignedUserName.toLowerCase().includes(q);
 
         if (!matchesSearch) return false;
 
@@ -311,7 +313,7 @@ export const ManageSongsPage: React.FC = () => {
                         <div style={{ position: 'relative', marginBottom: '1rem' }}>
                             <Search size={18} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
                             <input
-                                placeholder="Search inventory..."
+                                placeholder="Search by title, author, or editor..."
                                 value={searchTerm}
                                 onChange={e => setSearchTerm(e.target.value)}
                                 style={{ width: '100%', padding: '0.75rem 0.75rem 0.75rem 2.5rem', borderRadius: '12px', border: '1px solid #ddd' }}

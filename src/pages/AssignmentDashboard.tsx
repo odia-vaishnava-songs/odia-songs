@@ -132,6 +132,84 @@ export const AssignmentDashboard: React.FC = () => {
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: '#4A2C40' }}>
                     <Users size={20} />
+                    <h3 style={{ margin: 0, fontWeight: 800 }}>Comparison: All Editors Progress</h3>
+                </div>
+
+                {/* 📊 GLOBAL COMPARISON CHART (ONE VIEW) */}
+                <div style={{ 
+                    background: 'white', 
+                    borderRadius: '24px', 
+                    padding: '2rem', 
+                    marginBottom: '2rem',
+                    border: '1px solid #eee',
+                    boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)'
+                }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {stats.map(([id, data]) => {
+                            const compPercent = (data.completed / data.total) * 100;
+                            const progPercent = (data.in_progress / data.total) * 100;
+                            const notPercent = (data.not_done / data.total) * 100;
+
+                            return (
+                                <div key={id} style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                                    <div style={{ width: '120px', fontSize: '0.9rem', fontWeight: 700, color: '#4A5568', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                        {data.name}
+                                    </div>
+                                    <div style={{ flex: 1, position: 'relative' }}>
+                                        <div style={{ 
+                                            height: '24px', 
+                                            background: '#F1F5F9', 
+                                            borderRadius: '12px', 
+                                            display: 'flex', 
+                                            overflow: 'hidden',
+                                            boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)'
+                                        }}>
+                                            <div title={`${data.completed} Done`} style={{ width: `${compPercent}%`, background: '#22C55E' }} />
+                                            <div title={`${data.in_progress} In Progress`} style={{ width: `${progPercent}%`, background: '#3182CE' }} />
+                                            <div title={`${data.not_done} Pending`} style={{ width: `${notPercent}%`, background: '#CBD5E0' }} />
+                                        </div>
+                                        <div style={{ 
+                                            position: 'absolute', 
+                                            right: '-50px', 
+                                            top: '50%', 
+                                            transform: 'translateY(-50%)', 
+                                            fontSize: '0.8rem', 
+                                            fontWeight: 800, 
+                                            color: '#64748b',
+                                            width: '40px'
+                                        }}>
+                                            {data.total}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    
+                    {/* Legend */}
+                    <div style={{ 
+                        marginTop: '2rem', 
+                        paddingTop: '1.5rem', 
+                        borderTop: '1px solid #eee', 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        gap: '2rem',
+                        flexWrap: 'wrap'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#22C55E' }}>
+                            <div style={{ width: '12px', height: '12px', background: '#22C55E', borderRadius: '3px' }} /> Proofread
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#3182CE' }}>
+                            <div style={{ width: '12px', height: '12px', background: '#3182CE', borderRadius: '3px' }} /> In Progress
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#94A3B8' }}>
+                            <div style={{ width: '12px', height: '12px', background: '#CBD5E0', borderRadius: '3px' }} /> Pending
+                        </div>
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: '#4A2C40' }}>
+                    <Users size={20} />
                     <h3 style={{ margin: 0, fontWeight: 800 }}>Performance by Editor</h3>
                 </div>
 
