@@ -68,7 +68,7 @@ const server = http.createServer(async (req, res) => {
                             
                             if (sim > blockBestSim) blockBestSim = sim;
                         }
-                        if (blockBestSim >= 0.7) matches.push({ id: blockId, score: blockBestSim });
+                        if (blockBestSim >= 0.5) matches.push({ id: blockId, score: blockBestSim });
                     }
                     if (matches.length > 0) {
                         matches.sort((a,b) => b.score - a.score);
