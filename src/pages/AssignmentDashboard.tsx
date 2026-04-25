@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSongs } from '../hooks/useSongs';
 import { supabase } from '../supabase/config';
-import { ArrowLeft, Users, CheckCircle2, Clock, PlayCircle, BarChart3, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Users, CheckCircle2, Clock, PlayCircle, BarChart3, TrendingUp, Copy, Share2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { User } from '../types';
 
@@ -67,6 +67,30 @@ export const AssignmentDashboard: React.FC = () => {
         return { total, completed, in_progress, not_done, percent: total > 0 ? Math.round((completed / total) * 100) : 0 };
     }, [songs]);
 
+    const handleCopyAll = () => {
+        const date = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+        let text = `📊 *VAISHNAVA SONGS PROGRESS (${date})*\n\n`;
+        
+        stats.forEach(([_, data]) => {
+            const percent = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
+            text += `👤 *${data.name}*\n`;
+            text += `✅ Done: ${data.completed} | ⏳ Todo: ${data.not_done}\n`;
+            text += `📈 Progress: ${percent}%\n\n`;
+        });
+        
+        text += `📚 *Total Library: ${overall.percent}% Completed*`;
+        
+        navigator.clipboard.writeText(text);
+        alert('Full progress report copied to clipboard! (WhatsApp ready)');
+    };
+
+    const handleCopyIndividual = (data: any) => {
+        const percent = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
+        const text = `🎵 *SONG SYNC UPDATE*\nEditor: *${data.name}*\n✅ Completed: ${data.completed}\n⏳ To-Do: ${data.not_done}\n📈 Score: ${percent}%`;
+        navigator.clipboard.writeText(text);
+        alert(`Stats for ${data.name} copied!`);
+    };
+
     if (loading || songsLoading) {
         return (
             <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -130,9 +154,22 @@ export const AssignmentDashboard: React.FC = () => {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: '#4A2C40' }}>
-                    <Users size={20} />
-                    <h3 style={{ margin: 0, fontWeight: 800 }}>Comparison: All Editors Progress</h3>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#4A2C40' }}>
+                        <Users size={20} />
+                        <h3 style={{ margin: 0, fontWeight: 800 }}>Comparison: All Editors Progress</h3>
+                    </div>
+                    <button 
+                        onClick={handleCopyAll}
+                        style={{ 
+                            background: '#25D366', color: 'white', border: 'none', padding: '0.5rem 1rem', 
+                            borderRadius: '12px', fontSize: '0.75rem', fontWeight: 800, 
+                            display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer',
+                            boxShadow: '0 4px 6px rgba(37, 211, 102, 0.2)' 
+                        }}
+                    >
+                        <Share2 size={14} /> Copy for WhatsApp
+                    </button>
                 </div>
 
                 {/* 📊 GLOBAL COMPARISON CHART (ONE VIEW) */}
@@ -185,27 +222,6 @@ export const AssignmentDashboard: React.FC = () => {
                             );
                         })}
                     </div>
-                    
-                    {/* Legend */}
-                    <div style={{ 
-                        marginTop: '2rem', 
-                        paddingTop: '1.5rem', 
-                        borderTop: '1px solid #eee', 
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        gap: '2rem',
-                        flexWrap: 'wrap'
-                    }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#22C55E' }}>
-                            <div style={{ width: '12px', height: '12px', background: '#22C55E', borderRadius: '3px' }} /> Proofread
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#3182CE' }}>
-                            <div style={{ width: '12px', height: '12px', background: '#3182CE', borderRadius: '3px' }} /> In Progress
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', fontWeight: 600, color: '#94A3B8' }}>
-                            <div style={{ width: '12px', height: '12px', background: '#CBD5E0', borderRadius: '3px' }} /> Pending
-                        </div>
-                    </div>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: '#4A2C40' }}>
@@ -214,7 +230,7 @@ export const AssignmentDashboard: React.FC = () => {
                 </div>
 
                 {/* 📊 EDITOR CARDS WITH CHARTS */}
-                <div style={{ display: 'grid', gap: '1.2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.2rem' }}>
                     {stats.map(([id, data]) => {
                         const compPercent = (data.completed / data.total) * 100;
                         const progPercent = (data.in_progress / data.total) * 100;
@@ -226,60 +242,70 @@ export const AssignmentDashboard: React.FC = () => {
                                 borderRadius: '20px', 
                                 padding: '1.5rem', 
                                 border: '1px solid #eee',
-                                boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)'
+                                boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)',
+                                display: 'flex',
+                                flexDirection: 'column'
                             }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.2rem' }}>
                                     <div>
                                         <div style={{ fontWeight: 800, fontSize: '1.1rem', color: '#2D3748' }}>{data.name}</div>
                                         <div style={{ fontSize: '0.85rem', color: '#718096' }}>{data.total} Songs Assigned</div>
                                     </div>
-                                    <div style={{ 
-                                        background: '#F7FAFC', 
-                                        padding: '4px 12px', 
-                                        borderRadius: '20px', 
-                                        fontSize: '0.8rem', 
-                                        fontWeight: 700, 
-                                        color: '#4A5568',
-                                        border: '1px solid #E2E8F0'
-                                    }}>
-                                        {Math.round(compPercent)}% Completed
+                                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                        <button 
+                                            onClick={() => handleCopyIndividual(data)}
+                                            style={{ background: '#f0fdf4', color: '#166534', border: '1px solid #bbf7d0', padding: '6px', borderRadius: '8px', cursor: 'pointer', display: 'flex' }}
+                                            title="Copy Individual Stats"
+                                        >
+                                            <Copy size={16} />
+                                        </button>
+                                        <div style={{ 
+                                            background: '#F7FAFC', 
+                                            padding: '4px 12px', 
+                                            borderRadius: '20px', 
+                                            fontSize: '0.8rem', 
+                                            fontWeight: 700, 
+                                            color: '#4A5568',
+                                            border: '1px solid #E2E8F0'
+                                        }}>
+                                            {Math.round(compPercent)}%
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Stacked Progress Chart */}
                                 <div style={{ 
-                                    height: '32px', 
+                                    height: '16px', 
                                     background: '#F1F5F9', 
-                                    borderRadius: '16px', 
+                                    borderRadius: '8px', 
                                     display: 'flex', 
                                     overflow: 'hidden', 
                                     marginBottom: '1rem',
-                                    border: '4px solid #fff',
-                                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05)'
+                                    boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)'
                                 }}>
                                     <div 
                                         title={`${data.completed} Completed`}
-                                        style={{ width: `${compPercent}%`, background: '#22C55E', transition: 'width 0.5s ease' }} 
+                                        style={{ width: `${compPercent}%`, background: '#22C55E' }} 
                                     />
                                     <div 
                                         title={`${data.in_progress} In Progress`}
-                                        style={{ width: `${progPercent}%`, background: '#3182CE', transition: 'width 0.5s ease' }} 
+                                        style={{ width: `${progPercent}%`, background: '#3182CE' }} 
                                     />
                                     <div 
                                         title={`${data.not_done} Pending`}
-                                        style={{ width: `${notPercent}%`, background: '#CBD5E0', transition: 'width 0.5s ease' }} 
+                                        style={{ width: `${notPercent}%`, background: '#CBD5E0' }} 
                                     />
                                 </div>
 
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: '#166534', fontWeight: 700 }}>
-                                        <CheckCircle2 size={14} /> {data.completed} Done
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.7rem', color: '#166534', fontWeight: 700 }}>
+                                        <CheckCircle2 size={12} /> {data.completed}
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: '#1E40AF', fontWeight: 700 }}>
-                                        <PlayCircle size={14} /> {data.in_progress} Active
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.7rem', color: '#1E40AF', fontWeight: 700 }}>
+                                        <PlayCircle size={12} /> {data.in_progress}
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: '#475569', fontWeight: 700 }}>
-                                        <Clock size={14} /> {data.not_done} To Do
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.7rem', color: '#475569', fontWeight: 700 }}>
+                                        <Clock size={12} /> {data.not_done}
                                     </div>
                                 </div>
                             </div>

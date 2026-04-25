@@ -32,6 +32,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [confirmingLogout, setConfirmingLogout] = useState(false);
+    const [myStats, setMyStats] = useState<{ assigned: number, completed: number } | null>(null);
 
     // Reset view when closed
     useEffect(() => {
@@ -48,8 +49,22 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                 setSearchQuery('');
             }, 300);
             return () => clearTimeout(timer);
+        } else if (user) {
+            // Fetch stats for current user when drawer opens
+            const fetchMyStats = async () => {
+                const { data, error } = await supabase
+                    .from('songs')
+                    .select('status, verified')
+                    .eq('assigned_to', user.id);
+                
+                if (!error && data) {
+                    const completed = data.filter(s => s.status === 'COMPLETED' || s.verified).length;
+                    setMyStats({ assigned: data.length, completed });
+                }
+            };
+            fetchMyStats();
         }
-    }, [isOpen]);
+    }, [isOpen, user]);
 
 
 
@@ -261,6 +276,37 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                 <MenuItem icon={<Shield size={20} />} label="Privacy Policy" onClick={() => { navigate('/privacy-policy'); onClose(); }} />
                                 <MenuItem icon={<MessageCircle size={20} />} label="Feedback / Queries" onClick={() => window.location.href = "mailto:support@odia.app"} />
                                 <MenuItem icon={<Heart size={20} />} label="Donate" onClick={() => alert("Donation feature coming soon!")} />
+
+                                {user && myStats && myStats.assigned > 0 && (
+                                    <div style={{
+                                        margin: '1rem 0',
+                                        padding: '1.2rem',
+                                        background: 'linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 100%)',
+                                        borderRadius: '16px',
+                                        border: '1px solid #FFE082',
+                                        boxShadow: '0 4px 12px rgba(255, 153, 0, 0.1)'
+                                    }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
+                                            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#B7791F', textTransform: 'uppercase', letterSpacing: '0.5px' }}>My Contribution</div>
+                                            <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#718096', backgroundColor: 'white', padding: '2px 8px', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+                                                {myStats.completed}/{myStats.assigned} Done
+                                            </div>
+                                        </div>
+                                        
+                                        <div style={{ position: 'relative', height: '10px', background: '#EDF2F7', borderRadius: '5px', overflow: 'hidden', marginBottom: '0.5rem' }}>
+                                            <div style={{ 
+                                                width: `${(myStats.completed / myStats.assigned) * 100}%`, 
+                                                height: '100%', 
+                                                background: 'linear-gradient(90deg, #F6AD55, #ED8936)',
+                                                borderRadius: '5px',
+                                                transition: 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+                                            }} />
+                                        </div>
+                                        <div style={{ textAlign: 'right', fontSize: '0.85rem', fontWeight: 900, color: '#DD6B20' }}>
+                                            {Math.round((myStats.completed / myStats.assigned) * 100)}%
+                                        </div>
+                                    </div>
+                                )}
 
                                 {(() => {
                                     const role = user?.role?.toLowerCase();
