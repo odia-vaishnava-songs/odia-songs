@@ -26,6 +26,26 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
+    if (req.method === 'GET' && req.url === '/list') {
+        try {
+            const resources = fs.readFileSync(RESOURCES_PATH, 'utf8');
+            const list = [];
+            const blocks = resources.split(/(?=id:\s*')/);
+            for (let block of blocks) {
+                const idMatch = block.match(/id:\s*'([^']*)'/);
+                const titleMatch = block.match(/title:\s*'([^']*)'/);
+                if (idMatch && titleMatch) {
+                    list.push({ id: idMatch[1], title: titleMatch[1] });
+                }
+            }
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(list));
+        } catch (e) {
+            res.writeHead(500); res.end(e.message);
+        }
+        return;
+    }
+
     if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
 
     if (req.method === 'POST' && req.url === '/sync') {
@@ -94,49 +114,12 @@ const server = http.createServer(async (req, res) => {
                 });
 
                 if (!targetId) {
-                    // AUTO-CREATION LOGIC
-                    console.log(`✨ NEW SONG DETECTED: "${title}"`);
-                    const safeId = `song-${normalize(title).substring(0, 30)}`;
-                    
-                    // 1. Upsert to Supabase
-                    const { error: upsertError } = await supabase.from('songs').upsert({
-                        id: safeId,
-                        title: title,
-                        title_english: title,
-                        audio_url: audioVersions[0].url,
-                        audio_versions: audioVersions,
-                        status: 'COMPLETED',
-                        published: true,
-                        updated_at: new Date().toISOString()
-                    }, { onConflict: 'id' });
-
-                    if (upsertError) throw upsertError;
-                    console.log(`✅ Supabase Upserted: ${safeId}`);
-
-                    // 2. Append to Local resources.ts
-                    const newEntry = `\n    {
-        id: '${safeId}',
-        title: '${title}',
-        title_english: '${title}',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        published: true,
-        status: 'COMPLETED',
-        audioUrl: '${audioVersions[0].url}',
-        vocalist: '${audioVersions[0].label}'
-    },`;
-
-                    // Insert before the closing bracket of the array
-                    const finalOutput = resources.replace(/\];\s*export const CATEGORIES/, (match) => {
-                        return `${newEntry}\n${match}`;
-                    });
-                    
-                    fs.writeFileSync(RESOURCES_PATH, finalOutput);
-                    console.log(`✅ Local file updated with NEW song: ${safeId}`);
-                    
-                    res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ success: true, id: safeId, created: true }));
+                    console.log(`❌ MATCH FAIL: Could not find existing song for "${title}"`);
+                    res.writeHead(404, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ 
+                        error: 'No matching song found.', 
+                        suggestion: 'Please use the manual selection in the console script.'
+                    }));
                     return;
                 }
 

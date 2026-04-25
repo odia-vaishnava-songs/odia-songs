@@ -790,18 +790,7 @@ export const RESOURCES: Resource[] = [
             { label: "HG Jai Sachinandana Prabhu (B)", url: "https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F42%20Boro%20Sukher%20khabor%20P-80.MP3" }
         ]
     },
-    {
-        id: 'song-atmanivedanatuwapade',
-        title: 'ତୁମ ପଦ ପଲ୍ଲବ (Tuwa Pade Minoti Mor)',
-        title_odia: 'ତୁମ ପଦ ପଲ୍ଲବ',
-        title_english: 'Tuwa Pade Minoti Mor',
-        category: 'Songs',
-        type: 'html',
-        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
-        structuredContent: (Songs as any).SONG_TUWAPADEMINOTIMOR_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
+
     {
         id: 'song-gopinatmamanivedana',
         title: 'ଗୋପୀନାଥ (Part 1): ମମ ନିବେଦନ ଶୁନ (Gopinath Part 1)',
@@ -1114,6 +1103,21 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
 
+
+
+
+    {
+        id: 'song-krppbsb',
+        title: 'Ki Rupe Paibo Seva',
+        title_english: 'Ki Rupe Paibo Seva',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        published: true,
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Ki_Rupe_Paiba_Seba/Ki_Rupe_Paiba_Seba_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        vocalist: 'HG Jai Sachinandana Prabhu'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
