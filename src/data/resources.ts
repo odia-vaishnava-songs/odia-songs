@@ -1031,7 +1031,27 @@ export const RESOURCES: Resource[] = [
             ]
         },
         published: true,
-        status: 'NOT_DONE'
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-hariharayenamah',
+        title: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ (Hari Haraye Namah)',
+        title_odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ',
+        title_english: 'Hari Haraye Namah Krsna Yadavaya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: {
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ\nଯାଦବାୟ ମାଧବାୟ କେଶବାୟ ନମଃ ।।୧।।",
+                    translation: "ଶ୍ରୀହରି ଓ ଯାଦବକୁଳତିଳକ ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ମୋର ସାଷ୍ଟାଙ୍ଗ ପ୍ରଣିପାତ। ଯାଦବ, ମାଧବ ଓ କେଶବଙ୍କୁ ମୋର ବାରମ୍ବାର ନମସ୍କାର।",
+                }
+            ]
+        },
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
