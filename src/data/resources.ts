@@ -926,7 +926,7 @@ export const RESOURCES: Resource[] = [
         vocalist: 'HG Jai Sachinanadana Prabhu'
     },
     {
-        id: 'song-jayajayasrikrsnacaitanya',
+        id: 'song-jjsrkrsnctnntnnd',
         title: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ (Jaya Jaya Sri Krsna Caitanya)',
         title_odia: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ',
         title_english: 'Jaya Jaya Sri Krsna Caitanya Nityananda',
@@ -943,7 +943,7 @@ export const RESOURCES: Resource[] = [
                 {
                     id: 2,
                     lyric: "କୃପା କରି' ସବେ ମିଲି ସକଳ କରୁଣା\nଅଧମ ପତିତ ଜନେ ନା କରିହ ବଞ୍ଚନା ।।୨।।",
-                    translation: "ହେ ପ୍ରଭୁମାନେ! ଆପଣ ସମସ୍ତେ ମିଳିତ ହୋଇ ମୋ' ଉପରେ କରୁଣା କରନ୍ତୁ। ମୁଁ ଅତି ଅଧମ ଓ ପତିତ, ଦୟାକରି ମୋତେ ଆପଣଙ୍କ କୃପାରୁ ବଞ୍ଚିତ କରନ୍ତୁ ନାହିଁ।",
+                    translation: "ହେ ପ୍ରଭୁମାନେ! ଆପଣ ସମସ୍ତେ ମିଳିତ ହୋଇ ମୋ' ଉପରେ କରୁଣା କରନ୍ତୁ। ମୁଁ ଅତି ଅଧମ ଓ ପତିତ, ଦୟาକରି ମୋତେ ଆପଣଙ୍କ କୃପାରୁ ବଞ୍ଚିତ କରନ୍ତୁ ନାହିଁ।",
                 }
             ]
         },
