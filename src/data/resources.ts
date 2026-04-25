@@ -926,6 +926,33 @@ export const RESOURCES: Resource[] = [
         vocalist: 'HG Jai Sachinanadana Prabhu'
     },
     {
+        id: 'song-jayajayasrikrsnacaitanya',
+        title: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ (Jaya Jaya Sri Krsna Caitanya)',
+        title_odia: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ',
+        title_english: 'Jaya Jaya Sri Krsna Caitanya Nityananda',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: {
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ଜୟ ଜୟ ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ;\nଜୟାଦ୍ୱୈତ-ଚନ୍ଦ୍ର ଜୟ ଗୌର ଭକ୍ତ ବୃନ୍ଦ ।।୧।।",
+                    translation: "ହେ ପ୍ରଭୁ ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ, ଆପଣଙ୍କର ଜୟ ହେଉ! ହେ ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ, ଆପଣଙ୍କର ଜୟ ହେଉ! ଶ୍ରୀ ଅଦ୍ୱୈତ ଆଚାର୍ଯ୍ୟ ଏବଂ ସମସ୍ତ ଗୌର-ଭକ୍ତବୃନ୍ଦଙ୍କର ଜୟ ହେଉ!",
+                },
+                {
+                    id: 2,
+                    lyric: "କୃପା କରି' ସବେ ମିଲି ସକଳ କରୁଣା\nଅଧମ ପତିତ ଜନେ ନା କରିହ ବଞ୍ଚନା ।।୨।।",
+                    translation: "ହେ ପ୍ରଭୁମାନେ! ଆପଣ ସମସ୍ତେ ମିଳିତ ହୋଇ ମୋ' ଉପରେ କରୁଣା କରନ୍ତୁ। ମୁଁ ଅତି ଅଧମ ଓ ପତିତ, ଦୟାକରି ମୋତେ ଆପଣଙ୍କ କୃପାରୁ ବଞ୍ଚିତ କରନ୍ତୁ ନାହିଁ।",
+                }
+            ]
+        },
+        published: true,
+        status: 'COMPLETED',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        vocalist: 'HG Jai Sachinandana Prabhu'
+    },
+    {
         id: 'song-dhanamornityananda',
         title: 'ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ (Dhana Mor Nityananda)',
         title_odia: 'ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ',
@@ -1086,53 +1113,7 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
-    {
-        id: 'song-jeanilopremadhana',
-        title: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ (Je Anilo Prema Dhana)',
-        title_odia: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ',
-        title_english: 'Je Anilo Prema Dhana',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        structuredContent: {
-            verses: [
-                {
-                    id: 1,
-                    lyric: "ଯେ ଆନିଲ ପ୍ରେମ-ଧନ କରୁଣା ପ୍ରଚୁର\nହେନ ପ୍ରଭୁ କୋଥା ଗେଲ ଆଚାର୍ଯ୍ୟ-ଠାକୁର ।।୧।।",
-                    translation: "ଯିଏ ନିଜର ଅପାର କରୁଣା ବଳରେ ଗୋଲୋକ ରୂପକ ଶ୍ରେଷ୍ଠ ପ୍ରେମଧନ ଏହି ଜଗତକୁ ଆଣିଥିଲେ, ସେହି ପରମ ଦୟାଳୁ ଆଚାର୍ଯ୍ୟ-ଠାକୁର (ଶ୍ରୀ ନରୋତ୍ତମ ଦାସ ଠାକୁର) ଏବେ କୁଆଡ଼େ ଚାଲିଗଲେ?",
-                },
-                {
-                    id: 2,
-                    lyric: "କାଁହା ମୋର ସ୍ଵରୂପ ରୂପ କାଁହା ସନାତନ\nକାଁହା ଦାସ ରଘୁନାଥ ପତିତ-ପାବନ ।।୨।।",
-                    translation: "ମୋର ପ୍ରିୟ ସ୍ୱରୂପ ଦାମୋଦର ଏବଂ ରୂପ ଗୋସ୍ୱାମୀ କେଉଁଠାରେ ଅଛନ୍ତି? ସନାତନ ଗୋସ୍ୱାମୀ କେଉଁଠାରେ? ଆଉ ସେହି ପତିତ-ପାବନ ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀ ବା ଏବେ କୁଆଡ଼େ ଗଲେ?",
-                }
-            ]
-        },
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-jayajayasrikrsnacaitanya',
-        title: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ (Jaya Jaya Sri Krsna Caitanya)',
-        title_odia: 'ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ',
-        title_english: 'Jaya Jaya Sri Krsna Caitanya Nityananda',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        structuredContent: {
-            verses: [
-                {
-                    id: 1,
-                    lyric: "ଜୟ ଜୟ ଶ୍ରୀ-କୃଷ୍ଣ-ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ;\nଜୟାଦ୍ଵୈତ-ଚନ୍ଦ୍ର ଜୟ ଗୌର ଭକ୍ତ ବୃନ୍ଦ ।।୧।।",
-                    translation: "ହେ ପ୍ରଭୁ ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ, ଆପଣଙ୍କର ଜୟ ହେଉ। ହେ ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ, ଆପଣଙ୍କର ଜୟ ହେଉ। ଶ୍ରୀ ଅଦ୍ୱୈତ ଚନ୍ଦ୍ର ଏବଂ ସମସ୍ତ ଗୌର-ଭକ୍ତବୃନ୍ଦଙ୍କର ଜୟ ହେଉ।",
-                }
-            ]
-        },
-        published: true,
-        status: 'COMPLETED',
-        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
-        vocalist: 'HG Jai Sachinandana Prabhu'
-    }
+
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
