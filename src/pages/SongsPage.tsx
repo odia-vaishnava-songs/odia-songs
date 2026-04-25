@@ -42,7 +42,6 @@ export const SongsPage: React.FC = () => {
     const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
-    const [readingSongId, setReadingSongId] = useState<string | null>(null);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
