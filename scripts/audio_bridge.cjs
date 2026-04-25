@@ -96,12 +96,63 @@ const server = http.createServer(async (req, res) => {
                     return { label: v.singer, url: v.url };
                 });
 
+                if (!targetId) {
+                    // AUTO-CREATION LOGIC
+                    console.log(`✨ NEW SONG DETECTED: "${title}"`);
+                    const safeId = `song-${normalize(title).substring(0, 30)}`;
+                    
+                    // 1. Upsert to Supabase
+                    const { error: upsertError } = await supabase.from('songs').upsert({
+                        id: safeId,
+                        title: title,
+                        title_english: title,
+                        audio_url: audioVersions[0].url,
+                        audio_versions: audioVersions,
+                        status: 'COMPLETED',
+                        published: true,
+                        updated_at: new Date().toISOString()
+                    }, { onConflict: 'id' });
+
+                    if (upsertError) throw upsertError;
+                    console.log(`✅ Supabase Upserted: ${safeId}`);
+
+                    // 2. Append to Local resources.ts
+                    const newEntry = `\n    {
+        id: '${safeId}',
+        title: '${title}',
+        title_english: '${title}',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        published: true,
+        status: 'COMPLETED',
+        audioUrl: '${audioVersions[0].url}',
+        vocalist: '${audioVersions[0].label}'
+    },`;
+
+                    // Insert before the closing bracket of the array
+                    const finalOutput = resources.replace(/\];\s*export const CATEGORIES/, (match) => {
+                        return `${newEntry}\n${match}`;
+                    });
+                    
+                    fs.writeFileSync(RESOURCES_PATH, finalOutput);
+                    console.log(`✅ Local file updated with NEW song: ${safeId}`);
+                    
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true, id: safeId, created: true }));
+                    return;
+                }
+
+                console.log(`🎯 TARGET ID: ${targetId}`);
+
                 // 1. Update Supabase
-                const { error } = await supabase.from('songs').update({
+                const { error } = await supabase.from('songs').upsert({
+                    id: targetId,
                     audio_url: audioVersions[0].url,
                     audio_versions: audioVersions,
+                    status: 'COMPLETED',
                     updated_at: new Date().toISOString()
-                }).eq('id', targetId);
+                }, { onConflict: 'id' });
 
                 if (error) throw error;
                 console.log(`✅ Supabase Updated.`);
