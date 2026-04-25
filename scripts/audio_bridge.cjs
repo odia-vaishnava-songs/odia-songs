@@ -44,7 +44,7 @@ const server = http.createServer(async (req, res) => {
                 if (!targetId && title) {
                     // SNIPER MATCHING LOGIC
                     const searchWords = title.split(/[\s-]+/).filter(w => w.length >= 1);
-                    const searchTokens = searchWords.map(normalize);
+                    const searchTokens = searchWords.map(normalize).filter(t => t.length > 0);
                     let matches = [];
                     const blocks = resources.split('{');
                     
@@ -58,12 +58,17 @@ const server = http.createServer(async (req, res) => {
                             const cleanVal = val.replace(/'/g, '');
                             const valWords = cleanVal.split(/[\s-]/).filter(t => t.toLowerCase() !== 'song');
                             const valTokens = valWords.map(normalize).filter(w => w.length > 0);
-                            if (valTokens.length !== searchTokens.length) continue;
-                            const overlap = searchTokens.filter((st, idx) => valTokens[idx] === st).length;
-                            const sim = overlap / searchTokens.length;
+                            
+                            if (valTokens.length === 0 || searchTokens.length === 0) continue;
+                            
+                            // Calculate overlap based on the shorter length to be safe
+                            const minLen = Math.min(valTokens.length, searchTokens.length);
+                            const overlap = searchTokens.filter(st => valTokens.includes(st)).length;
+                            const sim = overlap / Math.max(valTokens.length, searchTokens.length);
+                            
                             if (sim > blockBestSim) blockBestSim = sim;
                         }
-                        if (blockBestSim >= 0.8) matches.push({ id: blockId, score: blockBestSim });
+                        if (blockBestSim >= 0.7) matches.push({ id: blockId, score: blockBestSim });
                     }
                     if (matches.length > 0) {
                         matches.sort((a,b) => b.score - a.score);
