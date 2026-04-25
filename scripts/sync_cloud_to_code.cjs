@@ -11,8 +11,13 @@ const RESOURCES_PATH = path.join(__dirname, '../src/data/resources.ts');
 const OUTPUT_PATH = path.join(__dirname, '../src/data/songsContent.ts');
 const BACKUP_PATH = path.join(__dirname, '../src/data/songsContent.ts'); // Backup is the file itself for surgical recovery
 
+const { createBackup } = require('./backup_manager.cjs');
+
 async function syncCloudToCode() {
     console.log('--- Cloud-to-Code Sync Started ---');
+    
+    // Safety Snapshot
+    createBackup();
 
     console.log('1. Reading resources.ts...');
     const resourcesContent = fs.readFileSync(RESOURCES_PATH, 'utf-8');
@@ -139,8 +144,22 @@ async function syncCloudToCode() {
         }
     });
 
+    const finalContent = outputLines.join('\n');
+    
+    // SAFETY GUARD: If the file is significantly smaller than it used to be (e.g. less than 500KB), 
+    // it likely means the database is empty or something went wrong. Prevent overwrite.
+    const SIZE_THRESHOLD = 500000;
+    if (finalContent.length < SIZE_THRESHOLD && fs.existsSync(OUTPUT_PATH)) {
+        const oldSize = fs.statSync(OUTPUT_PATH).size;
+        if (oldSize > SIZE_THRESHOLD) {
+            console.error('🛑 SAFETY SHIELD ACTIVATED: The new Gita/Song content is suspiciously small (%d bytes) compared to the current file (%d bytes).', finalContent.length, oldSize);
+            console.error('❌ Overwrite aborted to protect your proofread data. Check your Supabase connection or use the "run_recovery.cjs" script.');
+            process.exit(1);
+        }
+    }
+
     console.log(`4. Writing to ${OUTPUT_PATH}...`);
-    fs.writeFileSync(OUTPUT_PATH, outputLines.join('\n'), 'utf8');
+    fs.writeFileSync(OUTPUT_PATH, finalContent, 'utf8');
 
     console.log('✅ Local Sync Complete: Source code is up-to-date with remote phone edits.');
     return true;
