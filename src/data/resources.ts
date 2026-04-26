@@ -1296,6 +1296,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-krsnahoitecaturmukha',
+        title: 'କୃଷ୍ଣ ହଇତେ ଚତୁର୍ମୁଖ (Krsna Hoite Catur-mukha)',
+        title_odia: 'କୃଷ୍ଣ ହଇତେ ଚତୁର୍ମୁଖ',
+        title_english: 'Krsna Hoite Catur-mukha',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ ସରସ୍ଵତୀ ଠାକୁର (Srila Bhakti Siddhanta Sarasvati Thakura)',
+        structuredContent: (Songs as any).SONG_KRSNAHOITECATURMUKHA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
