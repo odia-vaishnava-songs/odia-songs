@@ -69,18 +69,11 @@ export const SongsPage: React.FC = () => {
             if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
             toolbeltTimerRef.current = setTimeout(() => setIsToolbeltExpanded(false), 3000);
         }
-        
-        // Auto-hide Main Menu (5s)
-        if (isFilterMenuOpen) {
-            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
-            menuTimerRef.current = setTimeout(() => setIsFilterMenuOpen(false), 5000);
-        }
 
         return () => {
             if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
-            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
         };
-    }, [isToolbeltExpanded, isFilterMenuOpen, fontSize, currentThemeKey]);
+    }, [isToolbeltExpanded]);
 
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
@@ -1366,18 +1359,31 @@ export const SongsPage: React.FC = () => {
                     <SlidersHorizontal size={20} />
                 </button>
                 {isFilterMenuOpen && (
-                    <div ref={filterMenuRef} style={{
-                        position: 'absolute',
-                        top: '70px',
-                        right: '1rem',
-                        background: 'white',
-                        padding: '1.25rem',
-                        borderRadius: 'var(--radius-lg)',
-                        boxShadow: 'var(--shadow-lg)',
-                        zIndex: 100,
-                        color: 'var(--color-text-main)',
-                        minWidth: '200px'
-                    }}>
+                    <>
+                        <div 
+                            onClick={() => setIsFilterMenuOpen(false)}
+                            style={{
+                                position: 'fixed',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                zIndex: 90,
+                                background: 'transparent'
+                            }}
+                        />
+                        <div ref={filterMenuRef} style={{
+                            position: 'absolute',
+                            top: '70px',
+                            right: '1rem',
+                            background: 'white',
+                            padding: '1.25rem',
+                            borderRadius: 'var(--radius-lg)',
+                            boxShadow: 'var(--shadow-lg)',
+                            zIndex: 100,
+                            color: 'var(--color-text-main)',
+                            minWidth: '200px'
+                        }}>
                         <button 
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -1599,9 +1605,15 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </button>
                     </div>
-                )}
-            </header>
-            <main style={{
+                </>
+            )}
+        </header>
+            <main 
+                ref={mainScrollRef}
+                onScroll={() => {
+                    if (isFilterMenuOpen) setIsFilterMenuOpen(false);
+                }}
+                style={{
                 flex: 1,
                 overflowY: 'auto',
                 padding: '1rem 0',
