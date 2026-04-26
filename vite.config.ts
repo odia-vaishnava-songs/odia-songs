@@ -38,6 +38,10 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
+      },
+      workbox: {
+        maximumFileSizeToCacheInBytes: 4194304, // 4 MiB
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       }
     }),
     {
