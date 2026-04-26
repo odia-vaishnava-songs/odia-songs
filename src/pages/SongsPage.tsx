@@ -42,7 +42,7 @@ export const SongsPage: React.FC = () => {
     const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
-    const [isThemeListExpanded, setIsThemeListExpanded] = useState(true);
+    const [isThemeListExpanded, setIsThemeListExpanded] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
@@ -57,6 +57,12 @@ export const SongsPage: React.FC = () => {
 
     const toolbeltTimerRef = useRef<any>(null);
     const menuTimerRef = useRef<any>(null);
+    useEffect(() => {
+        if (!isFilterMenuOpen) {
+            setIsThemeListExpanded(false);
+        }
+    }, [isFilterMenuOpen]);
+
     useEffect(() => {
         // Auto-hide Toolbelt (3s)
         if (isToolbeltExpanded) {
