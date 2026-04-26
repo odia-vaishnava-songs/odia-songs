@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus, ChevronDown } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -42,6 +42,7 @@ export const SongsPage: React.FC = () => {
     const [statsLoading, setStatsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
     const [isListening, setIsListening] = useState(false);
+    const [isThemeListExpanded, setIsThemeListExpanded] = useState(true);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
         try {
             const saved = localStorage.getItem('recent-song-ids');
@@ -1371,48 +1372,171 @@ export const SongsPage: React.FC = () => {
                         color: 'var(--color-text-main)',
                         minWidth: '200px'
                     }}>
-                        <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-text-light)', marginBottom: '1rem' }}>ଥିମ୍ ବାଛନ୍ତୁ (Choose Theme)</div>
-                        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsThemeListExpanded(!isThemeListExpanded);
+                            }}
+                            style={{ 
+                                width: '100%',
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'space-between',
+                                background: 'transparent',
+                                border: 'none',
+                                padding: '0 0 1rem 0',
+                                cursor: 'pointer',
+                                color: 'var(--color-text-light)',
+                                textAlign: 'left'
+                            }}
+                        >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: theme.color }} />
+                                <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଥିମ୍ ବାଛନ୍ତୁ (Choose Theme)</span>
+                            </div>
+                            <ChevronDown size={18} style={{ 
+                                transform: isThemeListExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                                transition: 'transform 0.3s ease',
+                                color: theme.color
+                            }} />
+                        </button>
+
+                        <div style={{ 
+                            display: 'flex', 
+                            flexDirection: 'column',
+                            gap: '10px',
+                            maxHeight: isThemeListExpanded ? '400px' : '0',
+                            overflow: 'hidden',
+                            marginBottom: isThemeListExpanded ? '1.5rem' : '0',
+                            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1)',
+                            opacity: isThemeListExpanded ? 1 : 0
+                        }}>
                             {Object.entries(TATTVA_THEMES).map(([k, v]) => (
                                 <button
                                     key={k}
                                     onClick={() => handleSetTheme(k)}
                                     style={{
-                                        width: '36px',
-                                        height: '36px',
-                                        borderRadius: '50%',
-                                        background: v.color,
-                                        border: currentThemeKey === k ? '3px solid white' : '1px solid #ddd',
-                                        boxShadow: currentThemeKey === k ? `0 0 0 2px ${v.color}` : 'none',
-                                        transition: 'all 0.2s ease'
+                                        width: '100%',
+                                        height: '58px',
+                                        borderRadius: '16px',
+                                        background: currentThemeKey === k ? `${v.color}10` : '#fff',
+                                        border: currentThemeKey === k ? `2px solid ${v.color}` : '1.5px solid #f1f5f9',
+                                        boxShadow: currentThemeKey === k ? `0 4px 12px ${v.color}15` : 'none',
+                                        transition: 'all 0.3s ease',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '14px',
+                                        padding: '0 14px',
+                                        cursor: 'pointer'
                                     }}
-                                />
+                                >
+                                    <div style={{ 
+                                        width: '36px', 
+                                        height: '36px', 
+                                        borderRadius: '10px', 
+                                        background: v.gradient,
+                                        flexShrink: 0,
+                                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                                    }} />
+                                    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', flex: 1 }}>
+                                        <span style={{ 
+                                            fontSize: '0.95rem', 
+                                            fontWeight: 800,
+                                            color: currentThemeKey === k ? v.color : '#1e293b',
+                                            letterSpacing: '0.3px'
+                                        }}>{v.name}</span>
+                                        <span style={{ 
+                                            fontSize: '0.65rem', 
+                                            color: '#94a3b8', 
+                                            fontWeight: 600,
+                                            textTransform: 'uppercase'
+                                        }}>{k === 'advaita' ? 'Eternal Dark' : 'Vedic Vibrance'}</span>
+                                    </div>
+                                    {currentThemeKey === k && (
+                                        <div style={{ 
+                                            background: v.color, 
+                                            color: '#fff', 
+                                            borderRadius: '50%', 
+                                            width: '22px', 
+                                            height: '22px', 
+                                            display: 'flex', 
+                                            alignItems: 'center', 
+                                            justifyContent: 'center'
+                                        }}>
+                                            <CheckCircle2 size={14} strokeWidth={3} />
+                                        </div>
+                                    )}
+                                </button>
                             ))}
                         </div>
 
-                        <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />
+                        <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
                         
-                        <div style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--color-text-light)', marginBottom: '0.75rem' }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</div>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#f8fafc', padding: '8px 12px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                        <div style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            gap: '8px',
+                            color: 'var(--color-text-light)',
+                            marginBottom: '1rem',
+                            padding: '0 4px'
+                        }}>
+                            <Type size={18} color={theme.color} />
+                            <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</span>
+                        </div>
+
+                        <div style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'space-between', 
+                            background: '#f8fafc', 
+                            padding: '8px', 
+                            borderRadius: '16px', 
+                            border: '1px solid #e2e8f0',
+                            marginBottom: '1.5rem'
+                        }}>
                             <button 
                                 onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
-                                style={{ background: '#fff', border: '1px solid #cbd5e1', padding: '6px', borderRadius: '8px', cursor: 'pointer', display: 'flex', color: '#64748b' }}
+                                style={{ 
+                                    background: '#fff', 
+                                    border: 'none', 
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '12px', 
+                                    cursor: 'pointer', 
+                                    display: 'flex', 
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#64748b',
+                                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                }}
                             >
-                                <Minus size={16} />
+                                <Minus size={20} />
                             </button>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#334155' }}>
-                                <Type size={16} />
-                                <span style={{ fontWeight: 800, fontSize: '0.95rem' }}>{toOdiaNumber(fontSize)}</span>
+                            <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                <span style={{ fontWeight: 900, fontSize: '1.1rem', color: theme.color }}>{toOdiaNumber(fontSize)}</span>
+                                <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>Points</span>
                             </div>
                             <button 
                                 onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
-                                style={{ background: '#fff', border: '1px solid #cbd5e1', padding: '6px', borderRadius: '8px', cursor: 'pointer', display: 'flex', color: '#64748b' }}
+                                style={{ 
+                                    background: '#fff', 
+                                    border: 'none', 
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '12px', 
+                                    cursor: 'pointer', 
+                                    display: 'flex', 
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#64748b',
+                                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                }}
                             >
-                                <Plus size={16} />
+                                <Plus size={20} />
                             </button>
                         </div>
 
-                        <div style={{ height: '1px', backgroundColor: '#eee', margin: '1rem 0' }} />
+                        <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
 
                         <button
                             onClick={() => {
@@ -1422,25 +1546,51 @@ export const SongsPage: React.FC = () => {
                             disabled={statsLoading}
                             style={{
                                 width: '100%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                padding: '0.75rem',
-                                backgroundColor: '#FFF8F1',
-                                border: '1px solid #FFE7D1',
-                                borderRadius: '12px',
-                                color: '#4A2B0F',
-                                fontWeight: 600,
-                                fontSize: '0.9rem',
+                                position: 'relative',
+                                background: theme.gradient,
+                                border: 'none',
+                                padding: '12px',
+                                borderRadius: '16px',
                                 cursor: 'pointer',
-                                opacity: statsLoading ? 0.7 : 1
+                                overflow: 'hidden',
+                                boxShadow: `0 8px 20px ${theme.color}30`
                             }}
                         >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <BarChart3 size={18} color="#FF9933" />
-                                <span>{statsLoading ? 'Loading...' : 'Library Stats'}</span>
+                            <div style={{ 
+                                position: 'absolute', 
+                                top: 0, 
+                                left: 0, 
+                                right: 0, 
+                                bottom: 0, 
+                                background: 'linear-gradient(rgba(255,255,255,0.15), transparent)',
+                                pointerEvents: 'none'
+                             }} />
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                    <div style={{ 
+                                        background: 'rgba(255,255,255,0.2)', 
+                                        padding: '8px', 
+                                        borderRadius: '12px',
+                                        color: '#fff'
+                                    }}>
+                                        <BarChart3 size={20} />
+                                    </div>
+                                    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                                        <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.9rem' }}>Library Stats</span>
+                                        <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.65rem', fontWeight: 600 }}>ANALYTICS INSIGHTS</span>
+                                    </div>
+                                </div>
+                                <div style={{ 
+                                    background: '#fff', 
+                                    color: theme.color, 
+                                    fontWeight: 900, 
+                                    padding: '4px 10px', 
+                                    borderRadius: '8px',
+                                    fontSize: '0.85rem'
+                                }}>
+                                    {toOdiaNumber(songs.length)}
+                                </div>
                             </div>
-                            <span style={{ fontSize: '0.7rem', backgroundColor: '#FF9933', color: 'white', padding: '2px 6px', borderRadius: '4px' }}>{songs.length}</span>
                         </button>
                     </div>
                 )}
