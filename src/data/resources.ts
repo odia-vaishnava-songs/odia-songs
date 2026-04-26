@@ -1236,6 +1236,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-krsnatavapunyahabebhai',
+        title: 'କୃଷ୍ଣ ତବ ପୁଣ୍ୟ ହବେ ଭାଇ (Krsna Tava Punya Habe Bhai)',
+        title_odia: 'କୃଷ୍ଣ ତବ ପୁଣ୍ୟ ହବେ ଭାଇ',
+        title_english: 'Krsna Tava Punya Habe Bhai',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଏ.ସି. ଭକ୍ତିବେଦାନ୍ତ ସ୍ୱାମୀ (Srila Prabhupada)',
+        structuredContent: (Songs as any).SONG_KRSNATAVAPUNYAHABEBHAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
