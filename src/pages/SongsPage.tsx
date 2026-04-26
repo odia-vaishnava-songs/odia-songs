@@ -56,7 +56,6 @@ export const SongsPage: React.FC = () => {
     const mainScrollRef = useRef<HTMLElement>(null);
 
     const toolbeltTimerRef = useRef<any>(null);
-    const menuTimerRef = useRef<any>(null);
     useEffect(() => {
         if (!isFilterMenuOpen) {
             setIsThemeListExpanded(false);
