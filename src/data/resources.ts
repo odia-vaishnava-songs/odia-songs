@@ -94,6 +94,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_TUMISARVESWARESVARAVRAJENDRAKUMAR_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -121,6 +122,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_VIDYARAVILASE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -132,6 +134,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_OHEVAISNAVATHAKURA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -143,6 +146,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NITAINAMHATE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -154,6 +158,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NARADAMUNI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -165,6 +170,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -176,6 +182,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_YASOMATINANDANA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -187,6 +194,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_VIBHAVARISESA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -198,6 +206,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_UDILOARUNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -209,6 +218,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SUDDHABHAKATACARANARENU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -220,6 +230,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SRIKRSNACAITANYAPRABHUJIVE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -239,6 +250,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SARVASVATOMARCARENE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -250,6 +262,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -425,6 +438,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATPART2_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -436,6 +450,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATPART3_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -447,6 +462,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GURUDEVAKRPABINDU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -458,6 +474,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GURUDEVABOROKRPAKORI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -469,6 +486,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KABESRICHAITANYAMORE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -480,6 +498,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KIJANIKIBALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -503,6 +522,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_OREMANABHALONAHILAGE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -514,6 +534,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_MAMAMANAMANDIRE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -525,6 +546,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_MANASADEHOGEHOYOKICHU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -799,6 +821,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATMAMANIVEDANA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -810,6 +833,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_BHAJAREBHAJAREAMAR_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Bhajare_Bhajare.mp3',
         vocalist: 'HH Gour Govinda Swami',
         audioVersions: [
@@ -842,6 +866,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_EKHANBUJHINUPRABHU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -853,6 +878,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_EMONADURMATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -864,6 +890,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GAYGORAMADHURA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -875,6 +902,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GAYGORACAND_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -886,6 +914,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KRPAKOROVAISNAVA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
