@@ -1284,6 +1284,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-paramakarunapahuduijana',
+        title: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇଜନ (Parama Karuna Pahu Dui Jana)',
+        title_odia: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇଜନ',
+        title_english: 'Parama Karuna Pahu Dui Jana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_PARAMAKARUNAPAHUDUIJANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
