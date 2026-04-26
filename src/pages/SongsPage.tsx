@@ -69,18 +69,11 @@ export const SongsPage: React.FC = () => {
             if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
             toolbeltTimerRef.current = setTimeout(() => setIsToolbeltExpanded(false), 3000);
         }
-        
-        // Auto-hide Main Menu (5s)
-        if (isFilterMenuOpen) {
-            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
-            menuTimerRef.current = setTimeout(() => setIsFilterMenuOpen(false), 5000);
-        }
 
         return () => {
             if (toolbeltTimerRef.current) clearTimeout(toolbeltTimerRef.current);
-            if (menuTimerRef.current) clearTimeout(menuTimerRef.current);
         };
-    }, [isToolbeltExpanded, isFilterMenuOpen, fontSize, currentThemeKey]);
+    }, [isToolbeltExpanded]);
 
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
@@ -1366,18 +1359,31 @@ export const SongsPage: React.FC = () => {
                     <SlidersHorizontal size={20} />
                 </button>
                 {isFilterMenuOpen && (
-                    <div ref={filterMenuRef} style={{
-                        position: 'absolute',
-                        top: '70px',
-                        right: '1rem',
-                        background: 'white',
-                        padding: '1.25rem',
-                        borderRadius: 'var(--radius-lg)',
-                        boxShadow: 'var(--shadow-lg)',
-                        zIndex: 100,
-                        color: 'var(--color-text-main)',
-                        minWidth: '200px'
-                    }}>
+                    <>
+                        <div 
+                            onClick={() => setIsFilterMenuOpen(false)}
+                            style={{
+                                position: 'fixed',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                zIndex: 90,
+                                background: 'transparent'
+                            }}
+                        />
+                        <div ref={filterMenuRef} style={{
+                            position: 'absolute',
+                            top: '70px',
+                            right: '1rem',
+                            background: 'white',
+                            padding: '1.25rem',
+                            borderRadius: 'var(--radius-lg)',
+                            boxShadow: 'var(--shadow-lg)',
+                            zIndex: 100,
+                            color: 'var(--color-text-main)',
+                            minWidth: '200px'
+                        }}>
                         <button 
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -1550,16 +1556,25 @@ export const SongsPage: React.FC = () => {
                                 fetchAuthorStats();
                             }}
                             disabled={statsLoading}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = `0 12px 24px ${theme.color}40`;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = `0 8px 20px ${theme.color}30`;
+                            }}
                             style={{
                                 width: '100%',
                                 position: 'relative',
                                 background: theme.gradient,
                                 border: 'none',
-                                padding: '12px',
-                                borderRadius: '16px',
+                                padding: '14px',
+                                borderRadius: '20px',
                                 cursor: 'pointer',
                                 overflow: 'hidden',
-                                boxShadow: `0 8px 20px ${theme.color}30`
+                                boxShadow: `0 8px 20px ${theme.color}30`,
+                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                             }}
                         >
                             <div style={{ 
@@ -1568,40 +1583,53 @@ export const SongsPage: React.FC = () => {
                                 left: 0, 
                                 right: 0, 
                                 bottom: 0, 
-                                background: 'linear-gradient(rgba(255,255,255,0.15), transparent)',
+                                background: 'linear-gradient(135deg, rgba(255,255,255,0.2), transparent)',
                                 pointerEvents: 'none'
                              }} />
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1, gap: '8px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                     <div style={{ 
-                                        background: 'rgba(255,255,255,0.2)', 
-                                        padding: '8px', 
-                                        borderRadius: '12px',
-                                        color: '#fff'
+                                        background: 'rgba(255,255,255,0.25)', 
+                                        padding: '10px', 
+                                        borderRadius: '14px',
+                                        color: '#fff',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backdropFilter: 'blur(4px)'
                                     }}>
-                                        <BarChart3 size={20} />
+                                        <BarChart3 size={20} strokeWidth={2.5} />
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                                        <span style={{ color: '#fff', fontWeight: 800, fontSize: '0.9rem' }}>Library Stats</span>
-                                        <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.65rem', fontWeight: 600 }}>ANALYTICS INSIGHTS</span>
+                                        <span style={{ color: '#fff', fontWeight: 900, fontSize: '0.95rem', letterSpacing: '0.2px' }}>Library Stats</span>
+                                        <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.6px', textTransform: 'uppercase' }}>Analytics Insights</span>
                                     </div>
                                 </div>
                                 <div style={{ 
-                                    background: '#fff', 
+                                    background: 'rgba(255,255,255,1)', 
                                     color: theme.color, 
                                     fontWeight: 900, 
-                                    padding: '4px 10px', 
-                                    borderRadius: '8px',
-                                    fontSize: '0.85rem'
+                                    padding: '6px 12px', 
+                                    borderRadius: '12px',
+                                    fontSize: '0.9rem',
+                                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                                    minWidth: '45px',
+                                    textAlign: 'center'
                                 }}>
                                     {toOdiaNumber(songs.length)}
                                 </div>
                             </div>
                         </button>
                     </div>
-                )}
-            </header>
-            <main style={{
+                </>
+            )}
+        </header>
+            <main 
+                ref={mainScrollRef}
+                onScroll={() => {
+                    if (isFilterMenuOpen) setIsFilterMenuOpen(false);
+                }}
+                style={{
                 flex: 1,
                 overflowY: 'auto',
                 padding: '1rem 0',
