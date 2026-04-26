@@ -1272,6 +1272,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-nitaigunamani',
+        title: 'ନିତାଇ ଗୁଣମଣି (Nitai Guna Mani)',
+        title_odia: 'ନିତାଇ ଗୁଣମଣି',
+        title_english: 'Nitai Guna Mani',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_NITAIGUNAMANI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
