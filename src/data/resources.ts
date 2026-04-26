@@ -1248,6 +1248,30 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-avatarasaragoraavatara',
+        title: 'ଅବତାର ସାର ଗୋରା-ଅବତାର (Avatara Sara Gora-Avatara)',
+        title_odia: 'ଅବତାର ସାର ଗୋରା-ଅବତାର',
+        title_english: 'Avatara Sara Gora-Avatara',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_AVATARASARAGORAAVATARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-akrodhaparamananda',
+        title: 'ଅକ୍ରୋଧ ପରମାନନ୍ଦ (Akrodha Paramananda)',
+        title_odia: 'ଅକ୍ରୋଧ ପରମାନନ୍ଦ',
+        title_english: 'Akrodha Paramananda',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_AKRODHAPARAMANANDA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
