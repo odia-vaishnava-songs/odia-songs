@@ -1308,6 +1308,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-dustamana',
+        title: 'ଦୁଷ୍ଟ ମନ (Dusta Mana)',
+        title_odia: 'ଦୁଷ୍ଟ ମନ',
+        title_english: 'Dusta Mana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ ସରସ୍ଵତୀ ଠାକୁର (Srila Bhakti Siddhanta Sarasvati Thakura)',
+        structuredContent: (Songs as any).SONG_DUSTAMANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
