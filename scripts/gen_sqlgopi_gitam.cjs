@@ -3,15 +3,15 @@ const fs = require('fs');
 const json = fs.readFileSync('gopi_gitam_structured.json', 'utf8');
 
 const sql = `
--- Sync Script for Gopi Gitam
+-- Updated Sync Script for Gopi Gitam (Search by First Line)
 INSERT INTO songs (
     id, title, category, type, description, author, structured_content, status, published
 ) VALUES (
     'song-gopigitam',
-    'ଗୋପୀ ଗୀତମ୍ (Gopī Gītam)',
+    'ଜୟତି ତେଽଧିକଂ ଜନ୍ମନା ବ୍ରଜଃ (Jayati Te ’Dhikam Janmanā Vrajaḥ)',
     'Songs',
     'html',
-    'ଶ୍ରୀ ଶୁକଦେବ ଗୋସ୍ୱାମୀ ବିରଚିତ ଗୋପୀ ଗୀତମ୍',
+    'ଗୋପୀ ଗୀତମ୍ (Gopi Gitam)',
     'ଶ୍ରୀ ଶୁକଦେବ ଗୋସ୍ୱାମୀ (Śrī Śukadeva Gosvāmī)',
     $json$${json}$json$::jsonb,
     'COMPLETED',
@@ -29,4 +29,4 @@ ON CONFLICT (id) DO UPDATE SET
 `;
 
 fs.writeFileSync('sync_gopi_gitam.sql', sql);
-console.log('SQL generated for Gopi Gitam');
+console.log('Updated SQL generated for Gopi Gitam');
