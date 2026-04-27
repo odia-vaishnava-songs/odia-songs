@@ -1,0 +1,13 @@
+
+    {
+        id: 'song-gaurangatumimore',
+        title: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନ ଛାଡ଼ିହ (Gauranga Tumi More Doya Na Chadhio)',
+        title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନ ଛାଡ଼ିହ',
+        title_english: 'Gauranga Tumi More Doya Na Chadhio',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_GAURANGATUMIMORE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
