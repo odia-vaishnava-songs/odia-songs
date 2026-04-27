@@ -1320,6 +1320,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-damodarastakam',
+        title: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍ (Sri Damodarastakam)',
+        title_odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍',
+        title_english: 'Sri Damodarastakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'ସତ୍ୟବ୍ରତ ମୁନି (Satyavrata Muni)',
+        structuredContent: (Songs as any).SONG_DAMODARASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
