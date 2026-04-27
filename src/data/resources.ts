@@ -1355,6 +1355,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-jayajayajagannathasacira',
+        title: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ (Jaya Jaya Jagannatha Sacira Nandana)',
+        title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ',
+        title_english: 'Jaya Jaya Jagannatha Sacira Nandana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_JAYAJAYAJAGANNATHASACIRA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
