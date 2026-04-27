@@ -1367,6 +1367,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-yadigauranahoito',
+        title: 'ଯଦି ଗୌର ନା ହଇତ (Yadi Gaura Na Hoito)',
+        title_odia: 'ଯଦି ଗୌର ନା ହଇତ',
+        title_english: 'Yadi Gaura Na Hoito',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_YADIGAURANAHOITO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
