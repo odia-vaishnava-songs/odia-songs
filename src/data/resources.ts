@@ -1379,6 +1379,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-radhejayajayamadhavadayite',
+        title: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ (Radhe Jaya Jaya Madhava Dayite)',
+        title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ',
+        title_english: 'Radhe Jaya Jaya Madhava Dayite',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ରୂପ ଗୋସ୍ୱାମୀ (Srila Rupa Gosvami)',
+        structuredContent: (Songs as any).SONG_RADHEJAYAJAYAMADHAVADAYITE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
