@@ -22,7 +22,6 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ଗୀତା ମାହାତ୍ମ୍ୟ |',
-        content: (Songs as any).GITA_MAHATMYA_ODIA,
         structuredContent: (Songs as any).SONG_GITAMAHATMYA_STRUCTURED,
         author: 'Adi Shankaracharya'
     },
@@ -32,7 +31,6 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭୁଲିୟା ତୋମାରେ - ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ପ୍ରସିଦ୍ଧ ଭଜନ |',
-        content: (Songs as any).BHULIYA_TOMARE_ODIA,
         structuredContent: (Songs as any).SONG_BHULIYATOMARE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhuliya_Tomare/Bhuliya_Tomare_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
