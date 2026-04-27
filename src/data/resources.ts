@@ -1330,6 +1330,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-gopigitam',
+        title: 'ଗୋପୀ ଗୀତମ୍ (Gopī Gītam)',
+        title_odia: 'ଗୋପୀ ଗୀତମ୍',
+        title_english: 'Gopi Gitam',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀ ଶୁକଦେବ ଗୋସ୍ୱାମୀ (Śrī Śukadeva Gosvāmī)',
+        structuredContent: (Songs as any).SONG_GOPIGITAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
