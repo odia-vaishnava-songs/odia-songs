@@ -30748,7 +30748,7 @@ export const SONG_MADANAMOHANATANU_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ପରମ ଚଞ୍୍ଚଳ",
-                    "meaning": "ଅତ୍ୟନ୍ତ ଚଞ୍ଚଳ"
+                    "meaning": "ଅତ୍ୟନ୍ତ ଚଞ୍୍ଚଳ"
                 }
             ]
         },
