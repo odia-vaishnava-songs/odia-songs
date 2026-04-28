@@ -1393,15 +1393,4 @@ export const RESOURCES: Resource[] = [
     },
 ];
 
-export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'\n    {
-        id: 'song-jayaradhejayakrsna',
-        title: 'ଜୟ ରାଧେ ଜୟ କୃଷ୍ଣ (Jaya Radhe Jaya Krsna)',
-        title_odia: 'ଜୟ ରାଧେ, ଜୟ କୃଷ୍ଣ, ଜୟ ବୃନ୍ଦାବନ',
-        title_english: 'Jaya Radhe Jaya Krsna Jaya Vrndavana',
-        category: 'Songs',
-        type: 'html',
-        author: 'କୃଷ୍ଣ ଦାସ ଗୋସ୍ଵାମୀ',
-        structuredContent: (Songs as any).SONG_JAYARADHEJAYAKRSNA_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    }\n];\n
+export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
