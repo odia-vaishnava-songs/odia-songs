@@ -1404,6 +1404,19 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-yamunastakam',
+        title: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ (Bhṛtur Antakasya Pattane)',
+        title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ',
+        title_english: 'Bhrtr Antakasya Pattane',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ରୂପ ଗୋସ୍ଵାମୀ (Srila Rupa Gosvami)',
+        description: 'ଯମୁନାଷ୍ଟକମ୍ (Yamunastakam)',
+        structuredContent: (Songs as any).SONG_YAMUNASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
