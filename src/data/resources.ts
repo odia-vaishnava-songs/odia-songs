@@ -1417,6 +1417,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-jayanarasimhasrinarasimha',
+        title: 'ଜୟ ନୃସିଂହ ଶ୍ରୀ ନୃସିଂହ (Jaya Narasimha Sri Narasimha)',
+        title_odia: 'ଜୟ ନୃସିଂହ ଶ୍ରୀ ନୃସିଂହ',
+        title_english: 'Jaya Narasimha Sri Narasimha',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବ୍ୟାସଦେବ (Vyasadeva)',
+        structuredContent: (Songs as any).SONG_JAYANARASIMHASRINARASIMHA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
