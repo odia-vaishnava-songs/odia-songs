@@ -1441,6 +1441,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-namonamahtulasi',
+        title: 'ନମୋ ନମଃ ତୁଲସୀ କୃଷ୍ଣ-ପ୍ରେୟସୀ (Namo Namah Tulasi Krsna Preyasi)',
+        title_odia: 'ନମୋ ନମଃ ତୁଲସୀ କୃଷ୍ଣ-ପ୍ରେୟସୀ',
+        title_english: 'Namo Namah Tulasi Krsna Preyasi',
+        category: 'Songs',
+        type: 'html',
+        author: 'କୃଷ୍ଣ ଦାସ (Krsna Dasa)',
+        structuredContent: (Songs as any).SONG_NAMONOMAH_TULASI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
