@@ -1429,6 +1429,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-namastenarasimhaya',
+        title: 'ନମସ୍ତେ ନରସିଂହାୟ (Namaste Narasimhaya)',
+        title_odia: 'ନମସ୍ତେ ନରସିଂହାୟ',
+        title_english: 'Namaste Narasimhaya',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବ୍ୟାସଦେବ (Vyasadeva)',
+        structuredContent: (Songs as any).SONG_NAMASTENARASIMHAYA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
