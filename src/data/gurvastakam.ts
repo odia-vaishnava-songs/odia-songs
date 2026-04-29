@@ -1,4 +1,4 @@
-import { StructuredSong } from '../types';
+import type { StructuredSong } from '../types';
 
 export const SONG_GURVASTAKAM_STRUCTURED: StructuredSong = {
     "verses": [

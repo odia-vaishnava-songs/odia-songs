@@ -1,4 +1,5 @@
 import * as Songs from './songsContent';
+import * as TempleSongs from './temple_songs_data';
 import type { Resource } from '../types';
 
 export const RESOURCES: Resource[] = [
@@ -1470,6 +1471,58 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-shikshashtakam',
+        title: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍ (Śrī Śikṣāṣṭakam)',
+        title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍',
+        title_english: 'Shikshashtakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
+        tags: ['Temple'],
+        structuredContent: (TempleSongs as any).SONG_SHIKSHASHTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gauraarati',
+        title: 'ଗୌର ଆରତି (Gaura Ārati)',
+        title_odia: 'ଗୌର ଆରତି',
+        title_english: 'Gaura Arati',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: ['Temple'],
+        structuredContent: (TempleSongs as any).SONG_GAURAARATI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gurupuja',
+        title: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ (Śrī Guru Caraṇa Padma)',
+        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ',
+        title_english: 'Guru Puja',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ନରୋତ୍ତମ ଦାସ ଠାକୁର',
+        tags: ['Temple'],
+        structuredContent: (TempleSongs as any).SONG_GURUPUJA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gurvastakam',
+        title: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍ (Śrī Gurv-aṣṭakam)',
+        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍',
+        title_english: 'Gurvastakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
+        tags: ['Temple'],
+        structuredContent: (TempleSongs as any).SONG_GURVASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    }
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
