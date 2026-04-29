@@ -435,13 +435,13 @@ export const SongsPage: React.FC = () => {
         });
 
         return (
-            <div style={{ padding: '0 0 2rem', maxWidth: '1000px', margin: '0 auto' }}>
+            <div style={{ padding: '0 0 0.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 {/* 🚀 QUICK NAVIGATION SLIDER (Requested) */}
                 <div 
                     className={isSliderInteracting ? 'interacting' : ''}
                     style={{ 
                         position: 'relative', 
-                        marginBottom: '1rem',
+                        marginBottom: '0.5rem',
                         padding: '0 4px',
                         zIndex: 500
                     }}
@@ -595,6 +595,197 @@ export const SongsPage: React.FC = () => {
                     </button>
                 </div>
 
+            </div>
+        );
+    };
+
+    const renderFeaturedCategories = () => {
+        if (searchQuery || selectedSong || activeTab !== 'gita') return null;
+
+        const cardStyle: React.CSSProperties = {
+            background: '#ffffff',
+            border: '1px solid #e2e8f0',
+            padding: '0.75rem',
+            borderRadius: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            width: '130px',
+            minWidth: '130px',
+            height: '170px',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            position: 'relative'
+        };
+
+        const iconContainerStyle: React.CSSProperties = {
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#f8fafc',
+            borderRadius: '10px',
+            margin: '2px 0'
+        };
+
+        return (
+            <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
+                <div style={{ 
+                    display: 'flex',
+                    gap: '16px',
+                    overflowX: 'auto',
+                    paddingBottom: '15px',
+                    scrollbarWidth: 'none' // Hide scrollbar for cleaner look
+                }}>
+                    {/* CARD 1: TEMPLE SONGS */}
+                    <div 
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery('Temple');
+                        }}
+                        style={{
+                            ...cardStyle,
+                            background: 'linear-gradient(135deg, #ff9d00, #ff5e00)',
+                            border: 'none',
+                            boxShadow: '0 8px 20px rgba(255, 126, 0, 0.25)',
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+                            e.currentTarget.style.boxShadow = '0 12px 30px rgba(255, 126, 0, 0.4)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                            e.currentTarget.style.boxShadow = '0 8px 20px rgba(255, 126, 0, 0.25)';
+                        }}
+                    >
+                        <span style={{ 
+                            fontSize: '0.85rem', 
+                            fontWeight: 900, 
+                            color: '#fff',
+                            fontFamily: 'var(--font-odia-sans)',
+                            textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                        }}>ମନ୍ଦିର ଗୀତ</span>
+                        
+                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
+                            <div style={{ 
+                                background: '#fff', 
+                                padding: '10px', 
+                                borderRadius: '12px',
+                                color: '#ff5e00',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                            }}>
+                                <Sparkles size={24} strokeWidth={2.5} />
+                            </div>
+                        </div>
+
+                        <span style={{ 
+                            fontSize: '0.65rem', 
+                            fontWeight: 900, 
+                            color: 'rgba(255,255,255,0.9)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px'
+                        }}>Temple Songs →</span>
+                    </div>
+
+                    {/* CARD 2: PRANAMA MANTRAS */}
+                    <div 
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery('Pranama');
+                        }}
+                        style={{
+                            ...cardStyle,
+                            background: 'linear-gradient(135deg, #0084ff, #00c6ff)',
+                            border: 'none',
+                            boxShadow: '0 8px 20px rgba(0, 132, 255, 0.25)',
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
+                            e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 132, 255, 0.4)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                            e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 132, 255, 0.25)';
+                        }}
+                    >
+                        <span style={{ 
+                            fontSize: '0.85rem', 
+                            fontWeight: 900, 
+                            color: '#fff',
+                            fontFamily: 'var(--font-odia-sans)',
+                            textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                        }}>ପ୍ରଣାମ ମନ୍ତ୍ର</span>
+                        
+                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
+                            <div style={{ 
+                                background: '#fff', 
+                                padding: '10px', 
+                                borderRadius: '12px',
+                                color: '#0084ff',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                            }}>
+                                <Mic size={24} strokeWidth={2.5} />
+                            </div>
+                        </div>
+
+                        <span style={{ 
+                            fontSize: '0.65rem', 
+                            fontWeight: 900, 
+                            color: 'rgba(255,255,255,0.9)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px'
+                        }}>Pranama Mantras →</span>
+                    </div>
+
+                    {/* CARD 3: RECENTLY ADDED */}
+                    <div 
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery(''); // Show all
+                        }}
+                        style={{
+                            ...cardStyle,
+                            background: '#1e293b',
+                            border: '1.5px dashed rgba(255,255,255,0.2)',
+                            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-6px)';
+                            e.currentTarget.style.background = '#0f172a';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.background = '#1e293b';
+                        }}
+                    >
+                        <span style={{ 
+                            fontSize: '0.85rem', 
+                            fontWeight: 900, 
+                            color: '#f1f5f9',
+                            fontFamily: 'var(--font-odia-sans)'
+                        }}>ଅନ୍ୟାନ୍ୟ</span>
+                        
+                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.05)' }}>
+                            <div style={{ 
+                                background: 'rgba(255,255,255,0.1)', 
+                                padding: '10px', 
+                                borderRadius: '12px',
+                                color: '#fff',
+                                border: '1px solid rgba(255,255,255,0.2)'
+                            }}>
+                                <Plus size={24} strokeWidth={3} />
+                            </div>
+                        </div>
+
+                        <span style={{ 
+                            fontSize: '0.65rem', 
+                            fontWeight: 900, 
+                            color: '#94a3b8',
+                            textTransform: 'uppercase'
+                        }}>View All →</span>
+                    </div>
+                </div>
             </div>
         );
     };
@@ -1634,7 +1825,12 @@ export const SongsPage: React.FC = () => {
                 padding: '1rem 0',
                 paddingBottom: '100px'
             }}>
-                {activeTab === 'gita' && renderGitaDashboard()}
+                {activeTab === 'gita' && (
+                    <>
+                        {renderGitaDashboard()}
+                        {renderFeaturedCategories()}
+                    </>
+                )}
                 <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
                     {sortedGroups.map(letter => (
                         <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
@@ -1672,75 +1868,98 @@ export const SongsPage: React.FC = () => {
                                         key={song.id}
                                         onClick={() => handleSelectSong(song)}
                                         style={{
-                                            padding: '1.25rem',
-                                            backgroundColor: 'white',
-                                            borderRadius: 'var(--radius-md)',
-                                            marginBottom: '0.75rem',
-                                            boxShadow: 'var(--shadow-sm)',
-                                            border: '1px solid #f0f0f0',
+                                            padding: '0.5rem 0.8rem',
+                                            backgroundColor: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#fff7ed' : 'white',
+                                            borderRadius: '14px',
+                                            marginBottom: '0.4rem',
+                                            boxShadow: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '0 2px 6px rgba(251, 146, 60, 0.15)' : '0 1px 3px rgba(0,0,0,0.05)',
+                                            border: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '1px solid #fb923c' : '1px solid #f1f5f9',
                                             cursor: 'pointer',
-                                            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                                            transition: 'all 0.2s ease',
+                                            position: 'relative',
+                                            overflow: 'hidden'
                                         }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.transform = 'translateY(-2px)';
-                                            e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                                            const isTempleTheme = searchQuery === 'Temple' && song.tags?.includes('Temple');
+                                            e.currentTarget.style.backgroundColor = isTempleTheme ? '#ffedd5' : '#f8fafc';
+                                            if (isTempleTheme) {
+                                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(251, 146, 60, 0.25)';
+                                            } else {
+                                                e.currentTarget.style.borderColor = theme.color + '30';
+                                            }
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.transform = 'translateY(0)';
-                                            e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                                            const isTempleTheme = searchQuery === 'Temple' && song.tags?.includes('Temple');
+                                            e.currentTarget.style.backgroundColor = isTempleTheme ? '#fff7ed' : 'white';
+                                            if (isTempleTheme) {
+                                                e.currentTarget.style.boxShadow = '0 2px 6px rgba(251, 146, 60, 0.15)';
+                                            } else {
+                                                e.currentTarget.style.borderColor = '#f1f5f9';
+                                            }
                                         }}
                                     >
                                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1 }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                                     <div style={{
-                                                        fontSize: '1.25rem',
-                                                        fontWeight: 800,
-                                                        color: song.published ? '#1ed106' : getStatusColor(song.status, song.verified),
+                                                        fontSize: '1rem',
+                                                        fontWeight: 900,
+                                                        color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#ea580c' : (song.published ? '#16a34a' : getStatusColor(song.status, song.verified)),
                                                         fontFamily: 'var(--font-odia-sans)',
-                                                        transition: 'color 0.3s ease'
+                                                        lineHeight: '1.2'
                                                     }}>{getOdiaTitle(song)}</div>
                                                     {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
                                                 </div>
                                                 {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
                                                     <div style={{
-                                                        fontSize: '0.95rem',
-                                                        color: (song.status === 'COMPLETED' || song.verified) ? '#1ed106' : '#666',
-                                                        fontWeight: (song.status === 'COMPLETED' || song.verified) ? 700 : 500,
-                                                        fontFamily: "'Outfit', sans-serif"
+                                                        fontSize: '0.75rem',
+                                                        color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#c2410c' : ((song.status === 'COMPLETED' || song.verified) ? '#16a34a' : '#64748b'),
+                                                        fontWeight: (song.status === 'COMPLETED' || song.verified || (searchQuery === 'Temple' && song.tags?.includes('Temple'))) ? 800 : 500,
+                                                        fontFamily: "'Outfit', sans-serif",
+                                                        marginTop: '-2px'
                                                     }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                                 )}
                                             </div>
                                             {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
                                                 <div 
                                                     style={{ 
-                                                        marginLeft: '1rem',
-                                                        padding: '8px',
-                                                        borderRadius: '12px',
-                                                        backgroundColor: '#F3E8FF',
-                                                        color: '#7E22CE',
+                                                        marginLeft: '0.75rem',
+                                                        padding: '6px',
+                                                        borderRadius: '8px',
+                                                        backgroundColor: '#f3e8ff',
+                                                        color: '#7e22ce',
                                                         display: 'flex',
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
-                                                        boxShadow: 'inset 0 0 0 1px rgba(126, 34, 206, 0.1)',
                                                         pointerEvents: 'none'
                                                     }} 
-                                                    title={(song.audioVersions?.length ?? 0) > 1 ? `${song.audioVersions?.length} Singers Sync'd` : "Audio Available"}
                                                 >
-                                                    <Mic size={18} strokeWidth={2.5} />
+                                                    <Mic size={14} strokeWidth={2.5} />
                                                 </div>
                                             )}
                                         </div>
                                         {song.author && (
                                             <div style={{
-                                                fontSize: '0.85rem',
-                                                marginTop: '0.5rem',
-                                                color: getStatusColor(song.status, song.verified),
-                                                opacity: 0.8,
+                                                fontSize: '0.65rem',
+                                                marginTop: '2px',
+                                                color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#ea580c' : '#94a3b8',
+                                                opacity: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? 0.8 : 1,
                                                 fontFamily: 'var(--font-odia-sans)',
-                                                fontWeight: (song.status === 'COMPLETED' || song.verified) ? 600 : 400
+                                                fontWeight: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? 800 : 500
                                             }}>
                                                 {song.author}
+                                            </div>
+                                        )}
+                                        {searchQuery === 'Temple' && song.tags?.includes('Temple') && (
+                                            <div style={{
+                                                position: 'absolute',
+                                                right: '-10px',
+                                                top: '50%',
+                                                transform: 'translateY(-50%)',
+                                                opacity: 0.05,
+                                                pointerEvents: 'none'
+                                            }}>
+                                                <Sparkles size={60} color="#ea580c" />
                                             </div>
                                         )}
                                     </div>

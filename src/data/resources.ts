@@ -13,6 +13,7 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_JAYARADHAMADHAVA_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Jaya_Radha_Madhava/Jaya_Radha_Madhava_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: ['Temple'],
         published: true,
         status: 'COMPLETED'
     },
@@ -132,6 +133,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: ['Pranama'],
         structuredContent: (Songs as any).SONG_OHEVAISNAVATHAKURA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -144,6 +146,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_NITAINAMHATE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -156,6 +159,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_NARADAMUNI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -168,6 +172,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -180,6 +185,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_YASOMATINANDANA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -192,6 +198,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_VIBHAVARISESA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -204,6 +211,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_UDILOARUNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -216,6 +224,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_SUDDHABHAKATACARANARENU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -228,6 +237,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_SRIKRSNACAITANYAPRABHUJIVE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -460,6 +470,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: ['Pranama'],
         structuredContent: (Songs as any).SONG_GURUDEVAKRPABINDU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -472,6 +483,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_GURUDEVABOROKRPAKORI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -509,6 +521,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         structuredContent: (Songs as any).SONG_BHAJABHAKATAVATSALA_STRUCTURED,
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         published: true,
         status: 'COMPLETED'
     },
@@ -641,6 +654,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        tags: [],
         structuredContent: (Songs as any).SONG_BHALEGAURAGADADHARA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1425,6 +1439,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ବ୍ୟାସଦେବ (Vyasadeva)',
+        tags: ['Temple'],
         structuredContent: (Songs as any).SONG_JAYANARASIMHASRINARASIMHA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1437,6 +1452,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ବ୍ୟାସଦେବ (Vyasadeva)',
+        tags: ['Temple', 'Pranama'],
         structuredContent: (Songs as any).SONG_NAMASTENARASIMHAYA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1449,6 +1465,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'କୃଷ୍ଣ ଦାସ (Krsna Dasa)',
+        tags: ['Temple', 'Pranama'],
         structuredContent: (Songs as any).SONG_NAMONOMAH_TULASI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
