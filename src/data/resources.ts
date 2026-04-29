@@ -1391,6 +1391,18 @@ export const RESOURCES: Resource[] = [
         published: true,
         status: 'COMPLETED'
     },
+    {
+        id: 'song-vrindavanastakam',
+        title: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ (Na Yoga Siddhir Na Mamastu)',
+        title_odia: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ',
+        title_english: 'Na Yoga Siddhir Na Mamastu',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ବିଶ୍ଵନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର (Srila Visvanatha Cakravarti Thakura)',
+        structuredContent: (Songs as any).SONG_NAYOGASIDDHIR_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
