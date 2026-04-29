@@ -22,7 +22,6 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ମୁଖନିସୃତ ଗୀତା ମାହାତ୍ମ୍ୟ |',
-        content: (Songs as any).GITA_MAHATMYA_ODIA,
         structuredContent: (Songs as any).SONG_GITAMAHATMYA_STRUCTURED,
         author: 'Adi Shankaracharya'
     },
@@ -32,7 +31,6 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         description: 'ଭୁଲିୟା ତୋମାରେ - ଶ୍ରୀ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ପ୍ରସିଦ୍ଧ ଭଜନ |',
-        content: (Songs as any).BHULIYA_TOMARE_ODIA,
         structuredContent: (Songs as any).SONG_BHULIYATOMARE_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Bhaktivinoda_Thakur/Bhuliya_Tomare/Bhuliya_Tomare_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର'
@@ -94,6 +92,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_TUMISARVESWARESVARAVRAJENDRAKUMAR_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -121,6 +120,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_VIDYARAVILASE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -132,6 +132,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_OHEVAISNAVATHAKURA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -143,6 +144,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NITAINAMHATE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -154,6 +156,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NARADAMUNI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -165,6 +168,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_NADIYAGODRUME_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -176,6 +180,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_YASOMATINANDANA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -187,6 +192,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_VIBHAVARISESA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -198,6 +204,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_UDILOARUNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -209,6 +216,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SUDDHABHAKATACARANARENU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -220,6 +228,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SRIKRSNACAITANYAPRABHUJIVE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -239,6 +248,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_SARVASVATOMARCARENE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -250,6 +260,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_PRABHUTAVAPADAYUGE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -425,6 +436,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATPART2_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -436,6 +448,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATPART3_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -447,6 +460,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GURUDEVAKRPABINDU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -458,6 +472,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GURUDEVABOROKRPAKORI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -469,6 +484,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KABESRICHAITANYAMORE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -480,6 +496,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KIJANIKIBALE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -503,6 +520,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_OREMANABHALONAHILAGE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -514,6 +532,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_MAMAMANAMANDIRE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -525,6 +544,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_MANASADEHOGEHOYOKICHU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -799,6 +819,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GOPINATMAMANIVEDANA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -810,6 +831,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_BHAJAREBHAJAREAMAR_STRUCTURED,
         audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Bhajare_Bhajare.mp3',
         vocalist: 'HH Gour Govinda Swami',
         audioVersions: [
@@ -842,6 +864,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_EKHANBUJHINUPRABHU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -853,6 +876,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_EMONADURMATI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -864,6 +888,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GAYGORAMADHURA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -875,6 +900,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_GAYGORACAND_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -886,6 +912,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
+        structuredContent: (Songs as any).SONG_KRPAKOROVAISNAVA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
@@ -1204,6 +1231,189 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Narottama Dasa Thakura',
         structuredContent: (Songs as any).SONG_THAKURAVAISNAVAPADA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-krsnatavapunyahabebhai',
+        title: 'କୃଷ୍ଣ ତବ ପୁଣ୍ୟ ହବେ ଭାଇ (Krsna Tava Punya Habe Bhai)',
+        title_odia: 'କୃଷ୍ଣ ତବ ପୁଣ୍ୟ ହବେ ଭାଇ',
+        title_english: 'Krsna Tava Punya Habe Bhai',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଏ.ସି. ଭକ୍ତିବେଦାନ୍ତ ସ୍ୱାମୀ (Srila Prabhupada)',
+        structuredContent: (Songs as any).SONG_KRSNATAVAPUNYAHABEBHAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-avatarasaragoraavatara',
+        title: 'ଅବତାର ସାର ଗୋରା-ଅବତାର (Avatara Sara Gora-Avatara)',
+        title_odia: 'ଅବତାର ସାର ଗୋରା-ଅବତାର',
+        title_english: 'Avatara Sara Gora-Avatara',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_AVATARASARAGORAAVATARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-akrodhaparamananda',
+        title: 'ଅକ୍ରୋଧ ପରମାନନ୍ଦ (Akrodha Paramananda)',
+        title_odia: 'ଅକ୍ରୋଧ ପରମାନନ୍ଦ',
+        title_english: 'Akrodha Paramananda',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_AKRODHAPARAMANANDA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-nitaigunamani',
+        title: 'ନିତାଇ ଗୁଣମଣି (Nitai Guna Mani)',
+        title_odia: 'ନିତାଇ ଗୁଣମଣି',
+        title_english: 'Nitai Guna Mani',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_NITAIGUNAMANI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-paramakarunapahuduijana',
+        title: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇଜନ (Parama Karuna Pahu Dui Jana)',
+        title_odia: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇଜନ',
+        title_english: 'Parama Karuna Pahu Dui Jana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଲୋଚନ ଦାସ ଠାକୁର (Srila Locana Dasa Thakura)',
+        structuredContent: (Songs as any).SONG_PARAMAKARUNAPAHUDUIJANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-krsnahoitecaturmukha',
+        title: 'କୃଷ୍ଣ ହଇତେ ଚତୁର୍ମୁଖ (Krsna Hoite Catur-mukha)',
+        title_odia: 'କୃଷ୍ଣ ହଇତେ ଚତୁର୍ମୁଖ',
+        title_english: 'Krsna Hoite Catur-mukha',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ ସରସ୍ଵତୀ ଠାକୁର (Srila Bhakti Siddhanta Sarasvati Thakura)',
+        structuredContent: (Songs as any).SONG_KRSNAHOITECATURMUKHA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-dustamana',
+        title: 'ଦୁଷ୍ଟ ମନ (Dusta Mana)',
+        title_odia: 'ଦୁଷ୍ଟ ମନ',
+        title_english: 'Dusta Mana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ ସରସ୍ଵତୀ ଠାକୁର (Srila Bhakti Siddhanta Sarasvati Thakura)',
+        structuredContent: (Songs as any).SONG_DUSTAMANA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-damodarastakam',
+        title: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍ (Sri Damodarastakam)',
+        title_odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍',
+        title_english: 'Sri Damodarastakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'ସତ୍ୟବ୍ରତ ମୁନି (Satyavrata Muni)',
+        structuredContent: (Songs as any).SONG_DAMODARASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gopigitam',
+        title: 'ଜୟତି ତେଽଧିକଂ ଜନ୍ମନା ବ୍ରଜଃ (Jayati Te ’Dhikam Janmanā Vrajaḥ)',
+        title_odia: 'ଜୟତି ତେଽଧିକଂ ଜନ୍ମନା ବ୍ରଜଃ',
+        title_english: 'Jayati Te ’Dhikam Janmanā Vrajaḥ',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଗୋପୀ ଗୀତମ୍ (Gopi Gitam)',
+        author: 'ଶ୍ରୀ ଶୁକଦେବ ଗୋସ୍ୱାମୀ (Śrī Śukadeva Gosvāmī)',
+        structuredContent: (Songs as any).SONG_GOPIGITAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-gaurangatumimore',
+        title: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନ ଛାଡ଼ିହ (Gauranga Tumi More Doya Na Chadhio)',
+        title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନ ଛାଡ଼ିହ',
+        title_english: 'Gauranga Tumi More Doya Na Chadhio',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_GAURANGATUMIMORE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-jayajayajagannathasacira',
+        title: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ (Jaya Jaya Jagannatha Sacira Nandana)',
+        title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ',
+        title_english: 'Jaya Jaya Jagannatha Sacira Nandana',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_JAYAJAYAJAGANNATHASACIRA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-yadigauranahoito',
+        title: 'ଯଦି ଗୌର ନା ହଇତ (Yadi Gaura Na Hoito)',
+        title_odia: 'ଯଦି ଗୌର ନା ହଇତ',
+        title_english: 'Yadi Gaura Na Hoito',
+        category: 'Songs',
+        type: 'html',
+        author: 'ବାସୁଦେବ ଘୋଷ (Vasudeva Ghosa)',
+        structuredContent: (Songs as any).SONG_YADIGAURANAHOITO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-radhejayajayamadhavadayite',
+        title: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ (Radhe Jaya Jaya Madhava Dayite)',
+        title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ',
+        title_english: 'Radhe Jaya Jaya Madhava Dayite',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ରୂପ ଗୋସ୍ୱାମୀ (Srila Rupa Gosvami)',
+        structuredContent: (Songs as any).SONG_RADHEJAYAJAYAMADHAVADAYITE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-vrindavanastakam',
+        title: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ (Na Yoga Siddhir Na Mamastu)',
+        title_odia: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ',
+        title_english: 'Na Yoga Siddhir Na Mamastu',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ବିଶ୍ଵନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର (Srila Visvanatha Cakravarti Thakura)',
+        description: 'ବୃନ୍ଦାବନାଷ୍ଟକମ୍ (Vrindavanastakam)',
+        structuredContent: (Songs as any).SONG_NAYOGASIDDHIR_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-yamunastakam',
+        title: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ (Bhṛtur Antakasya Pattane)',
+        title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ',
+        title_english: 'Bhrtr Antakasya Pattane',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ରୂପ ଗୋସ୍ଵାମୀ (Srila Rupa Gosvami)',
+        description: 'ଯମୁନାଷ୍ଟକମ୍ (Yamunastakam)',
+        structuredContent: (Songs as any).SONG_YAMUNASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },

@@ -30154,7 +30154,7 @@ export const SONG_GAURANGATUMIMORE_STRUCTURED: StructuredSong = {
                     "meaning": "ମୋତେ ଆପଣଙ୍କ ପାଦତଳେ ରଖନ୍ତୁ"
                 },
                 {
-                    "word": "ଆପନାର ବଲି",
+                    "word": "ଆପନାର ବୋଲି",
                     "meaning": "ନିଜର ବୋଲି କହି"
                 }
             ]
@@ -30165,7 +30165,7 @@ export const SONG_GAURANGATUMIMORE_STRUCTURED: StructuredSong = {
             "translation": "ବାସୁଦେବ ଘୋଷ ପ୍ରଭୁଙ୍କ ପାଦତଳେ ପଡ଼ି କହୁଛନ୍ତି, \"ହେ ପ୍ରଭୁ! ମୁଁ ଆପଣଙ୍କ ପାଦକୁ ଦୃଢ଼ ଭାବେ ଧରିଛି, ଦୟାକରି ଆପଣଙ୍କ ପାଦପଦ୍ମର ସୁଶୀତଳ ଛାୟାରେ ମୋତେ ସର୍ବଦା ଆଶ୍ରୟ ଦିଅନ୍ତୁ।\"",
             "wordMeanings": [
                 {
-                    "word": "ବାସୁଦେବ ଘୋଷେ ବଲେ",
+                    "word": "ବାସୁଦେବ ଘୋଷେ ବୋଲେ",
                     "meaning": "ଭକ୍ତ ବାସୁଦେବ ଘୋଷ କହୁଛନ୍ତି"
                 },
                 {
@@ -30184,6 +30184,7 @@ export const SONG_GAURANGATUMIMORE_STRUCTURED: StructuredSong = {
         }
     ]
 };
+
 
 export const SONG_JAYAJAYAJAGANNATHASACIRA_STRUCTURED: StructuredSong = {
     "verses": [
@@ -30682,7 +30683,6 @@ export const SONG_RADHEJAYAJAYAMADHAVADAYITE_STRUCTURED: StructuredSong = {
         }
     ]
 };
-
 export const SONG_NAYOGASIDDHIR_STRUCTURED: StructuredSong = {
     "verses": [
         {
@@ -30894,7 +30894,6 @@ export const SONG_NAYOGASIDDHIR_STRUCTURED: StructuredSong = {
         }
     ]
 };
-
 export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
     "verses": [
         {
@@ -31095,8 +31094,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 9,
-            "lyric": "ତୁଷ୍ଟ-ବୁଦ୍ଧିର୍ ଅଷ୍ଟକେନ ନିର୍ମଳୋର୍ମି-ଚେଷ୍ଟିତାଂ\nତ୍ୱାମ୍ ଅନେନ ଭାନୁ-ପୁତ୍ରᱤ ! ସର୍ବ-ଦେବ-ବେଷ୍ଟିତାମ୍ ।\nୟଃ ସ୍ତବୀତି ବର୍ଧୟସ୍ୱ ସର୍ବ-ପାପ-ମୋଚନେ\nଭକ୍ତି-ପୂରମ୍ ଅସ୍ୟ ଦେବି ! ପୁଣ୍ଡରୀକ-ଲୋଚନେ ।।୯।।",
-            "translation": "ହେ ସୂର୍ଯ୍ୟନନ୍ଦିନୀ! ହେ ପଦ୍ମପଳାଶ ଲୋଚନୀ ଯମୁନା ଦେବି! ଯେଉଁ ବ୍ୟକ୍ତି ନିର୍ମଳ ଚିତ୍ତରେ ଆପଣଙ୍କର ଏହି ଅଷ୍ଟକ ପାଠ କରେ, ତାଙ୍କର ସମସ୍ତ ପାପ ମୋଚନ କରି ତାଙ୍କ ହୃଦୟରେ ଶୁଦ୍ଧ ଭକ୍ତିର ପବାହକୁ ବଢ଼ାଇ ଦିଅନ୍ତୁ।",
+            "lyric": "ତୁଷ୍ଟ-ବୁଦ୍ଧିର୍ ଅଷ୍ଟକେନ ନିର୍ମଳୋର୍ମି-ଚେଷ୍ଟିତାଂ\nତ୍ୱାମ୍ ଅନେନ ଭାନୁ-ପୁତ୍ରି ! ସର୍ବ-ଦେବ-ବେଷ୍ଟିତାମ୍ ।\nୟଃ ସ୍ତବୀତି ବର୍ଧୟସ୍ୱ ସର୍ବ-ପାପ-ମୋଚନେ\nଭକ୍ତି-ପୂରମ୍ ଅସ୍ୟ ଦେବି ! ପୁଣ୍ଡରୀକ-ଲୋଚନେ ।।୯।।",
+            "translation": "ହେ ସୂର୍ଯ୍ୟନନ୍ଦିନୀ! ହେ ପଦ୍ମପଳାଶ ଲୋଚନୀ ଯମୁନା ଦେବି! ଯେଉଁ ବ୍ୟକ୍ତି ନିର୍ମଳ ଚିତ୍ତରେ ଆପଣଙ୍କର ଏହି ଅଷ୍ଟକ ପାଠ କରେ, ତାଙ୍କର ସମସ୍ତ ପାପ ମୋଚନ କରି ତାଙ୍କ ହୃଦୟରେ ଶୁଦ୍ଧ ଭକ୍ତିର ପ୍ରବାହକୁ ବଢ଼ାଇ ଦିଅନ୍ତୁ।",
             "wordMeanings": [
                 {
                     "word": "ତୁଷ୍ଟ-ବୁଦ୍ଧିର୍ ଅଷ୍ଟକେନ ନିର୍ମଳୋର୍ମି-ଚେଷ୍ଟିତାଂ",

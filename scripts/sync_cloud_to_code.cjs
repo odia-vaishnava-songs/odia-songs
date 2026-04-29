@@ -35,7 +35,8 @@ async function syncCloudToCode() {
 
     if (error) {
         console.error('❌ Database fetch failed:', error.message);
-        process.exit(1);
+        console.warn('⚠️  Proceeding with local cache... (Sync failed)');
+        return false;
     }
     console.log(`✅ Fetched ${songs.length} songs from the cloud.`);
 
