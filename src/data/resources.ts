@@ -1399,6 +1399,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'ଶ୍ରୀଲ ବିଶ୍ଵନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର (Srila Visvanatha Cakravarti Thakura)',
+        description: 'ବୃନ୍ଦାବନାଷ୍ଟକମ୍ (Vrindavanastakam)',
         structuredContent: (Songs as any).SONG_NAYOGASIDDHIR_STRUCTURED,
         published: true,
         status: 'COMPLETED'

@@ -5,7 +5,7 @@ INSERT INTO songs (
     'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ (Na Yoga Siddhir Na Mamastu)',
     'Songs',
     'html',
-    'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ — ଶ୍ରୀଲ ବିଶ୍ଵନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚନା',
+    'ବୃନ୍ଦାବନାଷ୍ଟକମ୍ (Vrindavanastakam)',
     'Visvanatha Cakravarti Thakura',
     $json${
     "verses": [

@@ -228,7 +228,7 @@ async function addVrindavanastakam() {
             title: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ (Na Yoga Siddhir Na Mamastu)',
             category: 'Songs',
             type: 'html',
-            description: 'ନ ଯୋଗ-ସିଦ୍ଧିର୍ ନ ମମାସ୍ତୁ — ଶ୍ରୀଲ ବିଶ୍ଵନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚନା',
+            description: 'ବୃନ୍ଦାବନାଷ୍ଟକମ୍ (Vrindavanastakam)',
             author: 'Visvanatha Cakravarti Thakura',
             structured_content: structuredContent,
             published: true,
