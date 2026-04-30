@@ -9,6 +9,8 @@ import { CompactAudioBar } from '../components/CompactAudioBar';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
+import * as TempleSongs from './temple_songs_data';
+import * as TempleIcons from '../components/TempleIcons';
 
 import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber } from '../utils/odia';
@@ -604,19 +606,20 @@ export const SongsPage: React.FC = () => {
 
         const cardStyle: React.CSSProperties = {
             background: '#ffffff',
-            border: '1px solid #e2e8f0',
-            padding: '0.75rem',
-            borderRadius: '16px',
+            border: '1.5px solid #f1f5f9',
+            padding: '1rem',
+            borderRadius: '24px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
-            width: '130px',
-            minWidth: '130px',
-            height: '170px',
+            gap: '12px',
+            width: '145px',
+            minWidth: '145px',
+            height: '190px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            position: 'relative'
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            position: 'relative',
+            overflow: 'hidden'
         };
 
         const iconContainerStyle: React.CSSProperties = {
@@ -625,18 +628,37 @@ export const SongsPage: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'center',
             background: '#f8fafc',
-            borderRadius: '10px',
-            margin: '2px 0'
+            borderRadius: '18px',
+            margin: '4px 0',
+            position: 'relative',
+            border: '1px solid #f1f5f9'
+        };
+
+        const titleStyle: React.CSSProperties = {
+            fontSize: '0.9rem',
+            fontWeight: 800,
+            color: '#1e293b',
+            fontFamily: 'var(--font-odia-sans)',
+            textAlign: 'center'
+        };
+
+        const footerStyle: React.CSSProperties = {
+            fontSize: '0.65rem',
+            fontWeight: 700,
+            color: '#64748b',
+            textTransform: 'uppercase',
+            letterSpacing: '0.8px',
+            textAlign: 'center'
         };
 
         return (
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{ 
                     display: 'flex',
-                    gap: '16px',
+                    gap: '20px',
                     overflowX: 'auto',
-                    paddingBottom: '15px',
-                    scrollbarWidth: 'none' // Hide scrollbar for cleaner look
+                    padding: '10px 5px 20px',
+                    scrollbarWidth: 'none'
                 }}>
                     {/* CARD 1: TEMPLE SONGS */}
                     <div 
@@ -644,48 +666,31 @@ export const SongsPage: React.FC = () => {
                             setActiveTab('songs');
                             setSearchQuery('Temple');
                         }}
-                        style={{
-                            ...cardStyle,
-                            background: 'linear-gradient(135deg, #ff9d00, #ff5e00)',
-                            border: 'none',
-                            boxShadow: '0 8px 20px rgba(255, 126, 0, 0.25)',
-                        }}
+                        style={cardStyle}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
-                            e.currentTarget.style.boxShadow = '0 12px 30px rgba(255, 126, 0, 0.4)';
+                            e.currentTarget.style.transform = 'translateY(-8px)';
+                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 126, 0, 0.08)';
+                            e.currentTarget.style.borderColor = '#ff9d0030';
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                            e.currentTarget.style.boxShadow = '0 8px 20px rgba(255, 126, 0, 0.25)';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
+                            e.currentTarget.style.borderColor = '#f1f5f9';
                         }}
                     >
-                        <span style={{ 
-                            fontSize: '0.85rem', 
-                            fontWeight: 900, 
-                            color: '#fff',
-                            fontFamily: 'var(--font-odia-sans)',
-                            textShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                        }}>ମନ୍ଦିର ଗୀତ</span>
+                        <span style={titleStyle}>ମନ୍ଦିର ଗୀତ</span>
                         
-                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
-                            <div style={{ 
-                                background: '#fff', 
-                                padding: '10px', 
-                                borderRadius: '12px',
-                                color: '#ff5e00',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                            }}>
-                                <Sparkles size={24} strokeWidth={2.5} />
+                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #fffcf5, #fff5e6)' }}>
+                            <div style={{ color: '#ff7e00' }}>
+                                <TempleIcons.TempleShikhara size={48} />
+                            </div>
+                            {/* Decorative Corner Motif */}
+                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#ff7e00' }}>
+                                <TempleIcons.LotusIcon size={30} />
                             </div>
                         </div>
 
-                        <span style={{ 
-                            fontSize: '0.65rem', 
-                            fontWeight: 900, 
-                            color: 'rgba(255,255,255,0.9)',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.5px'
-                        }}>Temple Songs →</span>
+                        <span style={footerStyle}>Temple Songs →</span>
                     </div>
 
                     {/* CARD 2: PRANAMA MANTRAS */}
@@ -694,96 +699,62 @@ export const SongsPage: React.FC = () => {
                             setActiveTab('songs');
                             setSearchQuery('Pranama');
                         }}
-                        style={{
-                            ...cardStyle,
-                            background: 'linear-gradient(135deg, #0084ff, #00c6ff)',
-                            border: 'none',
-                            boxShadow: '0 8px 20px rgba(0, 132, 255, 0.25)',
-                        }}
+                        style={cardStyle}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
-                            e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 132, 255, 0.4)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                            e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 132, 255, 0.25)';
-                        }}
-                    >
-                        <span style={{ 
-                            fontSize: '0.85rem', 
-                            fontWeight: 900, 
-                            color: '#fff',
-                            fontFamily: 'var(--font-odia-sans)',
-                            textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                        }}>ପ୍ରଣାମ ମନ୍ତ୍ର</span>
-                        
-                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)' }}>
-                            <div style={{ 
-                                background: '#fff', 
-                                padding: '10px', 
-                                borderRadius: '12px',
-                                color: '#0084ff',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                            }}>
-                                <Mic size={24} strokeWidth={2.5} />
-                            </div>
-                        </div>
-
-                        <span style={{ 
-                            fontSize: '0.65rem', 
-                            fontWeight: 900, 
-                            color: 'rgba(255,255,255,0.9)',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.5px'
-                        }}>Pranama Mantras →</span>
-                    </div>
-
-                    {/* CARD 3: RECENTLY ADDED */}
-                    <div 
-                        onClick={() => {
-                            setActiveTab('songs');
-                            setSearchQuery(''); // Show all
-                        }}
-                        style={{
-                            ...cardStyle,
-                            background: '#1e293b',
-                            border: '1.5px dashed rgba(255,255,255,0.2)',
-                            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-6px)';
-                            e.currentTarget.style.background = '#0f172a';
+                            e.currentTarget.style.transform = 'translateY(-8px)';
+                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 132, 255, 0.08)';
+                            e.currentTarget.style.borderColor = '#0084ff30';
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.background = '#1e293b';
+                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
+                            e.currentTarget.style.borderColor = '#f1f5f9';
                         }}
                     >
-                        <span style={{ 
-                            fontSize: '0.85rem', 
-                            fontWeight: 900, 
-                            color: '#f1f5f9',
-                            fontFamily: 'var(--font-odia-sans)'
-                        }}>ଅନ୍ୟାନ୍ୟ</span>
+                        <span style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</span>
                         
-                        <div style={{ ...iconContainerStyle, background: 'rgba(255,255,255,0.05)' }}>
-                            <div style={{ 
-                                background: 'rgba(255,255,255,0.1)', 
-                                padding: '10px', 
-                                borderRadius: '12px',
-                                color: '#fff',
-                                border: '1px solid rgba(255,255,255,0.2)'
-                            }}>
-                                <Plus size={24} strokeWidth={3} />
+                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)' }}>
+                            <div style={{ color: '#0084ff' }}>
+                                <TempleIcons.NamasteIcon size={48} />
+                            </div>
+                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#0084ff' }}>
+                                <TempleIcons.ConchIcon size={30} />
                             </div>
                         </div>
 
-                        <span style={{ 
-                            fontSize: '0.65rem', 
-                            fontWeight: 900, 
-                            color: '#94a3b8',
-                            textTransform: 'uppercase'
-                        }}>View All →</span>
+                        <span style={footerStyle}>Pranama Mantras →</span>
+                    </div>
+
+                    {/* CARD 3: ALL SONGS */}
+                    <div 
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery(''); 
+                        }}
+                        style={cardStyle}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-8px)';
+                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.08)';
+                            e.currentTarget.style.borderColor = '#8b5cf630';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
+                            e.currentTarget.style.borderColor = '#f1f5f9';
+                        }}
+                    >
+                        <span style={titleStyle}>ସମସ୍ତ ଗୀତ</span>
+                        
+                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f5f3ff, #ede9fe)' }}>
+                            <div style={{ color: '#8b5cf6' }}>
+                                <TempleIcons.LotusIcon size={48} />
+                            </div>
+                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#8b5cf6' }}>
+                                <TempleIcons.ConchIcon size={30} />
+                            </div>
+                        </div>
+
+                        <span style={footerStyle}>View All Songs →</span>
                     </div>
                 </div>
             </div>
