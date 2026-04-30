@@ -8,7 +8,7 @@ import {
 import { useAuth } from '../hooks/useAuth';
 import { useAudio } from '../context/AudioContext';
 import { supabase } from '../supabase/config';
-import panchaTattvaImg from '../assets/pancha-tattva.png';
+import * as TempleIcons from './TempleIcons';
 import type { User } from '../types';
 import type { PresenceUser } from '../hooks/usePresence';
 
@@ -249,17 +249,22 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                 <div style={{ flex: 1, overflowY: 'auto' }}>
                     {view === 'menu' ? (
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <div style={{ padding: '1rem 1rem 0.5rem 1rem', display: 'flex', justifyContent: 'center' }}>
-                                <img
-                                    src={panchaTattvaImg}
-                                    alt="Pancha Tattva"
-                                    style={{
-                                        width: '80%',
-                                        height: 'auto',
-                                        borderRadius: '8px',
-                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                                    }}
-                                />
+                            <div style={{ padding: '1.5rem 1rem 0.5rem 1rem', display: 'flex', justifyContent: 'center' }}>
+                                <div style={{ 
+                                    width: '120px', 
+                                    height: '120px', 
+                                    borderRadius: '50%', 
+                                    background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 10px 25px rgba(255, 153, 0, 0.1)',
+                                    border: '2px solid rgba(255, 153, 0, 0.05)'
+                                }}>
+                                    <div style={{ color: '#FF9933', filter: 'drop-shadow(0 8px 15px rgba(255, 153, 0, 0.3))' }}>
+                                        <TempleIcons.SacredLotus size={80} />
+                                    </div>
+                                </div>
                             </div>
 
                             <div style={{ padding: '0 1rem 1rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>

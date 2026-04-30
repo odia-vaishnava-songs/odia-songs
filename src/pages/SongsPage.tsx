@@ -9,7 +9,6 @@ import { CompactAudioBar } from '../components/CompactAudioBar';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
-import * as TempleSongs from './temple_songs_data';
 import * as TempleIcons from '../components/TempleIcons';
 
 import { TATTVA_THEMES } from '../constants/themes';
@@ -79,7 +78,7 @@ export const SongsPage: React.FC = () => {
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
         setIsDetailView(true);
-        
+
         // Only trigger selectSong if nothing is playing OR if we explicitly want to change the audio (Auto-Next)
         if (forcePlay || (!activeSong && (song.audioUrl || (song.audioVersions && song.audioVersions.length > 0)))) {
             selectSong(song);
@@ -95,7 +94,7 @@ export const SongsPage: React.FC = () => {
         } catch (e) {
             console.error("Error incrementing views:", e);
         }
-        
+
         // Track ID for Auto-Next
         (window as any)._activeSongId = song.id;
     };
@@ -410,7 +409,7 @@ export const SongsPage: React.FC = () => {
             color: string;
         }
         const allGitaSections: GitaSection[] = [];
-        
+
         if (mahatmya) {
             allGitaSections.push({
                 id: mahatmya.id,
@@ -439,10 +438,10 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{ padding: '0 0 0.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 {/* 🚀 QUICK NAVIGATION SLIDER (Requested) */}
-                <div 
+                <div
                     className={isSliderInteracting ? 'interacting' : ''}
-                    style={{ 
-                        position: 'relative', 
+                    style={{
+                        position: 'relative',
                         marginBottom: '0.5rem',
                         padding: '0 4px',
                         zIndex: 500
@@ -452,7 +451,7 @@ export const SongsPage: React.FC = () => {
                     onTouchStart={handleSliderInteraction}
                 >
                     {/* Left Navigation Arrow (Popup on Interaction) */}
-                    <button 
+                    <button
                         onPointerDown={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -483,10 +482,10 @@ export const SongsPage: React.FC = () => {
                         <ChevronLeft size={32} />
                     </button>
 
-                    <div 
+                    <div
                         ref={gitaSliderRef}
-                        className="horizontal-scroll-container" 
-                        style={{ 
+                        className="horizontal-scroll-container"
+                        style={{
                             padding: '4px 0',
                             scrollPadding: '0 20px',
                             position: 'relative',
@@ -495,16 +494,16 @@ export const SongsPage: React.FC = () => {
                         onScroll={handleSliderInteraction}
                     >
                         {allGitaSections.map((sec) => (
-                            <div 
+                            <div
                                 key={sec.id}
                                 onClick={() => {
                                     const song = songResources.find(s => s.id === sec.id);
                                     if (song) handleSelectSong(song);
                                 }}
-                                style={{ 
-                                    display: 'flex', 
-                                    flexDirection: 'column', 
-                                    alignItems: 'center', 
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
                                     minWidth: '110px',
                                     padding: '12px 8px',
                                     background: `linear-gradient(135deg, ${sec.color}08, ${sec.color}15)`,
@@ -518,10 +517,10 @@ export const SongsPage: React.FC = () => {
                                     justifyContent: 'space-between'
                                 }}
                             >
-                                <div style={{ 
-                                    fontSize: '0.75rem', 
-                                    fontWeight: 800, 
-                                    color: '#334155', 
+                                <div style={{
+                                    fontSize: '0.75rem',
+                                    fontWeight: 800,
+                                    color: '#334155',
                                     fontFamily: 'var(--font-odia-sans)',
                                     lineHeight: 1.2,
                                     height: '2.4rem',
@@ -531,13 +530,13 @@ export const SongsPage: React.FC = () => {
                                 }}>{sec.label}</div>
 
                                 {/* Apollo-style Compact Icon Box */}
-                                <div style={{ 
-                                    width: '70px', 
-                                    height: '70px', 
-                                    borderRadius: '14px', 
+                                <div style={{
+                                    width: '70px',
+                                    height: '70px',
+                                    borderRadius: '14px',
                                     background: 'white',
-                                    display: 'flex', 
-                                    alignItems: 'center', 
+                                    display: 'flex',
+                                    alignItems: 'center',
                                     justifyContent: 'center',
                                     color: 'var(--color-maroon)',
                                     boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
@@ -565,7 +564,7 @@ export const SongsPage: React.FC = () => {
                     </div>
 
                     {/* Right Navigation Arrow (Popup on Interaction) */}
-                    <button 
+                    <button
                         onPointerDown={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -605,55 +604,44 @@ export const SongsPage: React.FC = () => {
         if (searchQuery || selectedSong || activeTab !== 'gita') return null;
 
         const cardStyle: React.CSSProperties = {
-            background: '#ffffff',
-            border: '1.5px solid #f1f5f9',
-            padding: '1rem',
-            borderRadius: '24px',
+            padding: '1.5rem 1.25rem',
+            borderRadius: '32px',
             display: 'flex',
             flexDirection: 'column',
             gap: '12px',
-            width: '145px',
-            minWidth: '145px',
-            height: '190px',
+            width: '155px',
+            minWidth: '155px',
+            height: '220px',
             cursor: 'pointer',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
-            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)',
+            transition: 'all 0.5s cubic-bezier(0.2, 1, 0.3, 1)',
             position: 'relative',
-            overflow: 'hidden'
-        };
-
-        const iconContainerStyle: React.CSSProperties = {
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: '#f8fafc',
-            borderRadius: '18px',
-            margin: '4px 0',
-            position: 'relative',
-            border: '1px solid #f1f5f9'
+            overflow: 'hidden',
+            border: '1px solid rgba(255,255,255,0.6)'
         };
 
         const titleStyle: React.CSSProperties = {
-            fontSize: '0.9rem',
-            fontWeight: 800,
+            fontSize: '1.1rem',
+            fontWeight: 900,
             color: '#1e293b',
             fontFamily: 'var(--font-odia-sans)',
-            textAlign: 'center'
+            textAlign: 'left',
+            lineHeight: '1.1',
+            letterSpacing: '-0.2px'
         };
 
-        const footerStyle: React.CSSProperties = {
+        const engTitleStyle: React.CSSProperties = {
             fontSize: '0.65rem',
             fontWeight: 700,
-            color: '#64748b',
+            color: 'rgba(30, 41, 59, 0.5)',
             textTransform: 'uppercase',
-            letterSpacing: '0.8px',
-            textAlign: 'center'
+            letterSpacing: '0.6px',
+            marginTop: '4px'
         };
 
         return (
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ 
+                <div style={{
                     display: 'flex',
                     gap: '20px',
                     overflowX: 'auto',
@@ -661,7 +649,7 @@ export const SongsPage: React.FC = () => {
                     scrollbarWidth: 'none'
                 }}>
                     {/* CARD 1: TEMPLE SONGS */}
-                    <div 
+                    <div
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Temple');
@@ -679,7 +667,7 @@ export const SongsPage: React.FC = () => {
                         }}
                     >
                         <span style={titleStyle}>ମନ୍ଦିର ଗୀତ</span>
-                        
+
                         <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #fffcf5, #fff5e6)' }}>
                             <div style={{ color: '#ff7e00' }}>
                                 <TempleIcons.TempleShikhara size={48} />
@@ -694,7 +682,7 @@ export const SongsPage: React.FC = () => {
                     </div>
 
                     {/* CARD 2: PRANAMA MANTRAS */}
-                    <div 
+                    <div
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Pranama');
@@ -712,7 +700,7 @@ export const SongsPage: React.FC = () => {
                         }}
                     >
                         <span style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</span>
-                        
+
                         <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)' }}>
                             <div style={{ color: '#0084ff' }}>
                                 <TempleIcons.NamasteIcon size={48} />
@@ -726,10 +714,10 @@ export const SongsPage: React.FC = () => {
                     </div>
 
                     {/* CARD 3: ALL SONGS */}
-                    <div 
+                    <div
                         onClick={() => {
                             setActiveTab('songs');
-                            setSearchQuery(''); 
+                            setSearchQuery('');
                         }}
                         style={cardStyle}
                         onMouseEnter={(e) => {
@@ -744,7 +732,7 @@ export const SongsPage: React.FC = () => {
                         }}
                     >
                         <span style={titleStyle}>ସମସ୍ତ ଗୀତ</span>
-                        
+
                         <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f5f3ff, #ede9fe)' }}>
                             <div style={{ color: '#8b5cf6' }}>
                                 <TempleIcons.LotusIcon size={48} />
@@ -794,7 +782,7 @@ export const SongsPage: React.FC = () => {
                     <div style={{ background: cardBg, padding: '2.5rem 1.5rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
                         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '0 0 0.25rem', color: titleColor, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                         {selectedSong.author && <div style={{ fontSize: '1.2rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '2.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
-                        
+
                         <div style={{ height: '1px', background: isNightMode ? '#334155' : '#eee', margin: '1rem 0 3rem' }} />
 
                         {verses.map((verse, idx) => {
@@ -1103,7 +1091,7 @@ export const SongsPage: React.FC = () => {
         const textColor = isNightMode ? '#fff' : '#1e293b';
 
         return (
-            <div 
+            <div
                 style={{
                     position: 'fixed',
                     right: '12px',
@@ -1126,7 +1114,7 @@ export const SongsPage: React.FC = () => {
                 }}
             >
                 {/* Font Icon Toggle */}
-                <button 
+                <button
                     onClick={() => setIsToolbeltExpanded(!isToolbeltExpanded)}
                     style={{
                         background: 'transparent',
@@ -1146,14 +1134,14 @@ export const SongsPage: React.FC = () => {
 
                 {isToolbeltExpanded && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-                        <button 
+                        <button
                             onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
-                            style={{ 
-                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff', 
-                                color: textColor, 
+                            style={{
+                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff',
+                                color: textColor,
                                 width: '32px',
                                 height: '32px',
-                                borderRadius: '50%', 
+                                borderRadius: '50%',
                                 border: `1px solid ${glassBorder}`,
                                 display: 'flex',
                                 alignItems: 'center',
@@ -1163,24 +1151,24 @@ export const SongsPage: React.FC = () => {
                         >
                             <Plus size={16} />
                         </button>
-                        
-                        <div style={{ 
-                            color: textColor, 
-                            fontWeight: 900, 
+
+                        <div style={{
+                            color: textColor,
+                            fontWeight: 900,
                             fontSize: '0.85rem',
                             fontFamily: 'var(--font-odia-sans)'
                         }}>
                             {toOdiaNumber(fontSize)}
                         </div>
-                        
-                        <button 
+
+                        <button
                             onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
-                            style={{ 
-                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff', 
-                                color: textColor, 
+                            style={{
+                                background: isNightMode ? 'rgba(255,255,255,0.1)' : '#fff',
+                                color: textColor,
                                 width: '32px',
                                 height: '32px',
-                                borderRadius: '50%', 
+                                borderRadius: '50%',
                                 border: `1px solid ${glassBorder}`,
                                 display: 'flex',
                                 alignItems: 'center',
@@ -1249,8 +1237,8 @@ export const SongsPage: React.FC = () => {
                         {renderChapterNavigation()}
                     </div>
                 </main>
-                <div style={{ 
-                    height: '90px', 
+                <div style={{
+                    height: '90px',
                     width: '100%',
                     display: 'flex',
                     alignItems: 'flex-end',
@@ -1261,14 +1249,14 @@ export const SongsPage: React.FC = () => {
                     <div style={{ margin: '0 auto', width: '100%', position: 'relative' }}>
                         {/* 1. Background Music Popup (Higher float) */}
                         {activeSong && selectedSong?.id !== activeSong.id && (
-                            <div style={{ 
-                                position: 'fixed', 
-                                bottom: '150px', 
-                                left: '50%', 
-                                transform: 'translateX(-50%)', 
-                                width: '92%', 
-                                maxWidth: '500px', 
-                                zIndex: 1002 
+                            <div style={{
+                                position: 'fixed',
+                                bottom: '150px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                width: '92%',
+                                maxWidth: '500px',
+                                zIndex: 1002
                             }}>
                                 <CompactAudioBar />
                             </div>
@@ -1521,7 +1509,7 @@ export const SongsPage: React.FC = () => {
                 </button>
                 {isFilterMenuOpen && (
                     <>
-                        <div 
+                        <div
                             onClick={() => setIsFilterMenuOpen(false)}
                             style={{
                                 position: 'fixed',
@@ -1545,257 +1533,257 @@ export const SongsPage: React.FC = () => {
                             color: 'var(--color-text-main)',
                             minWidth: '200px'
                         }}>
-                        <button 
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setIsThemeListExpanded(!isThemeListExpanded);
-                            }}
-                            style={{ 
-                                width: '100%',
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                justifyContent: 'space-between',
-                                background: 'transparent',
-                                border: 'none',
-                                padding: '0 0 1rem 0',
-                                cursor: 'pointer',
-                                color: 'var(--color-text-light)',
-                                textAlign: 'left'
-                            }}
-                        >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: theme.color }} />
-                                <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଥିମ୍ ବାଛନ୍ତୁ (Choose Theme)</span>
-                            </div>
-                            <ChevronDown size={18} style={{ 
-                                transform: isThemeListExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
-                                transition: 'transform 0.3s ease',
-                                color: theme.color
-                            }} />
-                        </button>
-
-                        <div style={{ 
-                            display: 'flex', 
-                            flexDirection: 'column',
-                            gap: '10px',
-                            maxHeight: isThemeListExpanded ? '400px' : '0',
-                            overflow: 'hidden',
-                            marginBottom: isThemeListExpanded ? '1.5rem' : '0',
-                            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1)',
-                            opacity: isThemeListExpanded ? 1 : 0
-                        }}>
-                            {Object.entries(TATTVA_THEMES).map(([k, v]) => (
-                                <button
-                                    key={k}
-                                    onClick={() => handleSetTheme(k)}
-                                    style={{
-                                        width: '100%',
-                                        height: '58px',
-                                        borderRadius: '16px',
-                                        background: currentThemeKey === k ? `${v.color}10` : '#fff',
-                                        border: currentThemeKey === k ? `2px solid ${v.color}` : '1.5px solid #f1f5f9',
-                                        boxShadow: currentThemeKey === k ? `0 4px 12px ${v.color}15` : 'none',
-                                        transition: 'all 0.3s ease',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '14px',
-                                        padding: '0 14px',
-                                        cursor: 'pointer'
-                                    }}
-                                >
-                                    <div style={{ 
-                                        width: '36px', 
-                                        height: '36px', 
-                                        borderRadius: '10px', 
-                                        background: v.gradient,
-                                        flexShrink: 0,
-                                        boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-                                    }} />
-                                    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', flex: 1 }}>
-                                        <span style={{ 
-                                            fontSize: '0.95rem', 
-                                            fontWeight: 800,
-                                            color: currentThemeKey === k ? v.color : '#1e293b',
-                                            letterSpacing: '0.3px'
-                                        }}>{v.name}</span>
-                                        <span style={{ 
-                                            fontSize: '0.65rem', 
-                                            color: '#94a3b8', 
-                                            fontWeight: 600,
-                                            textTransform: 'uppercase'
-                                        }}>{k === 'advaita' ? 'Eternal Dark' : 'Vedic Vibrance'}</span>
-                                    </div>
-                                    {currentThemeKey === k && (
-                                        <div style={{ 
-                                            background: v.color, 
-                                            color: '#fff', 
-                                            borderRadius: '50%', 
-                                            width: '22px', 
-                                            height: '22px', 
-                                            display: 'flex', 
-                                            alignItems: 'center', 
-                                            justifyContent: 'center'
-                                        }}>
-                                            <CheckCircle2 size={14} strokeWidth={3} />
-                                        </div>
-                                    )}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
-                        
-                        <div style={{ 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            gap: '8px',
-                            color: 'var(--color-text-light)',
-                            marginBottom: '1rem',
-                            padding: '0 4px'
-                        }}>
-                            <Type size={18} color={theme.color} />
-                            <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</span>
-                        </div>
-
-                        <div style={{ 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'space-between', 
-                            background: '#f8fafc', 
-                            padding: '8px', 
-                            borderRadius: '16px', 
-                            border: '1px solid #e2e8f0',
-                            marginBottom: '1.5rem'
-                        }}>
-                            <button 
-                                onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
-                                style={{ 
-                                    background: '#fff', 
-                                    border: 'none', 
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '12px', 
-                                    cursor: 'pointer', 
-                                    display: 'flex', 
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsThemeListExpanded(!isThemeListExpanded);
+                                }}
+                                style={{
+                                    width: '100%',
+                                    display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: '#64748b',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                    justifyContent: 'space-between',
+                                    background: 'transparent',
+                                    border: 'none',
+                                    padding: '0 0 1rem 0',
+                                    cursor: 'pointer',
+                                    color: 'var(--color-text-light)',
+                                    textAlign: 'left'
                                 }}
                             >
-                                <Minus size={20} />
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: theme.color }} />
+                                    <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଥିମ୍ ବାଛନ୍ତୁ (Choose Theme)</span>
+                                </div>
+                                <ChevronDown size={18} style={{
+                                    transform: isThemeListExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                                    transition: 'transform 0.3s ease',
+                                    color: theme.color
+                                }} />
                             </button>
-                            <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                <span style={{ fontWeight: 900, fontSize: '1.1rem', color: theme.color }}>{toOdiaNumber(fontSize)}</span>
-                                <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>Points</span>
-                            </div>
-                            <button 
-                                onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
-                                style={{ 
-                                    background: '#fff', 
-                                    border: 'none', 
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '12px', 
-                                    cursor: 'pointer', 
-                                    display: 'flex', 
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: '#64748b',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
-                                }}
-                            >
-                                <Plus size={20} />
-                            </button>
-                        </div>
 
-                        <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
-
-                        <button
-                            onClick={() => {
-                                setIsFilterMenuOpen(false);
-                                fetchAuthorStats();
-                            }}
-                            disabled={statsLoading}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = `0 12px 24px ${theme.color}40`;
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = `0 8px 20px ${theme.color}30`;
-                            }}
-                            style={{
-                                width: '100%',
-                                position: 'relative',
-                                background: theme.gradient,
-                                border: 'none',
-                                padding: '14px',
-                                borderRadius: '20px',
-                                cursor: 'pointer',
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '10px',
+                                maxHeight: isThemeListExpanded ? '400px' : '0',
                                 overflow: 'hidden',
-                                boxShadow: `0 8px 20px ${theme.color}30`,
-                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                            }}
-                        >
-                            <div style={{ 
-                                position: 'absolute', 
-                                top: 0, 
-                                left: 0, 
-                                right: 0, 
-                                bottom: 0, 
-                                background: 'linear-gradient(135deg, rgba(255,255,255,0.2), transparent)',
-                                pointerEvents: 'none'
-                             }} />
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1, gap: '8px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <div style={{ 
-                                        background: 'rgba(255,255,255,0.25)', 
-                                        padding: '10px', 
-                                        borderRadius: '14px',
-                                        color: '#fff',
+                                marginBottom: isThemeListExpanded ? '1.5rem' : '0',
+                                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1)',
+                                opacity: isThemeListExpanded ? 1 : 0
+                            }}>
+                                {Object.entries(TATTVA_THEMES).map(([k, v]) => (
+                                    <button
+                                        key={k}
+                                        onClick={() => handleSetTheme(k)}
+                                        style={{
+                                            width: '100%',
+                                            height: '58px',
+                                            borderRadius: '16px',
+                                            background: currentThemeKey === k ? `${v.color}10` : '#fff',
+                                            border: currentThemeKey === k ? `2px solid ${v.color}` : '1.5px solid #f1f5f9',
+                                            boxShadow: currentThemeKey === k ? `0 4px 12px ${v.color}15` : 'none',
+                                            transition: 'all 0.3s ease',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '14px',
+                                            padding: '0 14px',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        <div style={{
+                                            width: '36px',
+                                            height: '36px',
+                                            borderRadius: '10px',
+                                            background: v.gradient,
+                                            flexShrink: 0,
+                                            boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                                        }} />
+                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', flex: 1 }}>
+                                            <span style={{
+                                                fontSize: '0.95rem',
+                                                fontWeight: 800,
+                                                color: currentThemeKey === k ? v.color : '#1e293b',
+                                                letterSpacing: '0.3px'
+                                            }}>{v.name}</span>
+                                            <span style={{
+                                                fontSize: '0.65rem',
+                                                color: '#94a3b8',
+                                                fontWeight: 600,
+                                                textTransform: 'uppercase'
+                                            }}>{k === 'advaita' ? 'Eternal Dark' : 'Vedic Vibrance'}</span>
+                                        </div>
+                                        {currentThemeKey === k && (
+                                            <div style={{
+                                                background: v.color,
+                                                color: '#fff',
+                                                borderRadius: '50%',
+                                                width: '22px',
+                                                height: '22px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center'
+                                            }}>
+                                                <CheckCircle2 size={14} strokeWidth={3} />
+                                            </div>
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
+
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                color: 'var(--color-text-light)',
+                                marginBottom: '1rem',
+                                padding: '0 4px'
+                            }}>
+                                <Type size={18} color={theme.color} />
+                                <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</span>
+                            </div>
+
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                background: '#f8fafc',
+                                padding: '8px',
+                                borderRadius: '16px',
+                                border: '1px solid #e2e8f0',
+                                marginBottom: '1.5rem'
+                            }}>
+                                <button
+                                    onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
+                                    style={{
+                                        background: '#fff',
+                                        border: 'none',
+                                        width: '40px',
+                                        height: '40px',
+                                        borderRadius: '12px',
+                                        cursor: 'pointer',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        backdropFilter: 'blur(4px)'
-                                    }}>
-                                        <BarChart3 size={20} strokeWidth={2.5} />
-                                    </div>
-                                    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                                        <span style={{ color: '#fff', fontWeight: 900, fontSize: '0.95rem', letterSpacing: '0.2px' }}>Library Stats</span>
-                                        <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.6px', textTransform: 'uppercase' }}>Analytics Insights</span>
-                                    </div>
+                                        color: '#64748b',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                    }}
+                                >
+                                    <Minus size={20} />
+                                </button>
+                                <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                                    <span style={{ fontWeight: 900, fontSize: '1.1rem', color: theme.color }}>{toOdiaNumber(fontSize)}</span>
+                                    <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>Points</span>
                                 </div>
-                                <div style={{ 
-                                    background: 'rgba(255,255,255,1)', 
-                                    color: theme.color, 
-                                    fontWeight: 900, 
-                                    padding: '6px 12px', 
-                                    borderRadius: '12px',
-                                    fontSize: '0.9rem',
-                                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                                    minWidth: '45px',
-                                    textAlign: 'center'
-                                }}>
-                                    {toOdiaNumber(songs.length)}
-                                </div>
+                                <button
+                                    onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
+                                    style={{
+                                        background: '#fff',
+                                        border: 'none',
+                                        width: '40px',
+                                        height: '40px',
+                                        borderRadius: '12px',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: '#64748b',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+                                    }}
+                                >
+                                    <Plus size={20} />
+                                </button>
                             </div>
-                        </button>
-                    </div>
-                </>
-            )}
-        </header>
-            <main 
+
+                            <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
+
+                            <button
+                                onClick={() => {
+                                    setIsFilterMenuOpen(false);
+                                    fetchAuthorStats();
+                                }}
+                                disabled={statsLoading}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = `0 12px 24px ${theme.color}40`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = `0 8px 20px ${theme.color}30`;
+                                }}
+                                style={{
+                                    width: '100%',
+                                    position: 'relative',
+                                    background: theme.gradient,
+                                    border: 'none',
+                                    padding: '14px',
+                                    borderRadius: '20px',
+                                    cursor: 'pointer',
+                                    overflow: 'hidden',
+                                    boxShadow: `0 8px 20px ${theme.color}30`,
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                                }}
+                            >
+                                <div style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    background: 'linear-gradient(135deg, rgba(255,255,255,0.2), transparent)',
+                                    pointerEvents: 'none'
+                                }} />
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1, gap: '8px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                        <div style={{
+                                            background: 'rgba(255,255,255,0.25)',
+                                            padding: '10px',
+                                            borderRadius: '14px',
+                                            color: '#fff',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            backdropFilter: 'blur(4px)'
+                                        }}>
+                                            <BarChart3 size={20} strokeWidth={2.5} />
+                                        </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                                            <span style={{ color: '#fff', fontWeight: 900, fontSize: '0.95rem', letterSpacing: '0.2px' }}>Library Stats</span>
+                                            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.6px', textTransform: 'uppercase' }}>Analytics Insights</span>
+                                        </div>
+                                    </div>
+                                    <div style={{
+                                        background: 'rgba(255,255,255,1)',
+                                        color: theme.color,
+                                        fontWeight: 900,
+                                        padding: '6px 12px',
+                                        borderRadius: '12px',
+                                        fontSize: '0.9rem',
+                                        boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                                        minWidth: '45px',
+                                        textAlign: 'center'
+                                    }}>
+                                        {toOdiaNumber(songs.length)}
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </>
+                )}
+            </header>
+            <main
                 ref={mainScrollRef}
                 onScroll={() => {
                     if (isFilterMenuOpen) setIsFilterMenuOpen(false);
                 }}
                 style={{
-                flex: 1,
-                overflowY: 'auto',
-                padding: '1rem 0',
-                paddingBottom: '100px'
-            }}>
+                    flex: 1,
+                    overflowY: 'auto',
+                    padding: '1rem 0',
+                    paddingBottom: '100px'
+                }}>
                 {activeTab === 'gita' && (
                     <>
                         {renderGitaDashboard()}
@@ -1892,8 +1880,8 @@ export const SongsPage: React.FC = () => {
                                                 )}
                                             </div>
                                             {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
-                                                <div 
-                                                    style={{ 
+                                                <div
+                                                    style={{
                                                         marginLeft: '0.75rem',
                                                         padding: '6px',
                                                         borderRadius: '8px',
@@ -1903,7 +1891,7 @@ export const SongsPage: React.FC = () => {
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
                                                         pointerEvents: 'none'
-                                                    }} 
+                                                    }}
                                                 >
                                                     <Mic size={14} strokeWidth={2.5} />
                                                 </div>

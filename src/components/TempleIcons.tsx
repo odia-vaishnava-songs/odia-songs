@@ -1,5 +1,15 @@
 
-import React from 'react';
+
+
+export const SacredLotus = ({ size = 24, color = 'currentColor' }: { size?: number, color?: string }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22C12 22 17 18 17 13C17 10.2386 14.7614 8 12 8C9.23858 8 7 10.2386 7 13C7 18 12 22 12 22Z" fill={color} opacity="0.2" />
+        <path d="M12 22C12 22 19 19 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 19 12 22 12 22Z" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 2V6" stroke={color} strokeWidth="2" strokeLinecap="round" />
+        <path d="M10 4L12 6L14 4" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="3" fill={color} opacity="0.3" />
+    </svg>
+);
 
 export const TempleShikhara = ({ size = 24, color = 'currentColor' }: { size?: number, color?: string }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
