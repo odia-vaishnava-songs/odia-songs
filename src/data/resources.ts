@@ -1522,6 +1522,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (TempleSongs as any).SONG_GURVASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-narasimhapranama',
+        title: 'ଉଗ୍ରଂ ବୀରଂ ମହାବିଷ୍ଣୁଂ (Ugram Viram Mahavishnum)',
+        title_odia: 'ଉଗ୍ରଂ ବୀରଂ ମହାବିଷ୍ଣୁଂ',
+        title_english: 'Ugram Viram Mahavishnum',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vyasadeva',
+        tags: ['Pranama'],
+        structuredContent: (Songs as any).SONG_NARASIMHAPRANAMA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
