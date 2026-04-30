@@ -3,6 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { celebrateBlast } from '../utils/celebration';
 import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, Lock, Sparkles, UserPlus, Eye, EyeOff } from 'lucide-react';
+import * as TempleIcons from '../components/TempleIcons';
 // Git Test Comment
 
 export const LoginPage: React.FC = () => {
@@ -80,7 +81,9 @@ export const LoginPage: React.FC = () => {
                         justifyContent: 'center', fontSize: '2.8rem',
                         boxShadow: '0 8px 16px rgba(255, 153, 51, 0.3)'
                     }}>
-                        🙏
+                        <div style={{ color: '#fff', filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.1))' }}>
+                            <TempleIcons.SacredLotus size={50} />
+                        </div>
                     </div>
                     <h1 style={{ color: 'var(--color-saffron-dark)', margin: 0, fontSize: '2.2rem', fontWeight: 800 }}>Odia Songs</h1>
                     <p style={{ color: '#666', marginTop: '0.5rem', fontSize: '1rem' }}>Divine melodies at your fingertips</p>

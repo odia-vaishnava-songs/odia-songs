@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { isValidIndianMobile } from '../utils/validation';
 import { celebrateBlast } from '../utils/celebration';
 import { User, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
+import * as TempleIcons from '../components/TempleIcons';
 
 export const SignupPage: React.FC = () => {
     const { registerWithPhone } = useAuth();
@@ -72,7 +73,9 @@ export const SignupPage: React.FC = () => {
                         justifyContent: 'center', fontSize: '2.2rem',
                         boxShadow: '0 8px 16px rgba(255, 153, 51, 0.3)'
                     }}>
-                        🙏
+                        <div style={{ color: '#fff', filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.1))' }}>
+                            <TempleIcons.SacredLotus size={45} />
+                        </div>
                     </div>
                     <h1 style={{ color: 'var(--color-saffron-dark)', margin: 0, fontSize: '2rem', fontWeight: 800 }}>New Devotee</h1>
                     <p style={{ color: '#666', marginTop: '0.5rem', fontSize: '0.95rem' }}>Join the path of divine melodies</p>
