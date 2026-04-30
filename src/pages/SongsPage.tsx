@@ -641,108 +641,134 @@ export const SongsPage: React.FC = () => {
 
         return (
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{
+                <div style={{ 
                     display: 'flex',
-                    gap: '20px',
+                    gap: '16px',
                     overflowX: 'auto',
-                    padding: '10px 5px 20px',
+                    padding: '10px 5px 30px',
                     scrollbarWidth: 'none'
                 }}>
-                    {/* CARD 1: TEMPLE SONGS */}
-                    <div
+                    {/* CARD 1: TEMPLE SONGS (Pic Style) */}
+                    <div 
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Temple');
                         }}
-                        style={cardStyle}
+                        style={{
+                            ...cardStyle,
+                            background: 'linear-gradient(135deg, #fff1f1 0%, #ffe4e4 100%)',
+                        }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px)';
-                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 126, 0, 0.08)';
-                            e.currentTarget.style.borderColor = '#ff9d0030';
+                            e.currentTarget.style.transform = 'translateY(-12px)';
+                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(239, 68, 68, 0.08)';
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
-                            e.currentTarget.style.borderColor = '#f1f5f9';
+                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
                         }}
                     >
-                        <span style={titleStyle}>ମନ୍ଦିର ଗୀତ</span>
-
-                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #fffcf5, #fff5e6)' }}>
-                            <div style={{ color: '#ff7e00' }}>
-                                <TempleIcons.TempleShikhara size={48} />
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                            <div>
+                                <div style={titleStyle}>ମନ୍ଦିର ଗୀତ</div>
+                                <div style={engTitleStyle}>Temple Songs</div>
                             </div>
-                            {/* Decorative Corner Motif */}
-                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#ff7e00' }}>
-                                <TempleIcons.LotusIcon size={30} />
+                            <div style={{
+                                background: '#ef4444',
+                                color: '#fff',
+                                fontSize: '0.55rem',
+                                fontWeight: 900,
+                                padding: '3px 8px',
+                                borderRadius: '20px',
+                                boxShadow: '0 4px 10px rgba(239, 68, 68, 0.2)',
+                                letterSpacing: '0.5px'
+                            }}>NEW</div>
+                        </div>
+                        
+                        <div style={{ 
+                            flex: 1, 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            marginTop: '10px'
+                        }}>
+                            <div style={{ color: '#ff7e00', filter: 'drop-shadow(0 15px 30px rgba(255, 126, 0, 0.2))' }}>
+                                <TempleIcons.TempleShikhara size={100} />
                             </div>
                         </div>
-
-                        <span style={footerStyle}>Temple Songs →</span>
                     </div>
 
-                    {/* CARD 2: PRANAMA MANTRAS */}
-                    <div
+                    {/* CARD 2: PRANAMA MANTRAS (Pic Style) */}
+                    <div 
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Pranama');
                         }}
-                        style={cardStyle}
+                        style={{
+                            ...cardStyle,
+                            background: 'linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%)',
+                        }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px)';
-                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 132, 255, 0.08)';
-                            e.currentTarget.style.borderColor = '#0084ff30';
+                            e.currentTarget.style.transform = 'translateY(-12px)';
+                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(59, 130, 246, 0.08)';
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
-                            e.currentTarget.style.borderColor = '#f1f5f9';
+                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
                         }}
                     >
-                        <span style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</span>
-
-                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f0f9ff, #e0f2fe)' }}>
-                            <div style={{ color: '#0084ff' }}>
-                                <TempleIcons.NamasteIcon size={48} />
-                            </div>
-                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#0084ff' }}>
-                                <TempleIcons.ConchIcon size={30} />
+                        <div>
+                            <div style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
+                            <div style={engTitleStyle}>Pranama Mantras</div>
+                        </div>
+                        
+                        <div style={{ 
+                            flex: 1, 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            marginTop: '10px'
+                        }}>
+                            <div style={{ color: '#0084ff', filter: 'drop-shadow(0 15px 30px rgba(0, 132, 255, 0.2))' }}>
+                                <TempleIcons.NamasteIcon size={100} />
                             </div>
                         </div>
-
-                        <span style={footerStyle}>Pranama Mantras →</span>
                     </div>
 
-                    {/* CARD 3: ALL SONGS */}
-                    <div
+                    {/* CARD 3: ALL SONGS (Pic Style) */}
+                    <div 
                         onClick={() => {
                             setActiveTab('songs');
-                            setSearchQuery('');
+                            setSearchQuery(''); 
                         }}
-                        style={cardStyle}
+                        style={{
+                            ...cardStyle,
+                            background: 'linear-gradient(135deg, #fcf5ff 0%, #f5e6ff 100%)',
+                        }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px)';
-                            e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.08)';
-                            e.currentTarget.style.borderColor = '#8b5cf630';
+                            e.currentTarget.style.transform = 'translateY(-12px)';
+                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(168, 85, 247, 0.08)';
                         }}
                         onMouseLeave={(e) => {
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
-                            e.currentTarget.style.borderColor = '#f1f5f9';
+                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
                         }}
                     >
-                        <span style={titleStyle}>ସମସ୍ତ ଗୀତ</span>
-
-                        <div style={{ ...iconContainerStyle, background: 'linear-gradient(135deg, #f5f3ff, #ede9fe)' }}>
-                            <div style={{ color: '#8b5cf6' }}>
-                                <TempleIcons.LotusIcon size={48} />
-                            </div>
-                            <div style={{ position: 'absolute', top: 0, right: 0, opacity: 0.1, color: '#8b5cf6' }}>
-                                <TempleIcons.ConchIcon size={30} />
-                            </div>
+                        <div>
+                            <div style={titleStyle}>ସମସ୍ତ ଗୀତ</div>
+                            <div style={engTitleStyle}>View All Songs</div>
                         </div>
 
-                        <span style={footerStyle}>View All Songs →</span>
+                        <div style={{ 
+                            flex: 1, 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            marginTop: '10px'
+                        }}>
+                            <div style={{ color: '#8b5cf6', filter: 'drop-shadow(0 15px 30px rgba(139, 92, 246, 0.2))' }}>
+                                <TempleIcons.LotusIcon size={100} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
