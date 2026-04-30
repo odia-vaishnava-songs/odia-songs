@@ -1524,6 +1524,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-premadhvani',
+        title: 'ପ୍ରେମ ଧ୍ୱନି (Prema Dhvani Prayers)',
+        title_odia: 'ପ୍ରେମ ଧ୍ୱନି',
+        title_english: 'Prem Dhvani (Jaya Dhvani)',
+        category: 'Songs',
+        type: 'html',
+        author: 'ISKCON',
+        tags: ['Temple'],
+        structuredContent: (TempleSongs as any).SONG_PREMADHVANI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-narasimhapranama',
         title: 'ଉଗ୍ରଂ ବୀରଂ ମହାବିଷ୍ଣୁଂ (Ugram Viram Mahavishnum)',
         title_odia: 'ଉଗ୍ରଂ ବୀରଂ ମହାବିଷ୍ଣୁଂ',
