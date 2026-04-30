@@ -1160,6 +1160,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-gurvastakam',
+        title: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବାଷ୍ଟକମ୍ – ମଙ୍ଗଳ ଆରତି (Śrī Śrī Gurv-aṣṭakam)',
+        title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବାଷ୍ଟକମ୍',
+        title_english: 'Gurvastakam (Samsara Davanala)',
+        category: 'Songs',
+        type: 'html',
+        author: 'ଶ୍ରୀଲ ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
+        tags: ['Temple'],
+        structuredContent: (Songs as any).SONG_GURVASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-hariboloharibolo',
         title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
         category: 'Songs',
@@ -1507,19 +1520,6 @@ export const RESOURCES: Resource[] = [
         author: 'ଶ୍ରୀଲ ନରୋତ୍ତମ ଦାସ ଠାକୁର',
         tags: ['Temple'],
         structuredContent: (TempleSongs as any).SONG_GURUPUJA_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-gurvastakam',
-        title: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍ (Śrī Gurv-aṣṭakam)',
-        title_odia: 'ଶ୍ରୀ ଗୁରୁ ଅଷ୍ଟକମ୍',
-        title_english: 'Gurvastakam',
-        category: 'Songs',
-        type: 'html',
-        author: 'ଶ୍ରୀଲ ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
-        tags: ['Temple'],
-        structuredContent: (TempleSongs as any).SONG_GURVASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },

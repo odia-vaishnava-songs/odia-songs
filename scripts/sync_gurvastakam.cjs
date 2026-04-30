@@ -1,6 +1,13 @@
-import type { StructuredSong } from '../types';
+const { createClient } = require('@supabase/supabase-js');
 
-export const SONG_GURVASTAKAM_STRUCTURED: StructuredSong = {
+const supabaseUrl = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjc29xaGRrZGZrenFkbHhxbWR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwNzY5ODAsImV4cCI6MjA4NzY1Mjk4MH0.rKZQkigexFy6w1ui99ARuxee6US5hPaTTLRTaASZ2Ec';
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+async function syncGurvastakam() {
+    const songId = 'song-gurvastakam';
+    const structuredContent = {
     "verses": [
         {
             "id": 1,
@@ -26,7 +33,7 @@ export const SONG_GURVASTAKAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 3,
-            "lyric": "ଶ୍ରୀ-ବିଗ୍ରହାରାଧନ-ନିତ୍ୟ-ନାନ-\nଶୃଙ୍ଗାର-ତନ୍-ମନ୍ଦିର-ମାର୍ଜନାଦୌ ।\nଯୁକ୍ତସ୍ୟ ଭକ୍ତାଂଶ୍ଚ ନିଯୁଞ୍ଜତୋଽପି\nବନ୍ଦେ ଗୁରୋଃ ଶ୍ରୀ-ଚରଣାରବିନ୍ଦମ୍ ॥",
+            "lyric": "ଶ୍ରୀ-ବିଗ୍ରହାରାଧନ-ନିତ୍ୟ-ନାନା-\nଶୃଙ୍ଗାର-ତନ୍-ମନ୍ଦିର-ମାର୍ଜନାଦୌ ।\nଯୁକ୍ତସ୍ୟ ଭକ୍ତାଂଶ୍ଚ ନିଯୁଞ୍ଜତୋଽପି\nବନ୍ଦେ ଗୁରୋଃ ଶ୍ରୀ-ଚରଣାରବିନ୍ଦମ୍ ॥",
             "translation": "ଯିଏ ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ବିଗ୍ରହ ସେବା, ସେମାନଙ୍କୁ ସୁନ୍ଦର ବେଶ କରାଇବା ଏବଂ ମନ୍ଦିର ସଫା କରିବା ଆଦି କାର୍ଯ୍ୟରେ ସର୍ବଦା ନିଜେ ରହିବା ସହ ଶିଷ୍ୟମାନଙ୍କୁ ମଧ୍ୟ ନିୟୋଜିତ କରନ୍ତି, ସେହି ଶ୍ରୀଗୁରୁଙ୍କ ଚରଣ କମଳରେ ମୁଁ ବନ୍ଦନା କରୁଛି।",
             "wordMeanings": [
                 { "word": "ଶ୍ରୀ-ବିଗ୍ରହାରାଧନ-ନିତ୍ୟ-ନାନା", "meaning": "ଶ୍ରୀ ବିଗ୍ରହଙ୍କର ପ୍ରତିଦିନ ବିଭିନ୍ନ ପ୍ରକାର ସେବା" },
@@ -92,3 +99,26 @@ export const SONG_GURVASTAKAM_STRUCTURED: StructuredSong = {
         }
     ]
 };
+
+    console.log(`Pushing updates for ${songId} to Supabase...`);
+    
+    const { error } = await supabase
+        .from('songs')
+        .upsert({ 
+            id: songId,
+            title: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବାଷ୍ଟକମ୍ – ମଙ୍ଗଳ ଆରତି (Śrī Śrī Gurv-aṣṭakam)',
+            category: 'Songs',
+            author: 'ଶ୍ରୀଲ ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
+            structured_content: structuredContent,
+            status: 'COMPLETED',
+            updated_at: new Date().toISOString()
+        });
+
+    if (error) {
+        console.error('❌ Error updating DB:', error);
+    } else {
+        console.log('✅ Successfully synced Gurvastakam to Supabase!');
+    }
+}
+
+syncGurvastakam();
