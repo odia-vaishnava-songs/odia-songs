@@ -12,22 +12,33 @@ export const SacredLotus = ({ size = 24, color = 'currentColor' }: { size?: numb
 );
 
 export const TempleShikhara = ({ size = 24, color = 'currentColor' }: { size?: number, color?: string }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Flag (Dhwaja) */}
-        <path d="M12 2L15 3L12 4" fill={color} />
-        <path d="M12 1V5" stroke={color} strokeWidth="1" strokeLinecap="round" />
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Main Jagannath-style Shikhara */}
+        {/* Base Garbhagriha */}
+        <rect x="25" y="80" width="50" height="15" rx="2" fill={color} opacity="0.6" />
+        <rect x="28" y="75" width="44" height="6" rx="1" fill={color} opacity="0.7" />
         
-        {/* Shikhara Body with horizontal tiers (Bhumis) */}
-        <path d="M12 5L16 10H8L12 5Z" fill={color} opacity="0.8" />
-        <path d="M16 10L17 15H7L8 10H16Z" fill={color} opacity="0.6" />
-        <path d="M17 15L18 20H6L7 15H17Z" fill={color} opacity="0.4" />
+        {/* Tiered Middle Sections (Bhumis) */}
+        <path d="M30 75 L32 65 H68 L70 75 H30Z" fill={color} opacity="0.8" />
+        <path d="M32 65 L34 55 H66 L68 65 H32Z" fill={color} opacity="0.9" />
+        <path d="M34 55 L36 45 H64 L66 55 H34Z" fill={color} />
         
-        {/* Base / Garbhagriha */}
-        <rect x="5" y="20" width="14" height="3" rx="1" fill={color} />
+        {/* Upper Shikhara (Curvilinear - Rekha Deula style) */}
+        <path d="M36 45 C38 35 42 25 50 15 C58 25 62 35 64 45 H36Z" fill={color} />
         
-        {/* Outline for definition */}
-        <path d="M12 5L6 20H18L12 5Z" stroke={color} strokeWidth="1.2" strokeLinejoin="round" />
-        <path d="M8.5 10H15.5M7.5 15H16.5" stroke={color} strokeWidth="1" strokeOpacity="0.3" />
+        {/* Horizontal Ribbing (Amalaka feel) */}
+        <path d="M40 40 H60" stroke="white" strokeWidth="1" opacity="0.2" />
+        <path d="M42 32 H58" stroke="white" strokeWidth="1" opacity="0.2" />
+        <path d="M45 25 H55" stroke="white" strokeWidth="1" opacity="0.2" />
+        
+        {/* Amalaka & Kalasha (Top) */}
+        <circle cx="50" cy="12" r="5" fill={color} />
+        <circle cx="50" cy="6" r="3" fill={color} />
+        
+        {/* Chakra & Dhwaja (Flag) */}
+        <circle cx="50" cy="12" r="6" stroke="white" strokeWidth="0.5" opacity="0.5" />
+        <path d="M50 1 L50 8" stroke={color} strokeWidth="1.5" />
+        <path d="M50 2 L62 5 L50 7V2Z" fill="#ef4444" /> {/* Red Flag */}
     </svg>
 );
 

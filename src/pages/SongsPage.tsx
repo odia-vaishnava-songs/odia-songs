@@ -604,20 +604,19 @@ export const SongsPage: React.FC = () => {
         if (searchQuery || selectedSong || activeTab !== 'gita') return null;
 
         const cardStyle: React.CSSProperties = {
-            padding: '1.5rem 1.25rem',
-            borderRadius: '32px',
+            padding: '1rem 1.25rem',
+            borderRadius: '20px',
             display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            width: '155px',
-            minWidth: '155px',
-            height: '220px',
+            alignItems: 'center',
+            gap: '16px',
+            minWidth: '220px',
+            height: '100px',
             cursor: 'pointer',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)',
-            transition: 'all 0.5s cubic-bezier(0.2, 1, 0.3, 1)',
+            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.04)',
+            transition: 'all 0.3s ease',
             position: 'relative',
             overflow: 'hidden',
-            border: '1px solid rgba(255,255,255,0.6)'
+            border: '1px solid #f1f5f9'
         };
 
         const titleStyle: React.CSSProperties = {
@@ -643,12 +642,12 @@ export const SongsPage: React.FC = () => {
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{ 
                     display: 'flex',
-                    gap: '16px',
+                    gap: '12px',
                     overflowX: 'auto',
-                    padding: '10px 5px 30px',
+                    padding: '10px 5px 20px',
                     scrollbarWidth: 'none'
                 }}>
-                    {/* CARD 1: TEMPLE SONGS (Pic Style) */}
+                    {/* CARD 1: TEMPLE SONGS (Horizontal) */}
                     <div 
                         onClick={() => {
                             setActiveTab('songs');
@@ -656,48 +655,42 @@ export const SongsPage: React.FC = () => {
                         }}
                         style={{
                             ...cardStyle,
-                            background: 'linear-gradient(135deg, #fff1f1 0%, #ffe4e4 100%)',
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-12px)';
-                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(239, 68, 68, 0.08)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
+                            background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
                         }}
                     >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                            <div>
-                                <div style={titleStyle}>ମନ୍ଦିର ଗୀତ</div>
-                                <div style={engTitleStyle}>Temple Songs</div>
-                            </div>
-                            <div style={{
-                                background: '#ef4444',
-                                color: '#fff',
-                                fontSize: '0.55rem',
-                                fontWeight: 900,
-                                padding: '3px 8px',
-                                borderRadius: '20px',
-                                boxShadow: '0 4px 10px rgba(239, 68, 68, 0.2)',
-                                letterSpacing: '0.5px'
-                            }}>NEW</div>
-                        </div>
-                        
                         <div style={{ 
-                            flex: 1, 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#ff7e0015',
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            marginTop: '10px'
+                            flexShrink: 0
                         }}>
-                            <div style={{ color: '#ff7e00', filter: 'drop-shadow(0 15px 30px rgba(255, 126, 0, 0.2))' }}>
-                                <TempleIcons.TempleShikhara size={100} />
+                            <div style={{ color: '#ff7e00' }}>
+                                <TempleIcons.TempleShikhara size={36} />
                             </div>
                         </div>
+                        <div>
+                            <div style={titleStyle}>ମନ୍ଦିର ଗୀତ</div>
+                            <div style={engTitleStyle}>Temple Songs</div>
+                        </div>
+                        {/* NEW Badge for Horizontal */}
+                        <div style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '8px',
+                            background: '#ef4444',
+                            color: '#fff',
+                            fontSize: '0.5rem',
+                            fontWeight: 900,
+                            padding: '2px 6px',
+                            borderRadius: '4px'
+                        }}>NEW</div>
                     </div>
 
-                    {/* CARD 2: PRANAMA MANTRAS (Pic Style) */}
+                    {/* CARD 2: PRANAMA MANTRAS (Horizontal) */}
                     <div 
                         onClick={() => {
                             setActiveTab('songs');
@@ -705,36 +698,30 @@ export const SongsPage: React.FC = () => {
                         }}
                         style={{
                             ...cardStyle,
-                            background: 'linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%)',
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-12px)';
-                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(59, 130, 246, 0.08)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
+                            background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
                         }}
                     >
+                        <div style={{ 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#0084ff15',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#0084ff' }}>
+                                <TempleIcons.NamasteIcon size={36} />
+                            </div>
+                        </div>
                         <div>
                             <div style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
                             <div style={engTitleStyle}>Pranama Mantras</div>
                         </div>
-                        
-                        <div style={{ 
-                            flex: 1, 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center',
-                            marginTop: '10px'
-                        }}>
-                            <div style={{ color: '#0084ff', filter: 'drop-shadow(0 15px 30px rgba(0, 132, 255, 0.2))' }}>
-                                <TempleIcons.NamasteIcon size={100} />
-                            </div>
-                        </div>
                     </div>
 
-                    {/* CARD 3: ALL SONGS (Pic Style) */}
+                    {/* CARD 3: ALL SONGS (Horizontal) */}
                     <div 
                         onClick={() => {
                             setActiveTab('songs');
@@ -742,32 +729,26 @@ export const SongsPage: React.FC = () => {
                         }}
                         style={{
                             ...cardStyle,
-                            background: 'linear-gradient(135deg, #fcf5ff 0%, #f5e6ff 100%)',
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-12px)';
-                            e.currentTarget.style.boxShadow = '0 25px 50px rgba(168, 85, 247, 0.08)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.04)';
+                            background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
                         }}
                     >
-                        <div>
-                            <div style={titleStyle}>ସମସ୍ତ ଗୀତ</div>
-                            <div style={engTitleStyle}>View All Songs</div>
-                        </div>
-
                         <div style={{ 
-                            flex: 1, 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#8b5cf615',
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            marginTop: '10px'
+                            flexShrink: 0
                         }}>
-                            <div style={{ color: '#8b5cf6', filter: 'drop-shadow(0 15px 30px rgba(139, 92, 246, 0.2))' }}>
-                                <TempleIcons.LotusIcon size={100} />
+                            <div style={{ color: '#8b5cf6' }}>
+                                <TempleIcons.LotusIcon size={36} />
                             </div>
+                        </div>
+                        <div>
+                            <div style={titleStyle}>ସମସ୍ତ ଗୀତ</div>
+                            <div style={engTitleStyle}>View All Songs</div>
                         </div>
                     </div>
                 </div>
