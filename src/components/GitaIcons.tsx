@@ -180,3 +180,13 @@ export const GitaCh18Icon: React.FC<IconProps> = ({ size = 64, ...props }) => (
     <path d="M12 9v1m3 2h1m-7 0H8m4 3v1" />
   </svg>
 );
+
+export const CircularLogo: React.FC<IconProps> = ({ size = 64, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="12" cy="12" r="10" stroke="#3880ff" strokeWidth="2" />
+    <path d="M12 8v8" stroke="#3880ff" />
+    <path d="M8 12h8" stroke="#3880ff" />
+    <circle cx="12" cy="12" r="3" fill="#3880ff" />
+    <path d="M12 2v2M12 20v2M2 12h2m16 0h2" stroke="#3880ff" strokeOpacity="0.5" />
+  </svg>
+);

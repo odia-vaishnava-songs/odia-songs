@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus, ChevronDown, List, History, Settings, Music2 } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, ChevronLeft, ChevronRight, Type, Minus, Plus, List, History, Settings } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -102,10 +102,10 @@ export const SongsPage: React.FC = () => {
     const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
     const [isToolbeltExpanded, setIsToolbeltExpanded] = useState(false);
-    const [isStatsOpen, setIsStatsOpen] = useState(false);
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
-    const [statsLoading, setStatsLoading] = useState(false);
-    const [activeTab, setActiveTab] = useState<'songs' | 'gita'>('songs');
+    const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
+    const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
     const [isListening, setIsListening] = useState(false);
     const [isThemeListExpanded, setIsThemeListExpanded] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -220,7 +220,6 @@ export const SongsPage: React.FC = () => {
     };
 
     const fetchAuthorStats = async () => {
-        setStatsLoading(true);
         try {
             const { data, error } = await supabase
                 .from('songs')
@@ -234,16 +233,51 @@ export const SongsPage: React.FC = () => {
                 counts[a] = (counts[a] || 0) + 1;
             });
 
-            const sorted = Object.entries(counts)
-                .map(([author, count]) => ({ author, count }))
-                .sort((a, b) => b.count - a.count);
+            // Curated list from screenshot
+            const primaryAuthors = [
+                "Bhaktivinoda Thakura",
+                "Narottama Dasa Thakura",
+                "A.C. Bhaktivedanta Swami",
+                "Krsnadasa Kaviraja Goswami",
+                "Rupa Goswami",
+                "Locana Dasa Thakura",
+                "Vasudeva Ghosha",
+                "Jayadeva Goswami",
+                "Sarvabhauma Bhattacarya",
+                "Vrndavana Dasa Thakura"
+            ];
+
+            // Merge curated list with actual data
+            const merged = primaryAuthors.map(author => ({
+                author,
+                count: counts[author] || 0
+            }));
+
+            // Add any other authors found in the database that aren't in the curated list
+            Object.entries(counts).forEach(([author, count]) => {
+                if (!primaryAuthors.includes(author)) {
+                    merged.push({ author, count });
+                }
+            });
+
+            // For the curated list, we keep the order from primaryAuthors, for others we sort by count
+            const sorted = merged.sort((a, b) => {
+                const aIdx = primaryAuthors.indexOf(a.author);
+                const bIdx = primaryAuthors.indexOf(b.author);
+                
+                // If both are in primary list, keep their original order
+                if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+                // If only one is in primary list, it comes first
+                if (aIdx !== -1) return -1;
+                if (bIdx !== -1) return 1;
+                
+                // Otherwise sort by count
+                return b.count - a.count;
+            });
 
             setAuthorStats(sorted);
-            setIsStatsOpen(true);
         } catch (err) {
             console.error('[Stats] Error:', err);
-        } finally {
-            setStatsLoading(false);
         }
     };
 
@@ -664,6 +698,7 @@ export const SongsPage: React.FC = () => {
         );
     };
 
+
     const renderFeaturedCategories = () => {
         if (searchQuery || selectedSong || activeTab !== 'gita') return null;
 
@@ -774,6 +809,7 @@ export const SongsPage: React.FC = () => {
                         className="category-card"
                         onClick={() => {
                             fetchAuthorStats();
+                            setIsAuthorPanelOpen(true);
                         }}
                         style={{
                             background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
@@ -1634,8 +1670,8 @@ export const SongsPage: React.FC = () => {
                         }
                     `}</style>
                 </div>
-                <button onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)} style={{
-                    background: 'rgba(255,255,255,0.2)',
+                <button onClick={() => setIsSettingsPanelOpen(true)} style={{
+                    background: isSettingsPanelOpen ? theme.color : 'rgba(255,255,255,0.2)',
                     color: '#fff',
                     borderRadius: '50%',
                     width: '40px',
@@ -1643,7 +1679,10 @@ export const SongsPage: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    backdropFilter: 'blur(4px)'
+                    backdropFilter: 'blur(4px)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
                 }}>
                     <SlidersHorizontal size={20} />
                 </button>
@@ -1699,16 +1738,65 @@ export const SongsPage: React.FC = () => {
                                         setIsFilterMenuOpen(false);
                                     }} 
                                 />
-                                <FilterMenuItem 
-                                    icon={<Users size={18} />} 
-                                    label="Authors" 
-                                    odia="ଲେଖକ ଅନୁସାରେ"
-                                    active={isStatsOpen}
+                                <div 
                                     onClick={() => {
                                         setIsFilterMenuOpen(false);
                                         fetchAuthorStats();
-                                    }} 
-                                />
+                                        setIsAuthorPanelOpen(true);
+                                    }}
+                                    style={{
+                                        margin: '0.5rem 1rem 0.75rem',
+                                        padding: '0.85rem 1.1rem',
+                                        borderRadius: '24px',
+                                        background: '#f0fdf4',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '14px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        border: '1px solid #dcfce7',
+                                        boxShadow: '0 4px 12px rgba(22, 163, 74, 0.08)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = '0 8px 20px rgba(22, 163, 74, 0.15)';
+                                        e.currentTarget.style.backgroundColor = '#ecfdf5';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(22, 163, 74, 0.08)';
+                                        e.currentTarget.style.backgroundColor = '#f0fdf4';
+                                    }}
+                                >
+                                    <div style={{
+                                        width: '48px',
+                                        height: '48px',
+                                        borderRadius: '14px',
+                                        background: '#dcfce7',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: '#16a34a'
+                                    }}>
+                                        <Users size={26} strokeWidth={2.5} />
+                                    </div>
+                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <span style={{ 
+                                            fontSize: '1.05rem', 
+                                            fontWeight: 900, 
+                                            color: '#064e3b',
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            lineHeight: '1.2'
+                                        }}>ଲେଖକ ଅନୁସାରେ</span>
+                                        <span style={{ 
+                                            fontSize: '0.65rem', 
+                                            fontWeight: 800, 
+                                            color: '#64748b',
+                                            letterSpacing: '0.5px',
+                                            marginTop: '2px'
+                                        }}>BY AUTHOR</span>
+                                    </div>
+                                </div>
                                 <FilterMenuItem 
                                     icon={<TempleIcons.TempleShikhara size={18} />} 
                                     label="Temple Songs" 
@@ -1853,98 +1941,80 @@ export const SongsPage: React.FC = () => {
                         {renderFeaturedCategories()}
                     </>
                 )}
-                <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
-                    {sortedGroups.map(letter => (
-                        <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
-                            {/* Sticky Section Header */}
-                            <div style={{
-                                position: 'sticky',
-                                top: '70px',
-                                zIndex: 5,
-                                display: 'flex',
-                                alignItems: 'center',
-                                padding: '0.5rem 1.25rem',
-                                pointerEvents: 'none'
-                            }}>
+
+                {activeTab === 'songs' && (
+                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
+                        {sortedGroups.map(letter => (
+                            <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
                                 <div style={{
-                                    fontSize: '1.1rem',
-                                    fontWeight: 800,
-                                    color: theme.color,
-                                    width: '32px',
-                                    height: '32px',
+                                    position: 'sticky',
+                                    top: '70px',
+                                    zIndex: 5,
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center',
-                                    background: 'white',
-                                    borderRadius: '8px',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                                    pointerEvents: 'auto'
+                                    padding: '0.5rem 1.25rem',
+                                    pointerEvents: 'none'
                                 }}>
-                                    {letter}
+                                    <div style={{
+                                        fontSize: '1.1rem',
+                                        fontWeight: 800,
+                                        color: theme.color,
+                                        width: '32px',
+                                        height: '32px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        background: 'white',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                        pointerEvents: 'auto'
+                                    }}>
+                                        {letter}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div style={{ padding: '0 0.5rem' }}>
-                                {groupedSongs[letter].map(song => (
-                                    <div
-                                        key={song.id}
-                                        onClick={() => handleSelectSong(song)}
-                                        style={{
-                                            padding: '0.5rem 0.8rem',
-                                            backgroundColor: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#fff7ed' : 'white',
-                                            borderRadius: '14px',
-                                            marginBottom: '0.4rem',
-                                            boxShadow: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '0 2px 6px rgba(251, 146, 60, 0.15)' : '0 1px 3px rgba(0,0,0,0.05)',
-                                            border: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '1px solid #fb923c' : '1px solid #f1f5f9',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.2s ease',
-                                            position: 'relative',
-                                            overflow: 'hidden'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            const isTempleTheme = searchQuery === 'Temple' && song.tags?.includes('Temple');
-                                            e.currentTarget.style.backgroundColor = isTempleTheme ? '#ffedd5' : '#f8fafc';
-                                            if (isTempleTheme) {
-                                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(251, 146, 60, 0.25)';
-                                            } else {
-                                                e.currentTarget.style.borderColor = theme.color + '30';
-                                            }
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            const isTempleTheme = searchQuery === 'Temple' && song.tags?.includes('Temple');
-                                            e.currentTarget.style.backgroundColor = isTempleTheme ? '#fff7ed' : 'white';
-                                            if (isTempleTheme) {
-                                                e.currentTarget.style.boxShadow = '0 2px 6px rgba(251, 146, 60, 0.15)';
-                                            } else {
-                                                e.currentTarget.style.borderColor = '#f1f5f9';
-                                            }
-                                        }}
-                                    >
-                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1 }}>
-                                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                    <div style={{
-                                                        fontSize: '1rem',
-                                                        fontWeight: 900,
-                                                        color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#ea580c' : (song.published ? '#16a34a' : getStatusColor(song.status, song.verified)),
-                                                        fontFamily: 'var(--font-odia-sans)',
-                                                        lineHeight: '1.2'
-                                                    }}>{getOdiaTitle(song)}</div>
-                                                    {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                <div style={{ padding: '0 0.5rem' }}>
+                                    {groupedSongs[letter].map(song => (
+                                        <div
+                                            key={song.id}
+                                            onClick={() => handleSelectSong(song)}
+                                            style={{
+                                                padding: '0.5rem 0.8rem',
+                                                backgroundColor: 'white',
+                                                borderRadius: '14px',
+                                                marginBottom: '0.4rem',
+                                                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                                                border: '1px solid #f1f5f9',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s ease',
+                                                position: 'relative',
+                                                overflow: 'hidden'
+                                            }}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1 }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                        <div style={{
+                                                            fontSize: '1rem',
+                                                            fontWeight: 900,
+                                                            color: song.published ? '#16a34a' : getStatusColor(song.status, song.verified),
+                                                            fontFamily: 'var(--font-odia-sans)',
+                                                            lineHeight: '1.2'
+                                                        }}>{getOdiaTitle(song)}</div>
+                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                                    </div>
+                                                    {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                        <div style={{
+                                                            fontSize: '0.75rem',
+                                                            color: (song.status === 'COMPLETED' || song.verified) ? '#16a34a' : '#64748b',
+                                                            fontWeight: (song.status === 'COMPLETED' || song.verified) ? 800 : 500,
+                                                            fontFamily: "'Outfit', sans-serif",
+                                                            marginTop: '-2px'
+                                                        }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
+                                                    )}
                                                 </div>
-                                                {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
+                                                {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
                                                     <div style={{
-                                                        fontSize: '0.75rem',
-                                                        color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#c2410c' : ((song.status === 'COMPLETED' || song.verified) ? '#16a34a' : '#64748b'),
-                                                        fontWeight: (song.status === 'COMPLETED' || song.verified || (searchQuery === 'Temple' && song.tags?.includes('Temple'))) ? 800 : 500,
-                                                        fontFamily: "'Outfit', sans-serif",
-                                                        marginTop: '-2px'
-                                                    }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
-                                                )}
-                                            </div>
-                                            {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
-                                                <div
-                                                    style={{
                                                         marginLeft: '0.75rem',
                                                         padding: '6px',
                                                         borderRadius: '8px',
@@ -1952,26 +2022,23 @@ export const SongsPage: React.FC = () => {
                                                         color: '#7e22ce',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                        pointerEvents: 'none'
-                                                    }}
-                                                >
-                                                    <Mic size={14} strokeWidth={2.5} />
+                                                        justifyContent: 'center'
+                                                    }}>
+                                                        <Mic size={14} strokeWidth={2.5} />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            {song.author && (
+                                                <div style={{
+                                                    fontSize: '0.65rem',
+                                                    marginTop: '2px',
+                                                    color: '#94a3b8',
+                                                    fontFamily: 'var(--font-odia-sans)',
+                                                    fontWeight: 500
+                                                }}>
+                                                    {song.author}
                                                 </div>
                                             )}
-                                        </div>
-                                        {song.author && (
-                                            <div style={{
-                                                fontSize: '0.65rem',
-                                                marginTop: '2px',
-                                                color: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? '#ea580c' : '#94a3b8',
-                                                opacity: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? 0.8 : 1,
-                                                fontFamily: 'var(--font-odia-sans)',
-                                                fontWeight: (searchQuery === 'Temple' && song.tags?.includes('Temple')) ? 800 : 500
-                                            }}>
-                                                {song.author}
-                                            </div>
-                                        )}
                                         {searchQuery === 'Temple' && song.tags?.includes('Temple') && (
                                             <div style={{
                                                 position: 'absolute',
@@ -1989,7 +2056,8 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                    </div>
+                )}
             </main>
             {/* Alphabet Sidebar - Only showing letters with songs for a clean list */}
             <div style={{
@@ -2093,7 +2161,6 @@ export const SongsPage: React.FC = () => {
                 </div>
             )}
             {/* Bottom Navigation */}
-            {!selectedSong && (
                 <div style={{
                     position: 'fixed',
                     bottom: '24px',
@@ -2149,138 +2216,298 @@ export const SongsPage: React.FC = () => {
                         <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ଭଗବଦ୍ ଗୀତା</span>
                     </button>
                 </div>
-            )}
-            {/* Statistics Modal */}
-            {/* Statistics Modal (Author Explorer) */}
-            {isStatsOpen && (
-                <div style={{
-                    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(12px)',
-                    zIndex: 2500, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    padding: '16px'
-                }}>
+
+            {/* ===== AUTHOR EXPLORER OVERLAY PANEL ===== */}
+            {isAuthorPanelOpen && (
+                <>
+                    {/* Backdrop */}
+                    <div
+                        onClick={() => setIsAuthorPanelOpen(false)}
+                        style={{
+                            position: 'fixed', inset: 0,
+                            background: 'rgba(0,0,0,0.45)',
+                            backdropFilter: 'blur(4px)',
+                            zIndex: 2000,
+                            animation: 'fadeIn 0.25s ease'
+                        }}
+                    />
+                    {/* Sliding Panel */}
                     <div style={{
-                        backgroundColor: 'white', width: '100%', maxWidth: '480px',
-                        maxHeight: '80vh', borderRadius: '32px', overflow: 'hidden',
-                        display: 'flex', flexDirection: 'column', boxShadow: '0 25px 60px rgba(0,0,0,0.15)',
-                        animation: 'modalSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                        position: 'fixed',
+                        top: 0, right: 0, bottom: 0,
+                        width: 'min(380px, 96vw)',
+                        background: '#f8fafc',
+                        zIndex: 2001,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        boxShadow: '-8px 0 40px rgba(0,0,0,0.18)',
+                        animation: 'slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
-                        {/* Modal Header */}
+                        {/* Panel Header */}
                         <div style={{
-                            padding: '1.5rem', background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)', color: 'white',
-                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                            position: 'relative', overflow: 'hidden'
+                            display: 'flex', alignItems: 'center', gap: '12px',
+                            padding: '1.25rem 1.25rem 1rem',
+                            background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
+                            color: 'white',
+                            flexShrink: 0
                         }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', zIndex: 2 }}>
-                                <div style={{ 
-                                    width: '48px', height: '48px', borderRadius: '14px', 
-                                    background: 'rgba(255,255,255,0.2)', display: 'flex', 
-                                    alignItems: 'center', justifyContent: 'center',
-                                    backdropFilter: 'blur(10px)'
-                                }}>
-                                    <Users size={28} />
-                                </div>
-                                <div>
-                                    <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 900, letterSpacing: '-0.3px' }}>Author Explorer</h3>
-                                    <div style={{ fontSize: '0.8rem', opacity: 0.9, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>ଲେଖକ ଅନୁସାରେ ଖୋଜନ୍ତୁ</div>
-                                </div>
+                            <div style={{
+                                width: '40px', height: '40px', borderRadius: '12px',
+                                background: 'rgba(255,255,255,0.2)', display: 'flex',
+                                alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                            }}>
+                                <Users size={22} />
+                            </div>
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: '1.1rem', fontWeight: 900, lineHeight: 1.2 }}>Author Explorer</div>
+                                <div style={{ fontSize: '0.75rem', opacity: 0.85, fontFamily: 'var(--font-odia-sans)' }}>ଲେଖକ ଅନୁସାରେ ଖୋଜନ୍ତୁ</div>
                             </div>
                             <button
-                                onClick={() => setIsStatsOpen(false)}
-                                style={{ 
-                                    background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', 
-                                    padding: '10px', borderRadius: '50%', cursor: 'pointer', zIndex: 2,
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                onClick={() => setIsAuthorPanelOpen(false)}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)', border: 'none',
+                                    color: 'white', width: '34px', height: '34px',
+                                    borderRadius: '10px', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', cursor: 'pointer', flexShrink: 0
                                 }}
                             >
-                                <X size={20} />
+                                <X size={18} />
                             </button>
-                            {/* Decorative Circle */}
-                            <div style={{ 
-                                position: 'absolute', top: '-20px', right: '-20px', 
-                                width: '100px', height: '100px', borderRadius: '50%', 
-                                background: 'rgba(255,255,255,0.1)', zIndex: 1 
-                            }} />
                         </div>
 
-                        {/* Modal Body */}
-                        <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem', backgroundColor: '#f8fafc' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                {authorStats.map((stat: { author: string; count: number }, idx: number) => (
-                                    <div
-                                        key={idx}
-                                        onClick={() => {
-                                            setSearchQuery(stat.author);
-                                            setIsStatsOpen(false);
-                                            mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{
-                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                            padding: '1.25rem', backgroundColor: 'white', borderRadius: '24px',
-                                            border: '1px solid #f1f5f9', cursor: 'pointer',
-                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                            boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1.02) translateX(4px)';
-                                            e.currentTarget.style.borderColor = '#16a34a40';
-                                            e.currentTarget.style.boxShadow = '0 10px 20px rgba(22, 163, 74, 0.08)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1) translateX(0)';
-                                            e.currentTarget.style.borderColor = '#f1f5f9';
-                                            e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)';
-                                        }}
-                                    >
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                                            <div style={{
-                                                backgroundColor: idx === 0 ? '#16a34a' : (idx === 1 ? '#22c55e' : '#86efac'), 
-                                                color: idx > 1 ? '#166534' : 'white', width: '32px', height: '32px',
-                                                borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                fontSize: '0.9rem', fontWeight: 900
-                                            }}>{toOdiaNumber(idx + 1)}</div>
-                                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                                <span style={{ fontWeight: 800, color: '#1e293b', fontSize: '1rem' }}>{stat.author}</span>
-                                                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 500 }}>{toOdiaNumber(stat.count)} Songs Available</span>
+                        {/* Author List */}
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '1rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                {authorStats.length === 0 ? (
+                                    <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#94a3b8' }}>
+                                        <Users size={40} style={{ opacity: 0.3, marginBottom: '1rem' }} />
+                                        <div style={{ fontWeight: 600 }}>Loading authors...</div>
+                                    </div>
+                                ) : authorStats.map((stat: { author: string; count: number }, idx: number) => {
+                                    const isActive = stat.count > 0;
+                                    return (
+                                        <div
+                                            key={idx}
+                                            onClick={() => {
+                                                if (isActive) {
+                                                    setSearchQuery(stat.author);
+                                                    setActiveTab('songs');
+                                                    setIsAuthorPanelOpen(false);
+                                                    mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }
+                                            }}
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                                padding: '0.9rem 1rem',
+                                                backgroundColor: 'white',
+                                                borderRadius: '16px',
+                                                border: isActive ? '1px solid #16a34a20' : '1px solid #f1f5f9',
+                                                cursor: isActive ? 'pointer' : 'default',
+                                                transition: 'all 0.2s ease',
+                                                boxShadow: isActive ? '0 4px 12px rgba(22, 163, 74, 0.08)' : '0 2px 4px rgba(0,0,0,0.02)',
+                                                opacity: isActive ? 1 : 0.6
+                                            }}
+                                            onMouseEnter={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.boxShadow = '0 6px 16px rgba(22, 163, 74, 0.12)'; } }}
+                                            onMouseLeave={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateX(0)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(22, 163, 74, 0.08)'; } }}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                                <div style={{
+                                                    backgroundColor: isActive ? '#16a34a' : '#cbd5e1',
+                                                    color: 'white', width: '26px', height: '26px',
+                                                    borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                    fontSize: '0.8rem', fontWeight: 900, flexShrink: 0
+                                                }}>{toOdiaNumber(idx + 1)}</div>
+                                                <div>
+                                                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: isActive ? '#1e293b' : '#64748b' }}>{stat.author}</div>
+                                                    <div style={{ fontSize: '0.68rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: isActive ? 700 : 500 }}>
+                                                        {isActive ? `${toOdiaNumber(stat.count)} Songs Available` : 'Coming Soon'}
+                                                    </div>
+                                                </div>
                                             </div>
+                                            {isActive
+                                                ? <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#16a34a', boxShadow: '0 0 8px rgba(22,163,74,0.5)', flexShrink: 0 }} />
+                                                : <ChevronRight size={14} color="#cbd5e1" />
+                                            }
                                         </div>
-                                        <div style={{
-                                            background: '#f0fdf4', color: '#16a34a', padding: '6px', borderRadius: '50%',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center'
-                                        }}>
-                                            <ChevronRight size={18} />
-                                        </div>
-                                    </div>
-                                ))}
-
-                                <div style={{
-                                    marginTop: '1.5rem', padding: '1.5rem', 
-                                    background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-                                    borderRadius: '24px', color: 'white', textAlign: 'center', 
-                                    boxShadow: '0 15px 30px rgba(15, 23, 42, 0.2)',
-                                    position: 'relative', overflow: 'hidden'
-                                }}>
-                                    <div style={{ fontSize: '0.85rem', opacity: 0.7, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Total Library Volume</div>
-                                    <div style={{ fontSize: '2.5rem', fontWeight: 950, letterSpacing: '-1px', margin: '4px 0' }}>
-                                        {toOdiaNumber(authorStats.reduce((acc: number, curr: { count: number }) => acc + curr.count, 0))}
-                                    </div>
-                                    <div style={{ fontSize: '0.9rem', opacity: 0.8, fontWeight: 500 }}>Sanctified Devotional Songs</div>
-                                    {/* Decorative Sparkle */}
-                                    <Sparkles size={40} style={{ position: 'absolute', top: '-10px', left: '-10px', opacity: 0.1 }} />
-                                </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
-                </div>
+                </>
             )}
-                    <style>{`
-                        @keyframes modalSlideUp {
-                            from { transform: translateY(20px); opacity: 0; }
-                            to { transform: translateY(0); opacity: 1; }
-                        }
-                    `}</style>
-                </div>
+
+            {/* ===== SETTINGS PANEL (Snap Style) ===== */}
+            {isSettingsPanelOpen && (
+                <>
+                    {/* Backdrop */}
+                    <div
+                        onClick={() => setIsSettingsPanelOpen(false)}
+                        style={{
+                            position: 'fixed', inset: 0,
+                            background: 'rgba(0,0,0,0.35)',
+                            backdropFilter: 'blur(3px)',
+                            zIndex: 2000,
+                            animation: 'fadeIn 0.2s ease'
+                        }}
+                    />
+                    {/* Sliding Panel */}
+                    <div style={{
+                        position: 'fixed',
+                        top: 0, right: 0, bottom: 0,
+                        width: 'min(340px, 96vw)',
+                        background: 'white',
+                        zIndex: 2001,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        boxShadow: '-8px 0 40px rgba(0,0,0,0.15)',
+                        animation: 'slideInRight 0.32s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}>
+                        {/* Panel Header */}
+                        <div style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            padding: '1.25rem 1.25rem 1rem',
+                            background: theme.gradient,
+                            color: 'white',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <SlidersHorizontal size={20} />
+                                <span style={{ fontSize: '1rem', fontWeight: 900 }}>Settings</span>
+                            </div>
+                            <button
+                                onClick={() => setIsSettingsPanelOpen(false)}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)', border: 'none',
+                                    color: 'white', width: '32px', height: '32px',
+                                    borderRadius: '10px', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', cursor: 'pointer'
+                                }}
+                            >
+                                <X size={17} />
+                            </button>
+                        </div>
+
+                        {/* Panel Body */}
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
+
+                            {/* ── THEME SECTION ── */}
+                            <div style={{
+                                background: '#fff',
+                                borderRadius: '20px',
+                                border: '1px solid #f1f5f9',
+                                padding: '1.25rem',
+                                marginBottom: '1rem',
+                                boxShadow: '0 2px 12px rgba(0,0,0,0.04)'
+                            }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+                                    <div style={{
+                                        width: '12px', height: '12px', borderRadius: '50%',
+                                        background: theme.gradient, flexShrink: 0
+                                    }} />
+                                    <span style={{
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        fontSize: '1rem', fontWeight: 800, color: '#1e293b'
+                                    }}>ଥିମ୍ ବାଛନ୍ତୁ</span>
+                                    <span style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 600 }}>(Choose Theme)</span>
+                                </div>
+                                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                                    {Object.entries(TATTVA_THEMES).map(([k, v]) => (
+                                        <div
+                                            key={k}
+                                            onClick={() => handleSetTheme(k)}
+                                            title={k.charAt(0).toUpperCase() + k.slice(1)}
+                                            style={{
+                                                width: '36px', height: '36px',
+                                                borderRadius: '50%',
+                                                background: v.gradient,
+                                                border: currentThemeKey === k ? '3px solid white' : '3px solid transparent',
+                                                boxShadow: currentThemeKey === k ? `0 0 0 2.5px ${v.color}, 0 4px 12px rgba(0,0,0,0.12)` : '0 2px 6px rgba(0,0,0,0.08)',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s ease',
+                                                transform: currentThemeKey === k ? 'scale(1.15)' : 'scale(1)'
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* ── FONT SIZE SECTION ── */}
+                            <div style={{
+                                background: '#fff',
+                                borderRadius: '20px',
+                                border: '1px solid #f1f5f9',
+                                padding: '1.25rem',
+                                boxShadow: '0 2px 12px rgba(0,0,0,0.04)'
+                            }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.25rem' }}>
+                                    <Type size={18} color={theme.color} />
+                                    <span style={{
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        fontSize: '1rem', fontWeight: 800, color: '#1e293b'
+                                    }}>ଅକ୍ଷର ସାଇଜ୍</span>
+                                    <span style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 600 }}>(Font Size)</span>
+                                </div>
+                                <div style={{
+                                    display: 'flex', alignItems: 'center', gap: '0',
+                                    border: '1.5px solid #e2e8f0',
+                                    borderRadius: '16px',
+                                    overflow: 'hidden'
+                                }}>
+                                    <button
+                                        onClick={() => setFontSize(f => Math.max(f - 2, 12))}
+                                        style={{
+                                            flex: 1, padding: '1rem', fontSize: '1.4rem',
+                                            fontWeight: 300, color: '#64748b',
+                                            background: '#f8fafc', border: 'none',
+                                            cursor: 'pointer', transition: 'background 0.2s'
+                                        }}
+                                        onMouseEnter={e => (e.currentTarget.style.background = '#f1f5f9')}
+                                        onMouseLeave={e => (e.currentTarget.style.background = '#f8fafc')}
+                                    >−</button>
+                                    <div style={{
+                                        flex: 2, textAlign: 'center',
+                                        borderLeft: '1.5px solid #e2e8f0',
+                                        borderRight: '1.5px solid #e2e8f0',
+                                        padding: '0.75rem'
+                                    }}>
+                                        <div style={{
+                                            fontSize: '2rem', fontWeight: 900,
+                                            color: theme.color,
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            lineHeight: 1
+                                        }}>{toOdiaNumber(fontSize)}</div>
+                                        <div style={{ fontSize: '0.6rem', fontWeight: 700, color: '#94a3b8', letterSpacing: '1px', marginTop: '2px' }}>POINTS</div>
+                                    </div>
+                                    <button
+                                        onClick={() => setFontSize(f => Math.min(f + 2, 32))}
+                                        style={{
+                                            flex: 1, padding: '1rem', fontSize: '1.4rem',
+                                            fontWeight: 300, color: '#64748b',
+                                            background: '#f8fafc', border: 'none',
+                                            cursor: 'pointer', transition: 'background 0.2s'
+                                        }}
+                                        onMouseEnter={e => (e.currentTarget.style.background = '#f1f5f9')}
+                                        onMouseLeave={e => (e.currentTarget.style.background = '#f8fafc')}
+                                    >+</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </>
             )}
+
+            <style>{`
+                @keyframes modalSlideUp {
+                    from { transform: translateY(20px); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
+                }
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); }
+                    to { transform: translateX(0); }
+                }
+            `}</style>
         </div>
     );
 };
