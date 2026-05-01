@@ -10,6 +10,7 @@ import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
 import * as TempleIcons from '../components/TempleIcons';
+import { AUTHOR_CATALOG } from '../data/authorCatalog';
 
 import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber } from '../utils/odia';
@@ -102,7 +103,7 @@ export const SongsPage: React.FC = () => {
     const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
     const [isToolbeltExpanded, setIsToolbeltExpanded] = useState(false);
-    const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
+    const [authorStats, setAuthorStats] = useState<{ author: string; count: number; total: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
     const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
     const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
@@ -234,45 +235,31 @@ export const SongsPage: React.FC = () => {
                 counts[a] = (counts[a] || 0) + 1;
             });
 
-            // Curated list from screenshot
-            const primaryAuthors = [
-                "Bhaktivinoda Thakura",
-                "Narottama Dasa Thakura",
-                "A.C. Bhaktivedanta Swami",
-                "Krsnadasa Kaviraja Goswami",
-                "Rupa Goswami",
-                "Locana Dasa Thakura",
-                "Vasudeva Ghosha",
-                "Jayadeva Goswami",
-                "Sarvabhauma Bhattacarya",
-                "Vrndavana Dasa Thakura"
-            ];
-
-            // Merge curated list with actual data
-            const merged = primaryAuthors.map(author => ({
-                author,
-                count: counts[author] || 0
+            // Extract all authors from AUTHOR_CATALOG as primary source
+            const catalogAuthors = AUTHOR_CATALOG.map(a => a.name);
+            
+            // Build merged list: catalog authors enriched with available counts
+            const merged = AUTHOR_CATALOG.map(cat => ({
+                author: cat.name,
+                count: counts[cat.name] || 0,
+                total: cat.catalog.length
             }));
 
-            // Add any other authors found in the database that aren't in the curated list
+            // Add any other authors found in the database that aren't in the catalog
             Object.entries(counts).forEach(([author, count]) => {
-                if (!primaryAuthors.includes(author)) {
-                    merged.push({ author, count });
+                if (!catalogAuthors.includes(author)) {
+                    merged.push({ author, count, total: count });
                 }
             });
 
-            // For the curated list, we keep the order from primaryAuthors, for others we sort by count
+            // Sort: catalog authors first, then by count
             const sorted = merged.sort((a, b) => {
-                const aIdx = primaryAuthors.indexOf(a.author);
-                const bIdx = primaryAuthors.indexOf(b.author);
+                const aIdx = catalogAuthors.indexOf(a.author);
+                const bIdx = catalogAuthors.indexOf(b.author);
                 
-                // If both are in primary list, keep their original order
                 if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
-                // If only one is in primary list, it comes first
                 if (aIdx !== -1) return -1;
                 if (bIdx !== -1) return 1;
-                
-                // Otherwise sort by count
                 return b.count - a.count;
             });
 
@@ -1340,19 +1327,38 @@ export const SongsPage: React.FC = () => {
 
     // ── FULL-SCREEN AUTHOR PAGE (only when no song is open) ───────────────────
     if (selectedAuthor && !selectedSong) {
-        const authorSongs = songResources
-            .filter(s => s.author === selectedAuthor)
-            .sort((a, b) => (a.title_odia || a.title_english || '').localeCompare(b.title_odia || b.title_english || ''));
+        // Available songs from RESOURCES
+        const availableSongs = songResources.filter(s => s.author === selectedAuthor);
 
-        // Group by first Odia letter
-        const grouped: Record<string, typeof authorSongs> = {};
-        authorSongs.forEach(s => {
-            const title = (s.title_odia || s.title_english || '?');
-            const letter = title[0] || '?';
-            if (!grouped[letter]) grouped[letter] = [];
-            grouped[letter].push(s);
+        // Full catalog for this author
+        const catalogEntry = AUTHOR_CATALOG.find(a => a.name === selectedAuthor);
+        const fullCatalog = catalogEntry?.catalog ?? [];
+
+        // Build merged list: catalog songs enriched with resource match
+        const mergedList = fullCatalog.map(cs => {
+            const key = cs.title_english.toLowerCase().replace(/[^a-z0-9]/g, '');
+            // Try to find matching resource by english title similarity
+            const resource = availableSongs.find(r => {
+                const re = (r.title_english || r.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                return re === key || re.includes(key.slice(0, 8)) || key.includes(re.slice(0, 8));
+            });
+            return { ...cs, resource };
         });
-        const groupLetters = Object.keys(grouped).sort();
+
+        // Also add any songs in resources NOT in catalog
+        availableSongs.forEach(r => {
+            const re = (r.title_english || r.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const alreadyListed = mergedList.some(m => {
+                const mk = m.title_english.toLowerCase().replace(/[^a-z0-9]/g, '');
+                return mk === re || mk.includes(re.slice(0, 8)) || re.includes(mk.slice(0, 8));
+            });
+            if (!alreadyListed) {
+                mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
+            }
+        });
+
+        const availableCount = mergedList.filter(m => !!m.resource).length;
+        const totalCount = mergedList.length;
 
         return (
             <div style={{
@@ -1368,137 +1374,108 @@ export const SongsPage: React.FC = () => {
                 }}>
                     <button
                         onClick={() => setSelectedAuthor(null)}
-                        style={{
-                            background: 'rgba(255,255,255,0.2)', color: '#fff',
-                            padding: '8px', borderRadius: '12px', display: 'flex',
-                            border: 'none', cursor: 'pointer'
-                        }}
+                        style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '8px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}
                     >
                         <ArrowLeft size={26} strokeWidth={2.5} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{
-                            fontSize: '1.1rem', fontWeight: 900,
-                            color: '#fff', whiteSpace: 'nowrap',
-                            overflow: 'hidden', textOverflow: 'ellipsis'
-                        }}>{selectedAuthor}</div>
-                        <div style={{ fontSize: '0.75rem', opacity: 0.8, marginTop: '1px' }}>
-                            {authorSongs.length} Songs
+                        <div style={{ fontSize: '1.05rem', fontWeight: 900, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {selectedAuthor}
+                        </div>
+                        <div style={{ fontSize: '0.72rem', opacity: 0.8 }}>
+                            {availableCount} of {totalCount} songs available
                         </div>
                     </div>
-                    <div style={{
-                        background: 'rgba(255,255,255,0.2)',
-                        borderRadius: '12px', padding: '6px 14px',
-                        fontSize: '0.8rem', fontWeight: 800, color: '#fff',
-                        display: 'flex', alignItems: 'center', gap: '6px'
-                    }}>
-                        <Users size={16} />
+                    <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '12px', padding: '6px 12px', fontSize: '0.78rem', fontWeight: 800, color: '#fff', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <Users size={14} />
                         <span>Author</span>
                     </div>
                 </header>
 
-                {/* Author Hero Card */}
-                <div style={{
-                    padding: '1.25rem 1rem 0.75rem',
-                    background: 'rgba(0,0,0,0.12)',
-                    borderBottom: '1px solid rgba(255,255,255,0.1)',
-                    flexShrink: 0
-                }}>
+                {/* Author Hero */}
+                <div style={{ padding: '1rem', background: 'rgba(0,0,0,0.12)', borderBottom: '1px solid rgba(255,255,255,0.1)', flexShrink: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div style={{
-                            width: '56px', height: '56px', borderRadius: '18px',
-                            background: 'rgba(255,255,255,0.2)',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            flexShrink: 0, border: '2px solid rgba(255,255,255,0.3)'
-                        }}>
-                            <Users size={28} color="#fff" />
+                        <div style={{ width: '52px', height: '52px', borderRadius: '16px', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '2px solid rgba(255,255,255,0.3)' }}>
+                            <Users size={26} color="#fff" />
                         </div>
                         <div>
-                            <div style={{
-                                fontSize: '1.35rem', fontWeight: 900, color: '#fff',
-                                lineHeight: 1.2, marginBottom: '4px'
-                            }}>{selectedAuthor}</div>
-                            <div style={{
-                                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                                background: 'rgba(255,255,255,0.15)',
-                                borderRadius: '20px', padding: '3px 10px'
-                            }}>
-                                <CheckCircle2 size={12} color="rgba(255,255,255,0.9)" />
-                                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>
-                                    {authorSongs.length} Songs Available
+                            <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', lineHeight: 1.2 }}>{selectedAuthor}</div>
+                            {catalogEntry?.odia && (
+                                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-odia-sans)', marginTop: '2px' }}>{catalogEntry.odia}</div>
+                            )}
+                            {/* Progress bar */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '6px' }}>
+                                <div style={{ width: '120px', height: '5px', background: 'rgba(255,255,255,0.2)', borderRadius: '10px', overflow: 'hidden' }}>
+                                    <div style={{ width: `${totalCount > 0 ? (availableCount / totalCount) * 100 : 0}%`, height: '100%', background: '#4ade80', borderRadius: '10px', transition: 'width 0.5s ease' }} />
+                                </div>
+                                <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', fontWeight: 700 }}>
+                                    {availableCount}/{totalCount} Available
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Songs List */}
+                {/* Full Song List */}
                 <main style={{ flex: 1, overflowY: 'auto', background: '#f8fafc', paddingBottom: '40px' }}>
-                    {groupLetters.map(letter => (
-                        <div key={letter}>
-                            {/* Letter divider */}
-                            <div style={{
-                                position: 'sticky', top: 0,
-                                padding: '0.4rem 1.25rem',
-                                background: 'rgba(248,250,252,0.95)',
-                                backdropFilter: 'blur(8px)',
-                                zIndex: 5, display: 'flex', alignItems: 'center', gap: '10px'
-                            }}>
-                                <span style={{
-                                    fontSize: '1.1rem', fontWeight: 900,
-                                    color: theme.color,
-                                    fontFamily: 'var(--font-odia-sans)'
-                                }}>{letter}</span>
-                                <div style={{ flex: 1, height: '1px', background: `${theme.color}20` }} />
-                            </div>
-
-                            {grouped[letter].map(song => (
-                                <div
-                                    key={song.id}
-                                    onClick={() => { setSelectedSong(song); setIsDetailView(true); }}
-                                    style={{
-                                        display: 'flex', alignItems: 'center',
-                                        padding: '0.9rem 1.25rem',
-                                        borderBottom: '1px solid #f1f5f9',
-                                        cursor: 'pointer', gap: '0.875rem',
-                                        background: 'white',
-                                        transition: 'background 0.15s ease'
-                                    }}
-                                    onMouseEnter={e => (e.currentTarget.style.background = '#f8fafc')}
-                                    onMouseLeave={e => (e.currentTarget.style.background = 'white')}
-                                >
-                                    {/* Number badge */}
-                                    <div style={{
-                                        width: '36px', height: '36px', borderRadius: '10px',
-                                        background: `${theme.color}15`,
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        flexShrink: 0
-                                    }}>
-                                        <BookText size={18} color={theme.color} />
-                                    </div>
-                                    {/* Song info */}
-                                    <div style={{ flex: 1, minWidth: 0 }}>
-                                        <div style={{
-                                            fontSize: '1.05rem', fontWeight: 800,
-                                            color: '#1e293b',
-                                            fontFamily: 'var(--font-odia-sans)',
-                                            whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
-                                        }}>{song.title_odia || song.title_english}</div>
-                                        {song.title_english && (
-                                            <div style={{
-                                                fontSize: '0.75rem', color: '#64748b',
-                                                fontWeight: 600, marginTop: '1px',
-                                                whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
-                                            }}>{song.title_english}</div>
-                                        )}
-                                    </div>
-                                    {/* Verified badge */}
-                                    {song.verified && <CheckCircle2 size={16} color="#4fd1c5" />}
-                                    <ChevronRight size={16} color="#cbd5e1" />
+                    {mergedList.map((song, idx) => {
+                        const hasResource = !!song.resource;
+                        return (
+                            <div
+                                key={idx}
+                                onClick={() => {
+                                    if (hasResource && song.resource) {
+                                        setSelectedSong(song.resource);
+                                        setIsDetailView(true);
+                                    }
+                                }}
+                                style={{
+                                    display: 'flex', alignItems: 'center',
+                                    padding: '0.85rem 1.25rem',
+                                    borderBottom: '1px solid #f1f5f9',
+                                    cursor: hasResource ? 'pointer' : 'default',
+                                    gap: '0.875rem',
+                                    background: 'white',
+                                    opacity: hasResource ? 1 : 0.55,
+                                    transition: 'background 0.15s ease'
+                                }}
+                                onMouseEnter={e => { if (hasResource) e.currentTarget.style.background = '#f0fdf4'; }}
+                                onMouseLeave={e => { if (hasResource) e.currentTarget.style.background = 'white'; }}
+                            >
+                                {/* Icon badge */}
+                                <div style={{
+                                    width: '36px', height: '36px', borderRadius: '10px', flexShrink: 0,
+                                    background: hasResource ? `${theme.color}15` : '#f1f5f9',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                }}>
+                                    <BookText size={18} color={hasResource ? theme.color : '#94a3b8'} />
                                 </div>
-                            ))}
-                        </div>
-                    ))}
+                                {/* Title */}
+                                <div style={{ flex: 1, minWidth: 0 }}>
+                                    <div style={{
+                                        fontSize: '0.95rem', fontWeight: 800,
+                                        color: hasResource ? '#1e293b' : '#64748b',
+                                        fontFamily: song.title_odia ? 'var(--font-odia-sans)' : 'inherit',
+                                        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                                    }}>
+                                        {song.title_odia || song.title_english}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '0.72rem', fontWeight: 600, marginTop: '1px',
+                                        color: hasResource ? theme.color : '#94a3b8',
+                                        whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                                    }}>
+                                        {hasResource ? song.title_english : '⏳ Coming Soon'}
+                                    </div>
+                                </div>
+                                {/* Status indicator */}
+                                {hasResource
+                                    ? <CheckCircle2 size={16} color={theme.color} />
+                                    : <ChevronRight size={15} color="#cbd5e1" />
+                                }
+                            </div>
+                        );
+                    })}
                 </main>
             </div>
         );
@@ -2450,7 +2427,7 @@ export const SongsPage: React.FC = () => {
                                         <Users size={40} style={{ opacity: 0.3, marginBottom: '1rem' }} />
                                         <div style={{ fontWeight: 600 }}>Loading authors...</div>
                                     </div>
-                                ) : authorStats.map((stat: { author: string; count: number }, idx: number) => {
+                                ) : authorStats.map((stat: { author: string; count: number; total: number }, idx: number) => {
                                     const isActive = stat.count > 0;
                                     return (
                                         <div
@@ -2484,8 +2461,17 @@ export const SongsPage: React.FC = () => {
                                                 }}>{toOdiaNumber(idx + 1)}</div>
                                                 <div>
                                                     <div style={{ fontSize: '0.9rem', fontWeight: 800, color: isActive ? '#1e293b' : '#64748b' }}>{stat.author}</div>
-                                                    <div style={{ fontSize: '0.68rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: isActive ? 700 : 500 }}>
-                                                        {isActive ? `${toOdiaNumber(stat.count)} Songs Available` : 'Coming Soon'}
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '2px' }}>
+                                                        <div style={{ fontSize: '0.68rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                                            <CheckCircle2 size={10} />
+                                                            {toOdiaNumber(stat.count)} Available
+                                                        </div>
+                                                        {stat.total > stat.count && (
+                                                            <div style={{ fontSize: '0.68rem', color: '#64748b', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                                                <Circle size={10} style={{ opacity: 0.5 }} />
+                                                                {toOdiaNumber(stat.total - stat.count)} Coming Soon
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </div>
