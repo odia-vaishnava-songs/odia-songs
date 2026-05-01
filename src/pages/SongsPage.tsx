@@ -603,21 +603,7 @@ export const SongsPage: React.FC = () => {
     const renderFeaturedCategories = () => {
         if (searchQuery || selectedSong || activeTab !== 'gita') return null;
 
-        const cardStyle: React.CSSProperties = {
-            padding: '1rem 1.25rem',
-            borderRadius: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-            minWidth: '220px',
-            height: '100px',
-            cursor: 'pointer',
-            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.04)',
-            transition: 'all 0.3s ease',
-            position: 'relative',
-            overflow: 'hidden',
-            border: '1px solid #f1f5f9'
-        };
+
 
         const titleStyle: React.CSSProperties = {
             fontSize: '1.1rem',
@@ -642,19 +628,18 @@ export const SongsPage: React.FC = () => {
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{ 
                     display: 'flex',
-                    gap: '12px',
-                    overflowX: 'auto',
+                    gap: '16px',
+                    flexWrap: 'wrap',
                     padding: '10px 5px 20px',
-                    scrollbarWidth: 'none'
                 }}>
-                    {/* CARD 1: TEMPLE SONGS (Horizontal) */}
+                    {/* CARD 1: TEMPLE SONGS */}
                     <div 
+                        className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Temple');
                         }}
                         style={{
-                            ...cardStyle,
                             background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
                         }}
                     >
@@ -673,10 +658,9 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={titleStyle}>ମନ୍ଦିର ଗୀତ</div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ମନ୍ଦିର ଗୀତ</div>
                             <div style={engTitleStyle}>Temple Songs</div>
                         </div>
-                        {/* NEW Badge for Horizontal */}
                         <div style={{
                             position: 'absolute',
                             top: '8px',
@@ -690,14 +674,14 @@ export const SongsPage: React.FC = () => {
                         }}>NEW</div>
                     </div>
 
-                    {/* CARD 2: PRANAMA MANTRAS (Horizontal) */}
+                    {/* CARD 2: PRANAMA MANTRAS */}
                     <div 
+                        className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery('Pranama');
                         }}
                         style={{
-                            ...cardStyle,
                             background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
                         }}
                     >
@@ -716,19 +700,49 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={titleStyle}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
                             <div style={engTitleStyle}>Pranama Mantras</div>
                         </div>
                     </div>
 
-                    {/* CARD 3: ALL SONGS (Horizontal) */}
+                    {/* CARD 3: SEARCH BY AUTHOR */}
                     <div 
+                        className="category-card"
+                        onClick={() => {
+                            setIsFilterMenuOpen(true);
+                        }}
+                        style={{
+                            background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+                        }}
+                    >
+                        <div style={{ 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#16a34a15',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#16a34a' }}>
+                                <Users size={36} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ଲେଖକ ଅନୁସାରେ</div>
+                            <div style={engTitleStyle}>By Author</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 4: ALL SONGS */}
+                    <div 
+                        className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
                             setSearchQuery(''); 
                         }}
                         style={{
-                            ...cardStyle,
                             background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
                         }}
                     >
@@ -747,8 +761,40 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={titleStyle}>ସମସ୍ତ ଗୀତ</div>
-                            <div style={engTitleStyle}>View All Songs</div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ସମସ୍ତ ଗୀତ</div>
+                            <div style={engTitleStyle}>All Songs</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 5: RECENTLY VIEWED (On new row if 4 cards per row) */}
+                    <div 
+                        className="category-card"
+                        onClick={() => {
+                            setActiveTab('songs');
+                            // Maybe set a query for recent? Or just scroll to a section
+                            setSearchQuery('Recent');
+                        }}
+                        style={{
+                            background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
+                        }}
+                    >
+                        <div style={{ 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#fb718515',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#fb7185' }}>
+                                <Sparkles size={36} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ଏବେ ପଢ଼ାହୋଇଛି</div>
+                            <div style={engTitleStyle}>Recently Viewed</div>
                         </div>
                     </div>
                 </div>
@@ -1375,6 +1421,29 @@ export const SongsPage: React.FC = () => {
                 .gita-card:hover .arrow-icon {
                     transform: translateX(4px);
                     color: #ffffff;
+                }
+
+                .category-card {
+                    padding: 1rem 1.25rem;
+                    border-radius: 20px;
+                    display: flex;
+                    alignItems: center;
+                    gap: 16px;
+                    minWidth: '220px';
+                    width: 220px;
+                    height: 100px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid #f1f5f9;
+                    flex-shrink: 0;
+                }
+
+                .category-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
                 }
             `}</style>
             <header style={{
