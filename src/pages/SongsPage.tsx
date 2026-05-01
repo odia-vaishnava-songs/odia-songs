@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus, ChevronDown } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, BarChart3, ChevronLeft, ChevronRight, Type, Minus, Plus, ChevronDown, List, History, Settings, Music2 } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -16,6 +16,70 @@ import { toOdiaNumber } from '../utils/odia';
 import * as GitaIcons from '../components/GitaIcons';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
+
+const FilterMenuItem: React.FC<{
+    icon: React.ReactNode;
+    label: string;
+    odia: string;
+    onClick: () => void;
+    active?: boolean;
+}> = ({ icon, label, odia, onClick, active }) => {
+    return (
+        <button
+            onClick={onClick}
+            style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '0.75rem 1.25rem',
+                background: active ? 'rgba(22, 163, 74, 0.1)' : 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all 0.2s ease',
+                color: active ? '#166534' : '#475569',
+                position: 'relative'
+            }}
+            onMouseEnter={(e) => {
+                if (!active) {
+                    e.currentTarget.style.background = '#f8fafc';
+                    e.currentTarget.style.color = '#1e293b';
+                }
+            }}
+            onMouseLeave={(e) => {
+                if (!active) {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = '#475569';
+                }
+            }}
+        >
+            <div style={{
+                color: active ? '#16a34a' : '#94a3b8',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '20px'
+            }}>
+                {icon}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800 }}>{label}</span>
+                <span style={{ fontSize: '0.6rem', fontWeight: 600, opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{odia}</span>
+            </div>
+            {active && (
+                <div style={{ 
+                    position: 'absolute', 
+                    right: '12px', 
+                    width: '6px', 
+                    height: '6px', 
+                    borderRadius: '50%', 
+                    backgroundColor: '#16a34a' 
+                }} />
+            )}
+        </button>
+    );
+};
 
 
 export const SongsPage: React.FC = () => {
@@ -1601,250 +1665,173 @@ export const SongsPage: React.FC = () => {
                             position: 'absolute',
                             top: '70px',
                             right: '1rem',
-                            background: 'white',
-                            padding: '1.25rem',
-                            borderRadius: 'var(--radius-lg)',
-                            boxShadow: 'var(--shadow-lg)',
+                            background: 'rgba(255, 255, 255, 0.95)',
+                            backdropFilter: 'blur(16px)',
+                            padding: '0',
+                            borderRadius: '28px',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
                             zIndex: 100,
-                            color: 'var(--color-text-main)',
-                            minWidth: '200px'
+                            color: '#1e293b',
+                            minWidth: '240px',
+                            border: '1px solid rgba(255, 255, 255, 0.5)',
+                            overflow: 'hidden',
+                            animation: 'modalSlideUp 0.3s ease-out'
                         }}>
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsThemeListExpanded(!isThemeListExpanded);
-                                }}
-                                style={{
-                                    width: '100%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'space-between',
-                                    background: 'transparent',
-                                    border: 'none',
-                                    padding: '0 0 1rem 0',
-                                    cursor: 'pointer',
-                                    color: 'var(--color-text-light)',
-                                    textAlign: 'left'
-                                }}
-                            >
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: theme.color }} />
-                                    <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଥିମ୍ ବାଛନ୍ତୁ (Choose Theme)</span>
-                                </div>
-                                <ChevronDown size={18} style={{
-                                    transform: isThemeListExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
-                                    transition: 'transform 0.3s ease',
-                                    color: theme.color
-                                }} />
-                            </button>
-
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '10px',
-                                maxHeight: isThemeListExpanded ? '400px' : '0',
-                                overflow: 'hidden',
-                                marginBottom: isThemeListExpanded ? '1.5rem' : '0',
-                                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1)',
-                                opacity: isThemeListExpanded ? 1 : 0
-                            }}>
-                                {Object.entries(TATTVA_THEMES).map(([k, v]) => (
-                                    <button
-                                        key={k}
-                                        onClick={() => handleSetTheme(k)}
-                                        style={{
-                                            width: '100%',
-                                            height: '58px',
-                                            borderRadius: '16px',
-                                            background: currentThemeKey === k ? `${v.color}10` : '#fff',
-                                            border: currentThemeKey === k ? `2px solid ${v.color}` : '1.5px solid #f1f5f9',
-                                            boxShadow: currentThemeKey === k ? `0 4px 12px ${v.color}15` : 'none',
-                                            transition: 'all 0.3s ease',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '14px',
-                                            padding: '0 14px',
-                                            cursor: 'pointer'
-                                        }}
-                                    >
-                                        <div style={{
-                                            width: '36px',
-                                            height: '36px',
-                                            borderRadius: '10px',
-                                            background: v.gradient,
-                                            flexShrink: 0,
-                                            boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
-                                        }} />
-                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', flex: 1 }}>
-                                            <span style={{
-                                                fontSize: '0.95rem',
-                                                fontWeight: 800,
-                                                color: currentThemeKey === k ? v.color : '#1e293b',
-                                                letterSpacing: '0.3px'
-                                            }}>{v.name}</span>
-                                            <span style={{
-                                                fontSize: '0.65rem',
-                                                color: '#94a3b8',
-                                                fontWeight: 600,
-                                                textTransform: 'uppercase'
-                                            }}>{k === 'advaita' ? 'Eternal Dark' : 'Vedic Vibrance'}</span>
-                                        </div>
-                                        {currentThemeKey === k && (
-                                            <div style={{
-                                                background: v.color,
-                                                color: '#fff',
-                                                borderRadius: '50%',
-                                                width: '22px',
-                                                height: '22px',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center'
-                                            }}>
-                                                <CheckCircle2 size={14} strokeWidth={3} />
-                                            </div>
-                                        )}
-                                    </button>
-                                ))}
+                            {/* SECTION: FILTERS */}
+                            <div style={{ padding: '1rem 0 0.5rem' }}>
+                                <div style={{ 
+                                    padding: '0 1.25rem 0.5rem', 
+                                    fontSize: '0.7rem', 
+                                    fontWeight: 900, 
+                                    color: theme.color, 
+                                    textTransform: 'uppercase', 
+                                    letterSpacing: '1px',
+                                    opacity: 0.8
+                                }}>Filters</div>
+                                
+                                <FilterMenuItem 
+                                    icon={<BookA size={18} />} 
+                                    label="Alphabetical" 
+                                    odia="ଅକ୍ଷର ଅନୁକ୍ରମଣିକା"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<Users size={18} />} 
+                                    label="Authors" 
+                                    odia="ଲେଖକ ଅନୁସାରେ"
+                                    active={isStatsOpen}
+                                    onClick={() => {
+                                        setIsFilterMenuOpen(false);
+                                        fetchAuthorStats();
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<TempleIcons.TempleShikhara size={18} />} 
+                                    label="Temple Songs" 
+                                    odia="ମନ୍ଦିର ଗୀତ"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('Temple');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<TempleIcons.NamasteIcon size={18} />} 
+                                    label="Pranama Mantras" 
+                                    odia="ପ୍ରଣାମ ମନ୍ତ୍ର"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('Pranama');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<Sparkles size={18} />} 
+                                    label="Ashtakams" 
+                                    odia="ଅଷ୍ଟକମ୍"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('Ashtakam');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
                             </div>
 
-                            <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
+                            <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '0.25rem 0' }} />
 
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                color: 'var(--color-text-light)',
-                                marginBottom: '1rem',
-                                padding: '0 4px'
-                            }}>
-                                <Type size={18} color={theme.color} />
-                                <span style={{ fontSize: '0.9rem', fontWeight: 800 }}>ଅକ୍ଷର ସାଇଜ୍ (Font Size)</span>
-                            </div>
+                            {/* SECTION: MORE */}
+                            <div style={{ padding: '0.5rem 0 1rem' }}>
+                                <div style={{ 
+                                    padding: '0 1.25rem 0.5rem', 
+                                    fontSize: '0.7rem', 
+                                    fontWeight: 900, 
+                                    color: '#64748b', 
+                                    textTransform: 'uppercase', 
+                                    letterSpacing: '1px',
+                                    opacity: 0.8
+                                }}>More</div>
+                                
+                                <FilterMenuItem 
+                                    icon={<List size={18} />} 
+                                    label="Lists" 
+                                    odia="ତାଲିକା"
+                                    onClick={() => alert('Lists feature coming soon!')} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<Mic size={18} />} 
+                                    label="Singers" 
+                                    odia="ଗାୟକ"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('Singer');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<History size={18} />} 
+                                    label="History" 
+                                    odia="ଇତିହାସ"
+                                    onClick={() => {
+                                        setActiveTab('songs');
+                                        setSearchQuery('Recent');
+                                        setIsFilterMenuOpen(false);
+                                    }} 
+                                />
+                                <FilterMenuItem 
+                                    icon={<Settings size={18} />} 
+                                    label="Settings" 
+                                    odia="ସେଟିଙ୍ଗସ୍"
+                                    onClick={() => {
+                                        setIsThemeListExpanded(!isThemeListExpanded);
+                                    }} 
+                                />
 
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                background: '#f8fafc',
-                                padding: '8px',
-                                borderRadius: '16px',
-                                border: '1px solid #e2e8f0',
-                                marginBottom: '1.5rem'
-                            }}>
-                                <button
-                                    onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}
-                                    style={{
-                                        background: '#fff',
-                                        border: 'none',
-                                        width: '40px',
-                                        height: '40px',
-                                        borderRadius: '12px',
-                                        cursor: 'pointer',
+                                {/* Sub-menu for Settings (Themes/Font) */}
+                                {isThemeListExpanded && (
+                                    <div style={{ 
+                                        padding: '0.5rem 1rem', 
+                                        background: '#f8fafc',
+                                        borderTop: '1px solid #f1f5f9',
+                                        borderBottom: '1px solid #f1f5f9',
                                         display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#64748b',
-                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
-                                    }}
-                                >
-                                    <Minus size={20} />
-                                </button>
-                                <div style={{ display: 'flex', flex: 1, flexDirection: 'column', alignItems: 'center' }}>
-                                    <span style={{ fontWeight: 900, fontSize: '1.1rem', color: theme.color }}>{toOdiaNumber(fontSize)}</span>
-                                    <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>Points</span>
-                                </div>
-                                <button
-                                    onClick={() => setFontSize(prev => Math.min(prev + 2, 32))}
-                                    style={{
-                                        background: '#fff',
-                                        border: 'none',
-                                        width: '40px',
-                                        height: '40px',
-                                        borderRadius: '12px',
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#64748b',
-                                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
-                                    }}
-                                >
-                                    <Plus size={20} />
-                                </button>
-                            </div>
-
-                            <div style={{ height: '1.5px', background: 'linear-gradient(to right, transparent, #f1f5f9, transparent)', margin: '1.5rem 0' }} />
-
-                            <button
-                                onClick={() => {
-                                    setIsFilterMenuOpen(false);
-                                    fetchAuthorStats();
-                                }}
-                                disabled={statsLoading}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = `0 12px 24px ${theme.color}40`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = `0 8px 20px ${theme.color}30`;
-                                }}
-                                style={{
-                                    width: '100%',
-                                    position: 'relative',
-                                    background: theme.gradient,
-                                    border: 'none',
-                                    padding: '14px',
-                                    borderRadius: '20px',
-                                    cursor: 'pointer',
-                                    overflow: 'hidden',
-                                    boxShadow: `0 8px 20px ${theme.color}30`,
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                                }}
-                            >
-                                <div style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    background: 'linear-gradient(135deg, rgba(255,255,255,0.2), transparent)',
-                                    pointerEvents: 'none'
-                                }} />
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 1, gap: '8px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                        <div style={{
-                                            background: 'rgba(255,255,255,0.25)',
-                                            padding: '10px',
-                                            borderRadius: '14px',
-                                            color: '#fff',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            backdropFilter: 'blur(4px)'
-                                        }}>
-                                            <BarChart3 size={20} strokeWidth={2.5} />
-                                        </div>
-                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                                            <span style={{ color: '#fff', fontWeight: 900, fontSize: '0.95rem', letterSpacing: '0.2px' }}>Library Stats</span>
-                                            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.6px', textTransform: 'uppercase' }}>Analytics Insights</span>
-                                        </div>
-                                    </div>
-                                    <div style={{
-                                        background: 'rgba(255,255,255,1)',
-                                        color: theme.color,
-                                        fontWeight: 900,
-                                        padding: '6px 12px',
-                                        borderRadius: '12px',
-                                        fontSize: '0.9rem',
-                                        boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                                        minWidth: '45px',
-                                        textAlign: 'center'
+                                        flexDirection: 'column',
+                                        gap: '12px',
+                                        animation: 'fadeIn 0.3s ease'
                                     }}>
-                                        {toOdiaNumber(songs.length)}
+                                        {/* Font Size Control */}
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748b' }}>Font Size</span>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <button onClick={() => setFontSize(f => Math.max(f - 2, 12))} style={{ border: '1px solid #e2e8f0', background: 'white', borderRadius: '6px', width: '24px', height: '24px' }}>-</button>
+                                                <span style={{ fontSize: '0.8rem', fontWeight: 900, minWidth: '20px', textAlign: 'center' }}>{toOdiaNumber(fontSize)}</span>
+                                                <button onClick={() => setFontSize(f => Math.min(f + 2, 32))} style={{ border: '1px solid #e2e8f0', background: 'white', borderRadius: '6px', width: '24px', height: '24px' }}>+</button>
+                                            </div>
+                                        </div>
+                                        {/* Theme Preview */}
+                                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                                            {Object.entries(TATTVA_THEMES).map(([k, v]) => (
+                                                <div 
+                                                    key={k}
+                                                    onClick={() => handleSetTheme(k)}
+                                                    style={{ 
+                                                        width: '28px', 
+                                                        height: '28px', 
+                                                        borderRadius: '50%', 
+                                                        background: v.gradient,
+                                                        border: currentThemeKey === k ? '2px solid white' : 'none',
+                                                        boxShadow: currentThemeKey === k ? `0 0 0 2px ${v.color}` : 'none',
+                                                        cursor: 'pointer'
+                                                    }} 
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            </button>
+                                )}
+                            </div>
                         </div>
                     </>
                 )}
