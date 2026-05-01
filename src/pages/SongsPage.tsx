@@ -105,6 +105,7 @@ export const SongsPage: React.FC = () => {
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
     const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
+    const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
     const [isListening, setIsListening] = useState(false);
     const [isThemeListExpanded, setIsThemeListExpanded] = useState(false);
@@ -1337,12 +1338,178 @@ export const SongsPage: React.FC = () => {
         );
     };
 
+    // ── FULL-SCREEN AUTHOR PAGE (only when no song is open) ───────────────────
+    if (selectedAuthor && !selectedSong) {
+        const authorSongs = songResources
+            .filter(s => s.author === selectedAuthor)
+            .sort((a, b) => (a.title_odia || a.title_english || '').localeCompare(b.title_odia || b.title_english || ''));
+
+        // Group by first Odia letter
+        const grouped: Record<string, typeof authorSongs> = {};
+        authorSongs.forEach(s => {
+            const title = (s.title_odia || s.title_english || '?');
+            const letter = title[0] || '?';
+            if (!grouped[letter]) grouped[letter] = [];
+            grouped[letter].push(s);
+        });
+        const groupLetters = Object.keys(grouped).sort();
+
+        return (
+            <div style={{
+                position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                background: theme.gradient, zIndex: 1000,
+                display: 'flex', flexDirection: 'column', height: '100vh'
+            }}>
+                {/* Header */}
+                <header style={{
+                    display: 'flex', alignItems: 'center', padding: '0.85rem 1rem',
+                    background: 'rgba(0,0,0,0.18)', color: '#fff',
+                    backdropFilter: 'blur(10px)', gap: '0.75rem', flexShrink: 0
+                }}>
+                    <button
+                        onClick={() => setSelectedAuthor(null)}
+                        style={{
+                            background: 'rgba(255,255,255,0.2)', color: '#fff',
+                            padding: '8px', borderRadius: '12px', display: 'flex',
+                            border: 'none', cursor: 'pointer'
+                        }}
+                    >
+                        <ArrowLeft size={26} strokeWidth={2.5} />
+                    </button>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{
+                            fontSize: '1.1rem', fontWeight: 900,
+                            color: '#fff', whiteSpace: 'nowrap',
+                            overflow: 'hidden', textOverflow: 'ellipsis'
+                        }}>{selectedAuthor}</div>
+                        <div style={{ fontSize: '0.75rem', opacity: 0.8, marginTop: '1px' }}>
+                            {authorSongs.length} Songs
+                        </div>
+                    </div>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.2)',
+                        borderRadius: '12px', padding: '6px 14px',
+                        fontSize: '0.8rem', fontWeight: 800, color: '#fff',
+                        display: 'flex', alignItems: 'center', gap: '6px'
+                    }}>
+                        <Users size={16} />
+                        <span>Author</span>
+                    </div>
+                </header>
+
+                {/* Author Hero Card */}
+                <div style={{
+                    padding: '1.25rem 1rem 0.75rem',
+                    background: 'rgba(0,0,0,0.12)',
+                    borderBottom: '1px solid rgba(255,255,255,0.1)',
+                    flexShrink: 0
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <div style={{
+                            width: '56px', height: '56px', borderRadius: '18px',
+                            background: 'rgba(255,255,255,0.2)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            flexShrink: 0, border: '2px solid rgba(255,255,255,0.3)'
+                        }}>
+                            <Users size={28} color="#fff" />
+                        </div>
+                        <div>
+                            <div style={{
+                                fontSize: '1.35rem', fontWeight: 900, color: '#fff',
+                                lineHeight: 1.2, marginBottom: '4px'
+                            }}>{selectedAuthor}</div>
+                            <div style={{
+                                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                                background: 'rgba(255,255,255,0.15)',
+                                borderRadius: '20px', padding: '3px 10px'
+                            }}>
+                                <CheckCircle2 size={12} color="rgba(255,255,255,0.9)" />
+                                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>
+                                    {authorSongs.length} Songs Available
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Songs List */}
+                <main style={{ flex: 1, overflowY: 'auto', background: '#f8fafc', paddingBottom: '40px' }}>
+                    {groupLetters.map(letter => (
+                        <div key={letter}>
+                            {/* Letter divider */}
+                            <div style={{
+                                position: 'sticky', top: 0,
+                                padding: '0.4rem 1.25rem',
+                                background: 'rgba(248,250,252,0.95)',
+                                backdropFilter: 'blur(8px)',
+                                zIndex: 5, display: 'flex', alignItems: 'center', gap: '10px'
+                            }}>
+                                <span style={{
+                                    fontSize: '1.1rem', fontWeight: 900,
+                                    color: theme.color,
+                                    fontFamily: 'var(--font-odia-sans)'
+                                }}>{letter}</span>
+                                <div style={{ flex: 1, height: '1px', background: `${theme.color}20` }} />
+                            </div>
+
+                            {grouped[letter].map(song => (
+                                <div
+                                    key={song.id}
+                                    onClick={() => { setSelectedSong(song); setIsDetailView(true); }}
+                                    style={{
+                                        display: 'flex', alignItems: 'center',
+                                        padding: '0.9rem 1.25rem',
+                                        borderBottom: '1px solid #f1f5f9',
+                                        cursor: 'pointer', gap: '0.875rem',
+                                        background: 'white',
+                                        transition: 'background 0.15s ease'
+                                    }}
+                                    onMouseEnter={e => (e.currentTarget.style.background = '#f8fafc')}
+                                    onMouseLeave={e => (e.currentTarget.style.background = 'white')}
+                                >
+                                    {/* Number badge */}
+                                    <div style={{
+                                        width: '36px', height: '36px', borderRadius: '10px',
+                                        background: `${theme.color}15`,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        <BookText size={18} color={theme.color} />
+                                    </div>
+                                    {/* Song info */}
+                                    <div style={{ flex: 1, minWidth: 0 }}>
+                                        <div style={{
+                                            fontSize: '1.05rem', fontWeight: 800,
+                                            color: '#1e293b',
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                                        }}>{song.title_odia || song.title_english}</div>
+                                        {song.title_english && (
+                                            <div style={{
+                                                fontSize: '0.75rem', color: '#64748b',
+                                                fontWeight: 600, marginTop: '1px',
+                                                whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                                            }}>{song.title_english}</div>
+                                        )}
+                                    </div>
+                                    {/* Verified badge */}
+                                    {song.verified && <CheckCircle2 size={16} color="#4fd1c5" />}
+                                    <ChevronRight size={16} color="#cbd5e1" />
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </main>
+            </div>
+        );
+    }
+
     if (selectedSong) {
         return (
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                 {renderReaderToolbelt()}
                 <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
-                    <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex' }}>
+                    <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}>
                         <ArrowLeft size={28} strokeWidth={2.5} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
@@ -2290,10 +2457,8 @@ export const SongsPage: React.FC = () => {
                                             key={idx}
                                             onClick={() => {
                                                 if (isActive) {
-                                                    setSearchQuery(stat.author);
-                                                    setActiveTab('songs');
+                                                    setSelectedAuthor(stat.author);
                                                     setIsAuthorPanelOpen(false);
-                                                    mainScrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
                                                 }
                                             }}
                                             style={{
