@@ -709,7 +709,7 @@ export const SongsPage: React.FC = () => {
                     <div 
                         className="category-card"
                         onClick={() => {
-                            setIsFilterMenuOpen(true);
+                            fetchAuthorStats();
                         }}
                         style={{
                             background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
@@ -2164,42 +2164,61 @@ export const SongsPage: React.FC = () => {
                 </div>
             )}
             {/* Statistics Modal */}
+            {/* Statistics Modal (Author Explorer) */}
             {isStatsOpen && (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)',
-                    zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    padding: '20px'
+                    backgroundColor: 'rgba(15, 23, 42, 0.4)', backdropFilter: 'blur(12px)',
+                    zIndex: 2500, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    padding: '16px'
                 }}>
                     <div style={{
-                        backgroundColor: 'white', width: '100%', maxWidth: '450px',
-                        maxHeight: '85vh', borderRadius: '24px', overflow: 'hidden',
-                        display: 'flex', flexDirection: 'column', boxShadow: '0 20px 50px rgba(0,0,0,0.2)',
-                        animation: 'modalSlideUp 0.3s ease-out'
+                        backgroundColor: 'white', width: '100%', maxWidth: '480px',
+                        maxHeight: '80vh', borderRadius: '32px', overflow: 'hidden',
+                        display: 'flex', flexDirection: 'column', boxShadow: '0 25px 60px rgba(0,0,0,0.15)',
+                        animation: 'modalSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
                     }}>
                         {/* Modal Header */}
                         <div style={{
-                            padding: '1.25rem', background: theme.gradient, color: 'white',
-                            display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                            padding: '1.5rem', background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)', color: 'white',
+                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                            position: 'relative', overflow: 'hidden'
                         }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <BarChart3 size={24} />
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', zIndex: 2 }}>
+                                <div style={{ 
+                                    width: '48px', height: '48px', borderRadius: '14px', 
+                                    background: 'rgba(255,255,255,0.2)', display: 'flex', 
+                                    alignItems: 'center', justifyContent: 'center',
+                                    backdropFilter: 'blur(10px)'
+                                }}>
+                                    <Users size={28} />
+                                </div>
                                 <div>
-                                    <h3 style={{ margin: 0, fontSize: '1.1rem' }}>Author Statistics</h3>
-                                    <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>ଲେଖକ ପରିସଂଖ୍ୟାନ</div>
+                                    <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 900, letterSpacing: '-0.3px' }}>Author Explorer</h3>
+                                    <div style={{ fontSize: '0.8rem', opacity: 0.9, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>ଲେଖକ ଅନୁସାରେ ଖୋଜନ୍ତୁ</div>
                                 </div>
                             </div>
                             <button
                                 onClick={() => setIsStatsOpen(false)}
-                                style={{ background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', padding: '8px', borderRadius: '50%', cursor: 'pointer' }}
+                                style={{ 
+                                    background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', 
+                                    padding: '10px', borderRadius: '50%', cursor: 'pointer', zIndex: 2,
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                }}
                             >
                                 <X size={20} />
                             </button>
+                            {/* Decorative Circle */}
+                            <div style={{ 
+                                position: 'absolute', top: '-20px', right: '-20px', 
+                                width: '100px', height: '100px', borderRadius: '50%', 
+                                background: 'rgba(255,255,255,0.1)', zIndex: 1 
+                            }} />
                         </div>
 
                         {/* Modal Body */}
-                        <div style={{ flex: 1, overflowY: 'auto', padding: '1.25rem' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem', backgroundColor: '#f8fafc' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 {authorStats.map((stat: { author: string; count: number }, idx: number) => (
                                     <div
                                         key={idx}
@@ -2210,49 +2229,63 @@ export const SongsPage: React.FC = () => {
                                         }}
                                         style={{
                                             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                            padding: '1.1rem', backgroundColor: '#FFF8F1', borderRadius: '16px',
-                                            border: '1px solid #FFE7D1', cursor: 'pointer',
-                                            transition: 'transform 0.2s, background-color 0.2s'
+                                            padding: '1.25rem', backgroundColor: 'white', borderRadius: '24px',
+                                            border: '1px solid #f1f5f9', cursor: 'pointer',
+                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                            boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
                                         }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#FFF1E0';
-                                            e.currentTarget.style.transform = 'scale(1.02)';
+                                            e.currentTarget.style.transform = 'scale(1.02) translateX(4px)';
+                                            e.currentTarget.style.borderColor = '#16a34a40';
+                                            e.currentTarget.style.boxShadow = '0 10px 20px rgba(22, 163, 74, 0.08)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.backgroundColor = '#FFF8F1';
-                                            e.currentTarget.style.transform = 'scale(1)';
+                                            e.currentTarget.style.transform = 'scale(1) translateX(0)';
+                                            e.currentTarget.style.borderColor = '#f1f5f9';
+                                            e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)';
                                         }}
                                     >
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                                             <div style={{
-                                                backgroundColor: '#FF9933', color: 'white', width: '28px', height: '28px',
-                                                borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                fontSize: '0.8rem', fontWeight: 800
-                                            }}>{idx + 1}</div>
+                                                backgroundColor: idx === 0 ? '#16a34a' : (idx === 1 ? '#22c55e' : '#86efac'), 
+                                                color: idx > 1 ? '#166534' : 'white', width: '32px', height: '32px',
+                                                borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                fontSize: '0.9rem', fontWeight: 900
+                                            }}>{toOdiaNumber(idx + 1)}</div>
                                             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                                <span style={{ fontWeight: 700, color: '#4A2B0F' }}>{stat.author}</span>
-                                                <span style={{ fontSize: '0.7rem', color: '#915926' }}>Click to view all songs</span>
+                                                <span style={{ fontWeight: 800, color: '#1e293b', fontSize: '1rem' }}>{stat.author}</span>
+                                                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 500 }}>{toOdiaNumber(stat.count)} Songs Available</span>
                                             </div>
                                         </div>
                                         <div style={{
-                                            backgroundColor: 'white', padding: '4px 10px', borderRadius: '20px',
-                                            fontWeight: 800, color: '#FF9933', border: '1.5px solid #FF9933', fontSize: '0.9rem'
-                                        }}>{stat.count}</div>
+                                            background: '#f0fdf4', color: '#16a34a', padding: '6px', borderRadius: '50%',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                        }}>
+                                            <ChevronRight size={18} />
+                                        </div>
                                     </div>
                                 ))}
 
                                 <div style={{
-                                    marginTop: '1rem', padding: '1.5rem', background: 'linear-gradient(135deg, #FF9933, #FFCC33)',
-                                    borderRadius: '20px', color: 'white', textAlign: 'center', boxShadow: '0 10px 20px rgba(255, 153, 51, 0.2)'
+                                    marginTop: '1.5rem', padding: '1.5rem', 
+                                    background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                                    borderRadius: '24px', color: 'white', textAlign: 'center', 
+                                    boxShadow: '0 15px 30px rgba(15, 23, 42, 0.2)',
+                                    position: 'relative', overflow: 'hidden'
                                 }}>
-                                    <div style={{ fontSize: '0.85rem', opacity: 0.9 }}>Combined Library Size</div>
-                                    <div style={{ fontSize: '2.2rem', fontWeight: 900 }}>
-                                        {authorStats.reduce((acc: number, curr: { count: number }) => acc + curr.count, 0)} <span style={{ fontSize: '1rem', fontWeight: 400 }}>Songs</span>
+                                    <div style={{ fontSize: '0.85rem', opacity: 0.7, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Total Library Volume</div>
+                                    <div style={{ fontSize: '2.5rem', fontWeight: 950, letterSpacing: '-1px', margin: '4px 0' }}>
+                                        {toOdiaNumber(authorStats.reduce((acc: number, curr: { count: number }) => acc + curr.count, 0))}
                                     </div>
+                                    <div style={{ fontSize: '0.9rem', opacity: 0.8, fontWeight: 500 }}>Sanctified Devotional Songs</div>
+                                    {/* Decorative Sparkle */}
+                                    <Sparkles size={40} style={{ position: 'absolute', top: '-10px', left: '-10px', opacity: 0.1 }} />
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            )}
                     <style>{`
                         @keyframes modalSlideUp {
                             from { transform: translateY(20px); opacity: 0; }
