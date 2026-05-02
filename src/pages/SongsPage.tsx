@@ -83,6 +83,16 @@ const FilterMenuItem: React.FC<{
 };
 
 
+// Helper to normalize strings for diacritic-blind matching/searching
+const normalizeForSearch = (str: string) => {
+    if (!str) return '';
+    return str.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove standard diacritics
+        .replace(/ṛ/g, 'r').replace(/ś/g, 's').replace(/ṣ/g, 's') // Handle special Sanskrit chars
+        .replace(/ā/g, 'a').replace(/ī/g, 'i').replace(/ū/g, 'u')
+        .replace(/[^a-z0-9]/g, '');
+};
+
 export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
@@ -338,7 +348,7 @@ export const SongsPage: React.FC = () => {
     }, [songResources]);
 
     const filteredSongs = useMemo(() => {
-        const query = searchQuery.toLowerCase().trim();
+        const query = normalizeForSearch(searchQuery);
         const pool = activeTab === 'gita' ? gitaChapters : songResources;
 
         if (!query) {
@@ -347,14 +357,14 @@ export const SongsPage: React.FC = () => {
         }
 
         return pool.filter(s => {
-            const inTitle = (s.title_odia || s.title || '').toLowerCase().includes(query) || (s.title_english || '').toLowerCase().includes(query);
-            const inAuthor = s.author?.toLowerCase().includes(query);
-            const inDescription = s.description?.toLowerCase().includes(query);
-            const inTags = s.tags?.some(tag => tag?.toLowerCase().includes(query));
+            const inTitle = normalizeForSearch(s.title_odia || s.title || '').includes(query) || normalizeForSearch(s.title_english || '').includes(query);
+            const inAuthor = normalizeForSearch(s.author || '').includes(query);
+            const inDescription = normalizeForSearch(s.description || '').includes(query);
+            const inTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(query));
 
             // Check verses lyrics
             const inLyrics = s.structuredContent?.verses.some(v =>
-                (v.lyric || '').toLowerCase().includes(query) || (v.translation || '').toLowerCase().includes(query)
+                normalizeForSearch(v.lyric || '').includes(query) || normalizeForSearch(v.translation || '').includes(query)
             );
 
             return inTitle || inAuthor || inDescription || inLyrics || inTags;
@@ -1370,10 +1380,10 @@ export const SongsPage: React.FC = () => {
 
         // Build merged list: catalog songs enriched with resource match
         const mergedList = fullCatalog.map(cs => {
-            const key = cs.title_english.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const key = normalizeForSearch(cs.title_english);
             // Try to find matching resource by english title similarity
             const resource = availableSongs.find(r => {
-                const re = (r.title_english || r.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                const re = normalizeForSearch(r.title_english || r.title || '');
                 const ok = (r.title_odia || '').replace(/\s/g, '');
                 const ck = (cs.title_odia || '').replace(/\s/g, '');
                 
@@ -1393,10 +1403,10 @@ export const SongsPage: React.FC = () => {
 
         // Also add any songs in resources NOT in catalog
         availableSongs.forEach(r => {
-            const re = (r.title_english || r.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const re = normalizeForSearch(r.title_english || r.title || '');
             const alreadyListed = mergedList.some(m => {
-                const mk = m.title_english.toLowerCase().replace(/[^a-z0-9]/g, '');
-                return mk === re || mk.includes(re.slice(0, 8)) || re.includes(mk.slice(0, 8));
+                const mk = normalizeForSearch(m.title_english);
+                return mk === re || mk.includes(re.substring(0, 8)) || re.includes(mk.substring(0, 8));
             });
             if (!alreadyListed) {
                 mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
