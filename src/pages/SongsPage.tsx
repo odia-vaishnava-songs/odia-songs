@@ -231,7 +231,13 @@ export const SongsPage: React.FC = () => {
 
             const counts: Record<string, number> = {};
             data.forEach(s => {
-                const a = (s as any).author || 'Other Authors';
+                let a = (s as any).author || 'Other Authors';
+                // Runtime Mapping to Standardized Names
+                if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
+                if (a.includes('ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ')) a = 'Bhaktisiddhanta Saraswati';
+                if (a.includes('ଶ୍ରୀଲ ଲୋଚନ ଦାସ')) a = 'Locana Dasa Thakura';
+                if (a === 'Others Authors') a = 'Other Authors';
+                
                 counts[a] = (counts[a] || 0) + 1;
             });
 
