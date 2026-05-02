@@ -137,10 +137,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     {
         name: 'Rupa Goswami',
         catalog: [
-            { title_english: 'Namah Om Visnu Padaya' },
-            { title_english: 'Sri Gurvashtakam', title_odia: 'ଶ୍ରୀ ଗୁର୍ବଷ୍ଟକମ' },
-            { title_english: 'Sri Sri Sad Gosvamy Ashtakam' },
-            { title_english: 'Samsara Davanala Lidha Loka' },
+            { title_english: 'Bhratur Antakasya Pattane' },
+            { title_english: 'Disi Disi Racayantim' },
+            { title_english: 'Krsna Deva Bhavantam Vande' },
+            { title_english: 'Nikhila Sruti Mauli Ratna' },
+            { title_english: 'Radhe Jaya Jaya Madhava Dayite' }
         ]
     },
     {
