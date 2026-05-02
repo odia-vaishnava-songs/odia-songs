@@ -262,6 +262,50 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Vyasadeva',
+        odia: 'ବ୍ୟାସଦେବ',
+        catalog: [
+            { title_english: 'Bhagavad Gita' },
+            { title_english: 'Ugram Viram Mahavishnum' },
+            { title_english: 'Jaya Narasimha Sri Narasimha' },
+            { title_english: 'Namaste Narasimhaya' },
+        ]
+    },
+    {
+        name: 'Sri Caitanya Mahaprabhu',
+        odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
+        catalog: [
+            { title_english: 'Sri Sikshashtakam', title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍' },
+        ]
+    },
+    {
+        name: 'Satyavrata Muni',
+        odia: 'ସତ୍ୟବ୍ରତ ମୁନି',
+        catalog: [
+            { title_english: 'Damodarastakam', title_odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍' },
+        ]
+    },
+    {
+        name: 'Krsna Dasa',
+        odia: 'କୃଷ୍ଣ ଦାସ',
+        catalog: [
+            { title_english: 'Namo Namah Tulasi Krsna Preyasi' },
+        ]
+    },
+    {
+        name: 'ISKCON',
+        catalog: [
+            { title_english: 'Prema Dhvani Prayers' },
+        ]
+    },
+    {
+        name: 'Sukadeva Gosvami',
+        odia: 'ଶୁକଦେବ ଗୋସ୍ୱାମୀ',
+        catalog: [
+            { title_english: 'Gopi Gitam' },
+        ]
+    },
+    {
         name: 'Others Authors',
         catalog: []
     },
