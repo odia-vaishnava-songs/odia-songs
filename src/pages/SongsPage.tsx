@@ -244,7 +244,7 @@ export const SongsPage: React.FC = () => {
         try {
             const { data, error } = await supabase
                 .from('songs')
-                .select('author');
+                .select('id, author');
 
             if (error) throw error;
 
