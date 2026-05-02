@@ -128,8 +128,10 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     {
         name: 'Krsnadasa Kaviraja Goswami',
         catalog: [
-            { title_english: 'Jaya Jaya Nityananda Nimai Sahodara' },
-            { title_english: 'Parama Karuna' },
+            { title_english: 'Ambudanjanendra Nila' },
+            { title_english: 'Bhaja Gauranga Kaha Gauranga' },
+            { title_english: 'Krsna Krsna Krsna Krsna' },
+            { title_english: 'Kunkumakta Kancanabja' }
         ]
     },
     {
