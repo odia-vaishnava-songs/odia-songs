@@ -243,6 +243,7 @@ export const SongsPage: React.FC = () => {
                 "Krsnadasa Kaviraja Goswami",
                 "Rupa Goswami",
                 "Locana Dasa Thakura",
+                "Vyasadeva",
                 "Vasudeva Ghosha",
                 "Jayadeva Goswami",
                 "Sarvabhauma Bhattacarya",
@@ -257,6 +258,11 @@ export const SongsPage: React.FC = () => {
                 "Govinda Dasa Kaviraja",
                 "Devakinandana Dasa Thakura",
                 "Bilvamangala Thakura",
+                "Sri Caitanya Mahaprabhu",
+                "Satyavrata Muni",
+                "Krsna Dasa",
+                "ISKCON",
+                "Sukadeva Gosvami",
                 "Others Authors"
             ];
 
@@ -266,7 +272,7 @@ export const SongsPage: React.FC = () => {
                 return {
                     author: name,
                     count: counts[name] || 0,
-                    total: catalogEntry ? catalogEntry.catalog.length : (counts[name] || 0)
+                    total: catalogEntry ? Math.max(catalogEntry.catalog.length, counts[name] || 0) : (counts[name] || 0)
                 };
             });
 
@@ -2114,25 +2120,37 @@ export const SongsPage: React.FC = () => {
                                     zIndex: 5,
                                     display: 'flex',
                                     alignItems: 'center',
-                                    padding: '0.5rem 1.25rem',
-                                    pointerEvents: 'none'
+                                    padding: '0.75rem 0.5rem',
+                                    pointerEvents: 'none',
+                                    background: 'rgba(255,255,255,0.8)',
+                                    backdropFilter: 'blur(8px)',
+                                    margin: '0 -0.5rem 0.5rem',
+                                    borderBottom: '1px solid #f1f5f9'
                                 }}>
                                     <div style={{
-                                        fontSize: '1.1rem',
-                                        fontWeight: 800,
+                                        fontSize: '1rem',
+                                        fontWeight: 900,
                                         color: theme.color,
-                                        width: '32px',
-                                        height: '32px',
+                                        width: '36px',
+                                        height: '36px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         background: 'white',
-                                        borderRadius: '8px',
-                                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                                        pointerEvents: 'auto'
+                                        borderRadius: '10px',
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                                        pointerEvents: 'auto',
+                                        marginLeft: '0.75rem'
                                     }}>
                                         {letter}
                                     </div>
+                                    <div style={{ 
+                                        marginLeft: '0.75rem', 
+                                        fontSize: '0.75rem', 
+                                        fontWeight: 800, 
+                                        color: '#94a3b8', 
+                                        letterSpacing: '1px' 
+                                    }}>SECTION {letter}</div>
                                 </div>
 
                                 <div style={{ padding: '0 0.5rem' }}>
@@ -2482,14 +2500,36 @@ export const SongsPage: React.FC = () => {
                                                 }}>{toOdiaNumber(idx + 1)}</div>
                                                 <div>
                                                     <div style={{ fontSize: '0.95rem', fontWeight: 900, color: isActive ? '#1e293b' : '#64748b', letterSpacing: '-0.01em' }}>{stat.author}</div>
-                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
-                                                        <div style={{ fontSize: '0.7rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                            <CheckCircle2 size={11} />
+                                                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px', marginTop: '6px' }}>
+                                                        <div style={{ 
+                                                            fontSize: '0.75rem', 
+                                                            color: isActive ? '#16a34a' : '#94a3b8', 
+                                                            fontWeight: 800, 
+                                                            display: 'flex', 
+                                                            alignItems: 'center', 
+                                                            gap: '4px',
+                                                            background: isActive ? '#f0fdf4' : '#f8fafc',
+                                                            padding: '2px 8px',
+                                                            borderRadius: '6px',
+                                                            border: isActive ? '1px solid #dcfce7' : '1px solid #f1f5f9'
+                                                        }}>
+                                                            <CheckCircle2 size={12} />
                                                             {toOdiaNumber(stat.count)} Available
                                                         </div>
                                                         {stat.total > stat.count && (
-                                                            <div style={{ fontSize: '0.7rem', color: '#94a3b8', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', opacity: 0.8 }}>
-                                                                <Circle size={11} />
+                                                            <div style={{ 
+                                                                fontSize: '0.75rem', 
+                                                                color: '#64748b', 
+                                                                fontWeight: 700, 
+                                                                display: 'flex', 
+                                                                alignItems: 'center', 
+                                                                gap: '4px',
+                                                                background: '#f8fafc',
+                                                                padding: '2px 8px',
+                                                                borderRadius: '6px',
+                                                                border: '1px solid #f1f5f9'
+                                                            }}>
+                                                                <Circle size={12} strokeWidth={2.5} />
                                                                 {toOdiaNumber(stat.total - stat.count)} Coming Soon
                                                             </div>
                                                         )}
