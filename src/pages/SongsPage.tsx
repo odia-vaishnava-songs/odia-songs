@@ -253,6 +253,7 @@ export const SongsPage: React.FC = () => {
                 let a = (s as any).author || 'Other Authors';
                 // Runtime Mapping to Standardized Names
                 if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
+                if (a === 'Krsna Dasa') a = 'Krsnadasa Kaviraja Goswami';
                 if (a.includes('ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ')) a = 'Bhaktisiddhanta Saraswati';
                 if (a.includes('ଶ୍ରୀଲ ଲୋଚନ ଦାସ')) a = 'Locana Dasa Thakura';
                 if (a === 'Others Authors') a = 'Other Authors';
@@ -1380,7 +1381,9 @@ export const SongsPage: React.FC = () => {
         const availableSongs = songResources.filter(s => 
             (s.author || '').toLowerCase() === selectedAuthor.toLowerCase() ||
             (s.author === 'Srila Prabhupada' && selectedAuthor === 'A.C. Bhaktivedanta Swami') ||
-            (s.author === 'A.C. Bhaktivedanta Swami' && selectedAuthor === 'Srila Prabhupada')
+            (s.author === 'A.C. Bhaktivedanta Swami' && selectedAuthor === 'Srila Prabhupada') ||
+            (s.author === 'Krsnadasa Kaviraja Goswami' && selectedAuthor === 'Krsna Dasa') ||
+            (s.author === 'Krsna Dasa' && selectedAuthor === 'Krsnadasa Kaviraja Goswami')
         );
 
         // Full catalog for this author

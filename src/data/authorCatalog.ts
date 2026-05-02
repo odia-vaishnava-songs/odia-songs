@@ -46,7 +46,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Hari Hari Kabe Mora', title_odia: 'ହରି ହରି କବେ ମୋର' },
             { title_english: 'Jaya Jaya Radha Krsna', title_odia: 'ଜୟ ଜୟ ରାଧାକୃଷ୍ଣ' },
             { title_english: 'Jaya Radha Madhava', title_odia: 'ଜୟ ରାଧା-ମାଧବ' },
-            { title_english: 'Je Anilo Prema Dhana', title_odia: 'ଯେ ଅନିଲୋ ପ୍ରେମ ଧନ' },
             { title_english: 'Jiva Jago Jiva Jago', title_odia: 'ଜୀବ ଜାଗ ଜୀବ ଜାଗ' },
             { title_english: 'Kabe Goura Bane', title_odia: 'କବେ ଗୌର ବନେ' },
             { title_english: 'Kabe Ha\'be Bolo', title_odia: 'କବେ ହ\'ବେ ବୋଲୋ' },
@@ -80,6 +79,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Vidyara Vilase', title_odia: 'ଵିଦ୍ୟାର ଵିଲାସେ' },
             { title_english: 'Yadi Te Hari Pada Saroja Sudha', title_odia: 'ଯଦି ତେ ହରି-ପାଦ-ସରୋଜ-ସୁଧା' },
             { title_english: 'Yasomati Nandana', title_odia: 'ଯଶୋମତି ନନ୍ଦନ' },
+            { title_english: 'Gopinath Mama Nivedana Suno' },
+            { title_english: 'Aparadha Phale Mama' },
+            { title_english: 'E Dusta Hrdaye Kama' },
+            { title_english: 'Ek Din Santipure' },
+            { title_english: 'Gay Goracand Jiver Tore' },
+            { title_english: 'Harinama Tuwa Anek Swarupa' },
+            { title_english: 'Tuwa Pade E Minoti Mor' }
         ]
     },
     {
