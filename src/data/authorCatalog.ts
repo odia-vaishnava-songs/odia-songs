@@ -108,7 +108,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'A.C. Bhaktivedanta Swami',
+        name: 'Srila Prabhupada',
         catalog: [
             { title_english: 'Adore Adore Ye All' },
             { title_english: 'Bara Bara Plan Kori' },
@@ -306,7 +306,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'Others Authors',
+        name: 'Other Authors',
         catalog: []
     },
 ];

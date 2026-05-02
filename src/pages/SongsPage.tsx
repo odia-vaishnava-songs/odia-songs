@@ -231,7 +231,7 @@ export const SongsPage: React.FC = () => {
 
             const counts: Record<string, number> = {};
             data.forEach(s => {
-                const a = (s as any).author || 'Others Authors';
+                const a = (s as any).author || 'Other Authors';
                 counts[a] = (counts[a] || 0) + 1;
             });
 
@@ -239,7 +239,7 @@ export const SongsPage: React.FC = () => {
             const standardizedList = [
                 "Bhaktivinoda Thakura",
                 "Narottama Dasa Thakura",
-                "A.C. Bhaktivedanta Swami",
+                "Srila Prabhupada",
                 "Krsnadasa Kaviraja Goswami",
                 "Rupa Goswami",
                 "Locana Dasa Thakura",
@@ -263,7 +263,7 @@ export const SongsPage: React.FC = () => {
                 "Krsna Dasa",
                 "ISKCON",
                 "Sukadeva Gosvami",
-                "Others Authors"
+                "Other Authors"
             ];
 
             // Build merged list: catalog authors enriched with available counts
@@ -279,7 +279,7 @@ export const SongsPage: React.FC = () => {
             // Add any other authors found in the database that aren't in the standardized list to "Others Authors"
             Object.entries(counts).forEach(([author, count]) => {
                 if (!standardizedList.includes(author)) {
-                    const othersIndex = merged.findIndex(m => m.author === "Others Authors");
+                    const othersIndex = merged.findIndex(m => m.author === "Other Authors");
                     if (othersIndex !== -1) {
                         merged[othersIndex].count += count;
                         merged[othersIndex].total += count;
@@ -1352,7 +1352,11 @@ export const SongsPage: React.FC = () => {
     // ── FULL-SCREEN AUTHOR PAGE (only when no song is open) ───────────────────
     if (selectedAuthor && !selectedSong) {
         // Available songs from RESOURCES
-        const availableSongs = songResources.filter(s => s.author === selectedAuthor);
+        const availableSongs = songResources.filter(s => 
+            (s.author || '').toLowerCase() === selectedAuthor.toLowerCase() ||
+            (s.author === 'Srila Prabhupada' && selectedAuthor === 'A.C. Bhaktivedanta Swami') ||
+            (s.author === 'A.C. Bhaktivedanta Swami' && selectedAuthor === 'Srila Prabhupada')
+        );
 
         // Full catalog for this author
         const catalogEntry = AUTHOR_CATALOG.find(a => a.name === selectedAuthor);
@@ -1364,7 +1368,19 @@ export const SongsPage: React.FC = () => {
             // Try to find matching resource by english title similarity
             const resource = availableSongs.find(r => {
                 const re = (r.title_english || r.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                return re === key || re.includes(key.slice(0, 8)) || key.includes(re.slice(0, 8));
+                const ok = (r.title_odia || '').replace(/\s/g, '');
+                const ck = (cs.title_odia || '').replace(/\s/g, '');
+                
+                // 1. English Match (Standardized)
+                if (re === key || (key.length > 5 && re.includes(key.substring(0, 8))) || (re.length > 5 && key.includes(re.substring(0, 8)))) return true;
+                
+                // 2. Odia Match (if both have Odia titles)
+                if (ok && ck && (ok === ck || ok.includes(ck) || ck.includes(ok))) return true;
+                
+                // 3. ID Match (if resource ID is derived from English title)
+                if (r.id.toLowerCase().includes(key.substring(0, 8))) return true;
+
+                return false;
             });
             return { ...cs, resource };
         });

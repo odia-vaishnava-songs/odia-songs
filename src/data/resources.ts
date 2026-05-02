@@ -1289,7 +1289,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Krsna Tava Punya Habe Bhai',
         category: 'Songs',
         type: 'html',
-        author: 'A.C. Bhaktivedanta Swami',
+        author: 'Srila Prabhupada',
         structuredContent: (Songs as any).SONG_KRSNATAVAPUNYAHABEBHAI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
