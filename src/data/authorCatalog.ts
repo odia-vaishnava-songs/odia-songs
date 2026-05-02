@@ -82,10 +82,14 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Gopinath Mama Nivedana Suno' },
             { title_english: 'Aparadha Phale Mama' },
             { title_english: 'E Dusta Hrdaye Kama' },
+            { title_english: 'Ekhan Bujhinu Prabhu' },
             { title_english: 'Ek Din Santipure' },
             { title_english: 'Gay Goracand Jiver Tore' },
             { title_english: 'Harinama Tuwa Anek Swarupa' },
-            { title_english: 'Tuwa Pade E Minoti Mor' }
+            { title_english: 'Tuwa Pade E Minoti Mor' },
+            { title_english: 'Boro Sukher Khabor Gai' },
+            { title_english: 'Gaura Arati' },
+            { title_english: 'Hari bolo Hari bolo' }
         ]
     },
     {

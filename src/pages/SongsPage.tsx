@@ -249,16 +249,31 @@ export const SongsPage: React.FC = () => {
             if (error) throw error;
 
             const counts: Record<string, number> = {};
+            
+            // 1. Count songs from Database
             data.forEach(s => {
                 let a = (s as any).author || 'Other Authors';
-                // Runtime Mapping to Standardized Names
                 if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
                 if (a === 'Krsna Dasa') a = 'Krsnadasa Kaviraja Goswami';
                 if (a.includes('ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ')) a = 'Bhaktisiddhanta Saraswati';
                 if (a.includes('ଶ୍ରୀଲ ଲୋଚନ ଦାସ')) a = 'Locana Dasa Thakura';
                 if (a === 'Others Authors') a = 'Other Authors';
-                
                 counts[a] = (counts[a] || 0) + 1;
+            });
+
+            // 2. Count songs from local resources that might not be in DB yet
+            songResources.forEach(s => {
+                let a = s.author || 'Other Authors';
+                // Standardize
+                if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
+                if (a === 'Krsna Dasa') a = 'Krsnadasa Kaviraja Goswami';
+                if (a === 'Others Authors') a = 'Other Authors';
+                
+                // Only count if it's not already accounted for by a DB record with the same ID
+                // (This avoids double-counting since useSongs merges them)
+                if (!data.some(dbS => dbS.id === s.id)) {
+                    counts[a] = (counts[a] || 0) + 1;
+                }
             });
 
             // Standardized Authors List (from USER)
