@@ -39,11 +39,13 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-jeanilopremadhana',
-        title: 'ଯେ ଅନିଲୋ ପ୍ରେମ ଧନ (Je Anilo Prema Dhana)',
+        title: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ (Je Anilo Prema Dhana)',
+        title_odia: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ',
+        title_english: 'Je anila prema dhana koruna pracura',
         category: 'Songs',
         type: 'html',
         structuredContent: (Songs as any).SONG_JEANILOPREMADHANA_STRUCTURED,
-        author: 'Bhaktivinoda Thakura'
+        author: 'Narottama Dasa Thakura'
     },
     {
         id: 'song-amarjivana',
