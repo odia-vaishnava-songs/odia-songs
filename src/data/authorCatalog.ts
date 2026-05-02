@@ -113,12 +113,16 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Adore Adore Ye All' },
             { title_english: 'Bara Bara Plan Kori' },
             { title_english: 'Batula Kahaye Setha Saba Nirakara' },
-            { title_english: 'Bhajo Bhajo Bhai Caitanya Nitai' },
+            { title_english: 'Bhakti Ahaituki Hoy Sva Prakasita' },
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },
-            { title_english: 'Krishna Tava Punya Habe Bhai' },
-            { title_english: 'Samsara Davanala Lidha Loka', title_odia: 'ସଂସାର ଦାବାନଳ' },
-            { title_english: 'Sri-guru-carastakam' },
-            { title_english: 'Udilo Aruna Puraba Bhage', title_odia: 'ଉଦିଲ ଅରୁଣ' },
+            { title_english: 'Karma Phale Ase Saba Nana Vesa Dhari' },
+            { title_english: 'Krsna Tava Punya Habe Bhai' },
+            { title_english: 'Maha Vadanya Isvara Sri Gaura Sundara' },
+            { title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare' },
+            { title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore' },
+            { title_english: 'Samudrena Phena Yena' },
+            { title_english: 'Sisya Hoiya Kore Yei Gitar Sravana' },
+            { title_english: 'Vrndavana Dhame Ami Boseyachi Eka' }
         ]
     },
     {
