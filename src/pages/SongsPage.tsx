@@ -84,13 +84,22 @@ const FilterMenuItem: React.FC<{
 
 
 // Helper to normalize strings for diacritic-blind matching/searching
-const normalizeForSearch = (str: string) => {
+const normalizeForSearch = (str: string, aggressive = false) => {
     if (!str) return '';
-    return str.toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove standard diacritics
-        .replace(/ṛ/g, 'r').replace(/ś/g, 's').replace(/ṣ/g, 's') // Handle special Sanskrit chars
+    let res = str.toLowerCase()
+        .replace(/ṛ/g, 'r').replace(/ś/g, 's').replace(/ṣ/g, 's')
         .replace(/ā/g, 'a').replace(/ī/g, 'i').replace(/ū/g, 'u')
-        .replace(/[^a-z0-9]/g, '');
+        .replace(/ḍ/g, 'd').replace(/ḥ/g, 'h').replace(/ḷ/g, 'l')
+        .replace(/ṃ/g, 'm').replace(/ṅ/g, 'n').replace(/ñ/g, 'n').replace(/ṇ/g, 'n')
+        .replace(/ṭ/g, 't')
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove standard diacritics
+    
+    if (aggressive) {
+        // Aggressive mode: remove vowels to bridge "Bhratur" vs "Bhrtur" differences
+        res = res.replace(/[aeiouy]/g, '');
+    }
+    
+    return res.replace(/[^a-z0-9]/g, '');
 };
 
 export const SongsPage: React.FC = () => {
@@ -1381,19 +1390,26 @@ export const SongsPage: React.FC = () => {
         // Build merged list: catalog songs enriched with resource match
         const mergedList = fullCatalog.map(cs => {
             const key = normalizeForSearch(cs.title_english);
+            const keyAggressive = normalizeForSearch(cs.title_english, true);
+
             // Try to find matching resource by english title similarity
             const resource = availableSongs.find(r => {
-                const re = normalizeForSearch(r.title_english || r.title || '');
+                const title = r.title_english || r.title || '';
+                const re = normalizeForSearch(title);
+                const reAggressive = normalizeForSearch(title, true);
                 const ok = (r.title_odia || '').replace(/\s/g, '');
                 const ck = (cs.title_odia || '').replace(/\s/g, '');
                 
                 // 1. English Match (Standardized)
                 if (re === key || (key.length > 5 && re.includes(key.substring(0, 8))) || (re.length > 5 && key.includes(re.substring(0, 8)))) return true;
                 
-                // 2. Odia Match (if both have Odia titles)
+                // 2. Aggressive Match (Vowel-less fallback for transliteration differences)
+                if (reAggressive === keyAggressive) return true;
+
+                // 3. Odia Match (if both have Odia titles)
                 if (ok && ck && (ok === ck || ok.includes(ck) || ck.includes(ok))) return true;
                 
-                // 3. ID Match (if resource ID is derived from English title)
+                // 4. ID Match (if resource ID is derived from English title)
                 if (r.id.toLowerCase().includes(key.substring(0, 8))) return true;
 
                 return false;
@@ -1403,10 +1419,18 @@ export const SongsPage: React.FC = () => {
 
         // Also add any songs in resources NOT in catalog
         availableSongs.forEach(r => {
-            const re = normalizeForSearch(r.title_english || r.title || '');
+            const title = r.title_english || r.title || '';
+            const re = normalizeForSearch(title);
+            const reAggressive = normalizeForSearch(title, true);
+
             const alreadyListed = mergedList.some(m => {
                 const mk = normalizeForSearch(m.title_english);
-                return mk === re || mk.includes(re.substring(0, 8)) || re.includes(mk.substring(0, 8));
+                const mkAggressive = normalizeForSearch(m.title_english, true);
+                
+                return mk === re || 
+                       mkAggressive === reAggressive || 
+                       mk.includes(re.substring(0, 8)) || 
+                       re.includes(mk.substring(0, 8));
             });
             if (!alreadyListed) {
                 mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
