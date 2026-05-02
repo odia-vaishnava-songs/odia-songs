@@ -1,5 +1,5 @@
 // Author Catalog — sourced from vsnectar.web.app
-// Each entry lists ALL songs for that author.
+// Standardized names as requested by the USER.
 // Cross-referenced at runtime against RESOURCES to mark availability.
 
 export interface CatalogSong {
@@ -65,7 +65,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Nitai Nam Hate', title_odia: 'ନିତାଇ ନାମ ହାଟେ' },
             { title_english: 'Ohe Vaisnava Thakura', title_odia: 'ଓହେ ବୈଷ୍ଣବ ଠାକୁର' },
             { title_english: 'Ore Mana Bhalonahi Lage E Samsar', title_odia: 'ଓ ରେ ମନ, ଭାଲ ନାହି ଲାଗେ' },
-            { title_english: 'Prabhu Tava Pada Yuge', title_odia: 'ପ୍ରଭୁ ତବ ପଦଯୁଗେ' },
+            { title_english: 'Prabhu Tava Pada Yuge', title_odia: 'ପଭୁ ତବ ପଦଯୁଗେ' },
             { title_english: 'Prapance Poriya Agati', title_odia: 'ହରି ହେ! ପ୍ରପଞ୍ଚେ ପୋଡ଼ିୟା' },
             { title_english: 'Radha Krsna Bol Bol Bolo Re Sobai', title_odia: 'ରାଧା-କୃଷ୍ଣ ବୋଲ ବୋଲ' },
             { title_english: 'Radha Kunda Tata Kunja Kutir', title_odia: 'ରାଧା-କୁଣ୍ଡ-ତଟ-କୁଞ୍ଜ-କୁଟୀର' },
@@ -108,42 +108,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'Locana Dasa Thakura',
-        catalog: [
-            { title_english: 'Akrodha Paramananda' },
-            { title_english: 'Avatara Sara Gora Avatara' },
-            { title_english: 'Bhaja Bhaja Hari' },
-            { title_english: 'Ke Jabi Ke Jabi Bhai Bhava Sindhu Para' },
-            { title_english: 'Nitai Guna Mani' },
-            { title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati' },
-            { title_english: 'Parama Karuna Pahu Dui Jana', title_odia: 'ପରମ କରୁଣ' },
-            { title_english: 'Sri Gaura Arati', title_odia: 'ଶ୍ରୀ ଗୌର ଆରତି' },
-        ]
-    },
-    {
-        name: 'Bilvamangala Thakura',
-        catalog: [
-            { title_english: 'Agre Kurunam Atha' },
-            { title_english: 'Kararavindena Padaravindam' },
-            { title_english: 'Vraje Prasiddham Navanita' },
-        ]
-    },
-    {
-        name: 'Vasudeva Ghosha',
-        catalog: [
-            { title_english: 'Gauranga Tumi More Doya Na Chadiho', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ' },
-            { title_english: 'Jaya Jaya Jagannatha Sacira Nandana' },
-            { title_english: 'Makhana Cora' },
-            { title_english: 'Sri Sri Tulasi Arati', title_odia: 'ଶ୍ରୀ ତୁଳସୀ ଆରତି' },
-        ]
-    },
-    {
-        name: 'Srinivasa Acarya',
-        catalog: [
-            { title_english: 'Krsnotkirtana Gana Nartana (Sad-gosvamy-astakam)', title_odia: 'ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ' },
-        ]
-    },
-    {
         name: 'A.C. Bhaktivedanta Swami',
         catalog: [
             { title_english: 'Adore Adore Ye All' },
@@ -155,25 +119,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Samsara Davanala Lidha Loka', title_odia: 'ସଂସାର ଦାବାନଳ' },
             { title_english: 'Sri-guru-carastakam' },
             { title_english: 'Udilo Aruna Puraba Bhage', title_odia: 'ଉଦିଲ ଅରୁଣ' },
-        ]
-    },
-    {
-        name: 'Adi Sankaracarya',
-        catalog: [
-            { title_english: 'Achyutastakam' },
-            { title_english: 'Annapurnastakam' },
-            { title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ' },
-            { title_english: 'Bhavanyastakam' },
-            { title_english: 'Gita Mahatmya', title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ' },
-            { title_english: 'Govindastakam' },
-            { title_english: 'Jagannathastakam' },
-            { title_english: 'Narasimha Arati', title_odia: 'ନୃସିଂହ ଆରତି' },
-        ]
-    },
-    {
-        name: 'Jiva Goswami',
-        catalog: [
-            { title_english: 'Krsna Prema Mayi Radha' },
         ]
     },
     {
@@ -193,9 +138,52 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'Sanatana Goswami',
+        name: 'Locana Dasa Thakura',
         catalog: [
+            { title_english: 'Akrodha Paramananda' },
+            { title_english: 'Avatara Sara Gora Avatara' },
+            { title_english: 'Bhaja Bhaja Hari' },
+            { title_english: 'Ke Jabi Ke Jabi Bhai Bhava Sindhu Para' },
+            { title_english: 'Nitai Guna Mani' },
+            { title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati' },
+            { title_english: 'Parama Karuna Pahu Dui Jana', title_odia: 'ପରମ କରୁଣ' },
+            { title_english: 'Sri Gaura Arati', title_odia: 'ଶ୍ରୀ ଗୌର ଆରତି' },
+        ]
+    },
+    {
+        name: 'Vasudeva Ghosha',
+        catalog: [
+            { title_english: 'Gauranga Tumi More Doya Na Chadiho', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ' },
             { title_english: 'Jaya Jaya Jagannatha Sacira Nandana' },
+            { title_english: 'Makhana Cora' },
+            { title_english: 'Sri Sri Tulasi Arati', title_odia: 'ଶ୍ରୀ ତୁଳସୀ ଆରତି' },
+        ]
+    },
+    {
+        name: 'Jayadeva Goswami',
+        catalog: [
+            { title_english: 'Dasavatara Stotra', title_odia: 'ଦଶାବତାର ସ୍ତୋତ୍ର' },
+            { title_english: 'Pralaya Payodhi Jale' },
+            { title_english: 'Sri Gitagovinda' },
+        ]
+    },
+    {
+        name: 'Sarvabhauma Bhattacarya',
+        catalog: [
+            { title_english: 'Susloka Satakam' },
+        ]
+    },
+    {
+        name: 'Vrndavana Dasa Thakura',
+        catalog: [
+            { title_english: 'Abanika Majhe Dekha Dona Bhai' },
+            { title_english: 'Antare Nitai Bahire Nitai' },
+            { title_english: 'Hera Dekhiya Nayana Bhariya' },
+            { title_english: 'Janu Lambita Bahu Jugala' },
+            { title_english: 'Madana Mohana Tanu' },
+            { title_english: 'Nace Nace Nitai Gaur Guna Maniya' },
+            { title_english: 'Nana Dravya Ayojana' },
+            { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana' },
         ]
     },
     {
@@ -215,38 +203,42 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'Jayadeva Goswami',
-        catalog: [
-            { title_english: 'Dasavatara Stotra', title_odia: 'ଦଶାବତାର ସ୍ତୋତ୍ର' },
-            { title_english: 'Pralaya Payodhi Jale' },
-            { title_english: 'Sri Gitagovinda' },
-        ]
-    },
-    {
-        name: 'Vrndavana Dasa Thakura',
-        catalog: [
-            { title_english: 'Abanika Majhe Dekha Dona Bhai' },
-            { title_english: 'Antare Nitai Bahire Nitai' },
-            { title_english: 'Hera Dekhiya Nayana Bhariya' },
-            { title_english: 'Janu Lambita Bahu Jugala' },
-            { title_english: 'Madana Mohana Tanu' },
-            { title_english: 'Nace Nace Nitai Gaur Guna Maniya' },
-            { title_english: 'Nana Dravya Ayojana' },
-            { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana' },
-        ]
-    },
-    {
-        name: 'Sarvabhauma Bhattacarya',
-        catalog: [
-            { title_english: 'Susloka Satakam' },
-        ]
-    },
-    {
         name: 'Bhaktisiddhanta Saraswati',
         catalog: [
             { title_english: 'Ei Chh\'y gosai jar mui tar das' },
             { title_english: 'Sri Rupa Manjari Pada' },
             { title_english: 'Vaishnava Ke' },
+        ]
+    },
+    {
+        name: 'Adi Sankaracarya',
+        catalog: [
+            { title_english: 'Achyutastakam' },
+            { title_english: 'Annapurnastakam' },
+            { title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ' },
+            { title_english: 'Bhavanyastakam' },
+            { title_english: 'Gita Mahatmya', title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ' },
+            { title_english: 'Govindastakam' },
+            { title_english: 'Jagannathastakam' },
+            { title_english: 'Narasimha Arati', title_odia: 'ନୃସିଂହ ଆରତି' },
+        ]
+    },
+    {
+        name: 'Sanatana Goswami',
+        catalog: [
+            { title_english: 'Jaya Jaya Jagannatha Sacira Nandana' },
+        ]
+    },
+    {
+        name: 'Jiva Goswami',
+        catalog: [
+            { title_english: 'Krsna Prema Mayi Radha' },
+        ]
+    },
+    {
+        name: 'Srinivasa Acarya',
+        catalog: [
+            { title_english: 'Krsnotkirtana Gana Nartana (Sad-gosvamy-astakam)', title_odia: 'ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ' },
         ]
     },
     {
@@ -256,9 +248,21 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
-        name: 'Devakinandana Das Thakura',
+        name: 'Devakinandana Dasa Thakura',
         catalog: [
             { title_english: 'Vrndavana Vasidara' },
         ]
+    },
+    {
+        name: 'Bilvamangala Thakura',
+        catalog: [
+            { title_english: 'Agre Kurunam Atha' },
+            { title_english: 'Kararavindena Padaravindam' },
+            { title_english: 'Vraje Prasiddham Navanita' },
+        ]
+    },
+    {
+        name: 'Others Authors',
+        catalog: []
     },
 ];

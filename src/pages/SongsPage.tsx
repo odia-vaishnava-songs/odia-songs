@@ -231,39 +231,57 @@ export const SongsPage: React.FC = () => {
 
             const counts: Record<string, number> = {};
             data.forEach(s => {
-                const a = (s as any).author || 'Unknown Author';
+                const a = (s as any).author || 'Others Authors';
                 counts[a] = (counts[a] || 0) + 1;
             });
 
-            // Extract all authors from AUTHOR_CATALOG as primary source
-            const catalogAuthors = AUTHOR_CATALOG.map(a => a.name);
-            
-            // Build merged list: catalog authors enriched with available counts
-            const merged = AUTHOR_CATALOG.map(cat => ({
-                author: cat.name,
-                count: counts[cat.name] || 0,
-                total: cat.catalog.length
-            }));
+            // Standardized Authors List (from USER)
+            const standardizedList = [
+                "Bhaktivinoda Thakura",
+                "Narottama Dasa Thakura",
+                "A.C. Bhaktivedanta Swami",
+                "Krsnadasa Kaviraja Goswami",
+                "Rupa Goswami",
+                "Locana Dasa Thakura",
+                "Vasudeva Ghosha",
+                "Jayadeva Goswami",
+                "Sarvabhauma Bhattacarya",
+                "Vrndavana Dasa Thakura",
+                "Raghunatha Dasa Goswami",
+                "Visvanatha Cakravarti Thakura",
+                "Bhaktisiddhanta Saraswati",
+                "Adi Sankaracarya",
+                "Sanatana Goswami",
+                "Jiva Goswami",
+                "Srinivasa Acarya",
+                "Govinda Dasa Kaviraja",
+                "Devakinandana Dasa Thakura",
+                "Bilvamangala Thakura",
+                "Others Authors"
+            ];
 
-            // Add any other authors found in the database that aren't in the catalog
+            // Build merged list: catalog authors enriched with available counts
+            const merged = standardizedList.map(name => {
+                const catalogEntry = AUTHOR_CATALOG.find(cat => cat.name === name);
+                return {
+                    author: name,
+                    count: counts[name] || 0,
+                    total: catalogEntry ? catalogEntry.catalog.length : (counts[name] || 0)
+                };
+            });
+
+            // Add any other authors found in the database that aren't in the standardized list to "Others Authors"
             Object.entries(counts).forEach(([author, count]) => {
-                if (!catalogAuthors.includes(author)) {
-                    merged.push({ author, count, total: count });
+                if (!standardizedList.includes(author)) {
+                    const othersIndex = merged.findIndex(m => m.author === "Others Authors");
+                    if (othersIndex !== -1) {
+                        merged[othersIndex].count += count;
+                        merged[othersIndex].total += count;
+                    }
                 }
             });
 
-            // Sort: catalog authors first, then by count
-            const sorted = merged.sort((a, b) => {
-                const aIdx = catalogAuthors.indexOf(a.author);
-                const bIdx = catalogAuthors.indexOf(b.author);
-                
-                if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
-                if (aIdx !== -1) return -1;
-                if (bIdx !== -1) return 1;
-                return b.count - a.count;
-            });
-
-            setAuthorStats(sorted);
+            setAuthorStats(merged);
         } catch (err) {
             console.error('[Stats] Error:', err);
         }
@@ -2435,40 +2453,43 @@ export const SongsPage: React.FC = () => {
                                             onClick={() => {
                                                 if (isActive) {
                                                     setSelectedAuthor(stat.author);
-                                                    setIsAuthorPanelOpen(false);
+                                                    // For S-2 in individual window style, we keep the drawer open but the state change triggers full-screen overlay
+                                                    setIsAuthorPanelOpen(false); 
                                                 }
                                             }}
                                             style={{
                                                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                                padding: '0.9rem 1rem',
-                                                backgroundColor: 'white',
+                                                padding: '1.2rem',
+                                                background: 'white',
                                                 borderRadius: '16px',
-                                                border: isActive ? '1px solid #16a34a20' : '1px solid #f1f5f9',
                                                 cursor: isActive ? 'pointer' : 'default',
-                                                transition: 'all 0.2s ease',
-                                                boxShadow: isActive ? '0 4px 12px rgba(22, 163, 74, 0.08)' : '0 2px 4px rgba(0,0,0,0.02)',
-                                                opacity: isActive ? 1 : 0.6
+                                                border: '1px solid #f1f5f9',
+                                                boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                                                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                opacity: isActive ? 1 : 0.7
                                             }}
-                                            onMouseEnter={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.boxShadow = '0 6px 16px rgba(22, 163, 74, 0.12)'; } }}
-                                            onMouseLeave={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateX(0)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(22, 163, 74, 0.08)'; } }}
+                                            onMouseEnter={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(22, 163, 74, 0.12)'; e.currentTarget.style.borderColor = '#16a34a40'; } }}
+                                            onMouseLeave={(e) => { if (isActive) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.03)'; e.currentTarget.style.borderColor = '#f1f5f9'; } }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                                                 <div style={{
-                                                    backgroundColor: isActive ? '#16a34a' : '#cbd5e1',
-                                                    color: 'white', width: '26px', height: '26px',
-                                                    borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                    fontSize: '0.8rem', fontWeight: 900, flexShrink: 0
+                                                    backgroundColor: isActive ? '#16a34a' : '#f1f5f9',
+                                                    color: isActive ? 'white' : '#94a3b8', 
+                                                    width: '32px', height: '32px',
+                                                    borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                    fontSize: '0.85rem', fontWeight: 900, flexShrink: 0,
+                                                    boxShadow: isActive ? '0 4px 10px rgba(22, 163, 74, 0.3)' : 'none'
                                                 }}>{toOdiaNumber(idx + 1)}</div>
                                                 <div>
-                                                    <div style={{ fontSize: '0.9rem', fontWeight: 800, color: isActive ? '#1e293b' : '#64748b' }}>{stat.author}</div>
-                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '2px' }}>
-                                                        <div style={{ fontSize: '0.68rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                            <CheckCircle2 size={10} />
+                                                    <div style={{ fontSize: '0.95rem', fontWeight: 900, color: isActive ? '#1e293b' : '#64748b', letterSpacing: '-0.01em' }}>{stat.author}</div>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
+                                                        <div style={{ fontSize: '0.7rem', color: isActive ? '#16a34a' : '#94a3b8', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                                            <CheckCircle2 size={11} />
                                                             {toOdiaNumber(stat.count)} Available
                                                         </div>
                                                         {stat.total > stat.count && (
-                                                            <div style={{ fontSize: '0.68rem', color: '#64748b', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                                <Circle size={10} style={{ opacity: 0.5 }} />
+                                                            <div style={{ fontSize: '0.7rem', color: '#94a3b8', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', opacity: 0.8 }}>
+                                                                <Circle size={11} />
                                                                 {toOdiaNumber(stat.total - stat.count)} Coming Soon
                                                             </div>
                                                         )}
@@ -2476,8 +2497,8 @@ export const SongsPage: React.FC = () => {
                                                 </div>
                                             </div>
                                             {isActive
-                                                ? <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#16a34a', boxShadow: '0 0 8px rgba(22,163,74,0.5)', flexShrink: 0 }} />
-                                                : <ChevronRight size={14} color="#cbd5e1" />
+                                                ? <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#16a34a', boxShadow: '0 0 10px rgba(22,163,74,0.6)', flexShrink: 0 }} />
+                                                : <ChevronRight size={16} color="#cbd5e1" />
                                             }
                                         </div>
                                     );
