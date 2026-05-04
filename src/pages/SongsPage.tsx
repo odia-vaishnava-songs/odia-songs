@@ -237,13 +237,13 @@ export const SongsPage: React.FC = () => {
             
             // 1. Count songs from Database
             data.forEach(s => {
-                const a = standardizeAuthorName((s as any).author);
+                const a = standardizeAuthorName((s as any).author || '');
                 counts[a] = (counts[a] || 0) + 1;
             });
 
             // 2. Count songs from local resources that might not be in DB yet
             songResources.forEach(s => {
-                const a = standardizeAuthorName(s.author);
+                const a = standardizeAuthorName(s.author || '');
                 
                 // Only count if it's not already accounted for by a DB record with the same ID
                 // (This avoids double-counting since useSongs merges them)

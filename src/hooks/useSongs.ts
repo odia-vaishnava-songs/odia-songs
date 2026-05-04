@@ -15,14 +15,14 @@ export const useSongs = () => {
         const supabaseIds = new Set(supabaseSongs.map(s => s.id));
         const combined = [...supabaseSongs].map(s => ({
             ...s,
-            author: standardizeAuthorName(s.author)
+            author: standardizeAuthorName(s.author || '')
         }));
 
         LOCAL_RESOURCES.forEach(local => {
             if (!supabaseIds.has(local.id)) {
                 combined.push({
                     ...local,
-                    author: standardizeAuthorName(local.author)
+                    author: standardizeAuthorName(local.author || '')
                 });
             }
         });
