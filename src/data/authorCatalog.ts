@@ -1,4 +1,4 @@
-// Author Catalog — sourced from vsnectar.web.app
+﻿// Author Catalog — sourced from vsnectar.web.app
 // Standardized names as requested by the USER.
 // Cross-referenced at runtime against RESOURCES to mark availability.
 
@@ -16,7 +16,8 @@ export interface AuthorCatalog {
 export const AUTHOR_CATALOG: AuthorCatalog[] = [
     {
         name: 'Bhaktivinoda Thakura',
-        odia: 'ଶ୍ରୀଲ ଭକ�        catalog: [
+                odia: 'ଭକ୍ତିବିନୋଦ ଠାକୁର',
+        catalog: [
             { title_english: "Amar Bolite Prabhu" },
             { title_english: "Amar Jivan", title_odia: "ଆମାର ଜୀବନ" },
             { title_english: "Ami Jamuna Puline", title_odia: "ଆମି ଯମୁନା ପୁଲିନେ" },
@@ -95,7 +96,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: "Yadi Te Hari Pada Saroja Sudha", title_odia: "ଯଦି ତେ ହରି-ପାଦ-ସରୋଜ-ସୁଧା" },
             { title_english: "Yasomati Nandana", title_odia: "ଯଶୋମତି ନନ୍ଦନ" },
         ]
-��୍ଣ-କୀର୍ତ୍ତନେ' },
+��୍ଣ-କୀର୍ତ୍ତନେ' },
             { title_english: 'Suddha Bhakata Carana Renu', title_odia: 'ଶୁଦ୍ଧ ଭକତ-ଚରଣ ରେଣୁ' },
             { title_english: 'Tumi Sarvesvaresvara Vrajendra Kumar', title_odia: 'ତୁମି ସର୍ବେଶ୍ୱରେଶ୍ବର' },
             { title_english: 'Udilo Aruna Puraba Bhage', title_odia: 'ଉଦିଲ ଅରୁଣ ପୂରବ ଭାଗେ' },
