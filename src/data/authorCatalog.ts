@@ -260,8 +260,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Sanatana Goswami',
+        odia: 'ସନାତନ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Jaya Jaya Jagannatha Sacira Nandana' },
+            { title_english: 'Radhika Sarada Indu Nindimukha', title_odia: 'ରାଧିକା ଶାରଦ ଇନ୍ଦୁ ନିନ୍ଦିମୁଖ' },
         ]
     },
     {
