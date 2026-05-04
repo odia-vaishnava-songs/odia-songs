@@ -240,10 +240,10 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Bhaktisiddhanta Saraswati',
+        odia: 'ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ',
         catalog: [
-            { title_english: 'Ei Chh\'y gosai jar mui tar das' },
-            { title_english: 'Sri Rupa Manjari Pada' },
-            { title_english: 'Vaishnava Ke' },
+            { title_english: 'Dusta Mana', title_odia: 'ଦୁଷ୍ଟ ମନ' },
+            { title_english: 'Krsna Hoite Caturmukha', title_odia: 'କୃଷ୍ଣ ହୋଇତେ ଚତୁର୍ମୁଖ' },
         ]
     },
     {
