@@ -248,15 +248,14 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Adi Sankaracarya',
+        odia: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟ',
         catalog: [
-            { title_english: 'Achyutastakam' },
-            { title_english: 'Annapurnastakam' },
-            { title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ' },
-            { title_english: 'Bhavanyastakam' },
-            { title_english: 'Gita Mahatmya', title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ' },
-            { title_english: 'Govindastakam' },
-            { title_english: 'Jagannathastakam' },
-            { title_english: 'Narasimha Arati', title_odia: 'ନୃସିଂହ ଆରତି' },
+            { title_english: 'Achyutam Kesavam', title_odia: 'ଅଚ୍ୟୁତମ୍ କେଶବମ୍' },
+            { title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ୍' },
+            { title_english: 'Devi Suresvari Bhagavati Gange', title_odia: 'ଦେବୀ ସୁରେଶ୍ୱରୀ ଭଗବତୀ ଗଙ୍ଗେ' },
+            { title_english: 'Kadacit Kalindi Tata Vipina', title_odia: 'କଦାଚିତ୍ କାଳିନ୍ଦୀ ତଟ ବିପିନ' },
+            { title_english: 'Sariram Surupam Tatha', title_odia: 'ଶରୀରମ୍ ସୁରୂପମ୍ ତଥା' },
+            { title_english: 'Satyam Jnanam Anantam', title_odia: 'ସତ୍ୟମ୍ ଜ୍ଞାନମନନ୍ତମ୍' },
         ]
     },
     {
