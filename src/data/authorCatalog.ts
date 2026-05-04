@@ -177,11 +177,14 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Vasudeva Ghosha',
+        odia: 'ବାସୁଦେବ ଘୋଷ',
         catalog: [
-            { title_english: 'Gauranga Tumi More Doya Na Chadiho', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ' },
-            { title_english: 'Jaya Jaya Jagannatha Sacira Nandana' },
-            { title_english: 'Makhana Cora' },
-            { title_english: 'Sri Sri Tulasi Arati', title_odia: 'ଶ୍ରୀ ତୁଳସୀ ଆରତି' },
+            { title_english: 'Gauranga Tumi More Doya Na Chadiho', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନା ଛାଡିହୋ' },
+            { title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
+            { title_english: 'Jaya Jaya Jagannatha Sacira', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର' },
+            { title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଅଙ୍ଗିନାୟ ନାଚେ' },
+            { title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୟନା' },
+            { title_english: 'Yadi Gaura Na Hoito', title_odia: 'ଯଦି ଗୌର ନା ହୋଇତୋ' },
         ]
     },
     {
