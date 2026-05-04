@@ -33,7 +33,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Bhuliya Tomare Samsare', title_odia: 'ଭୁଲିୟା ତୋମାରେ' },
             { title_english: 'Bolo Hari Bolo' },
             { title_english: 'Boro Sukher Atit To Ke' },
-            { title_english: 'Doya Koro Prabhu' },
             { title_english: 'Doyala Nitai Caitanya', title_odia: 'ଦୟାଲ ନିତାଇ ଚୈତନ୍ୟ' },
             { title_english: 'Durlabha Manava Janma', title_odia: 'ଦୁର୍ଲଭ ମାନବ ଜନ୍ମ' },
             { title_english: 'Emona Durmati Samsara Bhitore' },
@@ -90,7 +89,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Boro Sukher Khabor Gai' },
             { title_english: 'Gaura Arati' },
             { title_english: 'Hari bolo Hari bolo' },
-            { title_english: 'Sata-koti-gopi-madhava-manadhika' }
         ]
     },
     {

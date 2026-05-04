@@ -3,8 +3,8 @@ import { supabase } from '../supabase/config';
 import type { Resource, SongVerse, WordMeaning } from '../types';
 import { X, Save, Trash2, CheckCircle2 } from 'lucide-react';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
-
-
+import { standardizeAuthorName } from '../utils/matching';
+import { AUTHOR_CATALOG } from '../data/authorCatalog';
 
 interface SongEditorProps {
     song?: Resource;
@@ -20,6 +20,13 @@ const INITIAL_VERSE: SongVerse = {
 };
 
 export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }) => {
+    // Unique standardized author names for the datalist
+    const canonicalAuthors = React.useMemo(() => {
+        const set = new Set<string>();
+        AUTHOR_CATALOG.forEach(a => set.add(a.name));
+        return Array.from(set).sort();
+    }, []);
+
     const [formData, setFormData] = useState<Partial<Resource>>(
         song || {
             title: '',
@@ -197,7 +204,7 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     audio_versions: formData.audioVersions,
                     vocalist: formData.vocalist,
                     audio_source: formData.audio_source,
-                    author: formData.author,
+                    author: standardizeAuthorName(formData.author || ''),
                     verified: formData.verified || false,
                     status: formData.status || 'NOT_DONE',
                     assigned_to: formData.assigned_to,
@@ -306,10 +313,16 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                         <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Author</span>
                         <input
                             placeholder="Bhaktivinoda Ṭhākura"
+                            list="author-list"
                             value={formData.author}
                             onChange={e => setFormData({ ...formData, author: e.target.value })}
                             style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #ddd' }}
                         />
+                        <datalist id="author-list">
+                            {canonicalAuthors.map(name => (
+                                <option key={name} value={name} />
+                            ))}
+                        </datalist>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         <span style={{ fontSize: '0.8rem', color: '#666', fontWeight: 600 }}>Original Language</span>

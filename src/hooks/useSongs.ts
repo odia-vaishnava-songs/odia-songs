@@ -3,6 +3,8 @@ import { supabase } from '../supabase/config';
 import type { Resource } from '../types';
 import { RESOURCES as LOCAL_RESOURCES } from '../data/resources';
 
+import { standardizeAuthorName } from '../utils/matching';
+
 export const useSongs = () => {
     const [songs, setSongs] = useState<Resource[]>(LOCAL_RESOURCES);
     const [loading, setLoading] = useState(true);
@@ -11,11 +13,17 @@ export const useSongs = () => {
     const processData = useCallback((supabaseSongs: any[]) => {
         // Merge local and supabase songs: Prefer supabase
         const supabaseIds = new Set(supabaseSongs.map(s => s.id));
-        const combined = [...supabaseSongs];
+        const combined = [...supabaseSongs].map(s => ({
+            ...s,
+            author: standardizeAuthorName(s.author)
+        }));
 
         LOCAL_RESOURCES.forEach(local => {
             if (!supabaseIds.has(local.id)) {
-                combined.push(local);
+                combined.push({
+                    ...local,
+                    author: standardizeAuthorName(local.author)
+                });
             }
         });
 

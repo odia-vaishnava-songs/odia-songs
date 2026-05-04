@@ -11,6 +11,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useSongs } from '../hooks/useSongs';
 import * as TempleIcons from '../components/TempleIcons';
 import { AUTHOR_CATALOG } from '../data/authorCatalog';
+import { normalizeForSearch, isTitleMatch, standardizeAuthorName } from '../utils/matching';
 
 import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber } from '../utils/odia';
@@ -84,23 +85,7 @@ const FilterMenuItem: React.FC<{
 
 
 // Helper to normalize strings for diacritic-blind matching/searching
-const normalizeForSearch = (str: string, aggressive = false) => {
-    if (!str) return '';
-    let res = str.toLowerCase()
-        .replace(/ṛ/g, 'r').replace(/ś/g, 's').replace(/ṣ/g, 's')
-        .replace(/ā/g, 'a').replace(/ī/g, 'i').replace(/ū/g, 'u')
-        .replace(/ḍ/g, 'd').replace(/ḥ/g, 'h').replace(/ḷ/g, 'l')
-        .replace(/ṃ/g, 'm').replace(/ṅ/g, 'n').replace(/ñ/g, 'n').replace(/ṇ/g, 'n')
-        .replace(/ṭ/g, 't')
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove standard diacritics
-    
-    if (aggressive) {
-        // Aggressive mode: remove vowels to bridge "Bhratur" vs "Bhrtur" differences
-        res = res.replace(/[aeiouy]/g, '');
-    }
-    
-    return res.replace(/[^a-z0-9]/g, '');
-};
+// Moved to ../utils/matching.ts for global consistency
 
 export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
@@ -252,22 +237,13 @@ export const SongsPage: React.FC = () => {
             
             // 1. Count songs from Database
             data.forEach(s => {
-                let a = (s as any).author || 'Other Authors';
-                if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
-                if (a === 'Krsna Dasa') a = 'Krsnadasa Kaviraja Goswami';
-                if (a.includes('ଶ୍ରୀଲ ଭକ୍ତି ସିଦ୍ଧାନ୍ତ')) a = 'Bhaktisiddhanta Saraswati';
-                if (a.includes('ଶ୍ରୀଲ ଲୋଚନ ଦାସ')) a = 'Locana Dasa Thakura';
-                if (a === 'Others Authors') a = 'Other Authors';
+                const a = standardizeAuthorName((s as any).author);
                 counts[a] = (counts[a] || 0) + 1;
             });
 
             // 2. Count songs from local resources that might not be in DB yet
             songResources.forEach(s => {
-                let a = s.author || 'Other Authors';
-                // Standardize
-                if (a === 'A.C. Bhaktivedanta Swami') a = 'Srila Prabhupada';
-                if (a === 'Krsna Dasa') a = 'Krsnadasa Kaviraja Goswami';
-                if (a === 'Others Authors') a = 'Other Authors';
+                const a = standardizeAuthorName(s.author);
                 
                 // Only count if it's not already accounted for by a DB record with the same ID
                 // (This avoids double-counting since useSongs merges them)
@@ -1407,49 +1383,18 @@ export const SongsPage: React.FC = () => {
 
         // Build merged list: catalog songs enriched with resource match
         const mergedList = fullCatalog.map(cs => {
-            const key = normalizeForSearch(cs.title_english);
-            const keyAggressive = normalizeForSearch(cs.title_english, true);
-
-            // Try to find matching resource by english title similarity
-            const resource = availableSongs.find(r => {
-                const title = r.title_english || r.title || '';
-                const re = normalizeForSearch(title);
-                const reAggressive = normalizeForSearch(title, true);
-                const ok = (r.title_odia || '').replace(/\s/g, '');
-                const ck = (cs.title_odia || '').replace(/\s/g, '');
-                
-                // 1. English Match (Standardized)
-                if (re === key || (key.length > 5 && re.includes(key.substring(0, 8))) || (re.length > 5 && key.includes(re.substring(0, 8)))) return true;
-                
-                // 2. Aggressive Match (Vowel-less fallback for transliteration differences)
-                if (reAggressive === keyAggressive) return true;
-
-                // 3. Odia Match (if both have Odia titles)
-                if (ok && ck && (ok === ck || ok.includes(ck) || ck.includes(ok))) return true;
-                
-                // 4. ID Match (if resource ID is derived from English title)
-                if (r.id.toLowerCase().includes(key.substring(0, 8))) return true;
-
-                return false;
-            });
+            // Try to find matching resource using centralized fuzzy logic
+            const resource = availableSongs.find(r => 
+                isTitleMatch(cs.title_english, r.title_english || r.title, cs.title_odia, r.title_odia)
+            );
             return { ...cs, resource };
         });
 
         // Also add any songs in resources NOT in catalog
         availableSongs.forEach(r => {
-            const title = r.title_english || r.title || '';
-            const re = normalizeForSearch(title);
-            const reAggressive = normalizeForSearch(title, true);
-
-            const alreadyListed = mergedList.some(m => {
-                const mk = normalizeForSearch(m.title_english);
-                const mkAggressive = normalizeForSearch(m.title_english, true);
-                
-                return mk === re || 
-                       mkAggressive === reAggressive || 
-                       mk.includes(re.substring(0, 8)) || 
-                       re.includes(mk.substring(0, 8));
-            });
+            const alreadyListed = mergedList.some(m => 
+                isTitleMatch(m.title_english, r.title_english || r.title, m.title_odia, r.title_odia)
+            );
             if (!alreadyListed) {
                 mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
             }
