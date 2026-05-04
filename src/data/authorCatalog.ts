@@ -281,8 +281,10 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Govinda Dasa Kaviraja',
+        odia: 'ଗୋବିନ୍ଦ ଦାସ କବିରାଜ',
         catalog: [
-            { title_english: 'Bhajahu Re Mana' },
+            { title_english: 'Bhajahu Re Mana', title_odia: 'ଭଜହୁ ରେ ମନ' },
+            { title_english: 'Kali Yuge Sri Caitanya', title_odia: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ' },
         ]
     },
     {
