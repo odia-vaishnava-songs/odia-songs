@@ -173,7 +173,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Nitai Guna Mani', title_odia: 'ନିତାଇ ଗୁଣମଣି' },
             { title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati', title_odia: 'ନିତାଇ ମୋର ଜୀବନ ଧନ ନିତାଇ ମୋର ଜାତି' },
             { title_english: 'Parama Karuna Pahu Dui Jana', title_odia: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇ ଜନ' },
-            { title_english: 'Sri Gaura Arati', title_odia: 'ଶ୍ରୀ ଗୌର ଆରତି' },
         ]
     },
     {
