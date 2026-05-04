@@ -214,7 +214,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Antare Nitai Bahire Nitai', title_odia: 'ଅନ୍ତରେ ନିତାଇ ବାହିରେ ନିତାଇ' },
             { title_english: 'Hera Dekhiya Nayana Bhariya', title_odia: 'ହେରା ଦେଖିୟା ନୟନ ଭରିୟା' },
             { title_english: 'Janu Lambita Bahu Jugala', title_odia: 'ଜାନୁ ଲମ୍ବିତ ବାହୁ ଯୁଗଳ' },
-            { title_english: 'Madana Mohana Tanu', title_odia: 'ମଦନ ମୋହନ ତନୁ' },
+            { title_english: 'Madana Mohana Tanum', title_odia: 'ମଦନ ମୋହନ ତନୁ' },
             { title_english: 'Nace Nace Nitai Gaur Guna Maniya', title_odia: 'ନାଚେ ନାଚେ ନିତାଇ ଗୌର ଗୁଣ ମଣିୟା' },
             { title_english: 'Nana Dravya Ayojana', title_odia: 'ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ' },
             { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana', title_odia: 'ଶ୍ରୀ ହରି ବାସରେ ହରି କୀର୍ତ୍ତନ ବିଧାନ' },
@@ -232,7 +232,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Visvanatha Cakravarti Thakura',
         odia: 'ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
         catalog: [
-            { title_english: 'Gangeya Campeya', title_odia: 'ଗାଙ୍ଗେୟ ଚାମ୍ପେୟ' },
+            { title_english: 'Vrnda-astakam (Gange Ya Campaya)', title_odia: 'ବୃନ୍ଦାଷ୍ଟକମ୍' },
             { title_english: 'Gurvastakam (Samsara Davanala Lidha Loka)', title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବଷ୍ଟକମ୍ (ମଙ୍ଗଳ ଆରତି)' },
             { title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
             { title_english: 'Na Yoga Siddhir Na Mamastu', title_odia: 'ନ ଯୋଗ ସିଦ୍ଧିର୍ନ ମମାସ୍ତୁ' },
@@ -283,7 +283,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Govinda Dasa Kaviraja',
         odia: 'ଗୋବିନ୍ଦ ଦାସ କବିରାଜ',
         catalog: [
-            { title_english: 'Bhajahu Re Mana', title_odia: 'ଭଜହୁ ରେ ମନ' },
+            { title_english: 'Bhaja Hu Re Mana Sri Nanda Nandana', title_odia: 'ଭଜହୁ ରେ ମନ' },
             { title_english: 'Kali Yuge Sri Caitanya', title_odia: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ' },
         ]
     },
@@ -300,7 +300,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'Agre Kurunam Atha', title_odia: 'ଅଗ୍ରେ କୁରୂଣାମ୍ ଅଥ' },
             { title_english: 'Kararavindena Padaravindam', title_odia: 'କରାରବିନ୍ଦେନ ପଦାରବିନ୍ଦମ୍' },
-            { title_english: 'Vraje Prasiddham Navanita', title_odia: 'ବ୍ରଜେ ପ୍ରସିଦ୍ଧମ୍ ନବନୀତ' },
+            { title_english: 'Vraje Prasiddham Navanita Cauram', title_odia: 'ବ୍ରଜେ ପ୍ରସିଦ୍ଧମ୍ ନବନୀତ' },
         ]
     },
     {
@@ -331,7 +331,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Krsna Dasa',
         odia: 'କୃଷ୍ଣ ଦାସ',
         catalog: [
-            { title_english: 'Namo Namah Tulasi Krsna Preyasi' },
+            { title_english: 'Jaya Radhe Jaya Krsna Jaya Vrndavana', title_odia: 'ଜୟ ରାଧେ, ଜୟ କୃଷ୍ଣ, ଜୟ ବୃନ୍ଦାବନ' },
+            { title_english: 'Namo Namah Tulasi Krsna Preyasi', title_odia: 'ନମୋ ନମଃ ତୁଳସୀ କୃଷ୍ଣ ପ୍ରେୟସୀ' },
         ]
     },
     {
