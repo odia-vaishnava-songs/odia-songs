@@ -222,10 +222,10 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Raghunatha Dasa Goswami',
+        odia: 'ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Gurau Gosthe Gosthalayisu' },
-            { title_english: 'Nija Pati Bhuja' },
-            { title_english: 'Vilapa Kusumanjali' },
+            { title_english: 'Gurau Gosthe Gosthalayisu', title_odia: 'ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ' },
+            { title_english: 'Nija Pati Bhuja', title_odia: 'ନିଜ ପତି ଭୁଜ' },
         ]
     },
     {
