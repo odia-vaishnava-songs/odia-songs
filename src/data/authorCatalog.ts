@@ -208,15 +208,16 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Vrndavana Dasa Thakura',
+        odia: 'ବୃନ୍ଦାବନ ଦାସ ଠାକୁର',
         catalog: [
-            { title_english: 'Abanika Majhe Dekha Dona Bhai' },
-            { title_english: 'Antare Nitai Bahire Nitai' },
-            { title_english: 'Hera Dekhiya Nayana Bhariya' },
-            { title_english: 'Janu Lambita Bahu Jugala' },
-            { title_english: 'Madana Mohana Tanu' },
-            { title_english: 'Nace Nace Nitai Gaur Guna Maniya' },
-            { title_english: 'Nana Dravya Ayojana' },
-            { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana' },
+            { title_english: 'Abanika Majhe Dekha Dona Bhai', title_odia: 'ଅବନିକା ମାଝେ ଦେଖ ଦୋନା ଭାଇ' },
+            { title_english: 'Antare Nitai Bahire Nitai', title_odia: 'ଅନ୍ତରେ ନିତାଇ ବାହିରେ ନିତାଇ' },
+            { title_english: 'Hera Dekhiya Nayana Bhariya', title_odia: 'ହେରା ଦେଖିୟା ନୟନ ଭରିୟା' },
+            { title_english: 'Janu Lambita Bahu Jugala', title_odia: 'ଜାନୁ ଲମ୍ବିତ ବାହୁ ଯୁଗଳ' },
+            { title_english: 'Madana Mohana Tanu', title_odia: 'ମଦନ ମୋହନ ତନୁ' },
+            { title_english: 'Nace Nace Nitai Gaur Guna Maniya', title_odia: 'ନାଚେ ନାଚେ ନିତାଇ ଗୌର ଗୁଣ ମଣିୟା' },
+            { title_english: 'Nana Dravya Ayojana', title_odia: 'ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ' },
+            { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana', title_odia: 'ଶ୍ରୀ ହରି ବାସରେ ହରି କୀର୍ତ୍ତନ ବିଧାନ' },
         ]
     },
     {
