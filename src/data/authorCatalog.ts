@@ -198,8 +198,12 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Sarvabhauma Bhattacarya',
+        odia: 'ସାର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟ',
         catalog: [
-            { title_english: 'Susloka Satakam' },
+            { title_english: 'Huhunkara Garjanadi Aho', title_odia: 'ହୁହୁଙ୍କାର ଗର୍ଜନାଦି ଅହୋ' },
+            { title_english: 'Nava Gaura Varam', title_odia: 'ନବ ଗୌର ବରଂ' },
+            { title_english: 'Nitayando Vadhutendur', title_odia: 'ନିତ୍ୟାନନ୍ଦୋ ବଧୂତେନ୍ଦୁଃ' },
+            { title_english: 'Ujjvala Varana', title_odia: 'ଉଜ୍ଜ୍ୱଳ ବରଣ' },
         ]
     },
     {
