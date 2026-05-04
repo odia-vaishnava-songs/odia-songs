@@ -235,71 +235,57 @@ export const SongsPage: React.FC = () => {
 
             const counts: Record<string, number> = {};
             
-            // 1. Count songs from Database
+            // 1. Process songs and assign to correct authors based on CATALOG
             data.forEach(s => {
-                const a = standardizeAuthorName((s as any).author || '');
-                counts[a] = (counts[a] || 0) + 1;
+                const songTitle = (s as any).title_english || (s as any).title || '';
+                const songOdia = (s as any).title_odia || '';
+                
+                // Find if this song belongs to a specific author in our catalog
+                const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                    cat.catalog.some(catSong => isTitleMatch(catSong.title_english, songTitle, catSong.title_odia, songOdia))
+                );
+                
+                const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName((s as any).author || '');
+                counts[authorName] = (counts[authorName] || 0) + 1;
             });
 
-            // 2. Count songs from local resources that might not be in DB yet
+            // 2. Count local-only resources
             songResources.forEach(s => {
-                const a = standardizeAuthorName(s.author || '');
-                
-                // Only count if it's not already accounted for by a DB record with the same ID
-                // (This avoids double-counting since useSongs merges them)
                 if (!data.some(dbS => dbS.id === s.id)) {
-                    counts[a] = (counts[a] || 0) + 1;
+                    const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                        cat.catalog.some(catSong => isTitleMatch(catSong.title_english, s.title_english || s.title, catSong.title_odia, s.title_odia))
+                    );
+                    const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName(s.author || '');
+                    counts[authorName] = (counts[authorName] || 0) + 1;
                 }
             });
 
-            // Standardized Authors List (from USER)
+            // Standardized Authors List (Always in sync with AUTHOR_CATALOG)
             const standardizedList = [
-                "Bhaktivinoda Thakura",
-                "Narottama Dasa Thakura",
-                "Srila Prabhupada",
-                "Krsnadasa Kaviraja Goswami",
-                "Rupa Goswami",
-                "Locana Dasa Thakura",
-                "Vyasadeva",
-                "Vasudeva Ghosha",
-                "Jayadeva Goswami",
-                "Sarvabhauma Bhattacarya",
-                "Vrndavana Dasa Thakura",
-                "Raghunatha Dasa Goswami",
-                "Visvanatha Cakravarti Thakura",
-                "Bhaktisiddhanta Saraswati",
-                "Adi Sankaracarya",
-                "Sanatana Goswami",
-                "Jiva Goswami",
-                "Srinivasa Acarya",
-                "Govinda Dasa Kaviraja",
-                "Devakinandana Dasa Thakura",
-                "Bilvamangala Thakura",
-                "Sri Caitanya Mahaprabhu",
-                "Satyavrata Muni",
-                "Krsna Dasa",
-                "ISKCON",
-                "Sukadeva Gosvami",
+                ...AUTHOR_CATALOG.map(a => a.name),
+                "Srimad Bhagavatam",
                 "Other Authors"
             ];
 
             // Build merged list: catalog authors enriched with available counts
             const merged = standardizedList.map(name => {
                 const catalogEntry = AUTHOR_CATALOG.find(cat => cat.name === name);
+                const dbCount = counts[name] || 0;
                 return {
                     author: name,
-                    count: counts[name] || 0,
-                    total: catalogEntry ? Math.max(catalogEntry.catalog.length, counts[name] || 0) : (counts[name] || 0)
+                    count: dbCount,
+                    total: catalogEntry ? Math.max(catalogEntry.catalog.length, dbCount) : dbCount
                 };
             });
 
-            // Add any other authors found in the database that aren't in the standardized list to "Others Authors"
+            // Add any stray authors that aren't in our standardized list to "Other Authors"
             Object.entries(counts).forEach(([author, count]) => {
                 if (!standardizedList.includes(author)) {
                     const othersIndex = merged.findIndex(m => m.author === "Other Authors");
                     if (othersIndex !== -1) {
                         merged[othersIndex].count += count;
-                        merged[othersIndex].total += count;
+                        // For stray authors, we treat count as total since we don't have a catalog
+                        merged[othersIndex].total += count; 
                     }
                 }
             });
