@@ -189,10 +189,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Jayadeva Goswami',
+        odia: 'ଜୟଦେବ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Dasavatara Stotra', title_odia: 'ଦଶାବତାର ସ୍ତୋତ୍ର' },
-            { title_english: 'Pralaya Payodhi Jale' },
-            { title_english: 'Sri Gitagovinda' },
+            { title_english: 'He Govinda He Gopal Kesava Madhava', title_odia: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ କେଶବ ମାଧବ' },
+            { title_english: 'Pralaya Payodhi Jale', title_odia: 'ପ୍ରଳୟ ପୟୋଧି ଜଲେ' },
+            { title_english: 'Srita Kamala', title_odia: 'ଶ୍ରୀତ କମଳା' },
         ]
     },
     {
