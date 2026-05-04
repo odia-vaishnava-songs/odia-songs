@@ -233,9 +233,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
         catalog: [
             { title_english: 'Gangeya Campeya', title_odia: 'ଗାଙ୍ଗେୟ ଚାମ୍ପେୟ' },
+            { title_english: 'Gurvastakam (Samsara Davanala Lidha Loka)', title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବଷ୍ଟକମ୍ (ମଙ୍ଗଳ ଆରତି)' },
             { title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
             { title_english: 'Na Yoga Siddhir Na Mamastu', title_odia: 'ନ ଯୋଗ ସିଦ୍ଧିର୍ନ ମମାସ୍ତୁ' },
-            { title_english: 'Samsara Davanala Lidha Loka', title_odia: 'ସଂସାର ଦାବାନଳ ଲୀଢ଼ ଲୋକ' },
         ]
     },
     {
