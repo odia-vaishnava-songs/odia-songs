@@ -1030,7 +1030,14 @@ export const SongsPage: React.FC = () => {
                 <div style={{ textAlign: 'center' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
-                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.25rem' }}>{selectedSong.author}</div>
+                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.25rem' }}>
+                        {(() => {
+                            const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                                cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
+                            );
+                            return catalogMatch ? catalogMatch.name : standardizeAuthorName(selectedSong.author || '');
+                        })()}
+                    </div>
                     {selectedSong.description && (
                         <div style={{ fontSize: '1.2rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.75rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
                     )}
@@ -1523,7 +1530,14 @@ export const SongsPage: React.FC = () => {
                             {getOdiaTitle(selectedSong)}
                             {selectedSong.verified && <CheckCircle2 size={18} color="#4fd1c5" />}
                         </div>
-                        <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{selectedSong.title_english || selectedSong.author}</div>
+                        <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>
+                            {selectedSong.title_english || (() => {
+                                const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                                    cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
+                                );
+                                return catalogMatch ? catalogMatch.name : standardizeAuthorName(selectedSong.author || '');
+                            })()}
+                        </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                         {(user?.role?.toLowerCase() === 'admin' || user?.role?.toLowerCase() === 'subadmin') && (
