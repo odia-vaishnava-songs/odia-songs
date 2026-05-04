@@ -289,8 +289,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Devakinandana Dasa Thakura',
+        odia: 'ଦେବକୀନନ୍ଦନ ଦାସ ଠାକୁର',
         catalog: [
-            { title_english: 'Vrndavana Vasidara' },
+            { title_english: 'Vrndavana Vasi Jata Vaisnavera Gana', title_odia: 'ବୃନ୍ଦାବନ ବାସୀ ଯତ ବୈଷ୍ଣବେର ଗଣ' },
         ]
     },
     {
