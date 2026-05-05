@@ -90,6 +90,7 @@ const FilterMenuItem: React.FC<{
 export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
+    const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSong, setSelectedSong] = useState<Resource | null>(null);
@@ -1375,7 +1376,7 @@ export const SongsPage: React.FC = () => {
         const fullCatalog = catalogEntry?.catalog ?? [];
 
         // Build merged list: catalog songs enriched with resource match
-        const mergedList = fullCatalog.map(cs => {
+        let mergedList = fullCatalog.map(cs => {
             // Try to find matching resource using centralized fuzzy logic
             const resource = availableSongs.find(r => 
                 isTitleMatch(cs.title_english, r.title_english || r.title, cs.title_odia, r.title_odia)
@@ -1392,6 +1393,11 @@ export const SongsPage: React.FC = () => {
                 mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
             }
         });
+
+        // --- FILTER: Only admins see "Coming Soon" (items without resource) ---
+        if (!isAdmin) {
+            mergedList = mergedList.filter(m => !!m.resource);
+        }
 
         const availableCount = mergedList.filter(m => !!m.resource).length;
         const totalCount = mergedList.length;
@@ -1419,7 +1425,7 @@ export const SongsPage: React.FC = () => {
                             {selectedAuthor}
                         </div>
                         <div style={{ fontSize: '0.72rem', opacity: 0.8 }}>
-                            {availableCount} of {totalCount} songs available
+                            {isAdmin ? `${availableCount} of ${totalCount} songs available` : `${availableCount} songs available`}
                         </div>
                     </div>
                     <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '12px', padding: '6px 12px', fontSize: '0.78rem', fontWeight: 800, color: '#fff', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -2475,7 +2481,56 @@ export const SongsPage: React.FC = () => {
                         </div>
 
                         {/* Author List */}
-                        <div style={{ flex: 1, overflowY: 'auto', padding: '1rem' }}>
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '0 1rem 1rem' }}>
+                            {/* Summary Card (New) */}
+                            {authorStats.length > 0 && (
+                                <div style={{
+                                    margin: '0.75rem 0 1rem',
+                                    padding: '1rem',
+                                    background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+                                    borderRadius: '18px',
+                                    border: '1.5px solid #16a34a15',
+                                    boxShadow: '0 10px 25px rgba(22, 163, 74, 0.05)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '12px'
+                                }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <div style={{ 
+                                            width: '32px', height: '32px', borderRadius: '10px', 
+                                            background: '#16a34a', color: 'white', 
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            boxShadow: '0 4px 10px rgba(22, 163, 74, 0.2)'
+                                        }}>
+                                            <Mic size={18} />
+                                        </div>
+                                        <div style={{ fontWeight: 900, fontSize: '0.95rem', color: '#1e293b' }}>ସାମଗ୍ରିକ ସ୍ଥିତି (Overall Status)</div>
+                                    </div>
+
+                                    <div style={{ display: 'flex', gap: '12px' }}>
+                                        <div style={{ 
+                                            flex: 1, background: '#16a34a', color: 'white', 
+                                            padding: '10px', borderRadius: '14px', 
+                                            textAlign: 'center', boxShadow: '0 6px 15px rgba(22, 163, 74, 0.2)'
+                                        }}>
+                                            <div style={{ fontSize: '1.2rem', fontWeight: 900 }}>{toOdiaNumber(authorStats.reduce((acc, s) => acc + s.count, 0))}</div>
+                                            <div style={{ fontSize: '0.65rem', fontWeight: 700, opacity: 0.9 }}>Available Songs</div>
+                                        </div>
+
+                                        {isAdmin && (
+                                            <div style={{ 
+                                                flex: 1, background: '#f1f5f9', color: '#64748b', 
+                                                padding: '10px', borderRadius: '14px', 
+                                                textAlign: 'center', border: '1px solid #e2e8f0'
+                                            }}>
+                                                <div style={{ fontSize: '1.2rem', fontWeight: 900 }}>{toOdiaNumber(authorStats.reduce((acc, s) => acc + (s.total - s.count), 0))}</div>
+                                                <div style={{ fontSize: '0.65rem', fontWeight: 700 }}>Coming Soon</div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                 {authorStats.length === 0 ? (
                                     <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#94a3b8' }}>
@@ -2535,7 +2590,7 @@ export const SongsPage: React.FC = () => {
                                                             <CheckCircle2 size={12} />
                                                             {toOdiaNumber(stat.count)} Available
                                                         </div>
-                                                        {stat.total > stat.count && (
+                                                        {stat.total > stat.count && isAdmin && (
                                                             <div style={{ 
                                                                 fontSize: '0.75rem', 
                                                                 color: '#64748b', 
