@@ -1431,7 +1431,7 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{
                 position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-                background: theme.gradient, zIndex: 1000,
+                background: theme.gradient, zIndex: 3000,
                 display: 'flex', flexDirection: 'column', height: '100vh'
             }}>
                 {/* Header */}
@@ -1441,7 +1441,10 @@ export const SongsPage: React.FC = () => {
                     backdropFilter: 'blur(10px)', gap: '0.75rem', flexShrink: 0
                 }}>
                     <button
-                        onClick={() => setSelectedAuthor(null)}
+                        onClick={() => {
+                            setSelectedAuthor(null);
+                            setIsAuthorPanelOpen(true);
+                        }}
                         style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '8px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}
                     >
                         <ArrowLeft size={26} strokeWidth={2.5} />
@@ -1551,7 +1554,7 @@ export const SongsPage: React.FC = () => {
 
     if (selectedSong) {
         return (
-            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 1000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 4000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                 {renderReaderToolbelt()}
                 <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
                     <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}>
@@ -2571,8 +2574,8 @@ export const SongsPage: React.FC = () => {
                                             onClick={() => {
                                                 if (isActive) {
                                                     setSelectedAuthor(stat.author);
-                                                    // For S-2 in individual window style, we keep the drawer open but the state change triggers full-screen overlay
-                                                    setIsAuthorPanelOpen(false); 
+                                                    // We keep isAuthorPanelOpen(true) so that when we go back, 
+                                                    // we are exactly where we left off in the explorer.
                                                 }
                                             }}
                                             style={{
