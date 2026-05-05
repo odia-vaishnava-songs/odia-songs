@@ -109,6 +109,9 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('caitanya') || n.includes('chaitanya')) return 'Sri Caitanya Mahaprabhu';
     if (n.includes('satyavrata')) return 'Satyavrata Muni';
     if (n.includes('sukadeva')) return 'Sukadeva Gosvami';
+    if (n.includes('vasudeva ghosha') || n.includes('vasudev ghosh')) return 'Vasudeva Ghosha';
+    if (n.includes('krsna dasa') || n.includes('krishna das')) return 'Krsna Dasa';
+    if (n.includes('iskcon')) return 'ISKCON';
     
-    return name;
+    return 'Other Authors';
 }
