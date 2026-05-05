@@ -262,11 +262,8 @@ export const SongsPage: React.FC = () => {
             });
 
             // Standardized Authors List (Always in sync with AUTHOR_CATALOG)
-            const standardizedList = [
-                ...AUTHOR_CATALOG.map(a => a.name),
-                "Srimad Bhagavatam",
-                "Other Authors"
-            ];
+            const baseAuthors = AUTHOR_CATALOG.map(a => a.name).filter(n => n !== "Other Authors" && n !== "Srimad Bhagavatam");
+            const standardizedList = [...baseAuthors, "Srimad Bhagavatam", "Other Authors"];
 
             // Build merged list: catalog authors enriched with available counts
             const allSongs = data.concat(songResources as any);
