@@ -81,7 +81,10 @@ export function isTitleMatch(
 }
 
 export function standardizeAuthorName(name: string): string {
-    const n = name.toLowerCase();
+    if (!name) return 'Other Authors';
+    const n = name.toLowerCase().trim();
+    
+    // 1. Check for well-known aliases first
     if (n.includes('prabhupada') || n.includes('bhaktivedanta')) return 'Srila Prabhupada';
     if (n.includes('bhaktivinoda')) return 'Bhaktivinoda Thakura';
     if (n.includes('narottama')) return 'Narottama Dasa Thakura';
@@ -90,5 +93,22 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('visvanatha')) return 'Visvanatha Cakravarti Thakura';
     if (n.includes('bhagavatam')) return 'Srimad Bhagavatam';
     if (n.includes('upa') || n.includes('upadesamrta')) return 'Rupa Goswami';
-    return name || 'Other Authors';
+    if (n.includes('vrndavana dasa') || n.includes('vrindavan das')) return 'Vrndavana Dasa Thakura';
+    if (n.includes('locana dasa') || n.includes('lochan das')) return 'Locana Dasa Thakura';
+    if (n.includes('jayadeva')) return 'Jayadeva Goswami';
+    if (n.includes('sarvabhauma')) return 'Sarvabhauma Bhattacarya';
+    if (n.includes('raghunatha dasa')) return 'Raghunatha Dasa Goswami';
+    if (n.includes('bhaktisiddhanta')) return 'Bhaktisiddhanta Saraswati';
+    if (n.includes('adi sankaracarya') || n.includes('sankaracharya')) return 'Adi Sankaracarya';
+    if (n.includes('sanatana')) return 'Sanatana Goswami';
+    if (n.includes('jiva')) return 'Jiva Goswami';
+    if (n.includes('srinivasa')) return 'Srinivasa Acarya';
+    if (n.includes('devakinandana')) return 'Devakinandana Dasa Thakura';
+    if (n.includes('bilvamangala')) return 'Bilvamangala Thakura';
+    if (n.includes('vyasadeva')) return 'Vyasadeva';
+    if (n.includes('caitanya') || n.includes('chaitanya')) return 'Sri Caitanya Mahaprabhu';
+    if (n.includes('satyavrata')) return 'Satyavrata Muni';
+    if (n.includes('sukadeva')) return 'Sukadeva Gosvami';
+    
+    return name;
 }

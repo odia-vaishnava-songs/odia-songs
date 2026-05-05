@@ -269,13 +269,37 @@ export const SongsPage: React.FC = () => {
             ];
 
             // Build merged list: catalog authors enriched with available counts
+            const allSongs = data.concat(songResources as any);
+            const authorToSongs: Record<string, any[]> = {};
+            allSongs.forEach(s => {
+                const name = s.author ? standardizeAuthorName(s.author) : 'Other Authors';
+                if (!authorToSongs[name]) authorToSongs[name] = [];
+                authorToSongs[name].push(s);
+            });
+
             const merged = standardizedList.map(name => {
                 const catalogEntry = AUTHOR_CATALOG.find(cat => cat.name === name);
-                const dbCount = counts[name] || 0;
+                const totalAvailable = counts[name] || 0;
+                const totalInCatalog = catalogEntry ? catalogEntry.catalog.length : 0;
+                
+                // Calculate how many of the available songs are actually in the catalog
+                let availableInCatalog = 0;
+                if (catalogEntry) {
+                    const authorSongs = authorToSongs[name] || [];
+                    availableInCatalog = catalogEntry.catalog.filter(cs => 
+                        authorSongs.some(s => isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia))
+                    ).length;
+                } else {
+                    availableInCatalog = totalAvailable;
+                }
+
+                const extraAvailable = Math.max(0, totalAvailable - availableInCatalog);
+                const totalCalculated = totalInCatalog + extraAvailable;
+
                 return {
                     author: name,
-                    count: dbCount,
-                    total: catalogEntry ? Math.max(catalogEntry.catalog.length, dbCount) : dbCount
+                    count: totalAvailable,
+                    total: totalCalculated
                 };
             });
 
@@ -1365,13 +1389,13 @@ export const SongsPage: React.FC = () => {
     // ── FULL-SCREEN AUTHOR PAGE (only when no song is open) ───────────────────
     if (selectedAuthor && !selectedSong) {
         // Available songs from RESOURCES
-        const availableSongs = songResources.filter(s => 
-            (s.author || '').toLowerCase() === selectedAuthor.toLowerCase() ||
-            (s.author === 'Srila Prabhupada' && selectedAuthor === 'A.C. Bhaktivedanta Swami') ||
-            (s.author === 'A.C. Bhaktivedanta Swami' && selectedAuthor === 'Srila Prabhupada') ||
-            (s.author === 'Krsnadasa Kaviraja Goswami' && selectedAuthor === 'Krsna Dasa') ||
-            (s.author === 'Krsna Dasa' && selectedAuthor === 'Krsnadasa Kaviraja Goswami')
-        );
+        const availableSongs = songResources.filter(s => {
+            const standardized = standardizeAuthorName(s.author || '');
+            if (standardized.toLowerCase() === selectedAuthor.toLowerCase()) return true;
+            return AUTHOR_CATALOG.find(a => a.name === selectedAuthor)?.catalog.some(cs => 
+                isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia)
+            ) || false;
+        });
 
         // Full catalog for this author
         const catalogEntry = AUTHOR_CATALOG.find(a => a.name === selectedAuthor);
