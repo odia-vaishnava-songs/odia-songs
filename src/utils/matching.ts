@@ -1,38 +1,14 @@
-/**
- * Normalizes strings for diacritic-blind matching and searching.
- * @param str The string to normalize
- * @param aggressive If true, removes vowels to bridge transliteration differences (e.g., "Gurudev" vs "Gurudeva")
- */
-export const normalizeForSearch = (str: string, aggressive = false): string => {
-    if (!str) return '';
-    let res = str.toLowerCase()
-        .replace(/ṛ/g, 'r').replace(/ś/g, 's').replace(/ṣ/g, 's')
-        .replace(/ā/g, 'a').replace(/ī/g, 'i').replace(/ū/g, 'u')
-        .replace(/ḍ/g, 'd').replace(/ḥ/g, 'h').replace(/ḷ/g, 'l')
-        .replace(/ṃ/g, 'm').replace(/ṅ/g, 'n').replace(/ñ/g, 'n').replace(/ṇ/g, 'n')
-        .replace(/ṭ/g, 't')
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove standard diacritics
-    
-    if (aggressive) {
-        // Aggressive mode: remove vowels to bridge "Bhratur" vs "Bhrtur" differences
-        res = res.replace(/[aeiouy]/g, '');
-    }
-    
-    return res.replace(/[^a-z0-9]/g, '');
-};
+export function levenshteinDistance(s1: string, s2: string): number {
+    const len1 = s1.length;
+    const len2 = s2.length;
+    const matrix: number[][] = [];
 
-/**
- * Calculates Levenshtein distance between two strings.
- */
-export const levenshteinDistance = (a: string, b: string): number => {
-    const matrix = Array.from({ length: a.length + 1 }, () => 
-        Array.from({ length: b.length + 1 }, (_, i) => i)
-    );
-    for (let i = 0; i <= a.length; i++) matrix[i][0] = i;
+    for (let i = 0; i <= len1; i++) matrix[i] = [i];
+    for (let j = 0; j <= len2; j++) matrix[0][j] = j;
 
-    for (let i = 1; i <= a.length; i++) {
-        for (let j = 1; j <= b.length; j++) {
-            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+    for (let i = 1; i <= len1; i++) {
+        for (let j = 1; j <= len2; j++) {
+            const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
             matrix[i][j] = Math.min(
                 matrix[i - 1][j] + 1,
                 matrix[i][j - 1] + 1,
@@ -40,37 +16,61 @@ export const levenshteinDistance = (a: string, b: string): number => {
             );
         }
     }
-    return matrix[a.length][b.length];
-};
+    return matrix[len1][len2];
+}
+
+export function normalizeForSearch(str: string, aggressive = false): string {
+    if (!str) return '';
+    let res = str.toLowerCase();
+    
+    if (aggressive) {
+        // Remove vowels and common transliteration artifacts
+        res = res.replace(/[aeiouy]/g, '');
+    }
+    
+    // Remove all non-alphanumeric
+    return res.replace(/[^a-z0-9]/g, '');
+}
 
 /**
- * Checks if two song titles are a likely match using multiple strategies.
+ * Robust title matching with fuzzy fallback
  */
-export const isTitleMatch = (title1: string, title2: string, odia1?: string, odia2?: string): boolean => {
-    const t1 = normalizeForSearch(title1);
-    const t2 = normalizeForSearch(title2);
-    
-    if (!t1 || !t2) return false;
+export function isTitleMatch(
+    title1: string, 
+    title2: string, 
+    odia1?: string, 
+    odia2?: string
+): boolean {
+    if (!title1 || !title2) return false;
 
-    // 1. Exact normalized match
+    const t1 = title1.toLowerCase().trim();
+    const t2 = title2.toLowerCase().trim();
+
+    // 1. Exact match (case insensitive)
     if (t1 === t2) return true;
 
-    // 2. Substring match (for cases like "Gopinath Part 2 (Ghuchao Sansar)")
-    if (t1.length > 8 && t2.length > 8) {
+    // 2. Part-agnostic match
+    const cleanPart = (s: string) => s.replace(/part\s*\d+/gi, '').trim();
+    const ct1 = cleanPart(t1);
+    const ct2 = cleanPart(t2);
+    if (ct1 === ct2 && ct1.length > 3) return true;
+
+    // 3. Simple inclusion (only for longer titles)
+    if (t1.length > 10 && t2.length > 10) {
         if (t1.includes(t2) || t2.includes(t1)) return true;
     }
 
-    // 3. Aggressive match (vowel-less)
+    // 4. Aggressive match (vowel-less)
     const a1 = normalizeForSearch(title1, true);
     const a2 = normalizeForSearch(title2, true);
     if (a1 === a2 && a1.length > 3) return true;
 
-    // 4. Levenshtein match (allow small distance relative to length)
+    // 5. Levenshtein match (allow small distance relative to length)
     const dist = levenshteinDistance(t1, t2);
     const maxDist = Math.floor(Math.min(t1.length, t2.length) * 0.2); // 20% error threshold
     if (dist <= maxDist && dist <= 3) return true;
 
-    // 5. Odia Match (if both have Odia titles)
+    // 6. Odia Match (if both have Odia titles)
     if (odia1 && odia2) {
         const ok1 = odia1.replace(/[\s\W]/g, '');
         const ok2 = odia2.replace(/[\s\W]/g, '');
@@ -78,35 +78,17 @@ export const isTitleMatch = (title1: string, title2: string, odia1?: string, odi
     }
 
     return false;
-};
+}
 
-/**
- * Maps legacy or variation author names to the standardized catalog name.
- */
-export const standardizeAuthorName = (author: string): string => {
-    if (!author) return 'Other Authors';
-    
-    const name = author.trim();
-    
-    const AUTHOR_MAP: Record<string, string> = {
-        'A.C. Bhaktivedanta Swami': 'Srila Prabhupada',
-        'A. C. Bhaktivedanta Swami Prabhupada': 'Srila Prabhupada',
-        'Srila Prabhupada': 'Srila Prabhupada',
-        'Krsna Dasa': 'Krsnadasa Kaviraja Goswami',
-        'Krsnadasa Kaviraja Goswami': 'Krsnadasa Kaviraja Goswami',
-        'Others Authors': 'Other Authors',
-        'Other Authors': 'Other Authors'
-    };
-
-    // Odia name mappings
-    if (name.includes('ଭକ୍ତି ବିନୋଦ')) return 'Bhaktivinoda Thakura';
-    if (name.includes('ନରୋତ୍ତମ')) return 'Narottama Dasa Thakura';
-    if (name.includes('ଭକ୍ତି ସିଦ୍ଧାନ୍ତ')) return 'Bhaktisiddhanta Saraswati';
-    if (name.includes('ଲୋଚନ ଦାସ')) return 'Locana Dasa Thakura';
-    if (name.includes('ଶ୍ରୀ ଚୈତନ୍ୟ')) return 'Sri Caitanya Mahaprabhu';
-    if (name.includes('ବ୍ୟାସଦେବ')) return 'Vyasadeva';
-    if (name.includes('ସତ୍ୟବ୍ରତ ମୁନି')) return 'Satyavrata Muni';
-    if (name.includes('ଶୁକଦେବ ଗୋସ୍ୱାମୀ')) return 'Sukadeva Gosvami';
-
-    return AUTHOR_MAP[name] || name;
-};
+export function standardizeAuthorName(name: string): string {
+    const n = name.toLowerCase();
+    if (n.includes('prabhupada') || n.includes('bhaktivedanta')) return 'Srila Prabhupada';
+    if (n.includes('bhaktivinoda')) return 'Bhaktivinoda Thakura';
+    if (n.includes('narottama')) return 'Narottama Dasa Thakura';
+    if (n.includes('govinda dasa')) return 'Govinda Dasa Kaviraja';
+    if (n.includes('kaviraja goswami')) return 'Krsnadasa Kaviraja Goswami';
+    if (n.includes('visvanatha')) return 'Visvanatha Cakravarti Thakura';
+    if (n.includes('bhagavatam')) return 'Srimad Bhagavatam';
+    if (n.includes('upa') || n.includes('upadesamrta')) return 'Rupa Goswami';
+    return name || 'Other Authors';
+}

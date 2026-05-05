@@ -298,6 +298,8 @@ export const SongsPage: React.FC = () => {
     };
 
 
+    useEffect(() => { if (songResources.length > 0) fetchAuthorStats(); }, [songResources]);
+
     const scrollGitaSlider = (direction: 'left' | 'right') => {
         if (gitaSliderRef.current) {
             const scrollAmount = window.innerWidth < 768 ? 200 : 400;

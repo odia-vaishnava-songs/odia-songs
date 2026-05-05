@@ -1534,7 +1534,7 @@ export const RESOURCES: Resource[] = [
         id: 'song-gurupuja',
         title: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ (Śrī Guru Caraṇa Padma)',
         title_odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ',
-        title_english: 'Guru Puja',
+        title_english: 'Sri Guru Carana Padma',
         category: 'Songs',
         type: 'html',
         author: 'Narottama Dasa Thakura',
