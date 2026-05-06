@@ -1595,6 +1595,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KRSNAKRSNAKRSNAKRSNA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-amarboliteprabhu',
+        title: 'ଆମାର ବୋଲିତେ ପ୍ରଭୁ (Amar Bolite Prabhu)',
+        title_odia: 'ଆମାର ବୋଲିତେ ପ୍ରଭୁ',
+        title_english: 'Amar Bolite Prabhu',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_AMARBOLITEPRABHU_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
