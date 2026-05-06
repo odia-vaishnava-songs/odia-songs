@@ -1586,7 +1586,7 @@ export const RESOURCES: Resource[] = [
 
     {
         id: 'song-krsnakrsnakrsnakrsna',
-        title: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! (Kṛṣṇa Kṛṣṇa Kṛṣṇa Kṛṣṇa)',
+        title: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! (Krsna Krsna Krsna Krsna)',
         title_odia: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ!',
         title_english: 'Krsna Krsna Krsna Krsna',
         category: 'Songs',
