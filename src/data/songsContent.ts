@@ -31872,7 +31872,7 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
     "verses": [
         {
             "id": "Refrain",
-            "lyric": "Kṛṣṇa Deva Bhavantaṁ Vande\nMana-Mānasa-Madhukaram Arpaya Nija-Pada-Paṅkaja-Makarande.",
+            "lyric": "କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ\nମନ-ମାନସ-ମଧୁକରମ୍ ଅର୍ପୟ ନିଜ-ପଦ-ପଙ୍କଜ-ମକରନ୍ଦେ ।",
             "translation": "ହେ ପ୍ରଭୁ ଶ୍ରୀକୃଷ୍ଣ! ମୁଁ ଆପଣଙ୍କୁ ବନ୍ଦନା କରୁଛି। ମୋର ଏହି ଚଞ୍ଚଳ ମନରୂପକ ଭ୍ରମରକୁ ଆପଣଙ୍କ ପାଦପଦ୍ମର ଅମୃତ ରସରେ ସଦା ସର୍ବଦା ପାଇଁ ନିମଗ୍ନ କରି ରଖନ୍ତୁ।",
             "wordMeanings": [
                 {
@@ -31907,7 +31907,7 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 1,
-            "lyric": "Yadapī samādhiṣu vidhirapī paśyati na tava nakhāgra-marīcim\nIdam icchāmi niśamya tavācyuta tadapī kṛpādbhuta-vīcim.",
+            "lyric": "ୟଦପି ସମାଧିଷୁ ବିଧିରପି ପଶ୍ୟତି ନ ତବ ନଖାଗ୍ର-ମରୀଚିମ୍\nଇଦମ୍ ଇଚ୍ଛାମି ନିଶମ୍ୟ ତବାଚ୍ୟୁତ ତଦପି କୃପାଦ୍ଭୁତ-ବୀଚିମ୍ ।",
             "translation": "ହେ ଅଚ୍ୟୁତ! ସ୍ୱୟଂ ବ୍ରହ୍ମା ନିଜର ସମାଧିରେ ମଧ୍ୟ ଆପଣଙ୍କ ପାଦନଖର ସାମାନ୍ୟ କିରଣ ଦେଖିବାକୁ ଅସମର୍ଥ, କିନ୍ତୁ ମୁଁ ସେହି ଦର୍ଶନ ପାଇଁ ବ୍ୟାକୁଳ; କାରଣ ମୁଁ ଆପଣଙ୍କ ଅପାର କୃପାର ଅଦ୍ଭୁତ ଲହରୀ ବିଷୟରେ ଶୁଣିଛି।",
             "wordMeanings": [
                 {
@@ -31970,7 +31970,7 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 2,
-            "lyric": "Bhaktir udañcati yadyapi mādhava na tvayi mama tila-mātrī\nParameśvaratā tadapī tavādhikā durghaṭa-ghaṭana-vidhātrī.",
+            "lyric": "ଭକ୍ତିର୍ ଉଦଞ୍ଚତି ୟଦ୍ୟପି ମାଧବ ନ ତ୍ୱୟି ମମ ତିଳ-ମାତ୍ରୀ\nପରମେଶ୍ୱରତା ତଦପି ତବାଧିକା ଦୁର୍ଘଟ-ଘଟଣ-ବିଧାତ୍ରୀ ।",
             "translation": "ହେ ମାଧବ! ଆପଣଙ୍କ ପ୍ରତି ମୋର ତିଳେ ମାତ୍ର ଭକ୍ତି ନାହିଁ। ତଥାପି ଆପଣ ପରମେଶ୍ୱର ହୋଇଥିବାରୁ, କେବଳ ଆପଣଙ୍କର ସେହି ଅଲୌକିକ ଶକ୍ତି ହିଁ ମୋ ଭଳି ଅଧମ ଜୀବ ପାଇଁ ଅସମ୍ଭବକୁ ସମ୍ଭବ କରିପାରିବ।",
             "wordMeanings": [
                 {
@@ -32029,7 +32029,7 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 3,
-            "lyric": "Ayam aviloḷatayādya sanātana kalitādbhuta-rasa-bhāram\nNivasatu nityam ihāmṛta nindati vindan madhurima-sāram.",
+            "lyric": "ଅୟମ୍ ଅବିଲୋଳତୟାଦ୍ୟ ସନାତନ କଳିତାଦ୍ଭୁତ-ରସ-ଭାରମ୍\nନିବସତୁ ନିତ୍ୟମ୍ ଇହାମୃତ ନିନ୍ଦତି ବିନ୍ଦନ୍ ମଧୁରିମ-ସାରମ୍ ।",
             "translation": "ହେ ସନାତନ ପ୍ରଭୁ! ଆପଣଙ୍କ ପାଦପଦ୍ମର ମାଧୁର୍ଯ୍ୟ ସ୍ୱର୍ଗର ଅମୃତଠାରୁ ମଧ୍ୟ ଶ୍ରେଷ୍ଠ। ମୋର ପ୍ରାର୍ଥନା ଯେ, ଆଜିଠାରୁ ମୋର ଏହି ମନରୂପକ ଭ୍ରମର ସେହି ଅଦ୍ଭୁତ ରସରେ ମଗ୍ନ ହୋଇ ଆପଣଙ୍କ ଚରଣ କମଳରେ ସର୍ବଦା ପାଇଁ ସ୍ଥିର ହୋଇ ରହୁ।",
             "wordMeanings": [
                 {
