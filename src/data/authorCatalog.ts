@@ -35,7 +35,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Doyala Nitai Caitanya', title_odia: 'ଦୟାଲ ନିତାଇ ଚୈତନ୍ୟ' },
             { title_english: 'Durlabha Manava Janma', title_odia: 'ଦୁର୍ଲଭ ମାନବ ଜନ୍ମ' },
             { title_english: 'Emona Durmati Samsara Bhitore' },
-            { title_english: 'Gaite Gaite Nama Gelo' },
+            { title_english: 'Gāite Gāite Nāma Ki' },
             { title_english: 'Gopinath Part 2 (Ghuchao Sansar)', title_odia: 'ଗୋପୀନାଥ Part 2' },
             { title_english: 'Gopinath Part 3 (Amar Upaya Nai)', title_odia: 'ଗୋପୀନାଥ Part 3' },
             { title_english: 'Gurudev Boro Krpa Kori', title_odia: 'ଗୁରୁଦେବ ବଡ଼ କୃପା କରି' },
