@@ -3,6 +3,7 @@
 // Cross-referenced at runtime against RESOURCES to mark availability.
 
 export interface CatalogSong {
+    id?: string;
     title_english: string;
     title_odia?: string;
 }
