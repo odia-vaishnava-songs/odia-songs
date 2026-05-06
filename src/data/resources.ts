@@ -1625,6 +1625,18 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Thakura',
         structuredContent: (Songs as any).SONG_GAITEGAITENAMAKI_STRUCTURED,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-sariraavidyajala',
+        title: 'ଶରୀର ଅବିଦ୍ୟା ଜାଲ (Sarira Avidya Jala)',
+        title_odia: 'ଶରୀର ଅବିଦ୍ୟା ଜାଲ',
+        title_english: 'Sarira Avidya Jala',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_SARIRAVIDYAJALA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

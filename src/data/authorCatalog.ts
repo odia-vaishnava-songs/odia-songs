@@ -65,7 +65,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Prabhu Tava Pada Yuge', title_odia: 'ପଭୁ ତବ ପଦଯୁଗେ' },
             { title_english: 'Prapance Poriya Agati', title_odia: 'ହରି ହେ! ପ୍ରପଞ୍ଚେ ପୋଡ଼ିୟା' },
             { title_english: 'Radha Kunda Tata Kunja Kutir', title_odia: 'ରାଧା-କୁଣ୍ଡ-ତଟ-କୁଞ୍ଜ-କୁଟୀର' },
-            { title_english: 'Sarira Avidya Jala' },
+            { id: 'song-sariraavidyajala', title_english: 'Sarira Avidya Jala', title_odia: 'ଶରୀର ଅବିଦ୍ୟା ଜାଲ' },
             { title_english: 'Sarvasva Tomar Carane', title_odia: 'ସର୍ବସ୍ବ ତୋମାର, ଚରଣେ' },
             { title_english: 'Sri Krsna Caitanya Prabhu Jive Doya Kori', title_odia: 'ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ପ୍ରଭୁ' },
             { title_english: 'Sri Krsna Kirtane Jadi Manasa Tohar', title_odia: 'ଶ୍ରୀ-କୃଷ୍ଣ-କୀର୍ତ୍ତନେ' },
