@@ -1621,6 +1621,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-gaitegaitenamaki',
+        title: 'ଗାଇତେ ଗାଇତେ ନାମ କି (Gāite Gāite Nāma Ki)',
+        title_odia: 'ଗାଇତେ ଗାଇତେ ନାମ କି',
+        title_english: 'Gāite Gāite Nāma Ki',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_GAITEGAITENAMAKI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
