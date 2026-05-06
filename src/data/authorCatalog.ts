@@ -32,8 +32,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Bhale Gaura Gadadharer Arati', title_odia: 'ଭାଲେ ଗୌରା-ଗଦାଧରୈର ଆରତି' },
             { title_english: 'Bhuliya Tomare Samsare', title_odia: 'ଭୁଲିୟା ତୋମାରେ' },
             { title_english: 'Bolo Hari Bolo' },
-            { title_english: 'Boro Sukher Atit To Ke' },
-            { title_english: 'Doya Koro Prabhu' },
             { title_english: 'Doyala Nitai Caitanya', title_odia: 'ଦୟାଲ ନିତାଇ ଚୈତନ୍ୟ' },
             { title_english: 'Durlabha Manava Janma', title_odia: 'ଦୁର୍ଲଭ ମାନବ ଜନ୍ମ' },
             { title_english: 'Emona Durmati Samsara Bhitore' },
