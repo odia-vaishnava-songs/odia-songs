@@ -155,11 +155,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     {
         name: 'Rupa Goswami',
         catalog: [
-            { title_english: 'Bhratur Antakasya Pattane' },
+            { title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ' },
             { title_english: 'Disi Disi Racayantim' },
-            { title_english: 'Krsna Deva Bhavantam Vande' },
+            { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
             { title_english: 'Nikhila Sruti Mauli Ratna' },
-            { title_english: 'Radhe Jaya Jaya Madhava Dayite' }
+            { title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
         ]
     },
     {
@@ -179,9 +179,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Vasudeva Ghosha',
         odia: 'ବାସୁଦେବ ଘୋଷ',
         catalog: [
-            { title_english: 'Gauranga Tumi More Doya Na Chadiho', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନା ଛାଡିହୋ' },
+            { title_english: 'Gauranga Tumi More Doya Na Chadhio', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନା ଛାଡ଼ିହ' },
             { title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
-            { title_english: 'Jaya Jaya Jagannatha Sacira', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର' },
+            { title_english: 'Jaya Jaya Jagannatha Sacira Nandana', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ' },
             { title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଅଙ୍ଗିନାୟ ନାଚେ' },
             { title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୟନା' },
             { title_english: 'Yadi Gaura Na Hoito', title_odia: 'ଯଦି ଗୌର ନା ହୋଇତୋ' },
