@@ -64,7 +64,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Ore Mana Bhalonahi Lage E Samsar', title_odia: 'ଓ ରେ ମନ, ଭାଲ ନାହି ଲାଗେ' },
             { title_english: 'Prabhu Tava Pada Yuge', title_odia: 'ପଭୁ ତବ ପଦଯୁଗେ' },
             { title_english: 'Prapance Poriya Agati', title_odia: 'ହରି ହେ! ପ୍ରପଞ୍ଚେ ପୋଡ଼ିୟା' },
-            { id: 'song-radhakrsnabolbolboloresobai', title_english: 'Radha Krsna Bol Bol Bolo Re Sobai', title_odia: 'ରାଧା-କୃଷ୍ଣ ବୋଲ ବୋଲ' },
             { title_english: 'Radha Kunda Tata Kunja Kutir', title_odia: 'ରାଧା-କୁଣ୍ଡ-ତଟ-କୁଞ୍ଜ-କୁଟୀର' },
             { title_english: 'Sarira Avidya Jala' },
             { title_english: 'Sarvasva Tomar Carane', title_odia: 'ସର୍ବସ୍ବ ତୋମାର, ଚରଣେ' },

@@ -246,14 +246,6 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-radhakrsnabolbol',
-        title: 'ରାଧା-କୃଷ୍ଣ ବୋଲ ବୋଲ (Rādhā-Kṛṣṇa Bol Bol)',
-        category: 'Songs',
-        type: 'html',
-        structuredContent: (Songs as any).SONG_RADHAKRSNBOLBOL_STRUCTURED,
-        author: 'Bhaktivinoda Thakura'
-    },
-    {
         id: 'song-sarvasvatomarcarene',
         title: 'ସର୍ବସ୍ବ ତୋମାର (Sarvasva Tomar Carane)',
         title_odia: 'ସର୍ବସ୍ବ ତୋମାର, ଚରଣେ',
@@ -1632,20 +1624,6 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Bhaktivinoda Thakura',
         structuredContent: (Songs as any).SONG_GAITEGAITENAMAKI_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
-
-    {
-        id: 'song-radhakrsnabolbolboloresobai',
-        title: 'ରାଧାକୃଷ୍ଣ ବଲ୍ ବଲ୍ ବଲ୍ ରେ ସବାଇ (Rādhā Kṛଷ୍ଣ Bol Bol Bolo Re Sobhāi)',
-        title_odia: 'ରାଧାକୃଷ୍ଣ ବଲ୍ ବଲ୍ ବଲ୍ ରେ ସବାଇ',
-        title_english: 'Rādhā Kṛଷ୍ଣ Bol Bol Bolo Re Sobhāi',
-        category: 'Songs',
-        type: 'html',
-        author: 'Bhaktivinoda Thakura',
-        structuredContent: (Songs as any).SONG_RADHAKRSNABOLBOLBOLORESOBAI_STRUCTURED,
-        published: true,
         status: 'COMPLETED'
     }
 ];
