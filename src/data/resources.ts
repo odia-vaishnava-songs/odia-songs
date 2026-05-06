@@ -1634,6 +1634,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_GAITEGAITENAMAKI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-radhakrsnabolbolboloresobai',
+        title: 'ରାଧାକୃଷ୍ଣ ବଲ୍ ବଲ୍ ବଲ୍ ରେ ସବାଇ (Rādhā Kṛଷ୍ଣ Bol Bol Bolo Re Sobhāi)',
+        title_odia: 'ରାଧାକୃଷ୍ଣ ବଲ୍ ବଲ୍ ବଲ୍ ରେ ସବାଇ',
+        title_english: 'Rādhā Kṛଷ୍ଣ Bol Bol Bolo Re Sobhāi',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_RADHAKRSNABOLBOLBOLORESOBAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
