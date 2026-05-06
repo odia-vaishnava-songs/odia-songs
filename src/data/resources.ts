@@ -1608,6 +1608,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_AMARBOLITEPRABHU_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-bandhusangeyaditavarange',
+        title: 'ବନ୍ଧୁ ସଙ୍ଗେ ଯଦି ତବ ରଙ୍ଗ (Bandhu Sange Yadi Tava Range)',
+        title_odia: 'ବନ୍ଧୁ ସଙ୍ଗେ ଯଦି ତବ ରଙ୍ଗ',
+        title_english: 'Bandhu Sange Yadi Tava Range',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
