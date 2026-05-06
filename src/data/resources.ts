@@ -1568,6 +1568,20 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_NARASIMHAPRANAMA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-krsnadevabhavantam',
+        title: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ (Kṛṣṇa Deva Bhavantaṁ Vande)',
+        title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ',
+        title_english: 'Krsna Deva Bhavantam Vande',
+        category: 'Songs',
+        type: 'html',
+        author: 'Rupa Goswami',
+        description: 'ଶ୍ରୀଲ ରୂପ ଗୋସ୍ଵାମୀ ଙ୍କ ଦ୍ଵାରା ରଚନା',
+        structuredContent: (Songs as any).SONG_KRSNADEVABHAVANTAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
