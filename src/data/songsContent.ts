@@ -32092,3 +32092,43 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
         }
     ]
 };
+
+export const SONG_KRSNAKRSNAKRSNAKRSNA_STRUCTURED: StructuredSong = {
+    "verses": [
+        {
+            "id": 1,
+            "lyric": "Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! He!\nKṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! He!\nKṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa!\nRakṣa Mām!\nKṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Kṛṣṇa! Pāhi Mām!\nRāma! Rāghava! Rāma! Rāghava! Rāma! Rāghava! Rakṣa Mām!\nKṛṣṇa! Keśava! Kṛṣṇa! Keśava Kṛṣṇa! Keśava!\nPāhi Mām!",
+            "translation": "ହେ ଭଗବାନ କୃଷ୍ଣ! ଆପଣ ମୋତେ ରକ୍ଷା କରନ୍ତୁ ଏବଂ ମୋର ପାଳନ କରନ୍ତୁ। ହେ ପ୍ରଭୁ ରାମଚନ୍ଦ୍ର! ହେ ରଘୁକୁଳ ନନ୍ଦନ! ମୋତେ ସମସ୍ତ ବିପଦରୁ ରକ୍ଷା କରନ୍ତୁ। ହେ କୃଷ୍ଣ! ହେ କେଶବ! ମୋତେ ଆପଣଙ୍କ ଶରଣରେ ରଖି ଉଦ୍ଧାର କରନ୍ତୁ।",
+            "wordMeanings": [
+                {
+                    "word": "କୃଷ୍ଣ",
+                    "meaning": "ହେ କୃଷ୍ଣ!"
+                },
+                {
+                    "word": "ହେ",
+                    "meaning": "ଓଃ/ହେ ପ୍ରଭୁ!"
+                },
+                {
+                    "word": "ରକ୍ଷ ମାମ୍",
+                    "meaning": "ମୋତେ ରକ୍ଷା କରନ୍ତୁ"
+                },
+                {
+                    "word": "ପାହି ମାମ୍",
+                    "meaning": "ମୋର ପାଳନ କରନ୍ତୁ/ମୋତେ ଉଦ୍ଧାର କରନ୍ତୁ"
+                },
+                {
+                    "word": "ରାମ",
+                    "meaning": "ହେ ରାମ!"
+                },
+                {
+                    "word": "ରାଘବ",
+                    "meaning": "ହେ ରଘୁବଂଶ ଶିରୋମଣି!"
+                },
+                {
+                    "word": "କେଶବ",
+                    "meaning": "ହେ କେଶବ (କେଶୀ ଅସୁରର ବିନାଶକାରୀ)"
+                }
+            ]
+        }
+    ]
+};

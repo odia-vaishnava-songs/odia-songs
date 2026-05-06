@@ -148,7 +148,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'Ambudanjanendra Nila' },
             { title_english: 'Bhaja Gauranga Kaha Gauranga' },
-            { title_english: 'Krsna Krsna Krsna Krsna' },
+            { title_english: 'Krsna Krsna Krsna Krsna', title_odia: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ!' },
             { title_english: 'Kunkumakta Kancanabja' }
         ]
     },

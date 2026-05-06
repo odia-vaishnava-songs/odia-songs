@@ -1582,6 +1582,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KRSNADEVABHAVANTAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+
+    {
+        id: 'song-krsnakrsnakrsnakrsna',
+        title: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! (Kṛṣṇa Kṛṣṇa Kṛṣṇa Kṛṣṇa)',
+        title_odia: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ!',
+        title_english: 'Krsna Krsna Krsna Krsna',
+        category: 'Songs',
+        type: 'html',
+        author: 'Krsnadasa Kaviraja Goswami',
+        structuredContent: (Songs as any).SONG_KRSNAKRSNAKRSNAKRSNA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
