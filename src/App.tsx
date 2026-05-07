@@ -9,6 +9,7 @@ import { ManageSongsPage } from './pages/ManageSongsPage';
 import { SignupPage } from './pages/SignupPage';
 import { MigrateSongsPage } from './pages/MigrateSongsPage';
 import { AssignmentDashboard } from './pages/AssignmentDashboard';
+import { CatalogCompare } from './pages/CatalogCompare';
 import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 
@@ -138,6 +139,14 @@ const AppRoutes = () => {
           element={
             <ProtectedAdminRoute>
               <AssignmentDashboard />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="catalog-audit"
+          element={
+            <ProtectedAdminRoute>
+              <CatalogCompare />
             </ProtectedAdminRoute>
           }
         />

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
     X, Share2, HelpCircle, LogOut,
     CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft,
-    Phone, MapPin, Zap
+    Phone, MapPin, Zap, BookA
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useAudio } from '../context/AudioContext';
@@ -336,6 +336,14 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                                     onClick={() => { navigate('/manage-songs'); onClose(); }}
                                                     badge={role === 'admin' ? 'Admin' : 'Editor'}
                                                 />
+                                                {role === 'admin' && (
+                                                    <MenuItem
+                                                        icon={<BookA size={20} />}
+                                                        label="Catalog Audit"
+                                                        onClick={() => { navigate('/catalog-audit'); onClose(); }}
+                                                        badge="Admin"
+                                                    />
+                                                )}
                                                 {role === 'admin' && (
                                                     <div className="mt-4 pt-4 border-t border-gray-100">
                                                         <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
