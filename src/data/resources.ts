@@ -48,6 +48,19 @@ export const RESOURCES: Resource[] = [
         author: 'Narottama Dasa Thakura'
     },
     {
+        id: 'song-hariharayenamah',
+        title: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ (Hari Haraye Namah)',
+        title_odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ',
+        title_english: 'Hari Haraye Namah Krsna Yadavaya',
+        category: 'Songs',
+        type: 'html',
+        description: 'ନରୋତ୍ତମ ଦାସ ଠାକୁରଙ୍କ ଏକ ପ୍ରସିଦ୍ଧ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_HARIHARAYENAMAH_STRUCTURED,
+        author: 'Narottama Dasa Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',

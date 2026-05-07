@@ -102,7 +102,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Gauranga Karuna Koro', title_odia: 'ଗୌରାଙ୍ଗ କରୁଣା କର' },
             { title_english: 'Gaurangera Duti Pada', title_odia: 'ଗୌରାଙ୍ଗେର ଦୁଟି ପଦ' },
             { title_english: 'Gora Pahun', title_odia: 'ଗୋରା ପହୁଁ' },
-            { title_english: 'Hari Haraye Namah Krsna Yadavaya', title_odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ' },
+            { id: 'song-hariharayenamah', title_english: 'Hari Haraye Namah Krsna Yadavaya', title_odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ' },
             { title_english: 'Hari Hari Biphale Janama', title_odia: 'ହରି ହରି ବିଫଳେ ଜନମ' },
             { title_english: 'Hari Hari Kabe More Hoibe Su-Dina', title_odia: 'ହରି ହରି କବେ ମୋର ହୋଇବେ ସୁଦିନ' },
             { title_english: 'Jaya Jaya Sri Krsna Caitanya Nityananda', title_odia: 'ଜୟ ଜୟ ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ' },
