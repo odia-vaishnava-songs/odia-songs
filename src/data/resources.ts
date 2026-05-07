@@ -133,6 +133,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-tuwapadeeminotimor',
+        title: 'ତୁୱା ପଦେ ଏ ମିନତି ମୋର (Tuwa Pade E Minoti Mor)',
+        title_odia: 'ତୁୱା ପଦେ ଏ ମିନତି ମୋର',
+        title_english: 'Tuwa Pade E Minoti Mor',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି ବିନମ୍ର ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_TUWAPADEEMINOTIMOR_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',
