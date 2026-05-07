@@ -106,7 +106,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Hari Hari Kabe More Hoibe Su-Dina', title_odia: 'ହରି ହରି କବେ ମୋର ହୋଇବେ ସୁଦିନ' },
             { title_english: 'Jaya Jaya Sri Krsna Caitanya Nityananda', title_odia: 'ଜୟ ଜୟ ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ନିତ୍ୟାନନ୍ଦ' },
             { title_english: 'Je Anila Prema Dhana', title_odia: 'ଯେ ଆନିଲ ପ୍ରେମ ଧନ' },
-            { title_english: 'Kabe Krsna Dhan Pabo', title_odia: 'କବେ କୃଷ୍ଣ ଧନ ପାବୋ' },
+            { title_english: 'Kabe Krsna Dhan Pabo', title_odia: 'କବେ କୃଷ୍ଣ-ଧନ ପାବ' },
             { title_english: 'Ki Rupe Paibo Seva', title_odia: 'କି ରୂପେ ପାଇବୋ ସେବା' },
             { title_english: 'Kusumita Vrndavane Nacata Sikhi Gane', title_odia: 'କୁସୁମିତ ବୃନ୍ଦାବନେ ନାଚତ ଶିଖି ଗଣେ' },
             { title_english: 'Nitai Pada Kamala', title_odia: 'ନିତାଇ ପଦ କମଳ' },

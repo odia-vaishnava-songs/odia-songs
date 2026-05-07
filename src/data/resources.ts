@@ -1715,6 +1715,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_SARIRAVIDYAJALA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-kabekrsnadhanpabo',
+        title: 'କବେ କୃଷ୍ଣ-ଧନ ପାବ (Kabe Krsna Dhan Pabo)',
+        title_odia: 'କବେ କୃଷ୍ଣ-ଧନ ପାବ',
+        title_english: 'Kabe Krsna Dhan Pabo',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narottama Dasa Thakura',
+        structuredContent: (Songs as any).SONG_KABEKRSNADHANPABO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
