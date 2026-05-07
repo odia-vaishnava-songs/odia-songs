@@ -94,6 +94,19 @@ export const RESOURCES: Resource[] = [
         author: 'Bhaktivinoda Thakura'
     },
     {
+        id: 'song-edustahrdayekama',
+        title: 'ଏ ଦୁଷ୍ଟ ହୃଦୟେ କାମ (E Dusta Hrdaye Kama)',
+        title_odia: 'ଏ ଦୁଷ୍ଟ ହୃଦୟେ କାମ',
+        title_english: 'E Dusta Hrdaye Kama',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଭଗବାନ ନୃସିଂହଦେବଙ୍କୁ ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି କରୁଣ ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_EDUSTAHRDAYEKAMA_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',
