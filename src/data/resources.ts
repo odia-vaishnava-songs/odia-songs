@@ -146,6 +146,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-satakotigopimadhabamana',
+        title: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ (Sata Koti Gopi Madhaba Mana)',
+        title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ',
+        title_english: 'Sata Koti Gopi Madhaba Mana',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀରାଧା-ମାଧବଙ୍କ ଦିବ୍ୟ ପ୍ରେମ ଓ ରାସଲୀଳାର ଏକ ଅତି ମନୋରମ ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_SATAKOTIGOPIMADHABAMANA_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',

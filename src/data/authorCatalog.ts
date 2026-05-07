@@ -87,7 +87,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Boro Sukher Khabor Gai' },
             { title_english: 'Gaura Arati' },
             { title_english: 'Hari bolo Hari bolo' },
-            { title_english: 'Sata Koti Gopi Madhaba Mana' }
+            { id: 'song-satakotigopimadhabamana', title_english: 'Sata Koti Gopi Madhaba Mana', title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ' }
         ]
     },
     {
