@@ -82,7 +82,6 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-edustahrdayekama', title_english: 'E Dusta Hrdaye Kama', title_odia: 'ଏ ଦୁଷ୍ଟ ହୃଦୟେ କାମ' },
 
             { id: 'song-ekdinsantipure', title_english: 'Ek Din Santipure', title_odia: 'ଏକ ଦିନ ଶାନ୍ତିପୁରେ' },
-            { title_english: 'Gay Goracand Jivera Tore' },
             { title_english: 'Harinama Tuwa Anek Swarupa' },
             { title_english: 'Tuwa Pade E Minoti Mor' },
             { title_english: 'Boro Sukher Khabor Gai' },
