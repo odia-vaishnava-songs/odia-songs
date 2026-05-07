@@ -80,7 +80,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Gopinath Part 1 (Mama Nivedana Suno)', title_odia: 'ଗୋପୀନାଥ Part 1' },
             { title_english: 'Aparadha Phale Mama' },
             { id: 'song-edustahrdayekama', title_english: 'E Dusta Hrdaye Kama', title_odia: 'ଏ ଦୁଷ୍ଟ ହୃଦୟେ କାମ' },
-            { title_english: 'Ekhan Bujhinu Prabhu' },
+
             { title_english: 'Ek Din Santipure' },
             { title_english: 'Gay Goracand Jivera Tore' },
             { title_english: 'Harinama Tuwa Anek Swarupa' },
