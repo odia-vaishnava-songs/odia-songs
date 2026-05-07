@@ -81,7 +81,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Aparadha Phale Mama' },
             { id: 'song-edustahrdayekama', title_english: 'E Dusta Hrdaye Kama', title_odia: 'ଏ ଦୁଷ୍ଟ ହୃଦୟେ କାମ' },
 
-            { title_english: 'Ek Din Santipure' },
+            { id: 'song-ekdinsantipure', title_english: 'Ek Din Santipure', title_odia: 'ଏକ ଦିନ ଶାନ୍ତିପୁରେ' },
             { title_english: 'Gay Goracand Jivera Tore' },
             { title_english: 'Harinama Tuwa Anek Swarupa' },
             { title_english: 'Tuwa Pade E Minoti Mor' },

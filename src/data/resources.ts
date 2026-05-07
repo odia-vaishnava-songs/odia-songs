@@ -107,6 +107,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-ekdinsantipure',
+        title: 'ଏକ ଦିନ ଶାନ୍ତିପୁରେ (Ek Din Santipure)',
+        title_odia: 'ଏକ ଦିନ ଶାନ୍ତିପୁରେ',
+        title_english: 'Ek Din Santipure',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଶାନ୍ତିପୁର ଯାତ୍ରା ଓ ଶାଗ ଆସ୍ୱାଦନର ଏକ ସୁନ୍ଦର ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_EKDINSANTIPURE_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',
