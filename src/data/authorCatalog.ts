@@ -87,7 +87,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Boro Sukher Khabor Gai' },
             { title_english: 'Gaura Arati' },
             { title_english: 'Hari bolo Hari bolo' },
-            { title_english: 'Sata-koti-gopi-madhava-manadhika' }
+            { title_english: 'Sata Koti Gopi Madhava Manadhika' }
         ]
     },
     {
