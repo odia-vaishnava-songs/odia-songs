@@ -3,8 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
     ArrowLeft, Search, CheckCircle2, AlertCircle, 
-    HelpCircle, Clock, Filter, ChevronDown, Download,
-    ExternalLink, BookOpen, Database
+    Clock, Download, BookOpen, Database
 } from 'lucide-react';
 import { EXTERNAL_CATALOG } from '../data/externalCatalog';
 import { AUTHOR_CATALOG } from '../data/authorCatalog';
