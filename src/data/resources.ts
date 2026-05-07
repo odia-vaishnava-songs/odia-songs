@@ -120,6 +120,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-harinamatuaanekswarupa',
+        title: 'ହରିନାମ ତୁୱା ଅନେକ ସ୍ୱରୂପ (Harinama Tuwa Anek Swarupa)',
+        title_odia: 'ହରିନାମ ତୁୱା ଅନେକ ସ୍ୱରୂପ',
+        title_english: 'Harinama Tuwa Anek Swarupa',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ପ୍ରଣୀତ ଶ୍ରୀ ନାମ-ମହିମା ଗୀତ |',
+        structuredContent: (Songs as any).SONG_HARINAMATUAANEKSWARUPA_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-atmanivedanatuwapade',
         title: 'ଆତ୍ମନିବେଦନ ତୁୟା ପଦେ (Atmanivedana Tuwā Pade)',
         category: 'Songs',
