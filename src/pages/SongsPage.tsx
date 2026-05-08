@@ -843,6 +843,37 @@ export const SongsPage: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* CARD 3: ASTAKAM (New) */}
+                    <div 
+                        className="category-card"
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery('Astakam');
+                        }}
+                        style={{
+                            background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
+                        }}
+                    >
+                        <div style={{ 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: '#e11d4815',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#e11d48' }}>
+                                <TempleIcons.SacredLotus size={36} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{...titleStyle, fontSize: '1rem'}}>ଅଷ୍ଟକମ୍</div>
+                            <div style={engTitleStyle}>Astakam</div>
+                        </div>
+                    </div>
+
                     {/* CARD 3: SEARCH BY AUTHOR */}
                     <div 
                         className="category-card"

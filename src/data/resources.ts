@@ -28,6 +28,7 @@ export const RESOURCES: Resource[] = [
         description: 'ଶ୍ରୀମଦ୍ବଲ୍ଲଭାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ମଧୁରାଷ୍ଟକମ୍ |',
         structuredContent: (Songs as any).SONG_MADHURASHTAKAM_STRUCTURED,
         author: 'Vallabhacarya',
+        tags: ['Astakam'],
         published: true,
         status: 'COMPLETED'
     },
@@ -1270,7 +1271,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Visvanatha Cakravarti Thakura',
-        tags: ['Temple'],
+        tags: ['Temple', 'Astakam'],
         structuredContent: (Songs as any).SONG_GURVASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1457,6 +1458,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Satyavrata Muni',
+        tags: ['Astakam'],
         structuredContent: (Songs as any).SONG_DAMODARASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1531,6 +1533,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Visvanatha Cakravarti Thakura',
         description: 'ବୃନ୍ଦାବନାଷ୍ଟକମ୍ (Vrindavanastakam)',
+        tags: ['Astakam'],
         structuredContent: (Songs as any).SONG_NAYOGASIDDHIR_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1544,6 +1547,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Rupa Goswami',
         description: 'ଯମୁନାଷ୍ଟକମ୍ (Yamunastakam)',
+        tags: ['Astakam'],
         structuredContent: (Songs as any).SONG_YAMUNASTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -1595,7 +1599,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Sri Caitanya Mahaprabhu',
-        tags: ['Temple'],
+        tags: ['Temple', 'Astakam'],
         structuredContent: (TempleSongs as any).SONG_SHIKSHASHTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'

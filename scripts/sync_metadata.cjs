@@ -18,15 +18,22 @@ async function syncMetadata() {
     const metadata = [];
 
     blocks.forEach(block => {
-        const idMatch = block.match(/id:\s*'(.+?)'/);
-        const authorMatch = block.match(/author:\s*'(.+?)'/);
-        const categoryMatch = block.match(/category:\s*'(.+?)'/);
+        const idMatch = block.match(/id:\s*['"](.+?)['"]/);
+        const authorMatch = block.match(/author:\s*['"](.+?)['"]/);
+        const categoryMatch = block.match(/category:\s*['"](.+?)['"]/);
+        const tagsMatch = block.match(/tags:\s*\[([\s\S]*?)\]/);
 
         if (idMatch) {
+            let tags = null;
+            if (tagsMatch) {
+                tags = tagsMatch[1].split(',').map(t => t.trim().replace(/['"]/g, '')).filter(t => t);
+            }
+
             metadata.push({
                 id: idMatch[1],
                 author: authorMatch ? authorMatch[1] : null,
-                category: categoryMatch ? categoryMatch[1] : null
+                category: categoryMatch ? categoryMatch[1] : null,
+                tags: tags
             });
         }
     });
@@ -43,6 +50,7 @@ async function syncMetadata() {
         const updateData = {};
         if (item.author) updateData.author = item.author;
         if (item.category) updateData.category = item.category;
+        if (item.tags) updateData.tags = item.tags;
 
         const { error } = await supabase
             .from('songs')
