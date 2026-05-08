@@ -1818,6 +1818,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ANTARENITAIBAHIRENITAI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-arkebajabebamsi',
+        title: 'ଆର କେ ବାଜାବେ ବାଂଶୀ (Ar Ke Bajabe Bamsi)',
+        title_odia: 'ଆର କେ ବାଜାବେ ବାଂଶୀ',
+        title_english: 'Ar Ke Bajabe Bamsi',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        structuredContent: (Songs as any).SONG_ARKEBAJABEBAMSI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

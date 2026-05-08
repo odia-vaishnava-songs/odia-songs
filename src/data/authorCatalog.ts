@@ -367,6 +367,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Traditional',
+        odia: 'ପାରମ୍ପରିକ',
+        catalog: [
+            { id: 'song-arkebajabebamsi', title_english: 'Ar Ke Bajabe Bamsi', title_odia: 'ଆର କେ ବାଜାବେ ବାଂଶୀ' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: []
     },
