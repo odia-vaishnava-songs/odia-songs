@@ -1878,6 +1878,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BHAJABHAJAHARI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-bhajagaurangakahagauranga',
+        title: 'ଭଜ ଗୌରାଙ୍ଗ କହ ଗୌରାଙ୍ଗ (Bhaja Gauranga Kaha Gauranga)',
+        title_odia: 'ଭଜ ଗୌରାଙ୍ଗ କହ ଗୌରାଙ୍ଗ',
+        title_english: 'Bhaja Gauranga Kaha Gauranga',
+        category: 'Songs',
+        type: 'html',
+        author: 'Krsnadasa Kaviraja Goswami',
+        structuredContent: (Songs as any).SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
