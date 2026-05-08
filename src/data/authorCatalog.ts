@@ -363,7 +363,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Mira Bhai',
         odia: 'ମୀରାବାଈ',
         catalog: [
-            { id: 'song-antaramandirejago', title_english: 'Antara Mandire Jago Jago', title_odia: 'ଅନ୍ତର ମନ୍ଦିରେ ଜାଗୋ ଜାଗୋ' }
+            { id: 'song-antaramandirejago', title_english: 'Antara Mandire Jago Jago', title_odia: 'ଅନ୍ତର ମନ୍ଦିରେ ଜାଗୋ ଜାଗୋ' },
+            { id: 'song-arkotokal', title_english: 'Ar Koto Kal', title_odia: 'ଆର କତ କାଲ' }
         ]
     },
     {

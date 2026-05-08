@@ -1830,6 +1830,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ARKEBAJABEBAMSI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-arkotokal',
+        title: 'ଆର କତ କାଲ (Ar Koto Kal)',
+        title_odia: 'ଆର କତ କାଲ',
+        title_english: 'Ar Koto Kal',
+        category: 'Songs',
+        type: 'html',
+        author: 'Mira Bhai',
+        structuredContent: (Songs as any).SONG_ARKOTOKAL_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
