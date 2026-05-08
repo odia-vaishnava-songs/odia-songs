@@ -1739,6 +1739,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ABANIKAMAJHE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-achyutamkesavam',
+        title: 'ଅଚ୍ୟୁତଂ କେଶବଂ (Achyutam Kesavam)',
+        title_odia: 'ଅଚ୍ୟୁତଂ କେଶବଂ',
+        title_english: 'Achyutam Kesavam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Adi Sankaracarya',
+        structuredContent: (Songs as any).SONG_ACHYUTAMKESAVAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
