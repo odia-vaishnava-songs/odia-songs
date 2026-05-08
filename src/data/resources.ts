@@ -19,6 +19,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-madhurashtakam',
+        title: 'ଅଧରଂ ମଧୁରଂ (Sri Madhurashtakam)',
+        title_odia: 'ଅଧରଂ ମଧୁରଂ',
+        title_english: 'Adharam Madhuram',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀମଦ୍ବଲ୍ଲଭାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ମଧୁରାଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_MADHURASHTAKAM_STRUCTURED,
+        author: 'Srimad Vallabhacharya',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-gitamahatmya',
         title: 'ଗୀତା ମାହାତ୍ମ୍ୟ (Gītā Māhātmya)',
         category: 'Songs',
