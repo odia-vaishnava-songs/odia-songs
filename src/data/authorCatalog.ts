@@ -126,7 +126,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Srila Prabhupada',
         catalog: [
             { title_english: 'Adore Adore Ye All' },
-            { title_english: 'Bara Bara Plan Kori' },
+            { id: 'song-barabaraplankori', title_english: 'Bara Bara Plan Kori', title_odia: 'ବାର ବାର ପ୍ଲ୍ୟାନ କରେ' },
             { title_english: 'Batula Kahaye Setha Saba Nirakara' },
             { title_english: 'Bhakti Ahaituki Hoy Sva Prakasita' },
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },

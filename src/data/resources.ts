@@ -1842,6 +1842,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ARKOTOKAL_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-barabaraplankori',
+        title: 'ବାର ବାର ପ୍ଲ୍ୟାନ କରେ (Bara Bara Plan Kori)',
+        title_odia: 'ବାର ବାର ପ୍ଲ୍ୟାନ କରେ',
+        title_english: 'Bara Bara Plan Kori',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Prabhupada',
+        structuredContent: (Songs as any).SONG_BARABARAPLANKORI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
