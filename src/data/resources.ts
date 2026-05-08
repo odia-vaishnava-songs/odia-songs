@@ -1806,6 +1806,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ANTARAMANDIREJAGO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-antarenitaibahirenitai',
+        title: 'ଅନ୍ତରେ ନିତାଇ ବାହିରେ ନିତାଇ (Antare Nitai Bahire Nitai)',
+        title_odia: 'ଅନ୍ତରେ ନିତାଇ ବାହିରେ ନିତାଇ',
+        title_english: 'Antare Nitai Bahire Nitai',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vrndavana Dasa Thakura',
+        structuredContent: (Songs as any).SONG_ANTARENITAIBAHIRENITAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
