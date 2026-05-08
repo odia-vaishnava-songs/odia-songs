@@ -1854,6 +1854,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BARABARAPLANKORI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-batulakahaye',
+        title: 'ବାତୁଲ କହୟେ ସେଥା ସବ ନିରାକାର (Batula Kahaye Setha Saba Nirakara)',
+        title_odia: 'ବାତୁଲ କହୟେ ସେଥା ସବ ନିରାକାର',
+        title_english: 'Batula Kahaye Setha Saba Nirakara',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Prabhupada',
+        structuredContent: (Songs as any).SONG_BATULAKAHAYE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

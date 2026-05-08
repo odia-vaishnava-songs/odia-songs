@@ -127,7 +127,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'Adore Adore Ye All' },
             { id: 'song-barabaraplankori', title_english: 'Bara Bara Plan Kori', title_odia: 'ବାର ବାର ପ୍ଲ୍ୟାନ କରେ' },
-            { title_english: 'Batula Kahaye Setha Saba Nirakara' },
+            { id: 'song-batulakahaye', title_english: 'Batula Kahaye Setha Saba Nirakara', title_odia: 'ବାତୁଲ କହୟେ ସେଥା ସବ ନିରାକାର' },
             { title_english: 'Bhakti Ahaituki Hoy Sva Prakasita' },
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },
             { title_english: 'Karma Phale Ase Saba Nana Vesa Dhari' },
