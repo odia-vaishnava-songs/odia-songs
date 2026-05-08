@@ -36876,8 +36876,6 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
             ]
         }
     ]
-        }
-    ]
 };
 
 export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
