@@ -165,7 +165,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'Akrodha Paramananda', title_odia: 'ଅକ୍ରୋଧ ପରମାନନ୍ଦ' },
             { title_english: 'Avatara Sara Gora Avatara', title_odia: 'ଅବତାର ସାର ଗୋରା ଅବତାର' },
-            { title_english: 'Bhaja Bhaja Hari', title_odia: 'ଭଜ ଭଜ ହରି' },
+            { id: 'song-bhajabhajahari', title_english: 'Bhaja Bhaja Hari', title_odia: 'ଭଜ ଭଜ ହରି' },
             { title_english: 'Ke Jabi Ke Jabi Bhai Bhava Sindhu Para', title_odia: 'କେ ଯାବି କେ ଯାବି ଭାଇ ଭବ ସିନ୍ଧୁ ପାର' },
             { title_english: 'Nitai Guna Mani', title_odia: 'ନିତାଇ ଗୁଣମଣି' },
             { title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati', title_odia: 'ନିତାଇ ମୋର ଜୀବନ ଧନ ନିତାଇ ମୋର ଜାତି' },

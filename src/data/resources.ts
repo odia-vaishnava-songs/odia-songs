@@ -1866,6 +1866,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BATULAKAHAYE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-bhajabhajahari',
+        title: 'ଭଜ ଭଜ ହରି (Bhaja Bhaja Hari)',
+        title_odia: 'ଭଜ ଭଜ ହରି',
+        title_english: 'Bhaja Bhaja Hari',
+        category: 'Songs',
+        type: 'html',
+        author: 'Locana Dasa Thakura',
+        structuredContent: (Songs as any).SONG_BHAJABHAJAHARI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
