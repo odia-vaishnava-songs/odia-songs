@@ -27,7 +27,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         description: 'ଶ୍ରୀମଦ୍ବଲ୍ଲଭାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ମଧୁରାଷ୍ଟକମ୍ |',
         structuredContent: (Songs as any).SONG_MADHURASHTAKAM_STRUCTURED,
-        author: 'Srimad Vallabhacharya',
+        author: 'Vallabhacarya',
         published: true,
         status: 'COMPLETED'
     },

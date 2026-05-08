@@ -346,6 +346,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Vallabhacarya',
+        odia: 'ବଲ୍ଲଭାଚାର୍ଯ୍ୟ',
+        catalog: [
+            { id: 'song-madhurashtakam', title_english: 'Adharam Madhuram' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: []
     },
