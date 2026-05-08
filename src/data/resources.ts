@@ -1890,6 +1890,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-bhajagovinda',
+        title: 'ଭଜ ଗୋବିନ୍ଦ ଭଜ ଗୋବିନ୍ଦ (Bhaja Govinda Bhaja Govinda)',
+        title_odia: 'ଭଜ ଗୋବିନ୍ଦ ଭଜ ଗୋବିନ୍ଦ',
+        title_english: 'Bhaja Govinda Bhaja Govinda',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        structuredContent: (Songs as any).SONG_BHAJAGOVINDA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
