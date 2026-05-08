@@ -1781,6 +1781,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_AHENILASAILA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-amarnitaimilena',
+        title: 'ଆମାର ନିତାଇ ମିଲେ ନା (Amar Nitai Mile Na)',
+        title_odia: 'ଆମାର ନିତାଇ ମିଲେ ନା',
+        title_english: 'Amar Nitai Mile Na',
+        category: 'Songs',
+        type: 'html',
+        author: 'Unknown',
+        structuredContent: (Songs as any).SONG_AMARNITAIMILENA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
