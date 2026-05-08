@@ -1768,6 +1768,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_ACHYUTAMKESAVAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-ahenilasaila',
+        title: 'ଆହେ ନୀଳ ଶୈଳ (Ahe Nila Saila)',
+        title_odia: 'ଆହେ ନୀଳ ଶୈଳ',
+        title_english: 'Ahe Nila Saila',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhakta Salabega',
+        tags: ['Temple'],
+        structuredContent: (Songs as any).SONG_AHENILASAILA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

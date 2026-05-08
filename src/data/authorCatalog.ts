@@ -353,6 +353,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Bhakta Salabega',
+        odia: 'ଭକ୍ତ ସାଲବେଗ',
+        catalog: [
+            { id: 'song-ahenilasaila', title_english: 'Ahe Nila Saila', title_odia: 'ଆହେ ନୀଳ ଶୈଳ' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: []
     },
