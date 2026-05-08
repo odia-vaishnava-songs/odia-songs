@@ -111,6 +111,7 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('sukadeva')) return 'Sukadeva Gosvami';
     if (n.includes('vasudeva ghosha') || n.includes('vasudev ghosh')) return 'Vasudeva Ghosha';
     if (n.includes('krsna dasa') || n.includes('krishna das')) return 'Krsna Dasa';
+    if (n.includes('vallabhacarya') || n.includes('vallabhacharya')) return 'Vallabhacarya';
     if (n.includes('iskcon')) return 'ISKCON';
     
     return 'Other Authors';
