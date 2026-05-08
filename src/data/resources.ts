@@ -1793,6 +1793,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_AMARNITAIMILENA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-antaramandirejago',
+        title: 'ଅନ୍ତର ମନ୍ଦିରେ ଜାଗୋ ଜାଗୋ (Antara Mandire Jago Jago)',
+        title_odia: 'ଅନ୍ତର ମନ୍ଦିରେ ଜାଗୋ ଜାଗୋ',
+        title_english: 'Antara Mandire Jago Jago',
+        category: 'Songs',
+        type: 'html',
+        author: 'Mira Bhai',
+        tags: ['Temple'],
+        structuredContent: (Songs as any).SONG_ANTARAMANDIREJAGO_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

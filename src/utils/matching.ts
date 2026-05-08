@@ -113,6 +113,7 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('krsna dasa') || n.includes('krishna das')) return 'Krsna Dasa';
     if (n.includes('vallabhacarya') || n.includes('vallabhacharya')) return 'Vallabhacarya';
     if (n.includes('salabega')) return 'Bhakta Salabega';
+    if (n.includes('mira bhai') || n.includes('mirabai')) return 'Mira Bhai';
     if (n.includes('iskcon')) return 'ISKCON';
     
     return 'Other Authors';
