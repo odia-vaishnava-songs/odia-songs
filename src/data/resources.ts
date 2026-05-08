@@ -1727,6 +1727,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_KABEKRSNADHANPABO_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-abanikamajhe',
+        title: 'ଅବନିକ ମାଝେ ଦେଖ ଦୋନ ଭାଇ (Abanika Majhe Dekha Dona Bhai)',
+        title_odia: 'ଅବନିକ ମାଝେ ଦେଖ ଦୋନ ଭାଇ',
+        title_english: 'Abanika Majhe Dekha Dona Bhai',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vrndavana Dasa Thakura',
+        structuredContent: (Songs as any).SONG_ABANIKAMAJHE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
