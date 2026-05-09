@@ -588,7 +588,7 @@ export const SONG_GITAMAHATMYA_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁଖ ପଦ୍ମରୁ"
                 },
                 {
-                    "word": "বিନିଃସୃତା",
+                    "word": "ବିନିଃସୃତା",
                     "meaning": "ନିର୍ଗତ ହୋଇଛି"
                 }
             ]
@@ -603,7 +603,7 @@ export const SONG_GITAMAHATMYA_STRUCTURED: StructuredSong = {
                     "meaning": "ମହାଭାରତର ସାର ଅମୃତ"
                 },
                 {
-                    "word": "বিଷ୍ଣୁ-ବକ୍ତ୍ରାତ୍",
+                    "word": "ବିଷ୍ଣୁ-ବକ୍ତ୍ରାତ୍",
                     "meaning": "ବିଷ୍ଣୁଙ୍କ ମୁଖରୁ"
                 },
                 {
@@ -9926,7 +9926,7 @@ export const SONG_GITA_CHAPTER_11_STRUCTURED: StructuredSong = {
         },
         {
             "id": 31,
-            "lyric": "ଆଖ୍ୟାହି ମେ କୋ ଭବାନୁଗ୍ରରୂପୋ\nନମୋଽସ୍ତୁ ତେ ଦେବବର ପ୍ରସୀଦ ।\nবিଜ୍ଞାତୁମିଚ୍ଛାମି ଭବନ୍ତମାଦ୍ୟଂ\nନ ହି ପ୍ରଜାନାମି ତବ ପ୍ରବୃତ୍ତିମ୍ ।।୩୧।।",
+            "lyric": "ଆଖ୍ୟାହି ମେ କୋ ଭବାନୁଗ୍ରରୂପୋ\nନମୋଽସ୍ତୁ ତେ ଦେବବର ପ୍ରସୀଦ ।\nବିଜ୍ଞାତୁମିଚ୍ଛାମି ଭବନ୍ତମାଦ୍ୟଂ\nନ ହି ପ୍ରଜାନାମି ତବ ପ୍ରବୃତ୍ତିମ୍ ।।୩୧।।",
             "translation": "",
             "wordMeanings": []
         },
@@ -14583,7 +14583,7 @@ export const SONG_KABEGOURABANE_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ନାନା ଲତା-ତରୁ-ତଲେ",
-                    "meaning": "বিଭିନ୍ନ ଲତା ଓ ବୃକ୍ଷ ଗୁଡ଼ିକର ପାଦଦେଶରେ"
+                    "meaning": "ବିଭିନ୍ନ ଲତା ଓ ବୃକ୍ଷ ଗୁଡ଼ିକର ପାଦଦେଶରେ"
                 }
             ]
         },
@@ -40817,7 +40817,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଅର୍ପଣ କଲି"
                 },
                 {
-                    "word": "বিତୃଷ୍ଣା",
+                    "word": "ବିତୃଷ୍ଣା",
                     "meaning": "ସମସ୍ତ ବିଷୟ ବାସନାରୁ ମୁକ୍ତ"
                 },
                 {
@@ -40960,7 +40960,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଲୁଳିତ",
-                    "meaning": "বিକ୍ଷିପ୍ତ"
+                    "meaning": "ବିକ୍ଷିପ୍ତ"
                 },
                 {
                     "word": "ଶ୍ରମ-ବାରି",
@@ -40995,7 +40995,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଚର୍ମରେ"
                 },
                 {
-                    "word": "বিଲସତ୍",
+                    "word": "ବିଲସତ୍",
                     "meaning": "ଆନନ୍ଦ ଅନୁଭବ କରିବା"
                 },
                 {
@@ -41129,7 +41129,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ବଧ କରିବାକୁ"
                 },
                 {
-                    "word": "বিମୁଖସ୍ୟ",
+                    "word": "ବିମୁଖସ୍ୟ",
                     "meaning": "କୁଣ୍ଠାବୋଧ କରୁଥିବା"
                 },
                 {
@@ -41271,7 +41271,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଶାଣିତ"
                 },
                 {
-                    "word": "বিଶିଖ",
+                    "word": "ବିଶିଖ",
                     "meaning": "ଶର"
                 },
                 {
@@ -41279,7 +41279,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆହତ"
                 },
                 {
-                    "word": "বিଶୀର୍ଣ୍ଣ-ଦଂଶଃ",
+                    "word": "ବିଶୀର୍ଣ୍ଣ-ଦଂଶଃ",
                     "meaning": "ଭଙ୍ଗା ବର୍ମ"
                 },
                 {
@@ -41338,11 +41338,11 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
         },
         {
             "id": 8,
-            "lyric": "বিଜୟରଥକୁଟୁମ୍ବ ଆତ୍ତତୋତ୍ରେ\nଧୃତହୟରଶ୍ମିନି ତଚ୍ଛ୍ରିୟେକ୍ଷଣୀୟେ ।\nଭଗବତି ରତିରସ୍ତୁ ମେ ମୁମୂର୍ଷୋ-\nର୍ୟମିହ ନିରୀକ୍ଷ୍ୟ ହତା ଗତାଃ ସରୂପମ୍ ॥ ୩୯॥",
+            "lyric": "ବିଜୟରଥକୁଟୁମ୍ବ ଆତ୍ତତୋତ୍ରେ\nଧୃତହୟରଶ୍ମିନି ତଚ୍ଛ୍ରିୟେକ୍ଷଣୀୟେ ।\nଭଗବତି ରତିରସ୍ତୁ ମେ ମୁମୂର୍ଷୋ-\nର୍ୟମିହ ନିରୀକ୍ଷ୍ୟ ହତା ଗତାଃ ସରୂପମ୍ ॥ ୩୯॥",
             "translation": "ମୃତ୍ୟୁ ସମୟରେ ମୋର ମନ ସେହି ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଠାରେ ନିବିଷ୍ଟ ହେଉ, ଯିଏ ଅର୍ଜୁନଙ୍କ ରଥର ସାରଥୀ ସାଜି ଘୋଡ଼ାଙ୍କ ଲଗାମ ଧରିଥିଲେ। ଯେଉଁମାନେ କୁରୁକ୍ଷେତ୍ର ଯୁଦ୍ଧରେ ତାଙ୍କକୁ ଦର୍ଶନ କରି ପ୍ରାଣତ୍ୟାଗ କଲେ, ସେମାନେ ସମସ୍ତେ ମୁକ୍ତି ଓ ଦିବ୍ୟ ସ୍ୱରୂପ ପ୍ରାପ୍ତ ହେଲେ।",
             "wordMeanings": [
                 {
-                    "word": "বিଜୟ",
+                    "word": "ବିଜୟ",
                     "meaning": "ଅର୍ଜୁନ"
                 },
                 {
@@ -41429,7 +41429,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଚାଲି"
                 },
                 {
-                    "word": "বিଳାସ",
+                    "word": "ବିଳାସ",
                     "meaning": "ଭଙ୍ଗୀ"
                 },
                 {
@@ -41615,7 +41615,7 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଉପଲବ୍ଧି କରୁଛି"
                 },
                 {
-                    "word": "বিଧୂତ",
+                    "word": "ବିଧୂତ",
                     "meaning": "ଦୂର ହୋଇଥିବା"
                 },
                 {
