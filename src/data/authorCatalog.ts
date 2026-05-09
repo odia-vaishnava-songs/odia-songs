@@ -306,6 +306,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବ୍ୟାସଦେବ',
         catalog: [
             { title_english: 'Bhagavad Gita' },
+            { id: 'song-bhishmastuti', title_english: 'Bhishma Stuti', title_odia: 'ଭୀଷ୍ମ ସ୍ତୁତି' },
             { title_english: 'Ugram Viram Mahavishnum' },
             { title_english: 'Jaya Narasimha Sri Narasimha' },
             { title_english: 'Namaste Narasimhaya' },

@@ -56,6 +56,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-bhishmastuti',
+        title: 'ଭୀଷ୍ମ ସ୍ତୁତି (Bhishma Stuti)',
+        title_odia: 'ଭୀଷ୍ମ ସ୍ତୁତି',
+        title_english: 'Bhishma Stuti',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vyasadeva',
+        description: 'ଶ୍ରୀମଦ୍ ଭାଗବତମ୍ (୧-୯-୩୨ ରୁ ୪୨)',
+        structuredContent: (Songs as any).SONG_BHISHMASTUTI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhuliyatomare',
         title: 'ଭୁଲିୟା ତୋମାରେ (Bhuliyā tomāre)',
         category: 'Songs',
