@@ -1882,6 +1882,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-bhaktiahaituki',
+        title: 'ଭକ୍ତି ଅହୈତୁକୀ ହୟ ସ୍ୱ ପ୍ରକାଶିତ (Bhakti Ahaituki Hoy Sva Prakasita)',
+        title_odia: 'ଭକ୍ତି ଅହୈତୁକୀ ହୟ ସ୍ୱ ପ୍ରକାଶିତ',
+        title_english: 'Bhakti Ahaituki Hoy Sva Prakasita',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Prabhupada',
+        structuredContent: (Songs as any).SONG_BHAKTIAAHAITUKI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhajabhajahari',
         title: 'ଭଜ ଭଜ ହରି (Bhaja Bhaja Hari)',
         title_odia: 'ଭଜ ଭଜ ହରି',

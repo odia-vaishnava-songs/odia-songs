@@ -124,11 +124,12 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Srila Prabhupada',
+        odia: 'ଶ୍ରୀଲ ପ୍ରଭୁପାଦ',
         catalog: [
             { title_english: 'Adore Adore Ye All' },
             { id: 'song-barabaraplankori', title_english: 'Bara Bara Plan Kori', title_odia: 'ବାର ବାର ପ୍ଲ୍ୟାନ କରେ' },
             { id: 'song-batulakahaye', title_english: 'Batula Kahaye Setha Saba Nirakara', title_odia: 'ବାତୁଲ କହୟେ ସେଥା ସବ ନିରାକାର' },
-            { title_english: 'Bhakti Ahaituki Hoy Sva Prakasita' },
+            { id: 'song-bhaktiahaituki', title_english: 'Bhakti Ahaituki Hoy Sva Prakasita', title_odia: 'ଭକ୍ତି ଅହୈତୁକୀ ହୟ ସ୍ୱ ପ୍ରକାଶିତ' },
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },
             { title_english: 'Karma Phale Ase Saba Nana Vesa Dhari' },
             { title_english: 'Krsna Tava Punya Habe Bhai' },
