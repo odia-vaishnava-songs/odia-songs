@@ -63,7 +63,7 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Vyasadeva',
-        description: 'ଶ୍ରୀମଦ୍ ଭାଗବତମ୍ (୧-୯-୩୨ ରୁ ୪୨)',
+        description: 'ଶ୍ରୀମଦ୍ ଭାଗବତମ୍ (୧-୯-୩୨ ରୁ ୪୨) | ଅନୁବାଦ: ପୂଜ୍ୟପାଦ ଭାନୁ ସ୍ୱାମୀ ମହାରାଜ (HH Bhanu Swami Maharaj)ଙ୍କ ଦ୍ୱାରା ରଚିତ ଗ୍ରନ୍ଥରୁ ସଂଗୃହୀତ |',
         structuredContent: (Songs as any).SONG_BHISHMASTUTI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
@@ -106,6 +106,19 @@ export const RESOURCES: Resource[] = [
         author: 'Rupa Goswami',
         description: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀରାଧା-ଅଷ୍ଟକମ୍ |',
         structuredContent: (Songs as any).SONG_RADHEJAYAJAYA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-brahmabole',
+        title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
+        title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
+        title_english: 'Brahma Bole Catur Mukha',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        description: 'ବ୍ରହ୍ମା ଓ ଶିବଙ୍କ ଦ୍ୱାରା ହରିନାମ ସଙ୍କୀର୍ତ୍ତନର ଏକ ମନୋରମ ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_BRAHMABOLE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
