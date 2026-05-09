@@ -152,12 +152,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Rupa Goswami',
+        odia: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ' },
+            { id: 'song-yamunastakam', title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ' },
             { title_english: 'Disi Disi Racayantim' },
             { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
             { title_english: 'Nikhila Sruti Mauli Ratna' },
-            { title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
+            { id: 'song-radhejayajaya', title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
         ]
     },
     {
@@ -316,7 +317,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Sri Caitanya Mahaprabhu',
         odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
         catalog: [
-            { title_english: 'Sri Sikshashtakam', title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍' },
+            { id: 'song-sikshashtakam', title_english: 'Sri Sikshashtakam', title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍' },
         ]
     },
     {

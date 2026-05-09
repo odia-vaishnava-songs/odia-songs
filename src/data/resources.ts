@@ -69,6 +69,47 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-yamunastakam',
+        title: 'ଶ୍ରୀ ଶ୍ରୀ ଯମୁନାଷ୍ଟକମ୍ (Yamunāṣṭakam)',
+        title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଯମୁନାଷ୍ଟକମ୍',
+        title_english: 'Bhrtr Antakasya Pattane',
+        category: 'Songs',
+        type: 'html',
+        author: 'Rupa Goswami',
+        description: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଯମୁନାଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_YAMUNASTAKAM_STRUCTURED,
+        tags: ['Astakam'],
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sikshashtakam',
+        title: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍ (Śrī Śikṣāṣṭakam)',
+        title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍',
+        title_english: 'Sri Sikshashtakam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Sri Caitanya Mahaprabhu',
+        description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ମୁଖନିସୃତ ଅଷ୍ଟ ଶ୍ଳୋକାତ୍ମକ ଶିକ୍ଷାଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_SIKSHASHTAKAM_STRUCTURED,
+        tags: ['Astakam'],
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-radhejayajaya',
+        title: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ (Rādhe Jaya Jaya)',
+        title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ',
+        title_english: 'Radhe Jaya Jaya Madhava Dayite',
+        category: 'Songs',
+        type: 'html',
+        author: 'Rupa Goswami',
+        description: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀରାଧା-ଅଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_RADHEJAYAJAYA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhuliyatomare',
         title: 'ଭୁଲିୟା ତୋମାରେ (Bhuliyā tomāre)',
         category: 'Songs',
