@@ -42,6 +42,20 @@ export const RESOURCES: Resource[] = [
         author: 'Adi Sankaracarya'
     },
     {
+        id: 'song-bhajagovindam',
+        title: 'ଭଜ ଗୋବିନ୍ଦମ୍ (Bhaja Govindam)',
+        title_odia: 'ଭଜ ଗୋବିନ୍ଦମ୍',
+        title_english: 'Bhaja Govindam',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ପ୍ରସିଦ୍ଧ ଭଜ ଗୋବିନ୍ଦମ୍ ସ୍ତୋତ୍ର |',
+        structuredContent: (Songs as any).SONG_BHAJAGOVINDAM_STRUCTURED,
+        author: 'Adi Sankaracarya',
+        tags: ['Stotram'],
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhuliyatomare',
         title: 'ଭୁଲିୟା ତୋମାରେ (Bhuliyā tomāre)',
         category: 'Songs',
