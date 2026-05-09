@@ -1057,7 +1057,7 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
         {
             "id": 6,
             "lyric": "ବିଦ୍ୟାର ଗୌରବେ, ଭ୍ରମି ଦେଶେ ଦେଶେ,\nଧନ ଉପାର୍ଜନ କରି ।\nସ୍ବଜନ ପାଳନ, କରି ଏକ ମନେ,\nଭୁଲିନୁ ତୋମାରେ ହରି ॥",
-            "translation": "ତା'ପରେ ମୋର ଶିକ୍ଷାର ଶକ୍ତି ବଳରେ, ମୁଁ 비ଭିନ୍ନ ସ୍ଥାନ ଭ୍ରମଣ କଲି, ଅର୍ଥ ରୋଜଗାର କଲି ଏବଂ ଏକାଗ୍ରତାର ସହ ମୋର ପରିବାରର ଭରଣପୋଷଣ କଲି। ମୁଁ ତୁମକୁ ଭୁଲିଗଲି, ହେ ପ୍ରଭୁ!",
+            "translation": "ତା'ପରେ ମୋର ଶିକ୍ଷାର ଶକ୍ତି ବଳରେ, ମୁଁ ବିଭିନ୍ନ ସ୍ଥାନ ଭ୍ରମଣ କଲି, ଅର୍ଥ ରୋଜଗାର କଲି ଏବଂ ଏକାଗ୍ରତାର ସହ ମୋର ପରିବାରର ଭରଣପୋଷଣ କଲି। ମୁଁ ତୁମକୁ ଭୁଲିଗଲି, ହେ ପ୍ରଭୁ!",
             "wordMeanings": [
                 {
                     "word": "ବିଦ୍ୟାର",
@@ -1101,7 +1101,7 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ତୋମାରେ",
-                    "meaning": "ତୁମ 비ଷୟରେ"
+                    "meaning": "ତୁମ ବିଷୟରେ"
                 },
                 {
                     "word": "ହରି!",
@@ -1123,7 +1123,7 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ଏବେ"
                 },
                 {
-                    "word": "ଭକ୍ତି비ନୋଦ",
+                    "word": "ଭକ୍ତିବିନୋଦ",
                     "meaning": "ଭକ୍ତିବିନୋଦ"
                 },
                 {
@@ -4502,7 +4502,7 @@ export const SONG_TUMISARVESWARESVARAVRAJENDRAKUMAR_STRUCTURED: StructuredSong =
                 },
                 {
                     "word": "ଭରସା ଛାଡ଼ିୟା",
-                    "meaning": "비ଶ୍ୱାସ ତ୍ୟାଗ କରି"
+                    "meaning": "ବିଶ୍ୱାସ ତ୍ୟାଗ କରି"
                 },
                 {
                     "word": "ତୋମାର ଇଚ୍ଛାୟ ଆଛି",
@@ -5669,7 +5669,7 @@ export const SONG_NITAINAMHATE_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଣ୍ଡାର ରକ୍ଷକ ଶ୍ରୀ ଗଦାଧର ପଣ୍ଡିତ"
                 },
                 {
-                    "word": "비ଚକ୍ଷଣ",
+                    "word": "ବିଚକ୍ଷଣ",
                     "meaning": "ଅତ୍ୟନ୍ତ ଚତୁର ବା ନିପୁଣ"
                 }
             ]
@@ -7140,7 +7140,7 @@ export const SONG_PRABHUTAVAPADAYUGE_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁଁ ଶାରୀରିକ ସୁଖ ମାଗୁନାହିଁ"
                 },
                 {
-                    "word": "비ଦ୍ୟା ଧନ ଜନ",
+                    "word": "ବିଦ୍ୟା ଧନ ଜନ",
                     "meaning": "କିମ୍ବା ପାଣ୍ଡିତ୍ୟ, ସମ୍ପତ୍ତି ବା ଅନୁଗାମୀ ମାଗୁନାହିଁ"
                 }
             ]
@@ -7518,7 +7518,7 @@ export const SONG_GITA_CHAPTER_1_STRUCTURED: StructuredSong = {
         },
         {
             "id": 46,
-            "lyric": "ସଞ୍ଜୟ ଉବାଚ \nଏବମୁକ୍ତ୍ୱାର୍ଜୁନଃ ସଙ୍ଖ୍ୟେ ରଥୋପସ୍ଥ ଉପାବିଶତ୍ ।\n비ସୃଜ୍ୟ ସଶରଂ ଚାପଂ ଶୋକସଂବିଗ୍ନମାନସଃ ।।୬।।",
+            "lyric": "ସଞ୍ଜୟ ଉବାଚ \nଏବମୁକ୍ତ୍ୱାର୍ଜୁନଃ ସଙ୍ଖ୍ୟେ ରଥୋପସ୍ଥ ଉପାବିଶତ୍ ।\nବିସୃଜ୍ୟ ସଶରଂ ଚାପଂ ଶୋକସଂବିଗ୍ନମାନସଃ ।।୬।।",
             "translation": "",
             "wordMeanings": []
         }
@@ -15059,7 +15059,7 @@ export const SONG_KABEHABEBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ତ୍ୟାଗ କରି"
                 },
                 {
-                    "word": "비ଚାର",
+                    "word": "ବିଚାର",
                     "meaning": "ସାଂସାରିକ ବୁଦ୍ଧି"
                 }
             ]
@@ -15169,7 +15169,7 @@ export const SONG_KABEHABEBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ହେବି"
                 },
                 {
-                    "word": "비ବଶ",
+                    "word": "ବିବଶ",
                     "meaning": "ଅଭିଭୂତ"
                 },
                 {
@@ -15260,7 +15260,7 @@ export const SONG_KABEHABEBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "କରି"
                 },
                 {
-                    "word": "비ନୟ",
+                    "word": "ବିନୟ",
                     "meaning": "ନିବେଦନ"
                 },
                 {
@@ -17180,7 +17180,7 @@ export const SONG_KABEHABEHENODASA_STRUCTURED: StructuredSong = {
                     "meaning": "ବାସ କରି"
                 },
                 {
-                    "word": "비ଜନ-ସ୍ଥଲେ",
+                    "word": "ବିଜନ-ସ୍ଥଲେ",
                     "meaning": "ଏକ ନିର୍ଜନ ସ୍ଥାନରେ"
                 },
                 {
@@ -17458,7 +17458,7 @@ export const SONG_KABEMUIVAISHNAVA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ମାତିବୋ",
-                    "meaning": "비ଭୋର (ପାଗଳ) ହେବି"
+                    "meaning": "ବିଭୋର (ପାଗଳ) ହେବି"
                 },
                 {
                     "word": "ହୃଦୟେ",
@@ -29775,7 +29775,7 @@ export const SONG_DUSTAMANA_STRUCTURED: StructuredSong = {
                     "meaning": "ସମ୍ପର୍କ ସହ"
                 },
                 {
-                    "word": "비ଷୟ-ସମୂହ",
+                    "word": "ବିଷୟ-ସମୂହ",
                     "meaning": "ସାଂସାରିକ ବସ୍ତୁ"
                 },
                 {
@@ -30428,8 +30428,8 @@ export const SONG_DAMODARASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଚୁମ୍ବନ କରାଯାଇଥିବା"
                 },
                 {
-                    "word": "비ମ୍ବ-ରକ୍ତ-ଅଧରମ୍",
-                    "meaning": "비ମ୍ବ ଫଳ ପରି ନାଲି ଓଠ"
+                    "word": "ବିମ୍ବ-ରକ୍ତ-ଅଧରମ୍",
+                    "meaning": "ବିମ୍ବ ଫଳ ପରି ନାଲି ଓଠ"
                 },
                 {
                     "word": "ମେ",
@@ -30645,7 +30645,7 @@ export const SONG_DAMODARASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଏବଂ"
                 },
                 {
-                    "word": "비ଶ୍ୱସ୍ୟ ଧାମ୍ନେ",
+                    "word": "ବିଶ୍ୱସ୍ୟ ଧାମ୍ନେ",
                     "meaning": "ସମଗ୍ର ବ୍ରହ୍ମାଣ୍ଡର ଆଧାର"
                 },
                 {
@@ -30761,7 +30761,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆପଣଙ୍କୁ"
                 },
                 {
-                    "word": "비ଚିନ୍ୱତେ",
+                    "word": "ବିଚିନ୍ୱତେ",
                     "meaning": "ଖୋଜୁଛୁ"
                 }
             ]
@@ -30821,7 +30821,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଅଶୁଳ୍କ",
-                    "meaning": "비ନା ମୂଲ୍ୟର"
+                    "meaning": "ବିନା ମୂଲ୍ୟର"
                 },
                 {
                     "word": "ଦାସିକାଃ",
@@ -30859,8 +30859,8 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
             "translation": "ହେ ପୁରୁଷ ଶ୍ରେଷ୍ଠ! ବିଷାକ୍ତ ଜଳ, ଅଘାସୁର, ବର୍ଷା, ଝଡ଼, ବଜ୍ରପାତ ଏବଂ ବୃଷଭାସୁର ଓ ବ୍ୟୋମାସୁର ଭଳି ଅନେକ ଭୟଙ୍କର ବିପତ୍ତିରୁ ଆପଣ ବାରମ୍ବାର ଆମକୁ ରକ୍ଷା କରିଛନ୍ତି।",
             "wordMeanings": [
                 {
-                    "word": "비ଷ",
-                    "meaning": "비ଷାକ୍ତ"
+                    "word": "ବିଷ",
+                    "meaning": "ବିଷାକ୍ତ"
                 },
                 {
                     "word": "ଜଳ",
@@ -30868,7 +30868,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଅପ୍ୟୟାତ୍",
-                    "meaning": "비ନାଶରୁ"
+                    "meaning": "ବିନାଶରୁ"
                 },
                 {
                     "word": "ବ୍ୟାଳ",
@@ -30899,7 +30899,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମୟ ଦାନବର ପୁତ୍ର (ବ୍ୟୋମାସୁର)ରୁ"
                 },
                 {
-                    "word": "비ଶ୍ୱତଃ",
+                    "word": "ବିଶ୍ୱତଃ",
                     "meaning": "ସବୁ ପ୍ରକାର"
                 },
                 {
@@ -30970,7 +30970,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସାକ୍ଷୀ/ଦ୍ରଷ୍ଟା"
                 },
                 {
-                    "word": "비ଖନସା",
+                    "word": "ବିଖନସା",
                     "meaning": "ବ୍ରହ୍ମାଙ୍କ ଦ୍ୱାରା"
                 },
                 {
@@ -30978,8 +30978,8 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରାର୍ଥିତ ହୋଇ"
                 },
                 {
-                    "word": "비ଶ୍ୱ",
-                    "meaning": "비ଶ୍ୱର"
+                    "word": "ବିଶ୍ୱ",
+                    "meaning": "ବିଶ୍ୱର"
                 },
                 {
                     "word": "ଗୁପ୍ତୟେ",
@@ -31009,7 +31009,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
             "translation": "ହେ ଯଦୁଶ୍ରେଷ୍ଠ! ସଂସାର ଭୟରେ ଆପଣଙ୍କ ଚରଣକୁ ଆଶ୍ରୟ କରୁଥିବା ଭକ୍ତଙ୍କୁ ଆପଣ ଅଭୟ ପ୍ରଦାନ କରନ୍ତି। ହେ ପ୍ରିୟତମ! ଯେଉଁ ପଦ୍ମ ପରି ହାତରେ ଆପଣ ମାତା ଲକ୍ଷ୍ମୀଙ୍କ ହାତ ଧରିଥାନ୍ତି ଏବଂ ଯାହା ସମସ୍ତଙ୍କ ମନସ୍କାମନା ପୂର୍ଣ୍ଣ କରେ, ସେହି ହାତକୁ ଆମ ମୁଣ୍ଡ ଉପରେ ରଖନ୍ତୁ।",
             "wordMeanings": [
                 {
-                    "word": "비ରଚିତ",
+                    "word": "ବିରଚିତ",
                     "meaning": "ପ୍ରଦାନ କରୁଥିବା"
                 },
                 {
@@ -31105,7 +31105,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ହନ୍",
-                    "meaning": "비ନାଶ କରୁଥିବା"
+                    "meaning": "ବିନାଶ କରୁଥିବା"
                 },
                 {
                     "word": "ବୀର",
@@ -31294,7 +31294,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଖି ଯାହାଙ୍କର"
                 },
                 {
-                    "word": "비ଧି-କରୀଃ",
+                    "word": "ବିଧି-କରୀଃ",
                     "meaning": "ଆଜ୍ଞାକାରୀ ଦାସୀ"
                 },
                 {
@@ -31408,7 +31408,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରେମପୂର୍ଣ୍ଣ ଚାହାଣି"
                 },
                 {
-                    "word": "비ହରଣମ୍",
+                    "word": "ବିହରଣମ୍",
                     "meaning": "ଲୀଳା ଖେଳା"
                 },
                 {
@@ -31461,7 +31461,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "କ୍ଷୋଭୟନ୍ତି",
-                    "meaning": "비ଚଳିତ କରୁଛି"
+                    "meaning": "ବିଚଳିତ କରୁଛି"
                 },
                 {
                     "word": "ହି",
@@ -31570,7 +31570,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପଦ୍ମ ପରି ମୁଖ"
                 },
                 {
-                    "word": "비ଭ୍ରତ୍",
+                    "word": "ବିଭ୍ରତ୍",
                     "meaning": "ଧାରଣ କରିଥିବା"
                 },
                 {
@@ -31638,7 +31638,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଆପଦି",
-                    "meaning": "비ପତ୍ତି ସମୟରେ"
+                    "meaning": "ବିପତ୍ତି ସମୟରେ"
                 },
                 {
                     "word": "ଚରଣ-ପଙ୍କଜମ୍",
@@ -31674,7 +31674,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଆଧି-ହନ୍",
-                    "meaning": "ଦୁଃଖ 비ନାଶକାରୀ"
+                    "meaning": "ଦୁଃଖ ବିନାଶକାରୀ"
                 }
             ]
         },
@@ -31716,7 +31716,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆସକ୍ତିକୁ"
                 },
                 {
-                    "word": "비ସ୍ମାରଣମ୍",
+                    "word": "ବିସ୍ମାରଣମ୍",
                     "meaning": "ଭୁଲାଇ ଦିଏ"
                 },
                 {
@@ -31724,8 +31724,8 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମଣିଷଙ୍କୁ"
                 },
                 {
-                    "word": "비ତର",
-                    "meaning": "비ତରଣ କରନ୍ତୁ"
+                    "word": "ବିତର",
+                    "meaning": "ବିତରଣ କରନ୍ତୁ"
                 },
                 {
                     "word": "ବୀର",
@@ -31838,7 +31838,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭାଇ ଓ ବନ୍ଧୁମାନଙ୍କୁ"
                 },
                 {
-                    "word": "ଅତି-비ଲଙ୍ଘ୍ୟ",
+                    "word": "ଅତି-ବିଲଙ୍ଘ୍ୟ",
                     "meaning": "ତ୍ୟାଗ କରି/ଉଲ୍ଲଙ୍ଘନ କରି"
                 },
                 {
@@ -31854,7 +31854,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆସିଛୁ"
                 },
                 {
-                    "word": "ଗତି-비ଦଃ",
+                    "word": "ଗତି-ବିଦଃ",
                     "meaning": "ଉଦ୍ଦେଶ୍ୟ ଜାଣିଥିବା"
                 },
                 {
@@ -31925,7 +31925,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଲକ୍ଷ୍ମୀଙ୍କର"
                 },
                 {
-                    "word": "비କ୍ଷ୍ୟ",
+                    "word": "ବିକ୍ଷ୍ୟ",
                     "meaning": "ଦେଖି କରି"
                 },
                 {
@@ -31981,15 +31981,15 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ହନ୍ତ୍ରୀ",
-                    "meaning": "비ନାଶ କରୁଥିବା"
+                    "meaning": "ବିନାଶ କରୁଥିବା"
                 },
                 {
                     "word": "ଅଳମ୍",
                     "meaning": "ସମ୍ପୂର୍ଣ୍ଣ ଭାବେ"
                 },
                 {
-                    "word": "비ଶ୍ୱ-ମଙ୍ଗଳମ୍",
-                    "meaning": "ସମଗ୍ର 비ଶ୍ୱର ଶୁଭ"
+                    "word": "ବିଶ୍ୱ-ମଙ୍ଗଳମ୍",
+                    "meaning": "ସମଗ୍ର ବିଶ୍ୱର ଶୁଭ"
                 },
                 {
                     "word": "ତ୍ୟଜ",
@@ -32104,7 +32104,7 @@ export const SONG_GOPIGITAM_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଭ୍ରମତି",
-                    "meaning": "비ଚଳିତ ହେଉଛି"
+                    "meaning": "ବିଚଳିତ ହେଉଛି"
                 },
                 {
                     "word": "ଧୀଃ",
@@ -33931,7 +33931,7 @@ export const SONG_KRSNADEVABHAVANTAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପରାଜିତ କରୁଥିବା"
                 },
                 {
-                    "word": "비ନ୍ଦନ୍",
+                    "word": "ବିନ୍ଦନ୍",
                     "meaning": "ଲାଭ କରି"
                 },
                 {
@@ -36516,7 +36516,7 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ବଡ଼",
-                    "meaning": "비ରାଟ"
+                    "meaning": "ବିରାଟ"
                 },
                 {
                     "word": "ପାପୀ",
@@ -38525,7 +38525,7 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "meaning": "ରେ"
                 },
                 {
-                    "word": "비ନା",
+                    "word": "ବିନା",
                     "meaning": "ବିନା"
                 },
                 {
@@ -38782,7 +38782,7 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଅର୍ଜିତ"
                 },
                 {
-                    "word": "비ତ୍ତମ୍",
+                    "word": "ବିତ୍ତମ୍",
                     "meaning": "ଧନ"
                 },
                 {
@@ -38939,7 +38939,7 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 5,
-            "lyric": "ୟାବଦ୍-비ତ୍ତୋପାର୍ଜନ ସକ୍ତଃ\nତାବନ୍-ନିଜ ପରିବାରୋ ରକ୍ତଃ ।\nପଶ୍ଚାଜ୍ଜୀବତି ଜର୍ଜର ଦେହେ\nବାର୍ତ୍ତାଂ କୋ’ପି ନ ପୃଚ୍ଛତି ଗେହେ ।।",
+            "lyric": "ୟାବଦ୍-ବିତ୍ତୋପାର୍ଜନ ସକ୍ତଃ\nତାବନ୍-ନିଜ ପରିବାରୋ ରକ୍ତଃ ।\nପଶ୍ଚାଜ୍ଜୀବତି ଜର୍ଜର ଦେହେ\nବାର୍ତ୍ତାଂ କୋ’ପି ନ ପୃଚ୍ଛତି ଗେହେ ।।",
             "translation": "ଯେପର୍ଯ୍ୟନ୍ତ ତୁମେ ରୋଜଗାର କରୁଛ, ସମସ୍ତେ ତୁମକୁ ସ୍ନେହ କରିବେ। ଶରୀର ଅକ୍ଷମ ହେଲେ କେହି ତୁମର କୁଶଳ ପଚାରିବେ ନାହିଁ।",
             "wordMeanings": [
                 {
@@ -38947,7 +38947,7 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଯେପର୍ଯ୍ୟନ୍ତ"
                 },
                 {
-                    "word": "비ତ୍ତ",
+                    "word": "ବିତ୍ତ",
                     "meaning": "ଧନ"
                 },
                 {
@@ -39172,7 +39172,7 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଅତ୍ୟନ୍ତ"
                 },
                 {
-                    "word": "비ଚିତ୍ରଃ",
+                    "word": "ବିଚିତ୍ରଃ",
                     "meaning": "ବିଚିତ୍ର"
                 },
                 {
@@ -40212,7 +40212,7 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
         },
         {
             "id": 24,
-            "lyric": "କସ୍ତ୍ୱଂ କୋ’ହଂ କୁତ ଆୟାତଃ\nକା ମେ ଜନନୀ କୋ ମେ ତାତଃ ।\nଇତି ପରିଭାବୟ ସର୍ବମ୍ ଅସାରଂ\n비ଶ୍ୱଂ ତ୍ୟକ୍ତ୍ୱା ସ୍ୱପ୍ନ ବିଚାରମ୍ ।।",
+            "lyric": "କସ୍ତ୍ୱଂ କୋ’ହଂ କୁତ ଆୟାତଃ\nକା ମେ ଜନନୀ କୋ ମେ ତାତଃ ।\nଇତି ପରିଭାବୟ ସର୍ବମ୍ ଅସାରଂ\nବିଶ୍ୱଂ ତ୍ୟକ୍ତ୍ୱା ସ୍ୱପ୍ନ ବିଚାରମ୍ ।।",
             "translation": "ତୁମଠାରେ, ମୋଠାରେ ଓ ସମଗ୍ର ଜଗତରେ ଜଣେ ହିଁ ବିଷ୍ଣୁ ଅଛନ୍ତି। ତେଣୁ ଭେଦଭାବ ଛାଡ଼ି ସମସ୍ତଙ୍କୁ ନିଜ ସମାନ ଦେଖ।",
             "wordMeanings": [
                 {
