@@ -70,8 +70,8 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-yamunastakam',
-        title: 'ଶ୍ରୀ ଶ୍ରୀ ଯମୁନାଷ୍ଟକମ୍ (Yamunāṣṭakam)',
-        title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଯମୁନାଷ୍ଟକମ୍',
+        title: 'ଭ୍ରାତୃ ଅନ୍ତକସ୍ୟ ପତ୍ତନେ (Sri Yamunastakam)',
+        title_odia: 'ଭ୍ରାତୃ ଅନ୍ତକସ୍ୟ ପତ୍ତନେ',
         title_english: 'Bhrtr Antakasya Pattane',
         category: 'Songs',
         type: 'html',
@@ -1162,7 +1162,7 @@ export const RESOURCES: Resource[] = [
                 {
                     id: 2,
                     lyric: "କୃପା କରି' ସବେ ମିଲି ସକଳ କରୁଣା\nଅଧମ ପତିତ ଜନେ ନା କରିହ ବଞ୍ଚନା ।।୨।।",
-                    translation: "ହେ ପ୍ରଭୁମାନେ! ଆପଣ ସମସ୍ତେ ମିଳିତ ହୋଇ ମୋ' ଉପରେ କରୁଣା କରନ୍ତୁ। ମୁଁ ଅତି ଅଧମ ଓ ପତିତ, ଦୟาକରି ମୋତେ ଆପଣଙ୍କ କୃପାରୁ ବଞ୍ଚିତ କରନ୍ତୁ ନାହିଁ।",
+                    translation: "ହେ ପ୍ରଭୁମାନେ! ଆପଣ ସମସ୍ତେ ମିଳିତ ହୋଇ ମୋ' ଉପରେ କରୁଣା କରନ୍ତୁ। ମୁଁ ଅତି ଅଧମ ଓ ପତିତ, ଦୟାକରି ମୋତେ ଆପଣଙ୍କ କୃପାରୁ ବଞ୍ଚିତ କରନ୍ତୁ ନାହିଁ।",
                 }
             ]
         },
@@ -1170,6 +1170,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED',
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda/Jaya_Jaya_Sri_Krsna_Caitanya_Nityananda_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
         vocalist: 'HG Jai Sachinandana Prabhu'
+    },
+    {
+        id: 'song-gurvastakam',
+        title: 'ସଂସାର ଦାବାନଳ (Sri Gurvastakam)',
+        title_odia: 'ସଂସାର ଦାବାନଳ',
+        title_english: 'Samsara Davanala',
+        category: 'Songs',
+        type: 'html',
+        author: 'Visvanatha Cakravarti Thakura',
+        tags: ['Temple', 'Astakam'],
+        structuredContent: (Songs as any).SONG_GURVASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     },
     {
         id: 'song-dhanamornityananda',
@@ -1358,19 +1371,6 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-gurvastakam',
-        title: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବାଷ୍ଟକମ୍ – ମଙ୍ଗଳ ଆରତି (Śrī Śrī Gurv-aṣṭakam)',
-        title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବାଷ୍ଟକମ୍',
-        title_english: 'Gurvastakam (Samsara Davanala)',
-        category: 'Songs',
-        type: 'html',
-        author: 'Visvanatha Cakravarti Thakura',
-        tags: ['Temple', 'Astakam'],
-        structuredContent: (Songs as any).SONG_GURVASTAKAM_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
         id: 'song-hariboloharibolo',
         title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
         category: 'Songs',
@@ -1546,9 +1546,9 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-damodarastakam',
-        title: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍ (Sri Damodarastakam)',
-        title_odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍',
-        title_english: 'Sri Damodarastakam',
+        title: 'ନମାମୀଶ୍ୱରଂ ସଚ୍ଚିଦାନନ୍ଦ ରୂପଂ (Sri Damodarastakam)',
+        title_odia: 'ନମାମୀଶ୍ୱରଂ ସଚ୍ଚିଦାନନ୍ଦ ରୂପଂ',
+        title_english: 'Namamisvaram Saccidananda Rupam',
         category: 'Songs',
         type: 'html',
         author: 'Satyavrata Muni',

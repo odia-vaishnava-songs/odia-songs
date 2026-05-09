@@ -154,7 +154,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Rupa Goswami',
         odia: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { id: 'song-yamunastakam', title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ' },
+            { id: 'song-yamunastakam', title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୃ ଅନ୍ତକସ୍ୟ ପତ୍ତନେ' },
             { title_english: 'Disi Disi Racayantim' },
             { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
             { title_english: 'Nikhila Sruti Mauli Ratna' },
@@ -232,7 +232,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
         catalog: [
             { title_english: 'Vrnda-astakam (Gange Ya Campaya)', title_odia: 'ବୃନ୍ଦାଷ୍ଟକମ୍' },
-            { title_english: 'Gurvastakam (Samsara Davanala)', title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ଗୁର୍ବଷ୍ଟକମ୍ (ମଙ୍ଗଳ ଆରତି)' },
+            { id: 'song-gurvastakam', title_english: 'Samsara Davanala', title_odia: 'ସଂସାର ଦାବାନଳ' },
             { title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
             { title_english: 'Na Yoga Siddhir Na Mamastu', title_odia: 'ନ ଯୋଗ ସିଦ୍ଧିର୍ନ ମମାସ୍ତୁ' },
         ]
@@ -324,7 +324,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Satyavrata Muni',
         odia: 'ସତ୍ୟବ୍ରତ ମୁନି',
         catalog: [
-            { title_english: 'Damodarastakam', title_odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍' },
+            { id: 'song-damodarastakam', title_english: 'Namamisvaram Saccidananda Rupam', title_odia: 'ନମାମୀଶ୍ୱରଂ ସଚ୍ଚିଦାନନ୍ଦ ରୂପଂ' },
         ]
     },
     {
