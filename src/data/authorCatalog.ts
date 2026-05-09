@@ -317,7 +317,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Sri Caitanya Mahaprabhu',
         odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
         catalog: [
-            { id: 'song-shikshashtakam', title_english: 'Sri Sikshashtakam', title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍' },
+            { id: 'song-shikshashtakam', title_english: 'Ceto Darpana Marjanam', title_odia: 'ଚେତୋ ଦର୍ପଣ ମାର୍ଜନଂ' },
         ]
     },
     {

@@ -84,9 +84,9 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-shikshashtakam',
-        title: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍ (Śrī Śikṣāṣṭakam)',
-        title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍',
-        title_english: 'Sri Sikshashtakam',
+        title: 'ଚେତୋ ଦର୍ପଣ ମାର୍ଜନଂ (Sri Sikshashtakam)',
+        title_odia: 'ଚେତୋ ଦର୍ପଣ ମାର୍ଜନଂ',
+        title_english: 'Ceto Darpana Marjanam',
         category: 'Songs',
         type: 'html',
         author: 'Sri Caitanya Mahaprabhu',
