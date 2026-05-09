@@ -380,6 +380,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Sura Dasa',
+        odia: 'ସୂରଦାସ',
+        catalog: [
+            { id: 'song-caranakamal', title_english: 'Carana Kamal', title_odia: 'ଚରଣ କମଲ' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: []
     },

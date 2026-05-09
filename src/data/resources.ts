@@ -123,6 +123,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-caranakamal',
+        title: 'ଚରଣ କମଲ (Caraṇa Kamala)',
+        title_odia: 'ଚରଣ କମଲ',
+        title_english: 'Carana Kamal',
+        category: 'Songs',
+        type: 'html',
+        author: 'Sura Dasa',
+        description: 'ଭକ୍ତ ସୂରଦାସଙ୍କ ବିରଚିତ ଶ୍ରୀହରିଙ୍କ ଚରଣ ବନ୍ଦନା |',
+        structuredContent: (Songs as any).SONG_CARANAKAMAL_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhuliyatomare',
         title: 'ଭୁଲିୟା ତୋମାରେ (Bhuliyā tomāre)',
         category: 'Songs',
