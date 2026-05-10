@@ -28,8 +28,8 @@ export function normalizeForSearch(str: string, aggressive = false): string {
         res = res.replace(/[aeiouy]/g, '');
     }
     
-    // Remove all non-alphanumeric
-    return res.replace(/[^a-z0-9]/g, '');
+    // Preserve Odia characters along with English alphanumeric
+    return res.replace(/[^a-z0-9\u0B00-\u0B7F]/g, '');
 }
 
 /**

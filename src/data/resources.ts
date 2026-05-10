@@ -131,6 +131,7 @@ export const RESOURCES: Resource[] = [
         type: 'html',
         author: 'Traditional',
         description: 'ଶ୍ରୀଲ ଗୌରାଙ୍ଗ ମହାପ୍ରଭୁଙ୍କର ଏକ ମନୋରମ ଭଜନ |',
+        display_order: 5,
         structuredContent: (Songs as any).SONG_GOURANGASUNDARA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
