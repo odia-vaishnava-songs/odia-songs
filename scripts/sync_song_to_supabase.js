@@ -24,10 +24,15 @@ async function syncSong() {
     
     // Attempting to find title and author from the JSON if possible, or use defaults
     // For now, we'll use the ID to construct a title if not provided
-    const title = structuredContent.title || "ଦେଖିତେ ଦେଖିତେ (Dekhite Dekhite)";
+    const titleOdia = structuredContent.title_odia || "";
+    const titleEng = structuredContent.title_english || "";
+    const title = structuredContent.title || (titleOdia && titleEng ? `${titleOdia} (${titleEng})` : titleEng || titleOdia || "Untitled");
     const author = structuredContent.author || "Bhaktivinoda Thakura";
+    const title_eng = structuredContent.title_english || "Untitled";
 
-    console.log(`Syncing song: ${fullId}...`);
+    console.log(`Syncing song: ${fullId}`);
+    console.log(`Title: ${title_eng}`);
+    console.log(`Author: ${author}`);
 
     console.log("Logging in as Admin...");
     const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
