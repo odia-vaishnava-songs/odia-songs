@@ -43145,7 +43145,7 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
   "verses": [
     {
       "id": 1,
-      "lyric": "ଦେବି ସୁରେଶ୍ୱରି ଭଗବତି ଗଙ୍ଗେ\nତ୍ରିଭୁବନ-ତାରିଣି ତରଳ ତରଙ୍ଗେ ।\nଶଙ୍କର-ମୌଲି-ବିହାରିଣି ବିମଲେ\nମମ ମତିରାସ୍ତାଂ ତବ ପଦ-କମଲେ ।।",
+      "lyric": "ଦେବି ସୁରେଶ୍ୱରି ଭଗବତି ଗଙ୍ଗେ\nତ୍ରିଭୁବନ-ତାରିଣି ତରଳ ତରଙ୍ଗେ ।\nଶଙ୍କର-ମୌଲି-비ହାରିଣି ବିମଲେ\nମମ ମତିରାସ୍ତାଂ ତବ ପଦ-କମଲେ ।।",
       "translation": "ହେ ଦେବୀ ଗଙ୍ଗେ! ଆପଣ ସ୍ୱର୍ଗର ଦେବୀ, ତ୍ରିଲୋକର ଉଦ୍ଧାରକାରିଣୀ ଏବଂ ଶିବଙ୍କ ଜଟାରେ ବିହାର କରନ୍ତି। ହେ ନିର୍ମଳା ମାତା! ମୋର ମନ ସର୍ବଦା ଆପଣଙ୍କ ପାଦପଦ୍ମରେ ନିବିଷ୍ଟ ରହୁ।",
       "wordMeanings": [
         {
@@ -43291,6 +43291,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ପ୍ରବାହିତ ନଦୀ"
         },
         {
+          "word": "ଗଙ୍ଗେ",
+          "meaning": "ହେ ଗଙ୍ଗା"
+        },
+        {
           "word": "ହିମ",
           "meaning": "ବରଫ"
         },
@@ -43307,12 +43311,28 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ଧଳା"
         },
         {
+          "word": "ତରଙ୍ଗେ",
+          "meaning": "ତରଙ୍ଗ ବିଶିଷ୍ଟା"
+        },
+        {
           "word": "ଦୂରୀକୁରୁ",
           "meaning": "ଦୂର କରନ୍ତୁ"
         },
         {
+          "word": "ମମ",
+          "meaning": "ମୋର"
+        },
+        {
           "word": "ଦୁଷ୍କୃତି-ଭାରମ୍",
           "meaning": "ପାପର ବୋଝ"
+        },
+        {
+          "word": "କୁରୁ",
+          "meaning": "କରନ୍ତୁ"
+        },
+        {
+          "word": "କୃପୟା",
+          "meaning": "କୃପା କରି"
         },
         {
           "word": "ଭବ-ସାଗର-ପାରମ୍",
@@ -43325,6 +43345,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
       "lyric": "ତବ ଜଳମମଲଂ ୟେନ ନିପୀତଂ\nପରମ-ପଦଂ ଖଲୁ ତେନ ଗୃହୀତମ୍ ।\nମାତର୍ ଗଙ୍ଗେ ତ୍ୱୟି ୟୋ ଭକ୍ତଃ\nକିଲ ତଂ ଦ୍ରଷ୍ଟୁଂ ନ ୟମଃ ଶକ୍ତଃ ।।",
       "translation": "ଯିଏ ଆପଣଙ୍କ ନିର୍ମଳ ଜଳ ପାନ କରେ, ସେ ନିଶ୍ଚିତ ଭାବେ ପରମ ପଦ ପ୍ରାପ୍ତ ହୁଏ। ହେ ମାତା ଗଙ୍ଗେ! ଆପଣଙ୍କ ଭକ୍ତଙ୍କ ଉପରେ ଯମରାଜଙ୍କର ମଧଖ କୌଣସି ଅଧିକାର ରହେ ନାହିଁ।",
       "wordMeanings": [
+        {
+          "word": "ତବ",
+          "meaning": "ତୁମର"
+        },
         {
           "word": "ଜଳମ୍",
           "meaning": "ଜଳ"
@@ -43350,6 +43374,22 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ନିଶ୍ଚିତ ଭାବେ"
         },
         {
+          "word": "ତେନ",
+          "meaning": "ତାଙ୍କ ଦ୍ୱାରା"
+        },
+        {
+          "word": "ଗୃହୀତମ୍",
+          "meaning": "ପ୍ରାପ୍ତ ହୋଇଛି"
+        },
+        {
+          "word": "ମାତଃ",
+          "meaning": "ହେ ମାତା"
+        },
+        {
+          "word": "ଗଙ୍ଗେ",
+          "meaning": "ଗଙ୍ଗା"
+        },
+        {
           "word": "ତ୍ୱୟି",
           "meaning": "ତୁମ ଠାରେ"
         },
@@ -43362,8 +43402,28 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ଭକ୍ତ"
         },
         {
+          "word": "କିଳ",
+          "meaning": "ନିଶ୍ଚୟ"
+        },
+        {
+          "word": "ତମ୍",
+          "meaning": "ତାଙ୍କୁ"
+        },
+        {
+          "word": "ଦ୍ରଷ୍ଟୁମ୍",
+          "meaning": "ଦେଖିବାକୁ"
+        },
+        {
+          "word": "ନ",
+          "meaning": "ନୁହେଁ"
+        },
+        {
           "word": "ୟମଃ",
           "meaning": "ଯମରାଜ"
+        },
+        {
+          "word": "ଶକ୍ତଃ",
+          "meaning": "ସମର୍ଥ"
         }
       ]
     },
@@ -43379,6 +43439,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
         {
           "word": "ଜାହ୍ନବି",
           "meaning": "ହେ ଜାହ୍ନବୀ"
+        },
+        {
+          "word": "ଗଙ୍ଗେ",
+          "meaning": "ଗଙ୍ଗା"
         },
         {
           "word": "ଖଣ୍ଡିତ",
@@ -43405,8 +43469,16 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ମାତା"
         },
         {
+          "word": "ହେ",
+          "meaning": "ହେ"
+        },
+        {
           "word": "ମୁନି-ବର-କନ୍ୟେ",
           "meaning": "ଶ୍ରେଷ୍ଠ ମୁନି ଜହ୍ନୁଙ୍କ କନ୍ୟା"
+        },
+        {
+          "word": "ପତିତ-ନିବାରିଣି",
+          "meaning": "ପାପ ନିବାରଣ କାରିଣୀ"
         },
         {
           "word": "ତ୍ରିଭୁବନ-ଧନ୍ୟେ",
@@ -43416,7 +43488,7 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
     },
     {
       "id": 6,
-      "lyric": "କଳ୍ପ-ଲତାମ୍ ଇବ ଫଳଦାମ୍ ଲୋକେ\nପ୍ରଣମତି ୟସ୍ ତ୍ୱାଂ ନ ପତତି ଶୋକେ ।\nପାରାବାର-ବିହାରିଣି ଗଙ୍ଗେ\nବିମୁଖ-ବନିତା-କୃତ-ତରଳାପାଙ୍ଗେ ।।",
+      "lyric": "କଳ୍ପ-ଲତାମ୍ ଇବ ଫଳଦାମ୍ ଲୋକେ\nପ୍ରଣମତି ୟସ୍ ତ୍ୱାଂ ନ ପତତି ଶୋକେ ।\nପାରାବାର-비ହାରିଣି ଗଙ୍ଗେ\n비ମୁଖ-ବନିତା-କୃତ-ତରଳାପାଙ୍ଗେ ।।",
       "translation": "କଳ୍ପଲତା ପରି ଆପଣ ସମସ୍ତ ମନୋକାମନା ପୂର୍ଣ୍ଣ କରନ୍ତି। ଯିଏ ଆପଣଙ୍କୁ ପ୍ରଣାମ କରେ, ସେ କେବେ ଶୋକରେ ପଡ଼େ ନାହିଁ। ଆପଣ ସମୁଦ୍ର ସହ ମିଳିତ ହେବା ପାଇଁ ଜଣେ ଅନୁରାଗିଣୀ ନାରୀ ପରି ବ୍ୟାକୁଳ।",
       "wordMeanings": [
         {
@@ -43440,12 +43512,36 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ପ୍ରଣାମ କରନ୍ତି"
         },
         {
+          "word": "ୟଃ",
+          "meaning": "ଯିଏ"
+        },
+        {
+          "word": "ତ୍ୱାମ୍",
+          "meaning": "ଆପଣଙ୍କୁ"
+        },
+        {
+          "word": "ନ",
+          "meaning": "ନାହିଁ"
+        },
+        {
+          "word": "ପତତି",
+          "meaning": "ପଡ଼ନ୍ତି"
+        },
+        {
+          "word": "ଶୋକେ",
+          "meaning": "ଶୋକରେ"
+        },
+        {
           "word": "ପାରାବାର",
           "meaning": "ସମୁଦ୍ର"
         },
         {
           "word": "ବିହାରିଣି",
           "meaning": "ମିଳିବା ପାଇଁ ବ୍ୟାକୁଳ"
+        },
+        {
+          "word": "ଗଙ୍ଗେ",
+          "meaning": "ଗଙ୍ଗା"
         },
         {
           "word": "ବିମୁଖ",
@@ -43456,6 +43552,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ସ୍ତ୍ରୀ"
         },
         {
+          "word": "କୃତ",
+          "meaning": "କରାଯାଇଥିବା"
+        },
+        {
           "word": "ତରଳ-ଅପାଙ୍ଗେ",
           "meaning": "ଚଞ୍ଳ କଟାକ୍ଷ"
         }
@@ -43463,9 +43563,21 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
     },
     {
       "id": 7,
-      "lyric": "ତବ ଚେନ୍ ମାତଃ ସ୍ରୋତଃ-ସ୍ନାତଃ\nପୁନର୍ ଅପି ଜଠରେ ସୋ’ପି ନ ଜାତଃ ।\nନରକ-ନିବାରିଣି ଜାହ୍ନବି ଗଙ୍ଗେ\nକଲୁଷ-ବିନାଶିନି ମହିମୋତ୍ତୁଙ୍ଗେ ।।",
+      "lyric": "ତବ ଚେନ୍ ମାତଃ ସ୍ରୋତଃ-ସ୍ନାତଃ\nପୁନର୍ ଅପି ଜଠରେ ସୋ’ପି ନ ଜାତଃ ।\nନରକ-ନିବାରିଣି ଜାହ୍ନବି ଗଙ୍ଗେ\nକଲୁଷ-비ନାଶିନି ମହିମୋତ୍ତୁଙ୍ଗେ ।।",
       "translation": "ହେ ମାତା! ଯିଏ ଆପଣଙ୍କ ପବିତ୍ର ସ୍ରୋତରେ ସ୍ନାନ କରେ, ତାକୁ ପୁନର୍ବାର ମାତୃ ଗର୍ଭରୁ ଜନ୍ମ ନେବାକୁ ପଡ଼େ ନାହିଁ (ମୁକ୍ତି ମିଳେ)। ଆପଣ ନରକରୁ ରକ୍ଷା କରନ୍ତି ଏବଂ ସମସ୍ତ ପାପ ବିନାଶ କରନ୍ତି।",
       "wordMeanings": [
+        {
+          "word": "ତବ",
+          "meaning": "ତୁମର"
+        },
+        {
+          "word": "ଚେତ୍",
+          "meaning": "ଯଦି"
+        },
+        {
+          "word": "ମାତଃ",
+          "meaning": "ହେ ମାତା"
+        },
         {
           "word": "ସ୍ରୋତଃ",
           "meaning": "ସ୍ରୋତରେ"
@@ -43475,15 +43587,39 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ସ୍ନାନ କରିଥିବା"
         },
         {
+          "word": "ପୁନଃ ଅପି",
+          "meaning": "ପୁଣି ଥରେ ମଧ୍ୟ"
+        },
+        {
           "word": "ଜଠରେ",
           "meaning": "ମାତୃ ଗର୍ଭରେ"
+        },
+        {
+          "word": "ସଃ ଅପି",
+          "meaning": "ସେ ମଧ୍ୟ"
+        },
+        {
+          "word": "ନ",
+          "meaning": "ନାହିଁ"
+        },
+        {
+          "word": "ଜାତଃ",
+          "meaning": "ଜନ୍ମ ହୁଏ"
         },
         {
           "word": "ନରକ-ନିବାରିଣି",
           "meaning": "ନରକରୁ ରକ୍ଷାକାରିଣୀ"
         },
         {
-          "word": "କଲୁଷ-ବିନାଶିନି",
+          "word": "ଜାହ୍ନବି",
+          "meaning": "ଜାହ୍ନବୀ"
+        },
+        {
+          "word": "ଗଙ୍ଗେ",
+          "meaning": "ଗଙ୍ଗା"
+        },
+        {
+          "word": "କଳୁଷ-ବିନାଶିନି",
           "meaning": "ପାପ ବିନାଶିନୀ"
         },
         {
@@ -43510,8 +43646,24 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ପୁଣ୍ୟମୟ ତରଙ୍ଗ ଦ୍ୱାରା"
         },
         {
+          "word": "ଜୟ",
+          "meaning": "ଜୟ ହେଉ"
+        },
+        {
+          "word": "ଜାହ୍ନବି",
+          "meaning": "ଜାହ୍ନବୀ"
+        },
+        {
+          "word": "କରୁଣା-ଅପାଙ୍ଗେ",
+          "meaning": "କରୁଣାମୟ ଦୃଷ୍ଟି"
+        },
+        {
           "word": "ଇନ୍ଦ୍ର-ମୁକୁଟ",
           "meaning": "ଇନ୍ଦ୍ରଙ୍କ ମୁକୁଟର"
+        },
+        {
+          "word": "ମଣି",
+          "meaning": "ମଣି ଦ୍ୱାରା"
         },
         {
           "word": "ରାଜିତ",
@@ -43524,6 +43676,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
         {
           "word": "ସୁଖଦେ",
           "meaning": "ସୁଖଦାୟିନୀ"
+        },
+        {
+          "word": "ଶୁଭଦେ",
+          "meaning": "ଶୁଭଦାୟିନୀ"
         },
         {
           "word": "ଭୃତ୍ୟ-ଶରଣ୍ୟେ",
@@ -43549,20 +43705,56 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ସନ୍ତାପ"
         },
         {
+          "word": "ପାପମ୍",
+          "meaning": "ପାପ"
+        },
+        {
           "word": "ହର",
           "meaning": "ଦୂର କରନ୍ତୁ"
+        },
+        {
+          "word": "ମେ",
+          "meaning": "ମୋର"
+        },
+        {
+          "word": "ଭଗବତି",
+          "meaning": "ହେ ଭଗବତୀ"
         },
         {
           "word": "କୁମତି-କଳାପମ୍",
           "meaning": "ଦୁର୍ବୁଦ୍ଧିର ସମୂହ"
         },
         {
+          "word": "ତ୍ରିଭୁବନ-ସାରେ",
+          "meaning": "ତିନିପୁରର ସାର"
+        },
+        {
           "word": "ବସୁଧା-ହାରେ",
           "meaning": "ପୃଥିବୀର ଅଳଙ୍କାର (ହାର)"
         },
         {
+          "word": "ତ୍ୱମ୍",
+          "meaning": "ଆପଣ"
+        },
+        {
+          "word": "ଅସି",
+          "meaning": "ଅଟନ୍ତି"
+        },
+        {
           "word": "ଗତିଃ",
           "meaning": "ଏକମାତ୍ର ଗତି"
+        },
+        {
+          "word": "ମମ",
+          "meaning": "ମୋର"
+        },
+        {
+          "word": "ଖଲୁ",
+          "meaning": "ପ୍ରକୃତରେ"
+        },
+        {
+          "word": "ସଂସାରେ",
+          "meaning": "ଏହି ସଂସାରରେ"
         }
       ]
     },
@@ -43580,6 +43772,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ପରମ ଆନନ୍ଦ ପ୍ରଦାୟିନୀ"
         },
         {
+          "word": "କୁରୁ",
+          "meaning": "କରନ୍ତୁ"
+        },
+        {
           "word": "କରୁଣାମୟି",
           "meaning": "ହେ କରୁଣାମୟୀ"
         },
@@ -43588,12 +43784,32 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ଦୀନ ଜନଙ୍କ ଦ୍ୱାରା ବନ୍ଦିତା"
         },
         {
+          "word": "ତବ",
+          "meaning": "ତୁମର"
+        },
+        {
           "word": "ତଟ-ନିକଟେ",
           "meaning": "କୂଳ ନିକଟରେ"
         },
         {
+          "word": "ୟସ୍ୟ",
+          "meaning": "ଯାହାର"
+        },
+        {
+          "word": "ନିବାସଃ",
+          "meaning": "ବାସସ୍ଥାନ"
+        },
+        {
+          "word": "ଖଲୁ",
+          "meaning": "ନିଶ୍ଚିତ ଭାବେ"
+        },
+        {
           "word": "ବୈକୁଣ୍ଠେ",
           "meaning": "ବୈକୁଣ୍ଠରେ"
+        },
+        {
+          "word": "ତସ୍ୟ",
+          "meaning": "ତାଙ୍କର"
         }
       ]
     },
@@ -43605,6 +43821,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
         {
           "word": "ବରମ୍",
           "meaning": "ଶ୍ରେଷ୍ଠ/ଭଲ"
+        },
+        {
+          "word": "ଇହ",
+          "meaning": "ଏଠାରେ"
         },
         {
           "word": "ନୀରେ",
@@ -43619,6 +43839,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ମାଛ"
         },
         {
+          "word": "କିମ୍ ବା",
+          "meaning": "ଅଥବା"
+        },
+        {
           "word": "ତୀରେ",
           "meaning": "କୂଳରେ"
         },
@@ -43627,12 +43851,44 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ଏଣ୍ଡୁଅ"
         },
         {
+          "word": "କ୍ଷୀଣଃ",
+          "meaning": "ଦୁର୍ବଳ"
+        },
+        {
+          "word": "ଅଥବା",
+          "meaning": "କିମ୍ବା"
+        },
+        {
           "word": "ଶ୍ୱପଚଃ",
           "meaning": "ଚଣ୍ଡାଳ"
         },
         {
+          "word": "ମଳିନଃ",
+          "meaning": "ମଇଳା"
+        },
+        {
+          "word": "ଦୀନଃ",
+          "meaning": "ଗରିବ"
+        },
+        {
+          "word": "ତବ",
+          "meaning": "ତୁମଠାରୁ"
+        },
+        {
+          "word": "ନ ହି",
+          "meaning": "ନୁହେଁ"
+        },
+        {
+          "word": "ଦୂରେ",
+          "meaning": "ଦୂରରେ"
+        },
+        {
           "word": "ନୃପତିଃ",
           "meaning": "ରାଜା"
+        },
+        {
+          "word": "କୁଳୀନଃ",
+          "meaning": "ଉଚ୍ଚବଂଶଜ"
         }
       ]
     },
@@ -43642,24 +43898,72 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
       "translation": "ହେ ଭୁବନେଶ୍ୱରୀ! ଯିଏ ପ୍ରତିଦିନ ଏହି ପବିତ୍ର ଗଙ୍ଗା ସ୍ତୋତ୍ର ପାଠ କରେ, ସେ ନିଶ୍ଚୟ ଜୀବନରେ ସଫଳତା ଓ ବିଜୟ ଲାଭ କରେ।",
       "wordMeanings": [
         {
+          "word": "ଭୋ",
+          "meaning": "ହେ"
+        },
+        {
           "word": "ଭୁବନେଶ୍ୱରି",
           "meaning": "ବ୍ରହ୍ମାଣ୍ଡର ଈଶ୍ୱରୀ"
+        },
+        {
+          "word": "ପୁଣ୍ୟେ",
+          "meaning": "ପବିତ୍ରା"
+        },
+        {
+          "word": "ଧନ୍ୟେ",
+          "meaning": "ଧନ୍ୟା"
+        },
+        {
+          "word": "ଦେବି",
+          "meaning": "ଦେବୀ"
         },
         {
           "word": "ଦ୍ରବମୟି",
           "meaning": "ଜଳରୂପିଣୀ"
         },
         {
+          "word": "ମୁନି-ବର-କନ୍ୟେ",
+          "meaning": "ଜହ୍ନୁ ମୁନିଙ୍କ କନ୍ୟା"
+        },
+        {
           "word": "ଗଙ୍ଗା-ସ୍ତବମ୍",
           "meaning": "ଗଙ୍ଗା ସ୍ତୋତ୍ର"
+        },
+        {
+          "word": "ଇମମ୍",
+          "meaning": "ଏହି"
+        },
+        {
+          "word": "ଅମଲମ୍",
+          "meaning": "ନିର୍ମଳ"
+        },
+        {
+          "word": "ନିତ୍ୟମ୍",
+          "meaning": "ପ୍ରତିଦିନ"
         },
         {
           "word": "ପଠତି",
           "meaning": "ପାଠ କରେ"
         },
         {
+          "word": "ନରଃ",
+          "meaning": "ମନୁଷ୍ଯ"
+        },
+        {
+          "word": "ୟଃ",
+          "meaning": "ଯିଏ"
+        },
+        {
+          "word": "ସଃ",
+          "meaning": "ସେ"
+        },
+        {
           "word": "ଜୟତି",
           "meaning": "ବିଜୟୀ ହୁଏ"
+        },
+        {
+          "word": "ସତ୍ୟମ୍",
+          "meaning": "ସତ୍ୟ"
         }
       ]
     },
@@ -43669,6 +43973,10 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
       "translation": "ଯାହାଙ୍କ ହୃଦୟରେ ମା' ଗଙ୍ଗାଙ୍କ ପ୍ରତି ଭକ୍ତି ଅଛି, ସେ ସର୍ବଦା ସୁଖ ଓ ମୁକ୍ତି ଲାଭ କରନ୍ତି। ଏହି ମନୋହର ସ୍ତୋତ୍ର ପରମ ଆନନ୍ଦ ପ୍ରଦାନ କରେ।",
       "wordMeanings": [
         {
+          "word": "ୟେଷାମ୍",
+          "meaning": "ଯାହାଙ୍କର"
+        },
+        {
           "word": "ହୃଦୟେ",
           "meaning": "ହୃଦୟରେ"
         },
@@ -43677,12 +43985,40 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ଗଙ୍ଗାଙ୍କ ପ୍ରତି ଭକ୍ତି"
         },
         {
+          "word": "ତେଷାମ୍",
+          "meaning": "ତାଙ୍କର"
+        },
+        {
+          "word": "ଭବତି",
+          "meaning": "ହୁଏ"
+        },
+        {
+          "word": "ସଦା",
+          "meaning": "ସର୍ବଦା"
+        },
+        {
           "word": "ସୁଖ-ମୁକ୍ତିଃ",
           "meaning": "ସୁଖ ଓ ମୁକ୍ତି"
         },
         {
+          "word": "ମଧୁର-ମନୋହର",
+          "meaning": "ସୁନ୍ଦର ଓ ମନଲୋଭା"
+        },
+        {
           "word": "ପଜ୍ଝଟିକାଭିଃ",
           "meaning": "ପଜ୍ଝଟିକା ଛନ୍ଦରେ"
+        },
+        {
+          "word": "ପରମାନନ୍ଦ",
+          "meaning": "ପରମ ଆନନ୍ଦ"
+        },
+        {
+          "word": "କଳିତ",
+          "meaning": "ମିଶ୍ରିତ"
+        },
+        {
+          "word": "ଳଳିତାଭିଃ",
+          "meaning": "ମନୋହର"
         }
       ]
     },
@@ -43692,6 +44028,14 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
       "translation": "ଶିବଙ୍କ ପରମ ଭକ୍ତ ଶ୍ରୀ ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ରଚିତ ଏହି ନିର୍ମଳ ଗଙ୍ଗା ସ୍ତୋତ୍ର ସମସ୍ତ ମନୋକାମନା ପୂରଣ କରେ। ଏହିପରି ଭାବେ ଏହି ସ୍ତୋତ୍ର ସମାପ୍ତ ହେଲା।",
       "wordMeanings": [
         {
+          "word": "ଗଙ୍ଗା-ସ୍ତୋତ୍ରମ୍",
+          "meaning": "ଗଙ୍ଗା ସ୍ତୋତ୍ର"
+        },
+        {
+          "word": "ଇଦମ୍",
+          "meaning": "ଏହି"
+        },
+        {
           "word": "ଭବ-ସାରମ୍",
           "meaning": "ସଂସାରର ସାର"
         },
@@ -43700,12 +44044,36 @@ export const SONG_GANGASTOTRAM_STRUCTURED: StructuredSong = {
           "meaning": "ମନସ୍କାମନା ପୂର୍ଣ୍ଣକାରୀ"
         },
         {
+          "word": "ବିମଳମ୍",
+          "meaning": "ନିର୍ମଳ"
+        },
+        {
+          "word": "ସାରମ୍",
+          "meaning": "ମୂଳତତ୍ତ୍ୱ"
+        },
+        {
           "word": "ଶଙ୍କର-ସେବକ",
           "meaning": "ଶିବଙ୍କ ସେବକ"
         },
         {
           "word": "ଶଙ୍କର-ରଚିତମ୍",
           "meaning": "ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ରଚିତ"
+        },
+        {
+          "word": "ପଠତି",
+          "meaning": "ପାଠ କରନ୍ତି"
+        },
+        {
+          "word": "ଚ",
+          "meaning": "ଏବଂ"
+        },
+        {
+          "word": "বিନୟୀ",
+          "meaning": "ନମ୍ର ବ୍ୟକ୍ତି"
+        },
+        {
+          "word": "ଇତି ସମାପ୍ତମ୍",
+          "meaning": "ଏହିପରି ସମାପ୍ତ ହେଲା"
         }
       ]
     }
