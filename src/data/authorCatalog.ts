@@ -177,6 +177,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Kanu Ramadasa Thakura',
+        odia: 'କାନୁ ରାମଦାସ ଠାକୁର',
         catalog: [
             { id: 'song-doyakoromorenitai', title_english: 'Doya Koro More Nitai', title_odia: 'ଦୟା କରୋ ମୋରେ ନିତାଇ' }
         ]
