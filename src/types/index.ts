@@ -41,6 +41,9 @@ export interface AudioVersion {
 }
 
 export interface StructuredSong {
+    title_english?: string;
+    title_odia?: string;
+    author?: string;
     verses: SongVerse[];
     reference_url?: string;
 }
