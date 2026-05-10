@@ -1998,6 +1998,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-dhuledhulegorachanda',
+        title: 'ଧୁଲେ ଧୁଲେ ଗୋରା ଚାଁଦ (Dhule Dhule Gora Chanda)',
+        title_odia: 'ଧୁଲେ ଧୁଲେ ଗୋରା ଚାଁଦ',
+        title_english: 'Dhule Dhule Gora Chanda',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        structuredContent: (Songs as any).SONG_DHULEDHULEGORACHANDA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhajabhajahari',
         title: 'ଭଜ ଭଜ ହରି (Bhaja Bhaja Hari)',
         title_odia: 'ଭଜ ଭଜ ହରି',
