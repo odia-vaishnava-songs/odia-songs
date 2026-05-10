@@ -118,6 +118,7 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('iskcon')) return 'ISKCON';
     if (n.includes('sura dasa') || n.includes('surdas')) return 'Sura Dasa';
     if (n.includes('kanu ramadasa') || n.includes('kanu ramadas')) return 'Kanu Ramadasa Thakura';
+    // Trigger deployment refresh
     
     return 'Other Authors';
 }
