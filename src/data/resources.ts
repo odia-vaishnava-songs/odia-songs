@@ -1326,26 +1326,6 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-hariharayenamah',
-        title: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ (Hari Haraye Namah)',
-        title_odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ',
-        title_english: 'Hari Haraye Namah Krsna Yadavaya',
-        category: 'Songs',
-        type: 'html',
-        author: 'Narottama Dasa Thakura',
-        structuredContent: {
-            verses: [
-                {
-                    id: 1,
-                    lyric: "ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ ନମଃ\nଯାଦବାୟ ମାଧବାୟ କେଶବାୟ ନମଃ ।।୧।।",
-                    translation: "ଶ୍ରୀହରି ଓ ଯାଦବକୁଳତିଳକ ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ମୋର ସାଷ୍ଟାଙ୍ଗ ପ୍ରଣିପାତ। ଯାଦବ, ମାଧବ ଓ କେଶବଙ୍କୁ ମୋର ବାରମ୍ବାର ନମସ୍କାର।",
-                }
-            ]
-        },
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
         id: 'song-hariharibiphalejanama',
         title: 'ହରି ହରି ବିଫଳେ ଜନମ (Hari Hari Biphale Janama)',
         title_odia: 'ହରି ହରି ବିଫଳେ ଜନମ',
@@ -1658,20 +1638,6 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
-        id: 'song-yamunastakam',
-        title: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ (Bhṛtur Antakasya Pattane)',
-        title_odia: 'ଭ୍ରାତୁର୍ ଅନ୍ତକସ୍ୟ ପଟ୍ଟନେ',
-        title_english: 'Bhrtr Antakasya Pattane',
-        category: 'Songs',
-        type: 'html',
-        author: 'Rupa Goswami',
-        description: 'ଯମୁନାଷ୍ଟକମ୍ (Yamunastakam)',
-        tags: ['Astakam'],
-        structuredContent: (Songs as any).SONG_YAMUNASTAKAM_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
         id: 'song-jayanarasimhasrinarasimha',
         title: 'ଜୟ ନୃସିଂହ ଶ୍ରୀ ନୃସିଂହ (Jaya Narasimha Sri Narasimha)',
         title_odia: 'ଜୟ ନୃସିଂହ ଶ୍ରୀ ନୃସିଂହ',
@@ -1707,19 +1673,6 @@ export const RESOURCES: Resource[] = [
         author: 'Krsna Dasa',
         tags: ['Temple', 'Pranama'],
         structuredContent: (Songs as any).SONG_NAMONOMAH_TULASI_STRUCTURED,
-        published: true,
-        status: 'COMPLETED'
-    },
-    {
-        id: 'song-shikshashtakam',
-        title: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍ (Śrī Śikṣāṣṭakam)',
-        title_odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍',
-        title_english: 'Shikshashtakam',
-        category: 'Songs',
-        type: 'html',
-        author: 'Sri Caitanya Mahaprabhu',
-        tags: ['Temple', 'Astakam'],
-        structuredContent: (TempleSongs as any).SONG_SHIKSHASHTAKAM_STRUCTURED,
         published: true,
         status: 'COMPLETED'
     },
