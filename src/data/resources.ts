@@ -2010,6 +2010,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-dukhersagore',
+        title: 'ଦୁଃଖେର ସାଗୋରେ (Duhkher Sagore)',
+        title_odia: 'ଦୁଃଖେର ସାଗୋରେ',
+        title_english: 'Duhkher Sagore',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        structuredContent: (Songs as any).SONG_DUKHERSAGORE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-doyakoromorenitai',
         title: 'ଦୟା କରୋ ମୋରେ ନିତାଇ (Doya Koro More Nitai)',
         title_odia: 'ଦୟା କରୋ ମୋରେ ନିତାଇ',

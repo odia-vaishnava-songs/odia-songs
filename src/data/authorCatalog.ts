@@ -385,7 +385,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-arkebajabebamsi', title_english: 'Ar Ke Bajabe Bamsi', title_odia: 'ଆର କେ ବାଜାବେ ବଂଶୀ' },
             { id: 'song-bhajagovinda', title_english: 'Bhaja Govinda Bhaja Govinda', title_odia: 'ଭଜ ଗୋବିନ୍ଦ ଭଜ ଗୋବିନ୍ଦ' },
             { id: 'song-brahmabole', title_english: 'Brahma Bole Catur Mukha', title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ' },
-            { id: 'song-dhuledhulegorachanda', title_english: 'Dhule Dhule Gora Chanda', title_odia: 'ଧୁଲେ ଧୁଲେ ଗୋରା ଚାଁଦ' }
+            { id: 'song-dhuledhulegorachanda', title_english: 'Dhule Dhule Gora Chanda', title_odia: 'ଧୁଲେ ଧୁଲେ ଗୋରା ଚାଁଦ' },
+            { id: 'song-dukhersagore', title_english: 'Duhkher Sagore', title_odia: 'ଦୁଃଖେର ସାଗୋରେ' }
         ]
     },
     {
