@@ -1828,6 +1828,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-gangastotram',
+        title: 'ଦେବି ସୁରେଶ୍ୱରି ଭଗବତି ଗଙ୍ଗେ (Devi Suresvari Bhagavati Gange)',
+        title_odia: 'ଦେବି ସୁରେଶ୍ୱରି ଭଗବତି ଗଙ୍ଗେ',
+        title_english: 'Devi Suresvari Bhagavati Gange',
+        category: 'Songs',
+        type: 'html',
+        author: 'Adi Sankaracarya',
+        structuredContent: (Songs as any).SONG_GANGASTOTRAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-sariraavidyajala',
         title: 'ଶରୀର ଅବିଦ୍ୟା ଜାଲ (Sarira Avidya Jala)',
         title_odia: 'ଶରୀର ଅବିଦ୍ୟା ଜାଲ',
