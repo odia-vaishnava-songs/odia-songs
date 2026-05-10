@@ -47,6 +47,8 @@ async function syncSong() {
         .upsert({
             id: fullId,
             title: title,
+            title_english: structuredContent.title_english || "Dekhite Dekhite",
+            title_odia: structuredContent.title_odia || "ଦେଖିତେ ଦେଖିତେ",
             author: author,
             category: 'Songs',
             structured_content: structuredContent,
