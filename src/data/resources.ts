@@ -2010,6 +2010,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-doyakoromorenitai',
+        title: 'ଦୟା କରୋ ମୋରେ ନିତାଇ (Doya Koro More Nitai)',
+        title_odia: 'ଦୟା କରୋ ମୋରେ ନିତାଇ',
+        title_english: 'Doya Koro More Nitai',
+        category: 'Songs',
+        type: 'html',
+        author: 'Kanu Ramadasa Thakura',
+        structuredContent: (Songs as any).SONG_DOYAKOROMORENITAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhajabhajahari',
         title: 'ଭଜ ଭଜ ହରି (Bhaja Bhaja Hari)',
         title_odia: 'ଭଜ ଭଜ ହରି',
