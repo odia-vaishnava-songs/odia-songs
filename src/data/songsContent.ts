@@ -4833,6 +4833,30 @@ export const SONG_GOURANGASUNDARA_STRUCTURED: StructuredSong = {
     ]
 };
 
+export const SONG_HAREKRISHNAMAHAMANTRA_STRUCTURED: StructuredSong = {
+    "verses": [
+        {
+            "id": 1,
+            "lyric": "ହରେ କୃଷ୍ଣ ହରେ କୃଷ୍ଣ କୃଷ୍ଣ କୃଷ୍ଣ ହରେ ହରେ ।\nହରେ ରାମ ହରେ ରାମ ରାମ ରାମ ହରେ ହରେ ।।",
+            "translation": "ହେ ଶ୍ରୀକୃଷ୍ଣଙ୍କର ଆନ୍ତରିକ ଶକ୍ତି (ହରେ/ରାଧା), ହେ ସର୍ବ ଆକର୍ଷକ ପ୍ରଭୁ (କୃଷ୍ଣ), ହେ ପରମ ଆନନ୍ଦମୟ ଭଗବାନ (ରାମ), ଦୟାକରି ମୋତେ ଆପଣଙ୍କ ପ୍ରେମମୟୀ ସେବାରେ ନିୟୋଜିତ କରନ୍ତୁ।",
+            "wordMeanings": [
+                {
+                    "word": "ହରେ",
+                    "meaning": "ହେ ଭଗବାନଙ୍କ ଶକ୍ତି (ରାଧା)"
+                },
+                {
+                    "word": "କୃଷ୍ଣ",
+                    "meaning": "ହେ ସର୍ବ ଆକର୍ଷକ ପ୍ରଭୁ"
+                },
+                {
+                    "word": "ରାମ",
+                    "meaning": "ହେ ପରମ ଆନନ୍ଦମୟ ଭଗବାନ"
+                }
+            ]
+        }
+    ]
+};
+
 export const SONG_CARANAKAMAL_STRUCTURED: StructuredSong = {
     "verses": [
         {

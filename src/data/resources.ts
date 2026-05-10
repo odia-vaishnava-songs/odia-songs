@@ -137,6 +137,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-harekrishnamahamantra',
+        title: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର (Hare Krishna Mahamantra)',
+        title_odia: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର',
+        title_english: 'Hare Krishna Mahamantra',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        description: 'ଶ୍ରୀ ହରିନାମ ମହାମନ୍ତ୍ର |',
+        display_order: 1,
+        structuredContent: (Songs as any).SONG_HAREKRISHNAMAHAMANTRA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-caranakamal',
         title: 'ଚରଣ କମଲ (Caraṇa Kamala)',
         title_odia: 'ଚରଣ କମଲ',
