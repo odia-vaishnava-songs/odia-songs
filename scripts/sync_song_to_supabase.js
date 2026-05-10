@@ -25,10 +25,10 @@ async function syncSong() {
     // Attempting to find title and author from the JSON if possible, or use defaults
     // For now, we'll use the ID to construct a title if not provided
     const titleOdia = structuredContent.title_odia || "";
-    const titleEng = structuredContent.title_english || "";
-    const title = structuredContent.title || (titleOdia && titleEng ? `${titleOdia} (${titleEng})` : titleEng || titleOdia || "Untitled");
+    const titleEng = structuredContent.title_english || structuredContent.title || "";
+    const title = (titleOdia && titleEng) ? `${titleOdia} (${titleEng})` : (titleEng || titleOdia || "Untitled");
     const author = structuredContent.author || "Bhaktivinoda Thakura";
-    const title_eng = structuredContent.title_english || "Untitled";
+    const title_eng = titleEng || "Untitled";
 
     console.log(`Syncing song: ${fullId}`);
     console.log(`Title: ${title_eng}`);

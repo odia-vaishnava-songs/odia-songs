@@ -1992,7 +1992,7 @@ export const RESOURCES: Resource[] = [
         title_english: 'Bhakti Ahaituki Hoy Sva Prakasita',
         category: 'Songs',
         type: 'html',
-        author: 'Srila Prabhupada',
+        author: 'Bhaktivinoda Thakura',
         structuredContent: (Songs as any).SONG_BHAKTIAAHAITUKI_STRUCTURED,
         published: true,
         status: 'COMPLETED'

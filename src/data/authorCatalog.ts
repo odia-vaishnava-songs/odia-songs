@@ -31,6 +31,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Bhaja Bhakata Vatsala', title_odia: 'ଭଜ ଭକତ-ବତ୍ସଲ' },
             { title_english: 'Bhaja Re Bhaja Re Amar' },
             { title_english: 'Bhale Gaura Gadadharer Arati', title_odia: 'ଭାଲେ ଗୌରା-ଗଦାଧରୈର ଆରତି' },
+            { id: 'song-bhaktiahaituki', title_english: 'Bhakti Ahaituki Hoy Sva Prakasita', title_odia: 'ଭକ୍ତି ଅହୈତୁକୀ ହୟ ସ୍ୱ ପ୍ରକାଶିତ' },
             { title_english: 'Bhuliya Tomare Samsare', title_odia: 'ଭୁଲିୟା ତୋମାରେ' },
             { title_english: 'Bolo Hari Bolo' },
             { id: 'song-dekhitedekhite', title_english: 'Dekhite Dekhite', title_odia: 'ଦେଖିତେ ଦେଖିତେ' },
@@ -239,7 +240,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Visvanatha Cakravarti Thakura',
         odia: 'ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁର',
         catalog: [
-            { title_english: 'Vrnda-astakam (Gange Ya Campaya)', title_odia: 'ବୃନ୍ଦାଷ୍ଟକମ୍' },
+            { id: 'song-vrndaastakam', title_english: 'Vrnda-astakam (Gangeya Campeya)', title_odia: 'ବୃନ୍ଦାଷ୍ଟକମ୍' },
             { id: 'song-gurvastakam', title_english: 'Samsara Davanala', title_odia: 'ସଂସାର ଦାବାନଳ' },
             { title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
             { title_english: 'Na Yoga Siddhir Na Mamastu', title_odia: 'ନ ଯୋଗ ସିଦ୍ଧିର୍ନ ମମାସ୍ତୁ' },
