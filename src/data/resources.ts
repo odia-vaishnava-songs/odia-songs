@@ -798,6 +798,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-dekhitedekhite',
+        title: 'ଦେଖିତେ ଦେଖିତେ (Dekhite Dekhite)',
+        title_odia: 'ଦେଖିତେ ଦେଖିତେ',
+        title_english: 'Dekhite Dekhite',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        structuredContent: (Songs as any).SONG_DEKHITEDEKHITE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-kabehabebolo',
         title: 'କବେ ହ’ବେ ବୋଲୋ (Kabe Ha\' be Bolo)',
         title_odia: 'କବେ ହ’ବେ ବୋଲୋ',
