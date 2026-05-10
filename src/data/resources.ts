@@ -123,6 +123,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-gourangasundara',
+        title: 'ଗୌରାଙ୍ଗ ସୁନ୍ଦର ପ୍ରେମ ଜଳଧର (Gouranga Sundara)',
+        title_odia: 'ଗୌରାଙ୍ଗ ସୁନ୍ଦର ପ୍ରେମ ଜଳଧର',
+        title_english: 'Gouranga Sundara Prema Jaladhara',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        description: 'ଶ୍ରୀଲ ଗୌରାଙ୍ଗ ମହାପ୍ରଭୁଙ୍କର ଏକ ମନୋରମ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_GOURANGASUNDARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-caranakamal',
         title: 'ଚରଣ କମଲ (Caraṇa Kamala)',
         title_odia: 'ଚରଣ କମଲ',
