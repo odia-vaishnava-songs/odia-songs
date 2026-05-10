@@ -2068,6 +2068,18 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BHAJAGOVINDA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-gourangasundara',
+        title: 'ଗୌରାଙ୍ଗ ସୁନ୍ଦର ପ୍ରେମ ଜଳଧର (Gouranga Sundara Prema Jaladhara)',
+        title_odia: 'ଗୌରାଙ୍ଗ ସୁନ୍ଦର ପ୍ରେମ ଜଳଧର',
+        title_english: 'Gouranga Sundara Prema Jaladhara',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        structuredContent: (Songs as any).SONG_GOURANGASUNDARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
