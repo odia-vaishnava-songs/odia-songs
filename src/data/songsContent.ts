@@ -8025,6 +8025,10 @@ export const SONG_JAYARADHAGIRIVARADHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ଚମକୁଛି"
                 },
                 {
+                    "word": "ମୁଖେ",
+                    "meaning": "ମୁଖରେ"
+                },
+                {
                     "word": "ହାସି",
                     "meaning": "ହସ"
                 },
@@ -8101,12 +8105,16 @@ export const SONG_JAYARADHAGIRIVARADHARI_STRUCTURED: StructuredSong = {
                 {
                     "word": "ଉନକି",
                     "meaning": "ତାଙ୍କର (ରାଧାଙ୍କର)"
+                },
+                {
+                    "word": "ଶୋହେ",
+                    "meaning": "ଶୋଭା ପାଉଛି"
                 }
             ]
         },
         {
             "id": 5,
-            "lyric": "ଅରୁଣ ଚରଣେ ମଣି-ମଞ୍ଜିର ବାଓୟେ\nଶ୍ରୀ-କୃଷ୍ଣ-ଦାସ ତହିଁ ମନ ଭାଓୟେ ।।",
+            "lyric": "ଅରୁଣ ଚରଣେ ମଣି-ମଞ୍ଜିר ବାଓୟେ\nଶ୍ରୀ-କୃଷ୍ଣ-ଦାସ ତହିଁ ମନ ଭାଓୟେ ।।",
             "translation": "ସେମାନଙ୍କର ରକ୍ତିମ ପଦ୍ମ ପରି ପାଦରେ ରତ୍ନଖଚିତ ନୂପୁରଗୁଡ଼ିକ ଝୁଣ୍ଟି ଉଠୁଛନ୍ତି ଏବଂ ଶ୍ରୀକୃଷ୍ଣ ଦାସଙ୍କ ମନ ସେମାନଙ୍କର ଏହି ମହିମାମୟ ଉପସ୍ଥିତିରେ ଆଲୋକିତ ହୋଇଯାଉଛି।",
             "wordMeanings": [
                 {

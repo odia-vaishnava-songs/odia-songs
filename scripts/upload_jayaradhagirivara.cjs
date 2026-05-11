@@ -29,7 +29,8 @@ const structuredContent = {
         { "word": "ମୁରଲୀ", "meaning": "ବଂଶୀ" },
         { "word": "ଜୋରି", "meaning": "ଶୋଭା ପାଉଛି" },
         { "word": "ବେଣୀ", "meaning": "ବେଣୀ" },
-        { "word": "비ରାଜେ", "meaning": "ଚମକୁଛି" },
+        { "word": "ବିରାଜେ", "meaning": "ଚମକୁଛି" },
+        { "word": "ମୁଖେ", "meaning": "ମୁଖରେ" },
         { "word": "ହାସି", "meaning": "ହସ" },
         { "word": "ଥୋରି", "meaning": "ମୃଦୁ / ସାମାନ୍ୟ" }
       ]
@@ -59,12 +60,13 @@ const structuredContent = {
         { "word": "ନୀଲ", "meaning": "ନୀଳ ରଙ୍ଗର" },
         { "word": "ଉଢ଼ନୀ", "meaning": "ଓଢ଼ଣୀ" },
         { "word": "ବନି", "meaning": "ବସ୍ତ୍ର" },
-        { "word": "ଉନକି", "meaning": "ତାଙ୍କର (ରାଧାଙ୍କର)" }
+        { "word": "ଉନକି", "meaning": "ତାଙ୍କର (ରାଧାଙ୍କର)" },
+        { "word": "ଶୋହେ", "meaning": "ଶୋଭା ପାଉଛି" }
       ]
     },
     {
       "id": 5,
-      "lyric": "ଅରୁଣ ଚରଣେ ମଣି-ମଞ୍ଜିର ବାଓୟେ\nଶ୍ରୀ-କୃଷ୍ଣ-ଦାସ ତହିଁ ମନ ଭାଓୟେ ।।",
+      "lyric": "ଅରୁଣ ଚରଣେ ମଣି-ମଞ୍ଜିר ବାଓୟେ\nଶ୍ରୀ-କୃଷ୍ଣ-ଦାସ ତହିଁ ମନ ଭାଓୟେ ।।",
       "translation": "ସେମାନଙ୍କର ରକ୍ତିମ ପଦ୍ମ ପରି ପାଦରେ ରତ୍ନଖଚିତ ନୂପୁରଗୁଡ଼ିକ ଝୁଣ୍ଟି ଉଠୁଛନ୍ତି ଏବଂ ଶ୍ରୀକୃଷ୍ଣ ଦାସଙ୍କ ମନ ସେମାନଙ୍କର ଏହି ମହିମାମୟ ଉପସ୍ଥିତିରେ ଆଲୋକିତ ହୋଇଯାଉଛି।",
       "wordMeanings": [
         { "word": "ଅରୁଣ", "meaning": "ରକ୍ତିମ (ଲାଲ୍)" },
@@ -81,7 +83,7 @@ const structuredContent = {
 };
 
 async function upsertSong() {
-  console.log('🚀 Upserting "Jaya Radha Giri Vara Dhari" to Supabase...');
+  console.log('🚀 Correcting "Jaya Radha Giri Vara Dhari" (Full Word Meanings)...');
 
   const { error } = await supabase
     .from('songs')
@@ -100,9 +102,9 @@ async function upsertSong() {
     }, { onConflict: 'id' });
 
   if (error) {
-    console.error('❌ Failed to upsert song:', error.message);
+    console.error('❌ Failed to update song:', error.message);
   } else {
-    console.log('✅ Successfully upserted to Supabase!');
+    console.log('✅ Successfully updated with all word meanings!');
   }
 }
 
