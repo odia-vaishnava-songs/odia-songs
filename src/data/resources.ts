@@ -275,6 +275,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-jarmukhebhai',
+        title: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ (Jar Mukhe Bhai)',
+        title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ',
+        title_english: 'Jar Mukhe Bhai Hari Katha Nai',
+        category: 'Songs',
+        type: 'html',
+        description: 'ହରିଭକ୍ତ ଶୂନ୍ୟ ବ୍ୟକ୍ତିର ସଙ୍ଗ ତ୍ୟାଗ କରିବାକୁ ଏହି ଭଜନରେ ଉପଦେଶ ଦିଆଯାଇଛି |',
+        structuredContent: (Songs as any).SONG_JARMUKHEBHAI_STRUCTURED,
+        author: 'Unknown',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-isvaraparamakrsna',
         title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ (Isvara Parama Krsna)',
         title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ',

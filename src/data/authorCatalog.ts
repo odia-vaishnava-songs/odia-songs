@@ -408,6 +408,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Other Authors',
-        catalog: []
+        catalog: [
+            { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
+        ]
     },
 ];
