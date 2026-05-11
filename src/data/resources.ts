@@ -249,6 +249,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-heradekhiyanayanabhariya',
+        title: 'ହେର ଦେଖିୟା ନୟନ ଭରିୟା (Hera Dekhiya Nayana Bhariya)',
+        title_odia: 'ହେର ଦେଖିୟା ନୟନ ଭରିୟା',
+        title_english: 'Hera Dekhiya Nayana Bhariya',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ବୃନ୍ଦାବନ ଦାସ ଠାକୁରଙ୍କ ଏକ ଅତି ସୁନ୍ଦର ଗୌର-ଭଜନ |',
+        structuredContent: (Songs as any).SONG_HERADEKHIYANAYANABHARIYA_STRUCTURED,
+        author: 'Vrndavana Dasa Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
