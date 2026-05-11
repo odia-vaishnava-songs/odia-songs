@@ -5924,8 +5924,6 @@ export const SONG_HARIHARAYENAMAH_STRUCTURED: StructuredSong = {
 };
 
 export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
-    "title": "ହରି ହରି କବେ ମୋର ହୋଇବେ ସୁଦିନ (Hari Hari Kabe More Hoibe Su-Dina)",
-    "author": "Narottama Dasa Thakura",
     "verses": [
         {
             "id": 1,
@@ -5976,7 +5974,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
         },
         {
             "id": 2,
-            "lyric": "ସୁୟନ୍ତ୍ର ମିଶାଇୟା ଗାବୋ ସୁମଧୁର ତାନ .\nଆନନ୍ଦେ କରିବୋ ଦୋଁହାର ରୂପ ଗୁଣ ଗାନ ।।",
+            "lyric": "ସୁୟନ୍ତ୍ର ମିଶାଇୟା ଗାବୋ ସୁମଧୁର ତାନ ।\nଆନନ୍ଦେ କରିବୋ ଦୋଁହାର ରୂପ ଗୁଣ ଗାନ ।।",
             "translation": "କେବେ ମୁଁ ସୁନ୍ଦର ବାଦ୍ୟଯନ୍ତ୍ର ସହ ମଧୁର ସ୍ୱର ମିଶାଇ ଆନନ୍ଦର ସହିତ ଯୁଗଳ କିଶୋରଙ୍କ ରୂପ ଏବଂ ଗୁଣାବଳୀ ଗାନ କରିବି?",
             "wordMeanings": [
                 {
@@ -6027,7 +6025,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
         },
         {
             "id": 3,
-            "lyric": "'ରାଧିକା ଗୋବିନ୍ଦ' ବୋଲି କାନ୍ଦିବୋ ଉଚ୍ଚୈଃ ସ୍ୱରେ .\nଭିଜିବେ ସକଳ ଅଙ୍ଗ ନୟନେର ନୀରେ ।।",
+            "lyric": "'ରାଧିକା ଗୋବିନ୍ଦ' ବୋଲି କାନ୍ଦିବୋ ଉଚ୍ଚୈଃ ସ୍ୱରେ ।\nଭିଜିବେ ସକଳ ଅଙ୍ଗ ନୟନେର ନୀରେ ।।",
             "translation": "କେବେ ମୁଁ \"ହେ ରାଧିକେ! ହେ ଗୋବିନ୍ଦ!\" ବୋଲି ଉଚ୍ଚ ସ୍ୱରରେ ଡାକି କାନ୍ଦିବି ଏବଂ ମୋ ଆଖିର ଲୁହରେ ମୋର ସମଗ୍ର ଶରୀର ଭିଜିଯିବ?",
             "wordMeanings": [
                 {
@@ -6078,7 +6076,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
         },
         {
             "id": 4,
-            "lyric": "ଏଇ ବାର କରୁଣା କରୋ ରୂପ ସନାତନ .\nରଘୁନାଥ ଦାସ ମୋର ଶ୍ରୀ ଜୀବ ଜୀବନ ।।",
+            "lyric": "ଏଇ ବାର କରୁଣା କରୋ ରୂପ ସନାତନ ।\nରଘୁନାଥ ଦାସ ମୋର ଶ୍ରୀ ଜୀବ ଜୀବନ ।।",
             "translation": "ହେ ଶ୍ରୀ ରୂପ, ସନାତନ, ରଘୁନାଥ ଦାସ ଏବଂ ମୋର ଜୀବନ ସ୍ୱରୂପ ଶ୍ରୀ ଜୀବ ଗୋସ୍ୱାମୀ ପ୍ରଭୁ! ଏହି ଥରକ ପାଇଁ ମୋତେ କରୁଣା କରନ୍ତୁ।",
             "wordMeanings": [
                 {
@@ -6125,7 +6123,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
         },
         {
             "id": 5,
-            "lyric": "ଏଇ ବାର କରୁଣା କରୋ ଲଳିତା ବିଶାଖା .\nସଖ୍ୟ ଭାବେ ଶ୍ରୀଦାମ ସୁବଳାଦି ସଖା ।।",
+            "lyric": "ଏଇ ବାର କରୁଣା କରୋ ଲଳିତା ବିଶାଖା ।\nସଖ୍ୟ ଭାବେ ଶ୍ରୀଦାମ ସୁବଳାଦି ସଖା ।।",
             "translation": "ହେ ଲଳିତା, ବିଶାଖା ଏବଂ ସଖ୍ୟ ଭାବରେ ସ୍ଥିତ ଶ୍ରୀଦାମ ଓ ସୁବଳ ପ୍ରମୁଖ ସଖାଗଣ! ମୋତେ ଏହି ଥରକ ପାଇଁ କୃପା କରନ୍ତୁ।",
             "wordMeanings": [
                 {
@@ -6149,7 +6147,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ଲଳିତା ସଖୀ"
                 },
                 {
-                    "word": "비ଶାଖା",
+                    "word": "ବିଶାଖା",
                     "meaning": "ହେ ବିଶାଖା ସଖୀ"
                 },
                 {
@@ -6176,7 +6174,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
         },
         {
             "id": 6,
-            "lyric": "ସବେ ମିଳି କରୋ ଦୟା ପୂରୁକ ମୋର ଆଶ .\nପ୍ରାର୍ଥନା କରୋୟେ ସଦା ନରୋତ୍ତମ ଦାସ ।।",
+            "lyric": "ସବେ ମିଳି କରୋ ଦୟା ପୂରୁକ ମୋର ଆଶ ।\nପ୍ରାର୍ଥନା କରୋୟେ ସଦା ନରୋତ୍ତମ ଦାସ ।।",
             "translation": "ଆପଣ ସମସ୍ତେ ମିଶି ମୋତେ ଦୟା କରନ୍ତୁ ଯେପରି ମୋର ଏହି ଅଭିଳାଷ ପୂର୍ଣ୍ଣ ହେବ। ନରୋତ୍ତମ ଦାସ ସର୍ବଦା ଏହି ପ୍ରାର୍ଥନା କରୁଛନ୍ତି।",
             "wordMeanings": [
                 {
@@ -6225,8 +6223,7 @@ export const SONG_HARIHARIKABEMORE_STRUCTURED: StructuredSong = {
                 }
             ]
         }
-    ],
-    "category": "Songs"
+    ]
 };
 
 export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
