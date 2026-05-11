@@ -210,6 +210,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-harihedoyalmor',
+        title: 'ହରି ହେ ଦୟାଲ ମୋର (Hari He Doyal Mor)',
+        title_odia: 'ହରି ହେ ଦୟାଲ ମୋର',
+        title_english: 'Hari He Doyal Mor',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି ସୁନ୍ଦର ଦୀନତାମୟୀ ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_HARIHEDOYALMOR_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
