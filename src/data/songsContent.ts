@@ -6850,7 +6850,7 @@ export const SONG_HEGOVINDAHEGOPALKESAVA_STRUCTURED: StructuredSong = {
         },
         {
             "id": 5,
-            "lyric": "ଭବ-ଭୟ-ଭଞ୍ଜନ ଶ୍ରୀ ମଧୁ-ସୂଦନ\n비ପଦ-ଭଞ୍ଜନ ତୁମି ନାରାୟଣ ।।",
+            "lyric": "ଭବ-ଭୟ-ଭଞ୍ଜନ ଶ୍ରୀ ମଧୁ-ସୂଦନ\nବିପଦ-ଭଞ୍ଜନ ତୁମି ନାରାୟଣ ।।",
             "translation": "ଆପଣ ଜନ୍ମ-ମୃତ୍ୟୁ ରୂପକ ସଂସାରର ଭୟକୁ ଦୂର କରନ୍ତି ଏବଂ ଆପଣ ହିଁ ମଧୁ ଅସୁରକୁ ବଧ କରିଥିବା ମଧୁସୂଦନ। ହେ ନାରାୟଣ! ଆପଣ ସମସ୍ତ ବିପଦକୁ ନାଶ କରନ୍ତି ଏବଂ ସମସ୍ତ ଆତ୍ମାର ଏକମାତ୍ର ଆଶ୍ରୟ ଅଟନ୍ତି।",
             "wordMeanings": [
                 {
@@ -6863,15 +6863,15 @@ export const SONG_HEGOVINDAHEGOPALKESAVA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଭଞ୍ଜନ",
-                    "meaning": "비ନାଶକାରୀ"
+                    "meaning": "ବିନାଶକାରୀ"
                 },
                 {
                     "word": "ଶ୍ରୀ ମଧୁ-ସୂଦନ",
-                    "meaning": "ମଧୁ ଅସୁରର 비ନାଶକାରୀ"
+                    "meaning": "ମଧୁ ଅସୁରର ବିନାଶକାରୀ"
                 },
                 {
-                    "word": "비ପଦ-ଭଞ୍ଜନ",
-                    "meaning": "비ପଦ ନାଶକାରୀ"
+                    "word": "ବିପଦ-ଭଞ୍ଜନ",
+                    "meaning": "ବିପଦ ନାଶକାରୀ"
                 },
                 {
                     "word": "ତୁମି",
