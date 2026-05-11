@@ -7155,7 +7155,7 @@ export const SONG_HUHUNKARAGARJANADI_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ରୀରାଧାଙ୍କ ପ୍ରଭୁ"
                 },
                 {
-                    "word": "प्रାର୍ଥନାଦି-ଭାବନମ୍",
+                    "word": "ପ୍ରାର୍ଥନାଦି-ଭାବନମ୍",
                     "meaning": "ପ୍ରାର୍ଥନାରେ ନିମଗ୍ନ"
                 },
                 {
@@ -7553,7 +7553,7 @@ export const SONG_HUHUNKARAGARJANADI_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ସଙ୍ଗ-ଦୋଷ",
-                    "meaning": "କୂସଙ୍ଗ ଦୋଷ"
+                    "meaning": "କୁସଙ୍ଗ ଦୋଷ"
                 },
                 {
                     "word": "କର୍ମ ୟୋଗ",
