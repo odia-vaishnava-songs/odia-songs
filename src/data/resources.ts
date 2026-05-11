@@ -288,6 +288,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-janulambita',
+        title: 'ଜାନୁ ଲମ୍ବିତ ବାହୁ ଯୁଗଳ (Janu Lambita)',
+        title_odia: 'ଜାନୁ ଲମ୍ବିତ ବାହୁ ଯୁଗଳ',
+        title_english: 'Janu Lambita Bahu Jugala',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ ଓ ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁଙ୍କର ଦିବ୍ୟ ରୂପ ବର୍ଣ୍ଣନା କରୁଥିବା ଏକ ଅତି ସୁନ୍ଦର ଭଜନ |',
+        structuredContent: (Songs as any).SONG_JANULAMBITA_STRUCTURED,
+        author: 'Vrndavana Dasa Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-isvaraparamakrsna',
         title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ (Isvara Parama Krsna)',
         title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ',
