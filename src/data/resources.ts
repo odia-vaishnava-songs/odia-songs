@@ -197,6 +197,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-hariharikabemore',
+        title: 'ହରି ହରି କବେ ମୋର ହୋଇବେ ସୁଦିନ (Hari Hari Kabe More Hoibe Su-Dina)',
+        title_odia: 'ହରି ହରି କବେ ମୋର ହୋଇବେ ସୁଦିନ',
+        title_english: 'Hari Hari Kabe More Hoibe Su-Dina',
+        category: 'Songs',
+        type: 'html',
+        description: 'ନରୋତ୍ତମ ଦାସ ଠାକୁରଙ୍କ ଏକ ଅତି ମନୋରମ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_HARIHARIKABEMORE_STRUCTURED,
+        author: 'Narottama Dasa Thakura',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
