@@ -275,6 +275,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-isvaraparamakrsna',
+        title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ (Isvara Parama Krsna)',
+        title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ',
+        title_english: 'Isvara Parama Krsna',
+        category: 'Brahma Samhita',
+        type: 'html',
+        description: 'ଶ୍ରୀ ବ୍ରହ୍ମାଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ବ୍ରହ୍ମ ସଂହିତାର ପଞ୍ଚମ ଅଧ୍ୟାୟର ମୁଖ୍ୟ ଶ୍ଳୋକଗୁଡ଼ିକ |',
+        structuredContent: (Songs as any).SONG_ISVARAPARAMAKRSNA_STRUCTURED,
+        author: 'Lord Brahma',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',

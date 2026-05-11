@@ -13,6 +13,31 @@ const BACKUP_PATH = path.join(__dirname, '../src/data/songsContent.ts'); // Back
 
 const { createBackup } = require('./backup_manager.cjs');
 
+/**
+ * Automatically cleans known OCR/transliteration defects from the song data.
+ * This is the PERMANENT solution for character defects like '비' (Korean Bi) vs 'ବି' (Odia Bi).
+ */
+function sanitizeData(data) {
+    if (!data) return data;
+    let str = typeof data === 'string' ? data : JSON.stringify(data);
+    
+    // 1. Fix Korean character '비' (Bi) -> Odia 'ବି' (Bi)
+    str = str.replace(/비/g, 'ବି');
+    
+    // 2. Fix Sanskrit/Devanagari conjuncts that often slip into Odia OCR
+    str = str.replace(/प्र/g, 'ପ୍ର'); // Pra
+    str = str.replace(/ब्र/g, 'ବ୍ର'); // Bra
+    str = str.replace(/क्र/g, 'କ୍ର'); // Kra
+    str = str.replace(/ग्र/g, 'ଗ୍ର'); // Gra
+    str = str.replace(/द्र/g, 'ଦ୍ର'); // Dra
+    str = str.replace(/त्र/g, 'ତ୍ର'); // Tra
+    str = str.replace(/श्र/g, 'ଶ୍ର'); // Shra
+    str = str.replace(/प্ৰ/g, 'ପ୍ର'); // Assamese/Bengali Pra
+    
+    return typeof data === 'string' ? str : JSON.parse(str);
+}
+
+
 async function syncCloudToCode() {
     console.log('--- Cloud-to-Code Sync Started ---');
     
@@ -115,12 +140,14 @@ async function syncCloudToCode() {
         });
 
         if (matchingSong && (matchingSong.structured_content || matchingSong.structuredContent)) {
-            const data = matchingSong.structured_content || matchingSong.structuredContent;
+            const rawData = matchingSong.structured_content || matchingSong.structuredContent;
+            const data = sanitizeData(rawData); // Permanent Defect Scrub
             outputLines.push(`export const ${exportName}: StructuredSong = ${JSON.stringify(data, null, 4)};`);
             outputLines.push("");
         } else {
             console.log(`🔍 Export ${exportName} not found in DB JSON. Attempting fallback from local file...`);
-            const fallback = extractFromExisting(exportName);
+            const rawFallback = extractFromExisting(exportName);
+            const fallback = sanitizeData(rawFallback); // Also clean fallbacks
             if (fallback) {
                 outputLines.push(`export const ${exportName}: StructuredSong = ${fallback.trim()}${fallback.trim().endsWith(';') ? '' : ';'}`);
                 outputLines.push("");

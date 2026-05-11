@@ -323,6 +323,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Lord Brahma',
+        odia: 'ଭଗବାନ ବ୍ରହ୍ମା',
+        catalog: [
+            { id: 'song-isvaraparamakrsna', title_english: 'Isvara Parama Krsna', title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ' }
+        ]
+    },
+    {
         name: 'Sri Caitanya Mahaprabhu',
         odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
         catalog: [
