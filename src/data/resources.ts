@@ -301,6 +301,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-jayaradhagirivaradhari',
+        title: 'ଜୟ ରାଧା ଗିରି-ବର ଧାରୀ (Jaya Radha Giri Vara Dhari)',
+        title_odia: 'ଜୟ ରାଧା ଗିରି-ବର ଧାରୀ',
+        title_english: 'Jaya Radha Giri Vara Dhari',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କର ଏକ ଅତି ମନୋହର ଯୁଗଳ ମୂର୍ତ୍ତି ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_JAYARADHAGIRIVARADHARI_STRUCTURED,
+        author: 'Krsna Dasa',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-isvaraparamakrsna',
         title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ (Isvara Parama Krsna)',
         title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ',

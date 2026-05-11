@@ -347,6 +347,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Krsna Dasa',
         odia: 'କୃଷ୍ଣ ଦାସ',
         catalog: [
+            { id: 'song-jayaradhagirivaradhari', title_english: 'Jaya Radha Giri Vara Dhari', title_odia: 'ଜୟ ରାଧା ଗିରି-ବର ଧାରୀ' },
             { title_english: 'Jaya Radhe Jaya Krsna Jaya Vrndavana', title_odia: 'ଜୟ ରାଧେ, ଜୟ କୃଷ୍ଣ, ଜୟ ବୃନ୍ଦାବନ' },
             { title_english: 'Namo Namah Tulasi Krsna Preyasi', title_odia: 'ନମୋ ନମଃ ତୁଳସୀ କୃଷ୍ଣ ପ୍ରେୟସୀ' },
         ]
