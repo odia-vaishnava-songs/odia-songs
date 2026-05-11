@@ -216,9 +216,9 @@ export const RESOURCES: Resource[] = [
         title_english: 'Hari He Doyal Mor',
         category: 'Songs',
         type: 'html',
-        description: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁରଙ୍କ ଏକ ଅତି ସୁନ୍ଦର ଦୀନତାମୟୀ ପ୍ରାର୍ଥନା |',
+        description: 'ଏକ ଅତି ସୁନ୍ଦର ପାରମ୍ପରିକ ଦୀନତାମୟୀ ପ୍ରାର୍ଥନା |',
         structuredContent: (Songs as any).SONG_HARIHEDOYALMOR_STRUCTURED,
-        author: 'Bhaktivinoda Thakura',
+        author: 'Traditional',
         published: true,
         status: 'COMPLETED'
     },
