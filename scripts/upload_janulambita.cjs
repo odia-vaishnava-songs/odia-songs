@@ -23,7 +23,9 @@ const structuredContent = {
         { "word": "ଅମ୍ବର", "meaning": "ବସ୍ତ୍ର" },
         { "word": "ଶୋଭିତ", "meaning": "ଶୋଭା ପାଉଥିବା" },
         { "word": "କଳେବର", "meaning": "ଶରୀର" },
-        { "word": "ଉପମା", "meaning": "ତୁଳନା" }
+        { "word": "ଉପମା", "meaning": "ତୁଳନା" },
+        { "word": "ଦେୟବ", "meaning": "ଦେବି" },
+        { "word": "କାହା", "meaning": "କାହା ସହିତ" }
       ]
     },
     {
@@ -35,13 +37,16 @@ const structuredContent = {
         { "word": "ବିମଳ", "meaning": "ନିର୍ମଳ / ପବିତ୍ର" },
         { "word": "ବୟାନ", "meaning": "ମୁଖ" },
         { "word": "କମଳ", "meaning": "ପଦ୍ମ" },
-        { "word": "ପୀନ", "meaning": "비ଶାଳ / ପୃଷ୍ଠ" },
+        { "word": "ପୀନ", "meaning": "ବିଶାଳ / ପୃଷ୍ଠ" },
         { "word": "ହୃଦୟ", "meaning": "ବକ୍ଷସ୍ଥଳ" },
+        { "word": "ସାଜେ", "meaning": "ଶୋଭା ପାଉଛି" },
         { "word": "ଉନ୍ନତ", "meaning": "ଉଚ୍ଚ / ବଳିଷ୍ଠ" },
         { "word": "ଗୀମ", "meaning": "କନ୍ଧ / ବାହୁ" },
+        { "word": "ସିଂହ", "meaning": "ସିଂହକୁ" },
         { "word": "ଜିନିୟା", "meaning": "ଜୟ କରି (ବଳିଷ୍ଠ)" },
         { "word": "ଉଦାର", "meaning": "ମହାନ / ମହାନ୍" },
-        { "word": "ବିଗ୍ରହ", "meaning": "ରୂପ" }
+        { "word": "ବିଗ୍ରହ", "meaning": "ରୂପ" },
+        { "word": "ରାଜେ", "meaning": "ବିରାଜମାନ" }
       ]
     },
     {
@@ -55,9 +60,14 @@ const structuredContent = {
         { "word": "ଶଶଧର", "meaning": "ଚନ୍ଦ୍ର" },
         { "word": "କନୟା", "meaning": "ସୁନା" },
         { "word": "ମଞ୍ଜରୀ", "meaning": "ନୂପୁର / ପାଉଁଜି" },
+        { "word": "ଶୋହେ", "meaning": "ଶୋଭା ପାଉଛି" },
         { "word": "ହେରି", "meaning": "ଦେଖି" },
         { "word": "ଦିନମଣି", "meaning": "ସୂର୍ଯ୍ୟ" },
-        { "word": "ଜଗମନ", "meaning": "ଜଗତର ମନ" }
+        { "word": "ଆପନା", "meaning": "ନିଜକୁ" },
+        { "word": "ନିଛୟେ", "meaning": "ନିଶ୍ଚୟ / ସମର୍ପଣ" },
+        { "word": "ରୂପେ", "meaning": "ରୂପରେ" },
+        { "word": "ଜଗମନ", "meaning": "ଜଗତର ମନ" },
+        { "word": "ମୋହେ", "meaning": "ମୁଗ୍ଧ କରେ" }
       ]
     },
     {
@@ -66,8 +76,14 @@ const structuredContent = {
       "translation": "ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ ଓ ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁ ହିଁ କଳିଯୁଗର ଅବତାର। ସେମାନେ କିଏ ପାପୀ ବା କିଏ ପାଷଣ୍ଡ, ତାହା ବିଚାର ନ କରି ସମସ୍ତଙ୍କୁ ନିଜର କୃପା ବାଣ୍ଟନ୍ତି। ବୃନ୍ଦାବନ ଦାସ ନିଜର ଆରାଧ୍ୟ ପ୍ରଭୁ ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ଓ ନିତ୍ୟାନନ୍ଦଙ୍କର ଏହି ମହିମା ଗାନ କରୁଛନ୍ତି।",
       "wordMeanings": [
         { "word": "କଳି ଯୁଗେର", "meaning": "କଳିଯୁଗର" },
+        { "word": "ଅବତାର", "meaning": "ଅବତାର" },
+        { "word": "ଚୈତନ୍ୟ ନିତାଇ", "meaning": "ଶ୍ରୀ ଚୈତନ୍ୟ ଓ ନିତ୍ୟାନନ୍ଦ" },
+        { "word": "ପାପ", "meaning": "ପାପୀ" },
         { "word": "ପାଷଣ୍ଡ", "meaning": "ଦୁଷ୍ଟ / ପାଷଣ୍ଡ" },
-        { "word": "ନାହି ମାନେ", "meaning": "비ଚାର କରନ୍ତି ନାହିଁ" },
+        { "word": "ନାହି ମାନେ", "meaning": "ବିଚାର କରନ୍ତି ନାହିଁ" },
+        { "word": "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ", "meaning": "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ" },
+        { "word": "ଠାକୁର ନିତ୍ୟାନନ୍ଦ", "meaning": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ" },
+        { "word": "ବୃନ୍ଦାବନ (ଦାସ)", "meaning": "ବୃନ୍ଦାବନ ଦାସ" },
         { "word": "ଗୁଣ ଗାନେ", "meaning": "ଗୁଣ ଗାନ କରନ୍ତି" }
       ]
     }
@@ -75,7 +91,7 @@ const structuredContent = {
 };
 
 async function upsertSong() {
-  console.log('🚀 Upserting "Janu Lambita Bahu Jugala" to Supabase...');
+  console.log('🚀 Correcting "Janu Lambita Bahu Jugala" (Full Word Meanings)...');
 
   const { error } = await supabase
     .from('songs')
@@ -94,9 +110,9 @@ async function upsertSong() {
     }, { onConflict: 'id' });
 
   if (error) {
-    console.error('❌ Failed to upsert song:', error.message);
+    console.error('❌ Failed to update song:', error.message);
   } else {
-    console.log('✅ Successfully upserted to Supabase!');
+    console.log('✅ Successfully updated with complete word meanings!');
   }
 }
 

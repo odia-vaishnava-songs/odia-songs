@@ -7779,6 +7779,14 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ଉପମା",
                     "meaning": "ତୁଳନା"
+                },
+                {
+                    "word": "ଦେୟବ",
+                    "meaning": "ଦେବି"
+                },
+                {
+                    "word": "କାହା",
+                    "meaning": "କାହା ସହିତ"
                 }
             ]
         },
@@ -7812,12 +7820,20 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                     "meaning": "ବକ୍ଷସ୍ଥଳ"
                 },
                 {
+                    "word": "ସାଜେ",
+                    "meaning": "ଶୋଭା ପାଉଛି"
+                },
+                {
                     "word": "ଉନ୍ନତ",
                     "meaning": "ଉଚ୍ଚ / ବଳିଷ୍ଠ"
                 },
                 {
                     "word": "ଗୀମ",
                     "meaning": "କନ୍ଧ / ବାହୁ"
+                },
+                {
+                    "word": "ସିଂହ",
+                    "meaning": "ସିଂହକୁ"
                 },
                 {
                     "word": "ଜିନିୟା",
@@ -7830,6 +7846,10 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                 {
                     "word": "ବିଗ୍ରହ",
                     "meaning": "ରୂପ"
+                },
+                {
+                    "word": "ରାଜେ",
+                    "meaning": "ବିରାଜମାନ"
                 }
             ]
         },
@@ -7863,6 +7883,10 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                     "meaning": "ନୂପୁର / ପାଉଁଜି"
                 },
                 {
+                    "word": "ଶୋହେ",
+                    "meaning": "ଶୋଭା ପାଉଛି"
+                },
+                {
                     "word": "ହେରି",
                     "meaning": "ଦେଖି"
                 },
@@ -7871,8 +7895,24 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                     "meaning": "ସୂର୍ଯ୍ୟ"
                 },
                 {
+                    "word": "ଆପନା",
+                    "meaning": "ନିଜକୁ"
+                },
+                {
+                    "word": "ନିଛୟେ",
+                    "meaning": "ନିଶ୍ଚୟ / ସମର୍ପଣ"
+                },
+                {
+                    "word": "ରୂପେ",
+                    "meaning": "ରୂପରେ"
+                },
+                {
                     "word": "ଜଗମନ",
                     "meaning": "ଜଗତର ମନ"
+                },
+                {
+                    "word": "ମୋହେ",
+                    "meaning": "ମୁଗ୍ଧ କରେ"
                 }
             ]
         },
@@ -7886,12 +7926,36 @@ export const SONG_JANULAMBITA_STRUCTURED: StructuredSong = {
                     "meaning": "କଳିଯୁଗର"
                 },
                 {
+                    "word": "ଅବତାର",
+                    "meaning": "ଅବତାର"
+                },
+                {
+                    "word": "ଚୈତନ୍ୟ ନିତାଇ",
+                    "meaning": "ଶ୍ରୀ ଚୈତନ୍ୟ ଓ ନିତ୍ୟାନନ୍ଦ"
+                },
+                {
+                    "word": "ପାପ",
+                    "meaning": "ପାପୀ"
+                },
+                {
                     "word": "ପାଷଣ୍ଡ",
                     "meaning": "ଦୁଷ୍ଟ / ପାଷଣ୍ଡ"
                 },
                 {
                     "word": "ନାହି ମାନେ",
                     "meaning": "ବିଚାର କରନ୍ତି ନାହିଁ"
+                },
+                {
+                    "word": "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ",
+                    "meaning": "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ"
+                },
+                {
+                    "word": "ଠାକୁର ନିତ୍ୟାନନ୍ଦ",
+                    "meaning": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ"
+                },
+                {
+                    "word": "ବୃନ୍ଦାବନ (ଦାସ)",
+                    "meaning": "ବୃନ୍ଦାବନ ଦାସ"
                 },
                 {
                     "word": "ଗୁଣ ଗାନେ",
