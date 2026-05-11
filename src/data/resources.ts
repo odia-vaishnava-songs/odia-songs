@@ -223,6 +223,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-hegovindahegopala',
+        title: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ ହେ ଗୋବିନ୍ଦ (He Govinda He Gopala He Govinda)',
+        title_odia: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ ହେ ଗୋବିନ୍ଦ',
+        title_english: 'He Govinda He Gopala He Govinda',
+        category: 'Songs',
+        type: 'html',
+        description: 'ସୂର ଦାସଙ୍କ ଏକ ଅତି ଭାବପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା (ଗଜେନ୍ଦ୍ର ମୋକ୍ଷ ଆଧାରିତ) |',
+        structuredContent: (Songs as any).SONG_HEGOVINDAHEGOPALA_STRUCTURED,
+        author: 'Sura Dasa',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
