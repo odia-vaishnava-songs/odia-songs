@@ -262,6 +262,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-huhunkaragarjanadi',
+        title: 'ହୁହୁଙ୍କାର-ଗର୍ଜନାଦି ଅହୋ (Huhunkara Garjanadi Aho)',
+        title_odia: 'ହୁହୁଙ୍କାର-ଗର୍ଜନାଦି ଅହୋ',
+        title_english: 'Huhunkara Garjanadi Aho',
+        category: 'Ashtakams',
+        type: 'html',
+        description: 'ସର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଅଦ୍ୱୈତାଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_HUHUNKARAGARJANADI_STRUCTURED,
+        author: 'Sarvabhauma Bhattacarya',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
