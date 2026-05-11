@@ -1797,9 +1797,9 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-gauraarati',
-        title: 'ଗୌର ଆରତି (Gaura Ārati)',
-        title_odia: 'ଗୌର ଆରତି',
-        title_english: 'Gaura Arati',
+        title: 'ଜୟ ଜୟ ଗୋରାଚାଁଦେର ଆରତିକ (Gaura Arati)',
+        title_odia: 'ଜୟ ଜୟ ଗୋରାଚାଁଦେର ଆରତିକ',
+        title_english: 'Jaya Jaya Goracander Arotik (Gaura Arati)',
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Thakura',

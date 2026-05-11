@@ -93,7 +93,7 @@ export const EXTERNAL_CATALOG: string[] = [
     "Huhunkara Garjanadi Aho",
     "Isvara Parama Krsna",
     "Jar Mukhe Bhai Hari Katha Nai",
-    "Jaya Jaya Goracander Arotik",
+    "Jaya Jaya Goracander Arotik (Gaura Arati)",
     "Jagannatha Tattva",
     "Janu Lambita Bahu Jugala",
     "Jaya Jaya Jagannatha Sacira",
