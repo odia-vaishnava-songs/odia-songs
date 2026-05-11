@@ -236,6 +236,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-hegovindahegopalkesava',
+        title: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ କେଶବ ମାଧବ (He Govinda He Gopal Kesava Madhava)',
+        title_odia: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ କେଶବ ମାଧବ',
+        title_english: 'He Govinda He Gopal Kesava Madhava',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ଜୟଦେବ ଗୋସ୍ୱାମୀଙ୍କ ଏକ ଅତି ସୁନ୍ଦର ଭଜନ |',
+        structuredContent: (Songs as any).SONG_HEGOVINDAHEGOPALKESAVA_STRUCTURED,
+        author: 'Jayadeva Goswami',
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-amarjivana',
         title: 'ଆମାର ଜୀବନ (Amar Jīvana)',
         category: 'Songs',
