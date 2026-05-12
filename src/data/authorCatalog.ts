@@ -330,6 +330,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'B.R. Sridhara Deva Goswami',
+        odia: 'ବି. ଆର. ଶ୍ରୀଧର ଦେବ ଗୋସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-jayasacinandanasuramunivandana', title_english: 'Jaya Sacinandana Sura Muni Vandana', title_odia: 'ଜୟ ଶଚୀନନ୍ଦନ ସୁର ମୁନି ବନ୍ଦନ' }
+        ]
+    },
+    {
         name: 'Lord Brahma',
         odia: 'ଭଗବାନ ବ୍ରହ୍ମା',
         catalog: [

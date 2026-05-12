@@ -2192,6 +2192,19 @@ export const RESOURCES: Resource[] = [
         author: 'Hari Vyasa Devacarya',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-jayasacinandanasuramunivandana',
+        title: 'ଜୟ ଶଚୀନନ୍ଦନ ସୁର ମୁନି ବନ୍ଦନ (Jaya Sacinandana Sura Muni Vandana)',
+        title_odia: 'ଜୟ ଶଚୀନନ୍ଦନ ସୁର ମୁନି ବନ୍ଦନ',
+        title_english: 'Jaya Sacinandana Sura Muni Vandana',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ବି. ଆର. ଶ୍ରୀଧର ଦେବ ଗୋସ୍ୱାମୀଙ୍କ ବିରଚିତ ଶ୍ରୀ ଶଚୀନନ୍ଦନ ବନ୍ଦନା |',
+        structuredContent: (Songs as any).SONG_JAYASACINANDANA_STRUCTURED,
+        author: 'B.R. Sridhara Deva Goswami',
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
