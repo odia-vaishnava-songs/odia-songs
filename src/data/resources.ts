@@ -2179,6 +2179,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_BHAJAGOVINDA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-jayaradhejayaradheradhe',
+        title: 'ଜୟ ରାଧେ ଜୟ ରାଧେ ରାଧେ (Jaya Radhe Jaya Radhe Radhe)',
+        title_odia: 'ଜୟ ରାଧେ ଜୟ ରାଧେ ରାଧେ',
+        title_english: 'Jaya Radhe Jaya Radhe Radhe',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ହରି ବ୍ୟାସ ଦେବାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣ ଯୁଗଳ ସ୍ତୁତି |',
+        structuredContent: (Songs as any).SONG_JAYARADHE_STRUCTURED,
+        author: 'Hari Vyasa Devacarya',
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

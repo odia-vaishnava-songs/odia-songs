@@ -323,6 +323,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Hari Vyasa Devacarya',
+        odia: 'ହରି ବ୍ୟାସ ଦେବାଚାର୍ଯ୍ୟ',
+        catalog: [
+            { id: 'song-jayaradhejayaradheradhe', title_english: 'Jaya Radhe Jaya Radhe Radhe', title_odia: 'ଜୟ ରାଧେ ଜୟ ରାଧେ ରାଧେ' }
+        ]
+    },
+    {
         name: 'Lord Brahma',
         odia: 'ଭଗବାନ ବ୍ରହ୍ମା',
         catalog: [
