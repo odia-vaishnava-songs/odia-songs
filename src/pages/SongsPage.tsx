@@ -113,6 +113,7 @@ export const SongsPage: React.FC = () => {
     const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
     const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
+    const [activeLetter, setActiveLetter] = useState<string | null>(null);
     const [isListening, setIsListening] = useState(false);
     const [isThemeListExpanded, setIsThemeListExpanded] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -211,6 +212,8 @@ export const SongsPage: React.FC = () => {
         window.addEventListener('play-next-song', handleAutoNext);
         return () => window.removeEventListener('play-next-song', handleAutoNext);
     }, [songResources]);
+
+
 
     // Hook to instantly scroll to the top over a container element when selecting a new chapter
     // useLayoutEffect runs before paint, making the jump invisible to the eye
@@ -461,6 +464,31 @@ export const SongsPage: React.FC = () => {
         if (b === '#') return -1;
         return a.localeCompare(b);
     }), [groupedSongs]);
+
+    // 3. Section Tracking for Alphabetical Badge
+    useEffect(() => {
+        if (activeTab !== 'songs') {
+            setActiveLetter(null);
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveLetter(entry.target.getAttribute('data-letter'));
+                }
+            });
+        }, {
+            root: mainScrollRef.current,
+            threshold: 0,
+            rootMargin: '-10% 0px -85% 0px'
+        });
+
+        const sections = document.querySelectorAll('.song-section');
+        sections.forEach(section => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, [activeTab, searchQuery, sortedGroups]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -1798,7 +1826,7 @@ export const SongsPage: React.FC = () => {
             `}</style>
             <header style={{
                 background: theme.gradient,
-                padding: '1.25rem 1rem',
+                padding: '0.85rem 1rem',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
@@ -1825,6 +1853,12 @@ export const SongsPage: React.FC = () => {
                 >
                     <Menu size={22} />
                 </button>
+                <style>{`
+                    @keyframes fadeInScale {
+                        from { opacity: 0; transform: scale(0.5); }
+                        to { opacity: 1; transform: scale(1); }
+                    }
+                `}</style>
                 <div style={{ flex: 1, position: 'relative' }}>
                     {(loading || error) && (
                         <div style={{
@@ -2185,6 +2219,35 @@ export const SongsPage: React.FC = () => {
                     padding: '1rem 0',
                     paddingBottom: '100px'
                 }}>
+                {activeLetter && (
+                    <div style={{
+                        position: 'fixed',
+                        left: 'max(8px, calc(50% - 432px))',
+                        top: '85px',
+                        zIndex: 100,
+                        pointerEvents: 'none',
+                        animation: 'fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                    }}>
+                        <div style={{
+                            width: '36px',
+                            height: '36px',
+                            background: `linear-gradient(135deg, ${theme.color}, ${theme.color}CC)`,
+                            color: '#fff',
+                            borderRadius: '10px',
+                            display: 'grid',
+                            placeItems: 'center',
+                            fontWeight: 950,
+                            fontSize: '1.4rem',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                            border: '1.5px solid rgba(255,255,255,0.4)',
+                            backdropFilter: 'blur(8px)',
+                            fontFamily: 'var(--font-odia-sans)',
+                            lineHeight: 1
+                        }}>
+                            <span style={{ transform: 'translateY(3px)' }}>{activeLetter}</span>
+                        </div>
+                    </div>
+                )}
                 {activeTab === 'gita' && (
                     <>
                         {renderGitaDashboard()}
@@ -2195,45 +2258,13 @@ export const SongsPage: React.FC = () => {
                 {activeTab === 'songs' && (
                     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
                         {sortedGroups.map(letter => (
-                            <div key={letter} ref={(el) => { sectionRefs.current[letter] = el; }} style={{ marginBottom: '2rem' }}>
-                                <div style={{
-                                    position: 'sticky',
-                                    top: '70px',
-                                    zIndex: 5,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    padding: '0.75rem 0.5rem',
-                                    pointerEvents: 'none',
-                                    background: 'rgba(255,255,255,0.8)',
-                                    backdropFilter: 'blur(8px)',
-                                    margin: '0 -0.5rem 0.5rem',
-                                    borderBottom: '1px solid #f1f5f9'
-                                }}>
-                                    <div style={{
-                                        fontSize: '1rem',
-                                        fontWeight: 900,
-                                        color: theme.color,
-                                        width: '36px',
-                                        height: '36px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        background: 'white',
-                                        borderRadius: '10px',
-                                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                                        pointerEvents: 'auto',
-                                        marginLeft: '0.75rem'
-                                    }}>
-                                        {letter}
-                                    </div>
-                                    <div style={{ 
-                                        marginLeft: '0.75rem', 
-                                        fontSize: '0.75rem', 
-                                        fontWeight: 800, 
-                                        color: '#94a3b8', 
-                                        letterSpacing: '1px' 
-                                    }}>SECTION {letter}</div>
-                                </div>
+                            <div 
+                                key={letter} 
+                                ref={(el) => { sectionRefs.current[letter] = el; }} 
+                                className="song-section"
+                                data-letter={letter}
+                                style={{ marginBottom: '2rem' }}
+                            >
 
                                 <div style={{ padding: '0 0.5rem' }}>
                                     {groupedSongs[letter].map(song => (
