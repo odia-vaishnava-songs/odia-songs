@@ -2012,6 +2012,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-kararavindenapadaravindam',
+        title: 'କରାରବିନ୍ଦେନ ପଦାରବିନ୍ଦଂ (Kararavindena Padaravindam)',
+        title_odia: 'କରାରବିନ୍ଦେନ ପଦାରବିନ୍ଦଂ',
+        title_english: 'Kararavindena Padaravindam',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bilvamangala Thakura',
+        structuredContent: (Songs as any).SONG_KARARAVINDENAPADARAVINDAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-ahenilasaila',
         title: 'ଆହେ ନୀଳ ଶୈଳ (Ahe Nila Saila)',
         title_odia: 'ଆହେ ନୀଳ ଶୈଳ',

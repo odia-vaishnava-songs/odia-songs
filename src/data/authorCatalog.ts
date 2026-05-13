@@ -307,7 +307,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବିଲ୍ୱମଙ୍ଗଳ ଠାକୁର',
         catalog: [
             { title_english: 'Agre Kurunam Atha', title_odia: 'ଅଗ୍ରେ କୁରୂଣାମ୍ ଅଥ' },
-            { title_english: 'Kararavindena Padaravindam', title_odia: 'କରାରବିନ୍ଦେନ ପଦାରବିନ୍ଦମ୍' },
+            { id: 'song-kararavindenapadaravindam', title_english: 'Kararavindena Padaravindam', title_odia: 'କରାରବିନ୍ଦେନ ପଦାରବିନ୍ଦମ୍' },
             { title_english: 'Vraje Prasiddham Navanita Cauram', title_odia: 'ବ୍ରଜେ ପ୍ରସିଦ୍ଧମ୍ ନବନୀତ' },
         ]
     },
