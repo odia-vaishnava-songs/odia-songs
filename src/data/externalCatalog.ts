@@ -115,7 +115,7 @@ export const EXTERNAL_CATALOG: string[] = [
     "Kabe Krsna Dhan Pabo",
     "Kabe Mui Vaisnava Cinibo",
     "Kabe Sri Caitanya More Koribena Doya",
-    "Kadacit Kalindi Tata Vipina",
+
     "Kali Kukkura Kadan",
     "Kali Yuge Sri Caitanya",
     "Kararavindena Padaravindam",

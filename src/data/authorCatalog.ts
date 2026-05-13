@@ -261,7 +261,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-achyutamkesavam', title_english: 'Achyutam Kesavam', title_odia: 'ଅଚ୍ୟୁତମ୍ କେଶବମ୍' },
             { id: 'song-bhajagovindam', title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ୍' },
             { id: 'song-gangastotram', title_english: 'Devi Suresvari Bhagavati Gange', title_odia: 'ଦେବୀ ସୁରେଶ୍ୱରୀ ଭଗବତୀ ଗଙ୍ଗେ' },
-            { id: 'song-jagannathastakam', title_english: 'Kadacit Kalindi Tata Vipina', title_odia: 'କଦାଚିତ୍ କାଳିନ୍ଦୀ ତଟ ବିପିନ' },
+
             { title_english: 'Sariram Surupam Tatha', title_odia: 'ଶରୀରମ୍ ସୁରୂପମ୍ ତଥା' },
             { title_english: 'Satyam Jnanam Anantam', title_odia: 'ସତ୍ୟମ୍ ଜ୍ଞାନମନନ୍ତମ୍' },
         ]
