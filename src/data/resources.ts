@@ -2000,6 +2000,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-kaliyugesrichaitanya',
+        title: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ (Kali Yuge Sri Caitanya)',
+        title_odia: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ',
+        title_english: 'Kali Yuge Sri Caitanya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Govinda Dasa Kaviraja',
+        structuredContent: (Songs as any).SONG_KALIYUGESRICHAITANYA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-ahenilasaila',
         title: 'ଆହେ ନୀଳ ଶୈଳ (Ahe Nila Saila)',
         title_odia: 'ଆହେ ନୀଳ ଶୈଳ',

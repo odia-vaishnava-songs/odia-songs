@@ -292,7 +292,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ଗୋବିନ୍ଦ ଦାସ କବିରାଜ',
         catalog: [
             { title_english: 'Bhaja Hu Re Mana Sri Nanda Nandana', title_odia: 'ଭଜହୁ ରେ ମନ' },
-            { title_english: 'Kali Yuge Sri Caitanya', title_odia: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ' },
+            { id: 'song-kaliyugesrichaitanya', title_english: 'Kali Yuge Sri Caitanya', title_odia: 'କଳି ଯୁଗେ ଶ୍ରୀ ଚୈତନ୍ୟ' },
         ]
     },
     {
