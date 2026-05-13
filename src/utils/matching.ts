@@ -23,6 +23,12 @@ export function normalizeForSearch(str: string, aggressive = false): string {
     if (!str) return '';
     let res = str.toLowerCase();
     
+    // Normalize common transliteration differences
+    res = res.replace(/ch/g, 'c');
+    res = res.replace(/sh/g, 's');
+    res = res.replace(/v/g, 'b'); // Common in Bengali/Odia transliteration (Vraja/Braja)
+    res = res.replace(/w/g, 'v');
+    
     if (aggressive) {
         // Remove vowels and common transliteration artifacts
         res = res.replace(/[aeiouy]/g, '');
@@ -56,8 +62,10 @@ export function isTitleMatch(
     if (ct1 === ct2 && ct1.length > 3) return true;
 
     // 3. Simple inclusion (only for longer titles)
-    if (t1.length > 10 && t2.length > 10) {
-        if (t1.includes(t2) || t2.includes(t1)) return true;
+    const nt1 = normalizeForSearch(title1);
+    const nt2 = normalizeForSearch(title2);
+    if (nt1.length > 8 && nt2.length > 8) {
+        if (nt1.includes(nt2) || nt2.includes(nt1)) return true;
     }
 
     // 4. Aggressive match (vowel-less)

@@ -56,6 +56,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-jagannathastakam',
+        title: 'ଶ୍ରୀ ଜଗନ୍ନାଥାଷ୍ଟକମ୍ (Jagannathastakam)',
+        title_odia: 'ଶ୍ରୀ ଜଗନ୍ନାଥାଷ୍ଟକମ୍',
+        title_english: 'Jagannathastakam',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟଙ୍କ ବିରଚିତ ଶ୍ରୀ ଜଗନ୍ନାଥାଷ୍ଟକମ୍ |',
+        author: 'Adi Sankaracarya',
+        tags: ['Astakam'],
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-bhishmastuti',
         title: 'ଭୀଷ୍ମ ସ୍ତୁତି (Bhishma Stuti)',
         title_odia: 'ଭୀଷ୍ମ ସ୍ତୁତି',
