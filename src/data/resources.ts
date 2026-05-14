@@ -195,6 +195,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-kejabikejabi',
+        title: 'କେ ଯାବି କେ ଯାବି ଭାଇ ଭବ ସିନ୍ଧୁ ପାର (Ke Jabi Ke Jabi)',
+        title_odia: 'କେ ଯାବି କେ ଯାବି ଭାଇ ଭବ ସିନ୍ଧୁ ପାର',
+        title_english: 'Ke Jabi Ke Jabi Bhai Bhava Sindhu Para',
+        category: 'Songs',
+        type: 'html',
+        author: 'Locana Dasa Thakura',
+        description: 'ଶ୍ରୀ ଲୋଚନ ଦାସ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚିତ ଏକ ସୁନ୍ଦର ଭଜନ, ଯେଉଁଥିରେ ସେ ସଂସାର ରୂପକ ସମୁଦ୍ର ପାର ହେବା ପାଇଁ ହରିନାମ ନୌକାର ମାହାତ୍ମ୍ୟ ବର୍ଣ୍ଣନା କରିଛନ୍ତି |',
+        tags: ['Locana Dasa Thakura', 'Bhajan', 'Bhava Sindhu', 'Caitanya Mahaprabhu'],
+        structuredContent: (Songs as any).SONG_KEJABIKEJABI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
