@@ -242,7 +242,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-vrndaastakam', title_english: 'Vrnda-astakam (Gangeya Campeya)', title_odia: 'ବୃନ୍ଦାଷ୍ଟକମ୍' },
             { id: 'song-gurvastakam', title_english: 'Samsara Davanala', title_odia: 'ସଂସାର ଦାବାନଳ' },
-            { title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
+            { id: 'song-govardhanastakam', title_english: 'Krsna Prasadena Samasta', title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ' },
             { title_english: 'Na Yoga Siddhir Na Mamastu', title_odia: 'ନ ଯୋଗ ସିଦ୍ଧିର୍ନ ମମାସ୍ତୁ' },
         ]
     },

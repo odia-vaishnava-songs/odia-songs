@@ -153,6 +153,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-govardhanastakam',
+        title: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ (Govardhanastakam)',
+        title_odia: 'କୃଷ୍ଣ ପ୍ରସାଦେନ ସମସ୍ତ',
+        title_english: 'Krsna Prasadena Samasta (Govardhanastakam)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Visvanatha Cakravarti Thakura',
+        description: 'ବିଶ୍ୱନାଥ ଚକ୍ରବର୍ତ୍ତୀ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଗୋବର୍ଦ୍ଧନାଷ୍ଟକମ୍ |',
+        tags: ['Astakam', 'Visvanatha Cakravarti Thakura', 'Govardhana', 'Radha', 'Krsna'],
+        structuredContent: (Songs as any).SONG_GOVARDHANASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
