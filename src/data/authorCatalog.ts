@@ -57,6 +57,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Keno Hare Krsna Nam', title_odia: 'କେନୋ ହରେ କୃଷ୍ଣ ନାମ' },
             { title_english: 'Kesava Tuwa Jagata Vicitra', title_odia: 'କେଶବ! ତୁୱା ଜଗତ ବିଚିତ୍ର' },
             { title_english: 'Ki Jani Ki Bale', title_odia: 'କି ଜାନି କି ବଲେ' },
+            { id: 'song-krsnanamadhare', title_english: 'Krsna Nama Dhare Koto Bal', title_odia: 'କୃଷ୍ଣ ନାମ ଧରେ କତ ବଳ' },
             { title_english: 'Mama Mana Mandire', title_odia: 'ମମ ମନ ମନ୍ଦିରେ' },
             { title_english: 'Manasa Deha Geha Jo Kichu Mor', title_odia: 'ମାନସ, ଦେହ, ଗେହ' },
             { title_english: 'Nadiya Godrume Nityananda Mahajana', title_odia: 'ନଦୀୟା – ଗୋଦ୍ରୁମେ' },

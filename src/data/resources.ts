@@ -167,6 +167,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-krsnanamadhare',
+        title: 'କୃଷ୍ଣ ନାମ ଧରେ କତ ବଳ (Krsna Nama Dhare)',
+        title_odia: 'କୃଷ୍ଣ ନାମ ଧରେ କତ ବଳ',
+        title_english: 'Krsna Nama Dhare Koto Bal',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        description: 'ଭକ୍ତି ବିନୋଦ ଠାକୁରଙ୍କ ଦ୍ୱାରା ରଚିତ ହରିନାମର ମାହାତ୍ମ୍ୟ |',
+        tags: ['Bhaktivinoda Thakura', 'Krsna Nama', 'Harinama', 'Mahatmya'],
+        structuredContent: (Songs as any).SONG_KRSNANAMADHARE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
