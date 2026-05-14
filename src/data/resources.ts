@@ -111,6 +111,19 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-radhikastakam',
+        title: 'କୁଙ୍କୁମାକ୍ତ-କାଞ୍ଚନାବ୍ଜ (Radhikastakam)',
+        title_odia: 'କୁଙ୍କୁମାକ୍ତ-କାଞ୍ଚନାବ୍ଜ',
+        title_english: 'Kunkumakta Kancanabja',
+        category: 'Songs',
+        type: 'html',
+        author: 'Krsnadasa Kaviraja Goswami',
+        description: 'ଶ୍ରୀ କୃଷ୍ଣଦାସ କବିରାଜ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଶ୍ରୀ ରାଧିକାଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_RADHIKASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
