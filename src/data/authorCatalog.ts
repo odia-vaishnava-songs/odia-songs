@@ -133,7 +133,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-batulakahaye', title_english: 'Batula Kahaye Setha Saba Nirakara', title_odia: 'ବାତୁଲ କହୟେ ସେଥା ସବ ନିରାକାର' },
             { id: 'song-bhaktiahaituki', title_english: 'Bhakti Ahaituki Hoy Sva Prakasita', title_odia: 'ଭକ୍ତି ଅହୈତୁକୀ ହୟ ସ୍ୱ ପ୍ରକାଶିତ' },
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },
-            { title_english: 'Karma Phale Ase Saba Nana Vesa Dhari' },
+            { id: 'song-karmaphaleasesaba', title_english: 'Karma Phale Ase Saba Nana Vesa Dhari', title_odia: 'କର୍ମଫଳେ ଆସେ ସବ ନାନା ବେଶ ଧରି' },
             { title_english: 'Krsna Tava Punya Habe Bhai' },
             { title_english: 'Maha Vadanya Isvara Sri Gaura Sundara' },
             { title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare' },

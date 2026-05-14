@@ -1624,6 +1624,18 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-karmaphaleasesaba',
+        title: 'କର୍ମଫଳେ ଆସେ ସବ (Karma Phale Ase Saba)',
+        title_odia: 'କର୍ମଫଳେ ଆସେ ସବ ନାନା ବେଶ ଧରି',
+        title_english: 'Karma Phale Ase Saba Nana Vesa Dhari',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Prabhupada',
+        structuredContent: (Songs as any).SONG_KARMAPHALEASESABA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-avatarasaragoraavatara',
         title: 'ଅବତାର ସାର ଗୋରା-ଅବତାର (Avatara Sara Gora-Avatara)',
         title_odia: 'ଅବତାର ସାର ଗୋରା-ଅବତାର',
