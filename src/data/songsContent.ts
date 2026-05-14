@@ -50024,18 +50024,9 @@ export const SONG_RADHIKASTAKAM_STRUCTURED: StructuredSong = {
 
 
 export const SONG_SADGOSWAMYASTAKAM_STRUCTURED: StructuredSong = {
-  "id": "song-sadgoswamyastakam",
-  "title": "କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ (Sad Goswami Astakam)",
   "title_odia": "କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ",
   "title_english": "Krsnotkirtana Gana Nartana",
   "author": "Srinivasa Acarya",
-  "description": "ଶ୍ରୀନିବାସ ଆଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ରଚିତ ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ |",
-  "category": "Songs",
-  "tags": [
-    "Astakam",
-    "Srinivasa Acarya",
-    "Six Goswamis"
-  ],
   "verses": [
     {
       "id": 1,
