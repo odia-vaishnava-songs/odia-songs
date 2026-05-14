@@ -284,7 +284,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Srinivasa Acarya',
         odia: 'ଶ୍ରୀନିବାସ ଆଚାର୍ଯ୍ୟ',
         catalog: [
-            { title_english: 'Krsnotkirtana Gana Nartana (Sad-gosvamy-astakam)', title_odia: 'ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ (କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ)' },
+            { id: 'song-sadgoswamyastakam', title_english: 'Krsnotkirtana Gana Nartana (Sad-gosvamy-astakam)', title_odia: 'ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ (କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ)' },
         ]
     },
     {

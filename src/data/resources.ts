@@ -125,6 +125,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-sadgoswamyastakam',
+        title: 'କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ (Sad Goswami Astakam)',
+        title_odia: 'କୃଷ୍ଣୋତ୍କୀର୍ତ୍ତନ ଗାନ ନର୍ତ୍ତନ',
+        title_english: 'Krsnotkirtana Gana Nartana (Sad Goswami Astakam)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srinivasa Acarya',
+        description: 'ଶ୍ରୀନିବାସ ଆଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ରଚିତ ଷଡ଼ ଗୋସ୍ୱାମୀ ଅଷ୍ଟକ |',
+        tags: ['Astakam', 'Srinivasa Acarya', 'Six Goswamis', 'Radha', 'Krsna'],
+        structuredContent: (Songs as any).SONG_SADGOSWAMYASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',
