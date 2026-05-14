@@ -1523,7 +1523,7 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-hariboloharibolo',
-        title: 'ହରି ବୋଲ ହରି ବୋଲ (Hari bolo Hari bolo)',
+        title: 'ହରି ବୋଲ ହରି ବୋଲ ଭାଇ ରେ (Hari Bolo Hari Bolo Bhai Re)',
         category: 'Songs',
         type: 'html',
         author: 'Bhaktivinoda Thakura',
