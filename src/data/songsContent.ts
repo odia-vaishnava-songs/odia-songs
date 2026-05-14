@@ -50457,7 +50457,7 @@ export const SONG_SADGOSWAMYASTAKAM_STRUCTURED: StructuredSong = {
           "meaning": "ଶୋଇବା ଏବଂ ଖାଇବା"
         },
         {
-          "word": "비ହାରକ-ଆଦି",
+          "word": "ବିହାରକ-ଆଦି",
           "meaning": "ମନୋରଞ୍ଜନ ଇତ୍ୟାଦି"
         },
         {
@@ -51230,7 +51230,7 @@ export const SONG_GOVARDHANASTAKAM_STRUCTURED: StructuredSong = {
           "meaning": "କଳି/ଝଗଡ଼ା"
         },
         {
-          "word": "비ତେନେ",
+          "word": "ବିତେନେ",
           "meaning": "କରିଥିଲେ"
         },
         {
@@ -51365,7 +51365,7 @@ export const SONG_GOVARDHANASTAKAM_STRUCTURED: StructuredSong = {
         },
         {
           "word": "ବିତନ୍ୱନ୍",
-          "meaning": "비ସ୍ତାର କରୁଛି"
+          "meaning": "ବିସ୍ତାର କରୁଛି"
         },
         {
           "word": "ନୈସର୍ଗିକ",
@@ -51435,7 +51435,7 @@ export const SONG_GOVARDHANASTAKAM_STRUCTURED: StructuredSong = {
           "meaning": "ନିଶ୍ଚୟ"
         },
         {
-          "word": "비ସ୍ମିତାଃ",
+          "word": "ବିସ୍ମିତାଃ",
           "meaning": "ଆଶ୍ଚର୍ଯ୍ୟ ହୋଇ"
         },
         {
@@ -51664,7 +51664,7 @@ export const SONG_KRSNANAMADHARE_STRUCTURED: StructuredSong = {
           "meaning": "ଶକ୍ତି"
         },
         {
-          "word": "비ଷୟ-ବାସନା-ଅନଲେ",
+          "word": "ବିଷୟ-ବାସନା-ଅନଲେ",
           "meaning": "ସାଂସାରିକ ବାସନା ରୂପକ ନିଆଁରେ"
         },
         {
@@ -51798,7 +51798,7 @@ export const SONG_KRSNANAMADHARE_STRUCTURED: StructuredSong = {
     },
     {
       "id": 3,
-      "lyric": "ଚକ୍ଷେ ଧାରା, ଦେହେ ଘର୍ମ, ପୁଲକିତ ସବ ଚର୍ମ,\n비ବର୍ଣ୍ଣ ହୈଲ କଳେବର ।\nମୂର୍ଛିତ ହୈଲ ମନ, ପ୍ରଳୟେର ଆଗମନ,\nଭାବେ ସର୍ବ-ଦେହ ଜର ଜର ।।",
+      "lyric": "ଚକ୍ଷେ ଧାରା, ଦେହେ ଘର୍ମ, ପୁଲକିତ ସବ ଚର୍ମ,\nବିବର୍ଣ୍ଣ ହୈଲ କଳେବର ।\nମୂର୍ଛିତ ହୈଲ ମନ, ପ୍ରଳୟେର ଆଗମନ,\nଭାବେ ସର୍ବ-ଦେହ ଜର ଜର ।।",
       "translation": "ଆଖିରୁ ଅଶ୍ରୁଧାରା ବହେ, ଶରୀରରେ ଝାଳ ଜମେ ଏବଂ ସମଗ୍ର ଦେହ ରୋମାଞ୍ଚିତ ହୋଇ ଫିକା ପଡ଼ିଯାଏ। ମୋର ମନ ମୂର୍ଚ୍ଛିତ ହୋଇ ପ୍ରଳୟ ସଦୃଶ ଅବସ୍ଥା ଅନୁଭବ କରେ। ପ୍ରେମ ଭାବରେ ମୋର ସମଗ୍ର ଶରୀର ଜଡ଼ବତ୍ ହୋଇଯାଏ।",
       "wordMeanings": [
         {
@@ -51818,7 +51818,7 @@ export const SONG_KRSNANAMADHARE_STRUCTURED: StructuredSong = {
           "meaning": "ସମଗ୍ର ଚର୍ମ (ଲୋମଟାଙ୍କୁରି ଉଠିବା)"
         },
         {
-          "word": "비ବର୍ଣ୍ଣ",
+          "word": "ବିବର୍ଣ୍ଣ",
           "meaning": "ରଙ୍ଗହୀନ / ଫିକା"
         },
         {
@@ -52022,7 +52022,7 @@ export const SONG_KRSNANAMADHARE_STRUCTURED: StructuredSong = {
     },
     {
       "id": 7,
-      "lyric": "ପୂର୍ଣ୍ଣ ବିକଶିତ ହୈୟା, ବ୍ରଜେ ମୋରେ ଯାୟ ଲୈୟା,\nଦେଖାୟ ମୋରେ ସ୍ୱରୂପ-비ଳାସ ।\nମୋରେ ସିଦ୍ଧ-ଦେହ ଦିୟା, କୃଷ୍ଣ-ପାଶେ ରାଖେ ଗିୟା,\nଏ ଦେହେର କରେ ସର୍ବ-ନାଶ ।।",
+      "lyric": "ପୂର୍ଣ୍ଣ ବିକଶିତ ହୈୟା, ବ୍ରଜେ ମୋରେ ଯାୟ ଲୈୟା,\nଦେଖାୟ ମୋରେ ସ୍ୱରୂପ-ବିଳାସ ।\nମୋରେ ସିଦ୍ଧ-ଦେହ ଦିୟା, କୃଷ୍ଣ-ପାଶେ ରାଖେ ଗିୟା,\nଏ ଦେହେର କରେ ସର୍ବ-ନାଶ ।।",
       "translation": "ନାମ ଯେତେବେଳେ ପୂର୍ଣ୍ଣ ବିକଶିତ ହୁଅନ୍ତି, ସେତେବେଳେ ମତେ ବ୍ରଜଧାମକୁ ନେଇ ନିଜର ଦିବ୍ୟ ଲୀଳା ଦର୍ଶନ କରାନ୍ତି। ମତେ ଏକ ସିଦ୍ଧ ଚିନ୍ମୟ ଦେହ ପ୍ରଦାନ କରି କୃଷ୍ଣଙ୍କ ସେବାରେ ଲଗାନ୍ତି ଏବଂ ମୋର ଏହି ମରଶରୀରର ଜଡ଼ତାକୁ ବିନାଶ କରନ୍ତି।",
       "wordMeanings": [
         {
@@ -52050,7 +52050,7 @@ export const SONG_KRSNANAMADHARE_STRUCTURED: StructuredSong = {
           "meaning": "ମତେ"
         },
         {
-          "word": "ସ୍ୱରୂପ-비ଳାସ",
+          "word": "ସ୍ୱରୂପ-ବିଳାସ",
           "meaning": "ନିଜର ଆତ୍ମିକ ଲୀଳା"
         },
         {
