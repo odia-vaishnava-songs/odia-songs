@@ -181,6 +181,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-krsnajinakanamahai',
+        title: 'କୃଷ୍ଣ ଜିନକା ନାମ ହୈ (Krsna Jinaka Nama Hai)',
+        title_odia: 'କୃଷ୍ଣ ଜିନକା ନାମ ହୈ',
+        title_english: 'Krsna Jinaka Nama Hai',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        description: 'ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ବିଭିନ୍ନ ନାମ ଓ ଲୀଳାର ଏକ ମନୋରମ ଭଜନ |',
+        tags: ['Traditional', 'Krsna Nama', 'Bhajan', 'Gokula', 'Radhe Govinda'],
+        structuredContent: (Songs as any).SONG_KRSNAJINAKANAMAHAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',

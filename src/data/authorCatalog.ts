@@ -412,7 +412,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-dhuledhulegorachanda', title_english: 'Dhule Dhule Gora Chanda', title_odia: 'ଧୁଲେ ଧୁଲେ ଗୋରା ଚାଁଦ' },
             { id: 'song-dukhersagore', title_english: 'Duhkher Sagore', title_odia: 'ଦୁଃଖେର ସାଗୋରେ' },
             { id: 'song-gourangasundara', title_english: 'Gouranga Sundara Prema Jaladhara', title_odia: 'ଗୌରାଙ୍ଗ ସୁନ୍ଦର ପ୍ରେମ ଜଳଧର' },
-            { id: 'song-harekrishnamahamantra', title_english: 'Hare Krishna Mahamantra', title_odia: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର' }
+            { id: 'song-harekrishnamahamantra', title_english: 'Hare Krishna Mahamantra', title_odia: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର' },
+            { id: 'song-krsnajinakanamahai', title_english: 'Krsna Jinaka Nama Hai', title_odia: 'କୃଷ୍ଣ ଜିନକା ନାମ ହୈ' }
         ]
     },
     {
