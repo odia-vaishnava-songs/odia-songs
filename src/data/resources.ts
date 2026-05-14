@@ -139,6 +139,20 @@ export const RESOURCES: Resource[] = [
         status: 'COMPLETED'
     },
     {
+        id: 'song-yugalastakam',
+        title: 'କୃଷ୍ଣ ପ୍ରେମ ମୟୀ ରାଧା (Yugalastakam)',
+        title_odia: 'କୃଷ୍ଣ ପ୍ରେମ ମୟୀ ରାଧା',
+        title_english: 'Krsna Prema Mayi Radha (Yugalastakam)',
+        category: 'Songs',
+        type: 'html',
+        author: 'Jiva Goswami',
+        description: 'ଜୀବ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ଶ୍ରୀ ଯୁଗଳାଷ୍ଟକମ୍ |',
+        tags: ['Astakam', 'Jiva Goswami', 'Radha', 'Krsna', 'Yugalastakam'],
+        structuredContent: (Songs as any).SONG_YUGALASTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
         id: 'song-brahmabole',
         title: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ (Brahma Bole Catur Mukha)',
         title_odia: 'ବ୍ରହ୍ମା ବୋଲେ ଚତୁର୍ମୁଖ',

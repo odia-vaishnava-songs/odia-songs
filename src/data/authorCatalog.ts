@@ -277,7 +277,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Jiva Goswami',
         odia: 'ଜୀବ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Krsna Prema Mayi Radha', title_odia: 'କୃଷ୍ଣ ପ୍ରେମମୟୀ ରାଧା' },
+            { id: 'song-yugalastakam', title_english: 'Krsna Prema Mayi Radha', title_odia: 'କୃଷ୍ଣ ପ୍ରେମମୟୀ ରାଧା' },
         ]
     },
     {
