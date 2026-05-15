@@ -2377,6 +2377,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_MADHURAM_MADHUREBHYO_PI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-mahavadanyaisvara',
+        title: 'ମହାବଦାନ୍ୟ ଈଶ୍ୱର ଶ୍ରୀ ଗୌରସୁନ୍ଦର (Maha Vadanya Isvara)',
+        title_odia: 'ମହାବଦାନ୍ୟ ଈଶ୍ୱର ଶ୍ରୀ ଗୌରସୁନ୍ଦର',
+        title_english: 'Maha Vadanya Isvara Sri Gaura Sundara',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srila Prabhupada',
+        description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କର ପରମ ଦୟାଳୁ ଅବତାରର ଏକ ସୁନ୍ଦର ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_MAHAVADANYAISVARA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

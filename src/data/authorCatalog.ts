@@ -136,7 +136,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Boro Krpa Koile Krsna', title_odia: 'ବଡ଼ କୃପା କୈଲ' },
             { id: 'song-karmaphaleasesaba', title_english: 'Karma Phale Ase Saba Nana Vesa Dhari', title_odia: 'କର୍ମଫଳେ ଆସେ ସବ ନାନା ବେଶ ଧରି' },
             { title_english: 'Krsna Tava Punya Habe Bhai' },
-            { title_english: 'Maha Vadanya Isvara Sri Gaura Sundara' },
+            { id: 'song-mahavadanyaisvara', title_english: 'Maha Vadanya Isvara Sri Gaura Sundara', title_odia: 'ମହାବଦାନ୍ୟ ଈଶ୍ୱର ଶ୍ରୀ ଗୌରସୁନ୍ଦର' },
             { title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare' },
             { title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore' },
             { title_english: 'Samudrena Phena Yena' },
