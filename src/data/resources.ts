@@ -1593,8 +1593,19 @@ export const RESOURCES: Resource[] = [
         },
         published: true,
         status: 'COMPLETED'
+    },    {
+        id: 'song-madhavabahutaminati',
+        title: 'ମାଧବ ବହୁତ ମିନତି କରି ତୋୟ (Madhava Bahuta Minati)',
+        title_odia: 'ମାଧବ ବହୁତ ମିନତି କରି ତୋୟ',
+        title_english: 'Madhava Bahuta Minati Kari Toya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vidyapati',
+        description: 'କବି ବିଦ୍ୟାପତିଙ୍କ ଦ୍ୱାରା ରଚିତ ଏକ ଅତି କରୁଣ ଶରଣାଗତି ମୂଳକ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_MADHAVABAHUTAMINATI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     },
-
 
 
 
