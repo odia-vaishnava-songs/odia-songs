@@ -131,6 +131,7 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('sridhara deva') || n.includes('sridhar dev')) return 'B.R. Sridhara Deva Goswami';
     if (n.includes('vidyapati')) return 'Vidyapati';
     if (n.includes('nilakanta') || n.includes('nilakantha')) return 'Nilakanta Goswami';
+    if (n.includes('narahari') || n.includes('sarakara')) return 'Narahari Sarakara';
     // Trigger deployment refresh
     
     return 'Other Authors';
