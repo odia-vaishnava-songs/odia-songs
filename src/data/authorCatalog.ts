@@ -424,6 +424,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Vidyapati',
+        odia: 'ବିଦ୍ୟାପତି',
+        catalog: [
+            { id: 'song-madhavabahutaminati', title_english: 'Madhava Bahuta Minati Kari Toya', title_odia: 'ମାଧବ ବହୁତ ମିନତି କରି ତୋୟ' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
