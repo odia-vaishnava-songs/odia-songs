@@ -2390,6 +2390,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_MAHAVADANYAISVARA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-mahaprasadegovinde',
+        title: 'ମହାପ୍ରସାଦେ ଗୋବିନ୍ଦେ (Maha Prasade Govinde)',
+        title_odia: 'ମହାପ୍ରସାଦେ ଗୋବିନ୍ଦେ',
+        title_english: 'Maha Prasade Govinde',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vyasadeva',
+        description: 'ମହାପ୍ରସାଦ, ହରିନାମ ଏବଂ ବୈଷ୍ଣବଙ୍କ ପ୍ରତି ଶ୍ରଦ୍ଧା ଅର୍ପଣ କରିବା ପାଇଁ ଏକ ପବିତ୍ର ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_MAHAPRASADEGOVINDE_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

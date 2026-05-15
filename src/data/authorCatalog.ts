@@ -321,6 +321,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Ugram Viram Mahavishnum' },
             { title_english: 'Jaya Narasimha Sri Narasimha' },
             { title_english: 'Namaste Narasimhaya' },
+            { id: 'song-mahaprasadegovinde', title_english: 'Maha Prasade Govinde', title_odia: 'ମହାପ୍ରସାଦେ ଗୋବିନ୍ଦେ' },
         ]
     },
     {
