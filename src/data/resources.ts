@@ -2442,6 +2442,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_NAKOROLUNKARAMA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-mirarprabhuesogiridhari',
+        title: 'ମୀରାର ପ୍ରଭୁ ଏସୋ ଗିରିଧାରୀ (Mirar Prabhu Eso Giridhari)',
+        title_odia: 'ମୀରାର ପ୍ରଭୁ ଏସୋ ଗିରିଧାରୀ',
+        title_english: 'Mirar Prabhu Eso Giridhari',
+        category: 'Songs',
+        type: 'html',
+        author: 'Mira Bhai',
+        description: 'ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଚରଣରେ ମୀରାବାଈଙ୍କର ଏକ ଅତି ମଧୁର ଓ ଭକ୍ତିପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_MIRARPRABHUESOGIRIDHARI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
