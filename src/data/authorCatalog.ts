@@ -442,6 +442,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Narahari Sarakara',
+        odia: 'ନରହରି ସରକାର',
+        catalog: [
+            { id: 'song-manarekahanagaurakatha', title_english: 'Mana Re Kaha Na Gaura Katha', title_odia: 'ମନ ରେ କହ ନା ଗୌର କଥା' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }

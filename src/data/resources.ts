@@ -2455,6 +2455,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_MIRARPRABHUESOGIRIDHARI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-manarekahanagaurakatha',
+        title: 'ମନ ରେ କହ ନା ଗୌର କଥା (Mana Re Kaha Na Gaura Katha)',
+        title_odia: 'ମନ ରେ କହ ନା ଗୌର କଥା',
+        title_english: 'Mana Re Kaha Na Gaura Katha',
+        category: 'Songs',
+        type: 'html',
+        author: 'Narahari Sarakara',
+        description: 'ଶ୍ରୀଗୌରାଙ୍ଗ ମହାପ୍ରଭୁଙ୍କ ନାମ ଓ ରୂପର ଏକ ଅତି ମଧୁର ମହିମା କୀର୍ତ୍ତନ |',
+        structuredContent: (Songs as any).SONG_MANAREKAHANAGAURAKATHA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
