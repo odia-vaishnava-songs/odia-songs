@@ -2403,6 +2403,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_MAHAPRASADEGOVINDE_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-maineratanalagai',
+        title: 'ମୈନେ ରଟନା ଲଗାୟୀ ରାଧା ନାମ କୀ (Maine Ratana Lagai)',
+        title_odia: 'ମୈନେ ରଟନା ଲଗାୟୀ ରାଧା ନାମ କୀ',
+        title_english: 'Maine Ratana Lagai Radha Nama Ki',
+        category: 'Songs',
+        type: 'html',
+        author: 'Traditional',
+        description: 'ଶ୍ରୀରାଧାଙ୍କ ମଧୁର ନାମ ଜପ କରିବାର ଏକ ଅତ୍ୟନ୍ତ ଭକ୍ତିମୟ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_MAINERATANALAGAI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
