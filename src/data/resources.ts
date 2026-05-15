@@ -2351,6 +2351,32 @@ export const RESOURCES: Resource[] = [
         author: 'B.R. Sridhara Deva Goswami',
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-madhavabahutaminati',
+        title: 'ମାଧବ ବହୁତ ମିନତି କରି ତୋୟ (Madhava Bahuta Minati)',
+        title_odia: 'ମାଧବ ବହୁତ ମିନତି କରି ତୋୟ',
+        title_english: 'Madhava Bahuta Minati Kari Toya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vidyapati',
+        description: 'କବି ବିଦ୍ୟାପତିଙ୍କ ଦ୍ୱାରା ରଚିତ ଏକ ଅତି କରୁଣ ପ୍ରାର୍ଥନା |',
+        structuredContent: (Songs as any).SONG_MADHAVABAHUTAMINATI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-madhurammadhurebhyopi',
+        title: 'ମଧୁରଂ ମଧୁରେଭ୍ୟୋଽପି (Madhuram Madhurebhyo Pi)',
+        title_odia: 'ମଧୁରଂ ମଧୁରେଭ୍ୟୋଽପି',
+        title_english: 'Madhuram Madhurebhyo Pi',
+        category: 'Songs',
+        type: 'html',
+        author: 'Nilakanta Goswami',
+        description: 'ନୀଳକାନ୍ତ ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ରଚିତ ହରିନାମର ମାହାତ୍ମ୍ୟ |',
+        structuredContent: (Songs as any).SONG_MADHURAM_MADHUREBHYO_PI_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

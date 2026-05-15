@@ -431,6 +431,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Nilakanta Goswami',
+        odia: 'ନୀଳକାନ୍ତ ଗୋସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-madhurammadhurebhyopi', title_english: 'Madhuram Madhurebhyo Pi', title_odia: 'ମଧୁରଂ ମଧୁରେଭ୍ୟୋଽପି' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
