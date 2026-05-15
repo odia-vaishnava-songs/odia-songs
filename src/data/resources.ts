@@ -2481,6 +2481,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_RADHAKRPAKATAKSA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-sb-harinama-mahima',
+        title: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା (Srimad Bhagavatam - Harinama Mahima)',
+        title_odia: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା',
+        title_english: 'Srimad Bhagavatam - Harinama Mahima',
+        category: 'Songs',
+        type: 'html',
+        author: 'Srimad Bhagavatam',
+        description: 'ଶ୍ରୀମଦ୍ ଭାଗବତମ୍ ରୁ ୧୫ଟି ଦୁର୍ଲଭ ଶ୍ଳୋକ ଯାହା ହରିନାମ ସଙ୍କୀର୍ତ୍ତନର ଅପାର ମହିମା ଗାନ କରେ |',
+        structuredContent: (Songs as any).SONG_SB_HARINAMA_MAHIMA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

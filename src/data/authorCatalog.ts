@@ -450,6 +450,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Srimad Bhagavatam',
+        odia: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍',
+        catalog: [
+            { id: 'song-sb-harinama-mahima', title_english: 'Srimad Bhagavatam - Harinama Mahima', title_odia: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
