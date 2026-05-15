@@ -90,7 +90,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-borosukherkhabar', title_english: 'Boro Sukher Khabor Gai', title_odia: 'ବଡ଼ ସୁଖେର ଖବର ଗାଇ' },
             { id: 'song-gauraarati', title_english: 'Jaya Jaya Goracander Arotik (Gaura Arati)', title_odia: 'ଜୟ ଜୟ ଗୋରାଚାଁଦେର ଆରତିକ' },
             { id: 'song-hariboloharibolo', title_english: 'Hari bolo Hari bolo', title_odia: 'ହରି ବୋଲ ହରି ବୋଲ' },
-            { id: 'song-satakotigopimadhabamana', title_english: 'Sata Koti Gopi Madhaba Mana', title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ' }
+            { id: 'song-satakotigopimadhabamana', title_english: 'Sata Koti Gopi Madhaba Mana', title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ' },
+            { id: 'song-nakorolunkarama', title_english: 'Na Korolun Karama', title_odia: 'ନା କୋରୋଲୁଁ କରମ' }
         ]
     },
     {

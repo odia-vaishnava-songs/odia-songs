@@ -2429,6 +2429,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_NACENACENITAIGAUR_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-nakorolunkarama',
+        title: 'ନା କୋରୋଲୁଁ କରମ (Na Korolun Karama)',
+        title_odia: 'ନା କୋରୋଲୁଁ କରମ',
+        title_english: 'Na Korolun Karama',
+        category: 'Songs',
+        type: 'html',
+        author: 'Bhaktivinoda Thakura',
+        description: 'ଶରଣାଗତି ଓ ଆତ୍ମସମର୍ପଣର ଏକ ଅତି ମର୍ମସ୍ପର୍ଶୀ ଭଜନ |',
+        structuredContent: (Songs as any).SONG_NAKOROLUNKARAMA_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 
