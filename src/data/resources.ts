@@ -2416,6 +2416,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_MAINERATANALAGAI_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-nacenacenitaigaur',
+        title: 'ନାଚେ ନାଚେ ନିତାଈ ଗୌର ଗୁଣମଣିୟା (Nace Nace Nitai Gaur)',
+        title_odia: 'ନାଚେ ନାଚେ ନିତାଈ ଗୌର ଗୁଣମଣିୟା',
+        title_english: 'Nace Nace Nitai Gaur Guna Maniya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Vrndavana Dasa Thakura',
+        description: 'ଗୁଣର ରତ୍ନ ସ୍ୱରୂପ ନିତାଇ ଓ ଗୌର ଦୁଇ ଭାଇଙ୍କର ଏକ ସୁନ୍ଦର ନୃତ୍ୟ ବର୍ଣ୍ଣନା |',
+        structuredContent: (Songs as any).SONG_NACENACENITAIGAUR_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

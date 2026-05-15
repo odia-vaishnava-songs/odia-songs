@@ -224,7 +224,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Hera Dekhiya Nayana Bhariya', title_odia: 'ହେରା ଦେଖିୟା ନୟନ ଭରିୟା' },
             { id: 'song-janulambita', title_english: 'Janu Lambita Bahu Jugala', title_odia: 'ଜାନୁ ଲମ୍ବିତ ବାହୁ ଯୁଗଳ' },
             { title_english: 'Madana Mohana Tanum', title_odia: 'ମଦନ ମୋହନ ତନୁ' },
-            { title_english: 'Nace Nace Nitai Gaur Guna Maniya', title_odia: 'ନାଚେ ନାଚେ ନିତାଇ ଗୌର ଗୁଣ ମଣିୟା' },
+            { id: 'song-nacenacenitaigaur', title_english: 'Nace Nace Nitai Gaur Guna Maniya', title_odia: 'ନାଚେ ନାଚେ ନିତାଇ ଗୌର ଗୁଣ ମଣିୟା' },
             { title_english: 'Nana Dravya Ayojana', title_odia: 'ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ' },
             { title_english: 'Sri Hari Vasare Hari Kirtana Vidhana', title_odia: 'ଶ୍ରୀ ହରି ବାସରେ ହରି କୀର୍ତ୍ତନ ବିଧାନ' },
         ]
