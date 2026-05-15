@@ -418,7 +418,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-harekrishnamahamantra', title_english: 'Hare Krishna Mahamantra', title_odia: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର' },
             { id: 'song-krsnajinakanamahai', title_english: 'Krsna Jinaka Nama Hai', title_odia: 'କୃଷ୍ଣ ଜିନକା ନାମ ହୈ' },
             { id: 'song-maineratanalagai', title_english: 'Maine Ratana Lagai Radha Nama Ki', title_odia: 'ମୈନେ ରଟନା ଲଗାୟୀ ରାଧା ନାମ କୀ' },
-            { id: 'song-radhakrpakataksa', title_english: 'Sri Radha Krpa-kataksa-stava-raja', title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ' }
+            { id: 'song-radhakrpakataksa', title_english: 'Munindra Vrnda Vandite - Radha Krpa Kataksa', title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ' }
         ]
     },
     {

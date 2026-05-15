@@ -2471,13 +2471,13 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-radhakrpakataksa',
-        title: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ (Sri Radha Krpa-kataksa-stava-raja)',
+        title: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ (Munindra Vrnda Vandite - Radha Krpa Kataksa)',
         title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ',
-        title_english: 'Sri Radha Krpa-kataksa-stava-raja',
+        title_english: 'Munindra Vrnda Vandite - Radha Krpa Kataksa',
         category: 'Songs',
         type: 'html',
         author: 'Traditional',
-        description: 'ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ କୃପା ଭିକ୍ଷା ପାଇଁ ଭଗବାନ ଶିବଙ୍କ ଦ୍ୱାରା ରଚିତ ଏକ ଅତି ଦୁର୍ଲଭ ଓ ମହିମାମୟ ସ୍ତୋତ୍ର |',
+        description: 'ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ କୃପା ଭିକ୍ଷା ପାଇଁ ଭଗବାନ ଶିବଙ୍କ ଦ୍ୱାରା ରଚିତ ଏକ ଅତି ଦୁର୍ଲଭ ଓ ମହିମାମୟ ସ୍ତୋତ୍ର | (Munindra Vrnda Vandite)',
         structuredContent: (Songs as any).SONG_RADHAKRPAKATAKSA_STRUCTURED,
         published: true,
         status: 'COMPLETED'

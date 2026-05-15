@@ -53477,7 +53477,7 @@ export const SONG_MANAREKAHANAGAURAKATHA_STRUCTURED: StructuredSong = {
 };
 
 export const SONG_RADHAKRPAKATAKSA_STRUCTURED = {
-  "title_english": "Sri Radha Krpa-kataksa-stava-raja",
+  "title_english": "Munindra Vrnda Vandite - Radha Krpa Kataksa",
   "title_odia": "ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ",
   "author": "Traditional",
   "verses": [
