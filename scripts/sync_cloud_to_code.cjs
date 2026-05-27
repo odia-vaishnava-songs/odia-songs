@@ -23,8 +23,11 @@ function sanitizeData(data) {
     
     // 1. Fix Korean character '비' (Bi) -> Odia 'ବି' (Bi)
     str = str.replace(/비/g, 'ବି');
+
+    // 2. Fix Thai character 'า' (U+0E32) -> Odia 'ା' (U+0B3E)
+    str = str.replace(/\u0E32/g, '\u0B3E');
     
-    // 2. Fix Sanskrit/Devanagari conjuncts that often slip into Odia OCR
+    // 3. Fix Sanskrit/Devanagari conjuncts that often slip into Odia OCR
     str = str.replace(/प्र/g, 'ପ୍ର'); // Pra
     str = str.replace(/ब्र/g, 'ବ୍ର'); // Bra
     str = str.replace(/क्र/g, 'କ୍ର'); // Kra
