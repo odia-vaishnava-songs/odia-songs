@@ -111,6 +111,7 @@ async function syncCloudToCode() {
     'gita-chapter-17': 'SONG_GITA_CHAPTER_17_STRUCTURED',
     'gita-chapter-18': 'SONG_GITA_CHAPTER_18_STRUCTURED',
     'song-sb-harinama-mahima': 'SONG_SB_HARINAMA_MAHIMA_STRUCTURED',
+    'song-srisivashtakam': 'SONG_SRISIVASHTAKAM_STRUCTURED',
     'song-jayaradhadhava': 'SONG_JAYARADHAMADHAVA_STRUCTURED',
     'song-shikshashtakam': 'SONG_SIKSHASHTAKAM_STRUCTURED',
     'song-jivjago': 'SONG_JIVJAGOJIVJAGO_STRUCTURED',

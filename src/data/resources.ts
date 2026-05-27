@@ -2494,6 +2494,19 @@ export const RESOURCES: Resource[] = [
         structuredContent: (Songs as any).SONG_SB_HARINAMA_MAHIMA_STRUCTURED,
         published: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-srisivashtakam',
+        title: 'ଶ୍ରୀ ଶିବାଷ୍ଟକମ୍ - ନମୋ ନମସ୍ତେ ତ୍ରିଦଶେଶ୍ୱରାୟ (Sri Sivashtakam - Namo Namaste Tridasesvaraya)',
+        title_odia: 'ଶ୍ରୀ ଶିବାଷ୍ଟକମ୍ - ନମୋ ନମସ୍ତେ ତ୍ରିଦଶେଶ୍ୱରାୟ',
+        title_english: 'Sri Sivashtakam - Namo Namaste Tridasesvaraya',
+        category: 'Songs',
+        type: 'html',
+        author: 'Sri Caitanya Mahaprabhu',
+        description: 'ଭଗବାନ ଶିବଙ୍କ ପ୍ରଶଂସାରେ ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଦ୍ୱାରା ରଚିତ ଅଷ୍ଟକମ୍ |',
+        structuredContent: (Songs as any).SONG_SRISIVASHTAKAM_STRUCTURED,
+        published: true,
+        status: 'COMPLETED'
     }
 ];
 

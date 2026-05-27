@@ -457,6 +457,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Sri Caitanya Mahaprabhu',
+        odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
+        catalog: [
+            { id: 'song-srisivashtakam', title_english: 'Sri Sivashtakam - Namo Namaste Tridasesvaraya', title_odia: 'ଶ୍ରୀ ଶିବାଷ୍ଟକମ୍ - ନମୋ ନମସ୍ତେ ତ୍ରିଦଶେଶ୍ୱରାୟ' }
+        ]
+    },
+    {
         name: 'Other Authors',
         catalog: [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
