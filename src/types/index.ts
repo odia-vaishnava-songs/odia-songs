@@ -32,6 +32,8 @@ export interface SongVerse {
     translation: string;
     wordMeanings?: WordMeaning[];
     status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
+    count?: number | string;
+    [key: string]: any;
 }
 
 
@@ -41,11 +43,15 @@ export interface AudioVersion {
 }
 
 export interface StructuredSong {
+    id?: string;
+    title?: string;
+    tags?: string[];
     title_english?: string;
     title_odia?: string;
     author?: string;
     verses: SongVerse[];
     reference_url?: string;
+    [key: string]: any;
 }
 
 export interface Resource {

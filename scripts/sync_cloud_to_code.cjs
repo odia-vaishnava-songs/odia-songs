@@ -110,6 +110,18 @@ async function syncCloudToCode() {
     'gita-chapter-16': 'SONG_GITA_CHAPTER_16_STRUCTURED',
     'gita-chapter-17': 'SONG_GITA_CHAPTER_17_STRUCTURED',
     'gita-chapter-18': 'SONG_GITA_CHAPTER_18_STRUCTURED',
+    'song-sb-harinama-mahima': 'SONG_SB_HARINAMA_MAHIMA_STRUCTURED',
+    'song-jayaradhadhava': 'SONG_JAYARADHAMADHAVA_STRUCTURED',
+    'song-shikshashtakam': 'SONG_SIKSHASHTAKAM_STRUCTURED',
+    'song-jivjago': 'SONG_JIVJAGOJIVJAGO_STRUCTURED',
+    'song-Bolo Hari Bolo': 'SONG_BOLOHARIBOLO_STRUCTURED',
+    'song-vrindavanastakam': 'SONG_NAYOGASIDDHIR_STRUCTURED',
+    'song-namonamahtulasi': 'SONG_NAMONOMAH_TULASI_STRUCTURED',
+    'song-sariraavidyajala': 'SONG_SARIRAVIDYAJALA_STRUCTURED',
+    'song-bhaktiahaituki': 'SONG_BHAKTIAAHAITUKI_STRUCTURED',
+    'song-jayaradhejayaradheradhe': 'SONG_JAYARADHE_STRUCTURED',
+    'song-jayasacinandanasuramunivandana': 'SONG_JAYASACINANDANA_STRUCTURED',
+    'song-madhurammadhurebhyopi': 'SONG_MADHURAM_MADHUREBHYO_PI_STRUCTURED',
 };
 
     const extractFromExisting = (exportName) => {
