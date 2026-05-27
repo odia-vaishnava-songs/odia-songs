@@ -2484,9 +2484,9 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-sb-harinama-mahima',
-        title: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା (Srimad Bhagavatam - Harinama Mahima)',
+        title: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା (Srimad Bhagavatam - Harinama Mahima / Glories of the Holy Name / Nama Tattva)',
         title_odia: 'ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା',
-        title_english: 'Srimad Bhagavatam - Harinama Mahima',
+        title_english: 'Srimad Bhagavatam - Harinama Mahima (Glories of the Holy Name / Nama Tattva)',
         category: 'Songs',
         type: 'html',
         author: 'Srimad Bhagavatam',

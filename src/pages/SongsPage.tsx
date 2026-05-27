@@ -104,6 +104,14 @@ export const SongsPage: React.FC = () => {
             setSelectedSong(activeSong);
         }
     }, [isDetailView, selectedSong, activeSong]);
+
+    // Reset activeLetter when returning from detail view to main list
+    useEffect(() => {
+        if (!selectedSong) {
+            setActiveLetter(null);
+        }
+    }, [selectedSong]);
+
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
@@ -2219,7 +2227,7 @@ export const SongsPage: React.FC = () => {
                     padding: '1rem 0',
                     paddingBottom: '100px'
                 }}>
-                {activeLetter && (
+                {activeLetter && sortedGroups.length > 0 && (
                     <div style={{
                         position: 'fixed',
                         left: 'max(8px, calc(50% - 432px))',

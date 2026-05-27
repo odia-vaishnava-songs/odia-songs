@@ -56086,5 +56086,5 @@ export const SONG_SB_HARINAMA_MAHIMA_STRUCTURED: StructuredSong = {
         }
     ],
     "title_odia": "ଶ୍ରୀମଦ୍-ଭାଗବତମ୍ - ହରିନାମ ମହିମା",
-    "title_english": "Srimad Bhagavatam - Glories of the Holy Name"
+    "title_english": "Srimad Bhagavatam - Harinama Mahima (Glories of the Holy Name / Nama Tattva)"
 };
