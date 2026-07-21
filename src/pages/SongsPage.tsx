@@ -115,6 +115,7 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+    const [isViewMenuOpen, setIsViewMenuOpen] = useState(false);
     const [isToolbeltExpanded, setIsToolbeltExpanded] = useState(false);
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number; total: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
@@ -1037,12 +1038,12 @@ export const SongsPage: React.FC = () => {
 
         if (viewMode === 'sequential') {
             return (
-                <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
-                    <div style={{ background: cardBg, padding: '2.5rem 1.5rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '0 0 0.25rem', color: titleColor, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                        {selectedSong.author && <div style={{ fontSize: '1.2rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '2.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
+                <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingBottom: '4rem' }}>
+                    <div style={{ padding: '0.5rem 0 0', margin: '0 0.4rem', textAlign: 'center' }}>
+                        <h1 style={{ fontSize: '1.4rem', fontWeight: 900, margin: '0', color: titleColor, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
+                        {selectedSong.author && <div style={{ fontSize: '0.85rem', color: isNightMode ? '#94a3b8' : '#666', marginTop: '0.2rem', marginBottom: '0.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
 
-                        <div style={{ height: '1px', background: isNightMode ? '#334155' : '#eee', margin: '1rem 0 3rem' }} />
+                        <div style={{ height: '1px', background: isNightMode ? '#334155' : '#eee', margin: '0.5rem 0 0.5rem' }} />
 
                         {verses.map((verse, idx) => {
                             let speakerLine = '';
@@ -1068,8 +1069,7 @@ export const SongsPage: React.FC = () => {
                             }
 
                             return (
-                                <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '2.5rem' }}>
-                                    <div style={{ fontSize: '0.85rem', fontWeight: 800, color: isNightMode ? '#94a3b8' : '#888', marginBottom: '1rem', letterSpacing: '1px' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
+                                <div key={`lyric-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
                                     {speakerLine && (
                                         <div style={{
                                             display: 'inline-flex',
@@ -1081,7 +1081,7 @@ export const SongsPage: React.FC = () => {
                                             color: SPEAKER_MAP[speakerLine].color,
                                             fontSize: '0.9rem',
                                             fontWeight: 800,
-                                            marginBottom: '1rem',
+                                            marginBottom: '0.5rem',
                                             border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
                                             fontFamily: 'var(--font-odia-sans)'
                                         }}>
@@ -1091,12 +1091,14 @@ export const SongsPage: React.FC = () => {
                                     )}
                                     <div style={{
                                         whiteSpace: 'pre-wrap',
-                                        color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                        fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
-                                        fontWeight: 600,
+                                        color: isNightMode ? '#e2e8f0' : '#111827',
+                                        fontSize: speakerLine ? `${fontSize * 1.2}px` : `${fontSize * 1.1}px`,
+                                        fontWeight: 400,
                                         fontFamily: 'var(--font-odia-sans)',
-                                        lineHeight: '1.6'
-                                    }}>{mainLyric}</div>
+                                        lineHeight: '1.5'
+                                    }}>
+                                        {mainLyric} <span style={{ opacity: 0.5, fontSize: '0.85em', marginLeft: '6px' }}>|{toOdiaNumber(verse.id)}|</span>
+                                    </div>
                                 </div>
                             );
                         })}
@@ -1152,49 +1154,10 @@ export const SongsPage: React.FC = () => {
                         </a>
                     )}
 
-                    {/* Highly Visible View Switcher */}
-                    <div style={{
-                        display: 'flex',
-                        background: isNightMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
-                        padding: '4px',
-                        borderRadius: '12px',
-                        margin: '0 auto 1.5rem',
-                        maxWidth: '400px',
-                        justifyContent: 'center'
-                    }}>
-                        {[
-                            { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={16} /> },
-                            ...(verses.some(v => v.translation?.trim()) ? [{ id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={16} /> }] : []),
-                            ...(verses.some(v => (v.wordMeanings?.length ?? 0) > 0) ? [{ id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={16} /> }] : [])
-                        ].map(mode => (
-                            <button
-                                key={mode.id}
-                                onClick={() => setViewMode(mode.id as ViewMode)}
-                                style={{
-                                    flex: 1,
-                                    padding: '8px 12px',
-                                    borderRadius: '8px',
-                                    border: 'none',
-                                    background: viewMode === mode.id ? (isNightMode ? '#fff' : theme.color) : 'transparent',
-                                    color: viewMode === mode.id ? (isNightMode ? '#000' : '#fff') : (isNightMode ? '#aaa' : '#666'),
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    gap: '2px',
-                                    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    cursor: 'pointer',
-                                    fontFamily: 'var(--font-odia-sans)'
-                                }}
-                            >
-                                {mode.icon}
-                                <span style={{ fontSize: '0.75rem', fontWeight: 900 }}>{mode.label}</span>
-                                <span style={{ fontSize: '0.6rem', opacity: 0.8, fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{mode.eng}</span>
-                            </button>
-                        ))}
-                    </div>
+
                 </div>
 
-                {verses.map((verse) => {
+                {verses.map((verse, idx) => {
                     // Check for speaker
                     let speakerLine = '';
                     let mainLyric = verse.lyric;
@@ -1639,6 +1602,57 @@ export const SongsPage: React.FC = () => {
                         </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        {selectedSong.structuredContent && (
+                            (() => {
+                                const availableModes = [
+                                    { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={22} /> },
+                                    ...(selectedSong.structuredContent.verses.some((v: any) => v.translation?.trim()) ? [{ id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={22} /> }] : []),
+                                    ...(selectedSong.structuredContent.verses.some((v: any) => (v.wordMeanings?.length ?? 0) > 0) ? [{ id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={22} /> }] : [])
+                                ];
+                                const currentIndex = availableModes.findIndex(m => m.id === viewMode);
+                                const currentMode = availableModes[currentIndex !== -1 ? currentIndex : 0];
+
+                                const handleToggleMode = () => {
+                                    const nextIndex = (currentIndex + 1) % availableModes.length;
+                                    setViewMode(availableModes[nextIndex].id as ViewMode);
+                                };
+
+                                // If only 1 mode is available, don't show the toggle button at all
+                                if (availableModes.length <= 1) return null;
+
+                                return (
+                                    <button 
+                                        onClick={handleToggleMode} 
+                                        title={`Current: ${currentMode.eng}. Click to change view.`}
+                                        style={{
+                                            background: 'rgba(255,255,255,0.2)',
+                                            color: '#fff',
+                                            borderRadius: '50%',
+                                            width: '38px',
+                                            height: '38px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            backdropFilter: 'blur(4px)',
+                                            border: 'none',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                            marginRight: '0.2rem'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1.1)';
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.3)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
+                                        }}
+                                    >
+                                        {currentMode.icon}
+                                    </button>
+                                );
+                            })()
+                        )}
                         {(user?.role?.toLowerCase() === 'admin' || user?.role?.toLowerCase() === 'subadmin') && (
                             <button
                                 onClick={async () => {
@@ -1668,7 +1682,8 @@ export const SongsPage: React.FC = () => {
                     style={{
                         flex: 1,
                         overflowY: 'auto',
-                        padding: '0.4rem'
+                        padding: '0.4rem',
+                        background: viewMode === 'sequential' ? (currentThemeKey === 'advaita' ? '#0f172a' : '#ffffff') : 'transparent'
                     }}
                 >
                     <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '160px' }}>
