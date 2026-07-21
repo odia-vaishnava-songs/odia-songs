@@ -115,7 +115,6 @@ export const SongsPage: React.FC = () => {
     const [viewMode, setViewMode] = useState<ViewMode>('combined');
     const [fontSize, setFontSize] = useState(18);
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
-    const [isViewMenuOpen, setIsViewMenuOpen] = useState(false);
     const [isToolbeltExpanded, setIsToolbeltExpanded] = useState(false);
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number; total: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
@@ -1157,7 +1156,7 @@ export const SongsPage: React.FC = () => {
 
                 </div>
 
-                {verses.map((verse, idx) => {
+                {verses.map((verse) => {
                     // Check for speaker
                     let speakerLine = '';
                     let mainLyric = verse.lyric;
