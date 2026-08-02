@@ -137,7 +137,7 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
             footer.innerHTML = `
                 <div style="font-weight: 800; color: #FF9933; margin-bottom: 3px; font-size: 13px;">ଓଡ଼ିଆ ବୈଷ୍ଣବ ସଙ୍ଗୀତ (Odia Vaishnava Songs)</div>
                 <div>Downloaded by: <strong>${downloaderName}</strong> | Date: ${timestamp}</div>
-                <div style="opacity: 0.8;">© odia-songs.vercel.app</div>
+                <div style="opacity: 0.8;">© vs.bhaktiodia.in</div>
             `;
             
             element.appendChild(footer);
