@@ -14,4 +14,4 @@ export const TATTVA_THEMES: { [key: string]: ThemeDefinition } = {
     srivasa: { name: 'Srivasa', color: '#375B15', gradient: 'linear-gradient(135deg, #375B15 0%, #23400D 100%)', accent: '#375B15', text: '#fff' }
 };
 
-export const DEFAULT_THEME = 'gauranga';
+export const DEFAULT_THEME = 'srivasa';
