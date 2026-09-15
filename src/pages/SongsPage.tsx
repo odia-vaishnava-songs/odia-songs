@@ -1024,7 +1024,7 @@ export const SongsPage: React.FC = () => {
                     lineHeight: '1.9', color: textColor, fontFamily: "var(--font-odia-sans)", fontSize: `${fontSize}px`,
                     border: `1px solid ${borderColor}`, margin: '1.5rem 0.4rem', textAlign: 'center'
                 }}>
-                    <h1 style={{ fontSize: '2.5rem', color: titleColor, margin: '0 0 1rem', fontWeight: 900, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
+                    <h1 style={{ fontSize: '1.75rem', color: titleColor, margin: '0 0 0.5rem', fontWeight: 900, lineHeight: '1.2', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
                     {selectedSong.author && <div style={{ color: isNightMode ? '#94a3b8' : '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
                     <div style={{ whiteSpace: 'pre-wrap', color: textColor, fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.content}</div>
                 </div>
@@ -1121,10 +1121,10 @@ export const SongsPage: React.FC = () => {
 
         return (
             <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
-                <div style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.0', marginBottom: '0.25rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                    {selectedSong.title_english && <div style={{ fontSize: '1.25rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.75rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
-                    <div style={{ fontSize: '1.1rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.25rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+                    <h1 style={{ fontSize: '1.75rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.2', marginBottom: '0.35rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
+                    {selectedSong.title_english && <div style={{ fontSize: '1rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.35rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
+                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.35rem' }}>
                         {(() => {
                             const catalogMatch = AUTHOR_CATALOG.find(cat => 
                                 cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
@@ -1133,7 +1133,7 @@ export const SongsPage: React.FC = () => {
                         })()}
                     </div>
                     {selectedSong.description && (
-                        <div style={{ fontSize: '1.2rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.75rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
+                        <div style={{ fontSize: '0.95rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
                     )}
                     {reference_url && (
                         <a
