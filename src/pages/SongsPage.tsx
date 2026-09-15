@@ -14,7 +14,7 @@ import { AUTHOR_CATALOG } from '../data/authorCatalog';
 import { normalizeForSearch, isTitleMatch, standardizeAuthorName } from '../utils/matching';
 
 import { TATTVA_THEMES } from '../constants/themes';
-import { toOdiaNumber } from '../utils/odia';
+import { toOdiaNumber, hasEndingVerseNumber } from '../utils/odia';
 import * as GitaIcons from '../components/GitaIcons';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
@@ -1096,7 +1096,9 @@ export const SongsPage: React.FC = () => {
                                         fontFamily: 'var(--font-odia-sans)',
                                         lineHeight: '1.5'
                                     }}>
-                                        {mainLyric} <span style={{ opacity: 0.5, fontSize: '0.85em', marginLeft: '6px' }}>|{toOdiaNumber(verse.id)}|</span>
+                                        {mainLyric}{!hasEndingVerseNumber(mainLyric) && (
+                                            <span style={{ opacity: 0.5, fontSize: '0.85em', marginLeft: '6px' }}>|{toOdiaNumber(verse.id)}|</span>
+                                        )}
                                     </div>
                                 </div>
                             );

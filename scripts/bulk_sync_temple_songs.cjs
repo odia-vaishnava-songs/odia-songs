@@ -147,6 +147,18 @@ const TEMPLE_SONGS = [
 async function syncTempleSongs() {
     console.log('Starting Temple Songs Sync...');
     
+    console.log("Logging in as Admin...");
+    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email: "daitariswain7@gmail.com",
+        password: "pass-969200"
+    });
+
+    if (authError) {
+        console.error("Login failed:", authError.message);
+        process.exit(1);
+    }
+    console.log("Logged in successfully. UID:", authData.user.id);
+    
     for (const song of TEMPLE_SONGS) {
         console.log(`Syncing ${song.title_english}...`);
         const { error } = await supabase
