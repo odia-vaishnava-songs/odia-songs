@@ -175,7 +175,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-bhajabhajahari', title_english: 'Bhaja Bhaja Hari', title_odia: 'ଭଜ ଭଜ ହରି' },
             { id: 'song-kejabikejabi', title_english: 'Ke Jabi Ke Jabi Bhai Bhava Sindhu Para', title_odia: 'କେ ଯାବି କେ ଯାବି ଭାଇ ଭବ ସିନ୍ଧୁ ପାର' },
             { title_english: 'Nitai Guna Mani', title_odia: 'ନିତାଇ ଗୁଣମଣି' },
-            { title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati', title_odia: 'ନିତାଇ ମୋର ଜୀବନ ଧନ ନିତାଇ ମୋର ଜାତି' },
+            { id: 'song-nitaimorajibanadhana', title_english: 'Nitai Mora Jibana Dhana Nitai Mora Jati', title_odia: 'ନିତାଇ ମୋର ଜୀବନ ଧନ ନିତାଇ ମୋର ଜାତି' },
             { title_english: 'Parama Karuna Pahu Dui Jana', title_odia: 'ପରମ କରୁଣ ପହୁଁ ଦୁଇ ଜନ' },
         ]
     },
