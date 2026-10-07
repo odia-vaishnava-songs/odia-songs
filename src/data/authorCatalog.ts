@@ -192,7 +192,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବାସୁଦେବ ଘୋଷ',
         catalog: [
             { title_english: 'Gauranga Tumi More Doya Na Chadhio', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନା ଛାଡ଼ିହ' },
-            { title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
+            { id: 'song-goragunagaosuni', title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
             { title_english: 'Jaya Jaya Jagannatha Sacira Nandana', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ' },
             { title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଅଙ୍ଗିନାୟ ନାଚେ' },
             { title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୟନା' },
