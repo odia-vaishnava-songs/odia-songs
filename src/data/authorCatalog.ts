@@ -161,7 +161,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ',
         catalog: [
             { id: 'song-yamunastakam', title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୃ ଅନ୍ତକସ୍ୟ ପତ୍ତନେ' },
-            { title_english: 'Disi Disi Racayantim' },
+            { id: 'song-disidisiracayantim', title_english: 'Disi Disi Racayantim', title_odia: 'ଦିଶି ଦିଶି ରଚୟନ୍ତୀମ୍' },
             { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
             { title_english: 'Nikhila Sruti Mauli Ratna' },
             { id: 'song-radhejayajaya', title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
