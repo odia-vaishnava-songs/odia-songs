@@ -28,7 +28,7 @@ export function normalizeForSearch(str: string, aggressive = false): string {
     res = res.replace(/sh/g, 's');
     res = res.replace(/v/g, 'b'); // Common in Bengali/Odia transliteration (Vraja/Braja)
     res = res.replace(/w/g, 'v');
-    res = res.replace(/nitayan/g, 'nityan'); // Common vsnectar typo for Nityananda
+    res = res.replace(/nitayand/g, 'nityanand'); // Common vsnectar typo for Nityananda (Nitayando -> Nityanando)
     
     if (aggressive) {
         // Remove vowels and common transliteration artifacts
@@ -56,11 +56,16 @@ export function isTitleMatch(
     // 1. Exact match (case insensitive)
     if (t1 === t2) return true;
 
-    // 2. Part-agnostic match
-    const cleanPart = (s: string) => s.replace(/part\s*\d+/gi, '').trim();
-    const ct1 = cleanPart(t1);
-    const ct2 = cleanPart(t2);
-    if (ct1 === ct2 && ct1.length > 3) return true;
+    // 2. Part-agnostic and Subtitle-agnostic match
+    const cleanExtra = (s: string) => s.replace(/part\s*\d+/gi, '').split(/\s*[-–—]\s*/)[0].replace(/\([^)]*\)/g, '').trim();
+    const ce1 = cleanExtra(t1);
+    const ce2 = cleanExtra(t2);
+    if (ce1 === ce2 && ce1.length > 3) return true;
+
+    const nce1 = normalizeForSearch(ce1);
+    const nce2 = normalizeForSearch(ce2);
+    if (nce1 === nce2 && nce1.length > 3) return true;
+    if (nce1.length > 6 && nce2.length > 6 && (nce1.includes(nce2) || nce2.includes(nce1))) return true;
 
     // 3. Simple inclusion (only for longer titles)
     const nt1 = normalizeForSearch(title1);

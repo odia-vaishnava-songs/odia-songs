@@ -33,18 +33,19 @@ export const CatalogCompare: React.FC = () => {
     const comparisonData = useMemo(() => {
         // 1. Start with External Catalog
         const data = EXTERNAL_CATALOG.map(extName => {
-            // Find in Live Database
-            const liveMatch = liveSongs.find(s => 
-                isTitleMatch(extName, s.title_english || s.title, '', s.title_odia)
-            );
-
             // Find in Local Catalog (Coming Soon markers)
             const catalogMatch = catalogSongs.find(s => 
                 isTitleMatch(extName, s.title_english, '', s.title_odia)
             );
 
+            // Find in Live Database
+            const liveMatch = liveSongs.find(s => 
+                (catalogMatch?.id && s.id === catalogMatch.id) ||
+                isTitleMatch(extName, s.title_english || s.title, catalogMatch?.title_odia || '', s.title_odia)
+            );
+
             let status: 'completed' | 'coming-soon' | 'missing' = 'missing';
-            if (liveMatch && liveMatch.status === 'COMPLETED') status = 'completed';
+            if (liveMatch && (liveMatch.status === 'COMPLETED' || liveMatch.verified)) status = 'completed';
             else if (catalogMatch) status = 'coming-soon';
 
             return {

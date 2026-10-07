@@ -143,11 +143,12 @@ export const AdminPortalPage: React.FC = () => {
 
     const auditData = useMemo(() => {
         return EXTERNAL_CATALOG.map(extName => {
-            const liveMatch = songs.find(s =>
-                isTitleMatch(extName, s.title_english || s.title, '', s.title_odia)
-            );
             const catalogMatch = catalogSongs.find(s =>
                 isTitleMatch(extName, s.title_english, '', s.title_odia)
+            );
+            const liveMatch = songs.find(s =>
+                (catalogMatch?.id && s.id === catalogMatch.id) ||
+                isTitleMatch(extName, s.title_english || s.title, catalogMatch?.title_odia || '', s.title_odia)
             );
 
             let status: 'completed' | 'coming-soon' | 'missing' = 'missing';
