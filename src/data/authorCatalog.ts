@@ -148,8 +148,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'Krsnadasa Kaviraja Goswami',
+        odia: 'ଶ୍ରୀଳ କୃଷ୍ଣଦାସ କବିରାଜ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { title_english: 'Ambudanjanendra Nila' },
+            { id: 'song-ambudanjanendranila', title_english: 'Ambudanjanendra Nila', title_odia: 'ଅମ୍ବୁଦାଞ୍ଜନେନ୍ଦ୍ରନୀଳ' },
             { id: 'song-bhajagaurangakahagauranga', title_english: 'Bhaja Gauranga Kaha Gauranga', title_odia: 'ଭଜ ଗୌରାଙ୍ଗ କହ ଗୌରାଙ୍ଗ' },
             { title_english: 'Krsna Krsna Krsna Krsna', title_odia: 'କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ! କୃଷ୍ଣ!' },
             { title_english: 'Kunkumakta Kancanabja' }
