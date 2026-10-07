@@ -7,7 +7,8 @@ import { standardizeAuthorName } from '../utils/matching';
 
 export const useSongs = () => {
     const [songs, setSongs] = useState<Resource[]>(LOCAL_RESOURCES);
-    const [loading, setLoading] = useState(true);
+    // Local resources are already loaded and instantly available; do not block UI with a loading spinner
+    const [loading, setLoading] = useState(LOCAL_RESOURCES.length === 0);
     const [error, setError] = useState<string | null>(null);
 
     const processData = useCallback((supabaseSongs: any[]) => {

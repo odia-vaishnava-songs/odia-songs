@@ -1,39 +1,42 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppLayout } from './layouts/AppLayout';
-import { SongsPage } from './pages/SongsPage';
-import { GuidePage } from './pages/GuidePage';
-import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
-import { LoginPage } from './pages/LoginPage';
-import { ManageSongsPage } from './pages/ManageSongsPage';
-import { SignupPage } from './pages/SignupPage';
-import { MigrateSongsPage } from './pages/MigrateSongsPage';
-import { AssignmentDashboard } from './pages/AssignmentDashboard';
-import { CatalogCompare } from './pages/CatalogCompare';
 import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
+
+// Code-split pages so initial page load only downloads necessary code
+const SongsPage = React.lazy(() => import('./pages/SongsPage').then(m => ({ default: m.SongsPage })));
+const GuidePage = React.lazy(() => import('./pages/GuidePage').then(m => ({ default: m.GuidePage })));
+const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const LoginPage = React.lazy(() => import('./pages/LoginPage').then(m => ({ default: m.LoginPage })));
+const SignupPage = React.lazy(() => import('./pages/SignupPage').then(m => ({ default: m.SignupPage })));
+const ManageSongsPage = React.lazy(() => import('./pages/ManageSongsPage').then(m => ({ default: m.ManageSongsPage })));
+const MigrateSongsPage = React.lazy(() => import('./pages/MigrateSongsPage').then(m => ({ default: m.MigrateSongsPage })));
+const AssignmentDashboard = React.lazy(() => import('./pages/AssignmentDashboard').then(m => ({ default: m.AssignmentDashboard })));
+const CatalogCompare = React.lazy(() => import('./pages/CatalogCompare').then(m => ({ default: m.CatalogCompare })));
+const AdminPortalPage = React.lazy(() => import('./pages/AdminPortalPage').then(m => ({ default: m.AdminPortalPage })));
 
 // A resilient wrapper to stop "The Bounce"
 const ProtectedAdminRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
-  const [isVerifying, setIsVerifying] = React.useState(true);
   
-  const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
+  const stickyRole = (typeof window !== 'undefined' ? localStorage.getItem('sticky_role') : null) || '';
+  const effectiveRole = (user?.role || stickyRole).toLowerCase();
+  const isAdmin = effectiveRole === 'admin' || effectiveRole === 'subadmin';
+  const [isVerifying, setIsVerifying] = React.useState(!isAdmin);
 
   React.useEffect(() => {
-    // Give background sync 2.5 seconds to finish if we aren't sure yet
-    let timer: any;
-    if (!loading && !isAdmin) {
-      timer = setTimeout(() => {
-        setIsVerifying(false);
-      }, 5000); 
-    } else if (isAdmin) {
+    if (isAdmin) {
       setIsVerifying(false);
+      return;
     }
+    const timer = setTimeout(() => {
+      setIsVerifying(false);
+    }, 2500);
     return () => clearTimeout(timer);
   }, [loading, isAdmin]);
 
-  if (loading || (isVerifying && !isAdmin)) {
+  if ((loading || isVerifying) && !isAdmin) {
     return (
       <div style={{
         height: '100vh', display: 'flex', flexDirection: 'column',
@@ -44,7 +47,7 @@ const ProtectedAdminRoute = ({ children }: { children: React.ReactNode }) => {
           borderTop: '3px solid #FF9933', borderRadius: '50%',
           animation: 'spin 1s linear infinite'
         }} />
-        <p style={{ marginTop: '1rem', color: '#FF9933', fontWeight: 600 }}>Verifying Admin Credentials...</p>
+        <p style={{ marginTop: '1rem', color: '#FF9933', fontWeight: 600 }}>Loading Admin Portal...</p>
         <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -119,6 +122,14 @@ const AppRoutes = () => {
 
         {/* Protected Admin Routes with "Zero-Bounce" guard */}
         <Route
+          path="admin"
+          element={
+            <ProtectedAdminRoute>
+              <AdminPortalPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
           path="manage-songs"
           element={
             <ProtectedAdminRoute>
@@ -166,7 +177,20 @@ function App() {
     <AuthProvider>
       <AudioProvider>
         <BrowserRouter>
-          <AppRoutes />
+          <React.Suspense fallback={
+            <div style={{
+              height: '100vh', display: 'flex', flexDirection: 'column',
+              justifyContent: 'center', alignItems: 'center', background: '#FDFBF7'
+            }}>
+              <div style={{
+                width: '32px', height: '32px', border: '3px solid #eee',
+                borderTop: '3px solid #FF9933', borderRadius: '50%',
+                animation: 'spin 1s linear infinite'
+              }} />
+            </div>
+          }>
+            <AppRoutes />
+          </React.Suspense>
         </BrowserRouter>
       </AudioProvider>
     </AuthProvider>

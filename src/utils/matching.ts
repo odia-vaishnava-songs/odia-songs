@@ -28,6 +28,7 @@ export function normalizeForSearch(str: string, aggressive = false): string {
     res = res.replace(/sh/g, 's');
     res = res.replace(/v/g, 'b'); // Common in Bengali/Odia transliteration (Vraja/Braja)
     res = res.replace(/w/g, 'v');
+    res = res.replace(/nitayan/g, 'nityan'); // Common vsnectar typo for Nityananda
     
     if (aggressive) {
         // Remove vowels and common transliteration artifacts
@@ -80,8 +81,8 @@ export function isTitleMatch(
 
     // 6. Odia Match (if both have Odia titles)
     if (odia1 && odia2) {
-        const ok1 = odia1.replace(/[\s\W]/g, '');
-        const ok2 = odia2.replace(/[\s\W]/g, '');
+        const ok1 = odia1.replace(/[^\u0B00-\u0B7Fa-zA-Z0-9]/g, '');
+        const ok2 = odia2.replace(/[^\u0B00-\u0B7Fa-zA-Z0-9]/g, '');
         if (ok1 && ok2 && (ok1 === ok2 || ok1.includes(ok2) || ok2.includes(ok1))) return true;
     }
 

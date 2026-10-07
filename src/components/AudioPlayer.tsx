@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Repeat, Download, Sparkles, Repeat1, ListMusic, FileText, Image as ImageIcon } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 import type { AudioVersion, Resource } from '../types';
 
 export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverride }) => {
@@ -141,6 +139,14 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
             `;
             
             element.appendChild(footer);
+
+            // Dynamically import html2canvas and jspdf on demand to keep initial bundle lightweight
+            const [html2canvasModule, jsPdfModule] = await Promise.all([
+                import('html2canvas'),
+                import('jspdf')
+            ]);
+            const html2canvas = html2canvasModule.default;
+            const { jsPDF } = jsPdfModule;
 
             // Temporary style to ensure high quality capture
             const canvas = await html2canvas(element, {

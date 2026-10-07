@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     X, Share2, HelpCircle, LogOut,
-    CircleUser, Info, Shield, MessageCircle, Heart, Users, Search, ArrowLeft,
-    Phone, MapPin, Zap, BookA
+    CircleUser, Info, Shield, MessageCircle, Heart, Search, ArrowLeft,
+    Phone, MapPin, ExternalLink
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useAudio } from '../context/AudioContext';
 import { supabase } from '../supabase/config';
 import * as TempleIcons from './TempleIcons';
 import type { User } from '../types';
-import type { PresenceUser } from '../hooks/usePresence';
 
 type DrawerView = 'menu' | 'users' | 'assign';
 
@@ -19,10 +18,10 @@ interface SideDrawerProps {
     onClose: () => void;
     assigningSongIds?: string[] | null;
     onAssigned?: () => void;
-    onlineUsers?: PresenceUser[];
+    onlineUsers?: any[];
 }
 
-export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongIds, onAssigned, onlineUsers = [] }) => {
+export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigningSongIds, onAssigned }) => {
     const { logout, user } = useAuth();
     const { theme } = useAudio();
     const navigate = useNavigate();
@@ -316,104 +315,95 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                                 {(() => {
                                     const role = user?.role?.toLowerCase();
                                     if (role === 'admin' || role === 'subadmin') {
+                                        const isAdmin = role === 'admin';
                                         return (
-                                            <>
-                                                <div style={{ height: '1px', backgroundColor: '#eee', margin: '0.4rem 0' }} />
-                                                {role === 'admin' && (
-                                                    <MenuItem
-                                                        icon={<Users size={20} />}
-                                                        label="Registered Users"
-                                                        onClick={() => {
-                                                            setView('users');
-                                                            fetchUsers();
-                                                        }}
-                                                        badge="Admin"
-                                                    />
-                                                )}
-                                                <MenuItem
-                                                    icon={<Shield size={20} />}
-                                                    label="Manage Songs"
-                                                    onClick={() => { navigate('/manage-songs'); onClose(); }}
-                                                    badge={role === 'admin' ? 'Admin' : 'Editor'}
-                                                />
-                                                {role === 'admin' && (
-                                                    <MenuItem
-                                                        icon={<BookA size={20} />}
-                                                        label="Catalog Audit"
-                                                        onClick={() => { navigate('/catalog-audit'); onClose(); }}
-                                                        badge="Admin"
-                                                    />
-                                                )}
-                                                {role === 'admin' && (
-                                                    <div className="mt-4 pt-4 border-t border-gray-100">
-                                                        <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                                                            Library Sync
-                                                        </p>
-                                                        <MenuItem
-                                                            icon={<Zap size={20} className="text-blue-500" />}
-                                                            label="Sync VsNectar Library"
-                                                            onClick={() => {
-                                                                const confirmed = window.confirm("Ready to start the Master Sync? This will open VsNectar in a new tab.");
-                                                                if (confirmed) {
-                                                                    window.open('https://vsnectar.web.app/home', '_blank');
-                                                                    alert("Once the page opens, run the 'Master Scraper' script in the console to populate your database.");
-                                                                }
-                                                            }}
-                                                            badge="Admin"
-                                                        />
+                                            <div style={{
+                                                margin: '0.5rem 0',
+                                                borderRadius: '12px',
+                                                background: 'linear-gradient(135deg, #FFF7ED 0%, #FFFBEB 100%)',
+                                                border: '1.5px solid #FDBA74',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                overflow: 'hidden',
+                                                boxShadow: '0 2px 8px rgba(249, 115, 22, 0.08)'
+                                            }}>
+                                                <button
+                                                    onClick={() => {
+                                                        navigate('/admin');
+                                                        onClose();
+                                                    }}
+                                                    style={{
+                                                        flex: 1,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.8rem',
+                                                        padding: '0.75rem 0.9rem',
+                                                        border: 'none',
+                                                        background: 'transparent',
+                                                        textAlign: 'left',
+                                                        cursor: 'pointer',
+                                                        color: '#9A3412',
+                                                        fontWeight: 700
+                                                    }}
+                                                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(251, 146, 60, 0.12)'}
+                                                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                                >
+                                                    <span style={{
+                                                        width: '28px', height: '28px', borderRadius: '8px',
+                                                        background: 'linear-gradient(135deg, #EA580C, #C2410C)',
+                                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                        color: 'white', flexShrink: 0
+                                                    }}>
+                                                        <Shield size={16} />
+                                                    </span>
+                                                    <div style={{ flex: 1, minWidth: 0 }}>
+                                                        <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#9A3412', lineHeight: 1.2 }}>
+                                                            Admin Portal
+                                                        </div>
+                                                        <div style={{ fontSize: '0.68rem', color: '#EA580C', fontWeight: 600 }}>
+                                                            {isAdmin ? 'Administrator Console' : 'Editor Workspace'}
+                                                        </div>
                                                     </div>
-                                                )}
-
-                                            </>
+                                                    <span style={{
+                                                        fontSize: '0.62rem',
+                                                        backgroundColor: isAdmin ? '#EA580C' : '#D97706',
+                                                        color: 'white',
+                                                        padding: '2px 7px',
+                                                        borderRadius: '999px',
+                                                        fontWeight: 800,
+                                                        letterSpacing: '0.5px'
+                                                    }}>
+                                                        {isAdmin ? 'ADMIN' : 'EDITOR'}
+                                                    </span>
+                                                </button>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        window.open('/admin', '_blank');
+                                                        onClose();
+                                                    }}
+                                                    title="Open Admin Portal in a new window"
+                                                    style={{
+                                                        padding: '0.85rem 0.85rem',
+                                                        border: 'none',
+                                                        borderLeft: '1px solid #FDBA74',
+                                                        background: 'transparent',
+                                                        color: '#EA580C',
+                                                        cursor: 'pointer',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center'
+                                                    }}
+                                                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(251, 146, 60, 0.2)'}
+                                                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                                >
+                                                    <ExternalLink size={16} />
+                                                </button>
+                                            </div>
                                         );
                                     }
                                     return null;
                                 })()}
-
-                                {user?.role?.toLowerCase() === 'admin' && (
-                                    <div style={{
-                                        marginTop: '1rem',
-                                        padding: '0.8rem',
-                                        backgroundColor: onlineUsers.length > 0 ? '#F0FDF4' : '#f9f9f9',
-                                        borderRadius: '12px',
-                                        border: `1px solid ${onlineUsers.length > 0 ? '#BBF7D0' : '#eee'}`,
-                                    }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: onlineUsers.length > 0 ? '8px' : 0 }}>
-                                            <div style={{
-                                                width: '8px', height: '8px', borderRadius: '50%',
-                                                backgroundColor: onlineUsers.length > 0 ? '#22C55E' : '#999',
-                                                boxShadow: onlineUsers.length > 0 ? '0 0 0 2px rgba(34, 197, 94, 0.2)' : 'none',
-                                                animation: onlineUsers.length > 0 ? 'pulsePresence 2s infinite' : 'none'
-                                            }} />
-                                            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: onlineUsers.length > 0 ? '#166534' : '#666' }}>
-                                                {onlineUsers.length > 0 ? `Live Now: ${onlineUsers.length} Online` : 'Presence: Connecting...'}
-                                            </span>
-                                        </div>
-                                        {onlineUsers.length > 0 && (
-                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-                                                {onlineUsers.map(u => (
-                                                    <div key={u.id} style={{
-                                                        fontSize: '0.7rem',
-                                                        padding: '2px 8px',
-                                                        backgroundColor: 'white',
-                                                        border: '1px solid #DCFCE7',
-                                                        borderRadius: '8px',
-                                                        color: '#15803D'
-                                                    }}>
-                                                        {u.name}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
-                                        <style>{`
-                                            @keyframes pulsePresence {
-                                                0% { opacity: 1; transform: scale(1); }
-                                                50% { opacity: 0.5; transform: scale(1.2); }
-                                                100% { opacity: 1; transform: scale(1); }
-                                            }
-                                        `}</style>
-                                    </div>
-                                )}
 
                                 <div style={{ height: '1px', backgroundColor: '#eee', margin: '0.4rem 0' }} />
 

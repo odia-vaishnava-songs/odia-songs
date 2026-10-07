@@ -19,80 +19,79 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [user, setUser] = useState<User | null>(null);
-    const [loading, setLoading] = useState(true);
+    // Instant hydration from cache to eliminate multi-second first-paint blocking
+    const [user, setUser] = useState<User | null>(() => {
+        try {
+            const cached = localStorage.getItem('cached_auth_user');
+            return cached ? JSON.parse(cached) : null;
+        } catch {
+            return null;
+        }
+    });
+    // If we already have a cached user, we do not block UI with a full-screen spinner
+    const [loading, setLoading] = useState<boolean>(() => {
+        try {
+            return !localStorage.getItem('cached_auth_user');
+        } catch {
+            return true;
+        }
+    });
     const [status, setStatus] = useState('Initializing...');
     const lastSyncTime = useRef<number>(0);
     const lastSyncTimestampRef = useRef<number>(0); // Absolute time cooldown
     const mountedRef = useRef<boolean>(true);
-    const highestRoleRef = useRef<string>('user');
+    const highestRoleRef = useRef<string>(
+        (typeof window !== 'undefined' ? localStorage.getItem('sticky_role') : null) || 'user'
+    );
     const hasInitializedRef = useRef<boolean>(false);
 
-    // DEV MODE: Bypass login on localhost
-    const isLocal = typeof window !== 'undefined' &&
-        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-
-    // Initial load: restore sticky role from localStorage if possible
+    // Initial load: restore sticky role and verify session in background
     useEffect(() => {
         mountedRef.current = true;
 
         const sticky = localStorage.getItem('sticky_role');
         if (sticky) {
-            console.log('[Auth] Restored sticky role:', sticky);
             highestRoleRef.current = sticky;
         }
 
-        // Safety timeout: stop loading after 8 seconds even if something is slow
+        // Safety timeout: stop loading after 2.5 seconds max even on terrible connections
         const timeout = setTimeout(() => {
-            if (mountedRef.current && loading) {
+            if (mountedRef.current) {
                 setLoading(false);
             }
-        }, 8000);
+        }, 2500);
 
-        /* 🚀 LOCAL BYPASS TEMPORARILY DISABLED TO ALLOW REAL LOGIN TESTING
-        if (isLocal && !user) {
-            console.log('[Auth] Localhost Bypass Activated (Admin)');
+        // Immediate session check on mount
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (!mountedRef.current) return;
+            if (session?.user) {
+                syncProfile(session.user);
+            } else {
+                localStorage.removeItem('cached_auth_user');
+                setUser(null);
+                setLoading(false);
+                hasInitializedRef.current = true;
+            }
+        }).catch(err => {
+            console.warn('[Auth] Error getting session:', err);
+            if (mountedRef.current) {
+                localStorage.removeItem('cached_auth_user');
+                setUser(null);
+                setLoading(false);
+                hasInitializedRef.current = true;
+            }
+        });
 
-            const devUser: User = {
-                id: '00000000-0000-0000-0000-000000000000',
-                name: 'Dev Admin (Local)',
-                email: 'dev@local.com',
-                role: 'admin',
-                userId: '00000000-0000-0000-0000-000000000000'
-            };
-
-            // Background sync dev profile (non-blocking)
-            (async () => {
-                try {
-                    await supabase.from('profiles').upsert({
-                        id: '00000000-0000-0000-0000-000000000000',
-                        name: 'Dev Admin',
-                        role: 'ADMIN' // Uppercase for DB enum
-                    });
-                } catch (err: any) {
-                    console.warn('[Auth] Dev profile sync skipped/failed:', err.message);
-                }
-            })();
-
-            setUser(devUser);
-            setLoading(false);
-            hasInitializedRef.current = true;
-            return;
-
-        }
-        */
-
-
-        // Supabase auth subscription...
+        // Supabase auth subscription for real-time auth changes
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             if (!mountedRef.current) return;
 
             if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
-                if (!isLocal) setUser(null);
+                localStorage.removeItem('cached_auth_user');
+                setUser(null);
                 setLoading(false);
                 hasInitializedRef.current = true;
             } else if (session) {
-                // Background sync
                 const now = Date.now();
                 if (now - lastSyncTimestampRef.current > 5000) {
                     await syncProfile(session.user);
@@ -108,7 +107,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             clearTimeout(timeout);
             subscription.unsubscribe();
         };
-    }, [isLocal, user]);
+    }, []);
 
     const syncProfile = async (supabaseUser: any, retryCount = 0) => {
         if (!supabaseUser) return;
@@ -171,6 +170,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             console.log('[Auth] Sync complete. Result Role:', newUser.role, '(DB Role was:', dbRole, ')');
 
             if (mountedRef.current) {
+                // Save user in cache for 0ms instant reload next time
+                try {
+                    localStorage.setItem('cached_auth_user', JSON.stringify(newUser));
+                } catch (e) {
+                    console.warn('[Auth] Failed to cache user:', e);
+                }
+
                 // STICKY ROLE: Remember they were an Admin so they don't lose access on slow live connections
                 if (finalRole === 'admin' || finalRole === 'subadmin') {
                     localStorage.setItem('sticky_role', finalRole);

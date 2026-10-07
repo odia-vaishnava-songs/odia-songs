@@ -91,7 +91,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-gauraarati', title_english: 'Jaya Jaya Goracander Arotik (Gaura Arati)', title_odia: 'ଜୟ ଜୟ ଗୋରାଚାଁଦେର ଆରତିକ' },
             { id: 'song-hariboloharibolo', title_english: 'Hari bolo Hari bolo', title_odia: 'ହରି ବୋଲ ହରି ବୋଲ' },
             { id: 'song-satakotigopimadhabamana', title_english: 'Sata Koti Gopi Madhaba Mana', title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ' },
-            { id: 'song-nakorolunkarama', title_english: 'Na Korolun Karama', title_odia: 'ନା କୋରୋଲୁଁ କରମ' }
+            { id: 'song-nakorolunkarama', title_english: 'Na Korolun Karama', title_odia: 'ନା କୋରୋଲୁଁ କରମ' },
+            { id: 'song-ohepremerathakuragora', title_english: 'Ohe Premera Thakura Gora', title_odia: 'ଓହେ ପ୍ରେମେର ଠାକୁର ଗୋରା' }
         ]
     },
     {
@@ -138,7 +139,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-karmaphaleasesaba', title_english: 'Karma Phale Ase Saba Nana Vesa Dhari', title_odia: 'କର୍ମଫଳେ ଆସେ ସବ ନାନା ବେଶ ଧରି' },
             { title_english: 'Krsna Tava Punya Habe Bhai' },
             { id: 'song-mahavadanyaisvara', title_english: 'Maha Vadanya Isvara Sri Gaura Sundara', title_odia: 'ମହାବଦାନ୍ୟ ଈଶ୍ୱର ଶ୍ରୀ ଗୌରସୁନ୍ଦର' },
-            { title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare' },
+            { id: 'song-nityasiddhaparsadasaba', title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare', title_odia: 'ନିତ୍ୟ-ସିଦ୍ଧ ପାର୍ଷଦ ସବ ରାଧା-କୃଷ୍ଣ ସ୍ମରେ' },
             { title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore' },
             { title_english: 'Samudrena Phena Yena' },
             { title_english: 'Sisya Hoiya Kore Yei Gitar Sravana' },
@@ -212,7 +213,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'Huhunkara Garjanadi Aho', title_odia: 'ହୁହୁଙ୍କାର ଗର୍ଜନାଦି ଅହୋ' },
             { title_english: 'Nava Gaura Varam', title_odia: 'ନବ ଗୌର ବରଂ' },
-            { title_english: 'Nitayando Vadhutendur', title_odia: 'ନିତ୍ୟାନନ୍ଦୋ ବଧୂତେନ୍ଦୁଃ' },
+            { id: 'song-nityanandadvadasanama', title_english: 'Nityanando Vadhutendur', title_odia: 'ନିତ୍ୟାନନ୍ଦୋ ବଧୂତେନ୍ଦୁଃ' },
             { title_english: 'Ujjvala Varana', title_odia: 'ଉଜ୍ଜ୍ୱଳ ବରଣ' },
         ]
     },

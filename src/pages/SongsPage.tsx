@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { supabase } from '../supabase/config';
-import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, ExternalLink, X, Mic, Sparkles, Crosshair, Eye, Users, ChevronLeft, ChevronRight, Type, Minus, Plus, List, History, Settings } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, SlidersHorizontal, CheckCircle2, Menu, BookOpen, BookA, BookText, Circle, X, Mic, Sparkles, Crosshair, Eye, Users, ChevronLeft, ChevronRight, Type, Minus, Plus, List, History, Settings } from 'lucide-react';
 import type { Resource } from '../types';
 import { getStatusColor } from '../constants/colors';
 
@@ -14,8 +14,9 @@ import { AUTHOR_CATALOG } from '../data/authorCatalog';
 import { normalizeForSearch, isTitleMatch, standardizeAuthorName } from '../utils/matching';
 
 import { TATTVA_THEMES } from '../constants/themes';
-import { toOdiaNumber, hasEndingVerseNumber } from '../utils/odia';
+import { toOdiaNumber, getFormattedVerseDisplay } from '../utils/odia';
 import * as GitaIcons from '../components/GitaIcons';
+import { pushBackHandler, popBackHandler } from '../utils/backHandler';
 
 type ViewMode = 'combined' | 'sequential' | 'word-to-word';
 
@@ -155,6 +156,49 @@ export const SongsPage: React.FC = () => {
         };
     }, [isToolbeltExpanded]);
 
+    // Mobile Back Button synchronization: When a song is opened, register back handler
+    useEffect(() => {
+        if (selectedSong) {
+            pushBackHandler('song-detail', () => {
+                setSelectedSong(null);
+                setIsDetailView(false);
+            });
+        }
+    }, [selectedSong, setIsDetailView]);
+
+    // Mobile Back Button: Author Explorer Panel
+    useEffect(() => {
+        if (isAuthorPanelOpen) {
+            pushBackHandler('author-panel', () => {
+                setIsAuthorPanelOpen(false);
+            });
+        }
+    }, [isAuthorPanelOpen]);
+
+    // Mobile Back Button: Settings Panel
+    useEffect(() => {
+        if (isSettingsPanelOpen) {
+            pushBackHandler('settings-panel', () => {
+                setIsSettingsPanelOpen(false);
+            });
+        }
+    }, [isSettingsPanelOpen]);
+
+    // Mobile Back Button: Author filter drill-down
+    useEffect(() => {
+        if (selectedAuthor) {
+            pushBackHandler('selected-author', () => {
+                setSelectedAuthor(null);
+            });
+        }
+    }, [selectedAuthor]);
+
+    const handleCloseDetail = () => {
+        setSelectedSong(null);
+        setIsDetailView(false);
+        popBackHandler('song-detail');
+    };
+
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
         setSelectedSong(song);
         setIsDetailView(true);
@@ -254,7 +298,7 @@ export const SongsPage: React.FC = () => {
                 
                 // Find if this song belongs to a specific author in our catalog
                 const catalogMatch = AUTHOR_CATALOG.find(cat => 
-                    cat.catalog.some(catSong => isTitleMatch(catSong.title_english, songTitle, catSong.title_odia, songOdia))
+                    cat.catalog.some(catSong => (catSong.id && catSong.id === s.id) || isTitleMatch(catSong.title_english, songTitle, catSong.title_odia, songOdia))
                 );
                 
                 const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName((s as any).author || '');
@@ -265,7 +309,7 @@ export const SongsPage: React.FC = () => {
             songResources.forEach(s => {
                 if (!data.some(dbS => dbS.id === s.id)) {
                     const catalogMatch = AUTHOR_CATALOG.find(cat => 
-                        cat.catalog.some(catSong => isTitleMatch(catSong.title_english, s.title_english || s.title, catSong.title_odia, s.title_odia))
+                        cat.catalog.some(catSong => (catSong.id && catSong.id === s.id) || isTitleMatch(catSong.title_english, s.title_english || s.title, catSong.title_odia, s.title_odia))
                     );
                     const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName(s.author || '');
                     counts[authorName] = (counts[authorName] || 0) + 1;
@@ -295,7 +339,7 @@ export const SongsPage: React.FC = () => {
                 if (catalogEntry) {
                     const authorSongs = authorToSongs[name] || [];
                     availableInCatalog = catalogEntry.catalog.filter(cs => 
-                        authorSongs.some(s => isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia))
+                        authorSongs.some(s => (cs.id && cs.id === s.id) || isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia))
                     ).length;
                 } else {
                     availableInCatalog = totalAvailable;
@@ -371,6 +415,7 @@ export const SongsPage: React.FC = () => {
 
     const filteredSongs = useMemo(() => {
         const query = normalizeForSearch(searchQuery);
+        const queryAgg = normalizeForSearch(searchQuery, true);
         const pool = activeTab === 'gita' ? gitaChapters : songResources;
 
         if (!query) {
@@ -378,10 +423,18 @@ export const SongsPage: React.FC = () => {
             return activeTab === 'gita' ? [] : pool;
         }
 
+        const tokens = searchQuery.trim().split(/\s+/).filter(t => t.length > 1);
+
         return pool.filter(s => {
-            const inTitle = normalizeForSearch(s.title_odia || s.title || '').includes(query) || normalizeForSearch(s.title_english || '').includes(query);
-            const inAuthor = normalizeForSearch(s.author || '').includes(query);
-            const inDescription = normalizeForSearch(s.description || '').includes(query);
+            const normTitleOdia = normalizeForSearch(s.title_odia || s.title || '');
+            const normTitleEng = normalizeForSearch(s.title_english || '');
+            const normAuthor = normalizeForSearch(s.author || '');
+            const normDesc = normalizeForSearch(s.description || '');
+
+            // 1. Direct match on whole query
+            const inTitle = normTitleOdia.includes(query) || normTitleEng.includes(query);
+            const inAuthor = normAuthor.includes(query);
+            const inDescription = normDesc.includes(query);
             const inTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(query));
 
             // Check verses lyrics
@@ -389,7 +442,31 @@ export const SongsPage: React.FC = () => {
                 normalizeForSearch(v.lyric || '').includes(query) || normalizeForSearch(v.translation || '').includes(query)
             );
 
-            return inTitle || inAuthor || inDescription || inLyrics || inTags;
+            if (inTitle || inAuthor || inDescription || inLyrics || inTags) return true;
+
+            // 2. Aggressive (vowel-neutral) match for queries with at least 3 consonants
+            if (queryAgg.length >= 3) {
+                const inTitleAgg = normalizeForSearch(s.title_english || '', true).includes(queryAgg);
+                const inTagsAgg = s.tags?.some(tag => normalizeForSearch(tag || '', true).includes(queryAgg));
+                if (inTitleAgg || inTagsAgg) return true;
+            }
+
+            // 3. Multi-word / Token matching (every word in search query matches title, tags, or author)
+            if (tokens.length > 1) {
+                const allTokensMatch = tokens.every(token => {
+                    const tNorm = normalizeForSearch(token);
+                    const tAgg = normalizeForSearch(token, true);
+                    const matchTitle = normTitleOdia.includes(tNorm) || normTitleEng.includes(tNorm) || 
+                                       (tAgg.length >= 3 && normalizeForSearch(s.title_english || '', true).includes(tAgg));
+                    const matchTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(tNorm) || 
+                                      (tAgg.length >= 3 && normalizeForSearch(tag || '', true).includes(tAgg)));
+                    const matchAuthor = normAuthor.includes(tNorm);
+                    return matchTitle || matchTags || matchAuthor;
+                });
+                if (allTokensMatch) return true;
+            }
+
+            return false;
         });
     }, [songResources, gitaChapters, activeTab, searchQuery]);
 
@@ -1031,7 +1108,7 @@ export const SongsPage: React.FC = () => {
             );
         }
 
-        const { verses, reference_url } = selectedSong.structuredContent;
+        const { verses } = selectedSong.structuredContent;
         const isGita = selectedSong.category === 'Gita' || selectedSong.category === 'G' || selectedSong.id.startsWith('gita-') || selectedSong.id === 'song-gitamahatmya';
         const verseLabel = isGita ? 'ଶ୍ଲୋକ' : 'ପାଠ';
 
@@ -1088,18 +1165,24 @@ export const SongsPage: React.FC = () => {
                                             {SPEAKER_MAP[speakerLine].label}
                                         </div>
                                     )}
-                                    <div style={{
-                                        whiteSpace: 'pre-wrap',
-                                        color: isNightMode ? '#e2e8f0' : '#111827',
-                                        fontSize: speakerLine ? `${fontSize * 1.2}px` : `${fontSize * 1.1}px`,
-                                        fontWeight: 400,
-                                        fontFamily: 'var(--font-odia-sans)',
-                                        lineHeight: '1.5'
-                                    }}>
-                                        {mainLyric}{!hasEndingVerseNumber(mainLyric) && (
-                                            <span style={{ opacity: 0.5, fontSize: '0.85em', marginLeft: '6px' }}>|{toOdiaNumber(verse.id)}|</span>
-                                        )}
-                                    </div>
+                                    {(() => {
+                                        const { lyricText, markerText } = getFormattedVerseDisplay(mainLyric, verse.id);
+                                        return (
+                                            <div style={{
+                                                whiteSpace: 'pre-wrap',
+                                                color: isNightMode ? '#e2e8f0' : '#111827',
+                                                fontSize: speakerLine ? `${fontSize * 1.2}px` : `${fontSize * 1.1}px`,
+                                                fontWeight: 400,
+                                                fontFamily: 'var(--font-odia-sans)',
+                                                lineHeight: '1.6'
+                                            }}>
+                                                {lyricText}{' '}
+                                                <span style={{ whiteSpace: 'nowrap' }}>
+                                                    {markerText}
+                                                </span>
+                                            </div>
+                                        );
+                                    })()}
                                 </div>
                             );
                         })}
@@ -1134,25 +1217,6 @@ export const SongsPage: React.FC = () => {
                     </div>
                     {selectedSong.description && (
                         <div style={{ fontSize: '0.95rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
-                    )}
-                    {reference_url && (
-                        <a
-                            href={reference_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                color: isNightMode ? theme.color : '#2563eb',
-                                fontSize: '0.85rem',
-                                textDecoration: 'none',
-                                marginBottom: '1rem',
-                                fontWeight: 900
-                            }}
-                        >
-                            <ExternalLink size={16} /> Reference / Source
-                        </a>
                     )}
 
 
@@ -1213,15 +1277,25 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             )}
 
-                            <div style={{
-                                whiteSpace: 'pre-wrap',
-                                color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
-                                fontWeight: 600,
-                                fontFamily: 'var(--font-odia-sans)',
-                                marginBottom: '1.5rem',
-                                lineHeight: '1.6'
-                            }}>{mainLyric}</div>
+                            {(() => {
+                                const { lyricText, markerText } = getFormattedVerseDisplay(mainLyric, verse.id);
+                                return (
+                                    <div style={{
+                                        whiteSpace: 'pre-wrap',
+                                        color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
+                                        fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
+                                        fontWeight: 600,
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        marginBottom: '1.5rem',
+                                        lineHeight: '1.6'
+                                    }}>
+                                        {lyricText}{' '}
+                                        <span style={{ whiteSpace: 'nowrap' }}>
+                                            {markerText}
+                                        </span>
+                                    </div>
+                                );
+                            })()}
 
                             {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
                                 <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
@@ -1421,7 +1495,7 @@ export const SongsPage: React.FC = () => {
             const standardized = standardizeAuthorName(s.author || '');
             if (standardized.toLowerCase() === selectedAuthor.toLowerCase()) return true;
             return AUTHOR_CATALOG.find(a => a.name === selectedAuthor)?.catalog.some(cs => 
-                isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia)
+                (cs.id && cs.id === s.id) || isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia)
             ) || false;
         });
 
@@ -1431,9 +1505,9 @@ export const SongsPage: React.FC = () => {
 
         // Build merged list: catalog songs enriched with resource match
         let mergedList = fullCatalog.map(cs => {
-            // Try to find matching resource using centralized fuzzy logic
+            // Try to find matching resource using ID or centralized fuzzy logic
             const resource = availableSongs.find(r => 
-                isTitleMatch(cs.title_english, r.title_english || r.title, cs.title_odia, r.title_odia)
+                (cs.id && r.id === cs.id) || isTitleMatch(cs.title_english, r.title_english || r.title, cs.title_odia, r.title_odia)
             );
             return { ...cs, resource };
         });
@@ -1441,10 +1515,10 @@ export const SongsPage: React.FC = () => {
         // Also add any songs in resources NOT in catalog
         availableSongs.forEach(r => {
             const alreadyListed = mergedList.some(m => 
-                isTitleMatch(m.title_english, r.title_english || r.title, m.title_odia, r.title_odia)
+                (m.id && r.id === m.id) || isTitleMatch(m.title_english, r.title_english || r.title, m.title_odia, r.title_odia)
             );
             if (!alreadyListed) {
-                mergedList.push({ title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
+                mergedList.push({ id: r.id, title_english: r.title_english || r.title || '', title_odia: r.title_odia, resource: r });
             }
         });
 
@@ -1472,6 +1546,7 @@ export const SongsPage: React.FC = () => {
                         onClick={() => {
                             setSelectedAuthor(null);
                             setIsAuthorPanelOpen(true);
+                            popBackHandler('selected-author');
                         }}
                         style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '8px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}
                     >
@@ -1585,7 +1660,7 @@ export const SongsPage: React.FC = () => {
             <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 4000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                 {renderReaderToolbelt()}
                 <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
-                    <button onClick={() => { setSelectedSong(null); setIsDetailView(false); }} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}>
+                    <button onClick={handleCloseDetail} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}>
                         <ArrowLeft size={28} strokeWidth={2.5} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
@@ -2539,7 +2614,10 @@ export const SongsPage: React.FC = () => {
                 <>
                     {/* Backdrop */}
                     <div
-                        onClick={() => setIsAuthorPanelOpen(false)}
+                        onClick={() => {
+                            setIsAuthorPanelOpen(false);
+                            popBackHandler('author-panel');
+                        }}
                         style={{
                             position: 'fixed', inset: 0,
                             background: 'rgba(0,0,0,0.45)',
@@ -2580,7 +2658,10 @@ export const SongsPage: React.FC = () => {
                                 <div style={{ fontSize: '0.75rem', opacity: 0.85, fontFamily: 'var(--font-odia-sans)' }}>ଲେଖକ ଅନୁସାରେ ଖୋଜନ୍ତୁ</div>
                             </div>
                             <button
-                                onClick={() => setIsAuthorPanelOpen(false)}
+                                onClick={() => {
+                                    setIsAuthorPanelOpen(false);
+                                    popBackHandler('author-panel');
+                                }}
                                 style={{
                                     background: 'rgba(255,255,255,0.2)', border: 'none',
                                     color: 'white', width: '34px', height: '34px',
@@ -2740,7 +2821,10 @@ export const SongsPage: React.FC = () => {
                 <>
                     {/* Backdrop */}
                     <div
-                        onClick={() => setIsSettingsPanelOpen(false)}
+                        onClick={() => {
+                            setIsSettingsPanelOpen(false);
+                            popBackHandler('settings-panel');
+                        }}
                         style={{
                             position: 'fixed', inset: 0,
                             background: 'rgba(0,0,0,0.35)',
@@ -2774,7 +2858,10 @@ export const SongsPage: React.FC = () => {
                                 <span style={{ fontSize: '1rem', fontWeight: 900 }}>Settings</span>
                             </div>
                             <button
-                                onClick={() => setIsSettingsPanelOpen(false)}
+                                onClick={() => {
+                                    setIsSettingsPanelOpen(false);
+                                    popBackHandler('settings-panel');
+                                }}
                                 style={{
                                     background: 'rgba(255,255,255,0.2)', border: 'none',
                                     color: 'white', width: '32px', height: '32px',

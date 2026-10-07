@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabase/config';
 import type { Resource, SongVerse, WordMeaning } from '../types';
-import { X, Save, Trash2, CheckCircle2 } from 'lucide-react';
+import { X, Save, Trash2, CheckCircle2, Copy, Check } from 'lucide-react';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
 import { standardizeAuthorName } from '../utils/matching';
 import { AUTHOR_CATALOG } from '../data/authorCatalog';
@@ -40,6 +40,30 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
     const [saving, setSaving] = useState(false);
     const [isRawMode, setIsRawMode] = useState(false);
     const [rawJson, setRawJson] = useState('');
+    const [copiedAI, setCopiedAI] = useState(false);
+
+    const copyForAICheck = () => {
+        let text = `Please proofread and verify this Vaishnava song for our Odia Vaishnava Songs app:\n\n`;
+        text += `Song Title: ${formData.title_odia || ''} (${formData.title_english || formData.title || ''})\n`;
+        text += `Author: ${formData.author || 'Unknown'}\n\n`;
+        (formData.structuredContent?.verses || []).forEach((v, idx) => {
+            text += `--- Verse ${idx + 1} ---\n`;
+            text += `Odia Lyrics:\n${v.lyric}\n\n`;
+            if (v.wordMeanings && v.wordMeanings.length > 0) {
+                text += `Word Meanings:\n` + v.wordMeanings.map(wm => `* ${wm.word} - ${wm.meaning}`).join('\n') + `\n\n`;
+            }
+            if (v.translation) {
+                text += `Odia Translation:\n${v.translation}\n\n`;
+            }
+        });
+        text += `Please check:\n1. Are the Odia spelling, conjuncts, and halanta marks accurate?\n2. Is the Odia translation respectful, devotional, and faithful to Gaudiya Vaishnava siddhanta?\n3. Any improvements or corrections needed?`;
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text);
+            setCopiedAI(true);
+            setTimeout(() => setCopiedAI(false), 2500);
+        }
+    };
 
     const toggleRawMode = () => {
         if (!isRawMode) {
@@ -271,9 +295,33 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
             position: 'relative',
             paddingBottom: '5rem' // Space for sticky button
         }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'center' }}>
-                <h3 style={{ margin: 0 }}>{song ? 'Edit Song' : 'Add New Song'}</h3>
-                <button onClick={onCancel} style={{ background: '#f0f0f0', border: 'none', padding: '8px', borderRadius: '50%' }}><X size={24} /></button>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <h3 style={{ margin: 0 }}>{song ? 'Edit Song' : 'Add New Song'}</h3>
+                    <button
+                        onClick={copyForAICheck}
+                        type="button"
+                        title="Copy entire song formatted for ChatGPT or Gemini verification"
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            padding: '6px 12px',
+                            borderRadius: '8px',
+                            border: copiedAI ? '1.5px solid #22C55E' : '1px solid #CBD5E1',
+                            background: copiedAI ? '#DCFCE7' : '#F8FAFC',
+                            color: copiedAI ? '#15803D' : '#334155',
+                            fontSize: '0.78rem',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
+                        }}
+                    >
+                        {copiedAI ? <Check size={14} color="#15803D" /> : <Copy size={14} color="#EA580C" />}
+                        {copiedAI ? 'Copied for AI! ✓' : '📋 Copy for AI Check (ChatGPT / Gemini)'}
+                    </button>
+                </div>
+                <button onClick={onCancel} style={{ background: '#f0f0f0', border: 'none', padding: '8px', borderRadius: '50%', cursor: 'pointer' }}><X size={24} /></button>
             </div>
 
             <div style={{ display: 'grid', gap: '1rem', marginBottom: '2rem' }}>

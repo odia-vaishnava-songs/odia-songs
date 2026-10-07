@@ -36,7 +36,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Baloo+Bhaina+2:wght@400..800&family=Anek+Odia:wght@100..800&family=Noto+Sans+Oriya:wght@400;500;700&family=Noto+Serif+Oriya:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Baloo+Bhaina+2:wght@500;600;700&family=Anek+Odia:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;500;700&family=Noto+Serif+Oriya:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Baloo+Bhaina+2:wght@500;600;700&family=Anek+Odia:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;500;700&family=Noto+Serif+Oriya:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Baloo+Bhaina+2:wght@500;600;700&family=Anek+Odia:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;500;700&family=Noto+Serif+Oriya:wght@400;700&display=swap">
+  </noscript>
 </head>
 
 <body>
@@ -49,7 +53,7 @@
       <h1 style="margin-top: 20px;">Loading Odia Songs...</h1>
       <p style="margin-top: 10px; opacity: 0.8;">If this screen remains for more than 5 seconds, please check your
         connection.</p>
-      <button onclick="window.location.reload(true)"
+      <button onclick="if('caches' in window){caches.keys().then(function(keys){keys.forEach(function(k){caches.delete(k);});});}window.location.href=window.location.pathname+'?v='+Date.now();"
         style="margin-top: 30px; padding: 12px 24px; background: #FF9933; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Force
         Refresh</button>
       <style>
