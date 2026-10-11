@@ -103,7 +103,7 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('bhaktivinoda')) return 'Bhaktivinoda Thakura';
     if (n.includes('narottama')) return 'Narottama Dasa Thakura';
     if (n.includes('govinda dasa')) return 'Govinda Dasa Kaviraja';
-    if (n.includes('kaviraja goswami')) return 'Krsnadasa Kaviraja Goswami';
+    if (n.includes('kaviraja') || n.includes('krishnadasa') || n.includes('krsnadasa')) return 'Krsnadasa Kaviraja Goswami';
     if (n.includes('visvanatha')) return 'Visvanatha Cakravarti Thakura';
     if (n.includes('bhagavatam')) return 'Srimad Bhagavatam';
     if (n.includes('upa') || n.includes('upadesamrta')) return 'Rupa Goswami';

@@ -4,6 +4,7 @@ import { supabase } from '../supabase/config';
 import { ArrowLeft, Users, CheckCircle2, Clock, PlayCircle, BarChart3, TrendingUp, Copy, Share2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { User } from '../types';
+import { Spinner } from '../components/Spinner';
 
 export const AssignmentDashboard: React.FC = () => {
     const { songs, loading: songsLoading } = useSongs();
@@ -99,8 +100,7 @@ export const AssignmentDashboard: React.FC = () => {
     if (loading || songsLoading) {
         return (
             <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <div style={{ width: '40px', height: '40px', border: '3px solid #eee', borderTop: '3px solid #8A5082', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-                <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+                <Spinner size={38} color="#8A5082" />
             </div>
         );
     }

@@ -3,6 +3,7 @@ import { Play, Pause, SkipBack, SkipForward, Repeat, Download, Sparkles, Repeat1
 import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import type { AudioVersion, Resource } from '../types';
+import { Spinner } from './Spinner';
 
 export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverride }) => {
     const {
@@ -284,13 +285,13 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
                 
                 {/* 6: AUDIO DOWNLOAD */}
                 <button onClick={handleDownloadAudio} style={{ ...pillBtnStyle(primaryColor), opacity: isDownloading ? 0.7 : 1 }} disabled={isDownloading}>
-                    {isDownloading ? <div style={spinnerStyle} /> : <Download size={18} />}
+                    {isDownloading ? <Spinner size={18} color="white" /> : <Download size={18} />}
                 </button>
 
                 {/* 7: PAGE EXPORT (PHOTO/PDF) */}
                 <div ref={exportMenuRef} style={{ width: '100%', position: 'relative' }}>
                     <button onClick={() => setIsExportMenuOpen(!isExportMenuOpen)} style={pillBtnStyle(primaryColor, isExportMenuOpen)} disabled={isExporting}>
-                        {isExporting ? <div style={spinnerStyle} /> : <Sparkles size={18} />}
+                        {isExporting ? <Spinner size={18} color="white" /> : <Sparkles size={18} />}
                     </button>
                     {isExportMenuOpen && <div style={dropdownStyle(isNightMode, '-120px')}>
                         <div style={dropdownTitleStyle}>Export Page</div>
@@ -344,7 +345,6 @@ const dropdownItemStyle = (active: boolean, color: string, isNight: boolean): Re
 
 const dropdownTitleStyle: React.CSSProperties = { padding: '8px 14px', fontSize: '0.7rem', fontWeight: 900, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' };
 const badgeStyle: React.CSSProperties = { position: 'absolute', top: '2px', right: '2px', background: '#FF4444', color: 'white', fontSize: '9px', width: '16px', height: '16px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, border: '2px solid white', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' };
-const spinnerStyle: React.CSSProperties = { width: '20px', height: '20px', border: '3px solid rgba(255,255,255,0.3)', borderTop: '3px solid white', borderRadius: '50%', animation: 'spin 0.8s linear infinite' };
 
 
 function getDarker(hex: string) { 

@@ -12,6 +12,8 @@ import { useSongs } from '../hooks/useSongs';
 import * as TempleIcons from '../components/TempleIcons';
 import { AUTHOR_CATALOG } from '../data/authorCatalog';
 import { normalizeForSearch, isTitleMatch, standardizeAuthorName } from '../utils/matching';
+import { Spinner } from '../components/Spinner';
+import { SpinWheelModal } from '../components/SpinWheelModal';
 
 import { TATTVA_THEMES } from '../constants/themes';
 import { toOdiaNumber, getFormattedVerseDisplay } from '../utils/odia';
@@ -120,6 +122,7 @@ export const SongsPage: React.FC = () => {
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number; total: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
     const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
+    const [isSpinWheelOpen, setIsSpinWheelOpen] = useState(false);
     const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
     const [activeLetter, setActiveLetter] = useState<string | null>(null);
@@ -143,6 +146,12 @@ export const SongsPage: React.FC = () => {
             setIsThemeListExpanded(false);
         }
     }, [isFilterMenuOpen]);
+
+    useEffect(() => {
+        const handleOpenSpin = () => setIsSpinWheelOpen(true);
+        window.addEventListener('open-spin-wheel', handleOpenSpin);
+        return () => window.removeEventListener('open-spin-wheel', handleOpenSpin);
+    }, []);
 
     useEffect(() => {
         // Auto-hide Toolbelt (3s)
@@ -1080,6 +1089,38 @@ export const SongsPage: React.FC = () => {
                             <div style={engTitleStyle}>Recently Viewed</div>
                         </div>
                     </div>
+
+                    {/* CARD 6: SPIN TO WIN WHEEL */}
+                    <div 
+                        className="category-card"
+                        onClick={() => setIsSpinWheelOpen(true)}
+                        style={{
+                            background: 'linear-gradient(135deg, #FFFDE7 0%, #FFF8E1 100%)',
+                            border: '1.5px solid #FFD54F',
+                            boxShadow: '0 4px 15px rgba(255, 193, 7, 0.25)',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        <div style={{ 
+                            width: '50px', 
+                            height: '50px', 
+                            borderRadius: '12px', 
+                            background: 'linear-gradient(135deg, #FFD54F 0%, #FF8F00 100%)',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            boxShadow: '0 2px 8px rgba(255, 143, 0, 0.35)'
+                        }}>
+                            <div style={{ color: '#4A148C' }}>
+                                <TempleIcons.BlessingChakra size={32} color="#4A148C" />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{...titleStyle, fontSize: '1rem', color: '#B45309'}}>ଆଶୀର୍ବାଦ ଚକ୍ର</div>
+                            <div style={{...engTitleStyle, color: '#D97706', fontWeight: 700}}>Acharya Blessing Wheel 🪷</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
@@ -1958,70 +1999,85 @@ export const SongsPage: React.FC = () => {
                         to { opacity: 1; transform: scale(1); }
                     }
                 `}</style>
-                <div style={{ flex: 1, position: 'relative' }}>
-                    {(loading || error) && (
+                <div className="modern-searchbar-wrap" style={{ flex: 1, minWidth: 0, position: 'relative', height: '40px', display: 'flex', alignItems: 'center' }}>
+                    {error && (
                         <div style={{
                             position: 'absolute',
                             top: '-20px',
                             left: '0',
                             fontSize: '0.7rem',
-                            color: error ? '#ff4444' : '#fff',
-                            opacity: 0.8
+                            color: '#ff4444',
+                            opacity: 0.9
                         }}>
-                            {loading ? 'ଡାଟାବେସ୍ ରୁ ଅପଡେଟ୍ ହେଉଛି...' : error}
+                            {error}
                         </div>
                     )}
-                    <Search size={18} style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
+                    <Search size={17} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#71717a', pointerEvents: 'none', zIndex: 2 }} />
                     <input
                         type="text"
                         placeholder="ଭଜନ କିମ୍ବା ଗୀତ ଖୋଜନ୍ତୁ..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
+                        onFocus={(e) => {
+                            e.currentTarget.style.borderColor = '#FF9933';
+                            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 153, 51, 0.2)';
+                        }}
+                        onBlur={(e) => {
+                            e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)';
+                            e.currentTarget.style.boxShadow = 'none';
+                        }}
                         style={{
                             width: '100%',
-                            padding: '0.75rem 4.5rem 0.75rem 2.6rem',
-                            borderRadius: 'var(--radius-lg)',
-                            border: '2px solid transparent',
-                            backgroundImage: 'linear-gradient(white, white), linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853)',
-                            backgroundOrigin: 'border-box',
-                            backgroundClip: 'padding-box, border-box',
-                            fontSize: '1rem',
-                            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                            color: 'var(--color-text-main)',
+                            height: '40px',
+                            lineHeight: '40px',
+                            boxSizing: 'border-box',
+                            padding: '0 4.2rem 0 2.25rem',
+                            borderRadius: '10px',
+                            border: '1px solid rgba(0, 0, 0, 0.12)',
+                            backgroundColor: '#ffffff',
+                            fontSize: '0.92rem',
+                            boxShadow: 'none',
+                            color: '#1a1a1a',
                             outline: 'none',
-                            transition: 'all 0.2s ease',
+                            transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
                             fontFamily: 'var(--font-odia-sans)'
                         }}
                     />
                     <div style={{
                         position: 'absolute',
-                        right: '0.6rem',
+                        right: '0.4rem',
                         top: '50%',
                         transform: 'translateY(-50%)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '4px'
+                        gap: '2px',
+                        zIndex: 2
                     }}>
+                        {loading && (
+                            <div style={{ padding: '4px', display: 'flex', alignItems: 'center' }} title="ଅପଡେଟ୍ ହେଉଛି...">
+                                <Spinner size={16} color="#FF9933" />
+                            </div>
+                        )}
                         <button
                             onClick={handleVoiceSearch}
                             title="ଭଏସ୍ ସର୍ଚ୍ଚ (Voice Search)"
                             style={{
                                 background: isListening ? '#fef2f2' : 'transparent',
                                 border: 'none',
-                                color: isListening ? '#ef4444' : '#999',
+                                color: isListening ? '#ef4444' : '#71717a',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                padding: '6px',
-                                borderRadius: '50%',
-                                transition: 'all 0.3s ease',
+                                padding: '5px',
+                                borderRadius: '6px',
+                                transition: 'all 0.2s ease',
                                 animation: isListening ? 'pulse-mic 1.5s infinite' : 'none'
                             }}
-                            onMouseEnter={(e) => !isListening && (e.currentTarget.style.backgroundColor = '#f0f0f0')}
+                            onMouseEnter={(e) => !isListening && (e.currentTarget.style.backgroundColor = '#f3f4f6')}
                             onMouseLeave={(e) => !isListening && (e.currentTarget.style.backgroundColor = 'transparent')}
                         >
-                            <Mic size={18} />
+                            <Mic size={16} />
                         </button>
                         {searchQuery && (
                             <button
@@ -2030,29 +2086,81 @@ export const SongsPage: React.FC = () => {
                                 style={{
                                     background: 'transparent',
                                     border: 'none',
-                                    color: '#999',
+                                    color: '#71717a',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     cursor: 'pointer',
-                                    padding: '6px',
-                                    borderRadius: '50%'
+                                    padding: '5px',
+                                    borderRadius: '6px',
+                                    transition: 'background 0.2s ease'
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f0f0f0')}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f3f4f6')}
                                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                             >
-                                <X size={18} />
+                                <X size={16} />
                             </button>
                         )}
                     </div>
                     <style>{`
                         @keyframes pulse-mic {
-                            0% { transform: translateY(-50%) scale(1); opacity: 0.8; }
-                            50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
-                            100% { transform: translateY(-50%) scale(1); opacity: 0.8; }
+                            0% { transform: scale(1); opacity: 0.8; }
+                            50% { transform: scale(1.15); opacity: 1; }
+                            100% { transform: scale(1); opacity: 0.8; }
                         }
                     `}</style>
                 </div>
+
+                {/* Sacred Acharya Blessing Chakra Button */}
+                <button
+                    onClick={() => setIsSpinWheelOpen(true)}
+                    title="ଦୈନିକ ଲେଖକ ଆଶୀର୍ବାଦ ଚକ୍ର (Daily Acharya Blessing Wheel)"
+                    style={{
+                        background: 'linear-gradient(135deg, #FFE082 0%, #FFA000 100%)',
+                        color: '#4A148C',
+                        borderRadius: '12px',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        border: '1.5px solid rgba(255, 215, 0, 0.7)',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 10px rgba(255, 143, 0, 0.45)',
+                        flexShrink: 0,
+                        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                        position: 'relative'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.08)';
+                        e.currentTarget.style.boxShadow = '0 4px 14px rgba(255, 143, 0, 0.6)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)';
+                        e.currentTarget.style.boxShadow = '0 2px 10px rgba(255, 143, 0, 0.45)';
+                    }}
+                >
+                    <TempleIcons.BlessingChakra size={22} color="#4A148C" />
+                    <span style={{
+                        position: 'absolute',
+                        top: '-5px',
+                        right: '-6px',
+                        background: 'linear-gradient(135deg, #C2185B 0%, #880E4F 100%)',
+                        color: '#FFF9C4',
+                        fontSize: '8.5px',
+                        fontWeight: 900,
+                        padding: '1px 5px',
+                        borderRadius: '6px',
+                        border: '1.5px solid #FFE082',
+                        fontFamily: 'var(--font-odia-sans)',
+                        letterSpacing: '0.2px',
+                        boxShadow: '0 2px 5px rgba(0,0,0,0.4)',
+                        pointerEvents: 'none'
+                    }}>
+                        କୃପା
+                    </span>
+                </button>
+
                 <button onClick={() => setIsSettingsPanelOpen(true)} style={{
                     background: isSettingsPanelOpen ? theme.color : 'rgba(255,255,255,0.2)',
                     color: '#fff',
@@ -2993,6 +3101,35 @@ export const SongsPage: React.FC = () => {
                     to { transform: translateX(0); }
                 }
             `}</style>
+
+            {/* Spin To Win Lucky Wheel Modal */}
+            <SpinWheelModal
+                isOpen={isSpinWheelOpen}
+                onClose={() => setIsSpinWheelOpen(false)}
+                allSongs={songs}
+                onSelectAuthor={(author) => {
+                    setActiveTab('songs');
+                    setSearchQuery(author);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onSelectSong={(songItem) => {
+                    // Directly open the song if loaded, otherwise search
+                    const found = songs.find(s =>
+                        (songItem.id && s.id === songItem.id) ||
+                        (songItem.titleEnglish && s.title_english?.toLowerCase() === songItem.titleEnglish.toLowerCase()) ||
+                        (songItem.titleEnglish && s.title?.toLowerCase().includes(songItem.titleEnglish.toLowerCase())) ||
+                        (songItem.titleOdia && (s.title_odia?.includes(songItem.titleOdia) || s.title?.includes(songItem.titleOdia))) ||
+                        (songItem.searchQuery && (s.title?.toLowerCase().includes(songItem.searchQuery.toLowerCase()) || s.title_english?.toLowerCase().includes(songItem.searchQuery.toLowerCase())))
+                    );
+                    if (found) {
+                        handleSelectSong(found, false);
+                    } else {
+                        setActiveTab('songs');
+                        setSearchQuery(songItem.searchQuery || songItem.titleEnglish);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }}
+            />
         </div>
     );
 };

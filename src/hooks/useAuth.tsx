@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, createContext, useContext } from 'r
 import type { ReactNode } from 'react';
 import type { User } from '../types';
 import { supabase } from '../supabase/config';
+import { Spinner } from '../components/Spinner';
 
 interface AuthContextType {
     user: User | null;
@@ -366,11 +367,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                     justifyContent: 'center', alignItems: 'center',
                     background: '#FDFBF7', color: '#8A5082'
                 }}>
-                    <div style={{
-                        width: '40px', height: '40px', border: '4px solid #fff',
-                        borderTop: '4px solid #FF9933', borderRadius: '50%',
-                        animation: 'spin 1s linear infinite'
-                    }} />
+                    <Spinner size={44} color="#FF9933" />
                     <p style={{ marginTop: '1rem', fontWeight: 500, color: '#FF9933' }}>Loading Odia Songs...</p>
 
                     <div style={{

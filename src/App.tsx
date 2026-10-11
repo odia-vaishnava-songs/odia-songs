@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppLayout } from './layouts/AppLayout';
 import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
+import { Spinner } from './components/Spinner';
 
 // Code-split pages so initial page load only downloads necessary code
 const SongsPage = React.lazy(() => import('./pages/SongsPage').then(m => ({ default: m.SongsPage })));
@@ -42,13 +43,8 @@ const ProtectedAdminRoute = ({ children }: { children: React.ReactNode }) => {
         height: '100vh', display: 'flex', flexDirection: 'column',
         justifyContent: 'center', alignItems: 'center', background: '#FDFBF7'
       }}>
-        <div style={{
-          width: '30px', height: '30px', border: '3px solid #eee',
-          borderTop: '3px solid #FF9933', borderRadius: '50%',
-          animation: 'spin 1s linear infinite'
-        }} />
+        <Spinner size={36} color="#FF9933" />
         <p style={{ marginTop: '1rem', color: '#FF9933', fontWeight: 600 }}>Loading Admin Portal...</p>
-        <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
       </div>
     );
   }
@@ -182,11 +178,7 @@ function App() {
               height: '100vh', display: 'flex', flexDirection: 'column',
               justifyContent: 'center', alignItems: 'center', background: '#FDFBF7'
             }}>
-              <div style={{
-                width: '32px', height: '32px', border: '3px solid #eee',
-                borderTop: '3px solid #FF9933', borderRadius: '50%',
-                animation: 'spin 1s linear infinite'
-              }} />
+              <Spinner size={36} color="#FF9933" />
             </div>
           }>
             <AppRoutes />

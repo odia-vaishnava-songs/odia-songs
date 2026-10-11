@@ -7,6 +7,7 @@ import { Plus, Edit2, Trash2, Search, ArrowLeft, CheckCircle2, Menu, UserCheck, 
 import { useNavigate } from 'react-router-dom';
 import type { Resource, User } from '../types';
 import { STATUS_COLORS, getStatusBackground, getStatusColor } from '../constants/colors';
+import { Spinner } from '../components/Spinner';
 
 export const ManageSongsPage: React.FC = () => {
     const { songs, loading, error, refreshSongs } = useSongs();
@@ -310,13 +311,23 @@ export const ManageSongsPage: React.FC = () => {
                             </div>
                         </div>
 
-                        <div style={{ position: 'relative', marginBottom: '1rem' }}>
-                            <Search size={18} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
+                        <div style={{ position: 'relative', marginBottom: '1rem', height: '40px' }}>
+                            <Search size={17} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#71717a' }} />
                             <input
                                 placeholder="Search by title, author, or editor..."
                                 value={searchTerm}
                                 onChange={e => setSearchTerm(e.target.value)}
-                                style={{ width: '100%', padding: '0.75rem 0.75rem 0.75rem 2.5rem', borderRadius: '12px', border: '1px solid #ddd' }}
+                                style={{
+                                    width: '100%',
+                                    height: '40px',
+                                    boxSizing: 'border-box',
+                                    padding: '0 0.75rem 0 2.4rem',
+                                    borderRadius: '10px',
+                                    border: '1px solid #ddd',
+                                    backgroundColor: '#fff',
+                                    fontSize: '0.92rem',
+                                    outline: 'none'
+                                }}
                             />
                         </div>
 
@@ -418,24 +429,8 @@ export const ManageSongsPage: React.FC = () => {
 
                         {loading ? (
                             <div style={{ padding: '2rem', textAlign: 'center' }}>
-                                <p style={{ color: '#8A5082', fontWeight: 600 }}>Loading database...</p>
-                                <div style={{
-                                    width: '30px', height: '30px', border: '3px solid #f3f3f3',
-                                    borderTop: '3px solid #8A5082', borderRadius: '50%', margin: '1rem auto',
-                                    animation: 'spin 1s linear infinite'
-                                }} />
-                                <style>{`
-                                    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-                                    @keyframes blinkGreen {
-                                        0% { opacity: 1; box-shadow: 0 0 2px #1ed106; }
-                                        50% { opacity: 0.7; box-shadow: 0 0 15px #1ed106; }
-                                        100% { opacity: 1; box-shadow: 0 0 2px #1ed106; }
-                                    }
-                                    @keyframes ripple {
-                                        0% { transform: scale(1); opacity: 0.15; }
-                                        100% { transform: scale(1.6); opacity: 0; }
-                                    }
-                                `}</style>
+                                <p style={{ color: '#8A5082', fontWeight: 600, marginBottom: '1rem' }}>Loading database...</p>
+                                <Spinner size={34} color="#8A5082" />
                             </div>
                         ) : error ? (
                             <div style={{ padding: '1.5rem', backgroundColor: '#FFF5F5', border: '1px solid #FEB2B2', borderRadius: '12px', marginBottom: '1.5rem' }}>

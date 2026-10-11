@@ -66,3 +66,27 @@ export const ConchIcon = ({ size = 24, color = 'currentColor' }: { size?: number
         <path d="M14 11C14 11 16 11 18 11" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
     </svg>
 );
+
+export const BlessingChakra = ({ size = 24, color = 'currentColor' }: { size?: number, color?: string }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Outer Circular Rim */}
+        <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.6" />
+        <circle cx="12" cy="12" r="8.2" stroke={color} strokeWidth="0.8" strokeDasharray="1.2 1.2" opacity="0.85" />
+        
+        {/* 6 Sacred Acharya Petal Spokes */}
+        <line x1="12" y1="7.8" x2="12" y2="2" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="15.6" y1="9.9" x2="20.7" y2="7" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="15.6" y1="14.1" x2="20.7" y2="17" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="12" y1="16.2" x2="12" y2="22" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="8.4" y1="14.1" x2="3.3" y2="17" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="8.4" y1="9.9" x2="3.3" y2="7" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+        
+        {/* Center Golden Medallion Hub */}
+        <circle cx="12" cy="12" r="4.2" fill={color} opacity="0.95" />
+        
+        {/* Sacred Vaishnava Tilak Mark */}
+        <path d="M 11.1 10.3 L 12 12.5 L 12.9 10.3 Z" fill="#FFE082" />
+        <circle cx="12" cy="13.2" r="0.45" fill="#FFE082" />
+    </svg>
+);
+

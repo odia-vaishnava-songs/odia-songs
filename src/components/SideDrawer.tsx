@@ -267,6 +267,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose, assigni
                             </div>
 
                             <div style={{ padding: '0 1rem 1rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                                <MenuItem icon={<TempleIcons.BlessingChakra size={20} color="#FF9933" />} label="ଲେଖକ ଆଶୀର୍ବାଦ ଚକ୍ର 🪷" onClick={() => { onClose(); window.dispatchEvent(new CustomEvent('open-spin-wheel')); }} />
                                 <MenuItem icon={<Share2 size={20} />} label="Share App" onClick={handleShare} />
                                 <MenuItem
                                     icon={<HelpCircle size={20} />}

@@ -414,14 +414,59 @@ export const RESOURCES: Resource[] = [
     },
     {
         id: 'song-isvaraparamakrsna',
-        title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ (Isvara Parama Krsna)',
-        title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ',
-        title_english: 'Isvara Parama Krsna',
+        title: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ - ଶ୍ରୀ ବ୍ରହ୍ମ ସଂହିତା (Isvara Parama Krsna - Sri Brahma Samhita)',
+        title_odia: 'ଈଶ୍ୱରଃ ପରମଃ କୃଷ୍ଣଃ - ଶ୍ରୀ ବ୍ରହ୍ମ ସଂହିତା',
+        title_english: 'Isvara Parama Krsna - Sri Brahma Samhita',
         category: 'Brahma Samhita',
         type: 'html',
-        description: 'ଶ୍ରୀ ବ୍ରହ୍ମାଙ୍କ ଦ୍ୱାରା ରଚିତ ଶ୍ରୀ ବ୍ରହ୍ମ ସଂହିତାର ପଞ୍ଚମ ଅଧ୍ୟାୟର ମୁଖ୍ୟ ଶ୍ଳୋକଗୁଡ଼ିକ |',
+        description: 'ଶ୍ରୀ ବ୍ରହ୍ମାଜୀଙ୍କ ମୁଖନିସୃତ ପରମ ପବିତ୍ର ଶ୍ରୀ ବ୍ରହ୍ମ ସଂହିତା (ପଞ୍ଚମ ଅଧ୍ୟାୟ - ୨୯ଟି ଶ୍ଳୋକ) ।',
         structuredContent: (Songs as any).SONG_ISVARAPARAMAKRSNA_STRUCTURED,
+        audioUrl: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_S_to_Y/His_Grace_Swarupa_Damodar_Prabhu/Hari_Vandana/Swarupa_Damodar_Pr_Bhajans_-_06-Ishvarah_Param_Krishna.mp3',
+        vocalist: 'HG Swarupa Damodar Prabhu',
+        audioVersions: [
+            {
+                label: 'HG Swarupa Damodar Prabhu',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_S_to_Y/His_Grace_Swarupa_Damodar_Prabhu/Hari_Vandana/Swarupa_Damodar_Pr_Bhajans_-_06-Ishvarah_Param_Krishna.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/05_-_ISKCON_Chowpatty/00_-_Bhajans/04_-_Bhajans_by_Jai_Sachinanadana_%20Prabhu/02%20-%20Temple%20Program%20Prayers/IDT_-_Sri_Brahma_Samhita_-_By_Jai_Sachinanadana_Pr.mp3'
+            },
+            {
+                label: 'HH Bhakti Caru Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Krsna_Daipayana_Vyasa/Brahma_Samhita/Brahma_Samhita_-_Sung_by_HH_Bhakti_Caru_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Kadamba Kanana Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Krsna_Daipayana_Vyasa/Brahma_Samhita/Brahma_Samhita_-_Sung_by_HH_Kadamba_Kanana_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Vedavyasa Priya Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Krsna_Daipayana_Vyasa/Brahma_Samhita/Brahma_Samhita_-_Sung_by_HH_Vedavyasa_Priya_Swami_IDT.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu (01)',
+                url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F9%20Bramha%20Samhita%20P-19.MP3'
+            },
+            {
+                label: 'HG Gauranga Darshan Prabhu (Tune 1)',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Gauranga_Darshan_Prabhu/Slokas_Recitation/With_Tanpura/Brahma_Samhita/Gauranga_Darshan_Pr_-_Brahma_Samhita_Recitations_Tune-01_-_With_Tanpura.mp3'
+            },
+            {
+                label: 'HG Gauranga Darshan Prabhu (Tune 2)',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Gauranga_Darshan_Prabhu/Slokas_Recitation/With_Tanpura/Brahma_Samhita/Gauranga_Darshan_Pr_-_Brahma_Samhita_Recitations_Tune-02_-_With_Tanpura.mp3'
+            },
+            {
+                label: 'HG Gauranga Darshan Prabhu (Tune 3)',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Gauranga_Darshan_Prabhu/Slokas_Recitation/With_Tanpura/Brahma_Samhita/Gauranga_Darshan_Pr_-_Brahma_Samhita_Recitations_Tune-03_-_With_Tanpura.mp3'
+            },
+            {
+                label: 'HG Gauranga Darshan Prabhu (Tune 4)',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Gauranga_Darshan_Prabhu/Slokas_Recitation/With_Tanpura/Brahma_Samhita/Gauranga_Darshan_Pr_-_Brahma_Samhita_Recitations_Tune-04_-_With_Tanpura.mp3'
+            }
+        ],
         author: 'Lord Brahma',
+        tags: ['Isvara Parama Krsna', 'Brahma Samhita', 'Sri Brahma Samhita', 'Lord Brahma', 'Stotram', 'Prayers'],
         published: true,
         status: 'COMPLETED'
     },
@@ -5651,6 +5696,2587 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: "COMPLETED"
+    },
+    {
+        id: "song-garudadandakam",
+        title: "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍ (Sri Garuda Dandakam)",
+        title_odia: "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍",
+        title_english: "Sri Garuda Dandakam",
+        category: "Songs",
+        type: "html",
+        author: "Vedanta Desika",
+        tags: [
+            "Garuda Dandakam",
+            "Sri Garuda Dandakam",
+            "Vedanta Desika",
+            "Stotram",
+            "Dandakam",
+            "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍",
+            "ଗରୁଡ଼ ଦଣ୍ଡକମ୍",
+            "ବେଦାନ୍ତ ଦେଶିକ"
+        ],
+        description: "ଶ୍ରୀମଦ୍ ବେଦାନ୍ତ ଦେଶିକଙ୍କ ବିରଚିତ ସୁପ୍ରସିଦ୍ଧ ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍ ସ୍ତୋତ୍ର ।",
+        audioUrl: "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Garuda%20Dandakam%20with%20Lyrics%20Sri%20Vedanta%20Deshika.mp3",
+        vocalist: "HG Yasoda Kumara Prabhu",
+        audioVersions: [
+            {
+                label: "HG Yasoda Kumara Prabhu",
+                url: "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Garuda%20Dandakam%20with%20Lyrics%20Sri%20Vedanta%20Deshika.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-garudadandakam",
+            title: "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍ (Sri Garuda Dandakam)",
+            title_odia: "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକମ୍",
+            title_english: "Sri Garuda Dandakam",
+            author: "Vedanta Desika",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Garuda%20Dandakam_",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ନମଃ ପନ୍ନଗନଦ୍ଧାୟ ବୈକୁଣ୍ଠବଶବର୍ତ୍ତିନେ ।\nଶ୍ରୁତିସିନ୍ଧୁସୁଧୋତ୍ପାଦମନ୍ଦରାୟ ଗରୁତ୍ମତେ ॥ ୧ ॥",
+                    translation: "ଯିଏ ପରାକ୍ରମୀ ସର୍ପମାନଙ୍କୁ ନିଜ ଅଙ୍ଗରେ ଆଭୂଷଣ ରୂପେ ଧାରଣ କରିଛନ୍ତି, ଯିଏ ବୈକୁଣ୍ଠପତି ଶ୍ରୀଭଗବାନଙ୍କ ନିତ୍ୟ ଅନ୍ତରଙ୍ଗ ସେବକ ଓ ସର୍ବଦା ତାଙ୍କ ପ୍ରେମ-ବଶ୍ୟତାରେ ସେବାରତ, ଏବଂ ଯିଏ ବେଦରୂପୀ କ୍ଷୀରସମୁଦ୍ରକୁ ମନ୍ଥନ କରି ବ୍ରହ୍ମବିଦ୍ୟାରୂପୀ ଅମୃତ ପ୍ରକଟ କରିବା ପାଇଁ ମନ୍ଦର ପର୍ବତ ସଦୃଶ ଅଟନ୍ତି— ସେହି ପରମ ଭାଗବତ ଦିବ୍ୟପକ୍ଷଧାରୀ ଶ୍ରୀ ଗରୁଡ଼ଦେବଙ୍କୁ ମୋର ସାଦର ଦଣ୍ଡବତ ପ୍ରଣାମ।",
+                    wordMeanings: [
+                        {
+                            word: "ନମଃ",
+                            meaning: "ମୋର ବିନମ୍ର ପ୍ରଣାମ"
+                        },
+                        {
+                            word: "ପନ୍ନଗ-ନଦ୍ଧାୟ",
+                            meaning: "ବିଶାଳ ସର୍ପମାନଙ୍କୁ ଭୂଷଣ ରୂପେ ଧାରଣ କରିଥିବା"
+                        },
+                        {
+                            word: "ବୈକୁଣ୍ଠ-ବଶ-ବର୍ତ୍ତିନେ",
+                            meaning: "ବୈକୁଣ୍ଠନାଥ ଶ୍ରୀ ନାରାୟଣଙ୍କ ପ୍ରେମମୟ ବଶ୍ୟତାରେ ସଦା ବିଦ୍ୟମାନ ତଥା ତାଙ୍କ ଆଜ୍ଞାବହ ସେବକ"
+                        },
+                        {
+                            word: "ଶ୍ରୁତି-ସିନ୍ଧୁ",
+                            meaning: "ବେଦରୂପୀ ସମୁଦ୍ରର"
+                        },
+                        {
+                            word: "ସୁଧା-ଉତ୍ପାଦ",
+                            meaning: "ଅମୃତରୂପୀ ବ୍ରହ୍ମବିଦ୍ୟା ଉତ୍ପନ୍ନ କରିବା ନିମନ୍ତେ"
+                        },
+                        {
+                            word: "ମନ୍ଦରାୟ",
+                            meaning: "ମନ୍ଦର ପର୍ବତ ସଦୃଶ"
+                        },
+                        {
+                            word: "ଗରୁତ୍ମତେ",
+                            meaning: "ଦିବ୍ୟ ଡେଣାବିଶିଷ୍ଟ ପ୍ରଭୁ ଶ୍ରୀ ଗରୁଡ଼ଙ୍କୁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ଗରୁଡ଼ମଖିଳ-ବେଦ-ନୀଡ଼ାଧିରୂଢ଼ଂ\nଦ୍ୱିଷତ୍-ପୀଡ଼ନୋତ୍କଣ୍ଠିତାକୁଣ୍ଠ-ବୈକୁଣ୍ଠ-ପୀଠୀକୃତ-ସ୍କନ୍ଧମୀଡ଼େ\nସ୍ୱନୀଡ଼ାଗତି-ପ୍ରୀତ-ରୁଦ୍ରା-ସୁକୀର୍ତ୍ତି-ସ୍ତନାଭୋଗ-ଗାଢ଼ୋପଗୂଢ଼ଂ\nସ୍ଫୁରତ୍-କଣ୍ଟକ-ବ୍ରାତ-ବେଧ-ବ୍ୟଥା-ବେପମାନ-ଦ୍ୱିଜିହ୍ୱାଧିପାକଳ୍ପ-\nବିଷ୍ଫାର୍ଯ୍ୟମାଣ-ସ୍ଫଟାବାଟିକା-ରତ୍ନ-ରୋଚିଶ୍ଛଟା-ରାଜିନୀରାଜିତଂ\nକାନ୍ତି-କଲ୍ଲୋଳିନୀ-ରାଜିତମ୍ ॥ ୨ ॥",
+                    translation: "ସମସ୍ତ ବେଦ ଯାହାଙ୍କର ନୀଡ଼ (ବାସସ୍ଥାନ) ଏବଂ ଯିଏ ସେହି ବେଦରୂପୀ ଆସନରେ ଅଧିରୂଢ଼; ନିଜ ଭକ୍ତମାନଙ୍କ ଶତ୍ରୁ-ବିନାଶ ନିମନ୍ତେ ସଦା ତତ୍ପର ବୈକୁଣ୍ଠନାଥ ଶ୍ରୀ ନାରାୟଣ ଯାହାଙ୍କ ସ୍କନ୍ଧଦେଶକୁ ନିଜର ଦିବ୍ୟ ବାହନ ଆସନ କରିଛନ୍ତି— ମୁଁ ସେହି ଶ୍ରୀଗରୁଡ଼ଙ୍କ ସ୍ତୁତି କରୁଛି। ଯେତେବେଳେ ଭଗବାନଙ୍କ କାର୍ଯ୍ୟ ସମ୍ପନ୍ନ କରି ସେ ନିଜ ନୀଡ଼କୁ ଫେରିଆସନ୍ତି, ତାଙ୍କର ଦୁଇ ପ୍ରେମମୟୀ ପତ୍ନୀ 'ରୁଦ୍ରା' ଓ 'ସୁକୀର୍ତ୍ତି' ଅତ୍ୟନ୍ତ ଆନନ୍ଦରେ ତାଙ୍କୁ ଗାଢ଼ ଆଲିଙ୍ଗନ କରନ୍ତି। ସେହି ଦିବ୍ୟ ପ୍ରେମ-ଆନନ୍ଦରେ ଗରୁଡ଼ଙ୍କ ଶ୍ରୀଅଙ୍ଗରେ ରୋମାଞ୍ଚରୂପୀ ତୀକ୍ଷ୍ଣ କଣ୍ଟକ ଉଦ୍ଗତ ହୁଏ, ଯାହାଦ୍ୱାରା ତାଙ୍କ ଶରୀରରେ ଆଭୂଷଣ ରୂପେ ରହିଥିବା ନାଗମାନେ ଭୟରେ କମ୍ପିତ ହୋଇ ନିଜ ଫଣାଗୁଡ଼ିକୁ ମେଲି ଦିଅନ୍ତି। ସେହି ଫଣାସ୍ଥିତ ଉଜ୍ଜ୍ୱଳ ମଣିରତ୍ନର କିରଣମାଳା ସତେ ଯେପରି ଶ୍ରୀଗରୁଡ଼ଙ୍କ ନିମନ୍ତେ ମଙ୍ଗଳ ଆରତୀ ପ୍ରଦାନ କରେ ଏବଂ ସେହି ଅପୂର୍ବ ଦିବ୍ୟ କାନ୍ତି-ତରଙ୍ଗରେ ସେ ଅତ୍ୟନ୍ତ ଶୋଭା ପାଆନ୍ତି।",
+                    wordMeanings: [
+                        {
+                            word: "ଗରୁଡ଼ମ୍",
+                            meaning: "ଶ୍ରୀ ଗରୁଡ଼ ଭଗବାନଙ୍କୁ"
+                        },
+                        {
+                            word: "ଅଖିଳ-ବେଦ-ନୀଡ଼-ଅଧିରୂଢ଼ମ୍",
+                            meaning: "ସମସ୍ତ ବେଦରୂପୀ ବାସସ୍ଥାନ (ନୀଡ଼) ଉପରେ ବିରାଜମାନ"
+                        },
+                        {
+                            word: "ଦ୍ୱିଷତ୍-ପୀଡ଼ନ-ଉତ୍କଣ୍ଠିତ",
+                            meaning: "ଭକ୍ତମାନଙ୍କ ଶତ୍ରୁ ତଥା ଅସୁରମାନଙ୍କୁ ବିନାଶ କରିବା ନିମନ୍ତେ ସଦା ତତ୍ପର"
+                        },
+                        {
+                            word: "ଅକୁଣ୍ଠ-ବୈକୁଣ୍ଠ",
+                            meaning: "ଅପ୍ରତିହତ ପରାକ୍ରମୀ ବୈକୁଣ୍ଠପତି ଶ୍ରୀ ନାରାୟଣଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ପୀଠୀକୃତ-ସ୍କନ୍ଧମ୍",
+                            meaning: "ଆସନ ରୂପେ ବ୍ୟବହୃତ ହୋଇଥିବା କାନ୍ଧ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ଈଡ଼େ",
+                            meaning: "ମୁଁ ସ୍ତୁତି କରୁଛି"
+                        },
+                        {
+                            word: "ସ୍ୱ-ନୀଡ଼-ଆଗତି-ପ୍ରୀତ",
+                            meaning: "ନିଜ ଗୃହକୁ ପ୍ରତ୍ୟାବର୍ତ୍ତନ କରିବାରୁ ଆନନ୍ଦିତ ହୋଇଥିବା"
+                        },
+                        {
+                            word: "ରୁଦ୍ରା-ସୁକୀର୍ତ୍ତି",
+                            meaning: "ତାଙ୍କର ଦୁଇ ଧର୍ମପତ୍ନୀ ଶ୍ରୀରୁଦ୍ରା ଏବଂ ସୁକୀର୍ତ୍ତିଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ସ୍ତନାଭୋଗ-ଗାଢ଼-ଉପଗୂଢ଼ମ୍",
+                            meaning: "ପ୍ରେମପୂର୍ଣ୍ଣ ଗାଢ଼ ଆଲିଙ୍ଗନ ପ୍ରାପ୍ତ ହୋଇ"
+                        },
+                        {
+                            word: "ସ୍ଫୁରତ୍-କଣ୍ଟକ-ବ୍ରାତ-ବେଧ-ବ୍ୟଥା",
+                            meaning: "ଆନନ୍ଦରେ ଶିହରିତ ରୋମାଞ୍ଚରୂପୀ କଣ୍ଟକର ଆଘାତଜନିତ ବ୍ୟଥା ହେତୁ"
+                        },
+                        {
+                            word: "ବେପମାନ",
+                            meaning: "ଭୟଭୀତ ହୋଇ କମ୍ପିତ ହେଉଥିବା"
+                        },
+                        {
+                            word: "ଦ୍ୱିଜିହ୍ୱାଧିପ-ଆକଳ୍ପ",
+                            meaning: "ଅଳଙ୍କାର ରୂପେ ଧାରଣ କରିଥିବା ନାଗରାଜମାନଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ବିଷ୍ଫାର୍ଯ୍ୟମାଣ",
+                            meaning: "ପ୍ରସାରିତ ବା ମେଲା କରାଯାଉଥିବା"
+                        },
+                        {
+                            word: "ସ୍ଫଟା-ବାଟିକା-ରତ୍ନ",
+                            meaning: "ଫଣାମଣ୍ଡଳରେ ଥିବା ଦିବ୍ୟ ମଣିରତ୍ନର"
+                        },
+                        {
+                            word: "ରୋଚିଃ-ଛଟା-ରାଜି",
+                            meaning: "ଉଜ୍ଜ୍ୱଳ କିରଣଶ୍ରେଣୀ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ନୀରାଜିତମ୍",
+                            meaning: "ଆରତୀ ପ୍ରଦର୍ଶିତ ହେଉଥିବା"
+                        },
+                        {
+                            word: "କାନ୍ତି-କଲ୍ଲୋଳିନୀ-ରାଜିତମ୍",
+                            meaning: "ସୌନ୍ଦର୍ଯ୍ୟ ତରଙ୍ଗିଣୀରେ ଶୋଭାୟମାନ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 3,
+                    lyric: "ଜୟ ଗରୁଡ଼ ସୁପର୍ଣ୍ଣ ଦର୍ବୀକରାହାର ଦେବାଧିପାହାରହାରିନ୍\nଦିବୌକସ୍ପତି-କ୍ଷିପ୍ତ-ଦମ୍ଭୋଳି-ଧାରା-କିଣାକଳ୍ପ-\nକଳ୍ପାନ୍ତ-ବାତୂଳ-କଳ୍ପୋଦୟାନଳ୍ପ-ବୀରାୟିତୋଦ୍ୟଚ୍-ଚମତ୍କାର-\nଦୈତ୍ୟାରି-ଜୈତ୍ର-ଧ୍ୱଜାରୋହ-ନିର୍ଦ୍ଧାରିତୋତ୍କର୍ଷ\nସଙ୍କର୍ଷଣାତ୍ମନ୍ ଗରୁତ୍ମନ୍ ମରୁତ୍ପଞ୍ଚକାଧୀଶ ସତ୍ୟାଦିମୂର୍ତ୍ତେ\nନ କଶ୍ଚିତ୍-ସମସ୍ତେ ନମସ୍ତେ ପୁନସ୍ତେ ନମଃ ॥ ୩ ॥",
+                    translation: "ହେ ଗରୁଡ଼ ଭଗବାନ! ଆପଣଙ୍କର ଜୟ ହେଉ! ଆପଣଙ୍କର ପକ୍ଷ (ଡେଣା) ଅତ୍ୟନ୍ତ ସୁନ୍ଦର, ତେଣୁ ଆପଣଙ୍କ ନାମ 'ସୁପର୍ଣ୍ଣ'। ବିଷଧର ସର୍ପମାନେ ଆପଣଙ୍କ ଆହାର ଅଟନ୍ତି। ମାତା ବିନତାଙ୍କ ଦାସୀତ୍ୱ ମୋଚନ ନିମନ୍ତେ ଆପଣ ସ୍ୱର୍ଗରୁ ଦେବତାମାନଙ୍କ ଆହାର ଅମୃତ ଛଡ଼ାଇ ଆଣିଥିଲେ। ସେହି ସମୟରେ ଦେବରାଜ ଇନ୍ଦ୍ର ଆପଣଙ୍କ ଉପରକୁ ପ୍ରଚଣ୍ଡ ବଜ୍ର ନିକ୍ଷେପ କରିଥିଲେ, କିନ୍ତୁ ସେହି ବଜ୍ରାଘାତରୁ ସୃଷ୍ଟି ହୋଇଥିବା କ୍ଷତ-ଚିହ୍ନ ଆଜି ଆପଣଙ୍କ ଅଙ୍ଗରେ ବୀରତ୍ୱର ଅଳଙ୍କାର ପରି ଶୋଭା ପାଉଛି! ପ୍ରଳୟକାଳୀନ ପ୍ରଚଣ୍ଡ ମହାବାତ୍ୟା ସଦୃଶ ଅପାର ବୀରତ୍ୱ ଦେଖାଇ ଆପଣ ଅସୁରାରି ଶ୍ରୀହରିଙ୍କ ବିଜୟ-ପତାକାରେ ସର୍ବୋଚ୍ଚ ସ୍ଥାନ ଅଳଙ୍କୃତ କରିଛନ୍ତି। ଆପଣ ଚତୁର୍ବ୍ୟୁହର ପ୍ରଭୁ ଶ୍ରୀସଙ୍କର୍ଷଣଙ୍କ ସ୍ୱରୂପ ଅଟନ୍ତି, ପଞ୍ଚ ପ୍ରାଣବାୟୁର ଅଧୀଶ୍ୱର ଏବଂ ସତ୍ୟାଦି ପଞ୍ଚ ଦିବ୍ୟ ମୂର୍ତ୍ତିର ଅଧିଷ୍ଠାତା। ଏ ସମଗ୍ର ସୃଷ୍ଟିରେ ଆପଣଙ୍କ ସମାନ କେହି ନାହାନ୍ତି। ମୁଁ ଆପଣଙ୍କୁ ପ୍ରଣାମ କରୁଛି, ପୁନଶ୍ଚ ବାରମ୍ବାର ପ୍ରଣାମ କରୁଛି।",
+                    wordMeanings: [
+                        {
+                            word: "ଜୟ",
+                            meaning: "ଆପଣଙ୍କର ଜୟ ହେଉ"
+                        },
+                        {
+                            word: "ସୁପର୍ଣ୍ଣ",
+                            meaning: "ସୁନ୍ଦର ଦିବ୍ୟ ଡେଣାବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ଦର୍ବୀକର-ଆହାର",
+                            meaning: "ଫଣାଯୁକ୍ତ ସର୍ପମାନଙ୍କୁ ଭକ୍ଷଣ କରୁଥିବା"
+                        },
+                        {
+                            word: "ଦେବାଧିପ-ଆହାର-ହାରିନ୍",
+                            meaning: "ଦେବରାଜ ଇନ୍ଦ୍ରଙ୍କ ସୁରକ୍ଷିତ ଅମୃତ (ଦେବତାମାନଙ୍କ ଆହାର) ହରଣ କରି ଆଣିଥିବା"
+                        },
+                        {
+                            word: "ଦିବୌକସ୍ପତି-କ୍ଷିପ୍ତ-ଦମ୍ଭୋଳି-ଧାରା",
+                            meaning: "ସ୍ୱର୍ଗାଧିପତି ଇନ୍ଦ୍ରଙ୍କ ଦ୍ୱାରା ନିକ୍ଷିପ୍ତ ବଜ୍ରର ତୀକ୍ଷ୍ଣ ଧାର ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "କିଣ-ଆକଳ୍ପ",
+                            meaning: "ସୃଷ୍ଟି ହୋଇଥିବା କ୍ଷତ-ଚିହ୍ନ ଯାହାର ଅଳଙ୍କାର ସଦୃଶ ଶୋଭା ପାଉଛି"
+                        },
+                        {
+                            word: "କଳ୍ପାନ୍ତ-ବାତୂଳ-କଳ୍ପ",
+                            meaning: "ପ୍ରଳୟକାଳୀନ ପ୍ରଚଣ୍ଡ ଝଡ଼ବାତ୍ୟା ସଦୃଶ"
+                        },
+                        {
+                            word: "ଉଦୟ-ଅନଳ୍ପ-ବୀରାୟିତ-ଉଦ୍ୟତ୍-ଚମତ୍କାର",
+                            meaning: "ଅପାର ପରାକ୍ରମ ଓ ଚମତ୍କାରୀ ବୀରତ୍ୱ ପ୍ରଦର୍ଶନ କରିଥିବା"
+                        },
+                        {
+                            word: "ଦୈତ୍ୟାରି-ଜୈତ୍ର-ଧ୍ୱଜ-ଆରୋହ",
+                            meaning: "ଅସୁରାରି ଭଗବାନ ଶ୍ରୀବିଷ୍ଣୁଙ୍କ ବିଜୟ-ପତାକା ଉପରେ ବିରାଜମାନ ହୋଇ"
+                        },
+                        {
+                            word: "ନିର୍ଦ୍ଧାରିତ-ଉତ୍କର୍ଷ",
+                            meaning: "ସର୍ବଶ୍ରେଷ୍ଠ ମହିମା ପ୍ରତିପାଦିତ କରିଥିବା"
+                        },
+                        {
+                            word: "ସଙ୍କର୍ଷଣ-ଆତ୍ମନ୍",
+                            meaning: "ଚତୁର୍ବ୍ୟୁହ ଅନ୍ତର୍ଗତ ଭଗବାନ ଶ୍ରୀ ସଙ୍କର୍ଷଣଙ୍କ ସ୍ୱରୂପ"
+                        },
+                        {
+                            word: "ଗରୁତ୍ମନ୍",
+                            meaning: "ଦିବ୍ୟ ଡେଣାବିଶିଷ୍ଟ ପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ମରୁତ୍-ପଞ୍ଚକ-ଅଧୀଶ",
+                            meaning: "ପଞ୍ଚ ପ୍ରାଣବାୟୁ (ପ୍ରାଣ, ଅପାନ, ସମାନ, ଉଦାନ, ବ୍ୟାନ)ର ନିୟନ୍ତା"
+                        },
+                        {
+                            word: "ସତ୍ୟାଦି-ମୂର୍ତ୍ତେ",
+                            meaning: "ସତ୍ୟ, ସୁପର୍ଣ୍ଣ, ଗରୁଡ଼, ତାର୍କ୍ଷ୍ୟ ଓ ବିହଗେଶ୍ୱର— ଏହି ପାଞ୍ଚ ଦିବ୍ୟ ରୂପଧାରୀ"
+                        },
+                        {
+                            word: "ନ କଶ୍ଚିତ୍ ସମସ୍ତେ",
+                            meaning: "ଆପଣଙ୍କ ସମକକ୍ଷ କେହି ନାହାନ୍ତି"
+                        },
+                        {
+                            word: "ନମସ୍ତେ ପୁନସ୍ତେ ନମଃ",
+                            meaning: "ଆପଣଙ୍କୁ ବାରମ୍ବାର ପ୍ରଣାମ, ପୁନଶ୍ଚ ପ୍ରଣାମ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 4,
+                    lyric: "ନମ ଇଦମଜହତ୍-ସପର୍ଯ୍ୟାୟ ପର୍ଯ୍ୟାୟ-ନିର୍ଯ୍ୟାତ-ପକ୍ଷାନିଲାସ୍ଫାଳନୋଦ୍ୱେଳ-\nପାଥୋଧି-ବୀଚୀ-ଚପେଟାହତାଗାଧ-ପାତାଳ-ଭାଙ୍କାର-ସଙ୍କ୍ରୁଦ୍ଧ-\nନାଗେନ୍ଦ୍ର-ପୀଡ଼ାସୃଣୀ-ଭାବ-ଭାସ୍ୱନ୍-ନଖ-ଶ୍ରେଣୟେ\nଚଣ୍ଡ-ତୁଣ୍ଡାୟ ନୃତ୍ୟଦ୍-ଭୁଜଙ୍ଗ-ଭ୍ରୁବେ ବଜ୍ରିଣେ ଦଂଷ୍ଟ୍ରୟା\nତୁଭ୍ୟମଧ୍ୟାତ୍ମ-ବିଦ୍ୟା-ବିଧେୟା ବିଧେୟା\nଭବଦ୍-ଦାସ୍ୟମାପାଦୟେଥା ଦୟେଥାଶ୍ଚ ମେ ॥ ୪ ॥",
+                    translation: "ଜ୍ଞାନୀମାନେ ନିରନ୍ତର ଯାହାଙ୍କର ପୂଜା-ଆରାଧନା କରନ୍ତି, ମୋର ପ୍ରଣାମ ସେହି ପ୍ରଭୁଙ୍କୁ! ଉଡ଼ାଣ କାଳରେ ଆପଣଙ୍କ ବିଶାଳ ପକ୍ଷ (ଡେଣା)ରୁ ପ୍ରବାହିତ ପ୍ରଚଣ୍ଡ ବାୟୁ ସମସ୍ତ ସମୁଦ୍ରକୁ ଉତ୍ତାଳ କରିଦିଏ। ସେହି ସମୁଦ୍ର ତରଙ୍ଗରୂପୀ ଚାପୁଡ଼ା ଆଘାତରେ ପାତାଳପୁରୀ ପର୍ଯ୍ୟନ୍ତ 'ଭାଂ' ଧ୍ୱନି ଗୁଞ୍ଜରିତ ହୁଏ, ଯାହା ଶୁଣି କ୍ରୋଧାନ୍ୱିତ ଦିଗ୍-ଗଜ ଓ ନାଗମାନେ ଆକ୍ରମଣ କରିବାକୁ ଆସିଲେ, ଆପଣଙ୍କ ପ୍ରଦୀପ୍ତ ନଖଶ୍ରେଣୀ ଅଙ୍କୁଶ ସଦୃଶ ସେମାନଙ୍କୁ ଦମନ କରେ। ଆପଣଙ୍କ ତୀକ୍ଷ୍ଣ ଚଞ୍ଚୁ ଶତ୍ରୁଙ୍କ ହୃଦୟରେ ଭୟ ଉପୁଜାଏ; ଆପଣଙ୍କ କୁଟିଳ ଭ୍ରୁକୁଟି ନୃତ୍ୟରତ କାଳସର୍ପ ପରି ଏବଂ ଦନ୍ତସମୂହ ଇନ୍ଦ୍ରଙ୍କ ବଜ୍ର ପରି ଅଟେ। ହେ ପ୍ରଭୁ! ଆପଣଙ୍କୁ ପ୍ରଣାମ! ଆପଣ କୃପା କରି ମୋତେ ଅଧ୍ୟାତ୍ମ-ବିଦ୍ୟା (ବ୍ରହ୍ମବିଦ୍ୟା)ରେ ସମର୍ଥ କରାନ୍ତୁ, ମୋତେ ଆପଣଙ୍କ ଶ୍ରୀଚରଣର ନିତ୍ୟ ଦାସତ୍ୱ ପ୍ରଦାନ କରନ୍ତୁ ଏବଂ ମୋ ଉପରେ ପରମ କୃପା ବର୍ଷଣ କରନ୍ତୁ।",
+                    wordMeanings: [
+                        {
+                            word: "ନମଃ ଇଦମ୍",
+                            meaning: "ମୋର ଏହି ସାଦର ପ୍ରଣାମ"
+                        },
+                        {
+                            word: "ଅଜହତ୍-ସପର୍ଯ୍ୟାୟ",
+                            meaning: "ନିରନ୍ତର ଅବିରତ ଉପାସନା ପ୍ରାପ୍ତ କରୁଥିବା ଆପଣଙ୍କୁ"
+                        },
+                        {
+                            word: "ପର୍ଯ୍ୟାୟ-ନିର୍ଯ୍ୟାତ-ପକ୍ଷ-ଅନିଳ",
+                            meaning: "କ୍ରମାନ୍ୱୟରେ ଗତିଶୀଳ ଡେଣାରୁ ଉତ୍ପନ୍ନ ପ୍ରଚଣ୍ଡ ବାୟୁ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ଆସ୍ଫାଳନ-ଉଦ୍ୱେଳ-ପାଥୋଧି",
+                            meaning: "ଉତ୍ତାଳ ହୋଇ କୂଳ ଲଙ୍ଘୁଥିବା ସମୁଦ୍ରର"
+                        },
+                        {
+                            word: "ବୀଚୀ-ଚପେଟ-ଆହତ",
+                            meaning: "ତରଙ୍ଗରୂପୀ ଚାପୁଡ଼ା ମାଡ଼ରେ ଆହତ ହୋଇ"
+                        },
+                        {
+                            word: "ଅଗାଧ-ପାତାଳ-ଭାଙ୍କାର",
+                            meaning: "ଗଭୀର ପାତାଳପୁରୀରେ 'ଭାଂ' ଧ୍ୱନି ପ୍ରତିଧ୍ୱନିତ ହେବାରୁ"
+                        },
+                        {
+                            word: "ସଙ୍କ୍ରୁଦ୍ଧ-ନାଗେନ୍ଦ୍ର",
+                            meaning: "ଅତ୍ୟନ୍ତ କ୍ରୋଧିତ ହୋଇଥିବା ଦିଗହସ୍ତୀ ତଥା ନାଗମାନଙ୍କୁ"
+                        },
+                        {
+                            word: "ପୀଡ଼ା-ଅଙ୍କୁଶ-ଭାବ",
+                            meaning: "ଦମନ କରିବା ପାଇଁ ଅଙ୍କୁଶ ସଦୃଶ"
+                        },
+                        {
+                            word: "ଭାସ୍ୱନ୍-ନଖ-ଶ୍ରେଣୟେ",
+                            meaning: "ଉଜ୍ଜ୍ୱଳ ତୀକ୍ଷ୍ଣ ନଖଶ୍ରେଣୀ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ଚଣ୍ଡ-ତୁଣ୍ଡାୟ",
+                            meaning: "ଭୟଙ୍କର ତୀକ୍ଷ୍ଣ ଚଞ୍ଚୁ (ଥଣ୍ଟ) ଧାରଣ କରିଥିବା"
+                        },
+                        {
+                            word: "ନୃତ୍ୟଦ୍-ଭୁଜଙ୍ଗ-ଭ୍ରୁବେ",
+                            meaning: "ନୃତ୍ୟରତ ସର୍ପ ସଦୃଶ କୁଟିଳ ଭ୍ରୁକୁଟି ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ଦଂଷ୍ଟ୍ରୟା ବଜ୍ରିଣେ",
+                            meaning: "ବଜ୍ର ପରି କଠୋର ଦାନ୍ତ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ତୁଭ୍ୟମ୍",
+                            meaning: "ଆପଣଙ୍କୁ"
+                        },
+                        {
+                            word: "ଅଧ୍ୟାତ୍ମ-ବିଦ୍ୟା-ବିଧେୟା",
+                            meaning: "ଆତ୍ମଜ୍ଞାନ ବା ବ୍ରହ୍ମବିଦ୍ୟାର ନିୟନ୍ତା"
+                        },
+                        {
+                            word: "ବିଧେୟା",
+                            meaning: "ସୁଲଭ ବା ପ୍ରଦାନ କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ଭବଦ୍-ଦାସ୍ୟମ୍ ଆପାଦୟେଥା",
+                            meaning: "ମୋତେ ଆପଣଙ୍କ ନିତ୍ୟ ଦାସ୍ୟସେବା ପ୍ରଦାନ କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ଦୟେଥାଃ ଚ ମେ",
+                            meaning: "ଏବଂ ମୋ ପ୍ରତି ଅହେତୁକୀ ଦୟା ପ୍ରକାଶ କରନ୍ତୁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 5,
+                    lyric: "ମନୁରନୁଗତ-ପକ୍ଷି-ବକ୍ତ୍ର-ସ୍ଫୁରତ୍-ତାରକସ୍-ତାବକଶ୍\nଚିତ୍ରଭାନୁ-ପ୍ରିୟା-ଶେଖରସ୍ ତ୍ରାୟତାଂ ନସ୍\nତ୍ରିବର୍ଗାପବର୍ଗ-ପ୍ରସୂତିଃ ପରବ୍ୟୋମ-ଧାମନ୍\nବଳଦ୍ୱେଷି-ଦର୍ପ-ଜ୍ୱଳଦ୍-ବାଳଖିଲ୍ୟ-ପ୍ରତିଜ୍ଞାବତୀର୍ଣ୍ଣ\nସ୍ଥିରାଂ ତତ୍ତ୍ୱବୁଦ୍ଧିଂ ପରାଂ ଭକ୍ତିଧେନୁଂ ଜଗନ୍ମୂଳକନ୍ଦେ\nମୁକୁନ୍ଦେ ମହାନନ୍ଦ-ଦୋଗ୍ଧ୍ରୀଂ ଦଧୀଥା\nମୁଧାକାମହୀନାମ୍ ଅହୀନାମ୍ ଅହୀନାନ୍ତକ ॥ ୫ ॥",
+                    translation: "ହେ ପରମ ବୈକୁଣ୍ଠଧାମର ନିତ୍ୟ ନିବାସୀ ପ୍ରଭୁ! ଆପଣଙ୍କର ପଞ୍ଚାକ୍ଷର ଦିବ୍ୟ ମନ୍ତ୍ର, ଯାହା ପ୍ରଣବ 'ଓଁ'କାରରୁ ଆରମ୍ଭ ହୋଇ ଅଗ୍ନିଦେବଙ୍କ ପ୍ରିୟା 'ସ୍ୱାହା'ରେ ସମାପ୍ତ ହୁଏ, ତାହା ଚତୁର୍ବିଧ ପୁରୁଷାର୍ଥ— ଧର୍ମ, ଅର୍ଥ, କାମ ଏବଂ ମୋକ୍ଷ ପ୍ରଦାନ କରିଥାଏ; ସେହି ପବିତ୍ର ମନ୍ତ୍ର ଆମ୍ଭମାନଙ୍କୁ ସର୍ବଦା ରକ୍ଷା କରୁ। ଦେବରାଜ ଇନ୍ଦ୍ରଙ୍କ ଅହଙ୍କାର ଚୂର୍ଣ୍ଣ କରିବା ନିମନ୍ତେ ବାଳଖିଲ୍ୟ ମୁନିମାନଙ୍କ ଦିବ୍ୟ ସଂକଳ୍ପରୁ ଆପଣ ପ୍ରକଟ ହୋଇଥିଲେ। ହେ ମହାସର୍ପମାନଙ୍କ କାଳ ସ୍ୱରୂପ! ସମଗ୍ର ସୃଷ୍ଟିର ମୂଳ କାରଣ ଶ୍ରୀମୁକୁନ୍ଦଙ୍କ ଶ୍ରୀଚରଣରେ ମୋତେ ଅଚଳ ତତ୍ତ୍ୱଜ୍ଞାନ ପ୍ରଦାନ କରନ୍ତୁ ଏବଂ ନିଷ୍ଫଳ ସାଂସାରିକ କାମନାରୁ ରହିତ, ପରମାନନ୍ଦ-ଦୁଗ୍ଧ କ୍ଷରଣ କରୁଥିବା ପୂର୍ଣ୍ଣାଙ୍ଗ ପରାଭକ୍ତିରୂପୀ କାମଧେନୁ ମୋତେ ଦାନ କରନ୍ତୁ।",
+                    wordMeanings: [
+                        {
+                            word: "ତାବକଃ ମନୁଃ",
+                            meaning: "ଆପଣଙ୍କର ପବିତ୍ର ଗରୁଡ଼ ମନ୍ତ୍ର"
+                        },
+                        {
+                            word: "ଅନୁଗତ-ପକ୍ଷି-ବକ୍ତ୍ର-ସ୍ଫୁରତ୍-ତାରକଃ",
+                            meaning: "'ଓଁ'କାର (ତାରକ ମନ୍ତ୍ର) ଦ୍ୱାରା ଆରମ୍ଭ ହୋଇ ପକ୍ଷୀରାଜଙ୍କ ମନ୍ତ୍ରାକ୍ଷର ସହିତ ସଂଯୁକ୍ତ"
+                        },
+                        {
+                            word: "ଚିତ୍ରଭାନୁ-ପ୍ରିୟା-ଶେଖରଃ",
+                            meaning: "ଅଗ୍ନିପତ୍ନୀ 'ସ୍ୱାହା' ଶବ୍ଦ ଦ୍ୱାରା ସମାପ୍ତ ହେଉଥିବା"
+                        },
+                        {
+                            word: "ତ୍ରିବର୍ଗ-ଅପବର୍ଗ-ପ୍ରସୂତିଃ",
+                            meaning: "ଧର୍ମ, ଅର୍ଥ, କାମ (ତ୍ରିବର୍ଗ) ଏବଂ ମୋକ୍ଷ (ଅପବର୍ଗ) ପ୍ରଦାନ କରୁଥିବା"
+                        },
+                        {
+                            word: "ପରବ୍ୟୋମ-ଧାମନ୍",
+                            meaning: "ପରମ ବୈକୁଣ୍ଠ ଧାମର ଅଧିବାସୀ"
+                        },
+                        {
+                            word: "ତ୍ରାୟତାମ୍ ନଃ",
+                            meaning: "ଆମ୍ଭମାନଙ୍କୁ ସର୍ବଦା ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ବଳଦ୍ୱେଷି-ଦର୍ପ-ଜ୍ୱଳତ୍",
+                            meaning: "ଇନ୍ଦ୍ରଙ୍କ ଗର୍ବକୁ ଚୂର୍ଣ୍ଣ କରିବା ନିମନ୍ତେ"
+                        },
+                        {
+                            word: "ବାଳଖିଲ୍ୟ-ପ୍ରତିଜ୍ଞା-ଅବତୀର୍ଣ୍ଣ",
+                            meaning: "ବାଳଖିଲ୍ୟ ଋଷିମାନଙ୍କ ସଂକଳ୍ପ ଦ୍ୱାରା ଆବିର୍ଭୂତ ହୋଇଥିବା"
+                        },
+                        {
+                            word: "ସ୍ଥିରାମ୍ ତତ୍ତ୍ୱ-ବୁଦ୍ଧିମ୍",
+                            meaning: "ସ୍ଥିର ଭଗବତ୍ ତତ୍ତ୍ୱଜ୍ଞାନ"
+                        },
+                        {
+                            word: "ପରାମ୍ ଭକ୍ତି-ଧେନୁମ୍",
+                            meaning: "ଶ୍ରେଷ୍ଠ ଭକ୍ତିରୂପୀ କାମଧେନୁ"
+                        },
+                        {
+                            word: "ଜଗତ୍-ମୂଳ-କନ୍ଦେ ମୁକୁନ୍ଦେ",
+                            meaning: "ସମଗ୍ର ଜଗତର ମୂଳ କାରଣ ଶ୍ରୀ ମୁକୁନ୍ଦଙ୍କ ଶ୍ରୀଚରଣରେ"
+                        },
+                        {
+                            word: "ମହାନନ୍ଦ-ଦୋଗ୍ଧ୍ରୀମ୍",
+                            meaning: "ପରମ ଆନନ୍ଦରୂପୀ ଦୁଗ୍ଧ ପ୍ରଦାନକାରୀ"
+                        },
+                        {
+                            word: "ମୁଧା-କାମ-ହୀନାମ୍",
+                            meaning: "ନିଷ୍ଫଳ ଭୌତିକ କାମନା-ବାସନାରୁ ସମ୍ପୂର୍ଣ୍ଣ ମୁକ୍ତ"
+                        },
+                        {
+                            word: "ଅହୀନାମ୍",
+                            meaning: "ଅଖଣ୍ଡ ଓ ପରିପୂର୍ଣ୍ଣ"
+                        },
+                        {
+                            word: "ଦଧୀଥାଃ",
+                            meaning: "ମୋତେ ପ୍ରଦାନ କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ଅହୀନ-ଅନ୍ତକ",
+                            meaning: "ବିଶାଳ ସର୍ପମାନଙ୍କ କାଳ ସ୍ୱରୂପ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 6,
+                    lyric: "ଷଟ୍‌ତ୍ରିଂଶଦ୍-ଗଣ-ଚରଣୋ ନର-ପରିପାଟୀ-ନବୀନ-ଗୁମ୍ଭ-ଗଣଃ ।\nବିଷ୍ଣୁ-ରଥ-ଦଣ୍ଡକୋ ଽୟଂ ବିଘଟୟତୁ ବିପକ୍ଷ-ବାହିନୀ-ବ୍ୟୂହମ୍ ॥ ୬ ॥",
+                    translation: "ପ୍ରତ୍ୟେକ ଚରଣରେ ଛତିଶଟି ଗଣ (ଦୁଇଟି ନ-ଗଣ ଏବଂ ଚଉତିରିଶଟି ର-ଗଣ ମିଶି ମୋଟ ୧୦୮ ଅକ୍ଷର) ଦ୍ୱାରା ସୁସଜ୍ଜିତ ଏବଂ ଅତ୍ୟନ୍ତ ଅଭିନବ କାବ୍ୟିକ ପଦାବଳୀରେ ରଚିତ ଭଗବାନ ଶ୍ରୀବିଷ୍ଣୁଙ୍କ ବାହନ ଶ୍ରୀଗରୁଡ଼ଙ୍କର ଏହି 'ଗରୁଡ଼ ଦଣ୍ଡକମ୍', ପାଠକର ସମସ୍ତ ବିରୋଧୀ ଶତ୍ରୁ-ସେନାଙ୍କ ସୈନ୍ୟ-ବ୍ୟୂହ ତଥା ଜୀବନର ସମସ୍ତ ବାଧାବିଘ୍ନକୁ ଧୂଳିସାତ୍ କରିଦେଉ।",
+                    wordMeanings: [
+                        {
+                            word: "ଷଟ୍-ତ୍ରିଂଶତ୍-ଗଣ-ଚରଣଃ",
+                            meaning: "ପ୍ରତ୍ୟେକ ଚରଣରେ ଛତିଶଟି (୩୬) ଗଣ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ନ-ର-ପରିପାଟୀ",
+                            meaning: "'ନ-ଗଣ' ଏବଂ 'ର-ଗଣ'ର ଛାନ୍ଦସିକ କ୍ରମରେ ରଚିତ"
+                        },
+                        {
+                            word: "ନବୀନ-ଗୁମ୍ଭ-ଗଣଃ",
+                            meaning: "ଅଭିନବ ସୁନ୍ଦର ପଦାବଳୀର ସମାହାର"
+                        },
+                        {
+                            word: "ଅୟମ୍ ବିଷ୍ଣୁ-ରଥ-ଦଣ୍ଡକଃ",
+                            meaning: "ବିଷ୍ଣୁବାହନ ଶ୍ରୀ ଗରୁଡ଼ଙ୍କ ଏହି ଦଣ୍ଡକ ସ୍ତୋତ୍ର"
+                        },
+                        {
+                            word: "ବିଘଟୟତୁ",
+                            meaning: "ଛତ୍ରଭଙ୍ଗ ବା ବିନାଶ କରୁ"
+                        },
+                        {
+                            word: "ବିପକ୍ଷ-ବାହିନୀ-ବ୍ୟୂହମ୍",
+                            meaning: "ଶତ୍ରୁ-ସେନାମାନଙ୍କ ସମସ୍ତ ବ୍ୟୂହକୁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 7,
+                    lyric: "ବିଚିତ୍ର-ସିଦ୍ଧିଦଃ ସୋ ଽୟଂ ବେଙ୍କଟେଶ-ବିପଶ୍ଚିତା ।\nଗରୁଡ଼-ଧ୍ୱଜ-ତୋଷାୟ ଗୀତୋ ଗରୁଡ଼-ଦଣ୍ଡକଃ ॥ ୭ ॥",
+                    translation: "ସକଳ ଅଭୀଷ୍ଟ ଓ ବିଚିତ୍ର ସିଦ୍ଧି ପ୍ରଦାନକାରୀ ଏହି 'ଗରୁଡ଼ ଦଣ୍ଡକମ୍', ବିଦ୍ୱାନ କବି ଶ୍ରୀ ବେଙ୍କଟେଶ (ଶ୍ରୀ ବେଦାନ୍ତ ଦେଶିକ)ଙ୍କ ଦ୍ୱାରା ଗରୁଡ଼ଧ୍ୱଜ ଭଗବାନ ଶ୍ରୀମନ୍ ନାରାୟଣଙ୍କ ପ୍ରୀତି ସମ୍ପାଦନ ନିମନ୍ତେ ରଚିତ ତଥା ଗାନ କରାଯାଇଛି।",
+                    wordMeanings: [
+                        {
+                            word: "ବିଚିତ୍ର-ସିଦ୍ଧିଦଃ",
+                            meaning: "ଅଲୌକିକ ମନସ୍କାମନା ପୂର୍ଣ୍ଣ କରୁଥିବା"
+                        },
+                        {
+                            word: "ସଃ ଅୟମ୍",
+                            meaning: "ଏହି"
+                        },
+                        {
+                            word: "ବେଙ୍କଟେଶ-ବିପଶ୍ଚିତା",
+                            meaning: "ବିଦ୍ୱାନ କବି ଶ୍ରୀ ବେଙ୍କଟେଶ (ଶ୍ରୀ ବେଦାନ୍ତ ଦେଶିକ)ଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ଗରୁଡ଼-ଧ୍ୱଜ-ତୋଷାୟ",
+                            meaning: "ଗରୁଡ଼ଧ୍ୱଜ ପ୍ରଭୁ ଶ୍ରୀମନ୍ ନାରାୟଣଙ୍କ ସନ୍ତୋଷ ବିଧାନ ନିମନ୍ତେ"
+                        },
+                        {
+                            word: "ଗୀତଃ",
+                            meaning: "ଗାନ କରାଯାଇଥିବା"
+                        },
+                        {
+                            word: "ଗରୁଡ଼-ଦଣ୍ଡକଃ",
+                            meaning: "ଶ୍ରୀ ଗରୁଡ଼ ଦଣ୍ଡକ ସ୍ତୋତ୍ର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        id: "song-govindamprayers",
+        title: "ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା - ଦର୍ଶନ ଆରତୀ (Govindam Prayers - Darsana Arati)",
+        title_odia: "ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା (ଦର୍ଶନ ଆରତୀ)",
+        title_english: "Govindam Prayers (Darsana Arati)",
+        category: "Songs",
+        type: "html",
+        author: "Lord Brahma",
+        tags: [
+            "Govindam Prayers",
+            "Govindam Adi Purusam",
+            "Brahma Samhita",
+            "Darsana Arati",
+            "Lord Brahma",
+            "ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା",
+            "ଗୋବିନ୍ଦମ୍ ଆଦି ପୁରୁଷମ୍",
+            "ବ୍ରହ୍ମ ସଂହିତା",
+            "ଦର୍ଶନ ଆରତୀ",
+            "ବ୍ରହ୍ମା"
+        ],
+        description: "ଶ୍ରୀ ବ୍ରହ୍ମାଜୀଙ୍କ ମୁଖନିସୃତ ବ୍ରହ୍ମ ସଂହିତାରୁ ପ୍ରସିଦ୍ଧ ଦର୍ଶନ ଆରତୀ ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Classical_and_Western/Daily_temple_program/Daily%20temple%20program%202/16_-_Govindam_Adi_Purusam_-_Darsana-arati.mp3",
+        vocalist: "HG Yamuna Mataji",
+        audioVersions: [
+            {
+                label: "HG Yamuna Mataji (Temple Darshan Arati)",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Classical_and_Western/Daily_temple_program/Daily%20temple%20program%202/16_-_Govindam_Adi_Purusam_-_Darsana-arati.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-govindamprayers",
+            title: "ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା - ଦର୍ଶନ ଆରତୀ (Govindam Prayers - Darsana Arati)",
+            title_odia: "ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା (ଦର୍ଶନ ଆରତୀ)",
+            title_english: "Govindam Prayers (Darsana Arati)",
+            author: "Lord Brahma",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Govindam%20Prayers_More%20Songs_8",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ବେଣୁଂ କ୍ୱଣନ୍ତମ୍ ଅରବିନ୍ଦ-ଦଳାୟତାକ୍ଷଂ\nବର୍ହାବତଂସମ୍ ଅସିତାମ୍ବୁଦ-ସୁନ୍ଦରାଙ୍ଗମ୍ ।\nକନ୍ଦର୍ପ-କୋଟି-କମନୀୟ-ବିଶେଷ-ଶୋଭଂ\nଗୋବିନ୍ଦମ୍ ଆଦି-ପୁରୁଷଂ ତମ୍ ଅହଂ ଭଜାମି ॥ ୧ ॥",
+                    translation: "ଯିଏ ଅତି ମନୋହର ସ୍ୱରରେ ମୁରଲୀ ବାଦନ କରୁଛନ୍ତି; ଯାହାଙ୍କର ନୟନଯୁଗଳ ପ୍ରସ୍ଫୁଟିତ ପଦ୍ମପାଖୁଡ଼ା ସଦୃଶ ବିଶାଳ ଓ ସୁନ୍ଦର; ଯାହାଙ୍କ ମସ୍ତକରେ ମୟୂରପୁଚ୍ଛର ମନୋରମ ଚୂଳ ଶୋଭା ପାଉଛି; ଯାହାଙ୍କ ଶ୍ରୀଅଙ୍ଗର ଶ୍ୟାମଳ ଶୋଭା ନବଜଳଧର (ସଜଳ ମେଘ) ପରି ପରମ ଆକର୍ଷଣୀୟ; ଏବଂ ଯାହାଙ୍କର ଅପ୍ରାକୃତ ଦିବ୍ୟ ଲାବଣ୍ୟ କୋଟି କୋଟି କାମଦେବଙ୍କୁ ମଧ୍ୟ ପରାସ୍ତ ଓ ମୋହିତ କରିଦିଏ— ସେହି ଆଦିପୁରୁଷ ଭଗବାନ ଶ୍ରୀ ଗୋବିନ୍ଦଙ୍କର ମୁଁ ଭଜନ କରୁଛି।",
+                    wordMeanings: [
+                        {
+                            word: "ବେଣୁମ୍",
+                            meaning: "ବଂଶୀକୁ"
+                        },
+                        {
+                            word: "କ୍ୱଣନ୍ତମ୍",
+                            meaning: "ମଧୁର ସ୍ୱରରେ ବାଦନ କରୁଥିବା"
+                        },
+                        {
+                            word: "ଅରବିନ୍ଦ-ଦଳ-ଆୟତ-ଅକ୍ଷମ୍",
+                            meaning: "ପ୍ରସ୍ଫୁଟିତ ପଦ୍ମପାଖୁଡ଼ା ସଦୃଶ ବିଶାଳ ସୁନ୍ଦର ନୟନ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ବର୍ହ-ଅବତଂସମ୍",
+                            meaning: "ଶିଖିପୁଚ୍ଛ (ମୟୂରପୁଚ୍ଛ)କୁ ମୁକୁଟର ଚୂଳ ରୂପେ ଭୂଷିତ କରିଥିବା"
+                        },
+                        {
+                            word: "ଅସିତ-ଅମ୍ବୁଦ-ସୁନ୍ଦର-ଅଙ୍ଗମ୍",
+                            meaning: "ନବୀନ ନୀଳ ଜଳଧର (ମେଘ) ସଦୃଶ ଶ୍ୟାମଳ ସୁନ୍ଦର ଶ୍ରୀଅଙ୍ଗ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "କନ୍ଦର୍ପ-କୋଟି-କମନୀୟ",
+                            meaning: "କୋଟି କୋଟି କନ୍ଦର୍ପ (କାମଦେବ)ଙ୍କୁ ମୋହିତ କରୁଥିବା"
+                        },
+                        {
+                            word: "ବିଶେଷ-ଶୋଭମ୍",
+                            meaning: "ଅପ୍ରତିଦ୍ୱନ୍ଦ୍ୱୀ ଅଲୌକିକ ସୌନ୍ଦର୍ଯ୍ୟଶାଳୀ"
+                        },
+                        {
+                            word: "ଗୋବିନ୍ଦମ୍",
+                            meaning: "ସେହି ଇନ୍ଦ୍ରିୟ ଓ ଗୋକୁଳର ଆନନ୍ଦଦାତା ଶ୍ରୀ ଗୋବିନ୍ଦଙ୍କୁ"
+                        },
+                        {
+                            word: "ଆଦି-ପୁରୁଷମ୍",
+                            meaning: "ସର୍ବକାରଣର ପରମ ମୂଳ କାରଣ ଆଦିପୁରୁଷ ଭଗବାନଙ୍କୁ"
+                        },
+                        {
+                            word: "ତମ୍ ଅହମ୍ ଭଜାମି",
+                            meaning: "ମୁଁ ତାହାଙ୍କର ଭଜନ କରୁଛି"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ଅଙ୍ଗାନି ଯସ୍ୟ ସକଳେନ୍ଦ୍ରିୟ-ବୃତ୍ତି-ମନ୍ତି\nପଶ୍ୟନ୍ତି ପାନ୍ତି କଳୟନ୍ତି ଚିରଂ ଜଗନ୍ତି ।\nଆନନ୍ଦ-ଚିନ୍ମୟ-ସଦ୍-ଉଜ୍ଜ୍ୱଳ-ବିଗ୍ରହସ୍ୟ\nଗୋବିନ୍ଦମ୍ ଆଦି-ପୁରୁଷଂ ତମ୍ ଅହଂ ଭଜାମି ॥ ୨ ॥",
+                    translation: "ଯାହାଙ୍କର ଦିବ୍ୟ ଶ୍ରୀବିଗ୍ରହ ନିତ୍ୟ, ସଚ୍ଚିଦାନନ୍ଦମୟ ଏବଂ ପରମ ଉଜ୍ଜ୍ୱଳ ତେଜରେ ଝଟକୁଛି; ଯାହାଙ୍କ ଶ୍ରୀଅଙ୍ଗର ପ୍ରତ୍ୟେକ ଅଙ୍ଗ ସମସ୍ତ ଇନ୍ଦ୍ରିୟର କାର୍ଯ୍ୟ ସମ୍ପନ୍ନ କରିବାକୁ ସମର୍ଥ (ଅର୍ଥାତ୍ ଯିଏ ନେତ୍ର ଦ୍ୱାରା ଆହାର କରିପାରନ୍ତି, ଶ୍ରବଣ ଦ୍ୱାରା ଦର୍ଶନ କରିପାରନ୍ତି ଏବଂ ଚରଣ ଦ୍ୱାରା ଆଲିଙ୍ଗନ କରିପାରନ୍ତି); ଏବଂ ଯିଏ ଅନନ୍ତ କୋଟି ବ୍ରହ୍ମାଣ୍ଡକୁ ନିରନ୍ତର ଦର୍ଶନ କରୁଛନ୍ତି, ପାଳନ କରୁଛନ୍ତି ତଥା ସଂଚାଳିତ କରୁଛନ୍ତି— ସେହି ଆଦିପୁରୁଷ ପରମେଶ୍ୱର ଶ୍ରୀ ଗୋବିନ୍ଦଙ୍କର ମୁଁ ଭଜନ କରୁଛି।",
+                    wordMeanings: [
+                        {
+                            word: "ଯସ୍ୟ ଅଙ୍ଗାନି",
+                            meaning: "ଯାହାଙ୍କ ଶ୍ରୀଅଙ୍ଗର ପ୍ରତ୍ୟେକ ଅଙ୍ଗପ୍ରତ୍ୟଙ୍ଗ"
+                        },
+                        {
+                            word: "ସକଳ-ଇନ୍ଦ୍ରିୟ-ବୃତ୍ତି-ମନ୍ତି",
+                            meaning: "ସମସ୍ତ ଇନ୍ଦ୍ରିୟର କାର୍ଯ୍ୟ ସମ୍ପାଦନ କରିବାର ପୂର୍ଣ୍ଣ ଶକ୍ତିରେ ଯୁକ୍ତ"
+                        },
+                        {
+                            word: "ପଶ୍ୟନ୍ତି",
+                            meaning: "ସର୍ବଦା ଦର୍ଶନ କରୁଛନ୍ତି"
+                        },
+                        {
+                            word: "ପାନ୍ତି",
+                            meaning: "ପାଳନ ଓ ରକ୍ଷା କରୁଛନ୍ତି"
+                        },
+                        {
+                            word: "କଳୟନ୍ତି",
+                            meaning: "ପ୍ରକାଶ ବା ସୃଷ୍ଟି କରୁଛନ୍ତି"
+                        },
+                        {
+                            word: "ଚିରମ୍",
+                            meaning: "ଅନନ୍ତ କାଳ ପର୍ଯ୍ୟନ୍ତ"
+                        },
+                        {
+                            word: "ଜଗନ୍ତି",
+                            meaning: "ଅସଂଖ୍ୟ ବ୍ରହ୍ମାଣ୍ଡସମୂହକୁ"
+                        },
+                        {
+                            word: "ଆନନ୍ଦ-ଚିନ୍ମୟ",
+                            meaning: "ପରମ ଆନନ୍ଦମୟ ଓ ଅପ୍ରାକୃତ ଚୈତନ୍ୟମୟ"
+                        },
+                        {
+                            word: "ସଦ୍-ଉଜ୍ଜ୍ୱଳ-ବିଗ୍ରହସ୍ୟ",
+                            meaning: "ନିତ୍ୟ ସତ୍ୟ ତଥା ଦିବ୍ୟ ପରମ ଉଜ୍ଜ୍ୱଳ ଶ୍ରୀବିଗ୍ରହ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            word: "ଗୋବିନ୍ଦମ୍",
+                            meaning: "ସେହି ଶ୍ରୀ ଗୋବିନ୍ଦଙ୍କୁ"
+                        },
+                        {
+                            word: "ଆଦି-ପୁରୁଷମ୍",
+                            meaning: "ସର୍ବପ୍ରଥମ ମୂଳ ପରମପୁରୁଷଙ୍କୁ"
+                        },
+                        {
+                            word: "ତମ୍ ଅହମ୍ ଭଜାମି",
+                            meaning: "ମୁଁ ତାହାଙ୍କର ଭଜନ କରୁଛି"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        id: "song-guraugosthegosthalayisu",
+        title: "ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ - ଶ୍ରୀ ମନଃଶିକ୍ଷା (Gurau Gosthe Gosthalayisu - Sri Manah Siksa)",
+        title_odia: "ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ - ଶ୍ରୀ ମନଃଶିକ୍ଷା",
+        title_english: "Gurau Gosthe Gosthalayisu - Sri Manah Siksa",
+        category: "Songs",
+        type: "html",
+        author: "Raghunatha Dasa Goswami",
+        tags: [
+            "Gurau Gosthe Gosthalayisu",
+            "Manah Siksa",
+            "Sri Manah Siksa",
+            "Raghunatha Dasa Goswami",
+            "Stotram",
+            "ଗୁରୌ ଗୋଷ୍ଠେ",
+            "ମନଃଶିକ୍ଷା",
+            "ଶ୍ରୀ ମନଃଶିକ୍ଷା",
+            "ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀ"
+        ],
+        description: "ଶ୍ରୀଳ ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀଙ୍କ ବିରଚିତ ସୁପ୍ରସିଦ୍ଧ ଶ୍ରୀ ମନଃଶିକ୍ଷା (୧୨ଟି ଶ୍ଳୋକ) ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Raghunath_Dasa_Goswami/Gurau_Gosthe_Gosthalayisu/Gurau_Gosthe_Gosthalayisu_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3",
+        vocalist: "HG Jai Sachinandana Prabhu",
+        audioVersions: [
+            {
+                label: "HG Jai Sachinandana Prabhu",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Raghunath_Dasa_Goswami/Gurau_Gosthe_Gosthalayisu/Gurau_Gosthe_Gosthalayisu_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-guraugosthegosthalayisu",
+            title: "ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ - ଶ୍ରୀ ମନଃଶିକ୍ଷା (Gurau Gosthe Gosthalayisu - Sri Manah Siksa)",
+            title_odia: "ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ - ଶ୍ରୀ ମନଃଶିକ୍ଷା",
+            title_english: "Gurau Gosthe Gosthalayisu - Sri Manah Siksa",
+            author: "Raghunatha Dasa Goswami",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Gurau%20Gosthe%20Gosthalayisu_",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ ସୁଜନେ ଭୂସୁର-ଗଣେ\nସ୍ୱ-ମନ୍ତ୍ରେ ଶ୍ରୀ-ନାମ୍ନି ବ୍ରଜ-ନବ-ଯୁବ-ଦ୍ୱନ୍ଦ୍ୱ-ଶରଣେ ।\nସଦା ଦମ୍ଭଂ ହିତ୍ୱା କୁରୁ ରତିମ୍ ଅପୂର୍ବମ୍ ଅତିତରାଂ\nଅୟେ ସ୍ୱାନ୍ତର୍-ଭ୍ରାତଶ୍ ଚଟୁଭିର୍ ଅଭିଯାଚେ ଧୃତ-ପଦଃ ॥ ୧ ॥",
+                    translation: "ହେ ମୋର ଅନ୍ତରଙ୍ଗ ଭ୍ରାତା ମନ! ମୁଁ ତୋର ପାଦଯୁଗଳ ଧରି ଅତି ମଧୁର ବଚନରେ ବିନତି କରୁଛି: ତୁ ସମସ୍ତ କପଟତା ଓ ଦମ୍ଭ ପରିତ୍ୟାଗ କରି ଶ୍ରୀଗୁରୁଦେବ, ଶ୍ରୀଧାମ ବ୍ରଜଗୋଷ୍ଠ, ବ୍ରଜବାସୀଗଣ, ସାଧୁ-ବୈଷ୍ଣବବୃନ୍ଦ, ବ୍ରାହ୍ମଣକୁଳ, ଦୀକ୍ଷାମନ୍ତ୍ର, ଶ୍ରୀହରିନାମ ଏବଂ ନିତ୍ୟ-ନୂତନ ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣ ଯୁଗଳକିଶୋରଙ୍କ ଶ୍ରୀଚରଣ-ଶରଣରେ ଅପୂର୍ବ ତଥା ପରମ ପ୍ରେମମୟୀ ନିଷ୍ଠା ପ୍ରକଟ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ଅୟେ ସ୍ୱାନ୍ତର୍-ଭ୍ରାତଃ",
+                            meaning: "ହେ ମୋର ଭ୍ରାତା ମନ"
+                        },
+                        {
+                            word: "ଧୃତ-ପଦଃ",
+                            meaning: "ତୋର ପାଦ ଧରି"
+                        },
+                        {
+                            word: "ଚଟୁଭିଃ ଅଭିଯାଚେ",
+                            meaning: "ମିଷ୍ଟ ବଚନରେ ପ୍ରାର୍ଥନା କରୁଛି"
+                        },
+                        {
+                            word: "ସଦା ଦମ୍ଭଂ ହିତ୍ୱା",
+                            meaning: "ସର୍ବଦା କପଟତା ବା ଅହଙ୍କାର ତ୍ୟାଗ କରି"
+                        },
+                        {
+                            word: "ଗୁରୌ",
+                            meaning: "ଶ୍ରୀଗୁରୁଦେବଙ୍କ ଠାରେ"
+                        },
+                        {
+                            word: "ଗୋଷ୍ଠେ",
+                            meaning: "ପବିତ୍ର ବ୍ରଜଧାମରେ"
+                        },
+                        {
+                            word: "ଗୋଷ୍ଠ-ଆଳୟିଷୁ",
+                            meaning: "ବ୍ରଜବାସୀମାନଙ୍କ ଠାରେ"
+                        },
+                        {
+                            word: "ସୁଜନେ",
+                            meaning: "ସାଧୁ ବୈଷ୍ଣବମାନଙ୍କ ଠାରେ"
+                        },
+                        {
+                            word: "ଭୂସୁର-ଗଣେ",
+                            meaning: "ବ୍ରାହ୍ମଣମାନଙ୍କ ଠାରେ"
+                        },
+                        {
+                            word: "ସ୍ୱ-ମନ୍ତ୍ରେ",
+                            meaning: "ନିଜ ଦୀକ୍ଷାମନ୍ତ୍ରରେ"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ନାମ୍ନି",
+                            meaning: "ଶ୍ରୀହରିନାମରେ"
+                        },
+                        {
+                            word: "ବ୍ରଜ-ନବ-ଯୁବ-ଦ୍ୱନ୍ଦ୍ୱ-ଶରଣେ",
+                            meaning: "ଶ୍ରୀ ରାଧା-କୃଷ୍ଣ ଯୁଗଳକିଶୋରଙ୍କ ଶରଣାଗତିରେ"
+                        },
+                        {
+                            word: "ଅପୂର୍ବାଂ ରତିଂ କୁରୁ",
+                            meaning: "ଅପୂର୍ବ ଗାଢ଼ ପ୍ରେମାନୁରାଗ ସ୍ଥାପନ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ନ ଧର୍ମଂ ନାଧର୍ମଂ ଶ୍ରୁତି-ଗଣ-ନିରୁକ୍ତଂ କିଳ କୁରୁ\nବ୍ରଜେ ରାଧା-କୃଷ୍ଣ-ପ୍ରଚୁର-ପରିଚର୍ଯ୍ୟାମ୍ ଇହ ତନୁ ।\nଶଚୀ-ସୂନୁଂ ନନ୍ଦୀଶ୍ୱର-ପତି-ସୁତତ୍ୱେ ଗୁରୁ-ବରଂ\nମୁକୁନ୍ଦ-ପ୍ରେଷ୍ଠତ୍ୱେ ସ୍ମର ପଦମ୍ ଅଜସ୍ରଂ ନନୁ ମନଃ ॥ ୨ ॥",
+                    translation: "ହେ ମନ! ବେଦରେ ନିରୂପିତ ସାଂସାରିକ ଧର୍ମ ବା ଅଧର୍ମ ପଛରେ ଧାବିତ ନ ହୋଇ, ତୁ ଏହି ବ୍ରଜଭୂମିରେ ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ପ୍ରଚୁର ନିତ୍ୟ ପ୍ରେମମୟୀ ସେବାର ବିସ୍ତାର କର। ଶଚୀନନ୍ଦନ ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କୁ ସାକ୍ଷାତ୍ ନନ୍ଦନନ୍ଦନ ଶ୍ରୀକୃଷ୍ଣ ରୂପେ ଏବଂ ଶ୍ରୀଗୁରୁଦେବଙ୍କୁ ଶ୍ରୀମୁକୁନ୍ଦଙ୍କ ପରମ ପ୍ରିୟତମ ପ୍ରକାଶ ରୂପେ ଜାଣି ସେମାନଙ୍କ ଶ୍ରୀଚରଣକମଳକୁ ନିରନ୍ତର ସ୍ମରଣ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ନନୁ ମନଃ",
+                            meaning: "ହେ ମୋର ମନ"
+                        },
+                        {
+                            word: "ଶ୍ରୁତି-ଗଣ-ନିରୁକ୍ତଂ",
+                            meaning: "ବେଦମାନଙ୍କରେ ବର୍ଣ୍ଣିତ"
+                        },
+                        {
+                            word: "ନ ଧର୍ମଂ ନ ଅଧର୍ମଂ କୁରୁ",
+                            meaning: "ଲୌକିକ ଧର୍ମ ବା ଅଧର୍ମରେ ପ୍ରବୃତ୍ତ ହୁଅ ନାହିଁ"
+                        },
+                        {
+                            word: "ଇହ ବ୍ରଜେ",
+                            meaning: "ଏହି ବ୍ରଜଧାମରେ"
+                        },
+                        {
+                            word: "ରାଧା-କୃଷ୍ଣ-ପ୍ରଚୁର-ପରିଚର୍ଯ୍ୟାଂ ତନୁ",
+                            meaning: "ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ପ୍ରଚୁର ସେବା ସମ୍ପାଦନ କର"
+                        },
+                        {
+                            word: "ଶଚୀ-ସୂନୁଂ",
+                            meaning: "ଶଚୀମାତାଙ୍କ ପୁତ୍ର ଶ୍ରୀଗୌରାଙ୍ଗଙ୍କୁ"
+                        },
+                        {
+                            word: "ନନ୍ଦୀଶ୍ୱର-ପତି-ସୁତତ୍ୱେ",
+                            meaning: "ନନ୍ଦରାଜଙ୍କ ପୁତ୍ର ଶ୍ରୀକୃଷ୍ଣ ଭାବରେ"
+                        },
+                        {
+                            word: "ଗୁରୁ-ବରଂ",
+                            meaning: "ଶ୍ରେଷ୍ଠ ଶ୍ରୀଗୁରୁଦେବଙ୍କୁ"
+                        },
+                        {
+                            word: "ମୁକୁନ୍ଦ-ପ୍ରେଷ୍ଠତ୍ୱେ",
+                            meaning: "ଶ୍ରୀକୃଷ୍ଣଙ୍କ ପରମ ପ୍ରିୟଜନ ଭାବରେ"
+                        },
+                        {
+                            word: "ପଦମ୍ ଅଜସ୍ରଂ ସ୍ମର",
+                            meaning: "ତାଙ୍କ ଚରଣକୁ ନିରନ୍ତର ସ୍ମରଣ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 3,
+                    lyric: "ଯଦୀଚ୍ଛେର୍ ଆବାସଂ ବ୍ରଜ-ଭୁବି ସ-ରାଗଂ ପ୍ରତି-ଜନୁର୍\nଯୁବ-ଦ୍ୱନ୍ଦ୍ୱଂ ତଚ୍ ଚେତ୍ ପରିଚରିତୁମ୍ ଆରାଦ୍ ଅଭିଳଷେ ।\nସ୍ୱରୂପଂ ଶ୍ରୀ-ରୂପଂ ସ-ଗଣମ୍ ଇହ ତସ୍ୟାଗ୍ରଜମ୍ ଅପି\nସ୍ଫୁଟଂ ପ୍ରେମ୍ଣା ନିତ୍ୟଂ ସ୍ମର ନମ ତଦା ତ୍ୱଂ ଶୃଣୁ ମନଃ ॥ ୩ ॥",
+                    translation: "ହେ ମନ! ଶୁଣ, ଯଦି ତୁ ପ୍ରତି ଜନ୍ମରେ ବ୍ରଜଭୂମିରେ ଅନୁରାଗପୂର୍ବକ ବାସ କରିବାକୁ ଇଚ୍ଛା କରୁଛୁ ଏବଂ ଯୁଗଳକିଶୋର ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ଅନ୍ତରଙ୍ଗ ସେବା ନିକଟରୁ ପାଇବାକୁ ଅଭିଳାଷ ରଖୁଛୁ, ତେବେ ତୁ ଶ୍ରୀ ସ୍ୱରୂପ ଦାମୋଦର, ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ ଏବଂ ତାଙ୍କ ଜ୍ୟେଷ୍ଠଭ୍ରାତା ଶ୍ରୀ ସନାତନ ଗୋସ୍ୱାମୀ ତଥା ସେମାନଙ୍କ ସମସ୍ତ ପାର୍ଷଦଗଣଙ୍କୁ ନିତ୍ୟ ପ୍ରେମଭରେ ପ୍ରଣାମ କର ଓ ସ୍ମରଣ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ଶୃଣୁ ମନଃ",
+                            meaning: "ହେ ମନ, ତୁ ଶୁଣ"
+                        },
+                        {
+                            word: "ଯଦି ଇଚ୍ଛେଃ",
+                            meaning: "ଯଦି ତୁ ଚାହୁଁଛୁ"
+                        },
+                        {
+                            word: "ପ୍ରତି-ଜନୁଃ",
+                            meaning: "ପ୍ରତ୍ୟେକ ଜନ୍ମରେ"
+                        },
+                        {
+                            word: "ବ୍ରଜ-ଭୁବି ସ-ରାଗମ୍ ଆବାସଂ",
+                            meaning: "ବ୍ରଜଭୂମିରେ ପ୍ରେମାନୁରାଗପୂର୍ଣ୍ଣ ବାସସ୍ଥାନ"
+                        },
+                        {
+                            word: "ତତ୍ ଯୁବ-ଦ୍ୱନ୍ଦ୍ୱଂ",
+                            meaning: "ସେହି ଦିବ୍ୟ ଯୁଗଳକିଶୋରଙ୍କୁ"
+                        },
+                        {
+                            word: "ଆରାତ୍ ପରିଚରିତୁମ୍",
+                            meaning: "ସାକ୍ଷାତ୍ ଅତି ନିକଟରୁ ସେବା କରିବାକୁ"
+                        },
+                        {
+                            word: "ସ୍ୱରୂପଂ",
+                            meaning: "ଶ୍ରୀଳ ସ୍ୱରୂପ ଦାମୋଦର ଗୋସ୍ୱାମୀଙ୍କୁ"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ରୂପଂ ସ-ଗଣମ୍",
+                            meaning: "ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀ ଓ ତାଙ୍କ ସଙ୍ଗୀଗଣଙ୍କୁ"
+                        },
+                        {
+                            word: "ତସ୍ୟ ଅଗ୍ରଜମ୍ ଅପି",
+                            meaning: "ତାଙ୍କ ଜ୍ୟେଷ୍ଠଭ୍ରାତା ଶ୍ରୀ ସନାତନ ଗୋସ୍ୱାମୀଙ୍କୁ ମଧ୍ୟ"
+                        },
+                        {
+                            word: "ପ୍ରେମ୍ଣା ନିତ୍ୟଂ ସ୍ମର ନମ",
+                            meaning: "ପ୍ରେମର ସହ ସର୍ବଦା ସ୍ମରଣ କର ଓ ପ୍ରଣାମ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 4,
+                    lyric: "ଅସଦ୍-ବାର୍ତ୍ତା-ବେଶ୍ୟା ବିସୃଜ ମତି-ସର୍ବସ୍ୱ-ହରଣୀଃ\nକଥା ମୁକ୍ତି-ବ୍ୟାଘ୍ର୍ୟା ନ ଶୃଣୁ କିଳ ସର୍ବାତ୍ମ-ଗିଳନୀଃ ।\nଅପି ତ୍ୟକ୍ତ୍ୱା ଲକ୍ଷ୍ମୀ-ପତି-ରତିମ୍ ଇତୋ ବ୍ୟୋମ-ନୟନୀଂ\nବ୍ରଜେ ରାଧା-କୃଷ୍ଣୌ ସ୍ୱ-ରତି-ମଣି-ଦୌ ତ୍ୱଂ ଭଜ ମନଃ ॥ ୪ ॥",
+                    translation: "ହେ ମନ! ବୁଦ୍ଧିର ସମସ୍ତ ସତ୍ତ୍ୱ ଚୋରି କରିନେଉଥିବା ଗ୍ରାମ୍ୟକଥା ଓ ଅସତ୍-ପ୍ରସଙ୍ଗରୂପୀ ବେଶ୍ୟାକୁ ତୁ ସମ୍ପୂର୍ଣ୍ଣ ତ୍ୟାଗ କର। ସମସ୍ତ ଭକ୍ତିଭାବକୁ ଗିଳି ପକାଉଥିବା ନିର୍ବିଶେଷ ମୁକ୍ତିରୂପୀ ବାଘୁଣୀର କଥା ଆଦୌ ଶୁଣ ନାହିଁ। ଏପରିକି ବୈକୁଣ୍ଠପତି ନାରାୟଣଙ୍କ ଐଶ୍ୱର୍ଯ୍ୟମୟ ପ୍ରେମ (ଯାହା ବୈକୁଣ୍ଠକୁ ନେଇଯାଏ) ତାହାକୁ ମଧ୍ୟ ତ୍ୟାଗ କରି, ବ୍ରଜଧାମରେ ନିଜ ପ୍ରେମରୂପୀ ଅମୂଲ୍ୟ ରତ୍ନ ପ୍ରଦାନ କରୁଥିବା ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ନିତ୍ୟ ଭଜନ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ମତି-ସର୍ବସ୍ୱ-ହରଣୀଃ",
+                            meaning: "ବୁଦ୍ଧିର ସକଳ ଧନ ହରଣ କରୁଥିବା"
+                        },
+                        {
+                            word: "ଅସଦ୍-ବାର୍ତ୍ତା-ବେଶ୍ୟାଃ ବିସୃଜ",
+                            meaning: "ଅସତ୍-କଥାରୂପୀ ବେଶ୍ୟାମାନଙ୍କୁ ତ୍ୟାଗ କର"
+                        },
+                        {
+                            word: "ସର୍ବାତ୍ମ-ଗିଳନୀଃ",
+                            meaning: "ଭକ୍ତିମୟ ଆତ୍ମାକୁ ଗ୍ରାସ କରୁଥିବା"
+                        },
+                        {
+                            word: "ମୁକ୍ତି-ବ୍ୟାଘ୍ର୍ୟାଃ କଥା ନ ଶୃଣୁ",
+                            meaning: "ମୁକ୍ତିରୂପୀ ବାଘୁଣୀର କଥା ଶୁଣ ନାହିଁ"
+                        },
+                        {
+                            word: "ବ୍ୟୋମ-ନୟନୀଂ",
+                            meaning: "ବୈକୁଣ୍ଠ ଆକାଶକୁ ନେଇଯାଉଥିବା"
+                        },
+                        {
+                            word: "ଲକ୍ଷ୍ମୀ-ପତି-ରତିଂ ତ୍ୟକ୍ତ୍ୱା",
+                            meaning: "ଲକ୍ଷ୍ମୀପତି ନାରାୟଣଙ୍କ ପ୍ରତି ଆସକ୍ତି ତ୍ୟାଗ କରି"
+                        },
+                        {
+                            word: "ସ୍ୱ-ରତି-ମଣି-ଦୌ",
+                            meaning: "ନିଜ ପ୍ରେମରୂପୀ ମଣିରତ୍ନ ପ୍ରଦାନ କରୁଥିବା"
+                        },
+                        {
+                            word: "ବ୍ରଜେ ରାଧା-କୃଷ୍ଣୌ ଭଜ",
+                            meaning: "ବ୍ରଜରେ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କୁ ଭଜନ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 5,
+                    lyric: "ଅସଚ୍-ଚେଷ୍ଟା-କଷ୍ଟ-ପ୍ରଦ-ବିକଟ-ପାଶାଳିଭିର୍ ଇହ\nପ୍ରକାମଂ କାମାଦି-ପ୍ରକଟ-ପଥପାତି-ବ୍ୟତିକରୈଃ ।\nଗଳେ ବଦ୍ଧ୍ୱା ହନ୍ୟେ ଽହମ୍ ଇତି ବକ-ଭିଦ୍-ବର୍ତ୍ମପ-ଗଣେ\nକୁରୁ ତ୍ୱଂ ଫୁତ୍କାରାନ୍ ଅବତି ସ ଯଥା ତ୍ୱଂ ମନ ଇତଃ ॥ ୫ ॥",
+                    translation: "ହେ ମନ! କାମ, କ୍ରୋଧ ଆଦି ଡକାୟତମାନେ ଅସତ୍-କର୍ମରୂପୀ କଷ୍ଟଦାୟକ ଭୟଙ୍କର ଦଉଡ଼ିରେ ମୋ ବେକକୁ ବାନ୍ଧି ମୋତେ ହତ୍ୟା କରୁଛନ୍ତି! ତେଣୁ ତୁ ବକାସୁରନାଶକ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଭକ୍ତରୂପୀ ରାଜପଥ-ରକ୍ଷକମାନଙ୍କ ଉଦ୍ଦେଶ୍ୟରେ ଉଚ୍ଚ ସ୍ୱରରେ ଚିତ୍କାର (ଫୁତ୍କାର) କର— 'ମୁଁ ମରିଗଲି, ମୋତେ ରକ୍ଷା କର!' ଯାହାଦ୍ୱାରା ସେହି ଶ୍ରୀକୃଷ୍ଣ ଏହି ସଙ୍କଟରୁ ତୋତେ ଉଦ୍ଧାର କରିବେ।",
+                    wordMeanings: [
+                        {
+                            word: "କାମ-ଆଦି-ପଥପାତି-ବ୍ୟତିକରୈଃ",
+                            meaning: "କାମ-କ୍ରୋଧାଦି ରାଜପଥ-ଡକାୟତମାନଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ଅସତ୍-ଚେଷ୍ଟା-ପାଶାଳିଭିଃ",
+                            meaning: "କୁକର୍ମରୂପୀ ଭୟଙ୍କର ପାଶ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ଗଳେ ବଦ୍ଧ୍ୱା",
+                            meaning: "କଣ୍ଠରେ ବନ୍ଧନ କରି"
+                        },
+                        {
+                            word: "ହନ୍ୟେ ଅହମ୍ ଇତି",
+                            meaning: "'ମୁଁ ନିହତ ହେଉଛି' ବୋଲି ଭାବି"
+                        },
+                        {
+                            word: "ବକ-ଭିତ୍-ବର୍ତ୍ମପ-ଗଣେ",
+                            meaning: "ବକାସୁରହନ୍ତା କୃଷ୍ଣଙ୍କ ପାର୍ଷଦ ତଥା ପଥ-ରକ୍ଷକ ଭକ୍ତମାନଙ୍କ ନିକଟରେ"
+                        },
+                        {
+                            word: "ଫୁତ୍କାରାନ୍ କୁରୁ",
+                            meaning: "ଉଚ୍ଚ ସ୍ୱରରେ ଆର୍ତ୍ତନାଦ କର"
+                        },
+                        {
+                            word: "ଯଥା ସ ତ୍ୱାମ୍ ଅବତି",
+                            meaning: "ଯେପରି ସେ ତୋତେ ରକ୍ଷା କରିପାରିବେ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 6,
+                    lyric: "ଅରେ ଚେତଃ ପ୍ରୋଦ୍ୟତ୍-କପଟ-କୁଟି-ନାଟୀ-ଭର-ଖର-\nକ୍ଷରନ୍-ମୂତ୍ରେ ସ୍ନାତ୍ୱା ଦହସି କଥମ୍ ଆତ୍ମାନମ୍ ଅପି ମାମ୍ ।\nସଦା ତ୍ୱଂ ଗାନ୍ଧର୍ବା-ଗିରିଧର-ପଦ-ପ୍ରେମ-ବିଳସତ୍-\nସୁଧାମ୍ଭୋଧୌ ସ୍ନାତ୍ୱା ସ୍ୱମ୍ ଅପି ନିତରାଂ ମାଂ ଚ ସୁଖୟ ॥ ୬ ॥",
+                    translation: "ଆରେ ମୋର ମନ! ତୁ କପଟତା, କୂଟନୀତି ଓ ଦମ୍ଭରୂପୀ ଗର୍ଦ୍ଦଭର ମୂତ୍ରରେ ସ୍ନାନ କରି ନିଜକୁ ଏବଂ ମୋତେ କାହିଁକି ଜଳାଇ ମାରୁଛୁ? ତୁ ସର୍ବଦା ଶ୍ରୀ ରାଧା (ଗାନ୍ଧର୍ବିକା) ଓ ଗିରିଧାରୀ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଶ୍ରୀଚରଣ-ପ୍ରେମରୂପୀ ବିଳାସମୟ ଅମୃତ-ସମୁଦ୍ରରେ ସ୍ନାନ କର ଏବଂ ନିଜ ସହିତ ମୋତେ ମଧ୍ୟ ପରମ ଆନନ୍ଦ ପ୍ରଦାନ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ଅରେ ଚେତଃ",
+                            meaning: "ଆରେ ମନ"
+                        },
+                        {
+                            word: "ପ୍ରୋଦ୍ୟତ୍-କପଟ-କୁଟି-ନାଟୀ-ଭର",
+                            meaning: "ପ୍ରବଳ କପଟତା, କୂଟନୀତି ଓ ଛଳନା"
+                        },
+                        {
+                            word: "ଖର-କ୍ଷରନ୍-ମୂତ୍ରେ ସ୍ନାତ୍ୱା",
+                            meaning: "ଗଧର ମୂତ୍ରରେ ସ୍ନାନ କରି"
+                        },
+                        {
+                            word: "କଥଂ ଦହସି",
+                            meaning: "କାହିଁକି ଜ୍ୱାଳାଗ୍ରସ୍ତ କରୁଛୁ"
+                        },
+                        {
+                            word: "ଆତ୍ମାନମ୍ ଅପି ମାମ୍",
+                            meaning: "ନିଜକୁ ତଥା ମୋତେ"
+                        },
+                        {
+                            word: "ଗାନ୍ଧର୍ବା-ଗିରିଧର-ପଦ-ପ୍ରେମ",
+                            meaning: "ଶ୍ରୀ ରାଧା ଓ ଶ୍ରୀ ଗିରିଧାରୀଙ୍କ ଚରଣ-ପ୍ରେମରୂପୀ"
+                        },
+                        {
+                            word: "ସୁଧା-ଅମ୍ଭୋଧୌ ସ୍ନାତ୍ୱା",
+                            meaning: "ଅମୃତ ସାଗରରେ ସ୍ନାନ କରି"
+                        },
+                        {
+                            word: "ସ୍ୱମ୍ ଅପି ମାଂ ଚ ସୁଖୟ",
+                            meaning: "ନିଜକୁ ଓ ମୋତେ ସୁଖୀ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 7,
+                    lyric: "ପ୍ରତିଷ୍ଠାଶା ଧୃଷ୍ଟା ଶ୍ୱପଚ-ରମଣୀ ମେ ହୃଦି ନଟେତ୍\nକଥଂ ସାଧୁ-ପ୍ରେମା ସ୍ପୃଶତି ଶୁଚିର୍ ଏତନ୍ ନନୁ ମନଃ ।\nସଦା ତ୍ୱଂ ସେବସ୍ୱ ପ୍ରଭୁ-ଦୟିତ-ସାମନ୍ତମ୍ ଅତୁଳଂ\nଯଥା ତାଂ ନିଷ୍କାସ୍ୟ ତ୍ୱରିତମ୍ ଇହ ତଂ ବେଶୟତି ସଃ ॥ ୭ ॥",
+                    translation: "ହେ ମନ! ଯେପର୍ଯ୍ୟନ୍ତ 'ପ୍ରତିଷ୍ଠା ଓ ଯଶ'ର ଲାଳସାରୂପୀ ଧୃଷ୍ଟା ଚଣ୍ଡାଳୁଣୀ ମୋ ହୃଦୟରେ ନୃତ୍ୟ କରୁଥିବ, ସେପର୍ଯ୍ୟନ୍ତ ପବିତ୍ର ଓ ନିର୍ମଳ ସାଧୁ-ପ୍ରେମ ଏହି ହୃଦୟକୁ କିପରି ସ୍ପର୍ଶ କରିବ? ତେଣୁ ତୁ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ପରମ ପ୍ରିୟ ସେନାପତି ସଦୃଶ ଅତୁଳନୀୟ ଶ୍ରୀଗୁରୁଦେବଙ୍କ ସେବା କର, ଯାହାଦ୍ୱାରା ସେ ସେହି ଚଣ୍ଡାଳୁଣୀକୁ ତୁରନ୍ତ ତଡ଼ିଦେଇ ପବିତ୍ର ଶୁଦ୍ଧପ୍ରେମକୁ ହୃଦୟରେ ପ୍ରବେଶ କରାଇବେ।",
+                    wordMeanings: [
+                        {
+                            word: "ପ୍ରତିଷ୍ଠା-ଆଶା",
+                            meaning: "ମାନ-ଯଶ-ପ୍ରତିଷ୍ଠାର ଲୋଭ"
+                        },
+                        {
+                            word: "ଧୃଷ୍ଟା ଶ୍ୱପଚ-ରମଣୀ",
+                            meaning: "ନିର୍ଲଜ୍ଜା ଚଣ୍ଡାଳୁଣୀ ସ୍ତ୍ରୀ"
+                        },
+                        {
+                            word: "ହୃଦି ନଟେତ୍",
+                            meaning: "ହୃଦୟରେ ନାଚୁଛି"
+                        },
+                        {
+                            word: "ଶୁଚିଃ ସାଧୁ-ପ୍ରେମା",
+                            meaning: "ପବିତ୍ର ଶୁଦ୍ଧ ଭଗବତ୍-ପ୍ରେମ"
+                        },
+                        {
+                            word: "କଥଂ ସ୍ପୃଶତି",
+                            meaning: "କିପରି ସ୍ପର୍ଶ କରିବ"
+                        },
+                        {
+                            word: "ପ୍ରଭୁ-ଦୟିତ-ସାମନ୍ତମ୍",
+                            meaning: "ଭଗବାନଙ୍କ ପ୍ରିୟତମ ସେନାପତି (ଶ୍ରୀଗୁରୁଦେବଙ୍କୁ)"
+                        },
+                        {
+                            word: "ସଦା ସେବସ୍ୱ",
+                            meaning: "ସର୍ବଦା ସେବା କର"
+                        },
+                        {
+                            word: "ଯଥା ତାଂ ନିଷ୍କାସ୍ୟ",
+                            meaning: "ଯେପରି ସେ ତାହାକୁ ବାହାର କରିଦେଇ"
+                        },
+                        {
+                            word: "ତଂ ବେଶୟତି",
+                            meaning: "ସେହି ଶୁଦ୍ଧପ୍ରେମକୁ ପ୍ରବେଶ କରାଇବେ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 8,
+                    lyric: "ଯଥା ଦୁଷ୍ଟତ୍ୱଂ ମେ ଦରୟତି ଶଠସ୍ୟାପି କୃପୟା\nଯଥା ମହ୍ୟଂ ପ୍ରେମାମୃତମ୍ ଅପି ଦଦାତ୍ୟ୍ ଉଜ୍ଜ୍ୱଳମ୍ ଅସୌ ।\nଯଥା ଶ୍ରୀ-ଗାନ୍ଧର୍ବା-ଭଜନ-ବିଧୟେ ପ୍ରେରୟତି ମାଂ\nତଥା ଗୋଷ୍ଠେ କାକ୍ୱା ଗିରିଧରମ୍ ଇହ ତ୍ୱଂ ଭଜ ମନଃ ॥ ୮ ॥",
+                    translation: "ହେ ମନ! ମୁଁ ଅତ୍ୟନ୍ତ କପଟ ଓ ଶଠ ହେଲେ ମଧ୍ୟ, ଯେପରି ସେହି ପ୍ରଭୁ କୃପାପୂର୍ବକ ମୋର ସମସ୍ତ ଦୁଷ୍ଟତାକୁ ଚୂର୍ଣ୍ଣ କରିଦେବେ, ମୋତେ ଉଜ୍ଜ୍ୱଳ ପ୍ରେମାମୃତ ପ୍ରଦାନ କରିବେ ଏବଂ ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ ନିତ୍ୟ ସେବାରେ ନିୟୋଜିତ କରାଇବେ— ସେହିପରି ଭାବରେ ତୁ ଏହି ବ୍ରଜଭୂମିରେ ଅତ୍ୟନ୍ତ କାକୁସ୍ଥ ହୋଇ ଶ୍ରୀ ଗିରିଧାରୀଙ୍କ ଭଜନ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ଶଠସ୍ୟ ଅପି ମେ",
+                            meaning: "ମୋ ଭଳି କପଟୀର ମଧ୍ୟ"
+                        },
+                        {
+                            word: "ଦୁଷ୍ଟତ୍ୱଂ ଦରୟତି",
+                            meaning: "ଦୁଷ୍ଟତାକୁ ବିନାଶ କରିବେ"
+                        },
+                        {
+                            word: "ମହ୍ୟମ୍ ଉଜ୍ଜ୍ୱଳଂ ପ୍ରେମାମୃତଂ ଦଦାତି",
+                            meaning: "ମୋତେ ଉଜ୍ଜ୍ୱଳ ପ୍ରେମାମୃତ ପ୍ରଦାନ କରିବେ"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ଗାନ୍ଧର୍ବା-ଭଜନ-ବିଧୟେ",
+                            meaning: "ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ ଭଜନ-ସେବାରେ"
+                        },
+                        {
+                            word: "ମାଂ ପ୍ରେରୟତି",
+                            meaning: "ମୋତେ ପ୍ରେରିତ କରିବେ"
+                        },
+                        {
+                            word: "ତଥା କାକ୍ୱା",
+                            meaning: "ସେହିପରି କାକୁବାଣୀ ସହ ବିନତି କରି"
+                        },
+                        {
+                            word: "ଇହ ଗୋଷ୍ଠେ ଗିରିଧରଂ ଭଜ",
+                            meaning: "ଏହି ବ୍ରଜରେ ଶ୍ରୀଗିରିଧାରୀଙ୍କୁ ଭଜନ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 9,
+                    lyric: "ମଦ୍-ଈଶା-ନାଥତ୍ୱେ ବ୍ରଜ-ବିପିନ-ଚନ୍ଦ୍ରଂ ବ୍ରଜ-ବନେ-\nଶ୍ୱରୀଂ ତନ୍-ନାଥତ୍ୱେ ତଦ୍-ଅତୁଳ-ସଖୀତ୍ୱେ ତୁ ଲଳିତାମ୍ ।\nବିଶାଖାଂ ଶିକ୍ଷାଳୀ-ବିତରଣ-ଗୁରୁତ୍ୱେ ପ୍ରିୟ-ସରୋ-\nଗିରୀନ୍ଦ୍ରୌ ତତ୍-ପ୍ରେକ୍ଷା-ଲଳିତ-ରତି-ଦତ୍ୱେ ସ୍ମର ମନଃ ॥ ୯ ॥",
+                    translation: "ହେ ମନ! ବ୍ରଜବନର ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ମୋର ସ୍ୱାମିନୀ ଶ୍ରୀରାଧାଙ୍କ ପ୍ରାଣନାଥ ରୂପେ, ବ୍ରଜେଶ୍ୱରୀ ଶ୍ରୀରାଧାଙ୍କୁ ତାଙ୍କର ଏକମାତ୍ର ନିୟନ୍ତ୍ରୀ ରୂପେ, ଲଳିତାସଖୀଙ୍କୁ ଉଭୟଙ୍କ ଅତୁଳନୀୟା ପ୍ରିୟସଖୀ ରୂପେ, ବିଶାଖାଙ୍କୁ ସେବା-ଶିକ୍ଷା ଦାନକାରିଣୀ ଶ୍ରେଷ୍ଠ ଗୁରୁ ରୂପେ, ଏବଂ ପ୍ରିୟ ରାଧାକୁଣ୍ଡ ଓ ଶ୍ରୀ ଗୋବର୍ଦ୍ଧନ ଗିରିରାଜଙ୍କୁ ଯୁଗଳକିଶୋରଙ୍କ ଅପୂର୍ବ ଦର୍ଶନ ଓ ପ୍ରେମ ପ୍ରଦାନକାରୀ ତୀର୍ଥ ରୂପେ ସର୍ବଦା ସ୍ମରଣ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ବ୍ରଜ-ବିପିନ-ଚନ୍ଦ୍ରଂ",
+                            meaning: "ବ୍ରଜବନଚନ୍ଦ୍ର ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ"
+                        },
+                        {
+                            word: "ମତ୍-ଈଶା-ନାଥତ୍ୱେ",
+                            meaning: "ମୋର ଈଶ୍ୱରୀ ଶ୍ରୀରାଧାଙ୍କ ନାଥ ରୂପେ"
+                        },
+                        {
+                            word: "ବ୍ରଜ-ବନ-ଈଶ୍ୱରୀଂ",
+                            meaning: "ବ୍ରଜେଶ୍ୱରୀ ଶ୍ରୀରାଧାଙ୍କୁ"
+                        },
+                        {
+                            word: "ତତ୍-ନାଥତ୍ୱେ",
+                            meaning: "ଶ୍ରୀକୃଷ୍ଣଙ୍କ ସ୍ୱାମିନୀ ରୂପେ"
+                        },
+                        {
+                            word: "ଲଳିତାଂ ତଦ୍-ଅତୁଳ-ସଖୀତ୍ୱେ",
+                            meaning: "ଲଳିତାଙ୍କୁ ଅତୁଳନୀୟା ସଖୀ ଭାବେ"
+                        },
+                        {
+                            word: "ବିଶାଖାଂ ଶିକ୍ଷା-ଗୁରୁତ୍ୱେ",
+                            meaning: "ବିଶାଖାଙ୍କୁ ଶିକ୍ଷାଗୁରୁ ଭାବେ"
+                        },
+                        {
+                            word: "ପ୍ରିୟ-ସରଃ-ଗିରୀନ୍ଦ୍ରୌ",
+                            meaning: "ପ୍ରିୟ ରାଧାକୁଣ୍ଡ ଓ ଗୋବର୍ଦ୍ଧନ ପର୍ବତଙ୍କୁ"
+                        },
+                        {
+                            word: "ଲଳିତ-ରତି-ଦତ୍ୱେ ସ୍ମର",
+                            meaning: "ମଧୁର ପ୍ରେମଦାତା ରୂପେ ସ୍ମରଣ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 10,
+                    lyric: "ରତିଂ ଗୌରୀ-ଲୀଳେ ଅପି ତପତି ସୌନ୍ଦର୍ଯ୍ୟ-କିରଣୈଃ\nଶଚୀ-ଲକ୍ଷ୍ମୀ-ସତ୍ୟାଃ ପରିଭବତି ସୌଭାଗ୍ୟ-ବଳନୈଃ ।\nବଶୀ-କାରୈଶ୍ ଚନ୍ଦ୍ରାବଳୀ-ମୁଖ-ନବୀନ-ବ୍ରଜ-ସତୀଃ\nକ୍ଷିପତ୍ୟ୍ ଆରାଦ୍ ଯା ତାଂ ହରି-ଦୟିତ-ରାଧାଂ ଭଜ ମନଃ ॥ ୧୦ ॥",
+                    translation: "ହେ ମନ! ଯିଏ ନିଜ ଅଙ୍ଗକାନ୍ତିର ସୌନ୍ଦର୍ଯ୍ୟ କିରଣରେ ରତି, ଗୌରୀ ଏବଂ ଲୀଳାଦେବୀଙ୍କ ଗର୍ବକୁ ଦଗ୍ଧ କରିଦିଅନ୍ତି; ନିଜ ଅତୁଳନୀୟ ସୌଭାଗ୍ୟ ବଳରେ ଶଚୀ, ଲକ୍ଷ୍ମୀ ଓ ସତ୍ୟଭାମାଙ୍କୁ ପରାଭୂତ କରନ୍ତି; ଏବଂ ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ବଶୀଭୂତ କରିବାର ଅଦ୍ଭୁତ କଳାରେ ଚନ୍ଦ୍ରାବଳୀ ପ୍ରମୁଖ ବ୍ରଜଗୋପୀମାନଙ୍କୁ ପଛରେ ପକାଇଦିଅନ୍ତି— ଶ୍ରୀହରିଙ୍କ ସେହି ପରମା ପ୍ରିୟତମା ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କର ତୁ ଭଜନ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ସୌନ୍ଦର୍ଯ୍ୟ-କିରଣୈଃ",
+                            meaning: "ରୂପସୌନ୍ଦର୍ଯ୍ୟର କିରଣ ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ରତିଂ ଗୌରୀଂ ଲୀଳାଂ ତପତି",
+                            meaning: "ରତି, ଗୌରୀ ଓ ଲୀଳାଦେବୀଙ୍କୁ ସନ୍ତପ୍ତ କରନ୍ତି"
+                        },
+                        {
+                            word: "ସୌଭାଗ୍ୟ-ବଳନୈଃ",
+                            meaning: "ସୌଭାଗ୍ୟର ବୈଭବରେ"
+                        },
+                        {
+                            word: "ଶଚୀ-ଲକ୍ଷ୍ମୀ-ସତ୍ୟାଃ ପରିଭବତି",
+                            meaning: "ଶଚୀ, ଲକ୍ଷ୍ମୀ ଓ ସତ୍ୟଭାମାଙ୍କୁ ପରାଜିତ କରନ୍ତି"
+                        },
+                        {
+                            word: "ବଶୀ-କାରୈଃ",
+                            meaning: "ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ପ୍ରେମରେ ବଶୀଭୂତ କରିବାରେ"
+                        },
+                        {
+                            word: "ଚନ୍ଦ୍ରାବଳୀ-ମୁଖ-ସତୀଃ କ୍ଷିପତି",
+                            meaning: "ଚନ୍ଦ୍ରାବଳୀ ଆଦି ଗୋପୀମାନଙ୍କୁ ଅତିକ୍ରମ କରନ୍ତି"
+                        },
+                        {
+                            word: "ହରି-ଦୟିତ-ରାଧାଂ ଭଜ",
+                            meaning: "ଶ୍ରୀହରି-ପ୍ରିୟା ଶ୍ରୀରାଧାଙ୍କୁ ଭଜନ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 11,
+                    lyric: "ସମଂ ଶ୍ରୀ-ରୂପେଣ ସ୍ମର-ବିବଶ-ରାଧା-ଗିରିଭୃତୋର୍\nବ୍ରଜେ ସାକ୍ଷାତ୍-ସେବା-ଲଭନ-ବିଧୟେ ତଦ୍-ଗଣ-ଯୁଜୋଃ ।\nତଦ୍-ଇଜ୍ୟାଖ୍ୟା-ଧ୍ୟାନ-ଶ୍ରବଣ-ନତି-ପଞ୍ଚାମୃତମ୍ ଇଦଂ\nଧୟନ୍ ନିତ୍ୟଂ ଗୋବର୍ଦ୍ଧନମ୍ ଅନୁଦିନଂ ତ୍ୱଂ ଭଜ ମନଃ ॥ ୧୧ ॥",
+                    translation: "ହେ ମନ! ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଆନୁଗତ୍ୟରେ ସଖୀଗଣ-ପରିବେଷ୍ଟିତ, ପ୍ରେମବିହ୍ୱଳ ଶ୍ରୀ ଶ୍ରୀ ରାଧା-ଗିରିଧାରୀଙ୍କ ସାକ୍ଷାତ୍ ସେବା ପ୍ରାପ୍ତି ନିମନ୍ତେ— ତୁ ସେମାନଙ୍କ ପୂଜା, ନାମସଂକୀର୍ତ୍ତନ, ଧ୍ୟାନ, ଶ୍ରବଣ ଏବଂ ପ୍ରଣାମରୂପୀ ଏହି ପଞ୍ଚାମୃତକୁ ନିରନ୍ତର ପାନ କରି ପ୍ରତ୍ୟେକ ଦିନ ଶ୍ରୀ ଗୋବର୍ଦ୍ଧନଙ୍କର ଭଜନ କର।",
+                    wordMeanings: [
+                        {
+                            word: "ଶ୍ରୀ-ରୂପେଣ ସମମ୍",
+                            meaning: "ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ସହିତ ମିଶି"
+                        },
+                        {
+                            word: "ରାଧା-ଗିରିଭୃତୋଃ",
+                            meaning: "ଶ୍ରୀ ରାଧା ଓ ଶ୍ରୀକୃଷ୍ଣ ଗିରିଧାରୀଙ୍କର"
+                        },
+                        {
+                            word: "ସାକ୍ଷାତ୍-ସେବା-ଲଭନ-ବିଧୟେ",
+                            meaning: "ପ୍ରତ୍ୟକ୍ଷ ସେବା ଲାଭ କରିବା ନିମନ୍ତେ"
+                        },
+                        {
+                            word: "ଇଜ୍ୟା-ଆଖ୍ୟା-ଧ୍ୟାନ-ଶ୍ରବଣ-ନତି",
+                            meaning: "ପୂଜା, ନାମକୀର୍ତ୍ତନ, ଧ୍ୟାନ, ଶ୍ରବଣ ଓ ପ୍ରଣାମରୂପୀ"
+                        },
+                        {
+                            word: "ପଞ୍ଚାମୃତଂ ଧୟନ୍",
+                            meaning: "ପଞ୍ଚାମୃତକୁ ପାନ କରି"
+                        },
+                        {
+                            word: "ଅନୁଦିନଂ ଗୋବର୍ଦ୍ଧନଂ ଭଜ",
+                            meaning: "ପ୍ରତିଦିନ ଗୋବର୍ଦ୍ଧନଙ୍କୁ ଭଜନ କର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 12,
+                    lyric: "ମନଃ-ଶିକ୍ଷା-ଦୈକାଦଶକ-ବରମ୍ ଏତଂ ମଧୁରୟା\nଗିରା ଗାୟତ୍ୟ୍ ଉଚ୍ଚୈଃ ସମଧି-ଗତ-ସର୍ବାର୍ଥ-ତତି ଯଃ ।\nସ-ଯୂଥଃ ଶ୍ରୀ-ରୂପାନୁଗ ଇହ ଭବନ୍ ଗୋକୁଳ-ବନେ\nଜନୋ ରାଧା-କୃଷ୍ଣାତୁଳ-ଭଜନ-ରତ୍ନଂ ସ ଲଭତେ ॥ ୧୨ ॥",
+                    translation: "ଯେଉଁ ଭକ୍ତ ମନକୁ ଶିକ୍ଷା ପ୍ରଦାନକାରୀ ଏହି ଶ୍ରେଷ୍ଠ ଏକାଦଶ ଶ୍ଳୋକର ଗୂଢ଼ ଅର୍ଥ ହୃଦୟଙ୍ଗମ କରି ଅତି ମଧୁର କଣ୍ଠରେ ଉଚ୍ଚ ସ୍ୱରରେ ଗାନ କରନ୍ତି, ସେହି ବ୍ୟକ୍ତି ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଅନୁଗାମୀ ହୋଇ ନିଜ ସଙ୍ଗୀଗଣଙ୍କ ସହିତ ଶ୍ରୀ ଗୋକୁଳ ବୃନ୍ଦାବନରେ ଶ୍ରୀ ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ଅତୁଳନୀୟ ଦିବ୍ୟ ଭଜନରୂପୀ ରତ୍ନ ଲାଭ କରନ୍ତି।",
+                    wordMeanings: [
+                        {
+                            word: "ଏତଂ ମନଃ-ଶିକ୍ଷା-ଏକାଦଶକ-ବରମ୍",
+                            meaning: "ମନଃଶିକ୍ଷାର ଏହି ଶ୍ରେଷ୍ଠ ଏଗାରଟି ଶ୍ଳୋକକୁ"
+                        },
+                        {
+                            word: "ସମଧିଗତ-ସର୍ବ-ଅର୍ଥ-ତତିଃ",
+                            meaning: "ସମସ୍ତ ଗଭୀର ତାତ୍ପର୍ଯ୍ୟକୁ ବୁଝି"
+                        },
+                        {
+                            word: "ମଧୁରୟା ଗିରା ଉଚ୍ଚୈଃ ଗାୟତି",
+                            meaning: "ମଧୁର ବାଣୀରେ ଉଚ୍ଚ ସ୍ୱରରେ ଗାନ କରନ୍ତି"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ରୂପ-ଅନୁଗଃ ଭବନ୍",
+                            meaning: "ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଅନୁଗାମୀ ହୋଇ"
+                        },
+                        {
+                            word: "ସ-ଯୂଥଃ",
+                            meaning: "ନିଜ ପାର୍ଷଦ/ଭକ୍ତମାନଙ୍କ ସହିତ"
+                        },
+                        {
+                            word: "ଗୋକୁଳ-ବନେ",
+                            meaning: "ଶ୍ରୀ ଗୋକୁଳ ବୃନ୍ଦାବନରେ"
+                        },
+                        {
+                            word: "ରାଧା-କୃଷ୍ଣ-ଅତୁଳ-ଭଜନ-ରତ୍ନଂ ଲଭତେ",
+                            meaning: "ଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ଅତୁଳନୀୟ ଭଜନରୂପୀ ରତ୍ନ ପ୍ରାପ୍ତ ହୁଅନ୍ତି"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        id: "song-jagannathatattva",
+        title: "ଜଗନ୍ନାଥ ତତ୍ତ୍ୱ (Jagannatha Tattva)",
+        title_odia: "ଜଗନ୍ନାଥ ତତ୍ତ୍ୱ",
+        title_english: "Jagannatha Tattva",
+        category: "Songs",
+        type: "html",
+        author: "Vaishnava Acaryas",
+        tags: [
+            "Jagannatha Tattva",
+            "Jagannatha",
+            "Baladeva",
+            "Subhadra",
+            "ଜଗନ୍ନାଥ ତତ୍ତ୍ୱ",
+            "ଜଗନ୍ନାଥ",
+            "ବଳଦେବ",
+            "ସୁଭଦ୍ରା"
+        ],
+        description: "ଶ୍ରୀ ଜଗନ୍ନାଥ, ବଳଦେବ ଓ ସୁଭଦ୍ରା ମହାରାଣୀଙ୍କ ଦିବ୍ୟ ତତ୍ତ୍ୱ ଓ ଜୟଗାନ ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Jagannatha_Tattva/Jagannatha_Tattva_-_IDT.mp3",
+        vocalist: "Vaishnavas",
+        audioVersions: [
+            {
+                label: "Vaishnavas",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Jagannatha_Tattva/Jagannatha_Tattva_-_IDT.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-jagannathatattva",
+            title: "ଜଗନ୍ନାଥ ତତ୍ତ୍ୱ (Jagannatha Tattva)",
+            title_odia: "ଜଗନ୍ନାଥ ତତ୍ତ୍ୱ",
+            title_english: "Jagannatha Tattva",
+            author: "Vaishnava Acaryas",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Jagannatha%20Tattva_",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ ।\nଜୟ ବଳଦେବ, ଜୟ ସୁଭଦ୍ରା, ଜୟ ବଳଦେବ, ଜୟ ସୁଭଦ୍ରା ॥ ୧ ॥",
+                    translation: "ଜଗତର ନାଥ ଶ୍ରୀ ଜଗନ୍ନାଥ ମହାପ୍ରଭୁଙ୍କର ଜୟ ହେଉ, ଜୟ ହେଉ ! ଶ୍ରୀ ବଳଦେବ ଏବଂ ଭଗିନୀ ସୁଭଦ୍ରାଙ୍କର ଜୟଜୟକାର ହେଉ !",
+                    wordMeanings: [
+                        {
+                            word: "ଜୟ",
+                            meaning: "ଜୟଜୟକାର, ବିଜୟୀ ହୁଅନ୍ତୁ"
+                        },
+                        {
+                            word: "ଜଗନ୍ନାଥ",
+                            meaning: "ଜଗତର ନାଥ ଶ୍ରୀ ଜଗନ୍ନାଥ ମହାପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ବଳଦେବ",
+                            meaning: "ଶ୍ରୀ ବଳଭଦ୍ର / ବଳଦେବ ପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ସୁଭଦ୍ରା",
+                            meaning: "ଦେବୀ ସୁଭଦ୍ରା ମାତା"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ଜଗନ୍ନାଥ ସ୍ଵାମୀ ନୟନ-ପଥ-ଗାମୀ ଭବତୁ ମେ ॥ ୨ ॥",
+                    translation: "ଜଗତର ନାଥ ଶ୍ରୀ ଜଗନ୍ନାଥ ମହାପ୍ରଭୁ ମୋର ନୟନ ପଥର ପଥିକ ହୁଅନ୍ତୁ (ଅର୍ଥାତ୍ ମୋ ଦୃଷ୍ଟିଗୋଚର ହୋଇ ମୋତେ ଦର୍ଶନ ଦିଅନ୍ତୁ) ।",
+                    wordMeanings: [
+                        {
+                            word: "ଜଗନ୍ନାଥ ସ୍ଵାମୀ",
+                            meaning: "ଜଗତର ପ୍ରଭୁ ଶ୍ରୀଜଗନ୍ନାଥ"
+                        },
+                        {
+                            word: "ନୟନ-ପଥ-ଗାମୀ",
+                            meaning: "ଦୃଷ୍ଟିପଥରେ ଆଗମନକାରୀ, ମୋ ଦର୍ଶନର ଗୋଚର"
+                        },
+                        {
+                            word: "ଭବତୁ",
+                            meaning: "ହୁଅନ୍ତୁ"
+                        },
+                        {
+                            word: "ମେ",
+                            meaning: "ମୋର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 3,
+                    lyric: "ବୃନ୍ଦାବନ-ଚନ୍ଦ୍ର ଆମାର ପ୍ରଭୁ ଜଗନ୍ନାଥ ।\nଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ ॥\nନୀଳାଚଳ-ଚନ୍ଦ୍ର ଆମାର ପ୍ରଭୁ ଜଗନ୍ନାଥ ।\nଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ ॥ ୩ ॥",
+                    translation: "ଶ୍ରୀ ବୃନ୍ଦାବନର ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ସ୍ୱରୂପ ଶ୍ରୀକୃଷ୍ଣ ହିଁ ମୋର ପରମ ପ୍ରଭୁ ଶ୍ରୀଜଗନ୍ନାଥ । ଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ ! ଶ୍ରୀକ୍ଷେତ୍ର ନୀଳାଚଳର ଚନ୍ଦ୍ର ସ୍ୱରୂପ ଶ୍ରୀଜଗନ୍ନାଥ ହିଁ ମୋର ଏକମାତ୍ର ପ୍ରଭୁ । ଜୟ ଜଗନ୍ନାଥ, ଜୟ ଜଗନ୍ନାଥ !",
+                    wordMeanings: [
+                        {
+                            word: "ବୃନ୍ଦାବନ-ଚନ୍ଦ୍ର",
+                            meaning: "ବୃନ୍ଦାବନର ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ସ୍ୱରୂପ ଶ୍ରୀକୃଷ୍ଣ"
+                        },
+                        {
+                            word: "ଆମାର",
+                            meaning: "ମୋର"
+                        },
+                        {
+                            word: "ପ୍ରଭୁ",
+                            meaning: "ପରମେଶ୍ୱର, ସ୍ୱାମୀ"
+                        },
+                        {
+                            word: "ଜଗନ୍ନାଥ",
+                            meaning: "ଶ୍ରୀ ଜଗନ୍ନାଥ ମହାପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ଜୟ",
+                            meaning: "ଜୟଜୟକାର"
+                        },
+                        {
+                            word: "ନୀଳାଚଳ-ଚନ୍ଦ୍ର",
+                            meaning: "ନୀଳାଚଳ (ଶ୍ରୀକ୍ଷେତ୍ର ପୁରୀ)ର ଚନ୍ଦ୍ର ସ୍ୱରୂପ ଶ୍ରୀ ଜଗନ୍ନାଥ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 4,
+                    lyric: "ଉଜ୍ଜ୍ୱଳ ହରି ଆମାର ପ୍ରଭୁ ଜଗନ୍ନାଥ ।\nଉଜ୍ଜ୍ୱଳ ହରି ଆମାର ନୟନ ପତି ॥ ୪ ॥",
+                    translation: "ଉଜ୍ଜ୍ୱଳ ରସମୟ (ମଧୁର ପ୍ରେମରସରେ ଉଦ୍ଭାସିତ) ଶ୍ରୀହରି ହିଁ ମୋର ପ୍ରଭୁ ଶ୍ରୀଜଗନ୍ନାଥ । ସେହି ଦିବ୍ୟ ଉଜ୍ଜ୍ୱଳ ଶ୍ରୀହରି ହିଁ ମୋର ନୟନର ଏକମାତ୍ର ପ୍ରାଣପ୍ରିୟ ସ୍ୱାମୀ !",
+                    wordMeanings: [
+                        {
+                            word: "ଉଜ୍ଜ୍ୱଳ",
+                            meaning: "ଦିବ୍ୟ ପ୍ରକାଶମୟ, ଉଜ୍ଜ୍ୱଳ ରସମୟ (ମଧୁର ପ୍ରେମରସ)"
+                        },
+                        {
+                            word: "ହରି",
+                            meaning: "ପାପତାପହାରୀ ଶ୍ରୀହରି"
+                        },
+                        {
+                            word: "ଆମାର",
+                            meaning: "ମୋର"
+                        },
+                        {
+                            word: "ପ୍ରଭୁ",
+                            meaning: "ପରମ ସ୍ୱାମୀ"
+                        },
+                        {
+                            word: "ଜଗନ୍ନାଥ",
+                            meaning: "ଶ୍ରୀଜଗନ୍ନାଥ ମହାପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ନୟନ ପତି",
+                            meaning: "ନୟନର ପ୍ରଭୁ, ଆଖିର ଏକମାତ୍ର ପ୍ରାଣପ୍ରିୟ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        id: "song-namonamahtulasimaharani",
+        title: "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ (Namo Namah Tulasi Maharani)",
+        title_odia: "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ",
+        title_english: "Namo Namah Tulasi Maharani",
+        category: "Songs",
+        type: "html",
+        author: "Candrasekhara Kavi",
+        tags: [
+            "Namo Namah Tulasi Maharani",
+            "Tulasi Maharani",
+            "Candrasekhara Kavi",
+            "Tulasi",
+            "Pranama",
+            "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ",
+            "ତୁଲସୀ ମହାରାଣୀ",
+            "ତୁଲସୀ",
+            "ଚନ୍ଦ୍ରଶେଖର"
+        ],
+        description: "କବି ଚନ୍ଦ୍ରଶେଖରଙ୍କ ବିରଚିତ ସୁପ୍ରସିଦ୍ଧ ଶ୍ରୀ ତୁଲସୀ ମହାରାଣୀ ଭଜନ ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Namo_Namah_Tulasi_Maharani/Namo_Namah_Tulasi_Maharani_-_IDT.mp3",
+        vocalist: "Vaishnavas",
+        audioVersions: [
+            {
+                label: "Vaishnavas",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Namo_Namah_Tulasi_Maharani/Namo_Namah_Tulasi_Maharani_-_IDT.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-namonamahtulasimaharani",
+            title: "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ (Namo Namah Tulasi Maharani)",
+            title_odia: "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ",
+            title_english: "Namo Namah Tulasi Maharani",
+            author: "Candrasekhara Kavi",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Namo%20Namah%20Tulasi%20Maharani_Songs%20of%20Vaishnava%20Acaryas_3_11",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ନମୋ ନମଃ ତୁଲସୀ ମହାରାଣୀ, ବୃନ୍ଦେ ମହାରାଣୀ ନମୋ ନମଃ ।\nନମୋ ରେ ନମୋ ରେ ମୈୟା ନମୋ ନାରାୟଣୀ ॥ ୧ ॥",
+                    translation: "ହେ ତୁଲସୀ ମହାରାଣୀ! ହେ ବୃନ୍ଦେ ମହାରାଣୀ! ଆପଣଙ୍କ ଶ୍ରୀଚରଣରେ ମୋର ବାରମ୍ବାର ପ୍ରଣାମ । ହେ ଭକ୍ତିଦାତ୍ରୀ ମାତା! ହେ ନାରାୟଣୀ! ମୁଁ ଆପଣଙ୍କୁ ପୁନଃ ପୁନଃ ପ୍ରଣାମ କରୁଛି ।",
+                    wordMeanings: [
+                        {
+                            word: "ନମୋ ନମଃ",
+                            meaning: "ବାରମ୍ବାର ପ୍ରଣାମ, ନମସ୍କାର"
+                        },
+                        {
+                            word: "ତୁଲସୀ ମହାରାଣୀ",
+                            meaning: "ଶ୍ରୀମତୀ ତୁଲସୀ ଦେବୀ, ମହାରାଣୀ"
+                        },
+                        {
+                            word: "ବୃନ୍ଦେ ମହାରାଣୀ",
+                            meaning: "ବୃନ୍ଦାବନର ଅଧିଷ୍ଠାତ୍ରୀ ବୃନ୍ଦାଦେବୀ"
+                        },
+                        {
+                            word: "ନମୋ ରେ",
+                            meaning: "ହେ ମାତା! ତୁମକୁ ପ୍ରଣାମ"
+                        },
+                        {
+                            word: "ମୈୟା",
+                            meaning: "ମାତା"
+                        },
+                        {
+                            word: "ନାରାୟଣୀ",
+                            meaning: "ଭଗବାନ ନାରାୟଣଙ୍କ ପ୍ରିୟତମା ଶକ୍ତି"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ଜାକୋ ଦରଶେ, ପରଶେ ଅଘ-ନାଶଇ\nମହିମା ବେଦ-ପୁରାଣେ ବାଖାନୀ ॥ ୨ ॥",
+                    translation: "ଯାହାଙ୍କୁ କେବଳ ଦର୍ଶନ ଓ ସ୍ପର୍ଶ କଲେ ହିଁ ସମସ୍ତ ପାପ ଖଣ୍ଡନ ହୋଇଯାଏ, ସେହି ତୁଲସୀଦେବୀଙ୍କ ଅପାର ମହିମା ସମସ୍ତ ବେଦ ଓ ପୁରାଣମାନଙ୍କରେ ବିସ୍ତୃତ ଭାବେ ବର୍ଣ୍ଣିତ ହୋଇଛି ।",
+                    wordMeanings: [
+                        {
+                            word: "ଜାକୋ",
+                            meaning: "ଯାହାଙ୍କୁ"
+                        },
+                        {
+                            word: "ଦରଶେ",
+                            meaning: "ଦର୍ଶନ କଲେ"
+                        },
+                        {
+                            word: "ପରଶେ",
+                            meaning: "ସ୍ପର୍ଶ କଲେ"
+                        },
+                        {
+                            word: "ଅଘ-ନାଶଇ",
+                            meaning: "ସମସ୍ତ ପାପ ନଷ୍ଟ ହୋଇଯାଏ"
+                        },
+                        {
+                            word: "ମହିମା",
+                            meaning: "ଦିବ୍ୟ ଗୌରବ ଓ ମାହାତ୍ମ୍ୟ"
+                        },
+                        {
+                            word: "ବେଦ-ପୁରାଣେ",
+                            meaning: "ବେଦ ଏବଂ ପୁରାଣମାନଙ୍କରେ"
+                        },
+                        {
+                            word: "ବାଖାନୀ",
+                            meaning: "ବର୍ଣ୍ଣିତ ବା ପ୍ରକୀର୍ତ୍ତିତ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 3,
+                    lyric: "ଜାକୋ ପତ୍ର, ମଞ୍ଜରୀ କୋମଳ ଶ୍ରୀ-ପତି-ଚରଣ-କମଲେ ଲପଟାନୀ ।\nଧନ୍ୟ ତୁଲସୀ ମୈୟା, ପୁରାଣ ତପ କିୟେ, ଶ୍ରୀ-ଶାଳଗ୍ରାମ-ମହା-ପାଟରାଣୀ ॥ ୩ ॥",
+                    translation: "ଯାହାଙ୍କର ପବିତ୍ର ପତ୍ର ଏବଂ ସୁକୋମଳ ମଞ୍ଜରୀ ଲକ୍ଷ୍ମୀପତି ଶ୍ରୀଭଗବାନଙ୍କ ଚରଣକମଳରେ ସର୍ବଦା ଜଡ଼ିତ ହୋଇରହିଥାଏ । ହେ ଧନ୍ୟ ତୁଲସୀ ମାତା! ଆପଣ ପୂର୍ବରୁ କଠୋର ତପସ୍ୟା କରି ସାକ୍ଷାତ୍ ଶ୍ରୀ ଶାଳଗ୍ରାମ ଶିଳାଙ୍କର ପରମ ପ୍ରଧାନ ପାଟରାଣୀ ହେବାର ସୌଭାଗ୍ୟ ପ୍ରାପ୍ତ ହୋଇଛନ୍ତି ।",
+                    wordMeanings: [
+                        {
+                            word: "ଜାକୋ ପତ୍ର",
+                            meaning: "ଯାହାଙ୍କର ପତ୍ର"
+                        },
+                        {
+                            word: "ମଞ୍ଜରୀ କୋମଳ",
+                            meaning: "ସୁକୋମଳ ମଞ୍ଜରୀ"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ପତି",
+                            meaning: "ଲକ୍ଷ୍ମୀକାନ୍ତ ଭଗବାନ ନାରାୟଣ"
+                        },
+                        {
+                            word: "ଚରଣ-କମଲେ ଲପଟାନୀ",
+                            meaning: "ଚରଣକମଳକୁ ଆଲିଙ୍ଗନ କରି ରହେ"
+                        },
+                        {
+                            word: "ଧନ୍ୟ ତୁଲସୀ ମୈୟା",
+                            meaning: "ହେ ଧନ୍ୟ ତୁଲସୀ ମାତା"
+                        },
+                        {
+                            word: "ପୁରାଣ ତପ କିୟେ",
+                            meaning: "ପ୍ରାଚୀନ କାଳରୁ ମହାନ ତପସ୍ୟା କରି"
+                        },
+                        {
+                            word: "ଶ୍ରୀ-ଶାଳଗ୍ରାମ",
+                            meaning: "ସାକ୍ଷାତ୍ ଶାଳଗ୍ରାମ ଭଗବାନ"
+                        },
+                        {
+                            word: "ମହା-ପାଟରାଣୀ",
+                            meaning: "ପ୍ରଧାନ ମହିଷୀ ବା ପାଟରାଣୀ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 4,
+                    lyric: "ଧୂପ, ଦୀପ, ନୈବେଦ୍ୟ, ଆରତୀ, ଫୁଲନା କିୟେ ବରଖା ବରଖାନୀ ।\nଛାପ୍ପାନ୍ନ ଭୋଗ, ଛତ୍ରୀଶ ବ୍ୟଞ୍ଜନ, ବିନା ତୁଲସୀ ପ୍ରଭୁ ଏକ ନାହିଁ ମାନୀ ॥ ୪ ॥",
+                    translation: "ଯିଏ ଆପଣଙ୍କୁ ଧୂପ, ଦୀପ, ନୈବେଦ୍ୟ, ପୁଷ୍ପ ଏବଂ ଆରତୀ ଦ୍ୱାରା ପୂଜା କରେ, ଆପଣ ତାଙ୍କ ଉପରେ କୃପାବୃଷ୍ଟି ବର୍ଷଣ କରନ୍ତି । ଭଗବାନଙ୍କୁ ଯଦିଓ ଛପନ ଭୋଗ ଏବଂ ଛତିଶ ପ୍ରକାରର ବ୍ୟଞ୍ଜନ ଅର୍ପଣ କରାଯାଏ, କିନ୍ତୁ ତୁଲସୀ ପତ୍ର ବିନା ପ୍ରଭୁ ସେଥିରୁ ଗୋଟିଏ ହେଲେ ମଧ୍ୟ ସ୍ୱୀକାର କରନ୍ତି ନାହିଁ ।",
+                    wordMeanings: [
+                        {
+                            word: "ଧୂପ, ଦୀପ, ନୈବେଦ୍ୟ, ଆରତୀ",
+                            meaning: "ଧୂପ, ଦୀପ, ନୈବେଦ୍ୟ ଏବଂ ଆରତୀ ନିବେଦନ"
+                        },
+                        {
+                            word: "ଫୁଲନା କିୟେ",
+                            meaning: "ପୁଷ୍ପ ଅର୍ପଣ କରି"
+                        },
+                        {
+                            word: "ବରଖା ବରଖାନୀ",
+                            meaning: "କୃପାର ବୃଷ୍ଟି ବର୍ଷଣ କରନ୍ତି"
+                        },
+                        {
+                            word: "ଛାପ୍ପାନ୍ନ ଭୋଗ",
+                            meaning: "ଛପନ ପ୍ରକାରର ଭୋଗ-ନୈବେଦ୍ୟ"
+                        },
+                        {
+                            word: "ଛତ୍ରୀଶ ବ୍ୟଞ୍ଜନ",
+                            meaning: "ଛତିଶ ପ୍ରକାରର ସୁସ୍ୱାଦୁ ବ୍ୟଞ୍ଜନ"
+                        },
+                        {
+                            word: "ବିନା ତୁଲସୀ",
+                            meaning: "ତୁଲସୀ ପତ୍ର ବିନା"
+                        },
+                        {
+                            word: "ପ୍ରଭୁ ଏକ ନାହିଁ ମାନୀ",
+                            meaning: "ଭଗବାନ ଗୋଟିଏ ହେଲେ ମଧ୍ୟ ଗ୍ରହଣ କରନ୍ତି ନାହିଁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 5,
+                    lyric: "ଶିବ-ଶୁକ-ନାରଦ, ଆଉର ବ୍ରହ୍ମାଦିକୋ, ଢୂରତ ଫିରତ ମହା-ମୁନି ଜ୍ଞାନୀ ।\nଚନ୍ଦ୍ରଶେଖର ମୈୟା, ତେରା ଯଶ ଗାଓୱେ, ଭକତି-ଦାନ ଦୀଜିୟେ ମହାରାଣୀ ॥ ୫ ॥",
+                    translation: "ଦେବାଧିଦେବ ଶିବ, ଶୁକଦେବ, ନାରଦ, ବ୍ରହ୍ମାଦି ଦେବଗଣ ତଥା ବଡ଼ ବଡ଼ ଜ୍ଞାନୀ-ମହର୍ଷିମାନେ ଆପଣଙ୍କୁ ଭକ୍ତିଭରେ ପ୍ରଦକ୍ଷିଣ କରୁଛନ୍ତି । କବି ଚନ୍ଦ୍ରଶେଖର ପ୍ରାର୍ଥନା କରି କହୁଛନ୍ତି—ହେ ମାତା! ହେ ତୁଲସୀ ମହାରାଣୀ! ମୁଁ ଆପଣଙ୍କର ଦିବ୍ୟ ଯଶଗାନ କରୁଛି, ଦୟାକରି ମୋତେ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଚରଣରେ ଅହୈତୁକୀ ଶୁଦ୍ଧଭକ୍ତି ଦାନ କରନ୍ତୁ !",
+                    wordMeanings: [
+                        {
+                            word: "ଶିବ-ଶୁକ-ନାରଦ",
+                            meaning: "ଭଗବାନ ଶିବ, ଶ୍ରୀଳ ଶୁକଦେବ ଗୋସ୍ୱାମୀ ଏବଂ ଦେବର୍ଷି ନାରଦ"
+                        },
+                        {
+                            word: "ଆଉର ବ୍ରହ୍ମାଦିକୋ",
+                            meaning: "ଏବଂ ବ୍ରହ୍ମାଦି ଦେବତାଗଣ"
+                        },
+                        {
+                            word: "ଢୂରତ ଫିରତ",
+                            meaning: "ପରିକ୍ରମା କରୁଛନ୍ତି, ପ୍ରଦକ୍ଷିଣ କରୁଛନ୍ତି"
+                        },
+                        {
+                            word: "ମହା-ମୁନି ଜ୍ଞାନୀ",
+                            meaning: "ମହାନ ମୁନି ଏବଂ ଜ୍ଞାନୀଗଣ"
+                        },
+                        {
+                            word: "ଚନ୍ଦ୍ରଶେଖର",
+                            meaning: "କବି ଚନ୍ଦ୍ରଶେଖର"
+                        },
+                        {
+                            word: "ମୈୟା",
+                            meaning: "ହେ ମାତା"
+                        },
+                        {
+                            word: "ତେରା ଯଶ ଗାଓୱେ",
+                            meaning: "ଆପଣଙ୍କର ଯଶ ଗାନ କରୁଛି"
+                        },
+                        {
+                            word: "ଭକତି-ଦାନ ଦୀଜିୟେ",
+                            meaning: "ଶୁଦ୍ଧ ଭକ୍ତି ଦାନ କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ମହାରାଣୀ",
+                            meaning: "ହେ ମହାରାଣୀ ତୁଲସୀଦେବୀ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        id: "song-nanadravyaayojana",
+        title: "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ - ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ଅଧିବାସ (Nana Dravya Ayojana)",
+        title_odia: "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ - ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ଅଧିବାସ",
+        title_english: "Nana Dravya Ayojana - Sri Nama Sankirtana Adhivasa",
+        category: "Songs",
+        type: "html",
+        author: "Vrndavana Dasa Thakura",
+        tags: [
+            "Nana Dravya Ayojana",
+            "Adhivasa",
+            "Sri Nama Sankirtana Adhivasa",
+            "Vrndavana Dasa Thakura",
+            "Kirtan Mela",
+            "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ",
+            "ଅଧିବାସ",
+            "ବୃନ୍ଦାବନ ଦାସ ଠାକୁର"
+        ],
+        description: "ଶ୍ରୀଳ ବୃନ୍ଦାବନ ଦାସ ଠାକୁରଙ୍କ ବିରଚିତ ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ଅଧିବାସ କୀର୍ତ୍ତନ ।",
+        audioUrl: "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FISKCON%20Mayapur%20Kirtan%20Mela%202023%20__%20Adhivas%20Ceremony%20__%20HG%20Kamal%20Gopal%20Das.mp3",
+        vocalist: "HG Kamal Gopal Das",
+        audioVersions: [
+            {
+                label: "HG Kamal Gopal Das (Mayapur Kirtan Mela)",
+                url: "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FISKCON%20Mayapur%20Kirtan%20Mela%202023%20__%20Adhivas%20Ceremony%20__%20HG%20Kamal%20Gopal%20Das.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-nanadravyaayojana",
+            title: "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ - ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ଅଧିବାସ (Nana Dravya Ayojana)",
+            title_odia: "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ - ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ଅଧିବାସ",
+            title_english: "Nana Dravya Ayojana - Sri Nama Sankirtana Adhivasa",
+            author: "Vrndavana Dasa Thakura",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Nana%20Dravya%20Ayojana_",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ନାନା ଦ୍ରବ୍ୟ ଆୟୋଜନ, କରି କରେ ନିମନ୍ତ୍ରଣ ।\nକୃପା କରି କର ଆଗମନ ॥ ୧ ॥",
+                    translation: "ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନ ମହୋତ୍ସବ ନିମନ୍ତେ ନାନାବିଧ ପବିତ୍ର ଦ୍ରବ୍ୟ ଓ ଉପହାର ଆୟୋଜନ କରି ମୁଁ ସମସ୍ତଙ୍କୁ ବିନମ୍ରତାର ସହିତ ନିମନ୍ତ୍ରଣ କରୁଛି; ଆପଣମାନେ କୃପାପୂର୍ବକ ଏଠାକୁ ଆଗମନ କରନ୍ତୁ ।",
+                    wordMeanings: [
+                        {
+                            word: "ନାନା ଦ୍ରବ୍ୟ",
+                            meaning: "ବିଭିନ୍ନ ପ୍ରକାରର ପୂଜା ସାମଗ୍ରୀ ଓ ଉପକରଣ"
+                        },
+                        {
+                            word: "ଆୟୋଜନ କରି",
+                            meaning: "ସଂଗ୍ରହ ଓ ପ୍ରସ୍ତୁତ କରି"
+                        },
+                        {
+                            word: "କରେ ନିମନ୍ତ୍ରଣ",
+                            meaning: "ସାଦର ନିମନ୍ତ୍ରଣ କରୁଛି"
+                        },
+                        {
+                            word: "କୃପା କରି",
+                            meaning: "ଦୟାପରବଶ ହୋଇ"
+                        },
+                        {
+                            word: "କର ଆଗମନ",
+                            meaning: "ଏଠାକୁ ବିଜେ କରନ୍ତୁ, ଆସନ୍ତୁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 2,
+                    lyric: "ତୋମାରା ବୈଷ୍ଣବ ଗଣ, ମୋର ଏଇ ନିବେଦନ ।\nଦୃଷ୍ଟି କରି କର ସମାପନ ॥ ୨ ॥",
+                    translation: "ହେ ପ୍ରଭୁଙ୍କର ଶୁଦ୍ଧ ବୈଷ୍ଣବଗଣ! ଆପଣମାନଙ୍କ ଚରଣରେ ମୋର ଏହି ବିନମ୍ର ନିବେଦନ ଯେ, ଆପଣମାନେ ନିଜର ଶୁଭ କୃପାଦୃଷ୍ଟି ପ୍ରଦାନ କରି ଏହି ମହୋତ୍ସବକୁ ସଫଳ ଓ ସମ୍ପୂର୍ଣ୍ଣ କରନ୍ତୁ ।",
+                    wordMeanings: [
+                        {
+                            word: "ତୋମାରା",
+                            meaning: "ଆପଣମାନେ ସମସ୍ତେ"
+                        },
+                        {
+                            word: "ବୈଷ୍ଣବ ଗଣ",
+                            meaning: "ଭଗବାନଙ୍କର ଶୁଦ୍ଧ ଭକ୍ତବୃନ୍ଦ"
+                        },
+                        {
+                            word: "ମୋର ଏଇ ନିବେଦନ",
+                            meaning: "ମୋର ଏହି ଏକମାତ୍ର ପ୍ରାର୍ଥନା"
+                        },
+                        {
+                            word: "ଦୃଷ୍ଟି କରି",
+                            meaning: "ଆପଣଙ୍କର କୃପାଦୃଷ୍ଟି ପକାଇ"
+                        },
+                        {
+                            word: "କର ସମାପନ",
+                            meaning: "ଏହି ଅଧିବାସ କାର୍ଯ୍ୟ ସମ୍ପୂର୍ଣ୍ଣ କରନ୍ତୁ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 3,
+                    lyric: "କରି ଏତ ନିବେଦନ, ଆନିଲା ମହାନ୍ତ ଗଣ ।\nକୀର୍ତ୍ତନେର କରେ ଅଧିବାସ ॥ ୩ ॥",
+                    translation: "ଏହିପରି ଭାବରେ ପ୍ରାର୍ଥନା କରି ସମସ୍ତ ଶ୍ରେଷ୍ଠ ମହାନ୍ତ ବୈଷ୍ଣବମାନଙ୍କୁ ସାଦରେ ଆମନ୍ତ୍ରଣ କରାଗଲା ଏବଂ ସମସ୍ତେ ଏକତ୍ର ହୋଇ ଶ୍ରୀ ନାମ ସଂକୀର୍ତ୍ତନର ମଙ୍ଗଳମୟ ଅଧିବାସ କାର୍ଯ୍ୟ ଆରମ୍ଭ କଲେ ।",
+                    wordMeanings: [
+                        {
+                            word: "କରି ଏତ ନିବେଦନ",
+                            meaning: "ଏପରି ବିନମ୍ର ନିବେଦନ କରି"
+                        },
+                        {
+                            word: "ଆନିଲା",
+                            meaning: "ସାଦରେ ସ୍ୱାଗତ କରି ଅଣାଗଲା"
+                        },
+                        {
+                            word: "ମହାନ୍ତ ଗଣ",
+                            meaning: "ଶ୍ରେଷ୍ଠ ମହାନୁଭବ ବୈଷ୍ଣବ ସାଧୁଗଣ"
+                        },
+                        {
+                            word: "କୀର୍ତ୍ତନେର",
+                            meaning: "ହରିନାମ ସଂକୀର୍ତ୍ତନର"
+                        },
+                        {
+                            word: "କରେ ଅଧିବାସ",
+                            meaning: "ଶୁଭ ଅଧିବାସ ମଙ୍ଗଳ କର୍ମ ସମ୍ପାଦନ କଲେ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 4,
+                    lyric: "ଅନେକ ଭାଗ୍ୟର ଫଳେ, ବୈଷ୍ଣବ, ଆସିୟା ମିଳେ ।\nକାଲି ହବେ ମହୋତ୍ସବ ବିଳାସ ॥ ୪ ॥",
+                    translation: "ଅନେକ ଜନ୍ମର ପୁଣ୍ୟ ଓ ମହାନ ସୌଭାଗ୍ୟ ଫଳରେ ହିଁ ଏପରି ଶୁଦ୍ଧ ବୈଷ୍ଣବମାନଙ୍କର ସଙ୍ଗ ଓ ଦର୍ଶନ ଲାଭ ହୁଏ; ସେଥିପାଇଁ ଆସନ୍ତାକାଲି ଏକ ପରମ ଆନନ୍ଦମୟ ଦିବ୍ୟ ହରିନାମ ସଂକୀର୍ତ୍ତନ ମହୋତ୍ସବ ଅନୁଷ୍ଠିତ ହେବ ।",
+                    wordMeanings: [
+                        {
+                            word: "ଅନେକ ଭାଗ୍ୟର ଫଳେ",
+                            meaning: "ଅସୀମ ସୌଭାଗ୍ୟ ବଶତଃ"
+                        },
+                        {
+                            word: "ବୈଷ୍ଣବ ଆସିୟା ମିଳେ",
+                            meaning: "ସାଧୁ ବୈଷ୍ଣବମାନଙ୍କର ସଙ୍ଗ ଓ ସମାଗମ ପ୍ରାପ୍ତ ହୁଏ"
+                        },
+                        {
+                            word: "କାଲି ହବେ",
+                            meaning: "ଆସନ୍ତା କାଲି ଅନୁଷ୍ଠିତ ହେବ"
+                        },
+                        {
+                            word: "ମହୋତ୍ସବ ବିଳାସ",
+                            meaning: "ପରମ ଆନନ୍ଦଦାୟକ ହରିନାମ ମହୋତ୍ସବ"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 5,
+                    lyric: "ଶ୍ରୀ କୃଷ୍ଣେର ଲୀଳା-ଗାନ, କରିବେନ ଆସ୍ୱାଦନ ।\nପୂରିବେ ସବାର ଅଭିଳାଷ ॥ ୫ ॥",
+                    translation: "ସେହି ମହୋତ୍ସବରେ ସମସ୍ତେ ଏକତ୍ର ହୋଇ ଶ୍ରୀକୃଷ୍ଣଙ୍କର ମଧୁର ଦିବ୍ୟ ଲୀଳା-କୀର୍ତ୍ତନର ପରମ ରସ ଆସ୍ୱାଦନ କରିବେ ଏବଂ ପ୍ରତ୍ୟେକ ଭକ୍ତଙ୍କର ଦିବ୍ୟ ମନୋକାମନା ପୂର୍ଣ୍ଣ ହେବ ।",
+                    wordMeanings: [
+                        {
+                            word: "ଶ୍ରୀ କୃଷ୍ଣେର ଲୀଳା-ଗାନ",
+                            meaning: "ଶ୍ରୀକୃଷ୍ଣଙ୍କର ମଧୁର ଦିବ୍ୟ ଲୀଳା କୀର୍ତ୍ତନ"
+                        },
+                        {
+                            word: "କରିବେନ ଆସ୍ୱାଦନ",
+                            meaning: "ସମସ୍ତେ ଭକ୍ତିଭରେ ରସାସ୍ୱାଦନ କରିବେ"
+                        },
+                        {
+                            word: "ପୂରିବେ",
+                            meaning: "ପରିପୂର୍ଣ୍ଣ ହେବ"
+                        },
+                        {
+                            word: "ସବାର ଅଭିଳାଷ",
+                            meaning: "ସମସ୍ତ ଭକ୍ତଙ୍କର ମନୋବାଞ୍ଛା ବା ଆକାଙକ୍ଷା"
+                        }
+                    ],
+                    status: "COMPLETED"
+                },
+                {
+                    id: 6,
+                    lyric: "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ଚନ୍ଦ୍ର, ସକଳ ଭକତ ବୃନ୍ଦ ।\nଗୁଣ ଗାୟ ବୃନ୍ଦାବନ ଦାସ ॥ ୬ ॥",
+                    translation: "ଶ୍ରୀଳ ବୃନ୍ଦାବନ ଦାସ ଠାକୁର ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ସଦୃଶ ପରମଦୟାଳୁ ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ ଏବଂ ତାହାଙ୍କର ସମସ୍ତ ଅନ୍ତରଙ୍ଗ ଭକ୍ତବୃନ୍ଦଙ୍କର ଦିବ୍ୟ ଗୁଣରାଶି ବିନମ୍ର ଭାବରେ ଗାନ କରୁଛନ୍ତି ।",
+                    wordMeanings: [
+                        {
+                            word: "ଶ୍ରୀ କୃଷ୍ଣ ଚୈତନ୍ୟ ଚନ୍ଦ୍ର",
+                            meaning: "ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ସଦୃଶ ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ"
+                        },
+                        {
+                            word: "ସକଳ ଭକତ ବୃନ୍ଦ",
+                            meaning: "ତାହାଙ୍କର ସମସ୍ତ ପ୍ରିୟ ଭକ୍ତଗଣ"
+                        },
+                        {
+                            word: "ଗୁଣ ଗାୟ",
+                            meaning: "ଦିବ୍ୟ ଗୁଣଗାନ କରୁଛନ୍ତି"
+                        },
+                        {
+                            word: "ବୃନ୍ଦାବନ ଦାସ",
+                            meaning: "ଶ୍ରୀଳ ବୃନ୍ଦାବନ ଦାସ ଠାକୁର"
+                        }
+                    ],
+                    status: "COMPLETED"
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
+    },
+    {
+        "id": "song-narasimhakavacamvaksye",
+        "title": "ଶ୍ରୀ ନୃସିଂହ କବଚମ୍ (Narasimha Kavacam Vaksye)",
+        "title_odia": "ଶ୍ରୀ ନୃସିଂହ କବଚମ୍",
+        "title_english": "Narasimha Kavacam Vaksye",
+        "category": "Songs",
+        "type": "html",
+        "author": "Prahalad Maharaj",
+        "tags": [
+            "Narasimha Kavacam Vaksye",
+            "Narasimha Kavacam",
+            "Sri Narasimha Kavacam",
+            "Prahlada Maharaja",
+            "Prahalad Maharaj",
+            "Brahmanda Purana",
+            "Kavacam",
+            "Stotram",
+            "ଶ୍ରୀ ନୃସିଂହ କବଚମ୍",
+            "ନୃସିଂହ କବଚ",
+            "ପ୍ରହ୍ଲାଦ ମହାରାଜ"
+        ],
+        "description": "ଶ୍ରୀ ବ୍ରହ୍ମାଣ୍ଡ ପୁରାଣୋକ୍ତ ଭକ୍ତରାଜ ପ୍ରହ୍ଲାଦ ମହାରାଜାଙ୍କ ବିରଚିତ ପରମ ପବିତ୍ର ଶ୍ରୀ ନୃସିଂହ କବଚମ୍ ସ୍ତୋତ୍ର ।",
+        "audioUrl": "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FgNiIyld6A6tO.128.mp3",
+        "vocalist": "Vaishnavas",
+        "audioVersions": [
+            {
+                "label": "Vaishnavas",
+                "url": "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FgNiIyld6A6tO.128.mp3"
+            },
+            {
+                "label": "HG Yasoda Kumara Prabhu",
+                "url": "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FNARASIMHA%20KAVACHA%20STOTRA%20_%20Narasimha%20Kavacham%20with%20Lyrics%20_%20%20POWERFUL%20MANTRA%20TO%20SOLVE%20ALL%20PROBLEMS.mp3"
+            },
+            {
+                "label": "HG Gaura Mani Mataji",
+                "url": "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2F4QsH1wRxAmtE.128.mp3"
+            },
+            {
+                "label": "Vaishnavas (Traditional)",
+                "url": "https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads%2FNARASIMHA%20KAVACHA%20STOTRAM%20-%20MOST%20POWERFUL%20PRAYERS%20FOR%20PROTECTION%20WITH%20LYRICS%20_%20%E0%A4%A8%E0%A5%83%E0%A4%B8%E0%A4%BF%E0%A4%82%E0%A4%B9%20%E0%A4%95%E0%A4%B5%E0%A4%9A.mp3"
+            }
+        ],
+        "structuredContent": {
+            "id": "song-narasimhakavacamvaksye",
+            "title": "ଶ୍ରୀ ନୃସିଂହ କବଚମ୍ (Narasimha Kavacam Vaksye)",
+            "title_odia": "ଶ୍ରୀ ନୃସିଂହ କବଚମ୍",
+            "title_english": "Narasimha Kavacam Vaksye",
+            "author": "Prahalad Maharaj",
+            "category": "Songs",
+            "reference_url": "https://vsnectar.web.app/home/songs/Narasimha%20Kavacam%20Vaksye_",
+            "verses": [
+                {
+                    "id": 1,
+                    "lyric": "ନୃସିଂହ-କବଚଂ ବକ୍ଷ୍ୟେ ପ୍ରହ୍ଲାଦେନୋଦିତଂ ପୁରା ।\nସର୍ବ-ରକ୍ଷା-କରଂ ପୁଣ୍ୟଂ ସର୍ବୋପଦ୍ରବ-ନାଶନମ୍ ॥ ୧ ॥",
+                    "translation": "ପୂର୍ବକାଳରେ ଭକ୍ତରାଜ ପ୍ରହ୍ଲାଦ ମହାରାଜାଙ୍କ ଦ୍ୱାରା ପ୍ରୋକ୍ତ ପରମ ପବିତ୍ର ଶ୍ରୀ ନୃସିଂହ-କବଚ ମୁଁ ଏବେ ବର୍ଣ୍ଣନା କରୁଛି । ଏହି କବଚ ସମସ୍ତ ପ୍ରକାରର ରକ୍ଷା ପ୍ରଦାନକାରୀ, ପରମ ପୁଣ୍ୟପ୍ରଦ ଏବଂ ସମସ୍ତ ପ୍ରକାରର ଉପଦ୍ରବ ଓ ବିପତ୍ତିକୁ ବିନାଶ କରନ୍ତା ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ନୃସିଂହ-କବଚଂ ବକ୍ଷ୍ୟେ",
+                            "meaning": "ଶ୍ରୀ ନୃସିଂହ କବଚ ବର୍ଣ୍ଣନା କରୁଛି"
+                        },
+                        {
+                            "word": "ପ୍ରହ୍ଲାଦେନ ଉଦିତଂ ପୁରା",
+                            "meaning": "ପୂର୍ବେ ପ୍ରହ୍ଲାଦ ମହାରାଜାଙ୍କ ଦ୍ୱାରା କଥିତ"
+                        },
+                        {
+                            "word": "ସର୍ବ-ରକ୍ଷା-କରଂ",
+                            "meaning": "ସମସ୍ତ ପ୍ରକାର ରକ୍ଷା ବିଧାନକାରୀ"
+                        },
+                        {
+                            "word": "ପୁଣ୍ୟଂ",
+                            "meaning": "ପରମ ପବିତ୍ର ଓ ପୁଣ୍ୟଦାୟକ"
+                        },
+                        {
+                            "word": "ସର୍ବ-ଉପଦ୍ରବ-ନାଶନମ୍",
+                            "meaning": "ସମସ୍ତ ବିପଦ ଓ ଉପଦ୍ରବ ବିନାଶକାରୀ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 2,
+                    "lyric": "ସର୍ବ-ସମ୍ପତ୍-କରଂ ଚୈବ ସ୍ୱର୍ଗ-ମୋକ୍ଷ-ପ୍ରଦାୟକମ୍ ।\nଧ୍ୟାତ୍ୱା ନୃସିଂହଂ ଦେବେଶଂ ହେମ-ସିଂହାସନ-ସ୍ଥିତମ୍ ॥ ୨ ॥",
+                    "translation": "ଏହି କବଚ ସମସ୍ତ ସମ୍ପଦ ପ୍ରଦାନକାରୀ ତଥା ସ୍ୱର୍ଗ ଓ ମୋକ୍ଷର ଦାତା । ସୁବର୍ଣ୍ଣ ସିଂହାସନରେ ବିରାଜମାନ ଦେବାଧିଦେବ ଶ୍ରୀ ନୃସିଂହ ଭଗବାନଙ୍କୁ ଧ୍ୟାନ କରି ଏହି କବଚ ପାଠ କରିବା ଉଚିତ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସର୍ବ-ସମ୍ପତ୍-କରଂ",
+                            "meaning": "ସମସ୍ତ ଐଶ୍ୱର୍ଯ୍ୟ ଓ ସମ୍ପଦ ପ୍ରଦାନକାରୀ"
+                        },
+                        {
+                            "word": "ସ୍ୱର୍ଗ-ମୋକ୍ଷ-ପ୍ରଦାୟକମ୍",
+                            "meaning": "ସ୍ୱର୍ଗ ଏବଂ ମୁକ୍ତି ଦାୟକ"
+                        },
+                        {
+                            "word": "ଧ୍ୟାତ୍ୱା ନୃସିଂହଂ ଦେବେଶଂ",
+                            "meaning": "ଦେବତାମାନଙ୍କ ଈଶ୍ୱର ଶ୍ରୀନୃସିଂହଙ୍କୁ ଧ୍ୟାନ କରି"
+                        },
+                        {
+                            "word": "ହେମ-ସିଂହାସନ-ସ୍ଥିତମ୍",
+                            "meaning": "ସୁବର୍ଣ୍ଣ ସିଂହାସନରେ ଉପବିଷ୍ଟ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 3,
+                    "lyric": "ବିବୃତାସ୍ୟଂ ତ୍ରି-ନୟନଂ ଶରଦ୍-ଇନ୍ଦୁ-ସମ-ପ୍ରଭମ୍ ।\nଲକ୍ଷ୍ମ୍ୟାଲିଙ୍ଗିତ-ବାମାଙ୍ଗଂ ବିଭୂତିଭିର୍ ଉପାଶ୍ରିତମ୍ ॥ ୩ ॥",
+                    "translation": "ଯାହାଙ୍କର ମୁଖ ବିସ୍ତାରିତ, ଯେ ତ୍ରିନେତ୍ରଧାରୀ, ଶରତକାଳୀନ ପୂର୍ଣ୍ଣଚନ୍ଦ୍ର ସଦୃଶ ତେଜୋମୟ, ଯାହାଙ୍କର ବାମ ଅଙ୍ଗକୁ ଲକ୍ଷ୍ମୀଦେବୀ ଆଲିଙ୍ଗନ କରିଛନ୍ତି ଏବଂ ଯେ ସମସ୍ତ ଦିବ୍ୟ ବିଭୂତି ଓ ଐଶ୍ୱର୍ଯ୍ୟର ପରମ ଆଶ୍ରୟସ୍ଥଳ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ବିବୃତ-ଆସ୍ୟଂ",
+                            "meaning": "ପ୍ରସାରିତ ବା ଖୋଲା ମୁଖ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            "word": "ତ୍ରି-ନୟନଂ",
+                            "meaning": "ତିନୋଟି ନେତ୍ରଧାରୀ"
+                        },
+                        {
+                            "word": "ଶରଦ୍-ଇନ୍ଦୁ-ସମ-ପ୍ରଭମ୍",
+                            "meaning": "ଶରତ ଚନ୍ଦ୍ର ସଦୃଶ ଦୀପ୍ତିମନ୍ତ"
+                        },
+                        {
+                            "word": "ଲକ୍ଷ୍ମ୍ୟା ଆଲିଙ୍ଗିତ-ବାମ-ଅଙ୍ଗଂ",
+                            "meaning": "ଲକ୍ଷ୍ମୀଦେବୀଙ୍କ ଦ୍ୱାରା ଆଲିଙ୍ଗିତ ବାମ ପାର୍ଶ୍ୱ"
+                        },
+                        {
+                            "word": "ବିଭୂତିଭିଃ ଉପାଶ୍ରିତମ୍",
+                            "meaning": "ସମସ୍ତ ଐଶ୍ୱର୍ଯ୍ୟର ଆଶ୍ରୟସ୍ଥଳ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 4,
+                    "lyric": "ଚତୁର୍-ଭୁଜଂ କୋମଲାଙ୍ଗଂ ସ୍ୱର୍ଣ୍ଣ-କୁଣ୍ଡଳ-ଶୋଭିତମ୍ ।\nସରୋଜ-ଶୋଭିତୋରସ୍କଂ ରତ୍ନ-କେୟୂର-ମୁଦ୍ରିତମ୍ ॥ ୪ ॥",
+                    "translation": "ଯେ ଚତୁର୍ଭୁଜ, କୋମଳ ଶ୍ରୀଅଙ୍ଗଧାରୀ, ସୁବର୍ଣ୍ଣ କୁଣ୍ଡଳରେ ଶୋଭିତ, ଯାହାଙ୍କର ବିଶାଳ ବକ୍ଷସ୍ଥଳ ପଦ୍ମମାଳାରେ ସୁଶୋଭିତ ଏବଂ ଭୁଜଦଣ୍ଡ ରତ୍ନଖଚିତ ବାଜୁବନ୍ଧରେ ଅଳଙ୍କୃତ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଚତୁର୍-ଭୁଜଂ",
+                            "meaning": "ଚାରୋଟି ଭୁଜ ବିଶିଷ୍ଟ"
+                        },
+                        {
+                            "word": "କୋମଲ-ଅଙ୍ଗଂ",
+                            "meaning": "କୋମଳ ଶ୍ରୀଅଙ୍ଗ"
+                        },
+                        {
+                            "word": "ସ୍ୱର୍ଣ୍ଣ-କୁଣ୍ଡଳ-ଶୋଭିତମ୍",
+                            "meaning": "ସୁନା କୁଣ୍ଡଳରେ ସୁଶୋଭିତ"
+                        },
+                        {
+                            "word": "ସରୋଜ-ଶୋଭିତ-ଉରସ୍କଂ",
+                            "meaning": "ପଦ୍ମଫୁଲରେ ଶୋଭିତ ବକ୍ଷସ୍ଥଳ"
+                        },
+                        {
+                            "word": "ରତ୍ନ-କେୟୂର-ମୁଦ୍ରିତମ୍",
+                            "meaning": "ରତ୍ନଖଚିତ ବାଜୁବନ୍ଧରେ ଅଳଙ୍କୃତ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 5,
+                    "lyric": "ତପ୍ତ-କାଞ୍ଚନ-ସଙ୍କାଶଂ ପୀତ-ନିର୍ମଳ-ବାସସମ୍ ।\nଇନ୍ଦ୍ରାଦି-ସୁର-ମୌଳିସ୍ଥ-ସ୍ଫୁରନ୍-ମାଣିକ୍ୟ-ଦୀପ୍ତିଭିଃ ॥ ୫ ॥",
+                    "translation": "ଯାହାଙ୍କର କାନ୍ତି ତପ୍ତ କାଞ୍ଚନ ସଦୃଶ ଉଜ୍ଜ୍ୱଳ, ଯେ ନିର୍ମଳ ପୀତବସ୍ତ୍ର ପରିହିତ ଏବଂ ଇନ୍ଦ୍ରାଦି ଦେବତାମାନଙ୍କ ମୁକୁଟସ୍ଥିତ ଚମକପୂର୍ଣ୍ଣ ମାଣିକ୍ୟର ଦୀପ୍ତିରେ ପୂଜିତ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ତପ୍ତ-କାଞ୍ଚନ-ସଙ୍କାଶଂ",
+                            "meaning": "ତରଳିତ ସୁବର୍ଣ୍ଣ ସଦୃଶ ଉଜ୍ଜ୍ୱଳ"
+                        },
+                        {
+                            "word": "ପୀତ-ନିର୍ମଳ-ବାସସମ୍",
+                            "meaning": "ପବିତ୍ର ପୀତବସ୍ତ୍ର ଧାରଣ କରିଥିବା"
+                        },
+                        {
+                            "word": "ଇନ୍ଦ୍ର-ଆଦି-ସୁର",
+                            "meaning": "ଇନ୍ଦ୍ର ପ୍ରମୁଖ ଦେବତାଗଣ"
+                        },
+                        {
+                            "word": "ମୌଳିସ୍ଥ",
+                            "meaning": "ମୁକୁଟରେ ଥିବା"
+                        },
+                        {
+                            "word": "ସ୍ଫୁରନ୍-ମାଣିକ୍ୟ-ଦୀପ୍ତିଭିଃ",
+                            "meaning": "ଝଟକୁଥିବା ମାଣିକ୍ୟ ରତ୍ନର ଜ୍ୟୋତି"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 6,
+                    "lyric": "ବିରାଜିତ-ପଦ-ଦ୍ୱନ୍ଦ୍ୱଂ ଶଙ୍ଖ-ଚକ୍ରାଦି-ହେତିଭିଃ ।\nଗରୁତ୍ମତା ସବିନୟଂ ସ୍ତୂୟମାନଂ ମୁଦାନ୍ୱିତମ୍ ॥ ୬ ॥",
+                    "translation": "ଯାହାଙ୍କର ଚରଣଯୁଗଳ ଅତି ମନୋହର ରୂପେ ଶୋଭାୟମାନ, ଯେ ଶଙ୍ଖ, ଚକ୍ର ଇତ୍ୟାଦି ଦିବ୍ୟ ଆୟୁଧ ଧାରଣ କରିଛନ୍ତି ଏବଂ ଗରୁଡ଼ଙ୍କ ଦ୍ୱାରା ଅତି ବିନମ୍ରତାର ସହିତ ଆନନ୍ଦପୂର୍ବକ ସ୍ତୁତି ପ୍ରାପ୍ତ ହେଉଛନ୍ତି ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ବିରାଜିତ-ପଦ-ଦ୍ୱନ୍ଦ୍ୱଂ",
+                            "meaning": "ଶୋଭାୟମାନ ଚରଣଯୁଗଳ"
+                        },
+                        {
+                            "word": "ଶଙ୍ଖ-ଚକ୍ର-ଆଦି-ହେତିଭିଃ",
+                            "meaning": "ଶଙ୍ଖ, ଚକ୍ର ଆଦି ଅସ୍ତ୍ରଶସ୍ତ୍ରରେ"
+                        },
+                        {
+                            "word": "ଗରୁତ୍ମତା",
+                            "meaning": "ପକ୍ଷୀରାଜ ଗରୁଡ଼ଙ୍କ ଦ୍ୱାରା"
+                        },
+                        {
+                            "word": "ସବିନୟଂ",
+                            "meaning": "ବିନମ୍ରତାର ସହିତ"
+                        },
+                        {
+                            "word": "ସ୍ତୂୟମାନଂ",
+                            "meaning": "ସ୍ତୁତିଗାନ କରାଯାଉଥିବା"
+                        },
+                        {
+                            "word": "ମୁଦାନ୍ୱିତମ୍",
+                            "meaning": "ପରମ ଆନନ୍ଦଯୁକ୍ତ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 7,
+                    "lyric": "ସ୍ୱ-ହୃତ୍-କମଳ-ସଂବାସଂ କୃତ୍ୱା ତୁ କବଚଂ ପଠେତ୍ ।\nନୃସିଂହୋ ମେ ଶିରଃ ପାତୁ ଲୋକ-ରକ୍ଷାତ୍ମ-ସମ୍ଭବଃ ॥ ୭ ॥",
+                    "translation": "ନିଜ ହୃଦୟ-କମଳରେ ଶ୍ରୀନୃସିଂହଦେବଙ୍କୁ ବିରାଜମାନ କରାଇ ଏହି କବଚ ପାଠ କରିବ: ସମସ୍ତ ଲୋକଙ୍କ ରକ୍ଷା ନିମନ୍ତେ ଅବତରିତ ଶ୍ରୀନୃସିଂହ ମୋର ମସ୍ତକକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସ୍ୱ-ହୃତ୍-କମଳ-ସଂବାସଂ କୃତ୍ୱା",
+                            "meaning": "ନିଜ ହୃଦୟ ପଦ୍ମରେ ସ୍ଥାପନ କରି"
+                        },
+                        {
+                            "word": "କବଚଂ ପଠେତ୍",
+                            "meaning": "କବଚ ପାଠ କରିବ"
+                        },
+                        {
+                            "word": "ନୃସିଂହୋ ମେ ଶିରଃ ପାତୁ",
+                            "meaning": "ଶ୍ରୀ ନୃସିଂହ ମୋର ମସ୍ତକକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଲୋକ-ରକ୍ଷା-ଆତ୍ମ-ସମ୍ଭବଃ",
+                            "meaning": "ଜଗତର ରକ୍ଷା ପାଇଁ ପ୍ରକଟ ହୋଇଥିବା ପ୍ରଭୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 8,
+                    "lyric": "ସର୍ବଗୋଽପି ସ୍ତମ୍ଭ-ବାସଃ ଫାଲଂ ମେ ରକ୍ଷତୁ ଧ୍ୱନିମ୍ ।\nନୃସିଂହୋ ମେ ଦୃଶୌ ପାତୁ ସୋମ-ସୂର୍ଯ୍ୟାଗ୍ନି-ଲୋଚନଃ ॥ ୮ ॥",
+                    "translation": "ଯଦିଓ ସର୍ବବ୍ୟାପୀ ତଥାପି ସ୍ତମ୍ଭ ମଧ୍ୟରେ ପ୍ରକଟ ହୋଇଥିବା ପ୍ରଭୁ ମୋର କପାଳ ଓ ବାଣୀକୁ ରକ୍ଷା କରନ୍ତୁ । ଚନ୍ଦ୍ର, ସୂର୍ଯ୍ୟ ଓ ଅଗ୍ନି ସ୍ୱରୂପ ତିନୋଟି ନେତ୍ରଧାରୀ ଶ୍ରୀ ନୃସିଂହ ମୋର ନେତ୍ରଦ୍ୱୟକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସର୍ବଗଃ ଅପି",
+                            "meaning": "ସର୍ବବ୍ୟାପୀ ହୋଇ ମଧ୍ୟ"
+                        },
+                        {
+                            "word": "ସ୍ତମ୍ଭ-ବାସଃ",
+                            "meaning": "ସ୍ତମ୍ଭରେ ବାସ କରୁଥିବା"
+                        },
+                        {
+                            "word": "ଫାଲଂ ମେ ରକ୍ଷତୁ",
+                            "meaning": "ମୋର କପାଳକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଧ୍ୱନିମ୍",
+                            "meaning": "ମୋର ବାଣୀ ବା ଧ୍ୱନିକୁ"
+                        },
+                        {
+                            "word": "ଦୃଶୌ ପାତୁ",
+                            "meaning": "ଦୁଇ ଆଖିକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସୋମ-ସୂର୍ଯ୍ୟ-ଅଗ୍ନି-ଲୋଚନଃ",
+                            "meaning": "ଚନ୍ଦ୍ର, ସୂର୍ଯ୍ୟ ଓ ଅଗ୍ନିରୂପୀ ତିନୋଟି ଚକ୍ଷୁଧାରୀ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 9,
+                    "lyric": "ସ୍ମୃତିଂ ମେ ପାତୁ ନୃହରିର୍ ମୁନି-ବର୍ଯ୍ୟ-ସ୍ତୁତି-ପ୍ରିୟଃ ।\nନାସାଂ ମେ ସିଂହ-ନାସସ୍ ତୁ ମୁଖଂ ଲକ୍ଷ୍ମୀ-ମୁଖ-ପ୍ରିୟଃ ॥ ୯ ॥",
+                    "translation": "ଶ୍ରେଷ୍ଠ ମୁନିଗଣଙ୍କ ସ୍ତୁତିରେ ପ୍ରସନ୍ନ ହେଉଥିବା ଶ୍ରୀ ନୃହରି ମୋର ସ୍ମୃତିଶକ୍ତିକୁ ରକ୍ଷା କରନ୍ତୁ । ସିଂହ-ନାସିକାଧାରୀ ପ୍ରଭୁ ମୋର ନାସିକାକୁ ଏବଂ ଲକ୍ଷ୍ମୀଦେବୀଙ୍କ ମୁଖକମଳ ପ୍ରତି ଅନୁରାଗୀ ପ୍ରଭୁ ମୋର ମୁଖକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସ୍ମୃତିଂ ମେ ପାତୁ",
+                            "meaning": "ମୋର ସ୍ମରଣଶକ୍ତିକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ନୃହରିଃ",
+                            "meaning": "ଶ୍ରୀ ନୃସିଂହ ଭଗବାନ"
+                        },
+                        {
+                            "word": "ମୁନି-ବର୍ଯ୍ୟ-ସ୍ତୁତି-ପ୍ରିୟଃ",
+                            "meaning": "ଶ୍ରେଷ୍ଠ ମୁନିମାନଙ୍କ ସ୍ତୁତିରେ ପ୍ରିୟ"
+                        },
+                        {
+                            "word": "ନାସାଂ ମେ ସିଂହ-ନାସଃ",
+                            "meaning": "ସିଂହ ସଦୃଶ ନାକ ଥିବା ପ୍ରଭୁ ମୋ ନାସିକାକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ମୁଖଂ ଲକ୍ଷ୍ମୀ-ମୁଖ-ପ୍ରିୟଃ",
+                            "meaning": "ମାତା ଲକ୍ଷ୍ମୀଙ୍କ ପ୍ରିୟତମ ପ୍ରଭୁ ମୋ ମୁଖକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 10,
+                    "lyric": "ସର୍ବ-ବିଦ୍ୟାଧିପଃ ପାତୁ ନୃସିଂହୋ ରସନାଂ ମମ ।\nବକ୍ତ୍ରଂ ପାତ୍ୱ୍ ଇନ୍ଦୁ-ବଦନଃ ସଦା ପ୍ରହ୍ଲାଦ-ବନ୍ଦିତଃ ॥ ୧୦ ॥",
+                    "translation": "ସମସ୍ତ ବିଦ୍ୟାର ଅଧୀଶ୍ୱର ଶ୍ରୀ ନୃସିଂହ ମୋର ଜିହ୍ୱାକୁ ରକ୍ଷା କରନ୍ତୁ । ଚନ୍ଦ୍ରମୁଖୀ ତଥା ପ୍ରହ୍ଲାଦ ମହାରାଜଙ୍କ ଦ୍ୱାରା ନିରନ୍ତର ବନ୍ଦିତ ପ୍ରଭୁ ମୋର ଆନନକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସର୍ବ-ବିଦ୍ୟା-ଅଧିପଃ",
+                            "meaning": "ସମସ୍ତ ବିଦ୍ୟାର ପ୍ରଭୁ"
+                        },
+                        {
+                            "word": "ରସନାଂ ମମ ପାତୁ",
+                            "meaning": "ମୋର ଜିହ୍ୱାକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ବକ୍ତ୍ରଂ ପାତୁ",
+                            "meaning": "ମୋ ମୁଖମଣ୍ଡଳକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଇନ୍ଦୁ-ବଦନଃ",
+                            "meaning": "ଚନ୍ଦ୍ର ସଦୃଶ ଶୋଭାୟମାନ ମୁଖ"
+                        },
+                        {
+                            "word": "ସଦା ପ୍ରହ୍ଲାଦ-ବନ୍ଦିତଃ",
+                            "meaning": "ସର୍ବଦା ଭକ୍ତ ପ୍ରହ୍ଲାଦଙ୍କ ଦ୍ୱାରା ପୂଜିତ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 11,
+                    "lyric": "ନୃସିଂହଃ ପାତୁ ମେ କଣ୍ଠଂ ସ୍କନ୍ଧୌ ଭୂ-ଭରଣାନ୍ତକୃତ୍ ।\nଦିବ୍ୟାସ୍ତ୍ର-ଶୋଭିତ-ଭୁଜୋ ନୃସିଂହଃ ପାତୁ ମେ ଭୁଜୌ ॥ ୧୧ ॥",
+                    "translation": "ଶ୍ରୀ ନୃସିଂହ ମୋର କଣ୍ଠକୁ ରକ୍ଷା କରନ୍ତୁ । ପୃଥିବୀର ଭାରହରଣକାରୀ ପ୍ରଭୁ ମୋର ଦୁଇ ସ୍କନ୍ଧକୁ ଏବଂ ଦିବ୍ୟ ଅସ୍ତ୍ରଶସ୍ତ୍ରରେ ସୁଶୋଭିତ ଭୁଜଦଣ୍ଡ ବିଶିଷ୍ଟ ଶ୍ରୀ ନୃସିଂହ ମୋର ବାହୁଯୁଗଳକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "କଣ୍ଠଂ ପାତୁ",
+                            "meaning": "କଣ୍ଠକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସ୍କନ୍ଧୌ",
+                            "meaning": "ଦୁଇ କାନ୍ଧକୁ"
+                        },
+                        {
+                            "word": "ଭୂ-ଭରଣ-ଅନ୍ତକୃତ୍",
+                            "meaning": "ପୃଥିବୀର ଭାର ବିନାଶକାରୀ"
+                        },
+                        {
+                            "word": "ଦିବ୍ୟ-ଅସ୍ତ୍ର-ଶୋଭିତ-ଭୁଜଃ",
+                            "meaning": "ଦିବ୍ୟ ଅସ୍ତ୍ରରେ ଶୋଭିତ ବାହୁ"
+                        },
+                        {
+                            "word": "ଭୁଜୌ ପାତୁ",
+                            "meaning": "ଦୁଇ ଭୁଜକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 12,
+                    "lyric": "କରୌ ମେ ଦେବ-ବରଦୋ ନୃସିଂହଃ ପାତୁ ସର୍ବତଃ ।\nହୃଦୟଂ ଯୋଗି-ସାଧ୍ୟଶ୍ ଚ ନିବାସଂ ପାତୁ ମେ ହରିଃ ॥ ୧୨ ॥",
+                    "translation": "ଦେବତାମାନଙ୍କୁ ବର ପ୍ରଦାନକାରୀ ଶ୍ରୀ ନୃସିଂହ ମୋର ଦୁଇ ହସ୍ତକୁ ତଥା ସର୍ବଦିଗରୁ ମୋତେ ରକ୍ଷା କରନ୍ତୁ । ଯୋଗୀମାନଙ୍କ ଦ୍ୱାରା ପ୍ରାପ୍ୟ ପ୍ରଭୁ ମୋର ହୃଦୟକୁ ଏବଂ ଶ୍ରୀହରି ମୋର ବାସସ୍ଥାନକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "କରୌ ମେ",
+                            "meaning": "ମୋର ଦୁଇ ହାତକୁ"
+                        },
+                        {
+                            "word": "ଦେବ-ବରଦଃ",
+                            "meaning": "ଦେବତାମାନଙ୍କୁ ବରଦାତା"
+                        },
+                        {
+                            "word": "ପାତୁ ସର୍ବତଃ",
+                            "meaning": "ସର୍ବତୋଭାବେ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ହୃଦୟଂ ଯୋଗି-ସାଧ୍ୟଃ",
+                            "meaning": "ଯୋଗୀମାନଙ୍କ ଦ୍ୱାରା ପ୍ରାପ୍ୟ ପ୍ରଭୁ ହୃଦୟକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ନିବାସଂ ପାତୁ ମେ ହରିଃ",
+                            "meaning": "ଶ୍ରୀହରି ମୋର ଘର ବା ନିବାସକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 13,
+                    "lyric": "ମଧ୍ୟଂ ପାତୁ ହିରଣ୍ୟାକ୍ଷ-ବକ୍ଷଃ-କୁକ୍ଷି-ବିଦାରଣଃ ।\nନାଭିଂ ମେ ପାତୁ ନୃହରିଃ ସ୍ୱ-ନାଭି-ବ୍ରହ୍ମ-ସଂସ୍ତୁତଃ ॥ ୧୩ ॥",
+                    "translation": "ଦୈତ୍ୟ ହିରଣ୍ୟକଶିପୁର ବକ୍ଷ ଓ ଉଦରକୁ ବିଦୀର୍ଣ୍ଣ କରିଥିବା ପ୍ରଭୁ ମୋର ମଧ୍ୟଭାଗକୁ ରକ୍ଷା କରନ୍ତୁ । ନିଜ ନାଭିକମଳରୁ ଉତ୍ପନ୍ନ ବ୍ରହ୍ମାଙ୍କ ଦ୍ୱାରା ସ୍ତୁତ ଶ୍ରୀ ନୃହରି ମୋର ନାଭିକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ମଧ୍ୟଂ ପାତୁ",
+                            "meaning": "ଶରୀରର ମଧ୍ୟଭାଗକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ହିରଣ୍ୟାକ୍ଷ-ବକ୍ଷଃ-କୁକ୍ଷି-ବିଦାରଣଃ",
+                            "meaning": "ଦୈତ୍ୟର ବକ୍ଷ ଓ ପେଟ ବିଦାରଣକାରୀ"
+                        },
+                        {
+                            "word": "ନାଭିଂ ମେ ପାତୁ",
+                            "meaning": "ମୋର ନାଭିକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସ୍ୱ-ନାଭି-ବ୍ରହ୍ମ-ସଂସ୍ତୁତଃ",
+                            "meaning": "ନିଜ ନାଭିଜାତ ବ୍ରହ୍ମାଙ୍କ ଦ୍ୱାରା ସ୍ତୁତିପ୍ରାପ୍ତ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 14,
+                    "lyric": "ବ୍ରହ୍ମାଣ୍ଡ-କୋଟୟଃ କଟ୍ୟାଂ ଯସ୍ୟାସୌ ପାତୁ ମେ କଟିମ୍ ।\nଗୁହ୍ୟଂ ମେ ପାତୁ ଗୁହ୍ୟାନାଂ ମନ୍ତ୍ରାଣାଂ ଗୁହ୍ୟ-ରୂପ-ଧୃକ୍ ॥ ୧୪ ॥",
+                    "translation": "ଯାହାଙ୍କ କଟିପ୍ରଦେଶରେ କୋଟି କୋଟି ବ୍ରହ୍ମାଣ୍ଡ ଅବସ୍ଥିତ, ସେହି ପ୍ରଭୁ ମୋର କଟିକୁ ରକ୍ଷା କରନ୍ତୁ । ସମସ୍ତ ଗୁପ୍ତ ମନ୍ତ୍ରର ଗୋପନୀୟ ରୂପ ଧାରଣ କରିଥିବା ପ୍ରଭୁ ମୋର ଗୁହ୍ୟାଙ୍ଗକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ବ୍ରହ୍ମାଣ୍ଡ-କୋଟୟଃ କଟ୍ୟାଂ",
+                            "meaning": "ଯାହାଙ୍କ କଟିରେ କୋଟିକୋଟି ବ୍ରହ୍ମାଣ୍ଡ ଅବସ୍ଥିତ"
+                        },
+                        {
+                            "word": "ପାତୁ ମେ କଟିମ୍",
+                            "meaning": "ମୋ କଟିଦେଶକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଗୁହ୍ୟଂ ମେ ପାତୁ",
+                            "meaning": "ଗୋପନୀୟ ଅଙ୍ଗକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ମନ୍ତ୍ରାଣାଂ ଗୁହ୍ୟ-ରୂପ-ଧୃକ୍",
+                            "meaning": "ମନ୍ତ୍ରମାନଙ୍କର ଗୂଢ଼ ରୂପ ଧାରଣ କରିଥିବା"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 15,
+                    "lyric": "ଊରୂ ମନୋଭବଃ ପାତୁ ଜାନୁନୀ ନର-ରୂପ-ଧୃକ୍ ।\nଜଙ୍ଘେ ପାତୁ ଧରା-ଭାର-ହର୍ତ୍ତା ଯୋଽସୌ ନୃ-କେସରୀ ॥ ୧୫ ॥",
+                    "translation": "ପରମ ଆକର୍ଷକ କାମଦେବ-ସ୍ୱରୂପ ପ୍ରଭୁ ମୋର ଦୁଇ ଊରୁକୁ ରକ୍ଷା କରନ୍ତୁ । ନରରୂପ ଧାରଣକାରୀ ପ୍ରଭୁ ମୋର ଆଣ୍ଠୁଯୁଗଳକୁ ଏବଂ ପୃଥିବୀର ଭାରହରଣକାରୀ ଶ୍ରୀ ନୃସିଂହ ମୋର ଦୁଇ ଜଙ୍ଘାକୁ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଊରୂ ମନୋଭବଃ ପାତୁ",
+                            "meaning": "ପରମ ଆକର୍ଷକ ପ୍ରଭୁ ଦୁଇ ଜଙ୍ଘ/ଊରୁକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଜାନୁନୀ ନର-ରୂପ-ଧୃକ୍",
+                            "meaning": "ମାନବ ରୂପଧାରୀ ପ୍ରଭୁ ଆଣ୍ଠୁକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଜଙ୍ଘେ ପାତୁ",
+                            "meaning": "ପିଣ୍ଡୁଳି/ଗୋଡ଼କୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ଧରା-ଭାର-ହର୍ତ୍ତା",
+                            "meaning": "ଭୂମିର ଭାରହରଣକାରୀ"
+                        },
+                        {
+                            "word": "ନୃ-କେସରୀ",
+                            "meaning": "ନରସିଂହ ଭଗବାନ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 16,
+                    "lyric": "ସୁର-ରାଜ୍ୟ-ପ୍ରଦଃ ପାତୁ ପାଦୌ ମେ ନୃ-ହରୀଶ୍ୱରଃ ।\nସହସ୍ର-ଶୀର୍ଷା ପୁରୁଷଃ ପାତୁ ମେ ସର୍ବଶସ୍ ତନୁମ୍ ॥ ୧୬ ॥",
+                    "translation": "ଦେବତାମାନଙ୍କୁ ସ୍ୱର୍ଗରାଜ୍ୟ ପ୍ରଦାନକାରୀ ଶ୍ରୀ ନୃହରୀଶ୍ୱର ମୋର ଚରଣଦ୍ୱୟକୁ ରକ୍ଷା କରନ୍ତୁ । ସହସ୍ର-ମସ୍ତକଧାରୀ ପରମପୁରୁଷ ମୋର ସମଗ୍ର ଶରୀରକୁ ସର୍ବପ୍ରକାରେ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସୁର-ରାଜ୍ୟ-ପ୍ରଦଃ",
+                            "meaning": "ଦେବରାଜ୍ୟ ପ୍ରଦାନକାରୀ"
+                        },
+                        {
+                            "word": "ପାଦୌ ମେ ପାତୁ",
+                            "meaning": "ମୋ ଦୁଇ ପାଦକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ନୃ-ହରି-ଈଶ୍ୱରଃ",
+                            "meaning": "ନୃହରି ପରମେଶ୍ୱର"
+                        },
+                        {
+                            "word": "ସହସ୍ର-ଶୀର୍ଷା ପୁରୁଷଃ",
+                            "meaning": "ସହସ୍ର ଶୀର୍ଷ ବିଶିଷ୍ଟ ବିରାଟ ପୁରୁଷ"
+                        },
+                        {
+                            "word": "ସର୍ବଶଃ ତନୁମ୍ ପାତୁ",
+                            "meaning": "ସର୍ବଦା ସମଗ୍ର ଶରୀରକୁ ରକ୍ଷା କରନ୍ତୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 17,
+                    "lyric": "ମହୋଗ୍ରଃ ପୂର୍ବତଃ ପାତୁ ମହା-ବୀରାଗ୍ରଜୋଽଗ୍ନିତଃ ।\nମହା-ବିଷ୍ଣୁର୍ ଦକ୍ଷିଣେ ତୁ ମହା-ଜ୍ୱାଳସ୍ ତୁ ନୈରୃତୌ ॥ ୧୭ ॥",
+                    "translation": "ମହୋଗ୍ର ନୃସିଂହ ପୂର୍ବଦିଗରୁ, ମହାବୀରମାନଙ୍କ ମଧ୍ୟରେ ଅଗ୍ରଗଣ୍ୟ ପ୍ରଭୁ ଅଗ୍ନିକୋଣରୁ, ମହାବିଷ୍ଣୁ ଦକ୍ଷିଣଦିଗରୁ ଏବଂ ମହାଜ୍ୱାଳାମୟ ପ୍ରଭୁ ନୈରୃତ କୋଣରୁ ମୋତେ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ମହୋଗ୍ରଃ ପୂର୍ବତଃ ପାତୁ",
+                            "meaning": "ପରମ ତେଜସ୍ୱୀ ପ୍ରଭୁ ପୂର୍ବ ଦିଗରୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ମହା-ବୀର-ଅଗ୍ରଜଃ ଅଗ୍ନିତଃ",
+                            "meaning": "ମହାବୀର ପ୍ରଭୁ ଅଗ୍ନିକୋଣରୁ"
+                        },
+                        {
+                            "word": "ମହା-ବିଷ୍ଣୁଃ ଦକ୍ଷିଣେ",
+                            "meaning": "ମହାବିଷ୍ଣୁ ଦକ୍ଷିଣ ଦିଗରୁ"
+                        },
+                        {
+                            "word": "ମହା-ଜ୍ୱାଳଃ ନୈରୃତୌ",
+                            "meaning": "ପ୍ରଜ୍ଜ୍ୱଳିତ ପ୍ରଭୁ ନୈରୃତ କୋଣରୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 18,
+                    "lyric": "ପଶ୍ଚିମେ ପାତୁ ସର୍ବେଶୋ ଦିଶି ମେ ସର୍ବତୋ-ମୁଖଃ ।\nନୃସିଂହଃ ପାତୁ ବାୟବ୍ୟାଂ ସୌମ୍ୟାଂ ଭୂଷଣ-ବିଗ୍ରହଃ ॥ ୧୮ ॥",
+                    "translation": "ସର୍ବେଶ୍ୱର ପଶ୍ଚିମଦିଗରୁ, ସର୍ବତୋମୁଖ ପ୍ରଭୁ ପ୍ରତ୍ୟେକ ଦିଗରୁ, ଶ୍ରୀ ନୃସିଂହ ବାୟୁକୋଣରୁ ଏବଂ ସର୍ବାଙ୍ଗଭୂଷିତ ପ୍ରଭୁ ଉତ୍ତରଦିଗରୁ ମୋତେ ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ପଶ୍ଚିମେ ପାତୁ ସର୍ବେଶଃ",
+                            "meaning": "ସର୍ବେଶ୍ୱର ପଶ୍ଚିମ ଦିଗରୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସର୍ବତୋ-ମୁଖଃ",
+                            "meaning": "ସର୍ବତ୍ର ମୁଖ ଥିବା ପ୍ରଭୁ"
+                        },
+                        {
+                            "word": "ବାୟବ୍ୟାଂ ନୃସିଂହଃ ପାତୁ",
+                            "meaning": "ବାୟୁକୋଣରୁ ଶ୍ରୀ ନୃସିଂହ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସୌମ୍ୟାଂ ଭୂଷଣ-ବିଗ୍ରହଃ",
+                            "meaning": "ଉତ୍ତର ଦିଗରୁ ପରମ ଅଳଙ୍କୃତ ଦିବ୍ୟ ବିଗ୍ରହ ରକ୍ଷା କରନ୍ତୁ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 19,
+                    "lyric": "ଈଶାନ୍ୟାଂ ପାତୁ ଭଦ୍ରୋ ମେ ସର୍ବ-ମଙ୍ଗଳ-ଦାୟକଃ ।\nସଂସାର-ଭୟଦଃ ପାତୁ ମୃତ୍ୟୋର୍ ମୃତ୍ୟୁର୍ ନୃ-କେସରୀ ॥ ୧୯ ॥",
+                    "translation": "ସମସ୍ତ କଲ୍ୟାଣ ପ୍ରଦାନକାରୀ ଭଦ୍ର ନୃସିଂହ ଈଶାନ କୋଣରୁ ଏବଂ ସଂସାରର ଭୟ ହରଣକାରୀ ତଥା ମୃତ୍ୟୁର ମଧ୍ୟ ମୃତ୍ୟୁସ୍ୱରୂପ ନରସିଂହ ଭଗବାନ ମୋତେ ସର୍ବଦା ରକ୍ଷା କରନ୍ତୁ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଈଶାନ୍ୟାଂ ପାତୁ ଭଦ୍ରଃ",
+                            "meaning": "ଈଶାନ କୋଣରୁ କଲ୍ୟାଣକାରୀ ପ୍ରଭୁ ରକ୍ଷା କରନ୍ତୁ"
+                        },
+                        {
+                            "word": "ସର୍ବ-ମଙ୍ଗଳ-ଦାୟକଃ",
+                            "meaning": "ସମସ୍ତ ମଙ୍ଗଳ ଦାତା"
+                        },
+                        {
+                            "word": "ସଂସାର-ଭୟଦଃ",
+                            "meaning": "ସଂସାର ଭୟରୁ ତ୍ରାଣକର୍ତ୍ତା"
+                        },
+                        {
+                            "word": "ମୃତ୍ୟୋଃ ମୃତ୍ୟୁଃ",
+                            "meaning": "ମୃତ୍ୟୁର ମଧ୍ୟ ମୃତ୍ୟୁ ସ୍ୱରୂପ"
+                        },
+                        {
+                            "word": "ନୃ-କେସରୀ",
+                            "meaning": "ଶ୍ରୀ ନୃସିଂହଦେବ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 20,
+                    "lyric": "ଇଦଂ ନୃସିଂହ-କବଚଂ ପ୍ରହ୍ଲାଦ-ମୁଖ-ମଣ୍ଡିତମ୍ ।\nଭକ୍ତିମାନ୍ ଯଃ ପଠେନ୍ ନିତ୍ୟଂ ସର୍ବ-ପାପୈଃ ପ୍ରମୁଚ୍ୟତେ ॥ ୨୦ ॥",
+                    "translation": "ଭକ୍ତ ପ୍ରହ୍ଲାଦଙ୍କ ମୁଖାରବିନ୍ଦରୁ ନିଃସୃତ ଏହି ଶ୍ରୀ ନୃସିଂହ-କବଚକୁ ଯେଉଁ ଭକ୍ତିମାନ ମନୁଷ୍ୟ ପ୍ରତିଦିନ ନିଷ୍ଠାର ସହିତ ପାଠ କରେ, ସେ ସମସ୍ତ ପାପରୁ ମୁକ୍ତ ହୋଇଯାଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଇଦଂ ନୃସିଂହ-କବଚଂ",
+                            "meaning": "ଏହି ନୃସିଂହ କବଚ"
+                        },
+                        {
+                            "word": "ପ୍ରହ୍ଲାଦ-ମୁଖ-ମଣ୍ଡିତମ୍",
+                            "meaning": "ପ୍ରହ୍ଲାଦ ମହାରାଜାଙ୍କ ଶ୍ରୀମୁଖରୁ ଉଦ୍ଗୀର୍ଣ୍ଣ"
+                        },
+                        {
+                            "word": "ଭକ୍ତିମାନ୍ ଯଃ ପଠେନ୍ ନିତ୍ୟଂ",
+                            "meaning": "ଯେଉଁ ଭକ୍ତ ପ୍ରତିଦିନ ପାଠ କରେ"
+                        },
+                        {
+                            "word": "ସର୍ବ-ପାପୈଃ ପ୍ରମୁଚ୍ୟତେ",
+                            "meaning": "ସମସ୍ତ ପାପରୁ ସମ୍ପୂର୍ଣ୍ଣ ମୁକ୍ତ ହୁଏ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 21,
+                    "lyric": "ପୁତ୍ରବାନ୍ ଧନବାନ୍ ଲୋକେ ଦୀର୍ଘାୟୁର୍ ଉପଜାୟତେ ।\nୟଂ ୟଂ କାମୟତେ କାମଂ ତଂ ତଂ ପ୍ରାପ୍ନୋତ୍ୟ୍ ଅସଂଶୟମ୍ ॥ ୨୧ ॥",
+                    "translation": "ସେହି ବ୍ୟକ୍ତି ଏହି ସଂସାରରେ ସୁଯୋଗ୍ୟ ସନ୍ତାନ, ପ୍ରଚୁର ଧନସମ୍ପତ୍ତି ଏବଂ ଦୀର୍ଘ ଆୟୁ ପ୍ରାପ୍ତ ହୁଏ; ସେ ଯାହା ଯାହା କାମନା କରେ, ସେ ସବୁ ନିଃସନ୍ଦେହ ଭାବେ ଲାଭ କରେ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ପୁତ୍ରବାନ୍ ଧନବାନ୍",
+                            "meaning": "ପୁତ୍ରବାନ ଓ ଧନବାନ"
+                        },
+                        {
+                            "word": "ଦୀର୍ଘାୟୁଃ ଉପଜାୟତେ",
+                            "meaning": "ଦୀର୍ଘ ଆୟୁ ପ୍ରାପ୍ତ ହୁଏ"
+                        },
+                        {
+                            "word": "ୟଂ ୟଂ କାମୟତେ କାମଂ",
+                            "meaning": "ଯେଉଁ ଯେଉଁ ଇଚ୍ଛା କରେ"
+                        },
+                        {
+                            "word": "ତଂ ତଂ ପ୍ରାପ୍ନୋତି",
+                            "meaning": "ସେସବୁ ପ୍ରାପ୍ତ ହୁଏ"
+                        },
+                        {
+                            "word": "ଅସଂଶୟମ୍",
+                            "meaning": "ନିଃସନ୍ଦେହରେ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 22,
+                    "lyric": "ସର୍ବତ୍ର ଜୟମ୍ ଆପ୍ନୋତି ସର୍ବତ୍ର ବିଜୟୀ ଭବେତ୍ ।\nଭୂମ୍ୟ୍-ଅନ୍ତରୀକ୍ଷ-ଦିବ୍ୟାନାଂ ଗ୍ରହାଣାଂ ବିନିବାରଣମ୍ ॥ ୨୨ ॥",
+                    "translation": "ସେ ସର୍ବତ୍ର ବିଜୟ ଲାଭ କରେ ଏବଂ ସର୍ବଦା ବିଜୟୀ ହୁଏ । ପୃଥିବୀ, ଅନ୍ତରୀକ୍ଷ ଓ ଦେବଲୋକ ସମ୍ବନ୍ଧୀୟ ସମସ୍ତ ଅନିଷ୍ଟକାରୀ ଗ୍ରହମାନଙ୍କର ପ୍ରଭାବ ସମ୍ପୂର୍ଣ୍ଣ ଦୂରୀଭୂତ ହୁଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ସର୍ବତ୍ର ଜୟମ୍ ଆପ୍ନୋତି",
+                            "meaning": "ସବୁଆଡ଼େ ଜୟ ଲାଭ କରେ"
+                        },
+                        {
+                            "word": "ସର୍ବତ୍ର ବିଜୟୀ ଭବେତ୍",
+                            "meaning": "ସର୍ବଦା ବିଜୟୀ ହୁଏ"
+                        },
+                        {
+                            "word": "ଭୂମି-ଅନ୍ତରୀକ୍ଷ-ଦିବ୍ୟାନାଂ",
+                            "meaning": "ପୃଥିବୀ, ଆକାଶ ଓ ସ୍ୱର୍ଗଲୋକର"
+                        },
+                        {
+                            "word": "ଗ୍ରହାଣାଂ ବିନିବାରଣମ୍",
+                            "meaning": "ଅନିଷ୍ଟକାରୀ ଗ୍ରହପୀଡ଼ାର ନିବାରଣ ହୁଏ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 23,
+                    "lyric": "ବୃଶ୍ଚିକୋରଗ-ସମ୍ଭୂତ-ବିଷାପହରଣଂ ପରମ୍ ।\nବ୍ରହ୍ମ-ରାକ୍ଷସ-ଯକ୍ଷାଣାଂ ଦୂରୋତ୍ସାରଣ-କାରଣମ୍ ॥ ୨୩ ॥",
+                    "translation": "ଏହା ବିଛା ଓ ସର୍ପ ଇତ୍ୟାଦିଙ୍କ ଦ୍ୱାରା ଉତ୍ପନ୍ନ ଭୟଙ୍କର ବିଷକୁ ବିନାଶ କରେ ଏବଂ ବ୍ରହ୍ମରାକ୍ଷସ ତଥା ଯକ୍ଷ ଆଦି ଅଶୁଭ ଶକ୍ତିମାନଙ୍କୁ ବହୁ ଦୂରକୁ ତଡ଼ିଦିଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ବୃଶ୍ଚିକ-ଉରଗ-ସମ୍ଭୂତ",
+                            "meaning": "ବିଛା ଓ ସାପଠାରୁ ଉତ୍ପନ୍ନ"
+                        },
+                        {
+                            "word": "ବିଷ-ଅପହରଣଂ ପରମ୍",
+                            "meaning": "ବିଷକୁ ଦୂର କରିବାରେ ଶ୍ରେଷ୍ଠ"
+                        },
+                        {
+                            "word": "ବ୍ରହ୍ମ-ରାକ୍ଷସ-ଯକ୍ଷାଣାଂ",
+                            "meaning": "ବ୍ରହ୍ମରାକ୍ଷସ ଓ ଯକ୍ଷମାନଙ୍କୁ"
+                        },
+                        {
+                            "word": "ଦୂର-ଉତ୍ସାରଣ-କାରଣମ୍",
+                            "meaning": "ଦୂରକୁ ତଡ଼ିଦେବାର କାରଣ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 24,
+                    "lyric": "ଭୂର୍ଜେ ବା ତାଳ-ପତ୍ରେ ବା କବଚଂ ଲିଖିତଂ ଶୁଭମ୍ ।\nକର-ମୂଳେ ଧୃତଂ ଯେନ ସିଧ୍ୟେୟୁଃ କର୍ମ-ସିଦ୍ଧୟଃ ॥ ୨୪ ॥",
+                    "translation": "ଭୂର୍ଜପତ୍ର ବା ତାଳପତ୍ରରେ ଏହି ଶୁଭ କବଚ ଲେଖି ଯିଏ ନିଜ ବାହୁମୂଳରେ ଧାରଣ କରେ, ତାର ସମସ୍ତ କାର୍ଯ୍ୟ ସଫଳ ଓ ସିଦ୍ଧ ହୋଇଥାଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଭୂର୍ଜେ ବା ତାଳ-ପତ୍ରେ ବା",
+                            "meaning": "ଭୂର୍ଜପତ୍ର କିମ୍ବା ତାଳପତ୍ରରେ"
+                        },
+                        {
+                            "word": "କବଚଂ ଲିଖିତଂ ଶୁଭମ୍",
+                            "meaning": "ଏହି ମଙ୍ଗଳମୟ କବଚ ଲେଖି"
+                        },
+                        {
+                            "word": "କର-ମୂଳେ ଧୃତଂ ଯେନ",
+                            "meaning": "ଯିଏ ହାତ ବା ବାହୁରେ ଧାରଣ କରେ"
+                        },
+                        {
+                            "word": "କର୍ମ-ସିଦ୍ଧୟଃ ସିଧ୍ୟେୟୁଃ",
+                            "meaning": "ସମସ୍ତ କାର୍ଯ୍ୟରେ ସିଦ୍ଧି ପ୍ରାପ୍ତ ହୁଏ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 25,
+                    "lyric": "ଦେବାସୁର-ମନୁଷ୍ୟେଷୁ ସ୍ୱଂ ସ୍ୱମ୍ ଏବ ଜୟଂ ଲଭେତ୍ ।\nଏକ-ସନ୍ଧ୍ୟଂ ତ୍ରି-ସନ୍ଧ୍ୟଂ ବା ଯଃ ପଠେନ୍ ନିୟତୋ ନରଃ ॥ ୨୫ ॥",
+                    "translation": "ଯେଉଁ ନର ନିୟମପୂର୍ବକ ଦିନକୁ ଥରେ କିମ୍ବା ତିନି ସନ୍ଧ୍ୟାରେ ଏହା ପାଠ କରେ, ସେ ଦେବତା, ଅସୁର ଏବଂ ମନୁଷ୍ୟମାନଙ୍କ ମଧ୍ୟରେ ସର୍ବଦା ନିଜର ବିଜୟ ଲାଭ କରେ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ଦେବାସୁର-ମନୁଷ୍ୟେଷୁ",
+                            "meaning": "ଦେବତା, ଅସୁର ଓ ମନୁଷ୍ୟମାନଙ୍କ ମଧ୍ୟରେ"
+                        },
+                        {
+                            "word": "ଜୟଂ ଲଭେତ୍",
+                            "meaning": "ବିଜୟ ଲାଭ କରେ"
+                        },
+                        {
+                            "word": "ଏକ-ସନ୍ଧ୍ୟଂ ତ୍ରି-ସନ୍ଧ୍ୟଂ ବା",
+                            "meaning": "ଗୋଟିଏ ସନ୍ଧ୍ୟା ବା ତିନି ସନ୍ଧ୍ୟାରେ"
+                        },
+                        {
+                            "word": "ଯଃ ପଠେନ୍ ନିୟତଃ",
+                            "meaning": "ଯିଏ ନିୟମିତ ପାଠ କରେ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 26,
+                    "lyric": "ସର୍ବ-ମଙ୍ଗଳ-ମାଙ୍ଗଲ୍ୟଂ ଭୁକ୍ତିଂ ମୁକ୍ତିଂ ଚ ବିନ୍ଦତି ।\nଦ୍ୱା-ତ୍ରିଂଶତି-ସହସ୍ରାଣି ପଠେଚ୍ ଛୁଦ୍ଧାତ୍ମନାଂ ନୃଣାମ୍ ॥ ୨୬ ॥",
+                    "translation": "ସେ ସମସ୍ତ ମଙ୍ଗଳର ପରମ ମଙ୍ଗଳ ପ୍ରାପ୍ତ ହୁଏ ତଥା ଭୋଗ ଓ ମୁକ୍ତି ଉଭୟ ଲାଭ କରେ । ଶୁଦ୍ଧ ଚିତ୍ତରେ ମନୁଷ୍ୟ ଯଦି ଏହାକୁ ବତିଶ ହଜାର (୩୨,୦୦୦) ଥର ପାଠ କରେ...",
+                    "wordMeanings": [
+                        {
+                            "word": "ସର୍ବ-ମଙ୍ଗଳ-ମାଙ୍ଗଲ୍ୟଂ",
+                            "meaning": "ସର୍ବ ମଙ୍ଗଳର ପରମ କଲ୍ୟାଣ"
+                        },
+                        {
+                            "word": "ଭୁକ୍ତିଂ ମୁକ୍ତିଂ ଚ ବିନ୍ଦତି",
+                            "meaning": "ଇହଲୌକିକ ସୁଖ ଓ ମୋକ୍ଷ ଲାଭ କରେ"
+                        },
+                        {
+                            "word": "ଦ୍ୱା-ତ୍ରିଂଶତ୍-ସହସ୍ରାଣି",
+                            "meaning": "ବତିଶ ହଜାର ଥର"
+                        },
+                        {
+                            "word": "ପଠେତ୍ ଶୁଦ୍ଧ-ଆତ୍ମନାଂ",
+                            "meaning": "ପବିତ୍ର ହୃଦୟରେ ପାଠ କଲେ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 27,
+                    "lyric": "କବଚସ୍ୟାସ୍ୟ ମନ୍ତ୍ରସ୍ୟ ମନ୍ତ୍ର-ସିଦ୍ଧିଃ ପ୍ରଜାୟତେ ।\nଅନେନ ମନ୍ତ୍ର-ରାଜେନ କୃତ୍ୱା ଭସ୍ମାଭିମନ୍ତ୍ରଣମ୍ ॥ ୨୭ ॥",
+                    "translation": "...ତେବେ ଏହି କବଚ-ମନ୍ତ୍ରର ପୂର୍ଣ୍ଣ ସିଦ୍ଧି ପ୍ରାପ୍ତ ହୁଏ । ଏହି ମନ୍ତ୍ରରାଜ ଦ୍ୱାରା ଭସ୍ମକୁ ଅଭିମନ୍ତ୍ରିତ କରି...",
+                    "wordMeanings": [
+                        {
+                            "word": "କବଚସ୍ୟ ଅସ୍ୟ ମନ୍ତ୍ରସ୍ୟ",
+                            "meaning": "ଏହି କବଚ ମନ୍ତ୍ରର"
+                        },
+                        {
+                            "word": "ମନ୍ତ୍ର-ସିଦ୍ଧିଃ ପ୍ରଜାୟତେ",
+                            "meaning": "ମନ୍ତ୍ରସିଦ୍ଧି ପ୍ରାପ୍ତ ହୁଏ"
+                        },
+                        {
+                            "word": "ଅନେନ ମନ୍ତ୍ର-ରାଜେନ",
+                            "meaning": "ଏହି ଶ୍ରେଷ୍ଠ ମନ୍ତ୍ରରାଜ ଦ୍ୱାରା"
+                        },
+                        {
+                            "word": "ଭସ୍ମ-ଅଭିମନ୍ତ୍ରଣମ୍ କୃତ୍ୱା",
+                            "meaning": "ଭସ୍ମକୁ ମନ୍ତ୍ରପୂତ କରି"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 28,
+                    "lyric": "ତିଳକଂ ବିନ୍ୟସେଦ୍ ଯସ୍ ତୁ ତସ୍ୟ ଗ୍ରହ-ଭୟଂ ହରେତ୍ ।\nତ୍ରି-ବାରଂ ଜପମାନସ୍ ତୁ ଦତ୍ତଂ ବାର୍ୟ୍ ଅଭିମନ୍ତ୍ର୍ୟ ଚ ॥ ୨୮ ॥",
+                    "translation": "...ଯିଏ ତିଳକ ଲଗାଏ, ତାର ସମସ୍ତ ଗ୍ରହଭୟ ଦୂର ହୋଇଯାଏ । ତିନିଥର ଏହି ମନ୍ତ୍ର ଜପ କରି ଜଳକୁ ଅଭିମନ୍ତ୍ରିତ କରି...",
+                    "wordMeanings": [
+                        {
+                            "word": "ତିଳକଂ ବିନ୍ୟସେତ୍ ଯଃ",
+                            "meaning": "ଯେଉଁ ବ୍ୟକ୍ତି ତିଳକ ଧାରଣ କରେ"
+                        },
+                        {
+                            "word": "ତସ୍ୟ ଗ୍ରହ-ଭୟଂ ହରେତ୍",
+                            "meaning": "ତାର ଗ୍ରହଭୟ ଦୂର ହୁଏ"
+                        },
+                        {
+                            "word": "ତ୍ରି-ବାରଂ ଜପମାନଃ",
+                            "meaning": "ତିନିଥର ଜପ କରି"
+                        },
+                        {
+                            "word": "ବାରି ଅଭିମନ୍ତ୍ର୍ୟ",
+                            "meaning": "ଜଳକୁ ଅଭିମନ୍ତ୍ରିତ କରି"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 29,
+                    "lyric": "ପ୍ରାଶୟେଦ୍ ଯୋ ନରୋ ମନ୍ତ୍ରଂ ନୃସିଂହ-ଧ୍ୟାନମ୍ ଆଚରେତ୍ ।\nତସ୍ୟ ରୋଗାଃ ପ୍ରଣଶ୍ୟନ୍ତି ଯେ ଚ ସ୍ୟୁଃ କୁକ୍ଷି-ସମ୍ଭବାଃ ॥ ୨୯ ॥",
+                    "translation": "...ଯେଉଁ ମନୁଷ୍ୟ ଶ୍ରୀ ନୃସିଂହଙ୍କୁ ଧ୍ୟାନ କରି ସେହି ଜଳ ପାନ କରେ, ତାର ଉଦର ସମ୍ବନ୍ଧୀୟ ସମସ୍ତ ରୋଗ ତଥା ଅନ୍ୟାନ୍ୟ ବ୍ୟାଧି ବିନଷ୍ଟ ହୋଇଯାଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "ପ୍ରାଶୟେତ୍ ଯଃ ନରଃ",
+                            "meaning": "ଯେଉଁ ମନୁଷ୍ୟ ପାନ କରେ"
+                        },
+                        {
+                            "word": "ନୃସିଂହ-ଧ୍ୟାନମ୍ ଆଚରେତ୍",
+                            "meaning": "ଶ୍ରୀ ନୃସିଂହଙ୍କୁ ଧ୍ୟାନ କରେ"
+                        },
+                        {
+                            "word": "ତସ୍ୟ ରୋଗାଃ ପ୍ରଣଶ୍ୟନ୍ତି",
+                            "meaning": "ତାର ସମସ୍ତ ରୋଗ ନଷ୍ଟ ହୁଏ"
+                        },
+                        {
+                            "word": "କୁକ୍ଷି-ସମ୍ଭବାଃ",
+                            "meaning": "ପେଟ ବା ଉଦରଜନିତ ରୋଗ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 30,
+                    "lyric": "କିମ୍ ଅତ୍ର ବହୁନୋକ୍ତେନ ନୃସିଂହ-ସଦୃଶୋ ଭବେତ୍ ।\nମନସା ଚିନ୍ତିତଂ ଯତ୍ ତୁ ସ ତଚ୍ ଚାପ୍ନୋତ୍ୟ୍ ଅସଂଶୟମ୍ ॥ ୩୦ ॥",
+                    "translation": "ଅଧିକ ଆଉ କଣ କହିବା! ସେହି ସାଧକ ଶ୍ରୀ ନୃସିଂହଙ୍କ ସଦୃଶ ତେଜୋମୟ ଓ ଗୁଣବାନ ହୋଇଯାଏ; ସେ ମନରେ ଯାହା କିଛି ଚିନ୍ତା କରେ, ତାହା ନିଃସନ୍ଦେହ ରୂପେ ପ୍ରାପ୍ତ ହୁଏ ।",
+                    "wordMeanings": [
+                        {
+                            "word": "କିମ୍ ଅତ୍ର ବହୁନା ଉକ୍ତେନ",
+                            "meaning": "ଅଧିକ ବହୁତ କହିବାର କି ପ୍ରୟୋଜନ"
+                        },
+                        {
+                            "word": "ନୃସିଂହ-ସଦୃଶଃ ଭବେତ୍",
+                            "meaning": "ଶ୍ରୀନୃସିଂହଙ୍କ ସଦୃଶ ପ୍ରଭାବଶାଳୀ ହୁଏ"
+                        },
+                        {
+                            "word": "ମନସା ଚିନ୍ତିତଂ ଯତ୍",
+                            "meaning": "ମନରେ ଯାହା ଚିନ୍ତନ କରେ"
+                        },
+                        {
+                            "word": "ତତ୍ ଚ ଆପ୍ନୋତି",
+                            "meaning": "ତାହା ସେ ପ୍ରାପ୍ତ ହୁଏ"
+                        },
+                        {
+                            "word": "ଅସଂଶୟମ୍",
+                            "meaning": "ନିଶ୍ଚିତ ଭାବେ"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                },
+                {
+                    "id": 31,
+                    "lyric": "ଗର୍ଜନ୍ତଂ ଗର୍ଜୟନ୍ତଂ ନିଜ-ଭୁଜ-ପଟଳଂ ସ୍ଫୋଟୟନ୍ତଂ ହଠନ୍ତଂ\nରୂପ୍ୟନ୍ତଂ ତାପୟନ୍ତଂ ଦିବି ଭୁବି ଦିତିଜଂ କ୍ଷେପୟନ୍ତଂ କ୍ଷିପନ୍ତମ୍ ।\nକ୍ରନ୍ଦନ୍ତଂ ରୋଷୟନ୍ତଂ ଦିଶି ଦିଶି ସତତଂ ସଂହରନ୍ତଂ ଭରନ୍ତଂ\nବୀକ୍ଷନ୍ତଂ ଘୂର୍ଣ୍ଣୟନ୍ତଂ ଶର-ନିକର-ଶତୈର୍ ଦିବ୍ୟ-ସିଂହଂ ନମାମି ॥ ୩୧ ॥\n॥ ଇତି ଶ୍ରୀ-ବ୍ରହ୍ମାଣ୍ଡ-ପୁରାଣେ ପ୍ରହ୍ଲାଦୋକ୍ତଂ ଶ୍ରୀ-ନୃସିଂହ-କବଚଂ ସମ୍ପୂର୍ଣ୍ଣମ୍ ॥",
+                    "translation": "ଯେ ନିଜେ ଗର୍ଜନ କରୁଛନ୍ତି ଏବଂ ଅନ୍ୟମାନଙ୍କୁ ଗର୍ଜନ କରାଉଛନ୍ତି, ନିଜର ଅସଂଖ୍ୟ ବାହୁବଳରେ ଦୈତ୍ୟମାନଙ୍କୁ ବିଦାରଣ କରୁଛନ୍ତି, ଯେ ସ୍ୱର୍ଗ ଓ ମର୍ତ୍ତ୍ୟରେ ଦିତିପୁତ୍ର ଅସୁରମାନଙ୍କୁ ସନ୍ତ୍ରସ୍ତ ଓ ଉତ୍ତପ୍ତ କରି ଫିଙ୍ଗି ଦେଉଛନ୍ତି, ଯେ କ୍ରୋଧଭରେ ସମସ୍ତ ଦିଗରେ ଦୁଷ୍ଟମାନଙ୍କୁ ବିନାଶ କରୁଛନ୍ତି ଏବଂ ନିଜ ହସ୍ତରେ ସମସ୍ତ ବିଶ୍ୱର ପାଳନ ଓ ରକ୍ଷା କରୁଛନ୍ତି—ସେହି ଅଲୌକିକ ଦିବ୍ୟ ନୃସିଂହ ପ୍ରଭୁଙ୍କୁ ମୁଁ ପ୍ରଣାମ କରୁଛି । (ଏହିପରି ଶ୍ରୀ ବ୍ରହ୍ମାଣ୍ଡ ପୁରାଣୋକ୍ତ ପ୍ରହ୍ଲାଦ-ବିରଚିତ ଶ୍ରୀ ନୃସିଂହ କବଚ ସମ୍ପୂର୍ଣ୍ଣ ହେଲା ।)",
+                    "wordMeanings": [
+                        {
+                            "word": "ଗର୍ଜନ୍ତଂ ଗର୍ଜୟନ୍ତଂ",
+                            "meaning": "ଭୟଙ୍କର ଗର୍ଜନ କରୁଥିବା ଓ କରାଉଥିବା"
+                        },
+                        {
+                            "word": "ନିଜ-ଭୁଜ-ପଟଳଂ ସ୍ଫୋଟୟନ୍ତଂ",
+                            "meaning": "ନିଜ ଭୁଜଦଣ୍ଡରେ ଦୈତ୍ୟକୁ ବିଦାରଣ କରୁଥିବା"
+                        },
+                        {
+                            "word": "ଦିବି ଭୁବି ଦିତିଜଂ କ୍ଷେପୟନ୍ତଂ",
+                            "meaning": "ସ୍ୱର୍ଗ ଓ ପୃଥିବୀରେ ଅସୁରମାନଙ୍କୁ ନିକ୍ଷେପ କରୁଥିବା"
+                        },
+                        {
+                            "word": "ସଂହରନ୍ତଂ ଭରନ୍ତଂ",
+                            "meaning": "ଦୁଷ୍ଟମାନଙ୍କର ସଂହାର ଓ ଭକ୍ତମାନଙ୍କର ପାଳନକର୍ତ୍ତା"
+                        },
+                        {
+                            "word": "ଦିବ୍ୟ-ସିଂହଂ ନମାମି",
+                            "meaning": "ଦିବ୍ୟ ନରସିଂହ ପ୍ରଭୁଙ୍କୁ ପ୍ରଣାମ କରୁଛି"
+                        }
+                    ],
+                    "status": "COMPLETED"
+                }
+            ]
+        },
+        "published": true,
+        "verified": true,
+        "status": "COMPLETED"
     }
 ];
 

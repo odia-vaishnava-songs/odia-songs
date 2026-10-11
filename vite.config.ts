@@ -87,6 +87,13 @@ export default defineConfig({
       }
     }
   ],
+  server: {
+    port: 5174,
+    strictPort: true,
+    watch: {
+      ignored: ['**/backups/**', '**/scratch/**', '**/.git/**', '**/public/authors/**']
+    }
+  },
   build: {
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
