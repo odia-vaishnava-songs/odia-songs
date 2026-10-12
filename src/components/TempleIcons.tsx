@@ -83,6 +83,7 @@ export const BlessingChakra = ({ size = 24, color = 'currentColor' }: { size?: n
         
         {/* Center Golden Medallion Hub */}
         <circle cx="12" cy="12" r="4.2" fill={color} opacity="0.95" />
+        <circle cx="12" cy="12" r="4.2" stroke="#FFE082" strokeWidth="0.75" fill="none" opacity="0.9" />
         
         {/* Sacred Vaishnava Tilak Mark */}
         <path d="M 11.1 10.3 L 12 12.5 L 12.9 10.3 Z" fill="#FFE082" />

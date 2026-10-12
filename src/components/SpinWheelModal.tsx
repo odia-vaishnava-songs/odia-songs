@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, BookOpen, User } from 'lucide-react';
+import { X, User } from 'lucide-react';
 import { celebrateBlast, celebrate } from '../utils/celebration';
 import { DEFAULT_AUTHOR_SLICES, type SpinAuthorSlice, type AuthorSongItem } from '../data/spinWheelAuthors';
 import { RESOURCES } from '../data/resources';
@@ -291,19 +291,23 @@ export const SpinWheelModal: React.FC<{
 
 
     return (
-        <div style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 99999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(5, 4, 12, 0.9)',
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)',
-            padding: 'clamp(8px, 2vw, 20px)',
-            overflowY: 'auto'
-        }}>
+        <div 
+            className="spin-wheel-overlay"
+            style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 99999,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'rgba(5, 4, 12, 0.9)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                padding: 'clamp(6px, 1.5vw, 16px)',
+                overflowY: 'auto',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
+            }}>
             {/* Radial Background Sunburst Rays */}
             <div style={{
                 position: 'absolute',
@@ -313,24 +317,28 @@ export const SpinWheelModal: React.FC<{
             }} />
 
             {/* Modal Card (Responsive on Laptop & Mobile) */}
-            <div style={{
-                position: 'relative',
-                width: '100%',
-                maxWidth: 'min(94vw, 440px)',
-                maxHeight: 'min(95dvh, 720px)',
-                background: 'linear-gradient(180deg, #1b152d 0%, #0d0a17 100%)',
-                border: '1.5px solid rgba(255, 215, 0, 0.42)',
-                boxShadow: '0 25px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(126, 87, 194, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.15)',
-                borderRadius: 'clamp(18px, 3.5vw, 26px)',
-                padding: 'clamp(16px, 2.2vh, 24px) clamp(14px, 3vw, 22px)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                boxSizing: 'border-box',
-                overflowY: 'auto',
-                overflowX: 'hidden'
-            }}>
+            <div 
+                className="spin-wheel-card"
+                style={{
+                    position: 'relative',
+                    width: '100%',
+                    maxWidth: 'min(96vw, 490px)',
+                    maxHeight: 'min(97dvh, 780px)',
+                    background: 'linear-gradient(180deg, #1b152d 0%, #0d0a17 100%)',
+                    border: '1.5px solid rgba(255, 215, 0, 0.42)',
+                    boxShadow: '0 25px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(126, 87, 194, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.15)',
+                    borderRadius: 'clamp(18px, 3.5vw, 26px)',
+                    padding: 'clamp(12px, 1.8vh, 20px) clamp(8px, 2vw, 18px)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    boxSizing: 'border-box',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none'
+                }}>
                 {/* Close Button */}
                 <button
                     onClick={onClose}
@@ -338,8 +346,8 @@ export const SpinWheelModal: React.FC<{
                     title="Close"
                     style={{
                         position: 'absolute',
-                        top: 'clamp(10px, 1.8vh, 16px)',
-                        right: 'clamp(10px, 2vw, 16px)',
+                        top: 'clamp(8px, 1.5vh, 14px)',
+                        right: 'clamp(8px, 2vw, 14px)',
                         background: 'rgba(255, 255, 255, 0.12)',
                         border: 'none',
                         color: '#fff',
@@ -361,50 +369,58 @@ export const SpinWheelModal: React.FC<{
                     <X size={18} />
                 </button>
 
-                {/* Header Title (Fluid typography for all screens) */}
-                <h2 style={{
-                    margin: '0 0 4px',
-                    fontSize: 'clamp(1.22rem, 3.8vw, 1.55rem)',
-                    fontWeight: 800,
-                    color: '#FFE082',
-                    letterSpacing: '0.3px',
-                    lineHeight: 1.35,
-                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 215, 0, 0.4)',
-                    fontFamily: 'var(--font-odia-sans)'
-                }}>
-                    ଦୈନିକ ଲେଖକ ଆଶୀର୍ବାଦ ଚକ୍ର
-                </h2>
-                <p style={{
-                    margin: '0 0 clamp(4px, 1vh, 10px)',
-                    fontSize: 'clamp(0.72rem, 2.2vw, 0.82rem)',
-                    color: '#ded7f2',
-                    maxWidth: '92%',
-                    lineHeight: 1.5,
-                    fontFamily: 'var(--font-odia-sans)',
-                    fontWeight: 500
-                }}>
-                    ଘୁରାନ୍ତୁ ଏବଂ ପାଆନ୍ତୁ ଶ୍ରୀ ବୈଷ୍ଣବ ଆଚାର୍ଯ୍ୟଙ୍କ ଦିବ୍ୟ କୃପା ଓ ଆଶୀର୍ବାଦ
-                </p>
+                {/* Header Title: Only shown during wheel / spin phase, hidden on result screen */}
+                {!showRewardModal && (
+                    <>
+                        <h2 style={{
+                            margin: '0 0 3px',
+                            fontSize: 'clamp(1.16rem, 3.6vw, 1.52rem)',
+                            fontWeight: 800,
+                            color: '#FFE082',
+                            letterSpacing: '0.3px',
+                            lineHeight: 1.32,
+                            textShadow: '0 2px 4px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 215, 0, 0.4)',
+                            fontFamily: 'var(--font-odia-sans)'
+                        }}>
+                            ଦୈନିକ ଲେଖକ ଆଶୀର୍ବାଦ ଚକ୍ର
+                        </h2>
+                        <p style={{
+                            margin: '0 0 clamp(4px, 0.8vh, 8px)',
+                            fontSize: 'clamp(0.70rem, 2.1vw, 0.80rem)',
+                            color: '#ded7f2',
+                            maxWidth: '92%',
+                            lineHeight: 1.45,
+                            fontFamily: 'var(--font-odia-sans)',
+                            fontWeight: 500
+                        }}>
+                            ଘୁରାନ୍ତୁ ଏବଂ ପାଆନ୍ତୁ ଶ୍ରୀ ବୈଷ୍ଣବ ଆଚାର୍ଯ୍ୟଙ୍କ ଦିବ୍ୟ କୃପା ଓ ଆଶୀର୍ବାଦ
+                        </p>
+                    </>
+                )}
 
-                {/* THE WHEEL CONTAINER (Always visible; gracefully scales when result is displayed) */}
-                <div style={{
-                    position: 'relative',
-                    width: showRewardModal
-                        ? 'clamp(205px, min(64vw, 30vh), 260px)'
-                        : 'clamp(245px, min(75vw, 38vh), 315px)',
-                    height: showRewardModal
-                        ? 'clamp(205px, min(64vw, 30vh), 260px)'
-                        : 'clamp(245px, min(75vw, 38vh), 315px)',
-                    aspectRatio: '1 / 1',
-                    margin: showRewardModal
-                        ? 'clamp(1px, 0.4vh, 4px) 0 clamp(8px, 1.2vh, 12px)'
-                        : 'clamp(2px, 0.8vh, 6px) 0 clamp(10px, 1.5vh, 16px)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}>
+                {/* THE WHEEL CONTAINER (Grand size to fit mobile screens) */}
+                <div 
+                    onClick={!isSpinning && !showRewardModal ? handleSpin : undefined}
+                    style={{
+                        position: 'relative',
+                        width: showRewardModal
+                            ? 'clamp(280px, min(88vw, 44vh), 370px)'
+                            : 'clamp(310px, min(92vw, 50vh), 420px)',
+                        height: showRewardModal
+                            ? 'clamp(280px, min(88vw, 44vh), 370px)'
+                            : 'clamp(310px, min(92vw, 50vh), 420px)',
+                        aspectRatio: '1 / 1',
+                        margin: showRewardModal
+                            ? 'clamp(12px, 2vh, 18px) 0 clamp(6px, 1vh, 10px)'
+                            : 'clamp(4px, 0.8vh, 8px) 0 clamp(12px, 1.6vh, 18px)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        cursor: !isSpinning && !showRewardModal ? 'pointer' : 'default',
+                        transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                >
                     {/* Celestial Golden-Amethyst Halo behind the Wheel */}
                     <div style={{
                         position: 'absolute',
@@ -434,13 +450,15 @@ export const SpinWheelModal: React.FC<{
                         width: '100%',
                         height: '100%',
                         borderRadius: '50%',
+                        overflow: 'hidden',
+                        contain: 'paint',
                         transform: `rotate(${rotation}deg)`,
                         transition: isSpinning ? 'transform 4.5s cubic-bezier(0.12, 0.8, 0.2, 1)' : 'none',
                         willChange: 'transform'
                     }}>
                         <svg
                             viewBox="-160 -160 320 320"
-                            style={{ width: '100%', height: '100%', overflow: 'visible' }}
+                            style={{ width: '100%', height: '100%', overflow: 'hidden' }}
                         >
                             <defs>
                                 {/* Multi-Layer 3D Drop Shadow for Floating Petals */}
@@ -746,7 +764,8 @@ export const SpinWheelModal: React.FC<{
                         disabled={isSpinning}
                         style={{
                             position: 'relative',
-                            padding: 'clamp(6px, 1vh, 8px) clamp(20px, 4vw, 28px)',
+                            height: '42px',
+                            padding: '0 clamp(20px, 4vw, 28px)',
                             minWidth: 'clamp(170px, 42vw, 210px)',
                             background: isSpinning
                                 ? 'linear-gradient(135deg, #2b113d 0%, #160a22 100%)'
@@ -758,7 +777,7 @@ export const SpinWheelModal: React.FC<{
                             borderRadius: '24px',
                             cursor: isSpinning ? 'not-allowed' : 'pointer',
                             boxShadow: isSpinning
-                                ? '0 0 24px rgba(255, 215, 0, 0.6), 0 0 38px rgba(233, 30, 99, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.35)'
+                                ? '0 0 16px rgba(255, 215, 0, 0.5), 0 0 24px rgba(233, 30, 99, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.35)'
                                 : '0 6px 20px rgba(0, 0, 0, 0.65), 0 0 15px rgba(255, 215, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.25)',
                             animation: isSpinning ? 'pulseSpiritualGlow 1.8s infinite ease-in-out' : 'none',
                             transition: 'all 0.25s ease',
@@ -770,7 +789,7 @@ export const SpinWheelModal: React.FC<{
                             display: 'inline-flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            overflow: 'visible'
+                            boxSizing: 'border-box'
                         }}
                         onMouseEnter={(e) => {
                             if (!isSpinning) {
@@ -873,7 +892,7 @@ export const SpinWheelModal: React.FC<{
                     winningSlice && (
                         <div style={{
                             width: '100%',
-                            maxWidth: '390px',
+                            maxWidth: '430px',
                             background: 'linear-gradient(135deg, rgba(43, 17, 61, 0.96) 0%, rgba(22, 10, 34, 0.96) 100%)',
                             border: '1.5px solid #FFD54F',
                             borderRadius: '16px',
@@ -897,11 +916,11 @@ export const SpinWheelModal: React.FC<{
                             }}>
                                 {/* Author Avatar in Golden Frame */}
                                 <div style={{
-                                    width: '46px',
-                                    height: '46px',
+                                    width: '38px',
+                                    height: '38px',
                                     borderRadius: '50%',
                                     border: '2px solid #FFD54F',
-                                    boxShadow: '0 0 12px rgba(255, 215, 0, 0.65)',
+                                    boxShadow: '0 0 10px rgba(255, 215, 0, 0.6)',
                                     overflow: 'hidden',
                                     background: '#FFF8E1',
                                     display: 'flex',
@@ -923,51 +942,32 @@ export const SpinWheelModal: React.FC<{
                                             justifyContent: 'center',
                                             color: '#4A148C'
                                         }}>
-                                            <User size={26} color="#880E4F" />
+                                            <User size={22} color="#880E4F" />
                                         </div>
                                     )}
                                 </div>
 
-                                {/* Author Names */}
+                                {/* Author Name */}
                                 <div style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
-                                    {/* 1. Removed Blessing Label as requested */}
-                                    {/* 2. Made font a little smaller */}
                                     <h3 style={{
-                                        fontSize: 'clamp(0.92rem, 2.6vw, 1.05rem)',
-                                        fontWeight: 800,
+                                        fontSize: 'clamp(0.82rem, 2.3vw, 0.92rem)',
+                                        fontWeight: 700,
                                         margin: '0',
                                         color: '#FFFFFF',
                                         fontFamily: 'var(--font-odia-sans)',
-                                        lineHeight: 1.25,
-                                        textShadow: '0 1px 4px rgba(0,0,0,0.9), 0 0 10px rgba(255, 215, 0, 0.45)',
+                                        lineHeight: 1.4,
+                                        paddingTop: '2px',
+                                        textShadow: '0 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(255, 215, 0, 0.4)',
                                         whiteSpace: 'nowrap',
                                         overflow: 'hidden',
                                         textOverflow: 'ellipsis'
                                     }}>
                                         {winningSlice.authorNameOdia}
                                     </h3>
-                                    {/* 3. Subtitle: ତଳ ସଙ୍ଗୀତଟି ଖୋଲନ୍ତୁ */}
-                                    <div style={{
-                                        fontSize: '0.74rem',
-                                        color: '#FFE082',
-                                        fontWeight: 600,
-                                        fontFamily: 'var(--font-odia-sans)',
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '4px',
-                                        marginTop: '2px'
-                                    }}>
-                                        <span>✦</span>
-                                        <span>ତଳ ସଙ୍ଗୀତଟି ଖୋଲନ୍ତୁ</span>
-                                        <span>✦</span>
-                                    </div>
                                 </div>
                             </div>
 
-                            {/* 4. Show Song Name as per Acharya Spinned */}
+                            {/* 2: Song Name Card (Made text bigger & prominent with subtle golden pulse) */}
                             {selectedSongResult ? (
                                 <div
                                     onClick={() => {
@@ -983,54 +983,63 @@ export const SpinWheelModal: React.FC<{
                                     title="ଏହି ସଙ୍ଗୀତଟି ଖୋଲନ୍ତୁ"
                                     style={{
                                         width: '100%',
-                                        background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%)',
-                                        border: '1.2px solid rgba(255, 215, 0, 0.4)',
-                                        borderRadius: '10px',
-                                        padding: '7px 11px',
+                                        background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.16) 0%, rgba(255, 255, 255, 0.07) 100%)',
+                                        border: '1.5px solid rgba(255, 215, 0, 0.55)',
+                                        borderRadius: '12px',
+                                        padding: '9px 13px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'space-between',
-                                        gap: '8px',
+                                        gap: '10px',
                                         cursor: 'pointer',
-                                        boxShadow: '0 2px 10px rgba(0,0,0,0.35), inset 0 1px 2px rgba(255,255,255,0.1)',
+                                        boxShadow: '0 3px 12px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.12)',
                                         boxSizing: 'border-box',
-                                        transition: 'all 0.2s ease'
+                                        animation: 'subtleSongCardPulse 2.4s ease-in-out infinite',
+                                        transition: 'transform 0.2s ease, background 0.2s ease'
                                     }}
                                     onMouseEnter={(e) => {
+                                        e.currentTarget.style.animation = 'none';
                                         e.currentTarget.style.borderColor = '#FFD54F';
-                                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.22) 0%, rgba(255, 255, 255, 0.09) 100%)';
+                                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 255, 255, 0.12) 100%)';
                                         e.currentTarget.style.transform = 'translateY(-1px)';
+                                        e.currentTarget.style.boxShadow = '0 5px 22px rgba(255, 215, 0, 0.45), inset 0 1px 2px rgba(255,255,255,0.2)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.4)';
-                                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%)';
+                                        e.currentTarget.style.animation = 'subtleSongCardPulse 2.4s ease-in-out infinite';
+                                        e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.55)';
+                                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.16) 0%, rgba(255, 255, 255, 0.07) 100%)';
                                         e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.12)';
                                     }}
                                 >
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0, flex: 1, textAlign: 'left' }}>
-                                        <span style={{ fontSize: '1.15rem', flexShrink: 0 }}>🎵</span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: 1, textAlign: 'left' }}>
+                                        <span style={{ fontSize: '1.35rem', flexShrink: 0 }}>🎵</span>
                                         <div style={{ minWidth: 0, flex: 1 }}>
                                             <div style={{
-                                                fontSize: 'clamp(0.84rem, 2.4vw, 0.94rem)',
-                                                fontWeight: 800,
-                                                color: '#FFF8E1',
+                                                fontSize: 'clamp(1.02rem, 3.1vw, 1.20rem)',
+                                                fontWeight: 900,
+                                                color: '#FFFDE7',
                                                 fontFamily: 'var(--font-odia-sans)',
                                                 whiteSpace: 'nowrap',
                                                 overflow: 'hidden',
                                                 textOverflow: 'ellipsis',
-                                                lineHeight: 1.3
+                                                lineHeight: 1.55,
+                                                paddingTop: '5px',
+                                                paddingBottom: '2px',
+                                                textShadow: '0 2px 5px rgba(0,0,0,0.95), 0 0 14px rgba(255, 215, 0, 0.35)'
                                             }}>
                                                 {selectedSongResult.titleOdia}
                                             </div>
                                             {selectedSongResult.titleEnglish && (
                                                 <div style={{
-                                                    fontSize: '0.70rem',
-                                                    color: 'rgba(255, 248, 225, 0.72)',
+                                                    fontSize: '0.78rem',
+                                                    color: 'rgba(255, 248, 225, 0.85)',
                                                     fontWeight: 600,
                                                     whiteSpace: 'nowrap',
                                                     overflow: 'hidden',
                                                     textOverflow: 'ellipsis',
-                                                    lineHeight: 1.2
+                                                    lineHeight: 1.25,
+                                                    marginTop: '1px'
                                                 }}>
                                                     {selectedSongResult.titleEnglish}
                                                 </div>
@@ -1038,115 +1047,118 @@ export const SpinWheelModal: React.FC<{
                                         </div>
                                     </div>
                                     <div style={{
-                                        fontSize: '0.70rem',
-                                        fontWeight: 700,
-                                        color: '#FFE082',
-                                        background: 'rgba(255, 215, 0, 0.18)',
-                                        border: '1px solid rgba(255, 215, 0, 0.35)',
-                                        borderRadius: '6px',
-                                        padding: '3px 8px',
+                                        fontSize: '0.78rem',
+                                        fontWeight: 800,
+                                        color: '#3E2723',
+                                        background: 'linear-gradient(135deg, #FFE082 0%, #FFB300 100%)',
+                                        border: '1px solid #FFE082',
+                                        borderRadius: '8px',
+                                        padding: '4px 10px',
                                         whiteSpace: 'nowrap',
                                         flexShrink: 0,
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: '3px'
+                                        gap: '4px',
+                                        boxShadow: '0 2px 6px rgba(0,0,0,0.35)',
+                                        fontFamily: 'var(--font-odia-sans)'
                                     }}>
                                         <span>ଖୋଲନ୍ତୁ</span>
                                         <span>➔</span>
                                     </div>
                                 </div>
                             ) : (
-                                <div style={{
-                                    width: '100%',
-                                    background: 'rgba(255, 255, 255, 0.06)',
-                                    border: '1px solid rgba(255, 215, 0, 0.25)',
-                                    borderRadius: '10px',
-                                    padding: '7px 11px',
-                                    fontSize: 'clamp(0.78rem, 2.3vw, 0.86rem)',
-                                    color: '#FFF9C4',
-                                    fontFamily: 'var(--font-odia-sans)',
-                                    boxSizing: 'border-box'
-                                }}>
-                                    {winningSlice.authorNameOdia} ଭଜନ
+                                <div 
+                                    onClick={() => {
+                                        onClose();
+                                        if (onSelectAuthor) {
+                                            onSelectAuthor(winningSlice.authorNameEnglish);
+                                        }
+                                    }}
+                                    role="button"
+                                    tabIndex={0}
+                                    style={{
+                                        width: '100%',
+                                        background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.16) 0%, rgba(255, 255, 255, 0.07) 100%)',
+                                        border: '1.5px solid rgba(255, 215, 0, 0.45)',
+                                        borderRadius: '12px',
+                                        padding: '9px 13px',
+                                        fontSize: 'clamp(0.95rem, 2.8vw, 1.10rem)',
+                                        fontWeight: 800,
+                                        color: '#FFF9C4',
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        boxSizing: 'border-box',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between'
+                                    }}
+                                >
+                                    <span>{winningSlice.authorNameOdia} ଭଜନ</span>
+                                    <span style={{
+                                        fontSize: '0.78rem',
+                                        fontWeight: 800,
+                                        color: '#3E2723',
+                                        background: 'linear-gradient(135deg, #FFE082 0%, #FFB300 100%)',
+                                        border: '1px solid #FFE082',
+                                        borderRadius: '8px',
+                                        padding: '4px 10px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '4px'
+                                    }}>
+                                        <span>ଖୋଲନ୍ତୁ</span>
+                                        <span>➔</span>
+                                    </span>
                                 </div>
                             )}
 
-                            {/* Action Buttons */}
+                            {/* 4: Spin Again Button (Properly positioned, centered & user-friendly) */}
                             <div style={{
                                 display: 'flex',
-                                gap: '8px',
                                 justifyContent: 'center',
-                                width: '100%'
+                                alignItems: 'center',
+                                width: '100%',
+                                marginTop: '2px'
                             }}>
                                 <button
                                     onClick={() => {
                                         handleSpin();
                                     }}
                                     style={{
-                                        flex: 1,
-                                        padding: '9px 12px',
-                                        borderRadius: '10px',
-                                        border: '1.2px solid rgba(255, 215, 0, 0.45)',
-                                        background: 'rgba(255, 255, 255, 0.1)',
+                                        padding: '8px 26px',
+                                        minWidth: '170px',
+                                        borderRadius: '22px',
+                                        border: '1.3px solid rgba(255, 215, 0, 0.5)',
+                                        background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%)',
                                         color: '#FFF8E1',
                                         fontWeight: 700,
-                                        fontSize: '0.85rem',
+                                        fontSize: '0.86rem',
                                         cursor: 'pointer',
                                         display: 'inline-flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        gap: '5px',
-                                        transition: 'all 0.2s ease'
+                                        gap: '6px',
+                                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15)',
+                                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                                        touchAction: 'manipulation',
+                                        userSelect: 'none',
+                                        WebkitTapHighlightColor: 'transparent'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.18)';
+                                        e.currentTarget.style.background = 'linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)';
                                         e.currentTarget.style.borderColor = '#FFD54F';
+                                        e.currentTarget.style.boxShadow = '0 4px 14px rgba(255, 215, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.25)';
+                                        e.currentTarget.style.transform = 'translateY(-1px)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                                        e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.45)';
+                                        e.currentTarget.style.background = 'linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%)';
+                                        e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.5)';
+                                        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15)';
+                                        e.currentTarget.style.transform = 'translateY(0)';
                                     }}
                                 >
-                                    🔄 Spin Again
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        onClose();
-                                        if (selectedSongResult && onSelectSong) {
-                                            onSelectSong(selectedSongResult);
-                                        } else if (onSelectAuthor) {
-                                            onSelectAuthor(winningSlice.authorNameEnglish);
-                                        }
-                                    }}
-                                    style={{
-                                        flex: 1.25,
-                                        padding: '9px 14px',
-                                        borderRadius: '10px',
-                                        border: 'none',
-                                        background: 'linear-gradient(135deg, #FFD54F 0%, #FF8F00 100%)',
-                                        color: '#3E2723',
-                                        fontWeight: 800,
-                                        fontSize: '0.88rem',
-                                        cursor: 'pointer',
-                                        boxShadow: '0 4px 15px rgba(255, 143, 0, 0.45)',
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        gap: '5px',
-                                        transition: 'all 0.2s ease',
-                                        fontFamily: 'var(--font-odia-sans)'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1.02)';
-                                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 143, 0, 0.6)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = 'scale(1)';
-                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 143, 0, 0.45)';
-                                    }}
-                                >
-                                    <BookOpen size={15} />
-                                    <span>ଭଜନ ଦେଖନ୍ତୁ</span>
+                                    <span style={{ fontSize: '0.95rem' }}>🔄</span>
+                                    <span>Spin Again</span>
                                 </button>
                             </div>
                         </div>
@@ -1154,6 +1166,20 @@ export const SpinWheelModal: React.FC<{
                 )}
 
                 <style>{`
+                    /* Suppress all scrollbars to eliminate white bar flickering */
+                    .spin-wheel-card::-webkit-scrollbar,
+                    .spin-wheel-overlay::-webkit-scrollbar {
+                        display: none !important;
+                        width: 0px !important;
+                        height: 0px !important;
+                        background: transparent !important;
+                    }
+                    .spin-wheel-card,
+                    .spin-wheel-overlay {
+                        -ms-overflow-style: none !important;
+                        scrollbar-width: none !important;
+                    }
+
                     @keyframes pulseTextGlow {
                         0% {
                             color: #FFE082;
@@ -1194,6 +1220,20 @@ export const SpinWheelModal: React.FC<{
                         100% {
                             box-shadow: 0 0 16px rgba(255, 215, 0, 0.45), 0 0 30px rgba(126, 87, 194, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
                             border-color: rgba(255, 215, 0, 0.65);
+                        }
+                    }
+                    @keyframes subtleSongCardPulse {
+                        0% {
+                            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 215, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.12);
+                            border-color: rgba(255, 215, 0, 0.5);
+                        }
+                        50% {
+                            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.48), 0 0 20px rgba(255, 215, 0, 0.45), inset 0 1px 3px rgba(255, 255, 255, 0.25);
+                            border-color: #FFE082;
+                        }
+                        100% {
+                            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 215, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.12);
+                            border-color: rgba(255, 215, 0, 0.5);
                         }
                     }
                     @keyframes popIn {

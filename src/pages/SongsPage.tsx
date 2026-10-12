@@ -2116,7 +2116,7 @@ export const SongsPage: React.FC = () => {
                     onClick={() => setIsSpinWheelOpen(true)}
                     title="ଦୈନିକ ଲେଖକ ଆଶୀର୍ବାଦ ଚକ୍ର (Daily Acharya Blessing Wheel)"
                     style={{
-                        background: 'linear-gradient(135deg, #FFE082 0%, #FFA000 100%)',
+                        background: 'linear-gradient(135deg, #FFF176 0%, #FFB300 50%, #FF8F00 100%)',
                         color: '#4A148C',
                         borderRadius: '12px',
                         width: '40px',
@@ -2124,23 +2124,25 @@ export const SongsPage: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        border: '1.5px solid rgba(255, 215, 0, 0.7)',
+                        border: '1.5px solid rgba(255, 238, 88, 0.85)',
                         cursor: 'pointer',
-                        boxShadow: '0 2px 10px rgba(255, 143, 0, 0.45)',
+                        boxShadow: '0 3px 12px rgba(255, 143, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6)',
                         flexShrink: 0,
-                        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                        transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease',
                         position: 'relative'
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'scale(1.08)';
-                        e.currentTarget.style.boxShadow = '0 4px 14px rgba(255, 143, 0, 0.6)';
+                        e.currentTarget.style.boxShadow = '0 5px 16px rgba(255, 143, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.8)';
                     }}
                     onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.boxShadow = '0 2px 10px rgba(255, 143, 0, 0.45)';
+                        e.currentTarget.style.boxShadow = '0 3px 12px rgba(255, 143, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6)';
                     }}
                 >
-                    <TempleIcons.BlessingChakra size={22} color="#4A148C" />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', filter: 'drop-shadow(0 1px 2px rgba(74, 20, 140, 0.28))' }}>
+                        <TempleIcons.BlessingChakra size={28} color="#4A148C" />
+                    </div>
                     <span style={{
                         position: 'absolute',
                         top: '-5px',
@@ -2155,7 +2157,8 @@ export const SongsPage: React.FC = () => {
                         fontFamily: 'var(--font-odia-sans)',
                         letterSpacing: '0.2px',
                         boxShadow: '0 2px 5px rgba(0,0,0,0.4)',
-                        pointerEvents: 'none'
+                        pointerEvents: 'none',
+                        zIndex: 2
                     }}>
                         କୃପା
                     </span>
