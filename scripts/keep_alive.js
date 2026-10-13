@@ -1,18 +1,25 @@
-import 'dotenv/config';
+// Native .env loader for local development (Node 20.6+) without needing external packages
+if (typeof process.loadEnvFile === 'function') {
+  try {
+    process.loadEnvFile();
+  } catch {
+    // Ignore error if .env file is not found (e.g. in CI/GitHub Actions)
+  }
+}
 
-// This script pings the Supabase REST API to prevent the project from being paused due to inactivity.
-// It uses the native fetch API available in Node.js 18+.
+// Fallback to project's public Supabase credentials if environment variables are not set in GitHub Secrets
+const DEFAULT_SUPABASE_URL = 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
+const DEFAULT_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjc29xaGRrZGZrenFkbHhxbWR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwNzY5ODAsImV4cCI6MjA4NzY1Mjk4MH0.rKZQkigexFy6w1ui99ARuxee6US5hPaTTLRTaASZ2Ec';
 
-const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = (process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL).trim();
+const supabaseKey = (process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_KEY).trim();
 
 if (!supabaseUrl || !supabaseKey) {
   console.error('Error: Missing SUPABASE_URL or SUPABASE_ANON_KEY environment variables.');
   process.exit(1);
 }
 
-// We just need a simple GET request to any table to register activity.
-// Using the 'songs' table and limiting to 1 result for efficiency.
+// Simple GET request to songs table to register activity
 const url = `${supabaseUrl}/rest/v1/songs?select=id&limit=1`;
 
 async function ping() {
@@ -26,18 +33,18 @@ async function ping() {
         'Content-Type': 'application/json'
       }
     });
-    
+
     if (response.ok) {
       const data = await response.json();
-      console.log('Success! Project activity recorded.');
+      console.log('✅ Success! Supabase project activity recorded.');
       console.log('Response sample:', data);
     } else {
       const text = await response.text();
-      console.error(`Ping failed with status ${response.status}:`, text);
+      console.error(`❌ Ping failed with status ${response.status}:`, text);
       process.exit(1);
     }
   } catch (err) {
-    console.error('Network error while pinging Supabase:', err.message);
+    console.error('❌ Network error while pinging Supabase:', err.message);
     process.exit(1);
   }
 }
