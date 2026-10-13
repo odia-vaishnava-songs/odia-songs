@@ -65,12 +65,12 @@ export const AdminPortalPage: React.FC = () => {
 
             const { data: songAssignments, error: sErr } = await supabase
                 .from('songs')
-                .select('assigned_to, status, verified');
+                .select('assigned_to, status');
             if (sErr) throw sErr;
 
             const userStats = (profiles as User[]).map(p => {
                 const assigned = (songAssignments || []).filter(s => s.assigned_to === p.id);
-                const completed = assigned.filter((s: any) => s.status === 'COMPLETED' || s.verified).length;
+                const completed = assigned.filter((s: any) => s.status === 'COMPLETED').length;
                 return {
                     ...p,
                     assignedSongCount: assigned.length,

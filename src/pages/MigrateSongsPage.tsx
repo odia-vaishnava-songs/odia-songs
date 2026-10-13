@@ -51,7 +51,6 @@ export const MigrateSongsPage: React.FC = () => {
                         audio_url: song.audioUrl,
                         audio_versions: song.audioVersions,
                         author: song.author,
-                        verified: song.verified || false,
                         published: true
                     }, { onConflict: 'id' });
 

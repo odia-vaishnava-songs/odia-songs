@@ -26,7 +26,11 @@ export interface FormattedVerse {
 export const getFormattedVerseDisplay = (lyric: string, verseId: string | number): FormattedVerse => {
     if (!lyric) return { lyricText: '', markerText: '' };
 
-    const trimmed = lyric.trim();
+    let trimmed = lyric.trim();
+
+    // Strip redundant leading verse numbering/label (e.g. "(୧)", "(୨)", "(1)", "(ଘୋଷା)", "(ଫଳଶ୍ରୁତି)", "୧.", etc.)
+    trimmed = trimmed.replace(/^\s*[\(\[\{]\s*([୦-୯\d]+|ଘୋଷା|ghosa|refrain|ଫଳଶ୍ରୁତି)\s*[\)\]\}]\s*[:.-]?\s*/i, '').trim();
+    trimmed = trimmed.replace(/^\s*([୦-୯\d]+)\s*[:.-]\s*/, '').trim();
 
     // Check if the lyric already has an ending verse marker (e.g. ।।୧।।, ।। 1 ।।, |୧|, (୧), ।। ଘୋଷା ।।)
     const match = trimmed.match(/([।॥|/()\[\]]{1,2}\s*([\d୦-୯]+|ଘୋଷା)\s*[।॥|/()\[\]]{1,2}|\b[\d୦-୯]+\s*[।॥|])\s*$/i);
@@ -50,10 +54,12 @@ export const getFormattedVerseDisplay = (lyric: string, verseId: string | number
 
     const strId = String(verseId).trim().toLowerCase();
     const isGhosa = strId === 'ଘୋଷା' || strId === 'ghosa' || strId === 'refrain' || strId === '0';
-    const marker = isGhosa ? '।। ଘୋଷା ।।' : `।। ${toOdiaNumber(verseId)} ।।`;
+    const isPhalasruti = strId === 'ଫଳଶ୍ରୁତି' || strId === 'phalasruti';
+    const marker = isGhosa ? '।। ଘୋଷା ।।' : (isPhalasruti ? '।। ଫଳଶ୍ରୁତି ।।' : `।। ${toOdiaNumber(verseId)} ।।`);
 
     return {
         lyricText: cleanedText,
         markerText: marker
     };
 };
+

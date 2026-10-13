@@ -16,14 +16,16 @@ export const useSongs = () => {
         const supabaseIds = new Set(supabaseSongs.map(s => s.id));
         const combined = [...supabaseSongs].map(s => ({
             ...s,
-            author: standardizeAuthorName(s.author || '')
+            author: standardizeAuthorName(s.author || ''),
+            verified: true
         }));
 
         LOCAL_RESOURCES.forEach(local => {
             if (!supabaseIds.has(local.id)) {
                 combined.push({
                     ...local,
-                    author: standardizeAuthorName(local.author || '')
+                    author: standardizeAuthorName(local.author || ''),
+                    verified: true
                 });
             }
         });
@@ -41,7 +43,7 @@ export const useSongs = () => {
 
             const fetchPromise = supabase
                 .from('songs')
-                .select('id, title, title_odia, title_english, tags, views, original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, vocalist, audio_source, author, verified, status, assigned_to, published')
+                .select('id, title, title_odia, title_english, tags, views, original_lang, display_order, category, type, description, content, structuredContent:structured_content, audioUrl:audio_url, audioVersions:audio_versions, vocalist, audio_source, author, status, assigned_to, published')
                 .order('display_order', { ascending: true });
 
             const result: any = await Promise.race([fetchPromise, timeoutPromise]);

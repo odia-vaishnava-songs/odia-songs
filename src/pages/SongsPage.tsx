@@ -73,13 +73,13 @@ const FilterMenuItem: React.FC<{
                 <span style={{ fontSize: '0.6rem', fontWeight: 600, opacity: 0.7, fontFamily: 'var(--font-odia-sans)' }}>{odia}</span>
             </div>
             {active && (
-                <div style={{ 
-                    position: 'absolute', 
-                    right: '12px', 
-                    width: '6px', 
-                    height: '6px', 
-                    borderRadius: '50%', 
-                    backgroundColor: '#16a34a' 
+                <div style={{
+                    position: 'absolute',
+                    right: '12px',
+                    width: '6px',
+                    height: '6px',
+                    borderRadius: '50%',
+                    backgroundColor: '#16a34a'
                 }} />
             )}
         </button>
@@ -94,6 +94,7 @@ export const SongsPage: React.FC = () => {
     const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
+    const isNightMode = currentThemeKey === 'advaita';
     const { songs, loading, error } = useSongs();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSong, setSelectedSong] = useState<Resource | null>(null);
@@ -126,6 +127,24 @@ export const SongsPage: React.FC = () => {
     const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
     const [activeLetter, setActiveLetter] = useState<string | null>(null);
+    const [isLetterVisibleOnMobile, setIsLetterVisibleOnMobile] = useState(false);
+    const letterTimeoutRef = useRef<any>(null);
+
+    useEffect(() => {
+        if (!activeLetter || searchQuery.trim() !== '') {
+            setIsLetterVisibleOnMobile(false);
+            return;
+        }
+        setIsLetterVisibleOnMobile(true);
+        if (letterTimeoutRef.current) clearTimeout(letterTimeoutRef.current);
+        letterTimeoutRef.current = setTimeout(() => {
+            setIsLetterVisibleOnMobile(false);
+        }, 1800);
+
+        return () => {
+            if (letterTimeoutRef.current) clearTimeout(letterTimeoutRef.current);
+        };
+    }, [activeLetter, searchQuery]);
     const [isListening, setIsListening] = useState(false);
     const [isThemeListExpanded, setIsThemeListExpanded] = useState(false);
     const [recentIds, setRecentIds] = useState<string[]>(() => {
@@ -299,17 +318,17 @@ export const SongsPage: React.FC = () => {
             if (error) throw error;
 
             const counts: Record<string, number> = {};
-            
+
             // 1. Process songs and assign to correct authors based on CATALOG
             data.forEach(s => {
                 const songTitle = (s as any).title_english || (s as any).title || '';
                 const songOdia = (s as any).title_odia || '';
-                
+
                 // Find if this song belongs to a specific author in our catalog
-                const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                const catalogMatch = AUTHOR_CATALOG.find(cat =>
                     cat.catalog.some(catSong => (catSong.id && catSong.id === s.id) || isTitleMatch(catSong.title_english, songTitle, catSong.title_odia, songOdia))
                 );
-                
+
                 const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName((s as any).author || '');
                 counts[authorName] = (counts[authorName] || 0) + 1;
             });
@@ -317,7 +336,7 @@ export const SongsPage: React.FC = () => {
             // 2. Count local-only resources
             songResources.forEach(s => {
                 if (!data.some(dbS => dbS.id === s.id)) {
-                    const catalogMatch = AUTHOR_CATALOG.find(cat => 
+                    const catalogMatch = AUTHOR_CATALOG.find(cat =>
                         cat.catalog.some(catSong => (catSong.id && catSong.id === s.id) || isTitleMatch(catSong.title_english, s.title_english || s.title, catSong.title_odia, s.title_odia))
                     );
                     const authorName = catalogMatch ? catalogMatch.name : standardizeAuthorName(s.author || '');
@@ -342,12 +361,12 @@ export const SongsPage: React.FC = () => {
                 const catalogEntry = AUTHOR_CATALOG.find(cat => cat.name === name);
                 const totalAvailable = counts[name] || 0;
                 const totalInCatalog = catalogEntry ? catalogEntry.catalog.length : 0;
-                
+
                 // Calculate how many of the available songs are actually in the catalog
                 let availableInCatalog = 0;
                 if (catalogEntry) {
                     const authorSongs = authorToSongs[name] || [];
-                    availableInCatalog = catalogEntry.catalog.filter(cs => 
+                    availableInCatalog = catalogEntry.catalog.filter(cs =>
                         authorSongs.some(s => (cs.id && cs.id === s.id) || isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia))
                     ).length;
                 } else {
@@ -371,7 +390,7 @@ export const SongsPage: React.FC = () => {
                     if (othersIndex !== -1) {
                         merged[othersIndex].count += count;
                         // For stray authors, we treat count as total since we don't have a catalog
-                        merged[othersIndex].total += count; 
+                        merged[othersIndex].total += count;
                     }
                 }
             });
@@ -465,10 +484,10 @@ export const SongsPage: React.FC = () => {
                 const allTokensMatch = tokens.every(token => {
                     const tNorm = normalizeForSearch(token);
                     const tAgg = normalizeForSearch(token, true);
-                    const matchTitle = normTitleOdia.includes(tNorm) || normTitleEng.includes(tNorm) || 
-                                       (tAgg.length >= 3 && normalizeForSearch(s.title_english || '', true).includes(tAgg));
-                    const matchTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(tNorm) || 
-                                      (tAgg.length >= 3 && normalizeForSearch(tag || '', true).includes(tAgg)));
+                    const matchTitle = normTitleOdia.includes(tNorm) || normTitleEng.includes(tNorm) ||
+                        (tAgg.length >= 3 && normalizeForSearch(s.title_english || '', true).includes(tAgg));
+                    const matchTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(tNorm) ||
+                        (tAgg.length >= 3 && normalizeForSearch(tag || '', true).includes(tAgg)));
                     const matchAuthor = normAuthor.includes(tNorm);
                     return matchTitle || matchTags || matchAuthor;
                 });
@@ -483,6 +502,7 @@ export const SongsPage: React.FC = () => {
     const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
     const scrollToSection = (letter: string) => {
+        setActiveLetter(letter);
         const element = sectionRefs.current[letter];
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -886,14 +906,14 @@ export const SongsPage: React.FC = () => {
 
         return (
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ 
+                <div style={{
                     display: 'flex',
                     gap: '16px',
                     flexWrap: 'wrap',
                     padding: '10px 5px 20px',
                 }}>
                     {/* CARD 1: TEMPLE SONGS */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
@@ -903,13 +923,13 @@ export const SongsPage: React.FC = () => {
                             background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#ff7e0015',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -918,7 +938,7 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ମନ୍ଦିର ଗୀତ</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ମନ୍ଦିର ଗୀତ</div>
                             <div style={engTitleStyle}>Temple Songs</div>
                         </div>
                         <div style={{
@@ -935,7 +955,7 @@ export const SongsPage: React.FC = () => {
                     </div>
 
                     {/* CARD 2: PRANAMA MANTRAS */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
@@ -945,13 +965,13 @@ export const SongsPage: React.FC = () => {
                             background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#0084ff15',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -960,13 +980,13 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
                             <div style={engTitleStyle}>Pranama Mantras</div>
                         </div>
                     </div>
 
                     {/* CARD 3: ASTAKAM (New) */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
@@ -976,13 +996,13 @@ export const SongsPage: React.FC = () => {
                             background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#e11d4815',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -991,13 +1011,13 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ଅଷ୍ଟକମ୍</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଅଷ୍ଟକମ୍</div>
                             <div style={engTitleStyle}>Astakam</div>
                         </div>
                     </div>
 
                     {/* CARD 3: SEARCH BY AUTHOR */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             fetchAuthorStats();
@@ -1007,13 +1027,13 @@ export const SongsPage: React.FC = () => {
                             background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#16a34a15',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -1022,29 +1042,29 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ଲେଖକ ଅନୁସାରେ</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଲେଖକ ଅନୁସାରେ</div>
                             <div style={engTitleStyle}>By Author</div>
                         </div>
                     </div>
 
                     {/* CARD 4: ALL SONGS */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
-                            setSearchQuery(''); 
+                            setSearchQuery('');
                         }}
                         style={{
                             background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#8b5cf615',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -1053,13 +1073,13 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ସମସ୍ତ ଗୀତ</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ସମସ୍ତ ଗୀତ</div>
                             <div style={engTitleStyle}>All Songs</div>
                         </div>
                     </div>
 
                     {/* CARD 5: RECENTLY VIEWED (On new row if 4 cards per row) */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
@@ -1070,13 +1090,13 @@ export const SongsPage: React.FC = () => {
                             background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: '#fb718515',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
@@ -1085,13 +1105,13 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem'}}>ଏବେ ପଢ଼ାହୋଇଛି</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଏବେ ପଢ଼ାହୋଇଛି</div>
                             <div style={engTitleStyle}>Recently Viewed</div>
                         </div>
                     </div>
 
                     {/* CARD 6: SPIN TO WIN WHEEL */}
-                    <div 
+                    <div
                         className="category-card"
                         onClick={() => setIsSpinWheelOpen(true)}
                         style={{
@@ -1101,13 +1121,13 @@ export const SongsPage: React.FC = () => {
                             cursor: 'pointer'
                         }}
                     >
-                        <div style={{ 
-                            width: '50px', 
-                            height: '50px', 
-                            borderRadius: '12px', 
+                        <div style={{
+                            width: '50px',
+                            height: '50px',
+                            borderRadius: '12px',
                             background: 'linear-gradient(135deg, #FFD54F 0%, #FF8F00 100%)',
-                            display: 'flex', 
-                            alignItems: 'center', 
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0,
                             boxShadow: '0 2px 8px rgba(255, 143, 0, 0.35)'
@@ -1117,8 +1137,8 @@ export const SongsPage: React.FC = () => {
                             </div>
                         </div>
                         <div>
-                            <div style={{...titleStyle, fontSize: '1rem', color: '#B45309'}}>ଆଶୀର୍ବାଦ ଚକ୍ର</div>
-                            <div style={{...engTitleStyle, color: '#D97706', fontWeight: 700}}>Acharya Blessing Wheel 🪷</div>
+                            <div style={{ ...titleStyle, fontSize: '1rem', color: '#B45309' }}>ଆଶୀର୍ବାଦ ଚକ୍ର</div>
+                            <div style={{ ...engTitleStyle, color: '#D97706', fontWeight: 700 }}>Acharya Blessing Wheel 🪷</div>
                         </div>
                     </div>
                 </div>
@@ -1130,20 +1150,30 @@ export const SongsPage: React.FC = () => {
         if (!selectedSong) return null;
 
         const isNightMode = currentThemeKey === 'advaita';
-        const cardBg = isNightMode ? '#1E1E1E' : '#fff';
-        const textColor = isNightMode ? '#e2e8f0' : '#111';
-        const titleColor = isNightMode ? '#fff' : '#000';
-        const borderColor = isNightMode ? '#334155' : '#ddd';
+        const cardBg = isNightMode ? '#1E293B' : '#f4f5f8';
+        const textColor = isNightMode ? '#e2e8f0' : '#1e293b';
+        const cardShadow = isNightMode
+            ? '0 4px 14px rgba(0, 0, 0, 0.45)'
+            : '0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)';
+        const cardBorder = isNightMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.05)';
 
         if (!selectedSong.structuredContent) {
             return (
                 <div id="song-content" style={{
-                    background: cardBg, padding: '3rem 2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-                    lineHeight: '1.9', color: textColor, fontFamily: "var(--font-odia-sans)", fontSize: `${fontSize}px`,
-                    border: `1px solid ${borderColor}`, margin: '1.5rem 0.4rem', textAlign: 'center'
+                    background: cardBg,
+                    padding: '2rem 1.5rem',
+                    borderRadius: '8px',
+                    boxShadow: cardShadow,
+                    lineHeight: '1.9',
+                    color: textColor,
+                    fontFamily: "var(--font-odia-sans)",
+                    fontSize: `${fontSize}px`,
+                    border: cardBorder,
+                    margin: '0',
+                    width: '100%',
+                    boxSizing: 'border-box',
+                    textAlign: 'center'
                 }}>
-                    <h1 style={{ fontSize: '1.75rem', color: titleColor, margin: '0 0 0.5rem', fontWeight: 900, lineHeight: '1.2', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                    {selectedSong.author && <div style={{ color: isNightMode ? '#94a3b8' : '#666', fontSize: '1.2rem', marginBottom: '1.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
                     <div style={{ whiteSpace: 'pre-wrap', color: textColor, fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.content}</div>
                 </div>
             );
@@ -1151,21 +1181,24 @@ export const SongsPage: React.FC = () => {
 
         const { verses } = selectedSong.structuredContent;
         const isGita = selectedSong.category === 'Gita' || selectedSong.category === 'G' || selectedSong.id.startsWith('gita-') || selectedSong.id === 'song-gitamahatmya';
-        const verseLabel = isGita ? 'ଶ୍ଲୋକ' : 'ପାଠ';
 
         if (viewMode === 'sequential') {
             return (
-                <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingBottom: '4rem' }}>
-                    <div style={{ padding: '0.5rem 0 0', margin: '0 0.4rem', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '1.4rem', fontWeight: 900, margin: '0', color: titleColor, lineHeight: '1.1', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                        {selectedSong.author && <div style={{ fontSize: '0.85rem', color: isNightMode ? '#94a3b8' : '#666', marginTop: '0.2rem', marginBottom: '0.5rem', fontWeight: 500, fontFamily: 'var(--font-sans)' }}>{selectedSong.author}</div>}
-
-                        <div style={{ height: '1px', background: isNightMode ? '#334155' : '#eee', margin: '0.5rem 0 0.5rem' }} />
-
+                <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '10px', paddingBottom: '0', width: '100%', boxSizing: 'border-box' }}>
+                    <div style={{
+                        background: cardBg,
+                        padding: '1.5rem 1.25rem',
+                        borderRadius: '8px',
+                        border: cardBorder,
+                        boxShadow: cardShadow,
+                        margin: '0',
+                        textAlign: 'center',
+                        width: '100%',
+                        boxSizing: 'border-box'
+                    }}>
                         {verses.map((verse, idx) => {
                             let speakerLine = '';
                             let mainLyric = verse.lyric;
-                            // ... parsing logic remained the same ...
                             const firstLineMatch = verse.lyric.match(/^([^\n]+)\n/);
                             if (firstLineMatch) {
                                 let potentialSpeaker = firstLineMatch[1].trim();
@@ -1215,7 +1248,7 @@ export const SongsPage: React.FC = () => {
                                                 fontSize: speakerLine ? `${fontSize * 1.2}px` : `${fontSize * 1.1}px`,
                                                 fontWeight: 400,
                                                 fontFamily: 'var(--font-odia-sans)',
-                                                lineHeight: '1.6'
+                                                lineHeight: '1.7'
                                             }}>
                                                 {lyricText}{' '}
                                                 <span style={{ whiteSpace: 'nowrap' }}>
@@ -1229,12 +1262,29 @@ export const SongsPage: React.FC = () => {
                         })}
                     </div>
                     {verses.some(v => v.translation?.trim()) && (
-                        <div style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '12px', border: `1px solid ${borderColor}`, margin: '0 0.4rem', textAlign: 'center' }}>
-                            <div style={{ fontSize: '1rem', color: isNightMode ? theme.color : '#8A5082', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '2px', borderBottom: `2px solid ${isNightMode ? '#334155' : '#f0f0f0'}`, display: 'inline-block' }}>ଅନୁବାଦ (Translation)</div>
+                        <div style={{
+                            background: cardBg,
+                            padding: '1.5rem 1.25rem',
+                            borderRadius: '8px',
+                            border: cardBorder,
+                            boxShadow: cardShadow,
+                            margin: '0',
+                            textAlign: 'left',
+                            width: '100%',
+                            boxSizing: 'border-box'
+                        }}>
+                            <div style={{ fontSize: '1rem', color: isNightMode ? theme.accent : theme.color, fontWeight: 800, marginBottom: '1.5rem', letterSpacing: '1px', textAlign: 'center' }}>ଅନୁବାଦ (Translation)</div>
                             {verses.map((verse, idx) => verse.translation?.trim() && (
                                 <div key={`trans-${verse.id}`} style={{ marginBottom: idx === verses.length - 1 ? 0 : '1.5rem' }}>
-                                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#94a3b8' : '#888', marginBottom: '0.25rem' }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
-                                    <div style={{ color: textColor, fontSize: `${fontSize}px`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600 }}>{verse.translation}</div>
+                                    <div style={{ fontSize: '0.85rem', color: isNightMode ? '#94a3b8' : '#64748b', marginBottom: '0.25rem', fontWeight: 700 }}>
+                                        {isGita ? `ଶ୍ଲୋକ ${toOdiaNumber(verse.id)}` : (() => {
+                                            const rawLeading = verse.lyric?.match(/^\s*[\(\[\{]\s*(ଘୋଷା|ghosa|refrain|ଫଳଶ୍ରୁତି)\s*[\)\]\}]/i);
+                                            const isGhosa = verse.id.toString().toLowerCase().includes('ghosa') || verse.id === '0' || verse.id === 0 || Boolean(rawLeading && /ଘୋଷା|ghosa|refrain/i.test(rawLeading[1]));
+                                            const isPhalasruti = verse.id.toString().toLowerCase().includes('phalasruti') || Boolean(rawLeading && /ଫଳଶ୍ରୁତି/i.test(rawLeading[1]));
+                                            return isGhosa ? 'ଘୋଷା' : (isPhalasruti ? 'ଫଳଶ୍ରୁତି' : toOdiaNumber(verse.id));
+                                        })()}
+                                    </div>
+                                    <div style={{ color: isNightMode ? '#cbd5e1' : '#334155', fontSize: `${fontSize}px`, fontFamily: 'var(--font-odia-sans)', fontWeight: 500, lineHeight: '1.6' }}>{verse.translation}</div>
                                 </div>
                             ))}
                         </div>
@@ -1244,24 +1294,23 @@ export const SongsPage: React.FC = () => {
         }
 
         return (
-            <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '1rem 0.4rem' }}>
-                <div style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
-                    <h1 style={{ fontSize: '1.75rem', fontWeight: 900, color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), lineHeight: '1.2', marginBottom: '0.35rem', fontFamily: 'var(--font-odia-sans)' }}>{getOdiaTitle(selectedSong)}</h1>
-                    {selectedSong.title_english && <div style={{ fontSize: '1rem', color: isNightMode ? '#94a3b8' : '#666', marginBottom: '0.35rem', fontWeight: 500 }}>{selectedSong.title_english}</div>}
-                    <div style={{ fontSize: '0.9rem', color: isNightMode ? '#cbd5e1' : getStatusColor(selectedSong.status, selectedSong.verified), opacity: 0.9, marginBottom: '0.35rem' }}>
-                        {(() => {
-                            const catalogMatch = AUTHOR_CATALOG.find(cat => 
-                                cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
-                            );
-                            return catalogMatch ? catalogMatch.name : standardizeAuthorName(selectedSong.author || '');
-                        })()}
+            <div id="song-content" style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', boxSizing: 'border-box' }}>
+                {selectedSong.description && (
+                    <div style={{
+                        background: cardBg,
+                        padding: '1rem 1.25rem',
+                        borderRadius: '8px',
+                        border: cardBorder,
+                        boxShadow: cardShadow,
+                        textAlign: 'center',
+                        fontSize: '0.95rem',
+                        color: isNightMode ? '#e2e8f0' : '#334155',
+                        fontWeight: 600,
+                        fontFamily: 'var(--font-odia-sans)'
+                    }}>
+                        {selectedSong.description}
                     </div>
-                    {selectedSong.description && (
-                        <div style={{ fontSize: '0.95rem', color: isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified), fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-odia-sans)' }}>{selectedSong.description}</div>
-                    )}
-
-
-                </div>
+                )}
 
                 {verses.map((verse) => {
                     // Check for speaker
@@ -1273,7 +1322,6 @@ export const SongsPage: React.FC = () => {
                         let potentialSpeaker = firstLineMatch[1].trim();
                         let detectedKey = '';
 
-                        // Robust substring matching bypasses invisible unicode chars and database typos
                         if (potentialSpeaker.includes('ଭଗବାନୁବାଚ') || (potentialSpeaker.includes('ଶ୍ରୀଭଗବାନ') && (potentialSpeaker.includes('ଉବାଚ') || potentialSpeaker.length < 15))) {
                             detectedKey = 'ଶ୍ରୀଭଗବାନୁବାଚ';
                         } else if (potentialSpeaker.includes('ଅର୍ଜୁନ ଉବାଚ') || potentialSpeaker === 'ଅର୍ଜୁନ' || potentialSpeaker === 'ଅର୍ଜୁନ ଉବାଚ') {
@@ -1290,31 +1338,63 @@ export const SongsPage: React.FC = () => {
                         }
                     }
 
+                    const rawLeading = verse.lyric?.match(/^\s*[\(\[\{]\s*(ଘୋଷା|ghosa|refrain|ଫଳଶ୍ରୁତି)\s*[\)\]\}]/i);
+                    const isGhosa = verse.id.toString().toLowerCase().includes('ghosa') ||
+                        verse.id === '0' || verse.id === 0 ||
+                        Boolean(rawLeading && /ଘୋଷା|ghosa|refrain/i.test(rawLeading[1]));
+                    const isPhalasruti = verse.id.toString().toLowerCase().includes('phalasruti') ||
+                        Boolean(rawLeading && /ଫଳଶ୍ରୁତି/i.test(rawLeading[1]));
+
+                    const displayVerseNum = isGita
+                        ? `(ଶ୍ଲୋକ ${toOdiaNumber(verse.id)})`
+                        : isGhosa
+                            ? '(ଘୋଷା)'
+                            : isPhalasruti
+                                ? '(ଫଳଶ୍ରୁତି)'
+                                : `(${toOdiaNumber(verse.id)})`;
+
                     return (
-                        <div key={verse.id} style={{ background: cardBg, padding: '1.5rem 1rem', borderRadius: '8px', textAlign: 'center', border: `1px solid ${borderColor}`, position: 'relative' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '1.25rem' }}>
-                                <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
-                                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: theme.color, letterSpacing: '1px', opacity: 0.8 }}>{verseLabel} {toOdiaNumber(verse.id)}</div>
-                                <div style={{ height: '1px', flex: 1, background: isNightMode ? '#334155' : '#eee' }} />
+                        <div
+                            key={verse.id}
+                            style={{
+                                background: cardBg,
+                                padding: '1.25rem 1.25rem',
+                                borderRadius: '8px',
+                                border: cardBorder,
+                                boxShadow: cardShadow,
+                                width: '100%',
+                                boxSizing: 'border-box',
+                                position: 'relative'
+                            }}
+                        >
+                            <div style={{
+                                fontSize: '0.95rem',
+                                fontWeight: 700,
+                                color: isNightMode ? '#94a3b8' : '#475569',
+                                marginBottom: '0.75rem',
+                                textAlign: 'center'
+                            }}>
+                                {displayVerseNum}
                             </div>
 
                             {speakerLine && (
-                                <div style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '8px',
-                                    padding: '4px 12px',
-                                    borderRadius: '20px',
-                                    background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
-                                    color: SPEAKER_MAP[speakerLine].color,
-                                    fontSize: '0.9rem',
-                                    fontWeight: 800,
-                                    marginBottom: '1.5rem',
-                                    border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
-                                    fontFamily: 'var(--font-odia-sans)'
-                                }}>
-                                    {SPEAKER_MAP[speakerLine].icon}
-                                    {SPEAKER_MAP[speakerLine].label}
+                                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                                    <div style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '8px',
+                                        padding: '4px 12px',
+                                        borderRadius: '20px',
+                                        background: isNightMode ? SPEAKER_MAP[speakerLine].color + '20' : SPEAKER_MAP[speakerLine].color + '15',
+                                        color: SPEAKER_MAP[speakerLine].color,
+                                        fontSize: '0.9rem',
+                                        fontWeight: 800,
+                                        border: `1px solid ${SPEAKER_MAP[speakerLine].color}40`,
+                                        fontFamily: 'var(--font-odia-sans)'
+                                    }}>
+                                        {SPEAKER_MAP[speakerLine].icon}
+                                        {SPEAKER_MAP[speakerLine].label}
+                                    </div>
                                 </div>
                             )}
 
@@ -1324,11 +1404,12 @@ export const SongsPage: React.FC = () => {
                                     <div style={{
                                         whiteSpace: 'pre-wrap',
                                         color: verse.status ? getStatusColor(verse.status) : (isNightMode ? '#fff' : getStatusColor(selectedSong.status, selectedSong.verified)),
-                                        fontSize: speakerLine ? `${fontSize * 1.3}px` : `${fontSize * 1.15}px`,
+                                        fontSize: speakerLine ? `${fontSize * 1.25}px` : `${fontSize * 1.15}px`,
                                         fontWeight: 600,
                                         fontFamily: 'var(--font-odia-sans)',
-                                        marginBottom: '1.5rem',
-                                        lineHeight: '1.6'
+                                        textAlign: 'center',
+                                        lineHeight: '1.7',
+                                        marginBottom: (verse.translation && verse.translation.trim()) || (viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0) ? '1.25rem' : '0'
                                     }}>
                                         {lyricText}{' '}
                                         <span style={{ whiteSpace: 'nowrap' }}>
@@ -1339,18 +1420,36 @@ export const SongsPage: React.FC = () => {
                             })()}
 
                             {viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0 && (
-                                <div style={{ margin: '2rem 0', padding: '1.5rem', background: isNightMode ? '#0f172a' : '#f8fafc', borderRadius: '8px', border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}` }}>
-                                    <div style={{ lineHeight: '1.8', fontSize: `${fontSize * 0.85}px`, color: isNightMode ? '#cbd5e1' : '#334155' }}>
+                                <div style={{
+                                    margin: '1.25rem 0',
+                                    padding: '1rem 1.25rem',
+                                    background: isNightMode ? '#0f172a' : '#ffffff',
+                                    borderRadius: '8px',
+                                    border: `1px dashed ${isNightMode ? '#334155' : '#cbd5e1'}`,
+                                    textAlign: 'left'
+                                }}>
+                                    <div style={{ lineHeight: '1.8', fontSize: `${fontSize * 0.9}px`, color: isNightMode ? '#cbd5e1' : '#334155' }}>
                                         {verse.wordMeanings.map((wm, i) => (
                                             <React.Fragment key={i}>
-                                                <span style={{ fontWeight: 700, color: isNightMode ? theme.color : '#2563eb' }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
+                                                <span style={{ fontWeight: 700, color: isNightMode ? theme.accent : theme.color }}>{wm.word}</span> — {wm.meaning}{i < verse.wordMeanings!.length - 1 ? '; ' : ''}
                                             </React.Fragment>
                                         ))}
                                     </div>
                                 </div>
                             )}
+
                             {verse.translation && verse.translation.trim() !== '' && (
-                                <div style={{ color: textColor, fontSize: `${fontSize}px`, paddingTop: '1.5rem', borderTop: `1px solid ${isNightMode ? '#334155' : '#eee'}`, fontFamily: 'var(--font-odia-sans)', fontWeight: 600, lineHeight: '1.5' }}>{verse.translation}</div>
+                                <div style={{
+                                    color: isNightMode ? '#cbd5e1' : '#334155',
+                                    fontSize: `${fontSize}px`,
+                                    fontFamily: 'var(--font-odia-sans)',
+                                    fontWeight: 500,
+                                    lineHeight: '1.6',
+                                    textAlign: 'left',
+                                    marginTop: '1rem'
+                                }}>
+                                    {verse.translation}
+                                </div>
                             )}
                         </div>
                     );
@@ -1379,26 +1478,26 @@ export const SongsPage: React.FC = () => {
 
         const isNightMode = currentThemeKey === 'advaita';
 
-        // Match the image's "TEXT" button pagination aesthetic
         const btnStyleBase: React.CSSProperties = {
-            background: isNightMode ? '#2a2015' : '#e6cbaa',
-            color: isNightMode ? '#eedfc8' : '#221100',
-            border: `1px solid ${isNightMode ? '#463520' : '#d2b694'}`,
-            padding: '8px 14px',
-            borderRadius: '6px',
-            fontSize: '1rem',
+            background: isNightMode ? '#1e293b' : '#f4f5f8',
+            color: isNightMode ? '#f1f5f9' : '#0f172a',
+            border: `1px solid ${isNightMode ? '#334155' : 'rgba(0,0,0,0.1)'}`,
+            padding: '8px 16px',
+            borderRadius: '8px',
+            fontSize: '0.95rem',
             fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontWeight: 600,
+            fontWeight: 700,
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
+            boxShadow: '0 2px 5px rgba(0,0,0,0.15)',
             transition: 'all 0.2s ease',
             letterSpacing: '0.5px'
         };
 
         return (
-            <div style={{ padding: '2rem 0.5rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ padding: '1rem 0.5rem 0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                     {prevChapter && (
                         <button
@@ -1535,7 +1634,7 @@ export const SongsPage: React.FC = () => {
         const availableSongs = songResources.filter(s => {
             const standardized = standardizeAuthorName(s.author || '');
             if (standardized.toLowerCase() === selectedAuthor.toLowerCase()) return true;
-            return AUTHOR_CATALOG.find(a => a.name === selectedAuthor)?.catalog.some(cs => 
+            return AUTHOR_CATALOG.find(a => a.name === selectedAuthor)?.catalog.some(cs =>
                 (cs.id && cs.id === s.id) || isTitleMatch(cs.title_english, s.title_english || s.title, cs.title_odia, s.title_odia)
             ) || false;
         });
@@ -1547,7 +1646,7 @@ export const SongsPage: React.FC = () => {
         // Build merged list: catalog songs enriched with resource match
         let mergedList = fullCatalog.map(cs => {
             // Try to find matching resource using ID or centralized fuzzy logic
-            const resource = availableSongs.find(r => 
+            const resource = availableSongs.find(r =>
                 (cs.id && r.id === cs.id) || isTitleMatch(cs.title_english, r.title_english || r.title, cs.title_odia, r.title_odia)
             );
             return { ...cs, resource };
@@ -1555,7 +1654,7 @@ export const SongsPage: React.FC = () => {
 
         // Also add any songs in resources NOT in catalog
         availableSongs.forEach(r => {
-            const alreadyListed = mergedList.some(m => 
+            const alreadyListed = mergedList.some(m =>
                 (m.id && r.id === m.id) || isTitleMatch(m.title_english, r.title_english || r.title, m.title_odia, r.title_odia)
             );
             if (!alreadyListed) {
@@ -1579,9 +1678,19 @@ export const SongsPage: React.FC = () => {
             }}>
                 {/* Header */}
                 <header style={{
-                    display: 'flex', alignItems: 'center', padding: '0.85rem 1rem',
-                    background: 'rgba(0,0,0,0.18)', color: '#fff',
-                    backdropFilter: 'blur(10px)', gap: '0.75rem', flexShrink: 0
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: '56px',
+                    minHeight: '56px',
+                    maxHeight: '56px',
+                    padding: '0 0.75rem',
+                    background: theme.gradient,
+                    color: '#fff',
+                    gap: '0.6rem',
+                    flexShrink: 0,
+                    boxSizing: 'border-box',
+                    borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.18)'
                 }}>
                     <button
                         onClick={() => {
@@ -1589,9 +1698,9 @@ export const SongsPage: React.FC = () => {
                             setIsAuthorPanelOpen(true);
                             popBackHandler('selected-author');
                         }}
-                        style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '8px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}
+                        style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', cursor: 'pointer', flexShrink: 0, boxSizing: 'border-box' }}
                     >
-                        <ArrowLeft size={26} strokeWidth={2.5} />
+                        <ArrowLeft size={24} strokeWidth={2.2} />
                     </button>
                     <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontSize: '1.05rem', fontWeight: 900, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -1697,34 +1806,97 @@ export const SongsPage: React.FC = () => {
     }
 
     if (selectedSong) {
+        const isNightMode = currentThemeKey === 'advaita';
+        const songBg = isNightMode ? '#0f172a' : (theme.songBg || theme.accent || '#00CBFE');
         return (
-            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: theme.gradient, zIndex: 4000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
+            <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: songBg, zIndex: 4000, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                 {renderReaderToolbelt()}
-                <header style={{ display: 'flex', alignItems: 'center', padding: '0.75rem 1rem', background: 'rgba(0,0,0,0.15)', color: '#fff', backdropFilter: 'blur(10px)' }}>
-                    <button onClick={handleCloseDetail} style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', padding: '6px', borderRadius: '12px', display: 'flex', border: 'none', cursor: 'pointer' }}>
-                        <ArrowLeft size={28} strokeWidth={2.5} />
+                <header style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: '56px',
+                    minHeight: '56px',
+                    maxHeight: '56px',
+                    padding: '0 0.75rem',
+                    background: theme.gradient,
+                    color: '#fff',
+                    gap: '0.6rem',
+                    flexShrink: 0,
+                    boxSizing: 'border-box',
+                    borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
+                    zIndex: 10
+                }}>
+                    <button
+                        onClick={handleCloseDetail}
+                        aria-label="ପଛକୁ ଫେରନ୍ତୁ (Back)"
+                        style={{
+                            background: 'rgba(255,255,255,0.18)',
+                            color: '#fff',
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '1px solid rgba(255,255,255,0.22)',
+                            cursor: 'pointer',
+                            flexShrink: 0,
+                            boxSizing: 'border-box',
+                            transition: 'all 0.18s ease'
+                        }}
+                    >
+                        <ArrowLeft size={22} strokeWidth={2.4} />
                     </button>
-                    <div style={{ flex: 1, minWidth: 0, marginLeft: '1rem' }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff' }}>
+                    <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                        <div style={{
+                            fontSize: '1.14rem',
+                            fontWeight: 700,
+                            fontFamily: 'var(--font-odia-sans)',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.4rem',
+                            color: '#fff',
+                            lineHeight: 1.4,
+                            paddingTop: '4px',
+                            paddingBottom: '1px'
+                        }}>
                             {getOdiaTitle(selectedSong)}
-                            {selectedSong.verified && <CheckCircle2 size={18} color="#4fd1c5" />}
+                            {selectedSong.verified && <CheckCircle2 size={16} color="#4fd1c5" style={{ flexShrink: 0 }} />}
                         </div>
-                        <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>
-                            {selectedSong.title_english || (() => {
-                                const catalogMatch = AUTHOR_CATALOG.find(cat => 
-                                    cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
-                                );
-                                return catalogMatch ? catalogMatch.name : standardizeAuthorName(selectedSong.author || '');
+                        <div style={{
+                            fontSize: '0.72rem',
+                            opacity: 0.85,
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                            lineHeight: 1.2,
+                            marginTop: '0px'
+                        }}>
+                            {(() => {
+                                const authorName = (() => {
+                                    const catalogMatch = AUTHOR_CATALOG.find(cat =>
+                                        cat.catalog.some(catSong => isTitleMatch(catSong.title_english, selectedSong.title_english || selectedSong.title, catSong.title_odia, selectedSong.title_odia))
+                                    );
+                                    return catalogMatch ? catalogMatch.name : standardizeAuthorName(selectedSong.author || '');
+                                })();
+                                if (selectedSong.title_english && authorName && selectedSong.title_english.toLowerCase() !== authorName.toLowerCase()) {
+                                    return `${selectedSong.title_english} • ${authorName}`;
+                                }
+                                return selectedSong.title_english || authorName || '';
                             })()}
                         </div>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
                         {selectedSong.structuredContent && (
                             (() => {
                                 const availableModes = [
-                                    { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={22} /> },
-                                    ...(selectedSong.structuredContent.verses.some((v: any) => v.translation?.trim()) ? [{ id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={22} /> }] : []),
-                                    ...(selectedSong.structuredContent.verses.some((v: any) => (v.wordMeanings?.length ?? 0) > 0) ? [{ id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={22} /> }] : [])
+                                    { id: 'sequential', label: 'କେବଳ ଗୀତ', eng: 'Lyrics Only', icon: <BookText size={20} /> },
+                                    ...(selectedSong.structuredContent.verses.some((v: any) => v.translation?.trim()) ? [{ id: 'combined', label: 'ଗୀତ + ଅନୁବାଦ', eng: 'Combined', icon: <BookOpen size={20} /> }] : []),
+                                    ...(selectedSong.structuredContent.verses.some((v: any) => (v.wordMeanings?.length ?? 0) > 0) ? [{ id: 'word-to-word', label: 'ଶବ୍ଦାର୍ଥ', eng: 'Word Meaning', icon: <BookA size={20} /> }] : [])
                                 ];
                                 const currentIndex = availableModes.findIndex(m => m.id === viewMode);
                                 const currentMode = availableModes[currentIndex !== -1 ? currentIndex : 0];
@@ -1738,59 +1910,36 @@ export const SongsPage: React.FC = () => {
                                 if (availableModes.length <= 1) return null;
 
                                 return (
-                                    <button 
-                                        onClick={handleToggleMode} 
+                                    <button
+                                        onClick={handleToggleMode}
                                         title={`Current: ${currentMode.eng}. Click to change view.`}
                                         style={{
-                                            background: 'rgba(255,255,255,0.2)',
+                                            background: 'rgba(255,255,255,0.18)',
                                             color: '#fff',
-                                            borderRadius: '50%',
-                                            width: '38px',
-                                            height: '38px',
+                                            borderRadius: '10px',
+                                            width: '40px',
+                                            height: '40px',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            backdropFilter: 'blur(4px)',
-                                            border: 'none',
+                                            border: '1px solid rgba(255,255,255,0.22)',
                                             cursor: 'pointer',
-                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                            marginRight: '0.2rem'
+                                            boxSizing: 'border-box',
+                                            transition: 'all 0.18s ease'
                                         }}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1.1)';
-                                            e.currentTarget.style.background = 'rgba(255,255,255,0.3)';
+                                            e.currentTarget.style.transform = 'translateY(-1px)';
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.28)';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.transform = 'scale(1)';
-                                            e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
                                         }}
                                     >
                                         {currentMode.icon}
                                     </button>
                                 );
                             })()
-                        )}
-                        {(user?.role?.toLowerCase() === 'admin' || user?.role?.toLowerCase() === 'subadmin') && (
-                            <button
-                                onClick={async () => {
-                                    try {
-                                        const { error } = await supabase
-                                            .from('songs')
-                                            .update({ verified: !selectedSong.verified })
-                                            .eq('id', selectedSong.id);
-
-                                        if (error) throw error;
-                                        setSelectedSong({ ...selectedSong, verified: !selectedSong.verified });
-                                    } catch (err) {
-                                        console.error(err);
-                                        alert("Error updating verification");
-                                    }
-                                }}
-                                style={{ background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', padding: '6px', borderRadius: '50%', display: 'flex' }}
-                                title={selectedSong.verified ? "Verified" : "Mark as verified"}
-                            >
-                                {selectedSong.verified ? <CheckCircle2 size={24} /> : <Circle size={24} />}
-                            </button>
                         )}
                     </div>
                 </header>
@@ -1799,22 +1948,22 @@ export const SongsPage: React.FC = () => {
                     style={{
                         flex: 1,
                         overflowY: 'auto',
-                        padding: '0.4rem',
-                        background: viewMode === 'sequential' ? (currentThemeKey === 'advaita' ? '#0f172a' : '#ffffff') : 'transparent'
+                        padding: '8px 8px 8px',
+                        background: songBg,
+                        boxSizing: 'border-box',
+                        width: '100%'
                     }}
                 >
-                    <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '160px' }}>
+                    <div style={{ width: '100%', margin: '0 auto', boxSizing: 'border-box' }}>
                         {renderSongContent()}
                         {renderChapterNavigation()}
                     </div>
                 </main>
                 <div style={{
-                    height: '90px',
                     width: '100%',
-                    display: 'flex',
-                    alignItems: 'flex-end',
                     position: 'relative',
                     zIndex: 1001,
+                    flexShrink: 0,
                     background: 'transparent'
                 }}>
                     <div style={{ margin: '0 auto', width: '100%', position: 'relative' }}>
@@ -1842,7 +1991,7 @@ export const SongsPage: React.FC = () => {
     }
 
     return (
-        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'white', overflow: 'hidden' }}>
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: isNightMode ? '#0f172a' : '#f8fafc', overflow: 'hidden' }}>
             <style>{`
                 /* KILL THE BIG DEFAULT BARS Globally */
                 html, body {
@@ -1872,6 +2021,14 @@ export const SongsPage: React.FC = () => {
                 
                 *::-webkit-scrollbar-thumb:hover {
                     background: ${theme.color}A0;
+                }
+
+                @media (min-width: 920px) {
+                    .letter-indicator-badge {
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        transform: scale(1) !important;
+                    }
                 }
 
                 .gita-card {
@@ -1965,33 +2122,60 @@ export const SongsPage: React.FC = () => {
                 }
             `}</style>
             <header style={{
-                background: theme.gradient,
-                padding: '0.85rem 1rem',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem',
+                height: '56px',
+                minHeight: '56px',
+                maxHeight: '56px',
+                padding: '0 0.75rem',
+                background: theme.gradient,
                 color: '#fff',
+                gap: '0.6rem',
                 position: 'sticky',
                 top: 0,
                 zIndex: 10,
-                boxShadow: 'var(--shadow-md)'
+                flexShrink: 0,
+                boxSizing: 'border-box',
+                borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.18)'
             }}>
                 <button
                     onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
+                    aria-label="ମୁଖ୍ୟ ମେନୁ (Menu)"
                     style={{
-                        background: 'rgba(255,255,255,0.2)',
+                        background: 'rgba(255, 255, 255, 0.16)',
                         color: '#fff',
-                        borderRadius: '12px',
-                        width: '42px',
-                        height: '42px',
+                        borderRadius: '10px',
+                        width: '40px',
+                        height: '40px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        backdropFilter: 'blur(4px)',
-                        flexShrink: 0
+                        backdropFilter: 'blur(6px)',
+                        border: '1px solid rgba(255, 255, 255, 0.22)',
+                        cursor: 'pointer',
+                        flexShrink: 0,
+                        boxSizing: 'border-box',
+                        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
+                        transition: 'all 0.18s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                        e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2)';
+                    }}
+                    onMouseDown={(e) => {
+                        e.currentTarget.style.transform = 'translateY(1px)';
+                        e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseUp={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-1px)';
                     }}
                 >
-                    <Menu size={22} />
+                    <Menu size={20} />
                 </button>
                 <style>{`
                     @keyframes fadeInScale {
@@ -1999,20 +2183,28 @@ export const SongsPage: React.FC = () => {
                         to { opacity: 1; transform: scale(1); }
                     }
                 `}</style>
-                <div className="modern-searchbar-wrap" style={{ flex: 1, minWidth: 0, position: 'relative', height: '40px', display: 'flex', alignItems: 'center' }}>
+                <div className="modern-searchbar-wrap" style={{
+                    flex: 1,
+                    minWidth: 0,
+                    position: 'relative',
+                    height: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    boxSizing: 'border-box'
+                }}>
                     {error && (
                         <div style={{
                             position: 'absolute',
-                            top: '-20px',
+                            top: '-18px',
                             left: '0',
-                            fontSize: '0.7rem',
+                            fontSize: '0.68rem',
                             color: '#ff4444',
                             opacity: 0.9
                         }}>
                             {error}
                         </div>
                     )}
-                    <Search size={17} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#71717a', pointerEvents: 'none', zIndex: 2 }} />
+                    <Search size={16} style={{ position: 'absolute', left: '0.7rem', top: '50%', transform: 'translateY(-50%)', color: '#71717a', pointerEvents: 'none', zIndex: 2 }} />
                     <input
                         type="text"
                         placeholder="ଭଜନ କିମ୍ବା ଗୀତ ଖୋଜନ୍ତୁ..."
@@ -2020,23 +2212,23 @@ export const SongsPage: React.FC = () => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onFocus={(e) => {
                             e.currentTarget.style.borderColor = '#FF9933';
-                            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 153, 51, 0.2)';
+                            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 153, 51, 0.25), 0 3px 8px rgba(0, 0, 0, 0.1)';
                         }}
                         onBlur={(e) => {
-                            e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)';
-                            e.currentTarget.style.boxShadow = 'none';
+                            e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                            e.currentTarget.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.08)';
                         }}
                         style={{
                             width: '100%',
                             height: '40px',
                             lineHeight: '40px',
                             boxSizing: 'border-box',
-                            padding: '0 4.2rem 0 2.25rem',
+                            padding: '0 4rem 0 2.15rem',
                             borderRadius: '10px',
-                            border: '1px solid rgba(0, 0, 0, 0.12)',
+                            border: '1px solid rgba(0, 0, 0, 0.08)',
                             backgroundColor: '#ffffff',
-                            fontSize: '0.92rem',
-                            boxShadow: 'none',
+                            fontSize: '0.88rem',
+                            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.08)',
                             color: '#1a1a1a',
                             outline: 'none',
                             transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
@@ -2045,7 +2237,7 @@ export const SongsPage: React.FC = () => {
                     />
                     <div style={{
                         position: 'absolute',
-                        right: '0.4rem',
+                        right: '0.35rem',
                         top: '50%',
                         transform: 'translateY(-50%)',
                         display: 'flex',
@@ -2054,8 +2246,8 @@ export const SongsPage: React.FC = () => {
                         zIndex: 2
                     }}>
                         {loading && (
-                            <div style={{ padding: '4px', display: 'flex', alignItems: 'center' }} title="ଅପଡେଟ୍ ହେଉଛି...">
-                                <Spinner size={16} color="#FF9933" />
+                            <div style={{ padding: '3px', display: 'flex', alignItems: 'center' }} title="ଅପଡେଟ୍ ହେଉଛି...">
+                                <Spinner size={15} color="#FF9933" />
                             </div>
                         )}
                         <button
@@ -2069,7 +2261,7 @@ export const SongsPage: React.FC = () => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                padding: '5px',
+                                padding: '4px',
                                 borderRadius: '6px',
                                 transition: 'all 0.2s ease',
                                 animation: isListening ? 'pulse-mic 1.5s infinite' : 'none'
@@ -2077,7 +2269,7 @@ export const SongsPage: React.FC = () => {
                             onMouseEnter={(e) => !isListening && (e.currentTarget.style.backgroundColor = '#f3f4f6')}
                             onMouseLeave={(e) => !isListening && (e.currentTarget.style.backgroundColor = 'transparent')}
                         >
-                            <Mic size={16} />
+                            <Mic size={15} />
                         </button>
                         {searchQuery && (
                             <button
@@ -2091,14 +2283,14 @@ export const SongsPage: React.FC = () => {
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     cursor: 'pointer',
-                                    padding: '5px',
+                                    padding: '4px',
                                     borderRadius: '6px',
                                     transition: 'background 0.2s ease'
                                 }}
                                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f3f4f6')}
                                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                             >
-                                <X size={16} />
+                                <X size={15} />
                             </button>
                         )}
                     </div>
@@ -2118,7 +2310,7 @@ export const SongsPage: React.FC = () => {
                     style={{
                         background: 'linear-gradient(135deg, #FFF176 0%, #FFB300 50%, #FF8F00 100%)',
                         color: '#4A148C',
-                        borderRadius: '12px',
+                        borderRadius: '10px',
                         width: '40px',
                         height: '40px',
                         display: 'flex',
@@ -2126,37 +2318,42 @@ export const SongsPage: React.FC = () => {
                         justifyContent: 'center',
                         border: '1.5px solid rgba(255, 238, 88, 0.85)',
                         cursor: 'pointer',
-                        boxShadow: '0 3px 12px rgba(255, 143, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6)',
+                        boxShadow: '0 3px 8px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.6)',
                         flexShrink: 0,
+                        boxSizing: 'border-box',
                         transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease',
                         position: 'relative'
                     }}
                     onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.08)';
-                        e.currentTarget.style.boxShadow = '0 5px 16px rgba(255, 143, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.8)';
+                        e.currentTarget.style.transform = 'translateY(-1px) scale(1.06)';
+                        e.currentTarget.style.boxShadow = '0 5px 12px rgba(0, 0, 0, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.8)';
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.boxShadow = '0 3px 12px rgba(255, 143, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.6)';
+                        e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                        e.currentTarget.style.boxShadow = '0 3px 8px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.6)';
+                    }}
+                    onMouseDown={(e) => {
+                        e.currentTarget.style.transform = 'translateY(1px) scale(0.98)';
+                        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.2)';
                     }}
                 >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', filter: 'drop-shadow(0 1px 2px rgba(74, 20, 140, 0.28))' }}>
-                        <TempleIcons.BlessingChakra size={28} color="#4A148C" />
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <TempleIcons.BlessingChakra size={25} color="#4A148C" />
                     </div>
                     <span style={{
                         position: 'absolute',
                         top: '-5px',
-                        right: '-6px',
+                        right: '-5px',
                         background: 'linear-gradient(135deg, #C2185B 0%, #880E4F 100%)',
                         color: '#FFF9C4',
-                        fontSize: '8.5px',
+                        fontSize: '8px',
                         fontWeight: 900,
-                        padding: '1px 5px',
-                        borderRadius: '6px',
-                        border: '1.5px solid #FFE082',
+                        padding: '1px 4.5px',
+                        borderRadius: '5px',
+                        border: '1.2px solid #FFE082',
                         fontFamily: 'var(--font-odia-sans)',
                         letterSpacing: '0.2px',
-                        boxShadow: '0 2px 5px rgba(0,0,0,0.4)',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
                         pointerEvents: 'none',
                         zIndex: 2
                     }}>
@@ -2164,21 +2361,44 @@ export const SongsPage: React.FC = () => {
                     </span>
                 </button>
 
-                <button onClick={() => setIsSettingsPanelOpen(true)} style={{
-                    background: isSettingsPanelOpen ? theme.color : 'rgba(255,255,255,0.2)',
-                    color: '#fff',
-                    borderRadius: '50%',
-                    width: '40px',
-                    height: '40px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backdropFilter: 'blur(4px)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                }}>
-                    <SlidersHorizontal size={20} />
+                <button
+                    onClick={() => setIsSettingsPanelOpen(true)}
+                    title="ସେଟିଂସ୍ (Settings)"
+                    aria-label="ସେଟିଂସ୍ (Settings)"
+                    style={{
+                        background: 'rgba(255, 255, 255, 0.16)',
+                        color: '#fff',
+                        borderRadius: '10px',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backdropFilter: 'blur(6px)',
+                        border: '1px solid rgba(255, 255, 255, 0.22)',
+                        cursor: 'pointer',
+                        flexShrink: 0,
+                        boxSizing: 'border-box',
+                        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
+                        transition: 'all 0.18s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                        e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.24), inset 0 1px 1px rgba(255, 255, 255, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2)';
+                    }}
+                    onMouseDown={(e) => {
+                        e.currentTarget.style.transform = 'translateY(1px)';
+                        e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.2)';
+                    }}
+                    onMouseUp={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                    }}
+                >
+                    <SlidersHorizontal size={18} />
                 </button>
                 {isFilterMenuOpen && (
                     <>
@@ -2212,27 +2432,27 @@ export const SongsPage: React.FC = () => {
                         }}>
                             {/* SECTION: FILTERS */}
                             <div style={{ padding: '1rem 0 0.5rem' }}>
-                                <div style={{ 
-                                    padding: '0 1.25rem 0.5rem', 
-                                    fontSize: '0.7rem', 
-                                    fontWeight: 900, 
-                                    color: theme.color, 
-                                    textTransform: 'uppercase', 
+                                <div style={{
+                                    padding: '0 1.25rem 0.5rem',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 900,
+                                    color: theme.color,
+                                    textTransform: 'uppercase',
                                     letterSpacing: '1px',
                                     opacity: 0.8
                                 }}>Filters</div>
-                                
-                                <FilterMenuItem 
-                                    icon={<BookA size={18} />} 
-                                    label="Alphabetical" 
+
+                                <FilterMenuItem
+                                    icon={<BookA size={18} />}
+                                    label="Alphabetical"
                                     odia="ଅକ୍ଷର ଅନୁକ୍ରମଣିକା"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
-                                <div 
+                                <div
                                     onClick={() => {
                                         setIsFilterMenuOpen(false);
                                         fetchAuthorStats();
@@ -2275,51 +2495,51 @@ export const SongsPage: React.FC = () => {
                                         <Users size={26} strokeWidth={2.5} />
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                        <span style={{ 
-                                            fontSize: '1.05rem', 
-                                            fontWeight: 900, 
+                                        <span style={{
+                                            fontSize: '1.05rem',
+                                            fontWeight: 900,
                                             color: '#064e3b',
                                             fontFamily: 'var(--font-odia-sans)',
                                             lineHeight: '1.2'
                                         }}>ଲେଖକ ଅନୁସାରେ</span>
-                                        <span style={{ 
-                                            fontSize: '0.65rem', 
-                                            fontWeight: 800, 
+                                        <span style={{
+                                            fontSize: '0.65rem',
+                                            fontWeight: 800,
                                             color: '#64748b',
                                             letterSpacing: '0.5px',
                                             marginTop: '2px'
                                         }}>BY AUTHOR</span>
                                     </div>
                                 </div>
-                                <FilterMenuItem 
-                                    icon={<TempleIcons.TempleShikhara size={18} />} 
-                                    label="Temple Songs" 
+                                <FilterMenuItem
+                                    icon={<TempleIcons.TempleShikhara size={18} />}
+                                    label="Temple Songs"
                                     odia="ମନ୍ଦିର ଗୀତ"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('Temple');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
-                                <FilterMenuItem 
-                                    icon={<TempleIcons.NamasteIcon size={18} />} 
-                                    label="Pranama Mantras" 
+                                <FilterMenuItem
+                                    icon={<TempleIcons.NamasteIcon size={18} />}
+                                    label="Pranama Mantras"
                                     odia="ପ୍ରଣାମ ମନ୍ତ୍ର"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('Pranama');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
-                                <FilterMenuItem 
-                                    icon={<Sparkles size={18} />} 
-                                    label="Ashtakams" 
+                                <FilterMenuItem
+                                    icon={<Sparkles size={18} />}
+                                    label="Ashtakams"
                                     odia="ଅଷ୍ଟକମ୍"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('Ashtakam');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
                             </div>
 
@@ -2327,55 +2547,55 @@ export const SongsPage: React.FC = () => {
 
                             {/* SECTION: MORE */}
                             <div style={{ padding: '0.5rem 0 1rem' }}>
-                                <div style={{ 
-                                    padding: '0 1.25rem 0.5rem', 
-                                    fontSize: '0.7rem', 
-                                    fontWeight: 900, 
-                                    color: '#64748b', 
-                                    textTransform: 'uppercase', 
+                                <div style={{
+                                    padding: '0 1.25rem 0.5rem',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 900,
+                                    color: '#64748b',
+                                    textTransform: 'uppercase',
                                     letterSpacing: '1px',
                                     opacity: 0.8
                                 }}>More</div>
-                                
-                                <FilterMenuItem 
-                                    icon={<List size={18} />} 
-                                    label="Lists" 
+
+                                <FilterMenuItem
+                                    icon={<List size={18} />}
+                                    label="Lists"
                                     odia="ତାଲିକା"
-                                    onClick={() => alert('Lists feature coming soon!')} 
+                                    onClick={() => alert('Lists feature coming soon!')}
                                 />
-                                <FilterMenuItem 
-                                    icon={<Mic size={18} />} 
-                                    label="Singers" 
+                                <FilterMenuItem
+                                    icon={<Mic size={18} />}
+                                    label="Singers"
                                     odia="ଗାୟକ"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('Singer');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
-                                <FilterMenuItem 
-                                    icon={<History size={18} />} 
-                                    label="History" 
+                                <FilterMenuItem
+                                    icon={<History size={18} />}
+                                    label="History"
                                     odia="ଇତିହାସ"
                                     onClick={() => {
                                         setActiveTab('songs');
                                         setSearchQuery('Recent');
                                         setIsFilterMenuOpen(false);
-                                    }} 
+                                    }}
                                 />
-                                <FilterMenuItem 
-                                    icon={<Settings size={18} />} 
-                                    label="Settings" 
+                                <FilterMenuItem
+                                    icon={<Settings size={18} />}
+                                    label="Settings"
                                     odia="ସେଟିଙ୍ଗସ୍"
                                     onClick={() => {
                                         setIsThemeListExpanded(!isThemeListExpanded);
-                                    }} 
+                                    }}
                                 />
 
                                 {/* Sub-menu for Settings (Themes/Font) */}
                                 {isThemeListExpanded && (
-                                    <div style={{ 
-                                        padding: '0.5rem 1rem', 
+                                    <div style={{
+                                        padding: '0.5rem 1rem',
                                         background: '#f8fafc',
                                         borderTop: '1px solid #f1f5f9',
                                         borderBottom: '1px solid #f1f5f9',
@@ -2396,18 +2616,18 @@ export const SongsPage: React.FC = () => {
                                         {/* Theme Preview */}
                                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                                             {Object.entries(TATTVA_THEMES).map(([k, v]) => (
-                                                <div 
+                                                <div
                                                     key={k}
                                                     onClick={() => handleSetTheme(k)}
-                                                    style={{ 
-                                                        width: '28px', 
-                                                        height: '28px', 
-                                                        borderRadius: '50%', 
+                                                    style={{
+                                                        width: '28px',
+                                                        height: '28px',
+                                                        borderRadius: '50%',
                                                         background: v.gradient,
                                                         border: currentThemeKey === k ? '2px solid white' : 'none',
                                                         boxShadow: currentThemeKey === k ? `0 0 0 2px ${v.color}` : 'none',
                                                         cursor: 'pointer'
-                                                    }} 
+                                                    }}
                                                 />
                                             ))}
                                         </div>
@@ -2429,15 +2649,21 @@ export const SongsPage: React.FC = () => {
                     padding: '1rem 0',
                     paddingBottom: '100px'
                 }}>
-                {activeLetter && sortedGroups.length > 0 && (
-                    <div style={{
-                        position: 'fixed',
-                        left: 'max(8px, calc(50% - 432px))',
-                        top: '85px',
-                        zIndex: 100,
-                        pointerEvents: 'none',
-                        animation: 'fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-                    }}>
+                {activeLetter && sortedGroups.length > 0 && !searchQuery.trim() && (
+                    <div
+                        className="letter-indicator-badge"
+                        style={{
+                            position: 'fixed',
+                            left: 'max(8px, calc(50% - 432px))',
+                            top: '85px',
+                            zIndex: 100,
+                            pointerEvents: 'none',
+                            transition: 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.4s ease',
+                            opacity: isLetterVisibleOnMobile ? 1 : 0,
+                            visibility: isLetterVisibleOnMobile ? 'visible' : 'hidden',
+                            transform: isLetterVisibleOnMobile ? 'scale(1)' : 'scale(0.8)'
+                        }}
+                    >
                         <div style={{
                             width: '36px',
                             height: '36px',
@@ -2466,66 +2692,90 @@ export const SongsPage: React.FC = () => {
                 )}
 
                 {activeTab === 'songs' && (
-                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.5rem' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.75rem', paddingRight: '48px' }}>
                         {sortedGroups.map(letter => (
-                            <div 
-                                key={letter} 
-                                ref={(el) => { sectionRefs.current[letter] = el; }} 
+                            <div
+                                key={letter}
+                                ref={(el) => { sectionRefs.current[letter] = el; }}
                                 className="song-section"
                                 data-letter={letter}
-                                style={{ marginBottom: '2rem' }}
+                                style={{ marginBottom: '1.5rem' }}
                             >
-
-                                <div style={{ padding: '0 0.5rem' }}>
+                                <div>
                                     {groupedSongs[letter].map(song => (
                                         <div
                                             key={song.id}
                                             onClick={() => handleSelectSong(song)}
                                             style={{
-                                                padding: '0.5rem 0.8rem',
-                                                backgroundColor: 'white',
-                                                borderRadius: '14px',
-                                                marginBottom: '0.4rem',
-                                                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                                                border: '1px solid #f1f5f9',
+                                                padding: '0.75rem 1rem',
+                                                backgroundColor: isNightMode ? '#1e293b' : '#f4f5f8',
+                                                borderRadius: '12px',
+                                                marginBottom: '0.65rem',
+                                                boxShadow: isNightMode
+                                                    ? '0 4px 12px rgba(0,0,0,0.4)'
+                                                    : '0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)',
+                                                border: isNightMode
+                                                    ? '1px solid rgba(255,255,255,0.08)'
+                                                    : '1px solid rgba(0,0,0,0.06)',
                                                 cursor: 'pointer',
-                                                transition: 'all 0.2s ease',
+                                                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                                                 position: 'relative',
                                                 overflow: 'hidden'
                                             }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                                e.currentTarget.style.boxShadow = isNightMode
+                                                    ? '0 8px 20px rgba(0,0,0,0.5)'
+                                                    : '0 5px 5px -3px rgba(0,0,0,0.25), 0 4px 6px 0 rgba(0,0,0,0.18), 0 2px 10px 0 rgba(0,0,0,0.15)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                                e.currentTarget.style.boxShadow = isNightMode
+                                                    ? '0 4px 12px rgba(0,0,0,0.4)'
+                                                    : '0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)';
+                                            }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1 }}>
-                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1, minWidth: 0 }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, width: '100%' }}>
                                                         <div style={{
-                                                            fontSize: '1rem',
+                                                            fontSize: '1.14rem',
                                                             fontWeight: 900,
-                                                            color: song.published ? '#16a34a' : getStatusColor(song.status, song.verified),
+                                                            color: isNightMode ? '#f8fafc' : '#0f172a',
                                                             fontFamily: 'var(--font-odia-sans)',
-                                                            lineHeight: '1.2'
+                                                            lineHeight: '1.35',
+                                                            paddingTop: '2px',
+                                                            whiteSpace: 'nowrap',
+                                                            overflow: 'hidden',
+                                                            textOverflow: 'ellipsis',
+                                                            minWidth: 0
                                                         }}>{getOdiaTitle(song)}</div>
-                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" />}
+                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" style={{ flexShrink: 0 }} />}
                                                     </div>
                                                     {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
                                                         <div style={{
-                                                            fontSize: '0.75rem',
-                                                            color: (song.status === 'COMPLETED' || song.verified) ? '#16a34a' : '#64748b',
-                                                            fontWeight: (song.status === 'COMPLETED' || song.verified) ? 800 : 500,
+                                                            fontSize: '0.82rem',
+                                                            color: isNightMode ? '#38bdf8' : '#0284c7',
+                                                            fontWeight: 600,
                                                             fontFamily: "'Outfit', sans-serif",
-                                                            marginTop: '-2px'
+                                                            marginTop: '2px',
+                                                            whiteSpace: 'nowrap',
+                                                            overflow: 'hidden',
+                                                            textOverflow: 'ellipsis'
                                                         }}>{song.title_english || song.title.match(/\(([^)]+)\)/)?.[1]}</div>
                                                     )}
                                                 </div>
                                                 {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
                                                     <div style={{
-                                                        marginLeft: '0.75rem',
+                                                        marginLeft: '0.5rem',
                                                         padding: '6px',
                                                         borderRadius: '8px',
-                                                        backgroundColor: '#f3e8ff',
-                                                        color: '#7e22ce',
+                                                        backgroundColor: isNightMode ? 'rgba(168, 85, 247, 0.2)' : '#f3e8ff',
+                                                        color: isNightMode ? '#d8b4fe' : '#7e22ce',
                                                         display: 'flex',
                                                         alignItems: 'center',
-                                                        justifyContent: 'center'
+                                                        justifyContent: 'center',
+                                                        flexShrink: 0
                                                     }}>
                                                         <Mic size={14} strokeWidth={2.5} />
                                                     </div>
@@ -2533,32 +2783,35 @@ export const SongsPage: React.FC = () => {
                                             </div>
                                             {song.author && (
                                                 <div style={{
-                                                    fontSize: '0.65rem',
-                                                    marginTop: '2px',
-                                                    color: '#94a3b8',
+                                                    fontSize: '0.72rem',
+                                                    marginTop: '4px',
+                                                    color: isNightMode ? '#94a3b8' : '#64748b',
                                                     fontFamily: 'var(--font-odia-sans)',
-                                                    fontWeight: 500
+                                                    fontWeight: 600,
+                                                    whiteSpace: 'nowrap',
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis'
                                                 }}>
                                                     {song.author}
                                                 </div>
                                             )}
-                                        {searchQuery === 'Temple' && song.tags?.includes('Temple') && (
-                                            <div style={{
-                                                position: 'absolute',
-                                                right: '-10px',
-                                                top: '50%',
-                                                transform: 'translateY(-50%)',
-                                                opacity: 0.05,
-                                                pointerEvents: 'none'
-                                            }}>
-                                                <Sparkles size={60} color="#ea580c" />
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
+                                            {searchQuery === 'Temple' && song.tags?.includes('Temple') && (
+                                                <div style={{
+                                                    position: 'absolute',
+                                                    right: '-10px',
+                                                    top: '50%',
+                                                    transform: 'translateY(-50%)',
+                                                    opacity: 0.05,
+                                                    pointerEvents: 'none'
+                                                }}>
+                                                    <Sparkles size={60} color="#ea580c" />
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                     </div>
                 )}
             </main>
@@ -2664,61 +2917,61 @@ export const SongsPage: React.FC = () => {
                 </div>
             )}
             {/* Bottom Navigation */}
-                <div style={{
-                    position: 'fixed',
-                    bottom: '24px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    background: 'var(--color-cream)',
-                    backdropFilter: 'blur(16px)',
-                    padding: '8px',
-                    borderRadius: '24px',
-                    boxShadow: '0 8px 32px rgba(128, 0, 0, 0.15)',
-                    display: 'flex',
-                    gap: '8px',
-                    zIndex: 1000,
-                    border: '1px solid var(--color-maroon)20',
-                    maxWidth: '90vw'
-                }}>
-                    <button
-                        onClick={() => setActiveTab('songs')}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            padding: '10px 20px',
-                            borderRadius: '16px',
-                            border: 'none',
-                            background: activeTab === 'songs' ? theme.color : 'transparent',
-                            color: activeTab === 'songs' ? '#fff' : '#64748b',
-                            cursor: 'pointer',
-                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                            fontFamily: 'var(--font-odia-sans)'
-                        }}
-                    >
-                        <BookText size={20} />
-                        <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ସମସ୍ତ ସଙ୍ଗୀତ</span>
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('gita')}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            padding: '10px 20px',
-                            borderRadius: '16px',
-                            border: 'none',
-                            background: activeTab === 'gita' ? theme.color : 'transparent',
-                            color: activeTab === 'gita' ? '#fff' : '#64748b',
-                            cursor: 'pointer',
-                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                            fontFamily: 'var(--font-odia-sans)'
-                        }}
-                    >
-                        <BookOpen size={20} />
-                        <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ଭଗବଦ୍ ଗୀତା</span>
-                    </button>
-                </div>
+            <div style={{
+                position: 'fixed',
+                bottom: '24px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: 'var(--color-cream)',
+                backdropFilter: 'blur(16px)',
+                padding: '8px',
+                borderRadius: '24px',
+                boxShadow: '0 8px 32px rgba(128, 0, 0, 0.15)',
+                display: 'flex',
+                gap: '8px',
+                zIndex: 1000,
+                border: '1px solid var(--color-maroon)20',
+                maxWidth: '90vw'
+            }}>
+                <button
+                    onClick={() => setActiveTab('songs')}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '10px 20px',
+                        borderRadius: '16px',
+                        border: 'none',
+                        background: activeTab === 'songs' ? theme.color : 'transparent',
+                        color: activeTab === 'songs' ? '#fff' : '#64748b',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        fontFamily: 'var(--font-odia-sans)'
+                    }}
+                >
+                    <BookText size={20} />
+                    <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ସମସ୍ତ ସଙ୍ଗୀତ</span>
+                </button>
+                <button
+                    onClick={() => setActiveTab('gita')}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '10px 20px',
+                        borderRadius: '16px',
+                        border: 'none',
+                        background: activeTab === 'gita' ? theme.color : 'transparent',
+                        color: activeTab === 'gita' ? '#fff' : '#64748b',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        fontFamily: 'var(--font-odia-sans)'
+                    }}
+                >
+                    <BookOpen size={20} />
+                    <span style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>ଭଗବଦ୍ ଗୀତା</span>
+                </button>
+            </div>
 
             {/* ===== AUTHOR EXPLORER OVERLAY PANEL ===== */}
             {isAuthorPanelOpen && (
@@ -2800,9 +3053,9 @@ export const SongsPage: React.FC = () => {
                                     gap: '12px'
                                 }}>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                        <div style={{ 
-                                            width: '32px', height: '32px', borderRadius: '10px', 
-                                            background: '#16a34a', color: 'white', 
+                                        <div style={{
+                                            width: '32px', height: '32px', borderRadius: '10px',
+                                            background: '#16a34a', color: 'white',
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                                             boxShadow: '0 4px 10px rgba(22, 163, 74, 0.2)'
                                         }}>
@@ -2812,9 +3065,9 @@ export const SongsPage: React.FC = () => {
                                     </div>
 
                                     <div style={{ display: 'flex', gap: '12px' }}>
-                                        <div style={{ 
-                                            flex: 1, background: '#16a34a', color: 'white', 
-                                            padding: '10px', borderRadius: '14px', 
+                                        <div style={{
+                                            flex: 1, background: '#16a34a', color: 'white',
+                                            padding: '10px', borderRadius: '14px',
                                             textAlign: 'center', boxShadow: '0 6px 15px rgba(22, 163, 74, 0.2)'
                                         }}>
                                             <div style={{ fontSize: '1.2rem', fontWeight: 900 }}>{toOdiaNumber(authorStats.reduce((acc, s) => acc + s.count, 0))}</div>
@@ -2822,9 +3075,9 @@ export const SongsPage: React.FC = () => {
                                         </div>
 
                                         {isAdmin && (
-                                            <div style={{ 
-                                                flex: 1, background: '#f1f5f9', color: '#64748b', 
-                                                padding: '10px', borderRadius: '14px', 
+                                            <div style={{
+                                                flex: 1, background: '#f1f5f9', color: '#64748b',
+                                                padding: '10px', borderRadius: '14px',
                                                 textAlign: 'center', border: '1px solid #e2e8f0'
                                             }}>
                                                 <div style={{ fontSize: '1.2rem', fontWeight: 900 }}>{toOdiaNumber(authorStats.reduce((acc, s) => acc + (s.total - s.count), 0))}</div>
@@ -2870,7 +3123,7 @@ export const SongsPage: React.FC = () => {
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                                                 <div style={{
                                                     backgroundColor: isActive ? '#16a34a' : '#f1f5f9',
-                                                    color: isActive ? 'white' : '#94a3b8', 
+                                                    color: isActive ? 'white' : '#94a3b8',
                                                     width: '32px', height: '32px',
                                                     borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                                     fontSize: '0.85rem', fontWeight: 900, flexShrink: 0,
@@ -2879,12 +3132,12 @@ export const SongsPage: React.FC = () => {
                                                 <div>
                                                     <div style={{ fontSize: '0.95rem', fontWeight: 900, color: isActive ? '#1e293b' : '#64748b', letterSpacing: '-0.01em' }}>{stat.author}</div>
                                                     <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px', marginTop: '6px' }}>
-                                                        <div style={{ 
-                                                            fontSize: '0.75rem', 
-                                                            color: isActive ? '#16a34a' : '#94a3b8', 
-                                                            fontWeight: 800, 
-                                                            display: 'flex', 
-                                                            alignItems: 'center', 
+                                                        <div style={{
+                                                            fontSize: '0.75rem',
+                                                            color: isActive ? '#16a34a' : '#94a3b8',
+                                                            fontWeight: 800,
+                                                            display: 'flex',
+                                                            alignItems: 'center',
                                                             gap: '4px',
                                                             background: isActive ? '#f0fdf4' : '#f8fafc',
                                                             padding: '2px 8px',
@@ -2895,12 +3148,12 @@ export const SongsPage: React.FC = () => {
                                                             {toOdiaNumber(stat.count)} Available
                                                         </div>
                                                         {stat.total > stat.count && isAdmin && (
-                                                            <div style={{ 
-                                                                fontSize: '0.75rem', 
-                                                                color: '#64748b', 
-                                                                fontWeight: 700, 
-                                                                display: 'flex', 
-                                                                alignItems: 'center', 
+                                                            <div style={{
+                                                                fontSize: '0.75rem',
+                                                                color: '#64748b',
+                                                                fontWeight: 700,
+                                                                display: 'flex',
+                                                                alignItems: 'center',
                                                                 gap: '4px',
                                                                 background: '#f8fafc',
                                                                 padding: '2px 8px',

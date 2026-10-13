@@ -126,7 +126,6 @@ export const ManageSongsPage: React.FC = () => {
                 .from('songs')
                 .update({
                     status,
-                    verified: status === 'COMPLETED',
                     published: true // Ensure it stays public when updating status
                 })
                 .eq('id', songId);

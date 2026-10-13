@@ -13,6 +13,6 @@ Whenever the user requests adding/importing songs (e.g. from `vsnectar.web.app` 
    - Provide the complete draft inside a copyable code block in chat so the user can easily paste it into ChatGPT / Gemini for double-checking.
    - **Never push to the database without explicit user approval.**
 4. **Publishing (Upon User Approval)**:
-   - Upsert into Supabase `songs` table with `status: 'COMPLETED'`, `verified: true`, `published: true`, and all `audio_versions`.
+   - Upsert into Supabase `songs` table with `status: 'COMPLETED'`, `published: true`, and all `audio_versions`.
    - Add the song entry to `src/data/resources.ts`.
    - Verify TypeScript compilation using `npx tsc --noEmit`.

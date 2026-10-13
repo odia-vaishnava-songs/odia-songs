@@ -7,10 +7,14 @@ export const PrivacyPolicyPage: React.FC = () => {
             <header style={{
                 backgroundColor: 'var(--color-saffron)',
                 color: 'white',
-                padding: '0.75rem 1rem',
+                padding: '0 0.75rem',
+                height: '56px',
+                minHeight: '56px',
+                maxHeight: '56px',
+                boxSizing: 'border-box',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '1rem',
+                gap: '0.75rem',
                 position: 'sticky',
                 top: 0,
                 zIndex: 100,
@@ -18,11 +22,12 @@ export const PrivacyPolicyPage: React.FC = () => {
             }}>
                 <button
                     onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
-                    style={{ background: 'none', border: 'none', color: 'white', padding: '4px', cursor: 'pointer' }}
+                    aria-label="ମୁଖ୍ୟ ମେନୁ (Menu)"
+                    style={{ background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
                 >
-                    <Menu size={24} />
+                    <Menu size={22} />
                 </button>
-                <h1 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>Privacy Policy</h1>
+                <h1 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 600 }}>Privacy Policy</h1>
             </header>
 
             <div style={{ padding: '1rem', paddingBottom: '4rem', flex: 1 }}>

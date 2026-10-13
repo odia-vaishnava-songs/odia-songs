@@ -229,7 +229,6 @@ export const SongEditor: React.FC<SongEditorProps> = ({ song, onSave, onCancel }
                     vocalist: formData.vocalist,
                     audio_source: formData.audio_source,
                     author: standardizeAuthorName(formData.author || ''),
-                    verified: formData.verified || false,
                     status: formData.status || 'NOT_DONE',
                     assigned_to: formData.assigned_to,
                     published: true, // Always keep it public as requested
