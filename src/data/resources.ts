@@ -12979,6 +12979,106 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: "COMPLETED"
+    },
+    {
+        id: "song-prayojanadhidevapranama",
+        title: "ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ - ଶ୍ରୀ ଗୋପୀନାଥ ପ୍ରଣାମ (Prayojanadhideva Pranama - Sri Gopinatha Pranama)",
+        title_odia: "ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ - ଶ୍ରୀ ଗୋପୀନାଥ ପ୍ରଣାମ",
+        title_english: "Prayojanadhideva Pranama - Sri Gopinatha Pranama",
+        category: "Songs",
+        type: "html",
+        author: "Sanatana Goswami",
+        tags: [
+            "Prayojanadhideva",
+            "Prayojanadhideva Pranama",
+            "Gopinatha",
+            "Gopinatha Pranama",
+            "Sanatana Goswami",
+            "Krsnadasa Kaviraja Goswami",
+            "Pranama",
+            "Stuti",
+            "ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ",
+            "ଗୋପୀନାଥ ପ୍ରଣାମ",
+            "ସନାତନ ଗୋସ୍ୱାମୀ"
+        ],
+        description: "ଶ୍ରୀଲ କୃଷ୍ଣଦାସ କବିରାଜ ଗୋସ୍ୱାମୀ ବିରଚିତ ଶ୍ରୀ ଚୈତନ୍ୟ ଚରିତାମୃତ (ଆଦି ୧.୧୭) ଅନ୍ତର୍ଗତ ପ୍ରୟୋଜନ ତତ୍ତ୍ୱର ଅଧିଦେବ ଶ୍ରୀ ରାଧା-ଗୋପୀନାଥ ଜୀଉଙ୍କର ପରମ କୃପାମୟ ପ୍ରଣାମ ମନ୍ତ୍ର ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Prayojanadhideva_Pranama/Prayojanadhideva_Pranama_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3",
+        vocalist: "Srila Prabhupada",
+        audioVersions: [
+            {
+                label: "Srila Prabhupada",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Prayojanadhideva_Pranama/Prayojanadhideva_Pranama_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3"
+            },
+            {
+                label: "HG Jai Sachinandana Prabhu",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Prayojanadhideva_Pranama/Prayojanadhideva_Pranama_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3"
+            },
+            {
+                label: "HG Vaiyasaki Prabhu",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Prayojanadhideva_Pranama/Prayojanadhideva_Pranama_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-prayojanadhidevapranama",
+            title: "ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ - ଶ୍ରୀ ଗୋପୀନାଥ ପ୍ରଣାମ (Prayojanadhideva Pranama - Sri Gopinatha Pranama)",
+            title_odia: "ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ - ଶ୍ରୀ ଗୋପୀନାଥ ପ୍ରଣାମ",
+            title_english: "Prayojanadhideva Pranama - Sri Gopinatha Pranama",
+            author: "Sanatana Goswami",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Prayojanadhideva%20Pranama_Songs%20of%20Vaishnava%20Acaryas_0_14",
+            verses: [
+                {
+                    id: 1,
+                    lyric: "ଶ୍ରୀମାନ୍ ରାସ-ରସାରମ୍ଭୀ ବଂଶୀ-ବଟ-ତଟ-ସ୍ଥିତଃ ।\nକର୍ଷନ୍ ବେଣୁ-ସ୍ୱନୈର୍ ଗୋପୀର୍ ଗୋପୀନାଥଃ ଶ୍ରିୟେଽସ୍ତୁ ନଃ ॥ ୧ ॥",
+                    translation: "ପରମ ଐଶ୍ୱର୍ଯ୍ୟମୟ ତଥା ମାଧୁର୍ଯ୍ୟମୟ ଶ୍ରୀ ଗୋପୀନାଥ ଜୀଉ, ଯିଏ ଦିବ୍ୟ ରାସଲୀଳାର ଅମୃତ ରସ ଆରମ୍ଭ କରିବା ପାଇଁ ବଂଶୀବଟ ନିକଟବର୍ତ୍ତୀ ଯମୁନା ତଟରେ ଅବସ୍ଥାନ କରୁଛନ୍ତି ଏବଂ ନିଜର ଦିବ୍ୟ ବଂଶୀଧ୍ୱନି ମାଧ୍ୟମରେ ବ୍ରଜର ଗୋପୀକାମାନଙ୍କୁ ଆକର୍ଷିତ କରୁଛନ୍ତି, ସେହି ପ୍ରୟୋଜନାଧିଦେବ ଶ୍ରୀ ଗୋପୀନାଥ ଆମ୍ଭମାନଙ୍କ ଉପରେ କୃପାପୂର୍ବକ ନିଜର ପରମ ମଙ୍ଗଳମୟୀ ଆଧ୍ୟାତ୍ମିକ ସମ୍ପଦ (ଭଗବତ୍-ପ୍ରେମ) ବୃଷ୍ଟି କରନ୍ତୁ।",
+                    wordMeanings: [
+                        {
+                            word: "ଶ୍ରୀମାନ୍",
+                            meaning: "ପରମ ଶ୍ରୀଯୁକ୍ତ, ସକଳ ଦିବ୍ୟ ଶୋଭା ଓ ସୌନ୍ଦର୍ଯ୍ୟର ଆଧାର"
+                        },
+                        {
+                            word: "ରାସ-ରସ-ଆରମ୍ଭୀ",
+                            meaning: "ଦିବ୍ୟ ରାସଲୀଳାର ଅମୃତ ରସର ପ୍ରବର୍ତ୍ତକ ବା ଶୁଭାରମ୍ଭକାରୀ"
+                        },
+                        {
+                            word: "ବଂଶୀ-ବଟ-ତଟ-ସ୍ଥିତଃ",
+                            meaning: "ପବିତ୍ର ବଂଶୀବଟ ନିକଟସ୍ଥ ଯମୁନା ତଟରେ ବିରାଜମାନ"
+                        },
+                        {
+                            word: "କର୍ଷନ୍",
+                            meaning: "ପ୍ରେମପୂର୍ବକ ଆକର୍ଷିତ କରି"
+                        },
+                        {
+                            word: "ବେଣୁ-ସ୍ୱନୈଃ",
+                            meaning: "ମଧୁର ବଂଶୀର ଧ୍ୱନି ଦ୍ୱାରା"
+                        },
+                        {
+                            word: "ଗୋପୀଃ",
+                            meaning: "ବ୍ରଜର ସମସ୍ତ ଗୋପୀକାମାନଙ୍କୁ"
+                        },
+                        {
+                            word: "ଗୋପୀନାଥଃ",
+                            meaning: "ସେହି ଗୋପୀମାନଙ୍କର ପ୍ରାଣନାଥ ଶ୍ରୀ ଗୋପୀନାଥ ଜୀଉ"
+                        },
+                        {
+                            word: "ଶ୍ରିୟେ",
+                            meaning: "ପରମ ମଙ୍ଗଳ ତଥା ଦିବ୍ୟ ପ୍ରେମଭକ୍ତି ରୂପୀ ସମ୍ପଦ ନିମନ୍ତେ"
+                        },
+                        {
+                            word: "ଅସ୍ତୁ",
+                            meaning: "ପ୍ରଦାନ କରନ୍ତୁ, ବିରାଜମାନ ହେଉ"
+                        },
+                        {
+                            word: "ନଃ",
+                            meaning: "ଆମ୍ଭମାନଙ୍କ ଉପରେ"
+                        }
+                    ]
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
     }
 ];
 
