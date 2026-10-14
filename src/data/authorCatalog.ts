@@ -376,8 +376,9 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
     },
     {
         name: 'ISKCON',
+        odia: 'ଇସ୍କନ୍ (ISKCON)',
         catalog: [
-            { title_english: 'Prema Dhvani Prayers' },
+            { id: 'song-premadhvani', title_english: 'Prem Dhvani (Jaya Dhvani)', title_odia: 'ପ୍ରେମ ଧ୍ୱନି' },
         ]
     },
     {

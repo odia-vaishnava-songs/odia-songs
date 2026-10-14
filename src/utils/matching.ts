@@ -57,7 +57,7 @@ export function isTitleMatch(
     if (t1 === t2) return true;
 
     // 2. Part-agnostic and Subtitle-agnostic match
-    const cleanExtra = (s: string) => s.replace(/part\s*\d+/gi, '').split(/\s*[-–—]\s*/)[0].replace(/\([^)]*\)/g, '').trim();
+    const cleanExtra = (s: string) => s.replace(/part\s*\d+/gi, '').replace(/\bprayers?\b/gi, '').split(/\s*[-–—]\s*/)[0].replace(/\([^)]*\)/g, '').trim();
     const ce1 = cleanExtra(t1);
     const ce2 = cleanExtra(t2);
     if (ce1 === ce2 && ce1.length > 3) return true;
