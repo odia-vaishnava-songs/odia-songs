@@ -3,9 +3,9 @@ import { Play, Pause, X } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
 export const CompactAudioBar: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
-    const { activeSong, currentVersion, isPlaying, togglePlay, stopAudio, currentTime, duration, setIsDetailView, theme } = useAudio();
+    const { activeSong, currentVersion, isPlaying, hasPlayed, togglePlay, stopAudio, currentTime, duration, setIsDetailView, theme } = useAudio();
 
-    if (!activeSong) return null;
+    if (!activeSong || !hasPlayed) return null;
 
     const progress = (currentTime / (duration || 1)) * 100;
     const primaryColor = theme?.color || '#FF9933';

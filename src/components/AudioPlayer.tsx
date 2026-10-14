@@ -4,6 +4,8 @@ import { useAudio } from '../context/AudioContext';
 import { useAuth } from '../hooks/useAuth';
 import type { AudioVersion, Resource } from '../types';
 import { Spinner } from './Spinner';
+import { AUTHOR_CATALOG } from '../data/authorCatalog';
+import { isTitleMatch, standardizeAuthorName } from '../utils/matching';
 
 export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverride }) => {
     const {
@@ -108,24 +110,159 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
         setIsExporting(true);
         setIsExportMenuOpen(false);
         
+        let header: HTMLDivElement | null = null;
+        let footer: HTMLDivElement | null = null;
+        let element: HTMLElement | null = null;
+        let scrollContainer: HTMLElement | null = null;
+        let previousScrollTop = 0;
+
         try {
             // Target the specific song content container
-            const element = document.getElementById('song-content') || document.querySelector('main') || document.body;
+            element = document.getElementById('song-content') || document.querySelector('main') || document.body;
+            if (!element) throw new Error("Export container not found");
+
+            // Save scroll position and reset container to top to prevent canvas clipping
+            scrollContainer = element.closest('main') || document.querySelector('main');
+            if (scrollContainer) {
+                previousScrollTop = scrollContainer.scrollTop;
+                scrollContainer.scrollTop = 0;
+            }
+
+            const rawTitle = displaySong.title || '';
+            const noParens = rawTitle.replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+
+            let odiaTitle = displaySong.title_odia || displaySong.structuredContent?.title_odia || '';
+            if (!odiaTitle) {
+                if (noParens.match(/[\u0B00-\u0B7F]/)) {
+                    odiaTitle = noParens;
+                } else {
+                    const match = rawTitle.match(/\(([^)]+)\)/);
+                    if (match && match[1] && match[1].match(/[\u0B00-\u0B7F]/)) {
+                        odiaTitle = match[1].trim();
+                    } else {
+                        odiaTitle = noParens || rawTitle;
+                    }
+                }
+            }
+
+            let englishTitle = displaySong.title_english || displaySong.structuredContent?.title_english || '';
+            if (!englishTitle) {
+                const match = rawTitle.match(/\(([^)]+)\)/);
+                if (match && match[1] && !match[1].match(/[\u0B00-\u0B7F]/)) {
+                    englishTitle = match[1].trim();
+                } else {
+                    const noOdia = rawTitle.replace(/[\u0B00-\u0B7F]/g, '').replace(/[()]/g, '').trim();
+                    if (noOdia.length > 2) {
+                        englishTitle = noOdia;
+                    }
+                }
+            }
+
+            // Extract author from catalog or song metadata
+            const rawAuthor = displaySong.author || displaySong.structuredContent?.author || '';
+            let catalogMatch = AUTHOR_CATALOG.find(cat =>
+                cat.catalog.some(catSong => isTitleMatch(catSong.title_english, displaySong.title_english || displaySong.title, catSong.title_odia, displaySong.title_odia))
+            );
+            if (!catalogMatch && rawAuthor) {
+                const std = standardizeAuthorName(rawAuthor);
+                catalogMatch = AUTHOR_CATALOG.find(cat =>
+                    cat.name.toLowerCase() === rawAuthor.toLowerCase() ||
+                    (std !== 'Other Authors' && cat.name.toLowerCase() === std.toLowerCase())
+                );
+            }
+
+            const authorEnglish = catalogMatch ? catalogMatch.name : (standardizeAuthorName(rawAuthor) !== 'Other Authors' ? standardizeAuthorName(rawAuthor) : rawAuthor);
+            const authorOdia = catalogMatch?.odia || '';
+
+            let authorDisplay = '';
+            if (authorOdia && authorEnglish && authorOdia !== authorEnglish) {
+                authorDisplay = `${authorOdia} (${authorEnglish})`;
+            } else {
+                authorDisplay = authorOdia || authorEnglish || '';
+            }
+
+            const isFlexContainer = window.getComputedStyle(element).display === 'flex';
+            const titleColor = isNightMode ? (theme.accent || '#38BDF8') : (theme.color || '#D81B60');
+
+            // 🏷️ HEADER: Create temporary header card with Title and Author
+            header = document.createElement('div');
+            header.id = 'export-header-temp';
+
+            if (isFlexContainer) {
+                header.style.cssText = `
+                    background: ${isNightMode ? '#1E293B' : '#ffffff'};
+                    border-radius: 8px;
+                    border: ${isNightMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.08)'};
+                    box-shadow: ${isNightMode ? '0 4px 14px rgba(0, 0, 0, 0.45)' : '0 3px 10px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)'};
+                    padding: 20px 24px 18px 24px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    width: 100%;
+                    margin-bottom: 2px;
+                `;
+            } else {
+                header.style.cssText = `
+                    padding-bottom: 18px;
+                    margin-bottom: 18px;
+                    border-bottom: 1px dashed ${isNightMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.15)'};
+                    text-align: center;
+                    box-sizing: border-box;
+                    width: 100%;
+                `;
+            }
+
+            const showEnglishSubtitle = englishTitle && englishTitle.trim().toLowerCase() !== odiaTitle.trim().toLowerCase();
+
+            header.innerHTML = `
+                <div style="font-size: 24px; font-weight: 800; color: ${titleColor}; font-family: var(--font-odia-sans), sans-serif; line-height: 1.35; margin-bottom: 4px; letter-spacing: 0.2px;">
+                    ${odiaTitle}
+                </div>
+                ${showEnglishSubtitle ? `
+                    <div style="font-size: 14px; font-weight: 600; color: ${isNightMode ? '#cbd5e1' : '#64748b'}; font-family: 'Outfit', sans-serif; margin-bottom: 8px; letter-spacing: 0.3px;">
+                        ${englishTitle}
+                    </div>
+                ` : ''}
+                ${authorDisplay ? `
+                    <div style="display: inline-block; padding: 4px 14px; border-radius: 999px; background: ${isNightMode ? 'rgba(251, 191, 36, 0.12)' : 'rgba(245, 124, 0, 0.08)'}; border: 1px solid ${isNightMode ? 'rgba(251, 191, 36, 0.25)' : 'rgba(245, 124, 0, 0.2)'}; font-size: 13px; font-weight: 600; color: ${isNightMode ? '#fbbf24' : '#b45309'}; font-family: var(--font-odia-sans), 'Outfit', sans-serif; margin-top: 4px;">
+                        <span style="opacity: 0.85;">ରଚୟିତା: </span><strong>${authorDisplay}</strong>
+                    </div>
+                ` : ''}
+            `;
+
+            element.prepend(header);
             
             // 🏷️ BRAND LABELING: Create temporary footer for export
-            const footer = document.createElement('div');
+            footer = document.createElement('div');
             footer.id = 'export-footer-temp';
-            footer.style.cssText = `
-                padding: 15px 20px;
-                margin-top: 20px;
-                border-top: 1px solid ${isNightMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)'};
-                text-align: center;
-                font-family: 'Outfit', sans-serif;
-                background: ${isNightMode ? '#1e1e1e' : '#fDFBF7'};
-                color: ${isNightMode ? '#94a3b8' : '#64748b'};
-                font-size: 11px;
-                line-height: 1.5;
-            `;
+
+            if (isFlexContainer) {
+                footer.style.cssText = `
+                    background: ${isNightMode ? '#1E293B' : '#ffffff'};
+                    border-radius: 8px;
+                    border: ${isNightMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.08)'};
+                    box-shadow: ${isNightMode ? '0 4px 14px rgba(0, 0, 0, 0.45)' : '0 3px 10px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)'};
+                    padding: 15px 20px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    width: 100%;
+                    margin-top: 2px;
+                    font-family: 'Outfit', sans-serif;
+                    color: ${isNightMode ? '#94a3b8' : '#64748b'};
+                    font-size: 11px;
+                    line-height: 1.5;
+                `;
+            } else {
+                footer.style.cssText = `
+                    padding: 15px 20px;
+                    margin-top: 20px;
+                    border-top: 1px dashed ${isNightMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.15)'};
+                    text-align: center;
+                    font-family: 'Outfit', sans-serif;
+                    color: ${isNightMode ? '#94a3b8' : '#64748b'};
+                    font-size: 11px;
+                    line-height: 1.5;
+                `;
+            }
             
             const timestamp = new Date().toLocaleString('en-IN', { 
                 day: '2-digit', month: 'short', year: 'numeric', 
@@ -159,12 +296,17 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
                 windowHeight: element.scrollHeight
             });
 
-            // Cleanup: remove temporary footer after capture
-            if (element.contains(footer)) {
+            // Cleanup: remove temporary header and footer immediately after capture
+            if (header && element.contains(header)) {
+                element.removeChild(header);
+                header = null;
+            }
+            if (footer && element.contains(footer)) {
                 element.removeChild(footer);
+                footer = null;
             }
 
-            const fileName = `${displaySong.title_english || displaySong.title}`.replace(/[/\\?%*:|"<>]/g, '-');
+            const fileName = `${englishTitle || odiaTitle || displaySong.title}`.replace(/[/\\?%*:|"<>]/g, '-');
 
             if (type === 'jpg') {
                 const imgData = canvas.toDataURL('image/jpeg', 0.9);
@@ -186,6 +328,15 @@ export const AudioPlayer: React.FC<{ songOverride?: Resource }> = ({ songOverrid
             console.error("Export failed:", error);
             alert("Export failed. Please try again.");
         } finally {
+            if (header && header.parentNode) {
+                header.parentNode.removeChild(header);
+            }
+            if (footer && footer.parentNode) {
+                footer.parentNode.removeChild(footer);
+            }
+            if (scrollContainer) {
+                scrollContainer.scrollTop = previousScrollTop;
+            }
             setIsExporting(false);
         }
     };

@@ -8,7 +8,7 @@ import { CompactAudioBar } from '../components/CompactAudioBar';
 import { initMobileBackHandler, setExitToastCallback, pushBackHandler, popBackHandler } from '../utils/backHandler';
 
 export const AppLayout: React.FC = () => {
-    const { activeSong, isDetailView } = useAudio();
+    const { activeSong, isDetailView, hasPlayed } = useAudio();
     const { user } = useAuth();
     const { onlineUsers } = usePresence(user);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -92,8 +92,8 @@ export const AppLayout: React.FC = () => {
                 }}
             />
 
-            {/* Persistence mini-bar only when NOT in detail view */}
-            {activeSong && !isDetailView && (
+            {/* Persistence mini-bar only when NOT in detail view and audio has been played */}
+            {activeSong && !isDetailView && hasPlayed && (
                 <CompactAudioBar />
             )}
 

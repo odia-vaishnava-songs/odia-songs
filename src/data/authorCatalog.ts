@@ -63,7 +63,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Nadiya Godrume Nityananda Mahajana', title_odia: 'ନଦୀୟା – ଗୋଦ୍ରୁମେ' },
             { title_english: 'Narada Muni Bajay Vina', title_odia: 'ନାରଦ ମୁନି ବାଜାୟ ବୀଣା' },
             { title_english: 'Nija Karma Dose Phale', title_odia: 'ନିଜ କର୍ମ ଦୋଷ ଫଲେ' },
-            { title_english: 'Nitai Nam Hate', title_odia: 'ନିତାଇ ନାମ ହାଟେ' },
+            { id: 'song-nitaikinamenechere', title_english: 'Nitai Ki Nam Eneche Re (Nitai Nam Hate)', title_odia: 'ନିତାଇ କି ନାମ ଏନେଛେ ରେ (ନିତାଇ ନାମ ହାଟେ)' },
             { title_english: 'Ohe Vaisnava Thakura', title_odia: 'ଓହେ ବୈଷ୍ଣବ ଠାକୁର' },
             { title_english: 'Ore Mana Bhalonahi Lage E Samsar', title_odia: 'ଓ ରେ ମନ, ଭାଲ ନାହି ଲାଗେ' },
             { title_english: 'Prabhu Tava Pada Yuge', title_odia: 'ପଭୁ ତବ ପଦଯୁଗେ' },
@@ -163,7 +163,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-yamunastakam', title_english: 'Bhrtr Antakasya Pattane', title_odia: 'ଭ୍ରାତୃ ଅନ୍ତକସ୍ୟ ପତ୍ତନେ' },
             { id: 'song-disidisiracayantim', title_english: 'Disi Disi Racayantim', title_odia: 'ଦିଶି ଦିଶି ରଚୟନ୍ତୀମ୍' },
             { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
-            { title_english: 'Nikhila Sruti Mauli Ratna' },
+            { id: 'song-namastakam', title_english: 'Nikhila Sruti Mauli Ratna (Namastakam)', title_odia: 'ନିଖିଳ ଶ୍ରୁତି ମୌଳି ରତ୍ନ (ନାମାଷ୍ଟକମ୍)' },
             { id: 'song-radhejayajaya', title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
         ]
     },
@@ -213,7 +213,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ସାର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟ',
         catalog: [
             { title_english: 'Huhunkara Garjanadi Aho', title_odia: 'ହୁହୁଙ୍କାର ଗର୍ଜନାଦି ଅହୋ' },
-            { title_english: 'Nava Gaura Varam', title_odia: 'ନବ ଗୌର ବରଂ' },
+            { id: 'song-navagauravaram', title_english: 'Nava Gaura Varam', title_odia: 'ନବ ଗୌର ବରଂ' },
             { id: 'song-nityanandadvadasanama', title_english: 'Nityanando Vadhutendur', title_odia: 'ନିତ୍ୟାନନ୍ଦୋ ବଧୂତେନ୍ଦୁଃ' },
             { title_english: 'Ujjvala Varana', title_odia: 'ଉଜ୍ଜ୍ୱଳ ବରଣ' },
         ]
@@ -237,7 +237,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ରଘୁନାଥ ଦାସ ଗୋସ୍ୱାମୀ',
         catalog: [
             { title_english: 'Gurau Gosthe Gosthalayisu', title_odia: 'ଗୁରୌ ଗୋଷ୍ଠେ ଗୋଷ୍ଠାଳୟିଷୁ' },
-            { title_english: 'Nija Pati Bhuja', title_odia: 'ନିଜ ପତି ଭୁଜ' },
+            { id: 'song-nijapatibhuja', title_english: 'Nija Pati Bhuja', title_odia: 'ନିଜ ପତି ଭୁଜ' },
         ]
     },
     {
@@ -325,6 +325,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Jaya Narasimha Sri Narasimha' },
             { title_english: 'Namaste Narasimhaya' },
             { id: 'song-mahaprasadegovinde', title_english: 'Maha Prasade Govinde', title_odia: 'ମହାପ୍ରସାଦେ ଗୋବିନ୍ଦେ' },
+            { id: 'song-narayanakavacam', title_english: 'Sri Narayana Kavacam', title_odia: 'ଶ୍ରୀ ନାରାୟଣ କବଚମ୍' },
         ]
     },
     {
@@ -392,6 +393,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         ]
     },
     {
+        name: 'Jagannatha Dasa',
+        odia: 'ଅତିବଡ଼ୀ ଜଗନ୍ନାଥ ଦାସ',
+        catalog: [
+            { id: 'song-paramanandahemadhava', title_english: 'Paramananda He Madhava', title_odia: 'ପରମାନନ୍ଦ ହେ ମାଧବ' }
+        ]
+    },
+    {
         name: 'Bhakta Salabega',
         odia: 'ଭକ୍ତ ସାଲବେଗ',
         catalog: [
@@ -420,7 +428,10 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-harekrishnamahamantra', title_english: 'Hare Krishna Mahamantra', title_odia: 'ହରେ କୃଷ୍ଣ ମହାମନ୍ତ୍ର' },
             { id: 'song-krsnajinakanamahai', title_english: 'Krsna Jinaka Nama Hai', title_odia: 'କୃଷ୍ଣ ଜିନକା ନାମ ହୈ' },
             { id: 'song-maineratanalagai', title_english: 'Maine Ratana Lagai Radha Nama Ki', title_odia: 'ମୈନେ ରଟନା ଲଗାୟୀ ରାଧା ନାମ କୀ' },
-            { id: 'song-radhakrpakataksa', title_english: 'Munindra Vrnda Vandite - Radha Krpa Kataksa', title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ' }
+            { id: 'song-radhakrpakataksa', title_english: 'Munindra Vrnda Vandite - Radha Krpa Kataksa', title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ' },
+            { id: 'song-navaniradanindita', title_english: 'Nava Nirada Nindita (Sri Sri Vrajaraja Sutastakam)', title_odia: 'ନବ ନୀରଦ ନିନ୍ଦିତ (ଶ୍ରୀ ଶ୍ରୀ ବ୍ରଜରାଜ ସୁତାଷ୍ଟକମ୍)' },
+            { id: 'song-orevrndavanernandadulal', title_english: 'Ore Vrndavaner Nanda Dulal', title_odia: 'ଓରେ ବୃନ୍ଦାବନେର ନନ୍ଦ-ଦୁଲାଲ' },
+            { id: 'song-pancatattvamahamantra', title_english: 'Panca Tattva Mahamantra', title_odia: 'ପଞ୍ଚତତ୍ତ୍ୱ ମହାମନ୍ତ୍ର' }
         ]
     },
     {
@@ -463,6 +474,20 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁ',
         catalog: [
             { id: 'song-srisivashtakam', title_english: 'Sri Sivashtakam - Namo Namaste Tridasesvaraya', title_odia: 'ଶ୍ରୀ ଶିବାଷ୍ଟକମ୍ - ନମୋ ନମସ୍ତେ ତ୍ରିଦଶେଶ୍ୱରାୟ' }
+        ]
+    },
+    {
+        name: 'Madhvacharya',
+        odia: 'ଶ୍ରୀପାଦ ମଧ୍ୱାଚାର୍ଯ୍ୟ',
+        catalog: [
+            { id: 'song-narasimhanakhastuti', title_english: 'Sri Narasimha Nakha Stuti', title_odia: 'ଶ୍ରୀ ନରସିଂହ ନଖ ସ୍ତୁତି' }
+        ]
+    },
+    {
+        name: 'Vadiraja Tirtha',
+        odia: 'ଶ୍ରୀ ବାଦିରାଜ ତୀର୍ଥ',
+        catalog: [
+            { id: 'song-palayachyuthaashtakam', title_english: 'Palayachyutha Ashtakam (Sri Krsnastakam)', title_odia: 'ପାଳୟାଚ୍ୟୁତ ଅଷ୍ଟକମ୍ (ଶ୍ରୀ କୃଷ୍ଣାଷ୍ଟକମ୍)' }
         ]
     },
     {

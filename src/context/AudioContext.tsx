@@ -7,6 +7,7 @@ interface AudioContextType {
     activeSong: Resource | null;
     currentVersion: AudioVersion | null;
     isPlaying: boolean;
+    hasPlayed: boolean;
     currentTime: number;
     duration: number;
     isDetailView: boolean;
@@ -40,6 +41,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [activeSong, setActiveSong] = useState<Resource | null>(null);
     const [currentVersion, setCurrentVersion] = useState<AudioVersion | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [hasPlayed, setHasPlayed] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isDetailView, setIsDetailView] = useState(false);
@@ -93,7 +95,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         audio.addEventListener('timeupdate', updateTime);
         audio.addEventListener('loadedmetadata', updateDuration);
         audio.addEventListener('ended', onEnded);
-        audio.addEventListener('play', () => setIsPlaying(true));
+        audio.addEventListener('play', () => {
+            setIsPlaying(true);
+            setHasPlayed(true);
+        });
         audio.addEventListener('pause', () => setIsPlaying(false));
         audio.addEventListener('error', () => {
             const error = audio.error;
@@ -138,6 +143,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         const targetVersion = version || (song.audioVersions && song.audioVersions.length > 0 ? song.audioVersions[0] : { label: song.vocalist || 'Default', url: song.audioUrl || '' });
         setCurrentVersion(targetVersion);
         setIsPlaying(true);
+        setHasPlayed(true);
         if (audioRef.current) {
             audioRef.current.play().catch(console.error);
         }
@@ -158,6 +164,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setActiveSong(null);
         setCurrentVersion(null);
         setIsPlaying(false);
+        setHasPlayed(false);
         setCurrentTime(0);
     };
     const togglePlay = () => {
@@ -223,6 +230,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             activeSong,
             currentVersion,
             isPlaying,
+            hasPlayed,
             currentTime,
             duration,
             isDetailView,

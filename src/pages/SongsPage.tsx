@@ -91,7 +91,7 @@ const FilterMenuItem: React.FC<{
 // Moved to ../utils/matching.ts for global consistency
 
 export const SongsPage: React.FC = () => {
-    const { activeSong, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
+    const { activeSong, isPlaying, isDetailView, selectSong, setIsDetailView, theme, setTheme, currentThemeKey, setSongs } = useAudio();
     const { user } = useAuth();
     const isAdmin = user?.role === 'admin' || user?.role === 'subadmin';
     const isNightMode = currentThemeKey === 'advaita';
@@ -1150,12 +1150,12 @@ export const SongsPage: React.FC = () => {
         if (!selectedSong) return null;
 
         const isNightMode = currentThemeKey === 'advaita';
-        const cardBg = isNightMode ? '#1E293B' : '#f4f5f8';
+        const cardBg = isNightMode ? '#1E293B' : '#ffffff';
         const textColor = isNightMode ? '#e2e8f0' : '#1e293b';
         const cardShadow = isNightMode
             ? '0 4px 14px rgba(0, 0, 0, 0.45)'
-            : '0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)';
-        const cardBorder = isNightMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.05)';
+            : '0 3px 10px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)';
+        const cardBorder = isNightMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.08)';
 
         if (!selectedSong.structuredContent) {
             return (
@@ -1689,8 +1689,8 @@ export const SongsPage: React.FC = () => {
                     gap: '0.6rem',
                     flexShrink: 0,
                     boxSizing: 'border-box',
-                    borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.18)'
+                    boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.22)',
+                    zIndex: 100
                 }}>
                     <button
                         onClick={() => {
@@ -1823,9 +1823,8 @@ export const SongsPage: React.FC = () => {
                     gap: '0.6rem',
                     flexShrink: 0,
                     boxSizing: 'border-box',
-                    borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
-                    zIndex: 10
+                    boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.22)',
+                    zIndex: 100
                 }}>
                     <button
                         onClick={handleCloseDetail}
@@ -1967,8 +1966,8 @@ export const SongsPage: React.FC = () => {
                     background: 'transparent'
                 }}>
                     <div style={{ margin: '0 auto', width: '100%', position: 'relative' }}>
-                        {/* 1. Background Music Popup (Higher float) */}
-                        {activeSong && selectedSong?.id !== activeSong.id && (
+                        {/* 1. Background Music Popup (Higher float) - Only shown in lyric section if actively playing */}
+                        {activeSong && selectedSong?.id !== activeSong.id && isPlaying && (
                             <div style={{
                                 position: 'fixed',
                                 bottom: '150px',
@@ -2133,11 +2132,10 @@ export const SongsPage: React.FC = () => {
                 gap: '0.6rem',
                 position: 'sticky',
                 top: 0,
-                zIndex: 10,
+                zIndex: 100,
                 flexShrink: 0,
                 boxSizing: 'border-box',
-                borderBottom: `2.5px solid ${theme.accent || '#00CBFE'}`,
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.18)'
+                boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.22)'
             }}>
                 <button
                     onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
@@ -2707,13 +2705,13 @@ export const SongsPage: React.FC = () => {
                                             key={song.id}
                                             onClick={() => handleSelectSong(song)}
                                             style={{
-                                                padding: '0.75rem 1rem',
+                                                padding: '0.52rem 0.85rem',
                                                 backgroundColor: isNightMode ? '#1e293b' : '#f4f5f8',
-                                                borderRadius: '12px',
-                                                marginBottom: '0.65rem',
+                                                borderRadius: '10px',
+                                                marginBottom: '0.45rem',
                                                 boxShadow: isNightMode
-                                                    ? '0 4px 12px rgba(0,0,0,0.4)'
-                                                    : '0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)',
+                                                    ? '0 3px 8px rgba(0,0,0,0.35)'
+                                                    : '0 2px 4px -1px rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.1)',
                                                 border: isNightMode
                                                     ? '1px solid rgba(255,255,255,0.08)'
                                                     : '1px solid rgba(0,0,0,0.06)',
@@ -2731,34 +2729,35 @@ export const SongsPage: React.FC = () => {
                                             onMouseLeave={(e) => {
                                                 e.currentTarget.style.transform = 'translateY(0)';
                                                 e.currentTarget.style.boxShadow = isNightMode
-                                                    ? '0 4px 12px rgba(0,0,0,0.4)'
-                                                    : '0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)';
+                                                    ? '0 3px 8px rgba(0,0,0,0.35)'
+                                                    : '0 2px 4px -1px rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.1)';
                                             }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
-                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', flex: 1, minWidth: 0 }}>
-                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, width: '100%' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem' }}>
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.05rem', flex: 1, minWidth: 0 }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', minWidth: 0, width: '100%' }}>
                                                         <div style={{
-                                                            fontSize: '1.14rem',
+                                                            fontSize: '1.08rem',
                                                             fontWeight: 900,
                                                             color: isNightMode ? '#f8fafc' : '#0f172a',
                                                             fontFamily: 'var(--font-odia-sans)',
-                                                            lineHeight: '1.35',
-                                                            paddingTop: '2px',
+                                                            lineHeight: '1.45',
+                                                            paddingTop: '5px',
+                                                            paddingBottom: '1px',
                                                             whiteSpace: 'nowrap',
                                                             overflow: 'hidden',
                                                             textOverflow: 'ellipsis',
                                                             minWidth: 0
                                                         }}>{getOdiaTitle(song)}</div>
-                                                        {song.verified && <CheckCircle2 size={16} color="#00a38d" style={{ flexShrink: 0 }} />}
+                                                        {song.verified && <CheckCircle2 size={15} color="#00a38d" style={{ flexShrink: 0 }} />}
                                                     </div>
                                                     {(song.title_english || (song.title.match(/\(([^)]+)\)/)?.[1])) && (
                                                         <div style={{
-                                                            fontSize: '0.82rem',
+                                                            fontSize: '0.78rem',
                                                             color: isNightMode ? '#38bdf8' : '#0284c7',
                                                             fontWeight: 600,
                                                             fontFamily: "'Outfit', sans-serif",
-                                                            marginTop: '2px',
+                                                            marginTop: '1px',
                                                             whiteSpace: 'nowrap',
                                                             overflow: 'hidden',
                                                             textOverflow: 'ellipsis'
@@ -2767,9 +2766,9 @@ export const SongsPage: React.FC = () => {
                                                 </div>
                                                 {((song.audioVersions?.length ?? 0) > 0 || song.audioUrl) && (
                                                     <div style={{
-                                                        marginLeft: '0.5rem',
-                                                        padding: '6px',
-                                                        borderRadius: '8px',
+                                                        marginLeft: '0.4rem',
+                                                        padding: '4px',
+                                                        borderRadius: '6px',
                                                         backgroundColor: isNightMode ? 'rgba(168, 85, 247, 0.2)' : '#f3e8ff',
                                                         color: isNightMode ? '#d8b4fe' : '#7e22ce',
                                                         display: 'flex',
@@ -2777,14 +2776,14 @@ export const SongsPage: React.FC = () => {
                                                         justifyContent: 'center',
                                                         flexShrink: 0
                                                     }}>
-                                                        <Mic size={14} strokeWidth={2.5} />
+                                                        <Mic size={13} strokeWidth={2.5} />
                                                     </div>
                                                 )}
                                             </div>
                                             {song.author && (
                                                 <div style={{
-                                                    fontSize: '0.72rem',
-                                                    marginTop: '4px',
+                                                    fontSize: '0.7rem',
+                                                    marginTop: '2px',
                                                     color: isNightMode ? '#94a3b8' : '#64748b',
                                                     fontFamily: 'var(--font-odia-sans)',
                                                     fontWeight: 600,
@@ -3389,3 +3388,5 @@ export const SongsPage: React.FC = () => {
         </div>
     );
 };
+
+export default SongsPage;
