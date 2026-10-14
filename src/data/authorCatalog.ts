@@ -117,7 +117,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Nitai Pada Kamala', title_odia: 'ନିତାଇ ପଦ କମଳ' },
             { title_english: 'Radha Krsna Prana Mora', title_odia: 'ରାଧା କୃଷ୍ଣ ପ୍ରାଣ ମୋର' },
             { id: 'song-radhakrsnasevonmui', title_english: 'Radha Krsna Sevon Mui', title_odia: 'ରାଧା କୃଷ୍ଣ ସେବୋଁ ମୁଇଁ' },
-            { title_english: 'Radhika Carana Renu', title_odia: 'ରାଧିକା ଚରଣ ରେଣୁ' },
+            { id: 'song-radhikacaranarenu', title_english: 'Radhika Carana Renu', title_odia: 'ରାଧିକା ଚରଣ ରେଣୁ' },
             { title_english: 'Sri Guru Carana Padma', title_odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ' },
             { title_english: 'Sri Krsna Caitanya Prabhu Doya Koro More', title_odia: 'ଶ୍ରୀକୃଷ୍ଣ ଚୈତନ୍ୟ ପ୍ରଭୁ ଦୟା କର ମୋର' },
             { title_english: 'Sri Rupa Manjari Pada Sei Mora Sampada', title_odia: 'ଶ୍ରୀ ରୂପ ମଞ୍ଜରୀ ପଦ ସେଇ ମୋର ସମ୍ପଦ' },
