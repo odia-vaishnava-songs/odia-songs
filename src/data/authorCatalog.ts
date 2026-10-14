@@ -204,7 +204,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ଜୟଦେବ ଗୋସ୍ୱାମୀ',
         catalog: [
             { title_english: 'He Govinda He Gopal Kesava Madhava', title_odia: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ କେଶବ ମାଧବ' },
-            { title_english: 'Pralaya Payodhi Jale', title_odia: 'ପ୍ରଳୟ ପୟୋଧି ଜଲେ' },
+            { id: 'song-pralayapayodhijale', title_english: 'Pralaya Payodhi Jale', title_odia: 'ପ୍ରଳୟ ପୟୋଧି ଜଳେ' },
             { title_english: 'Srita Kamala', title_odia: 'ଶ୍ରୀତ କମଳା' },
         ]
     },
