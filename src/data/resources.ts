@@ -13079,6 +13079,195 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: "COMPLETED"
+    },
+    {
+        id: "song-pranamtomaighanasyam",
+        title: "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ (Pranam Tomai Ghana Syam)",
+        title_odia: "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ",
+        title_english: "Pranam Tomai Ghana Syam",
+        category: "Songs",
+        type: "html",
+        author: "Traditional",
+        tags: [
+            "Pranam Tomai Ghana Syam",
+            "Ghana Syam",
+            "Krsna",
+            "Traditional",
+            "Sajanikanta Das",
+            "Kanan Devi",
+            "Pranama",
+            "Prayer",
+            "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ",
+            "ଘନଶ୍ୟାମ",
+            "ପ୍ରାର୍ଥନା"
+        ],
+        description: "ସଜନୀକାନ୍ତ ଦାସଙ୍କ ବିରଚିତ ଏବଂ ବୈଷ୍ଣବ ଭକ୍ତମାନଙ୍କ ଦ୍ୱାରା ଆଦୃତ ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣ (ଘନଶ୍ୟାମ)ଙ୍କ ଶ୍ରୀଚରଣରେ ପରମ ଆତ୍ମନିବେଦନପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା ଗୀତ ।",
+        audioUrl: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Pranam_Tomai_Ghanasyam/Pranam_Tomai_Ghanasyam_-_Sung_by_Kananbala_Devi_IDT.mp3",
+        vocalist: "HG Kananbala Devi",
+        audioVersions: [
+            {
+                label: "HG Kananbala Devi",
+                url: "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Pranam_Tomai_Ghanasyam/Pranam_Tomai_Ghanasyam_-_Sung_by_Kananbala_Devi_IDT.mp3"
+            }
+        ],
+        structuredContent: {
+            id: "song-pranamtomaighanasyam",
+            title: "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ (Pranam Tomai Ghana Syam)",
+            title_odia: "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ",
+            title_english: "Pranam Tomai Ghana Syam",
+            author: "Traditional",
+            category: "Songs",
+            reference_url: "https://vsnectar.web.app/home/songs/Pranam%20Tomai%20Ghana%20Syam_More%20Songs%20of%20the%20Vaisnava%20Acaryas_39",
+            verses: [
+                {
+                    id: "ଘୋଷା",
+                    lyric: "ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ ॥ ଘୋଷା ॥",
+                    translation: "ହେ ନବଘନଶ୍ୟାମ ପ୍ରଭୁ ଶ୍ରୀକୃଷ୍ଣ! ମୁଁ ଆପଣଙ୍କ ଶ୍ରୀଚରଣାରବିନ୍ଦରେ କୋଟି କୋଟି ବିନମ୍ର ପ୍ରଣାମ ଜଣାଉଛି।",
+                    wordMeanings: [
+                        {
+                            word: "ପ୍ରଣାମ",
+                            meaning: "ବିନମ୍ର ଭକ୍ତିପୂର୍ଣ୍ଣ ପ୍ରଣାମ"
+                        },
+                        {
+                            word: "ତୋମାୟ",
+                            meaning: "ଆପଣଙ୍କୁ"
+                        },
+                        {
+                            word: "ଘନଶ୍ୟାମ",
+                            meaning: "ହେ ନବୀନ ସଜଳ ଜଳଧର (ମେଘ) ସଦୃଶ ଶ୍ୟାମଳ ଶ୍ରୀକୃଷ୍ଣ!"
+                        }
+                    ]
+                },
+                {
+                    id: 1,
+                    lyric: "ତୋମାର ଚରଣ ଶରଣ କରି\nଅଭୟ ଏଇ ବାର ଦାଓ ହେ ହରି ।\nଦୁଃଖ-ସାଗର ଯାବୋ ତରି\nତରୀ କରି ତବ ନାମ ॥ ୧ ॥",
+                    translation: "ହେ ହରି! ମୁଁ ଆପଣଙ୍କ ଶ୍ରୀଚରଣ କମଳକୁ ହିଁ ମୋର ଏକମାତ୍ର ଆଶ୍ରୟ ବୋଲି ଗ୍ରହଣ କରୁଛି; ଦୟାକରି ଏହି ଥର ମୋତେ ସକଳ ସାଂସାରିକ ଭୟରୁ ମୁକ୍ତ କରି ଅଭୟ ପ୍ରଦାନ କରନ୍ତୁ। ଆପଣଙ୍କ ପବିତ୍ର ହରିନାମକୁ ଏକ ନୌକା (ତରୀ) କରି ମୁଁ ଏହି ଅପାର ଦୁଃଖରୂପୀ ଭବସାଗରକୁ ସହଜରେ ପାରି ହୋଇଯିବି।",
+                    wordMeanings: [
+                        {
+                            word: "ତୋମାର ଚରଣ",
+                            meaning: "ଆପଣଙ୍କ ଶ୍ରୀଚରଣ କମଳକୁ"
+                        },
+                        {
+                            word: "ଶରଣ କରି",
+                            meaning: "ଏକମାତ୍ର ଆଶ୍ରୟ ସ୍ୱରୂପ ଗ୍ରହଣ କରି"
+                        },
+                        {
+                            word: "ଅଭୟ",
+                            meaning: "ନିର୍ଭୟତା ବା ଅଭୟ ଦାନ"
+                        },
+                        {
+                            word: "ଏଇ ବାର ଦାଓ",
+                            meaning: "ଏହି ଥର ପ୍ରଦାନ କରନ୍ତୁ"
+                        },
+                        {
+                            word: "ହେ ହରି",
+                            meaning: "ହେ ସକଳ ପାପତାପହାରୀ ଶ୍ରୀହରି!"
+                        },
+                        {
+                            word: "ଦୁଃଖ-ସାଗର",
+                            meaning: "ସାଂସାରିକ ଦୁଃଖରୂପୀ ଅଥଳ ସମୁଦ୍ରକୁ"
+                        },
+                        {
+                            word: "ଯାବୋ ତରି",
+                            meaning: "ପାରି ହୋଇ ଚାଲିଯିବି"
+                        },
+                        {
+                            word: "ତରୀ କରି",
+                            meaning: "ନୌକା (ଡଙ୍ଗା) ରୂପେ ଗ୍ରହଣ କରି"
+                        },
+                        {
+                            word: "ତବ ନାମ",
+                            meaning: "ଆପଣଙ୍କ ପବିତ୍ର ଦିବ୍ୟ ନାମକୁ"
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    lyric: "ଆମରା ପଡ଼ି ଘୁମାଇ ପ୍ରଭୁ\nତୋମାର ନିତ୍ୟ ଜାଗରଣ ।\nକ୍ଷଣେ କ୍ଷଣେ ଘଟାଓ ଯେଇ ଭୁଲ୍\nଚୋଖେ ମୋହେର ଆବରଣ ॥ ୨ ॥",
+                    translation: "ହେ ପ୍ରଭୁ! ଆମ୍ଭେମାନେ ମାୟାର ପ୍ରଭାବରେ ଅଜ୍ଞାନରୂପୀ ନିଦ୍ରାରେ ସର୍ବଦା ଶୋଇ ରହିଛୁ, କିନ୍ତୁ ଆପଣ ନିରନ୍ତର ଜାଗ୍ରତ ରହି ସମସ୍ତଙ୍କର ପାଳନ କରୁଛନ୍ତି। ଆମ ଚକ୍ଷୁରେ ମାୟା ଓ ମୋହର ଏକ ଘୋର ପରଦା ପଡ଼ିରହିଥିବାରୁ ଆମ୍ଭେମାନେ ପ୍ରତ୍ୟେକ କ୍ଷଣରେ କେବଳ ଭୁଲ୍ ଏବଂ ଭ୍ରମ ହିଁ କରିଚାଲିଛୁ।",
+                    wordMeanings: [
+                        {
+                            word: "ଆମରା",
+                            meaning: "ଆମ୍ଭେମାନେ, ବଦ୍ଧଜୀବଗଣ"
+                        },
+                        {
+                            word: "ପଡ଼ି ଘୁମାଇ",
+                            meaning: "ଅଜ୍ଞାନର ନିଦ୍ରାରେ ଶୋଇ ରହିଛୁ"
+                        },
+                        {
+                            word: "ପ୍ରଭୁ",
+                            meaning: "ହେ ପ୍ରାଣପତି ଭଗବାନ!"
+                        },
+                        {
+                            word: "ତୋମାର",
+                            meaning: "ଆପଣଙ୍କର ତ"
+                        },
+                        {
+                            word: "ନିତ୍ୟ ଜାଗରଣ",
+                            meaning: "ସର୍ବଦା ଚିର ଜାଗ୍ରତ ଅବସ୍ଥା"
+                        },
+                        {
+                            word: "କ୍ଷଣେ କ୍ଷଣେ",
+                            meaning: "ପ୍ରତି ମୁହୂର୍ତ୍ତରେ"
+                        },
+                        {
+                            word: "ଘଟାଓ ଯେଇ ଭୁଲ୍",
+                            meaning: "ଯେଉଁସବୁ ଭ୍ରମ ବା ତ୍ରୁଟି ଘଟିଚାଲିଛି"
+                        },
+                        {
+                            word: "ଚୋଖେ",
+                            meaning: "ଆମର ନେତ୍ର (ଆଖି) ଉପରେ"
+                        },
+                        {
+                            word: "ମୋହେର ଆବରଣ",
+                            meaning: "ମାୟା ଓ ମୋହର ଆଚ୍ଛାଦନ (ପରଦା) ଲାଗିରହିଛି"
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    lyric: "ସେଇ ଆବରଣ ଘୁଚାଓ ହରି\nଦାଁଡ଼ାଓ ଯୁଗଳ ମୂର୍ତ୍ତି ଧରି ।\nଦେଖବୋ ତୋମାୟ ନୟନ ଭରି\nପୂର୍ଣ୍ଣ କରି ମନସ୍କାମ ॥ ୩ ॥",
+                    translation: "ହେ ହରି! ଆମ ନେତ୍ରରୁ ସେହି ମାୟାର ଆବରଣକୁ ଦୂର କରିଦିଅନ୍ତୁ ଏବଂ ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ ସହିତ ନିଜର ଦିବ୍ୟ ଯୁଗଳ ମୂର୍ତ୍ତି ଧାରଣ କରି ଆମ ସମ୍ମୁଖରେ ପ୍ରକଟ ହୁଅନ୍ତୁ! ମୁଁ ନିଜ ନୟନ ଭରି ଆପଣଙ୍କର ସେହି ଦିବ୍ୟ ଶୋଭାକୁ ଦର୍ଶନ କରିବି ଏବଂ ଆପଣଙ୍କ ପ୍ରେମମୟୀ ସେବା ପ୍ରାପ୍ତ କରି ନିଜର ଜୀବନର ପରମ ମନସ୍କାମନାକୁ ପୂର୍ଣ୍ଣ କରିବି।",
+                    wordMeanings: [
+                        {
+                            word: "ସେଇ ଆବରଣ",
+                            meaning: "ସେହି ମାୟା ଓ ଅଜ୍ଞାନର ପରଦାକୁ"
+                        },
+                        {
+                            word: "ଘୁଚାଓ ହରି",
+                            meaning: "ଦୂର କରିଦିଅନ୍ତୁ ହେ ଶ୍ରୀହରି!"
+                        },
+                        {
+                            word: "ଦାଁଡ଼ାଓ",
+                            meaning: "ଆସି ଉଭା ହୁଅନ୍ତୁ, ପ୍ରକଟ ହୁଅନ୍ତୁ"
+                        },
+                        {
+                            word: "ଯୁଗଳ ମୂର୍ତ୍ତି ଧରି",
+                            meaning: "ଶ୍ରୀଶ୍ରୀ ରାଧା-କୃଷ୍ଣଙ୍କ ଦିବ୍ୟ ଯୁଗଳ ରୂପ ଧାରଣ କରି"
+                        },
+                        {
+                            word: "ଦେଖବୋ ତୋମାୟ",
+                            meaning: "ଆପଣଙ୍କୁ ଦର୍ଶନ କରିବି"
+                        },
+                        {
+                            word: "ନୟନ ଭରି",
+                            meaning: "ଆଖି ଭରି, ତୃପ୍ତ ହୋଇ"
+                        },
+                        {
+                            word: "ପୂର୍ଣ୍ଣ କରି",
+                            meaning: "ପରିପୂର୍ଣ୍ଣ କରିବି"
+                        },
+                        {
+                            word: "ମନସ୍କାମ",
+                            meaning: "ମନର ଚରମ ଆଧ୍ୟାତ୍ମିକ ଅଭିଳାଷ (ଭଗବତ୍ ପ୍ରେମସେବା)"
+                        }
+                    ]
+                }
+            ]
+        },
+        published: true,
+        verified: true,
+        status: "COMPLETED"
     }
 ];
 

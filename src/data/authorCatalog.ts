@@ -433,7 +433,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-radhakrpakataksa', title_english: 'Munindra Vrnda Vandite - Radha Krpa Kataksa', title_odia: 'ଶ୍ରୀ ରାଧା କୃପା-କଟାକ୍ଷ-ସ୍ତବ-ରାଜ' },
             { id: 'song-navaniradanindita', title_english: 'Nava Nirada Nindita (Sri Sri Vrajaraja Sutastakam)', title_odia: 'ନବ ନୀରଦ ନିନ୍ଦିତ (ଶ୍ରୀ ଶ୍ରୀ ବ୍ରଜରାଜ ସୁତାଷ୍ଟକମ୍)' },
             { id: 'song-orevrndavanernandadulal', title_english: 'Ore Vrndavaner Nanda Dulal', title_odia: 'ଓରେ ବୃନ୍ଦାବନେର ନନ୍ଦ-ଦୁଲାଲ' },
-            { id: 'song-pancatattvamahamantra', title_english: 'Panca Tattva Mahamantra', title_odia: 'ପଞ୍ଚତତ୍ତ୍ୱ ମହାମନ୍ତ୍ର' }
+            { id: 'song-pancatattvamahamantra', title_english: 'Panca Tattva Mahamantra', title_odia: 'ପଞ୍ଚତତ୍ତ୍ୱ ମହାମନ୍ତ୍ର' },
+            { id: 'song-pranamtomaighanasyam', title_english: 'Pranam Tomai Ghana Syam', title_odia: 'ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ' }
         ]
     },
     {
