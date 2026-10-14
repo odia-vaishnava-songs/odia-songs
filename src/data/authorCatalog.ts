@@ -502,4 +502,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-jarmukhebhai', title_english: 'Jar Mukhe Bhai Hari Katha Nai', title_odia: 'ଯାର୍ ମୁଖେ ଭାଇ ହରି କଥା ନାଇ' }
         ]
     },
+    {
+        name: 'Budhakaushika',
+        odia: 'ବୁଧକୌଶିକ ଋଷି',
+        catalog: [
+            { id: 'song-ramarakshastotra', title_english: 'Rama Raksha Stotra', title_odia: 'ଶ୍ରୀ ରାମରକ୍ଷା ସ୍ତୋତ୍ରମ୍' }
+        ]
+    },
 ];
