@@ -67,6 +67,18 @@ export function isTitleMatch(
     if (nce1 === nce2 && nce1.length > 3) return true;
     if (nce1.length > 6 && nce2.length > 6 && (nce1.includes(nce2) || nce2.includes(nce1))) return true;
 
+    // Aggressive match on cleaned strings (handles vowel differences like prema / prem)
+    const ace1 = normalizeForSearch(ce1, true);
+    const ace2 = normalizeForSearch(ce2, true);
+    if (ace1 === ace2 && ace1.length > 3) return true;
+    if (ace1.length > 5 && ace2.length > 5 && (ace1.includes(ace2) || ace2.includes(ace1))) return true;
+
+    // Check parenthesized subtitles if present (e.g., "Prem Dhvani (Jaya Dhvani)")
+    const paren1 = t1.match(/\(([^)]+)\)/)?.[1]?.trim();
+    const paren2 = t2.match(/\(([^)]+)\)/)?.[1]?.trim();
+    if (paren1 && (paren1.toLowerCase() === ce2 || normalizeForSearch(paren1, true) === ace2)) return true;
+    if (paren2 && (paren2.toLowerCase() === ce1 || normalizeForSearch(paren2, true) === ace1)) return true;
+
     // 3. Simple inclusion (only for longer titles)
     const nt1 = normalizeForSearch(title1);
     const nt2 = normalizeForSearch(title2);

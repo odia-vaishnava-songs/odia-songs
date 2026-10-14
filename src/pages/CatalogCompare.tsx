@@ -41,7 +41,8 @@ export const CatalogCompare: React.FC = () => {
             // Find in Live Database
             const liveMatch = liveSongs.find(s => 
                 (catalogMatch?.id && s.id === catalogMatch.id) ||
-                isTitleMatch(extName, s.title_english || s.title, catalogMatch?.title_odia || '', s.title_odia)
+                isTitleMatch(extName, s.title_english || '', catalogMatch?.title_odia || '', s.title_odia) ||
+                (s.title && isTitleMatch(extName, s.title, catalogMatch?.title_odia || '', s.title_odia))
             );
 
             let status: 'completed' | 'coming-soon' | 'missing' = 'missing';

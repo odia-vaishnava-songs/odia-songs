@@ -321,6 +321,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Vyasadeva',
         odia: 'ବ୍ୟାସଦେବ',
         catalog: [
+            { id: 'song-purusasukta', title_english: 'Purusa Sukta', title_odia: 'ପୁରୁଷ ସୂକ୍ତମ୍' },
             { title_english: 'Bhagavad Gita' },
             { id: 'song-bhishmastuti', title_english: 'Bhishma Stuti', title_odia: 'ଭୀଷ୍ମ ସ୍ତୁତି' },
             { title_english: 'Ugram Viram Mahavishnum' },
