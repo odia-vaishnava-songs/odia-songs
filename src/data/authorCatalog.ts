@@ -19,6 +19,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Bhaktivinoda Thakura',
         odia: 'ଶ୍ରୀଲ ଭକ୍ତି ବିନୋଦ ଠାକୁର',
         catalog: [
+            { id: 'song-ramanisiromani', title_english: 'Ramani Siromani', title_odia: 'ରମଣୀ-ଶିରୋମଣି' },
             { id: 'song-amarboliteprabhu', title_english: 'Amar Bolite Prabhu' },
             { title_english: 'Amar Jivan', title_odia: 'ଆମାର ଜୀବନ' },
             { title_english: 'Ami Jamuna Puline', title_odia: 'ଆମି ଯମୁନା ପୁଲିନେ' },
