@@ -14,11 +14,29 @@ export const useSongs = () => {
     const processData = useCallback((supabaseSongs: any[]) => {
         // Merge local and supabase songs: Prefer supabase
         const supabaseIds = new Set(supabaseSongs.map(s => s.id));
-        const combined = [...supabaseSongs].map(s => ({
-            ...s,
-            author: standardizeAuthorName(s.author || ''),
-            verified: true
-        }));
+        const combined = [...supabaseSongs].map(s => {
+            const local = LOCAL_RESOURCES.find(l => l.id === s.id);
+            let structuredContent = s.structuredContent;
+            if (local?.structuredContent?.verses && structuredContent?.verses) {
+                structuredContent = {
+                    ...structuredContent,
+                    verses: structuredContent.verses.map((sv: any, idx: number) => {
+                        const localVerse = local?.structuredContent?.verses?.[idx];
+                        return {
+                            ...sv,
+                            translationAudioUrl: sv.translationAudioUrl || localVerse?.translationAudioUrl,
+                            translationAudioMaleUrl: sv.translationAudioMaleUrl || localVerse?.translationAudioMaleUrl
+                        };
+                    })
+                };
+            }
+            return {
+                ...s,
+                structuredContent,
+                author: standardizeAuthorName(s.author || ''),
+                verified: true
+            };
+        });
 
         LOCAL_RESOURCES.forEach(local => {
             if (!supabaseIds.has(local.id)) {

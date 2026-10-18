@@ -91,7 +91,7 @@ export default defineConfig({
     port: 5174,
     strictPort: true,
     watch: {
-      ignored: ['**/backups/**', '**/scratch/**', '**/.git/**', '**/public/authors/**']
+      ignored: ['**/backups/**', '**/scratch/**', '**/.git/**', '**/public/authors/**', '**/public/audio/**']
     }
   },
   build: {

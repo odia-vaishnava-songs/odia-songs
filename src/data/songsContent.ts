@@ -97,7 +97,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -140,7 +142,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -195,7 +199,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ମଧୁରଂ",
                     "meaning": "ମଧୁର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -238,7 +244,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -281,7 +289,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -324,7 +334,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -367,7 +379,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -410,7 +424,9 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଖିଳଂ",
                     "meaning": "ସବୁକିଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v8_male.mp3"
         }
     ]
 };
@@ -784,7 +800,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଡୁକୃଞ୍-କରଣେ",
                     "meaning": "ବ୍ୟାକରଣର ନିୟମ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -847,7 +865,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଚିତ୍ତମ୍",
                     "meaning": "ମନ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -898,7 +918,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବାରମ୍ ବାରମ୍",
                     "meaning": "ବାରମ୍ବାର।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -965,7 +987,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ସମସ୍ତମ୍",
                     "meaning": "ସମଗ୍ର।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -1024,7 +1048,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଗେହେ",
                     "meaning": "ଘରେ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -1087,7 +1113,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ତସ୍ମିନ୍ କାୟେ",
                     "meaning": "ସେହି ଶରୀରକୁ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -1142,7 +1170,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ନା",
                     "meaning": "ନୁହେଁ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -1213,7 +1243,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଭ୍ରାତଃ",
                     "meaning": "ହେ ଭାଇ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -1240,7 +1272,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଜୀବନ୍-ମୁକ୍ତିଃ",
                     "meaning": "ଜୀବଦ୍ଦଶାରେ ମୁକ୍ତି।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v9_male.mp3"
         },
         {
             "id": 10,
@@ -1279,7 +1313,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ସଂସାରଃ",
                     "meaning": "ସାଂସାରିକ ବନ୍ଧନ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v10.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v10_male.mp3"
         },
         {
             "id": 11,
@@ -1354,7 +1390,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବିଦିତ୍ୱା",
                     "meaning": "ଜାଣିବା ପରେ/ଉପଲବ୍ଧି କରି।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v11.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v11_male.mp3"
         },
         {
             "id": 12,
@@ -1413,7 +1451,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଆଶା-ବାୟୁଃ",
                     "meaning": "ଆଶା ରୂପୀ ପବନ/ତୃଷ୍ଣା।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v12.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v12_male.mp3"
         },
         {
             "id": 13,
@@ -1456,7 +1496,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଭଗବଚ୍ଛରଣୈଃ",
                     "meaning": "ଭଗବତ୍ପାଦ ନାମରେ ପରିଚିତ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v13.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v13_male.mp3"
         },
         {
             "id": 14,
@@ -1527,7 +1569,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ନୌକା",
                     "meaning": "ନୌକା/ଡଙ୍ଗା।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v14.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v14_male.mp3"
         },
         {
             "id": 15,
@@ -1582,7 +1626,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବହୁକୃତ-ବେଷଃ",
                     "meaning": "ବିଭିନ୍ନ ପ୍ରକାରର ଛଦ୍ମବେଶ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v15.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v15_male.mp3"
         },
         {
             "id": 16,
@@ -1649,7 +1695,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଆଶାପିଣ୍ଡମ୍",
                     "meaning": "ଆଶା ଓ ବାସନାର ପିଣ୍ଡ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v16.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v16_male.mp3"
         },
         {
             "id": 17,
@@ -1700,7 +1748,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଆଶା-ପାଶଃ",
                     "meaning": "ଆଶା ବା ବାସନାର ରଜ୍ଜୁ/ଫାଶ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v17.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v17_male.mp3"
         },
         {
             "id": 18,
@@ -1747,7 +1797,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଜନ୍ମ ଶତେନ",
                     "meaning": "ଶହେ ଜନ୍ମରେ ମଧ୍ୟ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v18.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v18_male.mp3"
         },
         {
             "id": 19,
@@ -1806,7 +1858,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବିରାଗଃ",
                     "meaning": "ବୈରାଗ୍ୟ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v19.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v19_male.mp3"
         },
         {
             "id": 20,
@@ -1853,7 +1907,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ନନ୍ଦତ୍ୟେବ",
                     "meaning": "କେବଳ ସେ ହିଁ ଆନନ୍ଦିତ ହୁଏ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v20.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v20_male.mp3"
         },
         {
             "id": 21,
@@ -1912,7 +1968,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ନ ଚର୍ଚା",
                     "meaning": "କୌଣସି ବିଚାର ବା ଆଲୋଚନା ରହେ ନାହିଁ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v21.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v21_male.mp3"
         },
         {
             "id": 22,
@@ -1963,7 +2021,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ମୁରାରେ",
                     "meaning": "ହେ କୃଷ୍ଣ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v22.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v22_male.mp3"
         },
         {
             "id": 23,
@@ -2014,7 +2074,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବାଲୋନ୍ମତ୍ତବଦ୍",
                     "meaning": "ଜଣେ ଶିଶୁ ବା ପାଗଳ ପରି।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v23.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v23_male.mp3"
         },
         {
             "id": 24,
@@ -2069,7 +2131,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ସ୍ୱପ୍ନ ବିଚାରମ୍",
                     "meaning": "ସ୍ୱପ୍ନ ପରି ବିଚାର କରି।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v24.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v24_male.mp3"
         },
         {
             "id": 25,
@@ -2128,7 +2192,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବିଷ୍ଣୁତ୍ୱମ୍",
                     "meaning": "ବିଷ୍ଣୁତ୍ୱ ପ୍ରାପ୍ତି।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v25.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v25_male.mp3"
         },
         {
             "id": 26,
@@ -2179,7 +2245,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଭେଦାଜ୍ଞାନମ୍",
                     "meaning": "ଭେଦଭାବ ବା ଦ୍ୱୈତଭାବ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v26.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v26_male.mp3"
         },
         {
             "id": 27,
@@ -2234,7 +2302,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ନରକ",
                     "meaning": "ନରକରେ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v27.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v27_male.mp3"
         },
         {
             "id": 28,
@@ -2281,7 +2351,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ବିତ୍ତମ୍",
                     "meaning": "ଧନ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v28.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v28_male.mp3"
         },
         {
             "id": 29,
@@ -2336,7 +2408,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ପାପା-ଚରଣମ୍",
                     "meaning": "ପାପାଚାର/ଖରାପ କର୍ମ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v29.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v29_male.mp3"
         },
         {
             "id": 30,
@@ -2387,7 +2461,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ରୀତିଃ",
                     "meaning": "ପରମ୍ପରା/ନିୟମ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v30.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v30_male.mp3"
         },
         {
             "id": 31,
@@ -2422,7 +2498,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ମହଦ୍-ଅବଧାନମ୍",
                     "meaning": "ଅତ୍ୟନ୍ତ ସାବଧାନତା ସହ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v31.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v31_male.mp3"
         },
         {
             "id": 32,
@@ -2469,7 +2547,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଦେବମ୍",
                     "meaning": "ଭଗବାନଙ୍କୁ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v32.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v32_male.mp3"
         },
         {
             "id": 33,
@@ -2512,7 +2592,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଶୋଧିତକରଣଃ",
                     "meaning": "ଶୁଦ୍ଧ ଚିତ୍ତ ବା ସଂଶୋଧିତ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v33.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v33_male.mp3"
         },
         {
             "id": 34,
@@ -2543,7 +2625,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଭବତରଣେ",
                     "meaning": "ସଂସାର ସାଗର ପାର ହେବା ପାଇଁ।"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v34.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v34_male.mp3"
         },
         {
             "id": 35,
@@ -2554,7 +2638,9 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "word": "ଇତି ଭଜଗୋବିନ୍ଦମ୍ ସମ୍ପୂର୍ଣ୍ଣମ୍\n (ଏହିଠାରେ ଭଜ ଗୋବିନ୍ଦମ୍ ସ୍ତୋତ୍ର ସମାପ୍ତ ହେଲା)",
                     "meaning": ""
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v35.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v35_male.mp3"
         }
     ]
 };
@@ -2626,7 +2712,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରବାହଃ",
                     "meaning": "ସର୍ଜନା ଓ ବିନାଶ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v1_male.mp3"
         },
         {
             "id": 2,
@@ -2689,7 +2777,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଅନବଦ୍ୟା",
                     "meaning": "ନିଷ୍କାମ ଭାବେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v2_male.mp3"
         },
         {
             "id": 3,
@@ -2776,7 +2866,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଆତ୍ମା",
                     "meaning": "ମନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v3_male.mp3"
         },
         {
             "id": 4,
@@ -2859,7 +2951,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଅସ୍ତୁ",
                     "meaning": "ହେଉ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v4_male.mp3"
         },
         {
             "id": 5,
@@ -2938,7 +3032,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଅସ୍ତୁ",
                     "meaning": "ହେଉ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v5_male.mp3"
         },
         {
             "id": 6,
@@ -3021,7 +3117,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଉତ୍ତରୀୟଃ",
                     "meaning": "ଉପର ବସ୍ତ୍ର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v6_male.mp3"
         },
         {
             "id": 7,
@@ -3096,7 +3194,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ମୁକୁନ୍ଦଃ",
                     "meaning": "ମୁକ୍ତିଦାତା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v7_male.mp3"
         },
         {
             "id": 8,
@@ -3175,7 +3275,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ସୂ-ରୂପମ୍",
                     "meaning": "ନିଜର ମୂଳ ସ୍ୱରୂପ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v8_male.mp3"
         },
         {
             "id": 9,
@@ -3242,7 +3344,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଗୋପ-ବଧ୍ୱଃ",
                     "meaning": "ଗୋପୀମାନେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v9_male.mp3"
         },
         {
             "id": 10,
@@ -3309,7 +3413,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଆତ୍ମା",
                     "meaning": "ପରମାତ୍ମା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v10.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v10_male.mp3"
         },
         {
             "id": 11,
@@ -3384,7 +3490,9 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "word": "ଭେଦ-ମୋହଃ",
                     "meaning": "ଦ୍ୱୈତଭାବର ଅଜ୍ଞାନତା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v11.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v11_male.mp3"
         }
     ]
 };
@@ -3460,7 +3568,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅରବିନ୍ଦ-ବନ୍ଧୁ-ନନ୍ଦିନୀ",
                     "meaning": "ସୂର୍ଯ୍ୟଙ୍କ କନ୍ୟା (ଯମୁନା)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -3519,7 +3629,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅନ୍ଧିନୀ",
                     "meaning": "ନାଶକାରିଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -3570,7 +3682,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ମଙ୍ଗଳ-ଅନୁବନ୍ଧିନୀ",
                     "meaning": "ମଙ୍ଗଳ ପ୍ରଦାନକାରିଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -3621,7 +3735,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ନିନ୍ଦିନୀ",
                     "meaning": "ପରାସ୍ତକାରିଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -3672,7 +3788,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ବନ୍ଦିନୀ",
                     "meaning": "ବନ୍ଦନା କରନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -3723,7 +3841,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଭିନନ୍ଦିନୀ",
                     "meaning": "ଆନନ୍ଦିତ ହୁଅନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -3770,7 +3890,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ରନ୍ଧିନୀ",
                     "meaning": "ନାଶକାରିଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -3817,7 +3939,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଗନ୍ଧିନୀ",
                     "meaning": "ସୁଗନ୍ଧିତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -3868,7 +3992,9 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ପୁଣ୍ଡରୀକ-ଲୋଚନେ",
                     "meaning": "ହେ ପଦ୍ମାକ୍ଷୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v9_male.mp3"
         }
     ]
 };
@@ -7999,7 +8125,9 @@ export const SONG_BRAHMABOLE_STRUCTURED: StructuredSong = {
                     "word": "ରାମ ରାମ ହରେ ହରେ",
                     "meaning": "ରାମ ନାମ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v1_male.mp3"
         },
         {
             "id": 2,
@@ -8034,7 +8162,9 @@ export const SONG_BRAHMABOLE_STRUCTURED: StructuredSong = {
                     "word": "ପଞ୍ଚ ମୁଖେ",
                     "meaning": "ପାଞ୍ଚୋଟି ମୁଖରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v2_male.mp3"
         }
     ]
 };
@@ -8670,7 +8800,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "କଥା",
                     "meaning": "କାହାଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v1_male.mp3"
         },
         {
             "id": 2,
@@ -8737,7 +8869,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "ଦାସେ",
                     "meaning": "ଦାସକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v2_male.mp3"
         },
         {
             "id": 3,
@@ -8804,7 +8938,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "ଲବ",
                     "meaning": "ସାମାନ୍ୟ ଅଂଶ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v3_male.mp3"
         },
         {
             "id": 4,
@@ -8863,7 +8999,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "ଲାଗିଲୋ ଭାଲୋ",
                     "meaning": "ଭଲ ଲାଗିଲା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v4_male.mp3"
         },
         {
             "id": 5,
@@ -8918,7 +9056,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "ଅହର-ଅହଃ",
                     "meaning": "ଦିନକୁ ଦିନ (ସବୁ ସମୟ)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v5_male.mp3"
         },
         {
             "id": 6,
@@ -8973,7 +9113,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "ହରି!",
                     "meaning": "ହେ ପ୍ରଭୁ!"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v6_male.mp3"
         },
         {
             "id": 7,
@@ -9024,7 +9166,9 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "word": "କି ହବେ ଗତି?",
                     "meaning": "କିପରି ଗନ୍ତବ୍ୟ ସ୍ଥଳ ହେବ?"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v7_male.mp3"
         }
     ]
 };
@@ -12630,7 +12774,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "କ୍ଳେଶ",
                     "meaning": "ଯନ୍ତ୍ରଣା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v1_male.mp3"
         },
         {
             "id": 2,
@@ -12693,7 +12839,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "ସୁଖ-କର",
                     "meaning": "ସୁଖଦାୟକ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v2_male.mp3"
         },
         {
             "id": 3,
@@ -12752,7 +12900,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "ବିଭୂଷଣ",
                     "meaning": "ଅଳଙ୍କାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v3_male.mp3"
         },
         {
             "id": 4,
@@ -12811,7 +12961,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "କାମୀ",
                     "meaning": "ଲାଳସାଗ୍ରସ୍ତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v4_male.mp3"
         },
         {
             "id": 5,
@@ -12862,7 +13014,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "ଜର ଜର",
                     "meaning": "ଅତ୍ୟନ୍ତ ଜର୍ଜରିତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v5_male.mp3"
         },
         {
             "id": 6,
@@ -12917,7 +13071,9 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "word": "ନିବେଦନ",
                     "meaning": "ନିବେଦନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v6_male.mp3"
         }
     ]
 };
@@ -12978,7 +13134,9 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "word": "ରସ-ରାଜ",
                     "meaning": "ସମସ୍ତ ରସର ରାଜା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13014,7 +13172,9 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "word": "ପରିଜନ",
                     "meaning": "ସଙ୍ଗୀଗଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13078,7 +13238,9 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "word": "ବନେ",
                     "meaning": "ବନ ମଧ୍ୟରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13138,7 +13300,9 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "word": "ମିନତି କରେ",
                     "meaning": "ବିନମ୍ର ନିବେଦନ କରୁଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v4_male.mp3"
         }
     ],
     "reference_url": ""
@@ -13211,7 +13375,9 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "word": "ନାହିଁ ପାୟ",
                     "meaning": "ପାଉନାହିଁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13278,7 +13444,9 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "word": "ଆସି' ବେଲା",
                     "meaning": "ସମୟ ଆସି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13349,7 +13517,9 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "word": "ବଲେ",
                     "meaning": "ନିଜ ଶକ୍ତିରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13412,7 +13582,9 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "word": "ଦୟାମୟ",
                     "meaning": "ହେ ଦୟାମୟ !"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v4_male.mp3"
         }
     ]
 };
@@ -13508,7 +13680,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ବାର",
                     "meaning": "ବାରମ୍ବାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13543,7 +13717,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ପରାଣ",
                     "meaning": "ପ୍ରାଣକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13582,7 +13758,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ଲୋର",
                     "meaning": "ଅଶ୍ରୁ/ଲୁହ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13617,7 +13795,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ବାହିରାବ",
                     "meaning": "ବାହାରିବ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v4_male.mp3"
         },
         {
             "id": 5,
@@ -13660,7 +13840,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ବାର",
                     "meaning": "ପ୍ରତିବାର/ବାରମ୍ବାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v5_male.mp3"
         },
         {
             "id": 6,
@@ -13691,7 +13873,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ପରାଣ",
                     "meaning": "ପ୍ରାଣକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v6_male.mp3"
         },
         {
             "id": 7,
@@ -13734,7 +13918,9 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "word": "ହୀନ",
                     "meaning": "ହୀନ/ଦୁର୍ବଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v7_male.mp3"
         }
     ]
 };
@@ -15054,7 +15240,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଦେଖି",
                     "meaning": "ମୁଁ ଦେଖୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v1_male.mp3"
         },
         {
             "id": 2,
@@ -15113,7 +15301,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଭୟ",
                     "meaning": "ଭୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v2_male.mp3"
         },
         {
             "id": 3,
@@ -15180,7 +15370,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଅନୁରାଗୀ",
                     "meaning": "ଗଭୀର ପ୍ରେମରେ ଅନୁରକ୍ତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v3_male.mp3"
         },
         {
             "id": 4,
@@ -15239,7 +15431,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଅବିଦ୍ୟା-ଦୁଃଖ",
                     "meaning": "ଅଜ୍ଞାନତା ଜନିତ ଦୁଃଖ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v4_male.mp3"
         },
         {
             "id": 5,
@@ -15302,7 +15496,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଧନେ",
                     "meaning": "ଧନର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v5_male.mp3"
         },
         {
             "id": 6,
@@ -15361,7 +15557,9 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "word": "ଘରେ",
                     "meaning": "ଘରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v6_male.mp3"
         }
     ]
 };
@@ -17217,7 +17415,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ରାମ କୃଷ୍ଣ ହୟଗ୍ରୀବ",
                     "meaning": "ଶ୍ରୀରାମ, ଶ୍ରୀକୃଷ୍ଣ ଓ ହୟଗ୍ରୀବ ଭଗବାନଙ୍କ ନାମ ନିଅ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v1_male.mp3"
         },
         {
             "id": 2,
@@ -17248,7 +17448,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ଜୟ ଦାଶରଥି-ରାମ",
                     "meaning": "ଦଶରଥ ନନ୍ଦନ ଶ୍ରୀରାମଙ୍କର ଜୟ ହେଉ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v2_male.mp3"
         },
         {
             "id": 3,
@@ -17279,7 +17481,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ଭୁବନ-ସୁନ୍ଦର-ବର",
                     "meaning": "ସମଗ୍ର ବ୍ରହ୍ମାଣ୍ଡର ଶ୍ରେଷ୍ଠ ସୁନ୍ଦର ପୁରୁଷ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v3_male.mp3"
         },
         {
             "id": 4,
@@ -17310,7 +17514,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ଚିତ୍ତ-ହାରୀ ବଂଶୀ-ଧାରୀ",
                     "meaning": "ମନହରଣକାରୀ ମୁରଲୀଧର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v4_male.mp3"
         },
         {
             "id": 5,
@@ -17341,7 +17547,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ମୋହନ-ବଂଶୀ-ବିହାରୀ",
                     "meaning": "ମୋହନ ବଂଶୀ ବଜାଇ ବିହାର କରୁଥିବା ପ୍ରଭୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v5_male.mp3"
         },
         {
             "id": 6,
@@ -17368,7 +17576,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ବୃନ୍ଦା-ବିପିନ-ନିବାସୀ",
                     "meaning": "ବୃନ୍ଦାବନ ଧାମର ବାସିନ୍ଦା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v6_male.mp3"
         },
         {
             "id": 7,
@@ -17395,7 +17605,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ସମସ୍ତ-ଗୁଣ-ଗଣ-ଧାମ",
                     "meaning": "ସମସ୍ତ ସଦ୍ଗୁଣର ଆଶ୍ରୟସ୍ଥଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v7_male.mp3"
         },
         {
             "id": 8,
@@ -17426,7 +17638,9 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "word": "ରାଖୋ ବଚନ ମନ ମୋର",
                     "meaning": "ହେ ମୋର ମନ! ଏହି କଥାଟି ରଖ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v8_male.mp3"
         }
     ]
 };
@@ -23855,7 +24069,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ହାରୀ",
                     "meaning": "ମନମୁଗ୍ଧକାରୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v1_male.mp3"
         },
         {
             "id": 2,
@@ -23894,7 +24110,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଭୋଜନ",
                     "meaning": "ଭୋଜନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v2_male.mp3"
         },
         {
             "id": 3,
@@ -23933,7 +24151,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ସାରି",
                     "meaning": "ଧାଡ଼ି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v3_male.mp3"
         },
         {
             "id": 4,
@@ -23988,7 +24208,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ମୋଚା-ଖଣ୍ଡ ",
                     "meaning": "କଦଳୀ ଭଣ୍ଡାରୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v4_male.mp3"
         },
         {
             "id": 5,
@@ -24031,7 +24253,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ପାୟସାନ୍ନ ",
                     "meaning": " କ୍ଷୀରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v5_male.mp3"
         },
         {
             "id": 6,
@@ -24074,7 +24298,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରକାର ",
                     "meaning": "ପ୍ରକାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v6_male.mp3"
         },
         {
             "id": 7,
@@ -24121,7 +24347,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "କୁତୂହଳୀ ",
                     "meaning": "ଖୁସି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v7_male.mp3"
         },
         {
             "id": 8,
@@ -24168,7 +24396,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଭୋଜନ ",
                     "meaning": "ଖାଇବା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v8_male.mp3"
         },
         {
             "id": 9,
@@ -24215,7 +24445,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ହରିବୋଲ ",
                     "meaning": "ହରିବୋଲ !\n"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v9_male.mp3"
         },
         {
             "id": 10,
@@ -24266,7 +24498,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଯଶୋଦା-ଭବନେ ",
                     "meaning": "ଯଶୋଦାଙ୍କ ଘରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v10.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v10_male.mp3"
         },
         {
             "id": 11,
@@ -24321,7 +24555,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ସାରି ",
                     "meaning": "ପରେ ଧାଡ଼ି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v11.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v11_male.mp3"
         },
         {
             "id": 12,
@@ -24364,7 +24600,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ବଳଦେବ-ସନେ ",
                     "meaning": "ବଳରାମଙ୍କ ସହିତ\n"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v12.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v12_male.mp3"
         },
         {
             "id": 13,
@@ -24415,7 +24653,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଗେଲା ",
                     "meaning": "ଯାଆନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v13.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v13_male.mp3"
         },
         {
             "id": 14,
@@ -24458,7 +24698,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଯାୟ ",
                     "meaning": "ଯାଆନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v14.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v14_male.mp3"
         },
         {
             "id": 15,
@@ -24505,7 +24747,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରୀତ ",
                     "meaning": "ସନ୍ତୁଷ୍ଟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v15.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v15_male.mp3"
         },
         {
             "id": 16,
@@ -24548,7 +24792,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଗାୟ ",
                     "meaning": "ଗାଆନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v16.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v16_male.mp3"
         },
         {
             "id": 17,
@@ -24595,7 +24841,9 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "word": "ଠାକୁର ଭକ୍ତିବିନୋଦ ",
                     "meaning": "ଭକ୍ତିବିନୋଦ ଠାକୁର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v17.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v17_male.mp3"
         }
     ]
 };
@@ -26599,7 +26847,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ଉଦ୍ଧାର",
                     "meaning": "ମୁକ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v1_male.mp3"
         },
         {
             "id": 2,
@@ -26650,7 +26900,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "କାଛେ",
                     "meaning": "ପାଖକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v2_male.mp3"
         },
         {
             "id": 3,
@@ -26689,7 +26941,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ମୋଚନ",
                     "meaning": "ମୁକ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v3_male.mp3"
         },
         {
             "id": 4,
@@ -26740,7 +26994,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ଦିୟା",
                     "meaning": "ପ୍ରଦାନ କରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v4_male.mp3"
         },
         {
             "id": 5,
@@ -26787,7 +27043,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ଉଦ୍ଧାର",
                     "meaning": "ଉଦ୍ଧାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v5_male.mp3"
         },
         {
             "id": 6,
@@ -26830,7 +27088,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ପାଇ",
                     "meaning": "ପାଇବି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v6_male.mp3"
         },
         {
             "id": 7,
@@ -26873,7 +27133,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ବିଚାର",
                     "meaning": "ସିଦ୍ଧାନ୍ତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v7_male.mp3"
         },
         {
             "id": 8,
@@ -26920,7 +27182,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ଆଶ୍ରୟ",
                     "meaning": "ଆଶ୍ରୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v8_male.mp3"
         },
         {
             "id": 9,
@@ -26963,7 +27227,9 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "word": "ତୋମାର",
                     "meaning": "ଆପଣଙ୍କର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v9_male.mp3"
         }
     ]
 };
@@ -27023,7 +27289,9 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "word": "ଚିର-ଦିନ",
                     "meaning": "ସବୁଦିନ ପାଇଁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27074,7 +27342,9 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "word": "ପରାଧୀନ",
                     "meaning": "ଅନ୍ୟ ଉପରେ ନିର୍ଭରଶୀଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27117,7 +27387,9 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "word": "କୃଷ୍ଣାଧୀନ",
                     "meaning": "କୃଷ୍ଣଙ୍କ ଉପରେ ନିର୍ଭରଶୀଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v3_male.mp3"
         }
     ]
 };
@@ -27165,7 +27437,9 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "word": "ଫାଙ୍କି",
                     "meaning": "ପ୍ରତାରଣା ବା ଛଳନା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27220,7 +27494,9 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "word": "ବାକି",
                     "meaning": "ବାକି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27283,7 +27559,9 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "word": "ମେକି ",
                     "meaning": "ନକଲି ବା ବାହ୍ୟାଡ଼ମ୍ବର?"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v3_male.mp3"
         },
         {
             "id": 4,
@@ -27362,7 +27640,9 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "word": "ଦେଖି",
                     "meaning": "ଦେଖିବା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v4_male.mp3"
         },
         {
             "id": 5,
@@ -27429,7 +27709,9 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "word": "କି",
                     "meaning": "କ'ଣ?"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v5_male.mp3"
         }
     ]
 };
@@ -27477,7 +27759,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ବୋଲିହାରି",
                     "meaning": "ବିସ୍ମୟରେ ଅଭିଭୂତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27512,7 +27796,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "କିଶୋର-କିଶୋରୀ",
                     "meaning": "ଯୁବ ଦିବ୍ୟ ଯୁଗଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27559,7 +27845,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଜ୍ୟୋତିଃ",
                     "meaning": "ଉଜ୍ଜ୍ୱଳତା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v3_male.mp3"
         },
         {
             "id": 4,
@@ -27610,7 +27898,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଉଜାଲା",
                     "meaning": "ଆଲୋକିତ କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v4_male.mp3"
         },
         {
             "id": 5,
@@ -27649,7 +27939,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ରସାଲ",
                     "meaning": "ଆନନ୍ଦଦାୟକ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v5_male.mp3"
         },
         {
             "id": 6,
@@ -27688,7 +27980,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଢୁଲାଓୱେ",
                     "meaning": "ହଲାଉଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v6_male.mp3"
         },
         {
             "id": 7,
@@ -27727,7 +28021,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଲଗାଓୱେ",
                     "meaning": "ଅର୍ପଣ କରୁଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v7_male.mp3"
         },
         {
             "id": 8,
@@ -27766,7 +28062,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଆରତି",
                     "meaning": "ଆରତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v8_male.mp3"
         },
         {
             "id": 9,
@@ -27809,7 +28107,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଗାଓୱେ",
                     "meaning": "ଗାଉଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v9_male.mp3"
         },
         {
             "id": 10,
@@ -27848,7 +28148,9 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "word": "ଭୁଞ୍ଜେ",
                     "meaning": "ଉପଭୋଗ କରୁଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v10.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v10_male.mp3"
         }
     ]
 };
@@ -32024,7 +32326,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ଖୋଦ ନିତାଇ",
                     "meaning": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ ନିଜେ (ଏହାର ମାଲିକ ଓ ପରିଚାଳକ)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v1_male.mp3"
         },
         {
             "id": 2,
@@ -32059,7 +32363,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ବିକାୟ",
                     "meaning": "ବିକ୍ରୟ କରୁଛନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v2_male.mp3"
         },
         {
             "id": 3,
@@ -32098,7 +32404,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "କଷି'",
                     "meaning": "ନିର୍ଦ୍ଧାରଣ କରି (ଦର କଷାକଷି କରି)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v3_male.mp3"
         },
         {
             "id": 4,
@@ -32137,7 +32445,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ଯାଇ",
                     "meaning": "ମୁଁ ଏବେ ଯାଉଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v4_male.mp3"
         },
         {
             "id": 5,
@@ -32176,7 +32486,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "କାମ",
                     "meaning": "ଆମ ସମସ୍ତଙ୍କର ଅଭିଳାଷ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v5_male.mp3"
         },
         {
             "id": 6,
@@ -32211,7 +32523,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ପରମ-ଆନନ୍ଦ",
                     "meaning": "ପରମ ଆନନ୍ଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v6_male.mp3"
         },
         {
             "id": 7,
@@ -32250,7 +32564,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ସମ୍ବଲ",
                     "meaning": "ଆଧ୍ୟାତ୍ମିକ ସମ୍ପଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v7_male.mp3"
         },
         {
             "id": 8,
@@ -32289,7 +32605,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ଅପେକ୍ଷା",
                     "meaning": "ଖାତିର (ଅପେକ୍ଷା)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v8_male.mp3"
         },
         {
             "id": 9,
@@ -32324,7 +32642,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ଜଞ୍ଜାଲ",
                     "meaning": "ସମସ୍ୟା (ଜଞ୍ଜାଳ)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v9_male.mp3"
         },
         {
             "id": 10,
@@ -32359,7 +32679,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ନିତାଇ ଦୟାମୟ",
                     "meaning": "ଦୟାମୟ ନିତାଇ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v10.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v10_male.mp3"
         },
         {
             "id": 11,
@@ -32394,7 +32716,9 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "word": "ଆଶ୍ରୟ",
                     "meaning": "ସୁରକ୍ଷିତ ଆଶ୍ରୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v11.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v11_male.mp3"
         }
     ]
 };
@@ -32856,7 +33180,9 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "word": "ପରିହରି",
                     "meaning": "ପରିହାର କରି/ତ୍ୟାଗ କରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v1_male.mp3"
         },
         {
             "id": 2,
@@ -32932,7 +33258,9 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "word": "ସ୍ମର",
                     "meaning": "ସ୍ମରଣ କର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v2_male.mp3"
         },
         {
             "id": 3,
@@ -32988,7 +33316,9 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "word": "ରେ",
                     "meaning": "ହେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v3_male.mp3"
         },
         {
             "id": 4,
@@ -33056,7 +33386,9 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "word": "ରେ",
                     "meaning": "ହେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v4_male.mp3"
         }
     ],
     "reference_url": ""
@@ -33097,7 +33429,9 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "word": "ସୁଖେ",
                     "meaning": "ସୁଖରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v1_male.mp3"
         },
         {
             "id": 2,
@@ -33120,7 +33454,9 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "word": "ଦୁଃଖେ ଥାକୋ",
                     "meaning": "ଦୁଃଖରେ ରୁହ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v2_male.mp3"
         },
         {
             "id": 3,
@@ -33151,7 +33487,9 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "word": "ଥାକି'",
                     "meaning": "ରହି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v3_male.mp3"
         },
         {
             "id": 4,
@@ -33174,7 +33512,9 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "word": "ପୋଡ଼ି'",
                     "meaning": "ପଡ଼ିଯାଇ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v4_male.mp3"
         },
         {
             "id": 5,
@@ -33197,7 +33537,9 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "word": "ଅଦ୍ୱୈତ",
                     "meaning": "ପ୍ରଭୁ ଅଦ୍ୱୈତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v5_male.mp3"
         }
     ]
 };
@@ -34431,7 +34773,9 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "word": "ପରାଣ",
                     "meaning": "ପ୍ରାଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v1_male.mp3"
         },
         {
             "id": 2,
@@ -34518,7 +34862,9 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "word": "ଧନ",
                     "meaning": "ସମ୍ପଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v2_male.mp3"
         },
         {
             "id": 3,
@@ -34613,7 +34959,9 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "word": "ପାବନ",
                     "meaning": "ଉଦ୍ଧାରକର୍ତ୍ତା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v3_male.mp3"
         },
         {
             "id": 4,
@@ -34704,7 +35052,9 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "word": "ଧନ",
                     "meaning": "ସମ୍ପଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v4_male.mp3"
         }
     ]
 };
@@ -34902,48 +35252,48 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
     "verses": [
         {
             "id": 1,
-            "lyric": "ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ, ପତି ମୋର ଗୌରଚନ୍ଦ୍ର, \nପ୍ରାଣ ମୋର ଯୁଗଳ କିଶୋର ।\n\nଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ ବଳ, ଗଦାଧର ମୋର କୁଳ, \nନରହରି ବିଳସଇ ମୋର ।।",
-            "translation": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ ହେଉଛନ୍ତି ମୋର ସମ୍ପଦ। ପ୍ରଭୁ ଗୌରଚନ୍ଦ୍ର ମୋର ସ୍ଵାମୀ ଅଟନ୍ତି । କିଶୋର ଦିବ୍ୟ ଯୁଗଳ (ରାଧା-କୃଷ୍ଣ) ହେଉଛନ୍ତି ମୋର ଜୀବନ। ଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ ମୋର ଶକ୍ତି, ଗଦାଧର ମୋର ପରିବାର ଏବଂ ନରହରି ସରକାର ହେଉଛନ୍ତି ମୋର ଗୌରବ ।",
+            "lyric": "ଧନ ମୋର ନିତ୍ୟାନନ୍ଦ, ପତି ମୋର ଗୌରଚନ୍ଦ୍ର, \nପ୍ରାଣ ମୋର ଯୁଗଳ-କିଶୋର ।\n\nଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ ବଳ, ଗଦାଧର ମୋର କୁଳ, \nନରହରି ବିଳସଇ ମୋର ।।",
+            "translation": "ପରମ ଦୟାଳୁ ଶ୍ରୀମନ୍ ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁ ହିଁ ମୋର ଏକମାତ୍ର ଶ୍ରେଷ୍ଠ ସମ୍ପଦ, ଶ୍ରୀ ଗୌରଚନ୍ଦ୍ର ମୋର ପ୍ରାଣନାଥ ଓ ପତି, ଏବଂ ଶ୍ରୀଶ୍ରୀ ରାଧା-କୃଷ୍ଣ (ଦିବ୍ୟ ଯୁଗଳ-କିଶୋର) ହିଁ ମୋର ଜୀବନ-ପ୍ରାଣ ଅଟନ୍ତି । ଶ୍ରୀ ଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ ମୋର ଏକମାତ୍ର ଆଧ୍ୟାତ୍ମିକ ବଳ ଓ ଶକ୍ତି, ପଣ୍ଡିତ ଶ୍ରୀ ଗଦାଧର ମୋର ବଂଶ ଓ ପରିବାର, ଏବଂ ନରହରି ସରକାର ଠାକୁର ହିଁ ମୋର ଅନ୍ତରର ବିଳାସ ଓ ପରମ ଗୌରବ ଅଟନ୍ତି ।",
             "wordMeanings": [
                 {
                     "word": "ଧନ",
-                    "meaning": "ସମ୍ପଦ"
+                    "meaning": "ସମ୍ପଦ (ଅମୂଲ୍ୟ ନିଧି)"
                 },
                 {
                     "word": "ମୋର",
-                    "meaning": "ମୋର"
+                    "meaning": "ମୋହର"
                 },
                 {
                     "word": "ନିତ୍ୟାନନ୍ଦ",
-                    "meaning": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ"
+                    "meaning": "ଶ୍ରୀ ନିତ୍ୟାନନ୍ଦ ପ୍ରଭୁ"
                 },
                 {
                     "word": "ପତି",
-                    "meaning": "ପ୍ରଭୁ (ସ୍ଵାମୀ)"
+                    "meaning": "ପ୍ରଭୁ (ପାଳନକର୍ତ୍ତା)"
                 },
                 {
                     "word": "ଗୌରଚନ୍ଦ୍ର",
-                    "meaning": "ପ୍ରଭୁ ଗୌରଚନ୍ଦ୍ର"
+                    "meaning": "ଶ୍ରୀମନ୍ ମହାପ୍ରଭୁ ଗୌରଚନ୍ଦ୍ର"
                 },
                 {
                     "word": "ପ୍ରାଣ",
-                    "meaning": "ପ୍ରାଣ (ଜୀବନ)"
+                    "meaning": "ଜୀବନ"
                 },
                 {
                     "word": "ଯୁଗଳ-କିଶୋର",
-                    "meaning": "କିଶୋର ଦିବ୍ୟ ଯୁଗଳ (ରାଧା-କୃଷ୍ଣ)"
+                    "meaning": "ଶ୍ରୀଶ୍ରୀ ରାଧା-କୃଷ୍ଣ"
                 },
                 {
                     "word": "ଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ",
-                    "meaning": "ଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ"
+                    "meaning": "ଶ୍ରୀ ଅଦ୍ଵୈତ ଆଚାର୍ଯ୍ୟ ପ୍ରଭୁ"
                 },
                 {
                     "word": "ବଳ",
-                    "meaning": "ମୋର ଶକ୍ତି"
+                    "meaning": "ଆଧ୍ୟାତ୍ମିକ ଶକ୍ତି (ଆଶ୍ରୟ)"
                 },
                 {
                     "word": "ଗଦାଧର",
-                    "meaning": "ଗଦାଧର ପଣ୍ଡିତ"
+                    "meaning": "ପଣ୍ଡିତ ଶ୍ରୀ ଗଦାଧର"
                 },
                 {
                     "word": "କୁଳ",
@@ -34951,93 +35301,77 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ନରହରି",
-                    "meaning": "ନରହରି ସରକାର"
+                    "meaning": "ନରହରି ସରକାର ଠାକୁର"
                 },
                 {
                     "word": "ବିଳସଇ",
-                    "meaning": "ମହିମା (ବିଳାସ)"
+                    "meaning": "ଆନନ୍ଦର ବିଳାସ (ମହିମା)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v1_male.mp3"
         },
         {
             "id": 2,
-            "lyric": "ବୈଷ୍ଣବେର ପଦଧୂଳି, ତାହେ ମୋର ସ୍ନାନକେଳି, \nତର୍ପଣ ମୋର ବୈଷ୍ଣବେର ନାମ ।\n\nବିଚାର କରିୟା ମନେ, ଭକ୍ତି ରସ ଆସ୍ଵାଦନେ, \nମଧ୍ୟସ୍ଥ ଶ୍ରୀଭାଗବତ ପୁରାଣ ।।",
-            "translation": "ଭକ୍ତମାନଙ୍କ ପାଦଧୂଳିରେ ସ୍ନାନ କରିବା ହେଉଛି ମୋର ଜଳକ୍ରୀଡ଼ା । ଭକ୍ତମାନଙ୍କ ନାମ ସଂକୀର୍ତ୍ତନ କରିବା ହେଉଛି ମୋର ତୃପ୍ତି। ଭକ୍ତି ରସକୁ ଆସ୍ଵାଦନ କରି ସମସ୍ତ ବୈଦିକ ଶାସ୍ତ୍ରର ବିଚାର କରିବା ପରେ ମୁଁ ଏହି ନିଷ୍କର୍ଷରେ ପହଞ୍ଚିଛି ଯେ ଶ୍ରୀମଦ୍ ଭାଗବତ ହେଉଛି ସମସ୍ତ ଶାସ୍ତ୍ର ମଧ୍ୟରେ ଶ୍ରେଷ୍ଠ ।",
+            "lyric": "ବୈଷ୍ଣବେର ପଦଧୂଳି, ତାହେ ମୋର ସ୍ନାନ-କେଳି, \nତର୍ପଣ ମୋର ବୈଷ୍ଣବେର ନାମ ।\n\nବିଚାର କରିୟା ମନେ, ଭକ୍ତି-ରସ-ଆସ୍ଵାଦନେ, \nମଧ୍ୟସ୍ଥ ଶ୍ରୀ-ଭାଗବତ-ପୁରାଣ ।।",
+            "translation": "ଶୁଦ୍ଧ ବୈଷ୍ଣବ ଭକ୍ତମାନଙ୍କ ଶ୍ରୀଚରଣ-ଧୂଳିରେ ସ୍ନାନ କରିବା ହିଁ ମୋର ପରମ ଜଳକ୍ରୀଡ଼ା ଅଟେ । ସମସ୍ତ ବୈଷ୍ଣବମାନଙ୍କ ପବିତ୍ର ନାମ ସଂକୀର୍ତ୍ତନ କରିବା ହିଁ ମୋର ନିତ୍ୟ ତର୍ପଣ (ପରମ ସନ୍ତୋଷ) । ମନ ମଧ୍ୟରେ ସମସ୍ତ ଶାସ୍ତ୍ରକୁ ଗଭୀର ଭାବେ ବିଚାର କରି ଏବଂ ଶୁଦ୍ଧ ଭକ୍ତିରସ ଆସ୍ଵାଦନ କରି ମୁଁ ଏହି ନିଶ୍ଚୟ କରିଛି ଯେ, ଶ୍ରୀମଦ୍-ଭାଗବତ ମହାପୁରାଣ ହିଁ ସମସ୍ତ ବୈଦିକ ଶାସ୍ତ୍ର ମଧ୍ୟରେ ସର୍ବଶ୍ରେଷ୍ଠ ପ୍ରମାଣ ଅଟେ ।",
             "wordMeanings": [
                 {
                     "word": "ବୈଷ୍ଣବେର",
-                    "meaning": "ଭକ୍ତମାନଙ୍କର"
+                    "meaning": "ବୈଷ୍ଣବ ଭକ୍ତମାନଙ୍କର"
                 },
                 {
-                    "word": "ପଦ",
-                    "meaning": "ପାଦର"
-                },
-                {
-                    "word": "ଧୂଳି",
-                    "meaning": "ଧୂଳି"
+                    "word": "ପଦଧୂଳି",
+                    "meaning": "ଚରଣ-ଧୂଳି"
                 },
                 {
                     "word": "ତାହେ",
                     "meaning": "ସେଥିରେ"
                 },
                 {
-                    "word": "ସ୍ନାନ",
-                    "meaning": "ସ୍ନାନର"
-                },
-                {
-                    "word": "କେଳି",
-                    "meaning": "କ୍ରୀଡ଼ା (ଲୀଳା)"
+                    "word": "ସ୍ନାନ-କେଳି",
+                    "meaning": "ସ୍ନାନରୂପୀ ଜଳକ୍ରୀଡ଼ା"
                 },
                 {
                     "word": "ତର୍ପଣ",
-                    "meaning": "ସନ୍ତୋଷ (ତୃପ୍ତି)"
+                    "meaning": "ତୃପ୍ତି (ଶ୍ରଦ୍ଧାଞ୍ଜଳି)"
                 },
                 {
                     "word": "ନାମ",
-                    "meaning": "ନାମ"
+                    "meaning": "ପବିତ୍ର ନାମ"
                 },
                 {
-                    "word": "ବିଚାର",
-                    "meaning": "ବିଚାର"
-                },
-                {
-                    "word": "କରିୟା",
-                    "meaning": "କରି"
+                    "word": "ବିଚାର କରିୟା",
+                    "meaning": "ବିଚାର କରି"
                 },
                 {
                     "word": "ମନେ",
-                    "meaning": "ମନରେ"
+                    "meaning": "ମନ ମଧ୍ୟରେ"
                 },
                 {
-                    "word": "ଭକ୍ତି",
-                    "meaning": "ଭକ୍ତିର"
-                },
-                {
-                    "word": "ରସ",
-                    "meaning": "ରସ (ଅମୃତ)"
+                    "word": "ଭକ୍ତି-ରସ",
+                    "meaning": "ଶୁଦ୍ଧ ଭକ୍ତିର ଅମୃତ ରସ"
                 },
                 {
                     "word": "ଆସ୍ଵାଦନେ",
-                    "meaning": "ଆସ୍ଵାଦନ ଦ୍ଵାରା"
+                    "meaning": "ଆସ୍ଵାଦନ କରିବା ଦ୍ଵାରା"
                 },
                 {
                     "word": "ମଧ୍ୟସ୍ଥ",
-                    "meaning": "ମଧ୍ୟରେ (ସର୍ବଶ୍ରେଷ୍ଠ)"
+                    "meaning": "ସର୍ବଶ୍ରେଷ୍ଠ ସାର ପ୍ରମାଣ"
                 },
                 {
-                    "word": "ଶ୍ରୀ-ଭାଗବତ",
-                    "meaning": "ଶ୍ରୀମଦ୍ ଭାଗବତ"
-                },
-                {
-                    "word": "ପୁରାଣ",
-                    "meaning": "ପୁରାଣ"
+                    "word": "ଶ୍ରୀ-ଭାଗବତ-ପୁରାଣ",
+                    "meaning": "ଶ୍ରୀମଦ୍ ଭାଗବତ ମହାପୁରାଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v2_male.mp3"
         },
         {
             "id": 3,
-            "lyric": "ବୈଷ୍ଣବେର ଉଚ୍ଛିଷ୍ଟ , ତାହେ ମୋର ମନୋନିଷ୍ଠ,\nବୈଷ୍ଣବେର ନାମେତେ ଉଲ୍ଲାସ ।\n\nବୃନ୍ଦାବନେ ଚବୁତାରା, ତାହେ ମୋର ମନ ଘେରା,\nକହେ ଦୀନ ନରୋତ୍ତମ ଦାସ ।।",
-            "translation": "ଭକ୍ତମାନଙ୍କ ଦ୍ଵାରା ତ୍ୟାଗ କରାଯାଇଥିବା ଅଧାମୃତ (ପ୍ରସାଦ) ସେବନ କରିବା ଦ୍ଵାରା ଯେଉଁ ଆଧ୍ୟାତ୍ମିକ ଲାଭ ମିଳେ, ସେଥିରେ ମୋର ମନ ସମ୍ପୂର୍ଣ୍ଣ ଭାବେ ନିଷ୍ଠାବାନ। ଭକ୍ତିମାନଙ୍କ ନାମ ହିଁ ମୋର ଆନନ୍ଦ। ବୃନ୍ଦାବନର ପବିତ୍ର ଭୂମି ହେଉଛି ସେହି ସ୍ଥାନ ଯେଉଁଠାରେ ମୁଁ ମୋର ମନକୁ ଆବଦ୍ଧ କରି ରଖିଛି । ଦୀନ ନରୋତ୍ତମ ଦାସ ଏହିପରି ଭାବେ କହୁଛନ୍ତି ।",
+            "lyric": "ବୈଷ୍ଣବେର ଉଚ୍ଛିଷ୍ଟ, ତାହେ ମୋର ମନୋନିଷ୍ଠ,\nବୈଷ୍ଣବେର ନାମେତେ ଉଲ୍ଲାସ ।\n\nବୃନ୍ଦାବନେ ଚବୁତାରା, ତାହେ ମୋର ମନ ଘେରା,\nକହେ ଦୀନ ନରୋତ୍ତମ ଦାସ ।।",
+            "translation": "ଶୁଦ୍ଧ ବୈଷ୍ଣବମାନଙ୍କ ମହାପ୍ରସାଦୀ ଅଧାମୃତ (ଉଚ୍ଛିଷ୍ଟ) ସେବନ କରିବାରେ ହିଁ ମୋ ମନର ସମ୍ପୂର୍ଣ୍ଣ ନିଷ୍ଠା ଓ ଦୃଢ଼ ବିଶ୍ଵାସ ରହିଛି । ବୈଷ୍ଣବମାନଙ୍କ ପବିତ୍ର ନାମ ଗାନ କରିବା ହିଁ ମୋ ହୃଦୟର ପରମ ଉଲ୍ଲାସ ଓ ଆନନ୍ଦ । ଶ୍ରୀଧାମ ବୃନ୍ଦାବନର ପବିତ୍ର ଚଉତରା (ଚବୁତାରା) ମଧ୍ୟରେ ହିଁ ମୋର ମନ ଚିରଦିନ ଆବଦ୍ଧ ହୋଇ ରହୁ— ଏହିପରି ଦୀନହୀନ ନରୋତ୍ତମ ଦାସ ପ୍ରାର୍ଥନା କରୁଛନ୍ତି ।",
             "wordMeanings": [
                 {
                     "word": "ବୈଷ୍ଣବେର",
@@ -35045,27 +35379,35 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଉଚ୍ଛିଷ୍ଟ",
-                    "meaning": "ଅଧାମୃତ (ଅବଶିଷ୍ଟ ଖାଦ୍ୟ)"
+                    "meaning": "ଅଧାମୃତ (ଅବଶିଷ୍ଟ ମହାପ୍ରସାଦ)"
                 },
                 {
-                    "word": "ମନୋ",
-                    "meaning": "ମନର"
+                    "word": "ତାହେ",
+                    "meaning": "ତାହା ମଧ୍ୟରେ"
                 },
                 {
-                    "word": "ନିଷ୍ଠା",
-                    "meaning": "ବିଶ୍ଵାସ (ନିଷ୍ଠା)"
+                    "word": "ମନୋନିଷ୍ଠ",
+                    "meaning": "ମନର ଦୃଢ଼ ନିଷ୍ଠା"
+                },
+                {
+                    "word": "ନାମେତେ",
+                    "meaning": "ନାମ ସଂକୀର୍ତ୍ତନରେ"
                 },
                 {
                     "word": "ଉଲ୍ଲାସ",
-                    "meaning": "ଆନନ୍ଦ"
+                    "meaning": "ପରମ ଆନନ୍ଦ"
                 },
                 {
-                    "word": "ବୃନ୍ଦାବନେ ଚବୁତାରା",
-                    "meaning": "ବୃନ୍ଦାବନର ପବିତ୍ର ଭୂମି (ଚଉତରା)"
+                    "word": "ବୃନ୍ଦାବନେ",
+                    "meaning": "ଶ୍ରୀ ବୃନ୍ଦାବନ ଧାମରେ"
                 },
                 {
-                    "word": "ଘେରା",
-                    "meaning": "ଆବଦ୍ଧ ସ୍ଥାନ (ଘେର)"
+                    "word": "ଚବୁତାରା",
+                    "meaning": "ପବିତ୍ର ବେଦୀ (ଚଉତରା)"
+                },
+                {
+                    "word": "ମନ ଘେରା",
+                    "meaning": "ମନର ଆବଦ୍ଧ ସ୍ଥାନ"
                 },
                 {
                     "word": "କହେ",
@@ -35073,13 +35415,15 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                 },
                 {
                     "word": "ଦୀନ",
-                    "meaning": "ଦୀନ (ହୀନ-ହୃଦୟ)"
+                    "meaning": "ଅଧମ (ଦୀନ-ହୀନ)"
                 },
                 {
                     "word": "ନରୋତ୍ତମ ଦାସ",
-                    "meaning": "ନରୋତ୍ତମ ଦାସ"
+                    "meaning": "ଶ୍ରୀଳ ନରୋତ୍ତମ ଦାସ ଠାକୁର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v3_male.mp3"
         }
     ]
 };
@@ -36051,7 +36395,9 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "word": "କମଲ",
                     "meaning": "ପଦ୍ମ ଫୁଲ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v1_male.mp3"
         },
         {
             "id": 2,
@@ -36106,7 +36452,9 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "word": "ସୁନ୍ଦରୀ ରାଧିକା",
                     "meaning": "ସୁନ୍ଦରୀ ଶ୍ରୀମତୀ ରାଧାରାଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v2_male.mp3"
         },
         {
             "id": 3,
@@ -36165,7 +36513,9 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "word": "ମୋର ମନେ",
                     "meaning": "ମୋ ମନରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v3_male.mp3"
         }
     ]
 };
@@ -39390,7 +39740,9 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "word": "ଫେରେ",
                     "meaning": "ଫଳ ସ୍ୱରୂପ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v1_male.mp3"
         },
         {
             "id": 2,
@@ -39453,7 +39805,9 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "word": "ବିଷେ",
                     "meaning": "ବିନା (ବା ବିଷ ସଦୃଶ)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v2_male.mp3"
         },
         {
             "id": 3,
@@ -39524,7 +39878,9 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "word": "ମିଠ",
                     "meaning": "ମଧୁରତା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v3_male.mp3"
         },
         {
             "id": 4,
@@ -39595,7 +39951,9 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "word": "ତାପ",
                     "meaning": "ଉତ୍ତାପ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v4_male.mp3"
         },
         {
             "id": 5,
@@ -39666,7 +40024,9 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "word": "ମାଥା",
                     "meaning": "ମସ୍ତକ (ନିଜ ସତ୍ତା)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v5_male.mp3"
         }
     ]
 };
@@ -39706,7 +40066,9 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "word": "ବେଡ଼ାୟ।",
                     "meaning": "ଭ୍ରମଣ କରନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v1_male.mp3"
         },
         {
             "id": 2,
@@ -39745,7 +40107,9 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "word": "ବିଲାଇୟା",
                     "meaning": "ବିତରଣ କରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v2_male.mp3"
         },
         {
             "id": 3,
@@ -39784,7 +40148,9 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "word": "ଗୌର-ହରି",
                     "meaning": "ପ୍ରଭୁ ଚୈତନ୍ୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v3_male.mp3"
         },
         {
             "id": 4,
@@ -39819,7 +40185,9 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "word": "ଧୂଲାତେ ଲୋଟାୟ",
                     "meaning": "ଧୂଳିରେ ଲୁଟିବା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v4_male.mp3"
         },
         {
             "id": 5,
@@ -39862,7 +40230,9 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "word": "ଗେଲ",
                     "meaning": "ଯାଏ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v5_male.mp3"
         }
     ]
 };
@@ -45482,7 +45852,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ଭାଇ",
                     "meaning": "ଭାଇ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v1_male.mp3"
         },
         {
             "id": 2,
@@ -45541,7 +45913,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରୟାସ",
                     "meaning": "ପ୍ରଚେଷ୍ଟା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v2_male.mp3"
         },
         {
             "id": 3,
@@ -45596,7 +45970,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ହୋଇୟା",
                     "meaning": "ହୋଇ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v3_male.mp3"
         },
         {
             "id": 4,
@@ -45643,7 +46019,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ବହନ",
                     "meaning": "ବହନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v4_male.mp3"
         },
         {
             "id": 5,
@@ -45698,7 +46076,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରହରୀ",
                     "meaning": "ଜଗୁଆଳି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v5_male.mp3"
         },
         {
             "id": 6,
@@ -45745,7 +46125,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ବାସନା",
                     "meaning": "ଅଭିଳାଷ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v6_male.mp3"
         },
         {
             "id": 7,
@@ -45800,7 +46182,9 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "word": "ସାର",
                     "meaning": "ସାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v7_male.mp3"
         }
     ]
 };
@@ -45852,7 +46236,9 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "word": "କେଶୀ-ତୀର୍ଥ-ଘାଟେର ସକାଶ",
                     "meaning": "କେଶୀ-ଘାଟ ନିକଟକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v1_male.mp3"
         },
         {
             "id": 2,
@@ -45891,7 +46277,9 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "word": "ଶ୍ରୀ ଅଙ୍ଗେ ପ୍ରକାଶ",
                     "meaning": "ଶ୍ରୀଅଙ୍ଗରୁ ପ୍ରକାଶ ପାଉଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v2_male.mp3"
         },
         {
             "id": 3,
@@ -45934,7 +46322,9 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "word": "ଘଟିବେ ବିପଦ ଭାରୀ",
                     "meaning": "ବଡ଼ ବିପଦ ମାଡ଼ି ଆସିବ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v3_male.mp3"
         }
     ]
 };
@@ -48012,7 +48402,9 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "word": "ନିତା-ଇ",
                     "meaning": "ନିତ୍ୟାନନ୍ଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v1_male.mp3"
         },
         {
             "id": 2,
@@ -48055,7 +48447,9 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରେମ-ଘାଟ",
                     "meaning": "ପ୍ରେମର ମାଧୁର୍ଯ୍ୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v2_male.mp3"
         },
         {
             "id": 3,
@@ -48102,7 +48496,9 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "word": "ହରି",
                     "meaning": "ହରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v3_male.mp3"
         },
         {
             "id": 4,
@@ -48141,7 +48537,9 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "word": "ଦାସ",
                     "meaning": "ଦାସ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v4_male.mp3"
         }
     ]
 };
@@ -48205,7 +48603,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ଭଜେ",
                     "meaning": "ଭଜନା କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -48264,7 +48664,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ସନ୍ଦଧେ",
                     "meaning": "ଧ୍ୟାନ କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -48335,7 +48737,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ନମଃ",
                     "meaning": "ନମସ୍କାର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -48394,7 +48798,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ଦ୍ରୌପଦୀରକ୍ଷକ",
                     "meaning": "ଦ୍ରୌପଦୀଙ୍କ ରକ୍ଷାକାରୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -48457,7 +48863,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ମାମ୍",
                     "meaning": "ମୋତେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -48500,7 +48908,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ସର୍ବଦା",
                     "meaning": "ସବୁବେଳେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -48539,7 +48949,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ଭଜେ",
                     "meaning": "ଭଜନା କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -48602,7 +49014,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ଭଜେ",
                     "meaning": "ଭଜନା କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -48681,7 +49095,9 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "word": "ସମ୍ପୂର୍ଣ୍ଣମ୍",
                     "meaning": "ସମ୍ପୂର୍ଣ୍ଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v9_male.mp3"
         }
     ]
 };
@@ -49483,7 +49899,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ଦଳନ",
                     "meaning": "ଦଳି ଚକଟି ଦିଅ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v1_male.mp3"
         },
         {
             "id": 2,
@@ -49538,7 +49956,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ଆପଣ",
                     "meaning": "ଆପଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v2_male.mp3"
         },
         {
             "id": 3,
@@ -49589,7 +50009,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ତକ୍ଷଣ",
                     "meaning": "ସେହିକ୍ଷଣି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v3_male.mp3"
         },
         {
             "id": 4,
@@ -49652,7 +50074,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ବାରଣ",
                     "meaning": "ରକ୍ଷା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v4_male.mp3"
         },
         {
             "id": 5,
@@ -49707,7 +50131,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ରାଜନ",
                     "meaning": "ରାଜା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v5_male.mp3"
         },
         {
             "id": 6,
@@ -49766,7 +50192,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ତକ୍ଷଣ",
                     "meaning": "ସେହିକ୍ଷଣି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v6_male.mp3"
         },
         {
             "id": 7,
@@ -49817,7 +50245,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ଭୁବନ",
                     "meaning": "ପୁର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v7.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v7_male.mp3"
         },
         {
             "id": 8,
@@ -49864,7 +50294,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ଶରଣ",
                     "meaning": "ଆଶ୍ରୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v8.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v8_male.mp3"
         },
         {
             "id": 9,
@@ -49919,7 +50351,9 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "word": "ଶରଣ",
                     "meaning": "ଶରଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v9.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v9_male.mp3"
         }
     ]
 };
@@ -49975,7 +50409,9 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "word": "ତିଳକ",
                     "meaning": "ତିଳକ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50046,7 +50482,9 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "word": "ସୋନା",
                     "meaning": "ସୁନା (ପ୍ରେମ ରୂପକ ଧନ)"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50089,7 +50527,9 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "word": "ହଲ",
                     "meaning": "ହେଲା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v3_male.mp3"
         },
         {
             "id": 4,
@@ -50164,7 +50604,9 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "word": "ହବେ",
                     "meaning": "ହେବ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v4_male.mp3"
         }
     ]
 };
@@ -50231,7 +50673,9 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "word": "ଗିରିଧାରୀ-ଲାଲ",
                     "meaning": "ଗିରିଧାରୀ ଶ୍ରୀକୃଷ୍ଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50286,7 +50730,9 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "word": "ରାଖାଲ",
                     "meaning": "ରକ୍ଷାକର୍ତ୍ତା/ପାଳକ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50345,7 +50791,9 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "word": "ବ୍ରଜେର",
                     "meaning": "ବ୍ରଜର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v3_male.mp3"
         }
     ]
 };
@@ -50369,13 +50817,17 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ଜଗତମୟ",
                     "meaning": "ଜଗତ ସାରା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v0.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v0_male.mp3"
         },
         {
             "id": 1,
             "lyric": "ସାଧନ ନିତାଇ ଭଜନ ନିତାଇ ନିତାଇ ନୟନ ତାରା\nଦଶଦିକ ମୟ ନିତାଇ ସୁନ୍ଦର ନିତାଇ ଭୁବନ ଭରା ।।",
             "translation": "ନିତାଈ ହିଁ ମୋର ସାଧନା ଏବଂ ନିତାଈ ହିଁ ମୋର ଭଜନ, ସେ ମୋ ଆଖିର ପିତୁଳା ସଦୃଶ। ଦଶ ଦିଗରେ କେବଳ ସୁନ୍ଦର ନିତାଈ ବିରାଜମାନ ଏବଂ ସମଗ୍ର ଭୁବନ ତାଙ୍କରି ଦ୍ୱାରା ପରିପୂର୍ଣ୍ଣ।",
-            "wordMeanings": []
+            "wordMeanings": [],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1_male.mp3"
         },
         {
             "id": 1,
@@ -50422,7 +50874,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ଭରା",
                     "meaning": "ପରିପୂର୍ଣ୍ଣ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50485,7 +50939,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ବଳଦେବେ",
                     "meaning": "ବଳରାମଙ୍କ ସହ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50548,7 +51004,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ନାମ",
                     "meaning": "ନାମକ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v3_male.mp3"
         },
         {
             "id": 4,
@@ -50603,7 +51061,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ମାଝେ",
                     "meaning": "ଗହଣରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v4_male.mp3"
         },
         {
             "id": 5,
@@ -50654,7 +51114,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ରଙ୍ଗ",
                     "meaning": "ଆନନ୍ଦ/ଲୀଳା"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v5_male.mp3"
         },
         {
             "id": 6,
@@ -50717,7 +51179,9 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "word": "ମୋରେ",
                     "meaning": "ମୋତେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v6.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v6_male.mp3"
         }
     ]
 };
@@ -50757,13 +51221,17 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "word": "ନାଇ",
                     "meaning": "ନାହାନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v0.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v0_male.mp3"
         },
         {
             "id": 1,
             "lyric": "ମନ ଦୁଃଖେ କାନ୍ଦେ ଏକା କମଳିନୀ ରାଇ ଗୋ\nଶ୍ୟାମ ବ୍ରଜେ ନାଇ ।।",
             "translation": "ଶ୍ୟାମ ବ୍ରଜରେ ନଥିବାରୁ, କମଳିନୀ ଶ୍ରୀରାଧା ଅତ୍ୟନ୍ତ ମନ ଦୁଃଖରେ ଏକୁଟିଆ ବସି କାନ୍ଦୁଛନ୍ତି।",
-            "wordMeanings": []
+            "wordMeanings": [],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50794,7 +51262,9 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "word": "ରାଈ",
                     "meaning": "ରାଧାରାଣୀ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50841,7 +51311,9 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "word": "ଆସେ",
                     "meaning": "ଆସିଲେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v3_male.mp3"
         }
     ]
 };
@@ -50877,7 +51349,9 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "word": "ରବେ",
                     "meaning": "ରହିବ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v0.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v0_male.mp3"
         },
         {
             "id": 1,
@@ -50912,7 +51386,9 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "word": "କବେ",
                     "meaning": "କେବେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50999,7 +51475,9 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "word": "ଯାବେ",
                     "meaning": "ଯିବ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51078,7 +51556,9 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "word": "କବେ",
                     "meaning": "କେବେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v3_male.mp3"
         }
     ]
 };
@@ -51122,7 +51602,9 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "word": "ପଙ୍କେ",
                     "meaning": "କାଦୁଅରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51161,7 +51643,9 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "word": "ଭକ୍ତି-ନିତ୍ୟଧନ",
                     "meaning": "ଭକ୍ତି ରୂପକ ଅମୂଲ୍ୟ ନିତ୍ୟ ଧନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51212,7 +51696,9 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "word": "ପାରେ",
                     "meaning": "ଆରପାରିକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51255,7 +51741,9 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "word": "ବିହାର",
                     "meaning": "ବିଚରଣ/ଆନନ୍ଦ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v4_male.mp3"
         }
     ]
 };
@@ -51295,7 +51783,9 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "word": "ଶୂନ୍ୟେର",
                     "meaning": "ଶୂନ୍ୟର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51326,7 +51816,9 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "word": "ବଶ",
                     "meaning": "ଅଧୀନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51361,7 +51853,9 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "word": "ସାର",
                     "meaning": "ସାରାଂଶ/ଶ୍ରେଷ୍ଠ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51388,7 +51882,9 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "word": "ହେୟ",
                     "meaning": "ନିମ୍ନ/ତ୍ୟାଜ୍ୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v4_male.mp3"
         }
     ]
 };
@@ -51438,7 +51934,9 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "word": "ଆବରିତ",
                     "meaning": "ଆବୃତ୍ତ ବା ଘୋଡ଼େଇ ହୋଇ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51469,7 +51967,9 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "word": "ଜାଗାଇୟା",
                     "meaning": "ଜାଗ୍ରତ କରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51508,7 +52008,9 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "word": "ଜାଗୁୟାନ",
                     "meaning": "ଜାଗୃତ ବା ପ୍ରେରିତ ହୁଅନ୍ତି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51551,7 +52053,9 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "word": "ଭକତ",
                     "meaning": "ଭକ୍ତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v4_male.mp3"
         }
     ]
 };
@@ -52381,7 +52885,9 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "word": "ଶ୍ୟାମ",
                     "meaning": "ଶ୍ୟାମସୁନ୍ଦର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v1_male.mp3"
         },
         {
             "id": 2,
@@ -52428,7 +52934,9 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "word": "ବିପାକେ",
                     "meaning": "ଦୁର୍ଭାଗ୍ୟ/ଫଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v2_male.mp3"
         },
         {
             "id": 3,
@@ -52475,7 +52983,9 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "word": "ଜଡ଼",
                     "meaning": "ନିଶ୍ଚଳ/ଅଚଳ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v3_male.mp3"
         },
         {
             "id": 4,
@@ -52518,7 +53028,9 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "word": "ମଜେ",
                     "meaning": "ବୁଡ଼ିଯାଏ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v4.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v4_male.mp3"
         },
         {
             "id": 5,
@@ -52557,7 +53069,9 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "word": "ଶେଳ",
                     "meaning": "ବିନ୍ଧୁଥିବା ଅସ୍ତ୍ର/ଶଳ୍ୟ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v5.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v5_male.mp3"
         }
     ]
 };
@@ -52613,7 +53127,9 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "word": "ପ୍ରାଣ",
                     "meaning": "ପ୍ରାଣ/ଜୀବନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v0.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v0_male.mp3"
         },
         {
             "id": 1,
@@ -52644,7 +53160,9 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "word": "ବେଡ଼ାଓ",
                     "meaning": "ବୁଲ/ଭ୍ରମଣ କର"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v1_male.mp3"
         },
         {
             "id": 2,
@@ -52667,7 +53185,9 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "word": "ଅବସାନ",
                     "meaning": "ଶେଷ/ଅନ୍ତ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v2_male.mp3"
         }
     ]
 };
@@ -52719,7 +53239,9 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "word": "କାମ",
                     "meaning": "କାମରେ/ସାହାଯ୍ୟରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v1.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v1_male.mp3"
         },
         {
             "id": 2,
@@ -52778,7 +53300,9 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "word": "ହରି",
                     "meaning": "ହରିଙ୍କ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v2.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v2_male.mp3"
         },
         {
             "id": 3,
@@ -52829,7 +53353,9 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "word": "ଧାମ",
                     "meaning": "ଧାମକୁ/ନିବାସକୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v3.mp3",
+            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v3_male.mp3"
         }
     ]
 };

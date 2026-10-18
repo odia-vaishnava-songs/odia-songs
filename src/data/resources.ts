@@ -1510,11 +1510,29 @@ export const RESOURCES: Resource[] = [
         category: 'Songs',
         type: 'html',
         author: 'Narottama Dasa Thakura',
-        structuredContent: (Songs as any).SONG_DHANAMORNITYANANDA_STRUCTURED,
+        structuredContent: Songs.SONG_DHANAMORNITYANANDA_STRUCTURED,
         published: true,
         status: 'COMPLETED',
         audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Dhana_Mora_Nityanand/Dhana_Mora_Nityanand_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
-        vocalist: 'HG Jai Sachinanadana Prabhu'
+        vocalist: 'HG Jai Sachinanadana Prabhu',
+        audioVersions: [
+            {
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Dhana_Mora_Nityanand/Dhana_Mora_Nityanand_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+                label: 'HG Jai Sachinandana Prabhu'
+            },
+            {
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Narottam_Das_Thakur/Dhana_Mora_Nityanand/Dhana_Mora_Nityanand_-_Sung_by_HG_Sivarama_Prabhu_IDT.mp3',
+                label: 'HG Sivarama Prabhu'
+            },
+            {
+                url: 'https://pub-4f8c24b1c935435d9e3b959e0886ebf6.r2.dev/uploads%2FDhana%20Mora%20Nityananada.mp3',
+                label: 'HG Radheshyam Prabhu'
+            },
+            {
+                url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads%2F55%20Dhana%20Mora%20Nityananda%20P-108.MP3',
+                label: 'HG Jai Sachinandana Prabhu (Temple Live)'
+            }
+        ]
     },
     {
         id: 'song-eibarokarunakoro',

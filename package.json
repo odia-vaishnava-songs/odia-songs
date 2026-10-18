@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync": "node scripts/sync_cloud_to_code.cjs"
+    "sync": "node scripts/sync_cloud_to_code.cjs",
+    "tts": "node scripts/pipeline_generate_tts.cjs",
+    "tts:batch": "node scripts/batch_generate_tts.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",

@@ -30,6 +30,8 @@ export interface SongVerse {
     id: number | string;
     lyric: string;
     translation: string;
+    translationAudioUrl?: string;
+    translationAudioMaleUrl?: string;
     wordMeanings?: WordMeaning[];
     status?: 'NOT_DONE' | 'IN_PROGRESS' | 'COMPLETED';
     count?: number | string;

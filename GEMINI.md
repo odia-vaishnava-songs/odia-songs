@@ -16,3 +16,21 @@ Whenever the user requests adding/importing songs (e.g. from `vsnectar.web.app` 
    - Upsert into Supabase `songs` table with `status: 'COMPLETED'`, `published: true`, and all `audio_versions`.
    - Add the song entry to `src/data/resources.ts`.
    - Verify TypeScript compilation using `npx tsc --noEmit`.
+
+## Speech Translation Audio Workflow (Bhashini IITM-v1)
+All verse translation speech audio uses the Government of India's Bhashini AI engine:
+
+1. **Voice Quality & Architecture**:
+   - Primary: `Bhashini - IITM -v1` (`Bhashini/IITM/TTS`) for natural devotional cadence.
+   - Fallback: Automatically falls back to `ai4bharat/indic-tts-coqui-indo_aryan-gpu--t4` if IITM encounters a 500 error.
+   - Dual Voice: Both Female (`👩`) and Male (`👨`) tracks generated and compressed to 64 kbps MP3.
+   - Cloud CDN: Uploaded directly to Supabase Storage `song-tts/<slug>/` (never committed to Git).
+
+2. **Single Song Generation**:
+   - Run: `npm run tts -- <song-id>` (and `--male` / `--force`).
+
+3. **Bulk / Alphabetical Category Generation**:
+   - When user requests bulk updates (e.g., "Category C" or "Bulk update C"):
+     - **Single Approval Rule**: List all matching songs and ask for approval **ONCE**.
+     - Upon approval, autonomously run: `npm run tts:batch -- <letter>` without asking on every individual song.
+     - Runs cloud-to-code sync and TypeScript check automatically upon completion.
