@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { synthesizeOdiaTTS } = require('./bhashini_tts.cjs');
 const { syncCloudToCode } = require('./sync_cloud_to_code.cjs');
+const { uploadAudioToHF } = require('./hf_storage.cjs');
 require('dotenv').config();
 
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL || 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
@@ -82,7 +83,6 @@ async function runPipelineForSong(targetSongId, options = {}) {
 
     const isMale = gender === 'male';
     const storagePath = isMale ? `${songSlug}/v${verseId}_male.mp3` : `${songSlug}/v${verseId}.mp3`;
-    const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/song-tts/${storagePath}`;
 
     const existingUrl = isMale ? verse.translationAudioMaleUrl : verse.translationAudioUrl;
     if (!force && existingUrl) {
@@ -98,22 +98,28 @@ async function runPipelineForSong(targetSongId, options = {}) {
       // Step A: Synthesize & Float32-to-Int16 PCM encode
       await synthesizeOdiaTTS(translation, tempMp3Path, { gender, kbps: 64 });
 
-      // Step B: Upload to Supabase Storage bucket 'song-tts' via unauthenticated client (matches anon RLS)
-      console.log(`☁️ Uploading to Supabase Storage: song-tts/${storagePath}...`);
-      const fileBuffer = fs.readFileSync(tempMp3Path);
+      // Step B: Upload to Storage (Hugging Face CDN preferred, fallback to Supabase)
+      let publicUrl;
+      if (process.env.HF_TOKEN) {
+        console.log(`☁️ Uploading to Hugging Face CDN: ${storagePath}...`);
+        publicUrl = await uploadAudioToHF(storagePath, tempMp3Path);
+        console.log(`✅ Uploaded to Hugging Face CDN: ${publicUrl}`);
+      } else {
+        console.log(`☁️ Uploading to Supabase Storage: song-tts/${storagePath}...`);
+        const fileBuffer = fs.readFileSync(tempMp3Path);
+        const { data: uploadData, error: uploadErr } = await storageClient.storage
+          .from('song-tts')
+          .upload(storagePath, fileBuffer, {
+            contentType: 'audio/mpeg',
+            upsert: true
+          });
 
-      const { data: uploadData, error: uploadErr } = await storageClient.storage
-        .from('song-tts')
-        .upload(storagePath, fileBuffer, {
-          contentType: 'audio/mpeg',
-          upsert: true
-        });
-
-      if (uploadErr) {
-        throw new Error(`Storage upload error: ${uploadErr.message}`);
+        if (uploadErr) {
+          throw new Error(`Storage upload error: ${uploadErr.message}`);
+        }
+        publicUrl = `${SUPABASE_URL}/storage/v1/object/public/song-tts/${storagePath}`;
+        console.log(`✅ Uploaded to Supabase Storage: ${publicUrl}`);
       }
-
-      console.log(`✅ Uploaded to CDN: ${publicUrl}`);
 
       updatedVerses.push({
         ...verse,

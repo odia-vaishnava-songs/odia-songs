@@ -24,7 +24,7 @@ All verse translation speech audio uses the Government of India's Bhashini AI en
    - Primary: `Bhashini - IITM -v1` (`Bhashini/IITM/TTS`) for natural devotional cadence.
    - Fallback: Automatically falls back to `ai4bharat/indic-tts-coqui-indo_aryan-gpu--t4` if IITM encounters a 500 error.
    - Dual Voice: Both Female (`👩`) and Male (`👨`) tracks generated and compressed to 64 kbps MP3.
-   - Cloud CDN: Uploaded directly to Supabase Storage `song-tts/<slug>/` (never committed to Git).
+   - Cloud CDN: Uploaded directly to Hugging Face Dataset CDN (`OdiaVaishnavaSongs/odia-songs-tts`, zero egress fees & card-free) with fallback to Supabase Storage.
 
 2. **Single Song Generation**:
    - Run: `npm run tts -- <song-id>` (and `--male` / `--force`).

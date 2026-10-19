@@ -13,6 +13,8 @@
     "tts:batch": "node scripts/batch_generate_tts.cjs"
   },
   "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "@huggingface/hub": "^2.17.8",
     "@supabase/supabase-js": "^2.48.1",
     "canvas-confetti": "^1.9.4",
     "date-fns": "^4.1.0",

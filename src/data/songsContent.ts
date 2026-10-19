@@ -98,8 +98,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -143,8 +143,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -200,8 +200,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମଧୁର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -245,8 +245,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -290,8 +290,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -335,8 +335,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -380,8 +380,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -425,8 +425,8 @@ export const SONG_MADHURASHTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁକିଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/madhurashtakam/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/madhurashtakam/v8_male.mp3"
         }
     ]
 };
@@ -801,8 +801,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବ୍ୟାକରଣର ନିୟମ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -866,8 +866,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମନ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -919,8 +919,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବାରମ୍ବାର।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -988,8 +988,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସମଗ୍ର।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -1049,8 +1049,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଘରେ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -1114,8 +1114,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସେହି ଶରୀରକୁ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -1171,8 +1171,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନୁହେଁ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -1244,8 +1244,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ଭାଇ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -1273,8 +1273,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଜୀବଦ୍ଦଶାରେ ମୁକ୍ତି।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v9_male.mp3"
         },
         {
             "id": 10,
@@ -1314,8 +1314,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସାଂସାରିକ ବନ୍ଧନ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v10.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v10_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v10.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v10_male.mp3"
         },
         {
             "id": 11,
@@ -1391,8 +1391,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଜାଣିବା ପରେ/ଉପଲବ୍ଧି କରି।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v11.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v11_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v11.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v11_male.mp3"
         },
         {
             "id": 12,
@@ -1452,8 +1452,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଶା ରୂପୀ ପବନ/ତୃଷ୍ଣା।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v12.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v12_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v12.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v12_male.mp3"
         },
         {
             "id": 13,
@@ -1497,8 +1497,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଗବତ୍ପାଦ ନାମରେ ପରିଚିତ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v13.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v13_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v13.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v13_male.mp3"
         },
         {
             "id": 14,
@@ -1570,8 +1570,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନୌକା/ଡଙ୍ଗା।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v14.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v14_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v14.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v14_male.mp3"
         },
         {
             "id": 15,
@@ -1627,8 +1627,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବିଭିନ୍ନ ପ୍ରକାରର ଛଦ୍ମବେଶ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v15.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v15_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v15.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v15_male.mp3"
         },
         {
             "id": 16,
@@ -1696,8 +1696,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଶା ଓ ବାସନାର ପିଣ୍ଡ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v16.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v16_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v16.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v16_male.mp3"
         },
         {
             "id": 17,
@@ -1749,8 +1749,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଶା ବା ବାସନାର ରଜ୍ଜୁ/ଫାଶ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v17.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v17_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v17.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v17_male.mp3"
         },
         {
             "id": 18,
@@ -1798,8 +1798,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଶହେ ଜନ୍ମରେ ମଧ୍ୟ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v18.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v18_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v18.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v18_male.mp3"
         },
         {
             "id": 19,
@@ -1859,8 +1859,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବୈରାଗ୍ୟ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v19.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v19_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v19.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v19_male.mp3"
         },
         {
             "id": 20,
@@ -1908,8 +1908,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "କେବଳ ସେ ହିଁ ଆନନ୍ଦିତ ହୁଏ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v20.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v20_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v20.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v20_male.mp3"
         },
         {
             "id": 21,
@@ -1969,8 +1969,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "କୌଣସି ବିଚାର ବା ଆଲୋଚନା ରହେ ନାହିଁ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v21.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v21_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v21.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v21_male.mp3"
         },
         {
             "id": 22,
@@ -2022,8 +2022,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ କୃଷ୍ଣ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v22.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v22_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v22.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v22_male.mp3"
         },
         {
             "id": 23,
@@ -2075,8 +2075,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଜଣେ ଶିଶୁ ବା ପାଗଳ ପରି।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v23.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v23_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v23.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v23_male.mp3"
         },
         {
             "id": 24,
@@ -2132,8 +2132,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସ୍ୱପ୍ନ ପରି ବିଚାର କରି।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v24.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v24_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v24.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v24_male.mp3"
         },
         {
             "id": 25,
@@ -2193,8 +2193,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବିଷ୍ଣୁତ୍ୱ ପ୍ରାପ୍ତି।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v25.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v25_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v25.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v25_male.mp3"
         },
         {
             "id": 26,
@@ -2246,8 +2246,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭେଦଭାବ ବା ଦ୍ୱୈତଭାବ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v26.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v26_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v26.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v26_male.mp3"
         },
         {
             "id": 27,
@@ -2303,8 +2303,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନରକରେ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v27.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v27_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v27.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v27_male.mp3"
         },
         {
             "id": 28,
@@ -2352,8 +2352,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଧନ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v28.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v28_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v28.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v28_male.mp3"
         },
         {
             "id": 29,
@@ -2409,8 +2409,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପାପାଚାର/ଖରାପ କର୍ମ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v29.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v29_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v29.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v29_male.mp3"
         },
         {
             "id": 30,
@@ -2462,8 +2462,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପରମ୍ପରା/ନିୟମ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v30.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v30_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v30.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v30_male.mp3"
         },
         {
             "id": 31,
@@ -2499,8 +2499,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଅତ୍ୟନ୍ତ ସାବଧାନତା ସହ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v31.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v31_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v31.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v31_male.mp3"
         },
         {
             "id": 32,
@@ -2548,8 +2548,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଗବାନଙ୍କୁ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v32.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v32_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v32.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v32_male.mp3"
         },
         {
             "id": 33,
@@ -2593,8 +2593,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଶୁଦ୍ଧ ଚିତ୍ତ ବା ସଂଶୋଧିତ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v33.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v33_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v33.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v33_male.mp3"
         },
         {
             "id": 34,
@@ -2626,8 +2626,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସଂସାର ସାଗର ପାର ହେବା ପାଇଁ।"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v34.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v34_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v34.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v34_male.mp3"
         },
         {
             "id": 35,
@@ -2639,8 +2639,8 @@ export const SONG_BHAJAGOVINDAM_STRUCTURED: StructuredSong = {
                     "meaning": ""
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v35.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovindam/v35_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v35.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovindam/v35_male.mp3"
         }
     ]
 };
@@ -2713,8 +2713,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ସର୍ଜନା ଓ ବିନାଶ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v1_male.mp3"
         },
         {
             "id": 2,
@@ -2778,8 +2778,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ନିଷ୍କାମ ଭାବେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v2_male.mp3"
         },
         {
             "id": 3,
@@ -2867,8 +2867,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ମନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v3_male.mp3"
         },
         {
             "id": 4,
@@ -2952,8 +2952,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ହେଉ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v4_male.mp3"
         },
         {
             "id": 5,
@@ -3033,8 +3033,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ହେଉ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v5_male.mp3"
         },
         {
             "id": 6,
@@ -3118,8 +3118,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଉପର ବସ୍ତ୍ର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v6_male.mp3"
         },
         {
             "id": 7,
@@ -3195,8 +3195,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁକ୍ତିଦାତା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v7_male.mp3"
         },
         {
             "id": 8,
@@ -3276,8 +3276,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ନିଜର ମୂଳ ସ୍ୱରୂପ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v8_male.mp3"
         },
         {
             "id": 9,
@@ -3345,8 +3345,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଗୋପୀମାନେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v9_male.mp3"
         },
         {
             "id": 10,
@@ -3414,8 +3414,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ପରମାତ୍ମା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v10.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v10_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v10.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v10_male.mp3"
         },
         {
             "id": 11,
@@ -3491,8 +3491,8 @@ export const SONG_BHISHMASTUTI_STRUCTURED: StructuredSong = {
                     "meaning": "ଦ୍ୱୈତଭାବର ଅଜ୍ଞାନତା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v11.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhishmastuti/v11_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v11.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhishmastuti/v11_male.mp3"
         }
     ]
 };
@@ -3569,8 +3569,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସୂର୍ଯ୍ୟଙ୍କ କନ୍ୟା (ଯମୁନା)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -3630,8 +3630,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନାଶକାରିଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -3683,8 +3683,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମଙ୍ଗଳ ପ୍ରଦାନକାରିଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -3736,8 +3736,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ପରାସ୍ତକାରିଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -3789,8 +3789,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ବନ୍ଦନା କରନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -3842,8 +3842,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଆନନ୍ଦିତ ହୁଅନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -3891,8 +3891,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନାଶକାରିଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -3940,8 +3940,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁଗନ୍ଧିତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -3993,8 +3993,8 @@ export const SONG_YAMUNASTAKAM_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ପଦ୍ମାକ୍ଷୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/yamunastakam/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/yamunastakam/v9_male.mp3"
         }
     ]
 };
@@ -4046,7 +4046,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଶ୍ରୀକୃଷ୍ଣ-ସଙ୍କୀର୍ତ୍ତନମ୍",
                     "meaning": "ଶ୍ରୀକୃଷ୍ଣ ସଙ୍କୀର୍ତ୍ତନ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -4097,7 +4099,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଅଜନି-ନ-ଅନୁରାଗଃ",
                     "meaning": "ଅନୁରାଗ ହୋଇନାହିଁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -4136,7 +4140,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ହରିଃ",
                     "meaning": "ଶ୍ରୀ ହରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -4179,7 +4185,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ତ୍ୱୟି",
                     "meaning": "ଆପଣଙ୍କ ଠାରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -4222,7 +4230,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ବିଚିନ୍ତୟ",
                     "meaning": "ମନେ କରନ୍ତୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -4265,7 +4275,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ନାମ-ଗ୍ରହଣେ",
                     "meaning": "ନାମ ନେଲାବେଳେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -4300,7 +4312,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ଗୋବିନ୍ଦ-ବିରହେଣ",
                     "meaning": "ଗୋବିନ୍ଦଙ୍କ ବିରହରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -4347,7 +4361,9 @@ export const SONG_SIKSHASHTAKAM_STRUCTURED: StructuredSong = {
                     "word": "ନ-ଅପରଃ",
                     "meaning": "ଅନ୍ୟ କେହି ନୁହେଁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/shikshashtakam/v8_male.mp3"
         }
     ]
 };
@@ -8126,8 +8142,8 @@ export const SONG_BRAHMABOLE_STRUCTURED: StructuredSong = {
                     "meaning": "ରାମ ନାମ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/brahmabole/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/brahmabole/v1_male.mp3"
         },
         {
             "id": 2,
@@ -8163,8 +8179,8 @@ export const SONG_BRAHMABOLE_STRUCTURED: StructuredSong = {
                     "meaning": "ପାଞ୍ଚୋଟି ମୁଖରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/brahmabole/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/brahmabole/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/brahmabole/v2_male.mp3"
         }
     ]
 };
@@ -8619,7 +8635,9 @@ export const SONG_CARANAKAMAL_STRUCTURED: StructuredSong = {
                     "word": "ହରି ରାଇ",
                     "meaning": "ପ୍ରଭୁ ଶ୍ରୀହରିଙ୍କୁ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/vrefrain.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/vrefrain_male.mp3"
         },
         {
             "id": 1,
@@ -8658,7 +8676,9 @@ export const SONG_CARANAKAMAL_STRUCTURED: StructuredSong = {
                     "word": "ଦରସାଈ",
                     "meaning": "ଦେଖିପାରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v1_male.mp3"
         },
         {
             "id": 2,
@@ -8705,7 +8725,9 @@ export const SONG_CARANAKAMAL_STRUCTURED: StructuredSong = {
                     "word": "ଧରାଈ",
                     "meaning": "ଧାରଣ କରି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v2_male.mp3"
         },
         {
             "id": 3,
@@ -8732,7 +8754,9 @@ export const SONG_CARANAKAMAL_STRUCTURED: StructuredSong = {
                     "word": "ତେହି ପାଇ",
                     "meaning": "ସେହି ଚରଣରେ"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/caranakamal/v3_male.mp3"
         }
     ]
 };
@@ -8801,8 +8825,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "କାହାଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v1_male.mp3"
         },
         {
             "id": 2,
@@ -8870,8 +8894,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ଦାସକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v2_male.mp3"
         },
         {
             "id": 3,
@@ -8939,8 +8963,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ସାମାନ୍ୟ ଅଂଶ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v3_male.mp3"
         },
         {
             "id": 4,
@@ -9000,8 +9024,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଲ ଲାଗିଲା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v4_male.mp3"
         },
         {
             "id": 5,
@@ -9057,8 +9081,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ଦିନକୁ ଦିନ (ସବୁ ସମୟ)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v5_male.mp3"
         },
         {
             "id": 6,
@@ -9114,8 +9138,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ପ୍ରଭୁ!"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v6_male.mp3"
         },
         {
             "id": 7,
@@ -9167,8 +9191,8 @@ export const SONG_BHULIYATOMARE_STRUCTURED: StructuredSong = {
                     "meaning": "କିପରି ଗନ୍ତବ୍ୟ ସ୍ଥଳ ହେବ?"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhuliyatomare/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhuliyatomare/v7_male.mp3"
         }
     ]
 };
@@ -12775,8 +12799,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯନ୍ତ୍ରଣା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v1_male.mp3"
         },
         {
             "id": 2,
@@ -12840,8 +12864,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁଖଦାୟକ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v2_male.mp3"
         },
         {
             "id": 3,
@@ -12901,8 +12925,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅଳଙ୍କାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v3_male.mp3"
         },
         {
             "id": 4,
@@ -12962,8 +12986,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ଲାଳସାଗ୍ରସ୍ତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v4_male.mp3"
         },
         {
             "id": 5,
@@ -13015,8 +13039,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅତ୍ୟନ୍ତ ଜର୍ଜରିତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v5_male.mp3"
         },
         {
             "id": 6,
@@ -13072,8 +13096,8 @@ export const SONG_AMARJIVANA_STRUCTURED: StructuredSong = {
                     "meaning": "ନିବେଦନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarjivana/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarjivana/v6_male.mp3"
         }
     ]
 };
@@ -13135,8 +13159,8 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "meaning": "ସମସ୍ତ ରସର ରାଜା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13173,8 +13197,8 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "meaning": "ସଙ୍ଗୀଗଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13239,8 +13263,8 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "meaning": "ବନ ମଧ୍ୟରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13301,8 +13325,8 @@ export const SONG_AMIJAMUNAPULINE_STRUCTURED: StructuredSong = {
                     "meaning": "ବିନମ୍ର ନିବେଦନ କରୁଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amijamunapuline/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amijamunapuline/v4_male.mp3"
         }
     ],
     "reference_url": ""
@@ -13376,8 +13400,8 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "meaning": "ପାଉନାହିଁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13445,8 +13469,8 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "meaning": "ସମୟ ଆସି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13518,8 +13542,8 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "meaning": "ନିଜ ଶକ୍ତିରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13583,8 +13607,8 @@ export const SONG_ANADIKARAMAPHALE_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ଦୟାମୟ !"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/anadikaramaphale/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/anadikaramaphale/v4_male.mp3"
         }
     ]
 };
@@ -13681,8 +13705,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ବାରମ୍ବାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v1_male.mp3"
         },
         {
             "id": 2,
@@ -13718,8 +13742,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରାଣକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v2_male.mp3"
         },
         {
             "id": 3,
@@ -13759,8 +13783,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅଶ୍ରୁ/ଲୁହ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v3_male.mp3"
         },
         {
             "id": 4,
@@ -13796,8 +13820,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ବାହାରିବ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v4_male.mp3"
         },
         {
             "id": 5,
@@ -13841,8 +13865,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରତିବାର/ବାରମ୍ବାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v5_male.mp3"
         },
         {
             "id": 6,
@@ -13874,8 +13898,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରାଣକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v6_male.mp3"
         },
         {
             "id": 7,
@@ -13919,8 +13943,8 @@ export const SONG_APARADHAPHALEMAMA_STRUCTURED: StructuredSong = {
                     "meaning": "ହୀନ/ଦୁର୍ବଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/aparadhaphalemama/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/aparadhaphalemama/v7_male.mp3"
         }
     ]
 };
@@ -15241,8 +15265,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁଁ ଦେଖୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v1_male.mp3"
         },
         {
             "id": 2,
@@ -15302,8 +15326,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ଭୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v2_male.mp3"
         },
         {
             "id": 3,
@@ -15371,8 +15395,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ଗଭୀର ପ୍ରେମରେ ଅନୁରକ୍ତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v3_male.mp3"
         },
         {
             "id": 4,
@@ -15432,8 +15456,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ଅଜ୍ଞାନତା ଜନିତ ଦୁଃଖ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v4_male.mp3"
         },
         {
             "id": 5,
@@ -15497,8 +15521,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ଧନର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v5_male.mp3"
         },
         {
             "id": 6,
@@ -15558,8 +15582,8 @@ export const SONG_ATMANIVEDANATUWAPADE_STRUCTURED: StructuredSong = {
                     "meaning": "ଘରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/atmanivedanatuwapade/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/atmanivedanatuwapade/v6_male.mp3"
         }
     ]
 };
@@ -17416,8 +17440,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ରୀରାମ, ଶ୍ରୀକୃଷ୍ଣ ଓ ହୟଗ୍ରୀବ ଭଗବାନଙ୍କ ନାମ ନିଅ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v1_male.mp3"
         },
         {
             "id": 2,
@@ -17449,8 +17473,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ଦଶରଥ ନନ୍ଦନ ଶ୍ରୀରାମଙ୍କର ଜୟ ହେଉ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v2_male.mp3"
         },
         {
             "id": 3,
@@ -17482,8 +17506,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ସମଗ୍ର ବ୍ରହ୍ମାଣ୍ଡର ଶ୍ରେଷ୍ଠ ସୁନ୍ଦର ପୁରୁଷ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v3_male.mp3"
         },
         {
             "id": 4,
@@ -17515,8 +17539,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ମନହରଣକାରୀ ମୁରଲୀଧର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v4_male.mp3"
         },
         {
             "id": 5,
@@ -17548,8 +17572,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ମୋହନ ବଂଶୀ ବଜାଇ ବିହାର କରୁଥିବା ପ୍ରଭୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v5_male.mp3"
         },
         {
             "id": 6,
@@ -17577,8 +17601,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ବୃନ୍ଦାବନ ଧାମର ବାସିନ୍ଦା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v6_male.mp3"
         },
         {
             "id": 7,
@@ -17606,8 +17630,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ସମସ୍ତ ସଦ୍ଗୁଣର ଆଶ୍ରୟସ୍ଥଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v7_male.mp3"
         },
         {
             "id": 8,
@@ -17639,8 +17663,8 @@ export const SONG_VIBHAVARISESA_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ ମୋର ମନ! ଏହି କଥାଟି ରଖ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vibhavarisesa/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vibhavarisesa/v8_male.mp3"
         }
     ]
 };
@@ -24070,8 +24094,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ମନମୁଗ୍ଧକାରୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v1_male.mp3"
         },
         {
             "id": 2,
@@ -24111,8 +24135,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଭୋଜନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v2_male.mp3"
         },
         {
             "id": 3,
@@ -24152,8 +24176,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଧାଡ଼ି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v3_male.mp3"
         },
         {
             "id": 4,
@@ -24209,8 +24233,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "କଦଳୀ ଭଣ୍ଡାରୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v4_male.mp3"
         },
         {
             "id": 5,
@@ -24254,8 +24278,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": " କ୍ଷୀରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v5_male.mp3"
         },
         {
             "id": 6,
@@ -24299,8 +24323,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରକାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v6_male.mp3"
         },
         {
             "id": 7,
@@ -24348,8 +24372,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଖୁସି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v7_male.mp3"
         },
         {
             "id": 8,
@@ -24397,8 +24421,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଖାଇବା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v8_male.mp3"
         },
         {
             "id": 9,
@@ -24446,8 +24470,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ହରିବୋଲ !\n"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v9_male.mp3"
         },
         {
             "id": 10,
@@ -24499,8 +24523,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯଶୋଦାଙ୍କ ଘରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v10.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v10_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v10.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v10_male.mp3"
         },
         {
             "id": 11,
@@ -24556,8 +24580,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ପରେ ଧାଡ଼ି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v11.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v11_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v11.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v11_male.mp3"
         },
         {
             "id": 12,
@@ -24601,8 +24625,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ବଳରାମଙ୍କ ସହିତ\n"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v12.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v12_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v12.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v12_male.mp3"
         },
         {
             "id": 13,
@@ -24654,8 +24678,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯାଆନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v13.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v13_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v13.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v13_male.mp3"
         },
         {
             "id": 14,
@@ -24699,8 +24723,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯାଆନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v14.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v14_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v14.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v14_male.mp3"
         },
         {
             "id": 15,
@@ -24748,8 +24772,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ସନ୍ତୁଷ୍ଟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v15.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v15_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v15.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v15_male.mp3"
         },
         {
             "id": 16,
@@ -24793,8 +24817,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଗାଆନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v16.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v16_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v16.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v16_male.mp3"
         },
         {
             "id": 17,
@@ -24842,8 +24866,8 @@ export const SONG_BHAJABHAKATAVATSALA_STRUCTURED: StructuredSong = {
                     "meaning": "ଭକ୍ତିବିନୋଦ ଠାକୁର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v17.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhakatavatsala/v17_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v17.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhakatavatsala/v17_male.mp3"
         }
     ]
 };
@@ -26848,8 +26872,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁକ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v1_male.mp3"
         },
         {
             "id": 2,
@@ -26901,8 +26925,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ପାଖକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v2_male.mp3"
         },
         {
             "id": 3,
@@ -26942,8 +26966,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁକ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v3_male.mp3"
         },
         {
             "id": 4,
@@ -26995,8 +27019,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଦାନ କରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v4_male.mp3"
         },
         {
             "id": 5,
@@ -27044,8 +27068,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ଉଦ୍ଧାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v5_male.mp3"
         },
         {
             "id": 6,
@@ -27089,8 +27113,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ପାଇବି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v6_male.mp3"
         },
         {
             "id": 7,
@@ -27134,8 +27158,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ସିଦ୍ଧାନ୍ତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v7_male.mp3"
         },
         {
             "id": 8,
@@ -27183,8 +27207,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଶ୍ରୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v8_male.mp3"
         },
         {
             "id": 9,
@@ -27228,8 +27252,8 @@ export const SONG_AMITODURJANAATI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆପଣଙ୍କର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amitodurjanaati/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amitodurjanaati/v9_male.mp3"
         }
     ]
 };
@@ -27290,8 +27314,8 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁଦିନ ପାଇଁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27343,8 +27367,8 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "meaning": "ଅନ୍ୟ ଉପରେ ନିର୍ଭରଶୀଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27388,8 +27412,8 @@ export const SONG_ARKENOMAYAJALE_STRUCTURED: StructuredSong = {
                     "meaning": "କୃଷ୍ଣଙ୍କ ଉପରେ ନିର୍ଭରଶୀଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkenomayajale/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkenomayajale/v3_male.mp3"
         }
     ]
 };
@@ -27438,8 +27462,8 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରତାରଣା ବା ଛଳନା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27495,8 +27519,8 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "meaning": "ବାକି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27560,8 +27584,8 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "meaning": "ନକଲି ବା ବାହ୍ୟାଡ଼ମ୍ବର?"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v3_male.mp3"
         },
         {
             "id": 4,
@@ -27641,8 +27665,8 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "meaning": "ଦେଖିବା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v4_male.mp3"
         },
         {
             "id": 5,
@@ -27710,8 +27734,8 @@ export const SONG_ASALOKATHABOLTE_STRUCTURED: StructuredSong = {
                     "meaning": "କ'ଣ?"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/asalokathabolte/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/asalokathabolte/v5_male.mp3"
         }
     ]
 };
@@ -27760,8 +27784,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ବିସ୍ମୟରେ ଅଭିଭୂତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v1_male.mp3"
         },
         {
             "id": 2,
@@ -27797,8 +27821,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯୁବ ଦିବ୍ୟ ଯୁଗଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v2_male.mp3"
         },
         {
             "id": 3,
@@ -27846,8 +27870,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଉଜ୍ଜ୍ୱଳତା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v3_male.mp3"
         },
         {
             "id": 4,
@@ -27899,8 +27923,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଲୋକିତ କରୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v4_male.mp3"
         },
         {
             "id": 5,
@@ -27940,8 +27964,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆନନ୍ଦଦାୟକ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v5_male.mp3"
         },
         {
             "id": 6,
@@ -27981,8 +28005,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ହଲାଉଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v6_male.mp3"
         },
         {
             "id": 7,
@@ -28022,8 +28046,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଅର୍ପଣ କରୁଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v7_male.mp3"
         },
         {
             "id": 8,
@@ -28063,8 +28087,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆରତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v8_male.mp3"
         },
         {
             "id": 9,
@@ -28108,8 +28132,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଗାଉଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v9_male.mp3"
         },
         {
             "id": 10,
@@ -28149,8 +28173,8 @@ export const SONG_BHALEGAURAGADADHARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଉପଭୋଗ କରୁଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v10.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhalegauragadadhara/v10_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v10.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhalegauragadadhara/v10_male.mp3"
         }
     ]
 };
@@ -32327,8 +32351,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଭୁ ନିତ୍ୟାନନ୍ଦ ନିଜେ (ଏହାର ମାଲିକ ଓ ପରିଚାଳକ)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v1_male.mp3"
         },
         {
             "id": 2,
@@ -32364,8 +32388,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ବିକ୍ରୟ କରୁଛନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v2_male.mp3"
         },
         {
             "id": 3,
@@ -32405,8 +32429,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ନିର୍ଦ୍ଧାରଣ କରି (ଦର କଷାକଷି କରି)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v3_male.mp3"
         },
         {
             "id": 4,
@@ -32446,8 +32470,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ମୁଁ ଏବେ ଯାଉଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v4_male.mp3"
         },
         {
             "id": 5,
@@ -32487,8 +32511,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ଆମ ସମସ୍ତଙ୍କର ଅଭିଳାଷ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v5_male.mp3"
         },
         {
             "id": 6,
@@ -32524,8 +32548,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ପରମ ଆନନ୍ଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v6_male.mp3"
         },
         {
             "id": 7,
@@ -32565,8 +32589,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଧ୍ୟାତ୍ମିକ ସମ୍ପଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v7_male.mp3"
         },
         {
             "id": 8,
@@ -32606,8 +32630,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ଖାତିର (ଅପେକ୍ଷା)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v8_male.mp3"
         },
         {
             "id": 9,
@@ -32643,8 +32667,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ସମସ୍ୟା (ଜଞ୍ଜାଳ)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v9_male.mp3"
         },
         {
             "id": 10,
@@ -32680,8 +32704,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ଦୟାମୟ ନିତାଇ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v10.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v10_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v10.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v10_male.mp3"
         },
         {
             "id": 11,
@@ -32717,8 +32741,8 @@ export const SONG_BOROSUKHERKHABAR_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁରକ୍ଷିତ ଆଶ୍ରୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v11.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/borosukherkhabar/v11_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v11.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/borosukherkhabar/v11_male.mp3"
         }
     ]
 };
@@ -33181,8 +33205,8 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "meaning": "ପରିହାର କରି/ତ୍ୟାଗ କରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v1_male.mp3"
         },
         {
             "id": 2,
@@ -33259,8 +33283,8 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "meaning": "ସ୍ମରଣ କର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v2_male.mp3"
         },
         {
             "id": 3,
@@ -33317,8 +33341,8 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v3_male.mp3"
         },
         {
             "id": 4,
@@ -33387,8 +33411,8 @@ export const SONG_BHAJAREBHAJAREAMAR_STRUCTURED: StructuredSong = {
                     "meaning": "ହେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaja_re_bhaja_re_amar/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaja_re_bhaja_re_amar/v4_male.mp3"
         }
     ],
     "reference_url": ""
@@ -33430,8 +33454,8 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁଖରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v1_male.mp3"
         },
         {
             "id": 2,
@@ -33455,8 +33479,8 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ଦୁଃଖରେ ରୁହ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v2_male.mp3"
         },
         {
             "id": 3,
@@ -33488,8 +33512,8 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ରହି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v3_male.mp3"
         },
         {
             "id": 4,
@@ -33513,8 +33537,8 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ପଡ଼ିଯାଇ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v4_male.mp3"
         },
         {
             "id": 5,
@@ -33538,8 +33562,8 @@ export const SONG_BOLOHARIBOLO_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଭୁ ଅଦ୍ୱୈତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bolo_hari_bolo/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bolo_hari_bolo/v5_male.mp3"
         }
     ]
 };
@@ -34774,8 +34798,8 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରାଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v1_male.mp3"
         },
         {
             "id": 2,
@@ -34863,8 +34887,8 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "meaning": "ସମ୍ପଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v2_male.mp3"
         },
         {
             "id": 3,
@@ -34960,8 +34984,8 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "meaning": "ଉଦ୍ଧାରକର୍ତ୍ତା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v3_male.mp3"
         },
         {
             "id": 4,
@@ -35053,8 +35077,8 @@ export const SONG_AREBHAIBHAJAMORA_STRUCTURED: StructuredSong = {
                     "meaning": "ସମ୍ପଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arebhaibhajamora/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arebhaibhajamora/v4_male.mp3"
         }
     ]
 };
@@ -35308,8 +35332,8 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆନନ୍ଦର ବିଳାସ (ମହିମା)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v1_male.mp3"
         },
         {
             "id": 2,
@@ -35365,8 +35389,8 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ରୀମଦ୍ ଭାଗବତ ମହାପୁରାଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v2_male.mp3"
         },
         {
             "id": 3,
@@ -35422,8 +35446,8 @@ export const SONG_DHANAMORNITYANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ରୀଳ ନରୋତ୍ତମ ଦାସ ଠାକୁର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/dhanamornityananda/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/dhanamornityananda/v3_male.mp3"
         }
     ]
 };
@@ -36396,8 +36420,8 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "meaning": "ପଦ୍ମ ଫୁଲ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v1_male.mp3"
         },
         {
             "id": 2,
@@ -36453,8 +36477,8 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁନ୍ଦରୀ ଶ୍ରୀମତୀ ରାଧାରାଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v2_male.mp3"
         },
         {
             "id": 3,
@@ -36514,8 +36538,8 @@ export const SONG_VRNDAVANARAMYASTHANA_STRUCTURED: StructuredSong = {
                     "meaning": "ମୋ ମନରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/vrndavanaramyasthana/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/vrndavanaramyasthana/v3_male.mp3"
         }
     ]
 };
@@ -39741,8 +39765,8 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଫଳ ସ୍ୱରୂପ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v1_male.mp3"
         },
         {
             "id": 2,
@@ -39806,8 +39830,8 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "meaning": "ବିନା (ବା ବିଷ ସଦୃଶ)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v2_male.mp3"
         },
         {
             "id": 3,
@@ -39879,8 +39903,8 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "meaning": "ମଧୁରତା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v3_male.mp3"
         },
         {
             "id": 4,
@@ -39952,8 +39976,8 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "meaning": "ଉତ୍ତାପ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v4_male.mp3"
         },
         {
             "id": 5,
@@ -40025,8 +40049,8 @@ export const SONG_AVATARASARAGORAAVATARA_STRUCTURED: StructuredSong = {
                     "meaning": "ମସ୍ତକ (ନିଜ ସତ୍ତା)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/avatarasaragoraavatara/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/avatarasaragoraavatara/v5_male.mp3"
         }
     ]
 };
@@ -40067,8 +40091,8 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଭ୍ରମଣ କରନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v1_male.mp3"
         },
         {
             "id": 2,
@@ -40108,8 +40132,8 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ବିତରଣ କରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v2_male.mp3"
         },
         {
             "id": 3,
@@ -40149,8 +40173,8 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଭୁ ଚୈତନ୍ୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v3_male.mp3"
         },
         {
             "id": 4,
@@ -40186,8 +40210,8 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଧୂଳିରେ ଲୁଟିବା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v4_male.mp3"
         },
         {
             "id": 5,
@@ -40231,8 +40255,8 @@ export const SONG_AKRODHAPARAMANANDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଯାଏ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/akrodhaparamananda/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/akrodhaparamananda/v5_male.mp3"
         }
     ]
 };
@@ -45527,7 +45551,9 @@ export const SONG_NARASIMHAPRANAMA_STRUCTURED: StructuredSong = {
                     "word": "ମୃତ୍ୟୁର୍ ମୃତ୍ୟୁମ୍ ନମାମ୍ୟ ଅହମ୍",
                     "meaning": "ମୃତ୍ୟୁର ମଧ୍ୟ ମୃତ୍ୟୁ ସ୍ୱରୂପ ଭଗବାନଙ୍କୁ ମୁଁ ପ୍ରଣାମ କରୁଛି"
                 }
-            ]
+            ],
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/narasimhapranama/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/narasimhapranama/v1_male.mp3"
         }
     ]
 };
@@ -45853,8 +45879,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ଭାଇ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v1_male.mp3"
         },
         {
             "id": 2,
@@ -45914,8 +45940,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରଚେଷ୍ଟା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v2_male.mp3"
         },
         {
             "id": 3,
@@ -45971,8 +45997,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ହୋଇ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v3_male.mp3"
         },
         {
             "id": 4,
@@ -46020,8 +46046,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ବହନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v4_male.mp3"
         },
         {
             "id": 5,
@@ -46077,8 +46103,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ଜଗୁଆଳି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v5_male.mp3"
         },
         {
             "id": 6,
@@ -46126,8 +46152,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ଅଭିଳାଷ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v6_male.mp3"
         },
         {
             "id": 7,
@@ -46183,8 +46209,8 @@ export const SONG_AMARBOLITEPRABHU_STRUCTURED: StructuredSong = {
                     "meaning": "ସାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amarboliteprabhu/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amarboliteprabhu/v7_male.mp3"
         }
     ]
 };
@@ -46237,8 +46263,8 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "meaning": "କେଶୀ-ଘାଟ ନିକଟକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v1_male.mp3"
         },
         {
             "id": 2,
@@ -46278,8 +46304,8 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ରୀଅଙ୍ଗରୁ ପ୍ରକାଶ ପାଉଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v2_male.mp3"
         },
         {
             "id": 3,
@@ -46323,8 +46349,8 @@ export const SONG_BANDHUSANGEYADITAVARANGE_STRUCTURED: StructuredSong = {
                     "meaning": "ବଡ଼ ବିପଦ ମାଡ଼ି ଆସିବ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bandhusangeyaditavarange/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bandhusangeyaditavarange/v3_male.mp3"
         }
     ]
 };
@@ -48403,8 +48429,8 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "meaning": "ନିତ୍ୟାନନ୍ଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v1_male.mp3"
         },
         {
             "id": 2,
@@ -48448,8 +48474,8 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରେମର ମାଧୁର୍ଯ୍ୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v2_male.mp3"
         },
         {
             "id": 3,
@@ -48497,8 +48523,8 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "meaning": "ହରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v3_male.mp3"
         },
         {
             "id": 4,
@@ -48538,8 +48564,8 @@ export const SONG_ABANIKAMAJHE_STRUCTURED: StructuredSong = {
                     "meaning": "ଦାସ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/abanikamajhe/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/abanikamajhe/v4_male.mp3"
         }
     ]
 };
@@ -48604,8 +48630,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଜନା କରୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v1_male.mp3"
         },
         {
             "id": 2,
@@ -48665,8 +48691,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଧ୍ୟାନ କରୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v2_male.mp3"
         },
         {
             "id": 3,
@@ -48738,8 +48764,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ନମସ୍କାର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v3_male.mp3"
         },
         {
             "id": 4,
@@ -48799,8 +48825,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଦ୍ରୌପଦୀଙ୍କ ରକ୍ଷାକାରୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v4_male.mp3"
         },
         {
             "id": 5,
@@ -48864,8 +48890,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ମୋତେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v5_male.mp3"
         },
         {
             "id": 6,
@@ -48909,8 +48935,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସବୁବେଳେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v6_male.mp3"
         },
         {
             "id": 7,
@@ -48950,8 +48976,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଜନା କରୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v7_male.mp3"
         },
         {
             "id": 8,
@@ -49015,8 +49041,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ଭଜନା କରୁଛି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v8_male.mp3"
         },
         {
             "id": 9,
@@ -49096,8 +49122,8 @@ export const SONG_ACHYUTAMKESAVAM_STRUCTURED: StructuredSong = {
                     "meaning": "ସମ୍ପୂର୍ଣ୍ଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/achyutamkesavam/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/achyutamkesavam/v9_male.mp3"
         }
     ]
 };
@@ -49900,8 +49926,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ଦଳି ଚକଟି ଦିଅ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v1_male.mp3"
         },
         {
             "id": 2,
@@ -49957,8 +49983,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆପଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50010,8 +50036,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ସେହିକ୍ଷଣି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v3_male.mp3"
         },
         {
             "id": 4,
@@ -50075,8 +50101,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ରକ୍ଷା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v4_male.mp3"
         },
         {
             "id": 5,
@@ -50132,8 +50158,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ରାଜା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v5_male.mp3"
         },
         {
             "id": 6,
@@ -50193,8 +50219,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ସେହିକ୍ଷଣି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v6_male.mp3"
         },
         {
             "id": 7,
@@ -50246,8 +50272,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ପୁର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v7.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v7_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v7.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v7_male.mp3"
         },
         {
             "id": 8,
@@ -50295,8 +50321,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ଆଶ୍ରୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v8.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v8_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v8.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v8_male.mp3"
         },
         {
             "id": 9,
@@ -50352,8 +50378,8 @@ export const SONG_AHENILASAILA_STRUCTURED: StructuredSong = {
                     "meaning": "ଶରଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v9.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/ahenilasaila/v9_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v9.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/ahenilasaila/v9_male.mp3"
         }
     ]
 };
@@ -50410,8 +50436,8 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "meaning": "ତିଳକ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50483,8 +50509,8 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "meaning": "ସୁନା (ପ୍ରେମ ରୂପକ ଧନ)"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50528,8 +50554,8 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "meaning": "ହେଲା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v3_male.mp3"
         },
         {
             "id": 4,
@@ -50605,8 +50631,8 @@ export const SONG_AMARNITAIMILENA_STRUCTURED: StructuredSong = {
                     "meaning": "ହେବ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/amar_nitai/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/amar_nitai/v4_male.mp3"
         }
     ]
 };
@@ -50674,8 +50700,8 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "meaning": "ଗିରିଧାରୀ ଶ୍ରୀକୃଷ୍ଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50731,8 +50757,8 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "meaning": "ରକ୍ଷାକର୍ତ୍ତା/ପାଳକ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v2_male.mp3"
         },
         {
             "id": 3,
@@ -50792,8 +50818,8 @@ export const SONG_ANTARAMANDIREJAGO_STRUCTURED: StructuredSong = {
                     "meaning": "ବ୍ରଜର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antaramandirejago/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antaramandirejago/v3_male.mp3"
         }
     ]
 };
@@ -50818,16 +50844,16 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ଜଗତ ସାରା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v0.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v0_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v0.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v0_male.mp3"
         },
         {
             "id": 1,
             "lyric": "ସାଧନ ନିତାଇ ଭଜନ ନିତାଇ ନିତାଇ ନୟନ ତାରା\nଦଶଦିକ ମୟ ନିତାଇ ସୁନ୍ଦର ନିତାଇ ଭୁବନ ଭରା ।।",
             "translation": "ନିତାଈ ହିଁ ମୋର ସାଧନା ଏବଂ ନିତାଈ ହିଁ ମୋର ଭଜନ, ସେ ମୋ ଆଖିର ପିତୁଳା ସଦୃଶ। ଦଶ ଦିଗରେ କେବଳ ସୁନ୍ଦର ନିତାଈ ବିରାଜମାନ ଏବଂ ସମଗ୍ର ଭୁବନ ତାଙ୍କରି ଦ୍ୱାରା ପରିପୂର୍ଣ୍ଣ।",
             "wordMeanings": [],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v1_male.mp3"
         },
         {
             "id": 1,
@@ -50875,8 +50901,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ପରିପୂର୍ଣ୍ଣ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v1_male.mp3"
         },
         {
             "id": 2,
@@ -50940,8 +50966,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ବଳରାମଙ୍କ ସହ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51005,8 +51031,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ନାମକ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51062,8 +51088,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ଗହଣରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v4_male.mp3"
         },
         {
             "id": 5,
@@ -51115,8 +51141,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆନନ୍ଦ/ଲୀଳା"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v5_male.mp3"
         },
         {
             "id": 6,
@@ -51180,8 +51206,8 @@ export const SONG_ANTARENITAIBAHIRENITAI_STRUCTURED: StructuredSong = {
                     "meaning": "ମୋତେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v6.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/antarenitaibahirenitai/v6_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v6.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/antarenitaibahirenitai/v6_male.mp3"
         }
     ]
 };
@@ -51222,16 +51248,16 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "meaning": "ନାହାନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v0.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v0_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v0.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v0_male.mp3"
         },
         {
             "id": 1,
             "lyric": "ମନ ଦୁଃଖେ କାନ୍ଦେ ଏକା କମଳିନୀ ରାଇ ଗୋ\nଶ୍ୟାମ ବ୍ରଜେ ନାଇ ।।",
             "translation": "ଶ୍ୟାମ ବ୍ରଜରେ ନଥିବାରୁ, କମଳିନୀ ଶ୍ରୀରାଧା ଅତ୍ୟନ୍ତ ମନ ଦୁଃଖରେ ଏକୁଟିଆ ବସି କାନ୍ଦୁଛନ୍ତି।",
             "wordMeanings": [],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51263,8 +51289,8 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "meaning": "ରାଧାରାଣୀ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51312,8 +51338,8 @@ export const SONG_ARKEBAJABEBAMSI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆସିଲେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkebajabebamsi/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkebajabebamsi/v3_male.mp3"
         }
     ]
 };
@@ -51350,8 +51376,8 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "meaning": "ରହିବ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v0.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v0_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v0.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v0_male.mp3"
         },
         {
             "id": 1,
@@ -51387,8 +51413,8 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "meaning": "କେବେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51476,8 +51502,8 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "meaning": "ଯିବ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51557,8 +51583,8 @@ export const SONG_ARKOTOKAL_STRUCTURED: StructuredSong = {
                     "meaning": "କେବେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/arkotokal/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/arkotokal/v3_male.mp3"
         }
     ]
 };
@@ -51603,8 +51629,8 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "meaning": "କାଦୁଅରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51644,8 +51670,8 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "meaning": "ଭକ୍ତି ରୂପକ ଅମୂଲ୍ୟ ନିତ୍ୟ ଧନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51697,8 +51723,8 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆରପାରିକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51742,8 +51768,8 @@ export const SONG_BARABARAPLANKORI_STRUCTURED: StructuredSong = {
                     "meaning": "ବିଚରଣ/ଆନନ୍ଦ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/barabaraplankori/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/barabaraplankori/v4_male.mp3"
         }
     ]
 };
@@ -51784,8 +51810,8 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "meaning": "ଶୂନ୍ୟର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51817,8 +51843,8 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "meaning": "ଅଧୀନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v2_male.mp3"
         },
         {
             "id": 3,
@@ -51854,8 +51880,8 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "meaning": "ସାରାଂଶ/ଶ୍ରେଷ୍ଠ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v3_male.mp3"
         },
         {
             "id": 4,
@@ -51883,8 +51909,8 @@ export const SONG_BATULAKAHAYE_STRUCTURED: StructuredSong = {
                     "meaning": "ନିମ୍ନ/ତ୍ୟାଜ୍ୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/batulakahaye/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/batulakahaye/v4_male.mp3"
         }
     ]
 };
@@ -51935,8 +51961,8 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "meaning": "ଆବୃତ୍ତ ବା ଘୋଡ଼େଇ ହୋଇ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v1_male.mp3"
         },
         {
             "id": 2,
@@ -51968,8 +51994,8 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "meaning": "ଜାଗ୍ରତ କରି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v2_male.mp3"
         },
         {
             "id": 3,
@@ -52009,8 +52035,8 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "meaning": "ଜାଗୃତ ବା ପ୍ରେରିତ ହୁଅନ୍ତି"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v3_male.mp3"
         },
         {
             "id": 4,
@@ -52054,8 +52080,8 @@ export const SONG_BHAKTIAAHAITUKI_STRUCTURED: StructuredSong = {
                     "meaning": "ଭକ୍ତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhaktiahaituki/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhaktiahaituki/v4_male.mp3"
         }
     ]
 };
@@ -52886,8 +52912,8 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ଶ୍ୟାମସୁନ୍ଦର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v1_male.mp3"
         },
         {
             "id": 2,
@@ -52935,8 +52961,8 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ଦୁର୍ଭାଗ୍ୟ/ଫଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v2_male.mp3"
         },
         {
             "id": 3,
@@ -52984,8 +53010,8 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ନିଶ୍ଚଳ/ଅଚଳ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v3_male.mp3"
         },
         {
             "id": 4,
@@ -53029,8 +53055,8 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ବୁଡ଼ିଯାଏ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v4.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v4_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v4.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v4_male.mp3"
         },
         {
             "id": 5,
@@ -53070,8 +53096,8 @@ export const SONG_BHAJABHAJAHARI_STRUCTURED: StructuredSong = {
                     "meaning": "ବିନ୍ଧୁଥିବା ଅସ୍ତ୍ର/ଶଳ୍ୟ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v5.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajabhajahari/v5_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v5.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajabhajahari/v5_male.mp3"
         }
     ]
 };
@@ -53128,8 +53154,8 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "meaning": "ପ୍ରାଣ/ଜୀବନ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v0.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v0_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v0.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v0_male.mp3"
         },
         {
             "id": 1,
@@ -53161,8 +53187,8 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "meaning": "ବୁଲ/ଭ୍ରମଣ କର"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v1_male.mp3"
         },
         {
             "id": 2,
@@ -53186,8 +53212,8 @@ export const SONG_BHAJAGAURANGAKAHAGAURANGA_STRUCTURED: StructuredSong = {
                     "meaning": "ଶେଷ/ଅନ୍ତ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagaurangakahagauranga/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagaurangakahagauranga/v2_male.mp3"
         }
     ]
 };
@@ -53240,8 +53266,8 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "meaning": "କାମରେ/ସାହାଯ୍ୟରେ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v1.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v1_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v1.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v1_male.mp3"
         },
         {
             "id": 2,
@@ -53301,8 +53327,8 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "meaning": "ହରିଙ୍କ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v2.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v2_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v2.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v2_male.mp3"
         },
         {
             "id": 3,
@@ -53354,8 +53380,8 @@ export const SONG_BHAJAGOVINDA_STRUCTURED: StructuredSong = {
                     "meaning": "ଧାମକୁ/ନିବାସକୁ"
                 }
             ],
-            "translationAudioUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v3.mp3",
-            "translationAudioMaleUrl": "https://ucsoqhdkdfkzqdlxqmdy.supabase.co/storage/v1/object/public/song-tts/bhajagovinda/v3_male.mp3"
+            "translationAudioUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v3.mp3",
+            "translationAudioMaleUrl": "https://huggingface.co/datasets/OdiaVaishnavaSongs/odia-songs-tts/resolve/main/bhajagovinda/v3_male.mp3"
         }
     ]
 };

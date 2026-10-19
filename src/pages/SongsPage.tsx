@@ -170,6 +170,7 @@ export const SongsPage: React.FC = () => {
     const mainScrollRef = useRef<HTMLElement>(null);
     const [playingTtsVerseId, setPlayingTtsVerseId] = useState<number | string | null>(null);
     const [isTtsPaused, setIsTtsPaused] = useState(false);
+    const [isTtsBuffering, setIsTtsBuffering] = useState(false);
     const [ttsProgress, setTtsProgress] = useState<{ currentTime: number; duration: number }>({ currentTime: 0, duration: 0 });
     const [ttsSpeed, setTtsSpeed] = useState<number>(1.0);
     const [ttsVoiceGender, setTtsVoiceGender] = useState<'female' | 'male'>(() => {
@@ -192,15 +193,29 @@ export const SongsPage: React.FC = () => {
         }
     }, [isPlaying]);
 
-    const handleSetTtsVoice = (gender: 'female' | 'male') => {
-        if (ttsVoiceGender === gender) return;
-        setTtsVoiceGender(gender);
-        localStorage.setItem('tts-voice-gender', gender);
+
+    const handleToggleTtsVoice = () => {
+        const nextGender = ttsVoiceGender === 'female' ? 'male' : 'female';
+        setTtsVoiceGender(nextGender);
+        localStorage.setItem('tts-voice-gender', nextGender);
         if (playingTtsVerseId && ttsAudioRef.current) {
+            const currentVerse = selectedSong?.structuredContent?.verses?.find((v: any) => v.id === playingTtsVerseId);
+            if (currentVerse) {
+                const newAudioUrl = nextGender === 'male'
+                    ? (currentVerse.translationAudioMaleUrl || (currentVerse.translationAudioUrl ? currentVerse.translationAudioUrl.replace(/\.mp3$/, '_male.mp3') : undefined))
+                    : (currentVerse.translationAudioUrl || (currentVerse.translationAudioMaleUrl ? currentVerse.translationAudioMaleUrl.replace(/_male\.mp3$/, '.mp3') : undefined));
+                if (newAudioUrl) {
+                    handleToggleTts(playingTtsVerseId, newAudioUrl);
+                    return;
+                }
+            }
             ttsAudioRef.current.pause();
+            ttsAudioRef.current.removeAttribute('src');
+            ttsAudioRef.current.load();
             ttsAudioRef.current = null;
             setPlayingTtsVerseId(null);
             setIsTtsPaused(false);
+            setIsTtsBuffering(false);
             setTtsProgress({ currentTime: 0, duration: 0 });
         }
     };
@@ -223,6 +238,8 @@ export const SongsPage: React.FC = () => {
         // Switching verse or starting fresh:
         if (ttsAudioRef.current) {
             ttsAudioRef.current.pause();
+            ttsAudioRef.current.removeAttribute('src');
+            ttsAudioRef.current.load();
             ttsAudioRef.current = null;
         }
 
@@ -230,14 +247,26 @@ export const SongsPage: React.FC = () => {
             pauseSong();
         }
 
-        const cacheBustedUrl = audioUrl.includes('?') ? audioUrl : `${audioUrl}?v=2`;
-        const audio = new Audio(cacheBustedUrl);
+        // Stream on-the-fly without occupying persistent device storage
+        const streamUrl = `${audioUrl}${audioUrl.includes('?') ? '&' : '?'}nocache=${Date.now()}`;
+        const audio = new Audio(streamUrl);
+        audio.preload = 'none';
         audio.playbackRate = ttsSpeed;
         ttsAudioRef.current = audio;
         setPlayingTtsVerseId(verseId);
         setIsTtsPaused(false);
+        setIsTtsBuffering(true);
         setTtsProgress({ currentTime: 0, duration: 0 });
 
+        audio.onplaying = () => {
+            setIsTtsBuffering(false);
+        };
+        audio.onwaiting = () => {
+            setIsTtsBuffering(true);
+        };
+        audio.oncanplay = () => {
+            setIsTtsBuffering(false);
+        };
         audio.ontimeupdate = () => {
             setTtsProgress({ currentTime: audio.currentTime, duration: audio.duration || 0 });
         };
@@ -245,13 +274,25 @@ export const SongsPage: React.FC = () => {
             setTtsProgress(prev => ({ ...prev, duration: audio.duration || 0 }));
         };
         audio.onended = () => {
+            if (ttsAudioRef.current) {
+                ttsAudioRef.current.removeAttribute('src');
+                ttsAudioRef.current.load();
+                ttsAudioRef.current = null;
+            }
             setPlayingTtsVerseId(null);
             setIsTtsPaused(false);
+            setIsTtsBuffering(false);
             setTtsProgress({ currentTime: 0, duration: 0 });
         };
         audio.onerror = () => {
+            if (ttsAudioRef.current) {
+                ttsAudioRef.current.removeAttribute('src');
+                ttsAudioRef.current.load();
+                ttsAudioRef.current = null;
+            }
             setPlayingTtsVerseId(null);
             setIsTtsPaused(false);
+            setIsTtsBuffering(false);
         };
 
         audio.play().catch(e => console.error("Error playing TTS audio", e));
@@ -261,10 +302,13 @@ export const SongsPage: React.FC = () => {
         e.stopPropagation();
         if (ttsAudioRef.current) {
             ttsAudioRef.current.pause();
+            ttsAudioRef.current.removeAttribute('src');
+            ttsAudioRef.current.load();
             ttsAudioRef.current = null;
         }
         setPlayingTtsVerseId(null);
         setIsTtsPaused(false);
+        setIsTtsBuffering(false);
         setTtsProgress({ currentTime: 0, duration: 0 });
     };
 
@@ -1468,7 +1512,7 @@ export const SongsPage: React.FC = () => {
                                                                         <span style={{ width: '2.5px', height: '8px', backgroundColor: 'currentColor', borderRadius: '1px', animation: 'ttsWave 0.8s ease-in-out 0.4s infinite' }} />
                                                                     </div>
                                                                 )}
-                                                                <span>{isTtsPaused ? 'ଚଲାନ୍ତୁ' : 'ବନ୍ଦ କରନ୍ତୁ'}</span>
+                                                                <span>{isTtsBuffering ? 'ଲୋଡ୍ ହେଉଛି...' : (isTtsPaused ? 'ଚଲାନ୍ତୁ' : 'ବନ୍ଦ କରନ୍ତୁ')}</span>
                                                             </button>
                                                             <span style={{ fontSize: '11px', color: isNightMode ? '#94a3b8' : '#64748b', fontFamily: 'monospace' }}>
                                                                 {formatTtsTime(ttsProgress.currentTime)} / {formatTtsTime(ttsProgress.duration)}
@@ -1489,56 +1533,6 @@ export const SongsPage: React.FC = () => {
                                                             >
                                                                 {ttsSpeed}x
                                                             </button>
-                                                            <div style={{
-                                                                display: 'inline-flex',
-                                                                alignItems: 'center',
-                                                                padding: '1px',
-                                                                borderRadius: '12px',
-                                                                border: isNightMode ? '1px solid #334155' : '1px solid #cbd5e1',
-                                                                backgroundColor: isNightMode ? '#1e293b' : '#ffffff',
-                                                                gap: '1px'
-                                                            }}>
-                                                                <button
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        handleSetTtsVoice('female');
-                                                                    }}
-                                                                    title="ମହିଳା କଣ୍ଠସ୍ୱର (Female Voice)"
-                                                                    style={{
-                                                                        padding: '1px 6px',
-                                                                        borderRadius: '10px',
-                                                                        border: 'none',
-                                                                        backgroundColor: ttsVoiceGender === 'female' ? '#0284c7' : 'transparent',
-                                                                        color: ttsVoiceGender === 'female' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                        fontSize: '11px',
-                                                                        fontWeight: 700,
-                                                                        cursor: 'pointer',
-                                                                        transition: 'all 0.15s ease'
-                                                                    }}
-                                                                >
-                                                                    👩 ମହିଳା
-                                                                </button>
-                                                                <button
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        handleSetTtsVoice('male');
-                                                                    }}
-                                                                    title="ପୁରୁଷ କଣ୍ଠସ୍ୱର (Male Voice)"
-                                                                    style={{
-                                                                        padding: '1px 6px',
-                                                                        borderRadius: '10px',
-                                                                        border: 'none',
-                                                                        backgroundColor: ttsVoiceGender === 'male' ? '#0284c7' : 'transparent',
-                                                                        color: ttsVoiceGender === 'male' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                        fontSize: '11px',
-                                                                        fontWeight: 700,
-                                                                        cursor: 'pointer',
-                                                                        transition: 'all 0.15s ease'
-                                                                    }}
-                                                                >
-                                                                    👨 ପୁରୁଷ
-                                                                </button>
-                                                            </div>
                                                             <button
                                                                 onClick={handleStopTts}
                                                                 title="Stop"
@@ -1552,83 +1546,45 @@ export const SongsPage: React.FC = () => {
                                                         </div>
                                                     </div>
                                                 ) : (
-                                                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                                                        <button
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                handleToggleTts(verse.id, audioUrl);
-                                                            }}
-                                                            style={{
-                                                                display: 'inline-flex',
-                                                                alignItems: 'center',
-                                                                gap: '6px',
-                                                                padding: '5px 14px',
-                                                                borderRadius: '20px',
-                                                                border: isNightMode ? '1px solid #38bdf8' : '1px solid #0284c7',
-                                                                backgroundColor: isNightMode ? 'rgba(56, 189, 248, 0.15)' : '#f0f9ff',
-                                                                color: isNightMode ? '#38bdf8' : '#0284c7',
-                                                                fontSize: '13px',
-                                                                fontFamily: 'var(--font-odia-sans)',
-                                                                fontWeight: 700,
-                                                                cursor: 'pointer',
-                                                                transition: 'all 0.2s ease'
-                                                            }}
-                                                        >
-                                                            <Volume2 size={14} />
-                                                            <span>ଅନୁବାଦ ଶୁଣନ୍ତୁ</span>
-                                                        </button>
-                                                        <div style={{
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleToggleTts(verse.id, audioUrl);
+                                                        }}
+                                                        title="ଅନୁବାଦ ଶୁଣନ୍ତୁ (Listen to Translation)"
+                                                        aria-label="ଅନୁବାଦ ଶୁଣନ୍ତୁ"
+                                                        style={{
                                                             display: 'inline-flex',
                                                             alignItems: 'center',
-                                                            padding: '2px',
-                                                            borderRadius: '16px',
-                                                            border: isNightMode ? '1px solid #334155' : '1px solid #cbd5e1',
-                                                            backgroundColor: isNightMode ? 'rgba(30, 41, 59, 0.7)' : '#ffffff',
-                                                            boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                                                            gap: '2px'
-                                                        }}>
-                                                            <button
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleSetTtsVoice('female');
-                                                                }}
-                                                                title="ମହିଳା କଣ୍ଠସ୍ୱର (Female Voice)"
-                                                                style={{
-                                                                    padding: '3px 8px',
-                                                                    borderRadius: '12px',
-                                                                    border: 'none',
-                                                                    backgroundColor: ttsVoiceGender === 'female' ? '#0284c7' : 'transparent',
-                                                                    color: ttsVoiceGender === 'female' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                    fontSize: '11px',
-                                                                    fontWeight: 700,
-                                                                    cursor: 'pointer',
-                                                                    transition: 'all 0.15s ease'
-                                                                }}
-                                                            >
-                                                                👩 ମହିଳା
-                                                            </button>
-                                                            <button
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleSetTtsVoice('male');
-                                                                }}
-                                                                title="ପୁରୁଷ କଣ୍ଠସ୍ୱର (Male Voice)"
-                                                                style={{
-                                                                    padding: '3px 8px',
-                                                                    borderRadius: '12px',
-                                                                    border: 'none',
-                                                                    backgroundColor: ttsVoiceGender === 'male' ? '#0284c7' : 'transparent',
-                                                                    color: ttsVoiceGender === 'male' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                    fontSize: '11px',
-                                                                    fontWeight: 700,
-                                                                    cursor: 'pointer',
-                                                                    transition: 'all 0.15s ease'
-                                                                }}
-                                                            >
-                                                                👨 ପୁରୁଷ
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                                            justifyContent: 'center',
+                                                            width: '32px',
+                                                            height: '32px',
+                                                            borderRadius: '50%',
+                                                            border: isNightMode ? '1.5px solid rgba(56, 189, 248, 0.45)' : '1.5px solid #0284c7',
+                                                            background: isNightMode
+                                                                ? 'linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(14, 165, 233, 0.08) 100%)'
+                                                                : 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+                                                            color: isNightMode ? '#38bdf8' : '#0284c7',
+                                                            cursor: 'pointer',
+                                                            boxShadow: isNightMode ? '0 2px 6px rgba(0, 0, 0, 0.3)' : '0 2px 6px rgba(2, 132, 199, 0.16)',
+                                                            transition: 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                                            padding: 0
+                                                        }}
+                                                        onMouseEnter={(e) => {
+                                                            e.currentTarget.style.transform = 'scale(1.12)';
+                                                            e.currentTarget.style.boxShadow = isNightMode
+                                                                ? '0 4px 12px rgba(56, 189, 248, 0.35)'
+                                                                : '0 4px 12px rgba(2, 132, 199, 0.28)';
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.currentTarget.style.transform = 'scale(1)';
+                                                            e.currentTarget.style.boxShadow = isNightMode
+                                                                ? '0 2px 6px rgba(0, 0, 0, 0.3)'
+                                                                : '0 2px 6px rgba(2, 132, 199, 0.16)';
+                                                        }}
+                                                    >
+                                                        <Volume2 size={16} strokeWidth={2.2} />
+                                                    </button>
                                                 )}
                                             </div>
                                         );
@@ -1857,7 +1813,7 @@ export const SongsPage: React.FC = () => {
                                                                         <span style={{ width: '3px', height: '9px', backgroundColor: 'currentColor', borderRadius: '1.5px', animation: 'ttsWave 0.8s ease-in-out 0.4s infinite' }} />
                                                                     </div>
                                                                 )}
-                                                                <span>{isTtsPaused ? 'ଚଲାନ୍ତୁ' : 'ବନ୍ଦ କରନ୍ତୁ'}</span>
+                                                                <span>{isTtsBuffering ? 'ଲୋଡ୍ ହେଉଛି...' : (isTtsPaused ? 'ଚଲାନ୍ତୁ' : 'ବନ୍ଦ କରନ୍ତୁ')}</span>
                                                             </button>
 
                                                             <span style={{
@@ -1887,57 +1843,6 @@ export const SongsPage: React.FC = () => {
                                                             >
                                                                 {ttsSpeed}x
                                                             </button>
-
-                                                            <div style={{
-                                                                display: 'inline-flex',
-                                                                alignItems: 'center',
-                                                                padding: '1px',
-                                                                borderRadius: '12px',
-                                                                border: isNightMode ? '1px solid #334155' : '1px solid #cbd5e1',
-                                                                backgroundColor: isNightMode ? '#1e293b' : '#ffffff',
-                                                                gap: '2px'
-                                                            }}>
-                                                                <button
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        handleSetTtsVoice('female');
-                                                                    }}
-                                                                    title="ମହିଳା କଣ୍ଠସ୍ୱର (Female Voice)"
-                                                                    style={{
-                                                                        padding: '2px 8px',
-                                                                        borderRadius: '10px',
-                                                                        border: 'none',
-                                                                        backgroundColor: ttsVoiceGender === 'female' ? '#0284c7' : 'transparent',
-                                                                        color: ttsVoiceGender === 'female' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                        fontSize: '11px',
-                                                                        fontWeight: 700,
-                                                                        cursor: 'pointer',
-                                                                        transition: 'all 0.15s ease'
-                                                                    }}
-                                                                >
-                                                                    👩 ମହିଳା
-                                                                </button>
-                                                                <button
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        handleSetTtsVoice('male');
-                                                                    }}
-                                                                    title="ପୁରୁଷ କଣ୍ଠସ୍ୱର (Male Voice)"
-                                                                    style={{
-                                                                        padding: '2px 8px',
-                                                                        borderRadius: '10px',
-                                                                        border: 'none',
-                                                                        backgroundColor: ttsVoiceGender === 'male' ? '#0284c7' : 'transparent',
-                                                                        color: ttsVoiceGender === 'male' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                        fontSize: '11px',
-                                                                        fontWeight: 700,
-                                                                        cursor: 'pointer',
-                                                                        transition: 'all 0.15s ease'
-                                                                    }}
-                                                                >
-                                                                    👨 ପୁରୁଷ
-                                                                </button>
-                                                            </div>
 
                                                             <button
                                                                 onClick={handleStopTts}
@@ -1973,84 +1878,45 @@ export const SongsPage: React.FC = () => {
                                                         </div>
                                                     </div>
                                                 ) : (
-                                                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                                                        <button
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                handleToggleTts(verse.id, audioUrl);
-                                                            }}
-                                                            style={{
-                                                                display: 'inline-flex',
-                                                                alignItems: 'center',
-                                                                gap: '8px',
-                                                                padding: '6px 16px',
-                                                                borderRadius: '24px',
-                                                                border: isNightMode ? '1.5px solid #38bdf8' : '1.5px solid #0284c7',
-                                                                backgroundColor: isNightMode ? 'rgba(56, 189, 248, 0.15)' : '#f0f9ff',
-                                                                color: isNightMode ? '#38bdf8' : '#0284c7',
-                                                                fontSize: '13px',
-                                                                fontFamily: 'var(--font-odia-sans)',
-                                                                fontWeight: 700,
-                                                                cursor: 'pointer',
-                                                                boxShadow: '0 2px 6px rgba(2, 132, 199, 0.15)',
-                                                                transition: 'all 0.25s ease'
-                                                            }}
-                                                        >
-                                                            <Volume2 size={16} />
-                                                            <span>ଅନୁବାଦ ଶୁଣନ୍ତୁ</span>
-                                                        </button>
-                                                        <div style={{
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleToggleTts(verse.id, audioUrl);
+                                                        }}
+                                                        title="ଅନୁବାଦ ଶୁଣନ୍ତୁ (Listen to Translation)"
+                                                        aria-label="ଅନୁବାଦ ଶୁଣନ୍ତୁ"
+                                                        style={{
                                                             display: 'inline-flex',
                                                             alignItems: 'center',
-                                                            padding: '2px',
-                                                            borderRadius: '20px',
-                                                            border: isNightMode ? '1px solid #334155' : '1px solid #cbd5e1',
-                                                            backgroundColor: isNightMode ? 'rgba(30, 41, 59, 0.7)' : '#ffffff',
-                                                            boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-                                                            gap: '2px'
-                                                        }}>
-                                                            <button
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleSetTtsVoice('female');
-                                                                }}
-                                                                title="ମହିଳା କଣ୍ଠସ୍ୱର (Female Voice)"
-                                                                style={{
-                                                                    padding: '4px 10px',
-                                                                    borderRadius: '16px',
-                                                                    border: 'none',
-                                                                    backgroundColor: ttsVoiceGender === 'female' ? '#0284c7' : 'transparent',
-                                                                    color: ttsVoiceGender === 'female' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                    fontSize: '11px',
-                                                                    fontWeight: 700,
-                                                                    cursor: 'pointer',
-                                                                    transition: 'all 0.15s ease'
-                                                                }}
-                                                            >
-                                                                👩 ମହିଳା
-                                                            </button>
-                                                            <button
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleSetTtsVoice('male');
-                                                                }}
-                                                                title="ପୁରୁଷ କଣ୍ଠସ୍ୱର (Male Voice)"
-                                                                style={{
-                                                                    padding: '4px 10px',
-                                                                    borderRadius: '16px',
-                                                                    border: 'none',
-                                                                    backgroundColor: ttsVoiceGender === 'male' ? '#0284c7' : 'transparent',
-                                                                    color: ttsVoiceGender === 'male' ? '#ffffff' : (isNightMode ? '#94a3b8' : '#64748b'),
-                                                                    fontSize: '11px',
-                                                                    fontWeight: 700,
-                                                                    cursor: 'pointer',
-                                                                    transition: 'all 0.15s ease'
-                                                                }}
-                                                            >
-                                                                👨 ପୁରୁଷ
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                                            justifyContent: 'center',
+                                                            width: '34px',
+                                                            height: '34px',
+                                                            borderRadius: '50%',
+                                                            border: isNightMode ? '1.5px solid rgba(56, 189, 248, 0.45)' : '1.5px solid #0284c7',
+                                                            background: isNightMode
+                                                                ? 'linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(14, 165, 233, 0.08) 100%)'
+                                                                : 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+                                                            color: isNightMode ? '#38bdf8' : '#0284c7',
+                                                            cursor: 'pointer',
+                                                            boxShadow: isNightMode ? '0 2px 6px rgba(0, 0, 0, 0.3)' : '0 2px 8px rgba(2, 132, 199, 0.2)',
+                                                            transition: 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                                            padding: 0
+                                                        }}
+                                                        onMouseEnter={(e) => {
+                                                            e.currentTarget.style.transform = 'scale(1.12)';
+                                                            e.currentTarget.style.boxShadow = isNightMode
+                                                                ? '0 4px 12px rgba(56, 189, 248, 0.35)'
+                                                                : '0 4px 14px rgba(2, 132, 199, 0.32)';
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.currentTarget.style.transform = 'scale(1)';
+                                                            e.currentTarget.style.boxShadow = isNightMode
+                                                                ? '0 2px 6px rgba(0, 0, 0, 0.3)'
+                                                                : '0 2px 8px rgba(2, 132, 199, 0.2)';
+                                                        }}
+                                                    >
+                                                        <Volume2 size={17} strokeWidth={2.2} />
+                                                    </button>
                                                 )}
                                             </div>
                                         );
@@ -2496,6 +2362,56 @@ export const SongsPage: React.FC = () => {
                         </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
+                        {selectedSong.structuredContent?.verses?.some((v: any) => v.translationAudioUrl || v.translationAudioMaleUrl) && (
+                            <button
+                                onClick={handleToggleTtsVoice}
+                                title={ttsVoiceGender === 'female' ? "ମହିଳା କଣ୍ଠସ୍ୱର (କ୍ଲିକ୍ କରି ପୁରୁଷ କରନ୍ତୁ)" : "ପୁରୁଷ କଣ୍ଠସ୍ୱର (କ୍ଲିକ୍ କରି ମହିଳା କରନ୍ତୁ)"}
+                                aria-label="Toggle voice gender"
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '10px',
+                                    overflow: 'hidden',
+                                    padding: 0,
+                                    position: 'relative',
+                                    border: ttsVoiceGender === 'female'
+                                        ? '1.5px solid rgba(244, 63, 94, 0.4)'
+                                        : '1.5px solid rgba(234, 179, 8, 0.45)',
+                                    background: '#ffffff',
+                                    boxShadow: '0 2px 6px rgba(0,0,0,0.18)',
+                                    cursor: 'pointer',
+                                    boxSizing: 'border-box',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    transition: 'all 0.18s ease',
+                                    userSelect: 'none'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-1px) scale(1.05)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                                }}
+                            >
+                                <img
+                                    key={ttsVoiceGender}
+                                    src={ttsVoiceGender === 'female' ? '/icons/iskcon_mataji_avatar.jpg?v=4' : '/icons/iskcon_prabhu_avatar.jpg?v=4'}
+                                    alt={ttsVoiceGender === 'female' ? 'Mataji Voice' : 'Prabhu Voice'}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        objectPosition: 'center 35%',
+                                        transform: 'scale(1.22)',
+                                        transformOrigin: 'center 38%',
+                                        display: 'block',
+                                        pointerEvents: 'none'
+                                    }}
+                                />
+                            </button>
+                        )}
                         {selectedSong.structuredContent && (
                             (() => {
                                 const availableModes = [

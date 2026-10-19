@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { synthesizeOdiaTTS } = require('./bhashini_tts.cjs');
 const { syncCloudToCode } = require('./sync_cloud_to_code.cjs');
+const { uploadAudioToHF } = require('./hf_storage.cjs');
 require('dotenv').config();
 
 const SUPABASE_URL = process.env.VITE_SUPABASE_URL || 'https://ucsoqhdkdfkzqdlxqmdy.supabase.co';
@@ -61,17 +62,23 @@ async function processSingleSong(song, gender, force = false) {
       // 1. Synthesize via IITM-v1 (Option B with AI4Bharat fallback)
       await synthesizeOdiaTTS(translation, tempMp3Path, { gender, kbps: 64 });
 
-      // 2. Upload to Supabase Storage
-      const fileBuffer = fs.readFileSync(tempMp3Path);
-      const { error: uploadErr } = await storageClient.storage
-        .from('song-tts')
-        .upload(storagePath, fileBuffer, {
-          contentType: 'audio/mpeg',
-          upsert: true
-        });
+      // 2. Upload to Storage (Hugging Face CDN preferred, fallback to Supabase)
+      let publicUrl;
+      if (process.env.HF_TOKEN) {
+        publicUrl = await uploadAudioToHF(storagePath, tempMp3Path);
+      } else {
+        const fileBuffer = fs.readFileSync(tempMp3Path);
+        const { error: uploadErr } = await storageClient.storage
+          .from('song-tts')
+          .upload(storagePath, fileBuffer, {
+            contentType: 'audio/mpeg',
+            upsert: true
+          });
 
-      if (uploadErr) {
-        throw new Error(`Upload error: ${uploadErr.message}`);
+        if (uploadErr) {
+          throw new Error(`Upload error: ${uploadErr.message}`);
+        }
+        publicUrl = `${SUPABASE_URL}/storage/v1/object/public/song-tts/${storagePath}`;
       }
 
       // Cleanup local temp file to keep disk 100% clean
@@ -144,6 +151,9 @@ async function runBatch(prefix = 'A', options = {}) {
     }
     if (upperPrefix === 'B') {
       return eng.startsWith('B') || odia.startsWith('ବ') || odia.startsWith('ଭ');
+    }
+    if (upperPrefix === 'C') {
+      return eng.startsWith('C') || odia.startsWith('ଚ') || odia.startsWith('ଛ');
     }
     return eng.startsWith(upperPrefix);
   });
