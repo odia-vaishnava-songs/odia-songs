@@ -24,9 +24,12 @@ This workflow describes the safe, high-quality, verified method for adding missi
    - Log into Supabase using admin auth (`daitariswain7@gmail.com`).
    - Upsert into `songs` table with:
      - `status: 'COMPLETED'`
-     - `verified: true`
      - `published: true`
-     - `audio_url` and `audio_versions`
+     - `audio_url` (clean URL without `%2F`) and `vocalist`
+     - `audio_versions: [{ label: string, url: string }]` (**CRITICAL: must use `label`, NEVER `title`**)
      - `structured_content` containing all verses, lyrics, translations, and pure Odia word meanings.
-   - Add entry into `src/data/resources.ts`.
+     - *(Note: Supabase table has no `verified` column; do not include it in Supabase payload).*
+   - Add entry into `src/data/resources.ts` with `verified: true`, `vocalist`, and `audioVersions: [{ label: string, url: string }]` (**CRITICAL: camelCase `audioVersions` and `label`**).
+   - Update `src/data/authorCatalog.ts`.
+   - Run `node scripts/sync_cloud_to_code.cjs`.
    - Run `npx tsc --noEmit` to verify type safety.

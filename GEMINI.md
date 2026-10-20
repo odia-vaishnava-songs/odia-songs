@@ -13,8 +13,14 @@ Whenever the user requests adding/importing songs (e.g. from `vsnectar.web.app` 
    - Provide the complete draft inside a copyable code block in chat so the user can easily paste it into ChatGPT / Gemini for double-checking.
    - **Never push to the database without explicit user approval.**
 4. **Publishing (Upon User Approval)**:
-   - Upsert into Supabase `songs` table with `status: 'COMPLETED'`, `published: true`, and all `audio_versions`.
-   - Add the song entry to `src/data/resources.ts`.
+   - **Audio Standards**:
+     - Supabase `songs` table: `audio_url`, `vocalist`, and `audio_versions: [{ label: string, url: string }]` (**CRITICAL: must use `label`, NEVER `title`**).
+     - `src/data/resources.ts`: `audioUrl`, `vocalist`, and `audioVersions: [{ label: string, url: string }]` (**CRITICAL: camelCase `audioVersions` and `label`**).
+     - Clean R2 URLs: Ensure URLs use `/uploads/...` (avoid `%2F` in the path).
+     - Note: The Supabase `songs` table does NOT contain a `verified` column; keep `verified: true` in `resources.ts` only.
+   - Upsert into Supabase `songs` table with `status: 'COMPLETED'`, `published: true`, `vocalist`, and `audio_versions`.
+   - Add the song entry to `src/data/resources.ts` and `src/data/authorCatalog.ts`.
+   - Run `node scripts/sync_cloud_to_code.cjs`.
    - Verify TypeScript compilation using `npx tsc --noEmit`.
 
 ## Speech Translation Audio Workflow (Bhashini IITM-v1)

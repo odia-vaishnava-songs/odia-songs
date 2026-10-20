@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { celebrateBlast } from '../utils/celebration';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Phone, Mail, Lock, Sparkles, UserPlus, Eye, EyeOff } from 'lucide-react';
 import * as TempleIcons from '../components/TempleIcons';
 // Git Test Comment
 
 export const LoginPage: React.FC = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const { loginWithPhone, loginWithEmailPassword } = useAuth();
 
     const [inputValue, setInputValue] = useState('');
@@ -17,6 +18,7 @@ export const LoginPage: React.FC = () => {
     const [loading, setLoading] = useState(false);
 
     const isAdminInput = inputValue.includes('@');
+    const destination = (location.state as any)?.from?.pathname || '/';
 
     const handleUnifiedLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -28,7 +30,7 @@ export const LoginPage: React.FC = () => {
                 // Admin Login Logic using email/password
                 await loginWithEmailPassword(inputValue, password);
                 celebrateBlast();
-                navigate('/');
+                navigate(destination, { replace: true });
             } else {
                 // Phone Login Logic
                 const cleanPhone = inputValue.replace(/\D/g, '');
@@ -42,7 +44,7 @@ export const LoginPage: React.FC = () => {
                 const result = await loginWithPhone(cleanPhone);
                 if (result.success) {
                     celebrateBlast();
-                    navigate('/');
+                    navigate(destination, { replace: true });
                 } else {
                     setError(result.error || "Account not found. Please sign up first.");
                 }

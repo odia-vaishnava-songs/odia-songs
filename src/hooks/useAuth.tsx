@@ -65,30 +65,35 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         // Immediate session check on mount
         supabase.auth.getSession().then(({ data: { session } }) => {
             if (!mountedRef.current) return;
+            hasInitializedRef.current = true;
             if (session?.user) {
                 syncProfile(session.user);
             } else {
                 localStorage.removeItem('cached_auth_user');
+                localStorage.removeItem('sticky_role');
+                highestRoleRef.current = 'user';
                 setUser(null);
                 setLoading(false);
-                hasInitializedRef.current = true;
             }
         }).catch(err => {
             console.warn('[Auth] Error getting session:', err);
-            if (mountedRef.current) {
-                localStorage.removeItem('cached_auth_user');
+            if (!mountedRef.current) return;
+            hasInitializedRef.current = true;
+            // On network error, do not wipe user if already cached
+            if (!localStorage.getItem('cached_auth_user')) {
                 setUser(null);
-                setLoading(false);
-                hasInitializedRef.current = true;
             }
+            setLoading(false);
         });
 
         // Supabase auth subscription for real-time auth changes
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             if (!mountedRef.current) return;
 
-            if (_event === 'SIGNED_OUT' || (_event === 'INITIAL_SESSION' && !session)) {
+            if (_event === 'SIGNED_OUT') {
                 localStorage.removeItem('cached_auth_user');
+                localStorage.removeItem('sticky_role');
+                highestRoleRef.current = 'user';
                 setUser(null);
                 setLoading(false);
                 hasInitializedRef.current = true;

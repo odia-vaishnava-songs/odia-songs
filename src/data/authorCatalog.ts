@@ -141,8 +141,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Krsna Tava Punya Habe Bhai' },
             { id: 'song-mahavadanyaisvara', title_english: 'Maha Vadanya Isvara Sri Gaura Sundara', title_odia: 'ମହାବଦାନ୍ୟ ଈଶ୍ୱର ଶ୍ରୀ ଗୌରସୁନ୍ଦର' },
             { id: 'song-nityasiddhaparsadasaba', title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare', title_odia: 'ନିତ୍ୟ-ସିଦ୍ଧ ପାର୍ଷଦ ସବ ରାଧା-କୃଷ୍ଣ ସ୍ମରେ' },
-            { title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore' },
-            { title_english: 'Samudrena Phena Yena' },
+            { id: 'song-sambandhajaniyayebajivanayuddhakore', title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore', title_odia: 'ସମ୍ବନ୍ଧ ଜାନିୟା ଯେବା ଜୀବନ ଯୁଦ୍ଧ କରେ' },
+            { id: 'song-samudrenaphenayena', title_english: 'Samudrena Phena Yena', title_odia: 'ସମୁଦ୍ରେର ଫେନା ଯେନ' },
             { title_english: 'Sisya Hoiya Kore Yei Gitar Sravana' },
             { title_english: 'Vrndavana Dhame Ami Boseyachi Eka' }
         ]
@@ -195,7 +195,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { title_english: 'Gauranga Tumi More Doya Na Chadhio', title_odia: 'ଗୌରାଙ୍ଗ ତୁମି ମୋରେ ଦୟା ନା ଛାଡ଼ିହ' },
             { id: 'song-goragunagaosuni', title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
             { title_english: 'Jaya Jaya Jagannatha Sacira Nandana', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ' },
-            { title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଅଙ୍ଗିନାୟ ନାଚେ' },
+            { id: 'song-saciraanginayanace', title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଆଙ୍ଗିନାୟ ନାଚେ' },
             { title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୟନା' },
             { title_english: 'Yadi Gaura Na Hoito', title_odia: 'ଯଦି ଗୌର ନା ହୋଇତୋ' },
         ]
@@ -275,6 +275,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Sanatana Goswami',
         odia: 'ସନାତନ ଗୋସ୍ୱାମୀ',
         catalog: [
+            { id: 'song-sambandhadhidevapranama', title_english: 'Sambandhadhideva Pranama', title_odia: 'ସମ୍ବନ୍ଧାଧିଦେବ ପ୍ରଣାମ' },
             { id: 'song-abhidheyadhidevapranama', title_english: 'Abhidheyadhideva Pranama', title_odia: 'ଅଭିଧେୟାଧିଦେବ ପ୍ରଣାମ' },
             { id: 'song-prayojanadhidevapranama', title_english: 'Prayojanadhideva Pranama', title_odia: 'ପ୍ରୟୋଜନାଧିଦେବ ପ୍ରଣାମ' },
             { id: 'song-radhikasarantadunindimukha', title_english: 'Radhika Sarada Indu Nindimukha', title_odia: 'ରାଧିକା ଶାରଦ ଇନ୍ଦୁ ନିନ୍ଦିମୁଖ' },
@@ -507,6 +508,29 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବୁଧକୌଶିକ ଋଷି',
         catalog: [
             { id: 'song-ramarakshastotra', title_english: 'Rama Raksha Stotra', title_odia: 'ଶ୍ରୀ ରାମରକ୍ଷା ସ୍ତୋତ୍ରମ୍' }
+        ]
+    },
+    {
+        name: 'Radha Mohana Dasa',
+        odia: 'ରାଧାମୋହନ ଦାସ',
+        catalog: [
+            { id: 'song-sakhekalayagauramudaram', title_english: 'Sakhe Kalaya Gauram Udaram', title_odia: 'ସଖେ କଳୟ ଗୌରମ୍ ଉଦାରମ୍' }
+        ]
+    },
+    {
+        name: 'Prabodhananda Sarasvati',
+        odia: 'ପ୍ରବୋଧାନନ୍ଦ ସରସ୍ୱତୀ',
+        catalog: [
+            { id: 'song-saraccandrabhrantim', title_english: 'Nityanandastakam (Sarac Candra Bhrantim)', title_odia: 'ଶ୍ରୀ ନିତ୍ୟାନନ୍ଦାଷ୍ଟକମ୍ (ଶରଚ୍ଚନ୍ଦ୍ର-ଭ୍ରାନ୍ତିଂ)' }
+        ]
+    },
+    {
+        name: 'Adi Sankaracarya',
+        odia: 'ଆଦି ଶଙ୍କରାଚାର୍ଯ୍ୟ',
+        catalog: [
+            { id: 'song-gitamahatmya', title_english: 'Gita Mahatmya', title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ' },
+            { id: 'song-bhajagovindam', title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ୍' },
+            { id: 'song-sariramsurupam', title_english: 'Gurorastakam (Sariram Surupam Tatha)', title_odia: 'ଶ୍ରୀ ଗୁରୋରଷ୍ଟକମ୍ (ଶରୀରଂ ସୁରୂପଂ ତଥା)' }
         ]
     },
 ];

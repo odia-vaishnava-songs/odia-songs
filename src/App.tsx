@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AppLayout } from './layouts/AppLayout';
 import { AudioProvider } from './context/AudioContext';
 import { AuthProvider, useAuth } from './hooks/useAuth';
@@ -89,23 +89,28 @@ const ProtectedAdminRoute = ({ children }: { children: React.ReactNode }) => {
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
+  const location = useLocation();
 
   // Wait for auth to fully initialize (including profile sync) before deciding where to route.
   if (loading) {
     return null; // AuthProvider shows the devotional loading spinner
   }
 
-  // If not logged in at all, redirect to login/signup
+  // If not logged in at all, redirect to login/signup while preserving destination
   if (!user) {
     return (
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        {/* Redirect any other URL directly to login */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        {/* Redirect any other URL directly to login with original location state preserved */}
+        <Route path="*" element={<Navigate to="/login" state={{ from: location }} replace />} />
       </Routes>
     );
   }
+
+  // Restore destination if user was redirected from login
+  const from = (location.state as any)?.from?.pathname || '';
+  const redirectTarget = from && from !== '/login' && from !== '/signup' ? from : '/';
 
   // If logged in, show the app
   return (
@@ -159,9 +164,9 @@ const AppRoutes = () => {
         />
       </Route>
 
-      {/* If logged in, don't allow visiting guest pages */}
-      <Route path="/login" element={<Navigate to="/" replace />} />
-      <Route path="/signup" element={<Navigate to="/" replace />} />
+      {/* If logged in, redirect guest pages to the intended destination or root */}
+      <Route path="/login" element={<Navigate to={redirectTarget} replace />} />
+      <Route path="/signup" element={<Navigate to={redirectTarget} replace />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
