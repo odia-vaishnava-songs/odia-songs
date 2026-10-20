@@ -143,7 +143,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-nityasiddhaparsadasaba', title_english: 'Nitya Siddha Parsada Saba Radha Krsna Smare', title_odia: 'ନିତ୍ୟ-ସିଦ୍ଧ ପାର୍ଷଦ ସବ ରାଧା-କୃଷ୍ଣ ସ୍ମରେ' },
             { id: 'song-sambandhajaniyayebajivanayuddhakore', title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore', title_odia: 'ସମ୍ବନ୍ଧ ଜାନିୟା ଯେବା ଜୀବନ ଯୁଦ୍ଧ କରେ' },
             { id: 'song-samudrenaphenayena', title_english: 'Samudrena Phena Yena', title_odia: 'ସମୁଦ୍ରେର ଫେନା ଯେନ' },
-            { title_english: 'Sisya Hoiya Kore Yei Gitar Sravana' },
+            { id: 'song-sisyahoiya', title_english: 'Sisya Hoiya Kore Yei Gitar Sravana', title_odia: 'ଶିଷ୍ୟ ହୋଇୟା କରେ ଯେଇ ଗୀତାର ଶ୍ରବଣ' },
             { title_english: 'Vrndavana Dhame Ami Boseyachi Eka' }
         ]
     },
