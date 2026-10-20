@@ -534,4 +534,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-satyamjnanamanantam', title_english: 'Govindastakam (Satyam Jnanamanantam)', title_odia: 'ଶ୍ରୀ ଗୋବିନ୍ଦାଷ୍ଟକମ୍ (ସତ୍ୟଂ ଜ୍ଞାନମନନ୍ତଂ)' }
         ]
     },
+    {
+        name: 'Bhakti Caru Swami',
+        odia: 'ଭକ୍ତି ଚାରୁ ସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-sesubhadiner', title_english: 'Se Subha Diner', title_odia: 'ସେ ଶୁଭ ଦିନେର ଆରାଧନା କରେ' }
+        ]
+    },
 ];
