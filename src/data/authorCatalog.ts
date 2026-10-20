@@ -165,7 +165,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-disidisiracayantim', title_english: 'Disi Disi Racayantim', title_odia: 'ଦିଶି ଦିଶି ରଚୟନ୍ତୀମ୍' },
             { title_english: 'Krsna Deva Bhavantam Vande', title_odia: 'କୃଷ୍ଣ ଦେବ ଭବନ୍ତଂ ବନ୍ଦେ' },
             { id: 'song-namastakam', title_english: 'Nikhila Sruti Mauli Ratna (Namastakam)', title_odia: 'ନିଖିଳ ଶ୍ରୁତି ମୌଳି ରତ୍ନ (ନାମାଷ୍ଟକମ୍)' },
-            { id: 'song-radhejayajaya', title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' }
+            { id: 'song-radhejayajaya', title_english: 'Radhe Jaya Jaya Madhava Dayite', title_odia: 'ରାଧେ ଜୟ ଜୟ ମାଧବ-ଦୟିତେ' },
+            { id: 'song-gaurangapranama', title_english: 'Sri Gauranga Pranama', title_odia: 'ଶ୍ରୀ ଗୌରାଙ୍ଗ ପ୍ରଣାମ' }
         ]
     },
     {

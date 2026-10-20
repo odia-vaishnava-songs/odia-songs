@@ -19782,6 +19782,90 @@ export const RESOURCES: Resource[] = [
             "verified": true,
             "status": "COMPLETED"
     }
+,
+    {
+            "id": "song-gaurangapranama",
+            "title": "ଶ୍ରୀ ଗୌରାଙ୍ଗ ପ୍ରଣାମ (Sri Gauranga Pranama)",
+            "title_odia": "ଶ୍ରୀ ଗୌରାଙ୍ଗ ପ୍ରଣାମ",
+            "title_english": "Sri Gauranga Pranama",
+            "category": "Songs",
+            "type": "html",
+            "description": "ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀ ପ୍ରଭୁପାଦଙ୍କ ବିରଚିତ ଶ୍ରୀମନ୍ ମହାପ୍ରଭୁ ଗୌରସୁନ୍ଦରଙ୍କ ପରମ ଦିବ୍ୟ ପ୍ରଣାମ ମନ୍ତ୍ର (ଶ୍ରୀ ଚୈତନ୍ୟ-ଚରିତାମୃତ, ମଧ୍ୟ-ଲୀଳା ୧୯.୫୩) |",
+            "audioUrl": "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Sri_Gauranga_Pranama/Sri_Gauranga_Pranama_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3",
+            "vocalist": "Srila Prabhupada",
+            "audioVersions": [
+                    {
+                            "label": "Srila Prabhupada",
+                            "url": "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Sri_Gauranga_Pranama/Sri_Gauranga_Pranama_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3"
+                    },
+                    {
+                            "label": "HG Jai Sachinandana Prabhu",
+                            "url": "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Sri_Gauranga_Pranama/Sri_Gauranga_Pranama_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3"
+                    },
+                    {
+                            "label": "HH Bhakti Rasamrita Swami",
+                            "url": "https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Sri_Gauranga_Pranama/Sri_Gauranga_Pranama_-_Sung_by_HH_Bhakti_Rasamrita_Swami_IDT.mp3"
+                    }
+            ],
+            "author": "Rupa Goswami",
+            "tags": [
+                    "Rupa Goswami",
+                    "Sri Gauranga Pranama",
+                    "Gauranga Pranama",
+                    "Pranam Mantras",
+                    "ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ",
+                    "ଶ୍ରୀ ଗୌରାଙ୍ଗ ପ୍ରଣାମ",
+                    "ପ୍ରଣାମ ମନ୍ତ୍ର"
+            ],
+            "structuredContent": {
+                    "title": "ଶ୍ରୀ ଗୌରାଙ୍ଗ ପ୍ରଣାମ",
+                    "author": "ଶ୍ରୀ ରୂପ ଗୋସ୍ୱାମୀ",
+                    "verses": [
+                            {
+                                    "id": 1,
+                                    "lyric": "ନମୋ ମହାବଦାନ୍ୟାୟ କୃଷ୍ଣପ୍ରେମପ୍ରଦାୟ ତେ ।\nକୃଷ୍ଣାୟ କୃଷ୍ଣଚୈତନ୍ୟ-ନାମ୍ନେ ଗୌରତ୍ୱିଷେ ନମଃ ॥ ୧ ॥",
+                                    "translation": "ହେ ପରମ ଔଦାର୍ଯ୍ୟମୟ ମହାବଦାନ୍ୟ ଅବତାର! ଆପଣ ସ୍ୱୟଂ ଶ୍ରୀକୃଷ୍ଣ ହୋଇ ମଧ୍ୟ ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ ତପ୍ତକାଞ୍ଚନ ସଦୃଶ ଉଜ୍ଜ୍ୱଳ ଗୌରବର୍ଣ୍ଣ ଧାରଣ କରି ‘ଶ୍ରୀକୃଷ୍ଣଚୈତନ୍ୟ’ ନାମରେ ଅବତୀର୍ଣ୍ଣ ହୋଇଛନ୍ତି। ଆପଣ ସମସ୍ତ ଜୀବଙ୍କୁ ସୁଦୁର୍ଲ୍ଲଭ କୃଷ୍ଣପ୍ରେମ ଉନ୍ମୁକ୍ତ ଭାବେ ବିତରଣ କରୁଛନ୍ତି; ସେହି ଆପଣଙ୍କ ଶ୍ରୀଚରଣକମଳରେ ମୋର କୋଟି କୋଟି ବିନମ୍ର ପ୍ରଣାମ ନିବେଦନ କରୁଛି।",
+                                    "wordMeanings": [
+                                            {
+                                                    "word": "ନମଃ",
+                                                    "meaning": "ବିନମ୍ର ପ୍ରଣାମ"
+                                            },
+                                            {
+                                                    "word": "ମହା-ବଦାନ୍ୟାୟ",
+                                                    "meaning": "ସର୍ବାଧିକ ଉଦାର ବା ପରମ ଦାନଶୀଳ ଅବତାରଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "କୃଷ୍ଣ-ପ୍ରେମ-ପ୍ରଦାୟ",
+                                                    "meaning": "ଅମୂଲ୍ୟ କୃଷ୍ଣପ୍ରେମ ପ୍ରଦାନ କରୁଥିବା ପ୍ରଭୁଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "ତେ",
+                                                    "meaning": "ଆପଣଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "କୃଷ୍ଣାୟ",
+                                                    "meaning": "ସ୍ୱୟଂ ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "କୃଷ୍ଣ-ଚୈତନ୍ୟ-ନାମ୍ନେ",
+                                                    "meaning": "ଶ୍ରୀକୃଷ୍ଣଚୈତନ୍ୟ ନାମରେ ପ୍ରକଟ ହୋଇଥିବା ପ୍ରଭୁଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "ଗୌର-ତ୍ୱିଷେ",
+                                                    "meaning": "ଶ୍ରୀମତୀ ରାଧାରାଣୀଙ୍କ ଭଳି ତପ୍ତ-କାଞ୍ଚନ ସୁବର୍ଣ୍ଣ କାନ୍ତିବିଶିଷ୍ଟ"
+                                            },
+                                            {
+                                                    "word": "ନମଃ",
+                                                    "meaning": "ପୁନଃ ପୁନଃ ପ୍ରଣାମ"
+                                            }
+                                    ]
+                            }
+                    ]
+            },
+            "published": true,
+            "verified": true,
+            "status": "COMPLETED"
+    }
 ];
 
 export const CATEGORIES = ['ସବୁ', 'ଗୀତ', 'କୀର୍ତ୍ତନ', 'ଗୀତା'];
