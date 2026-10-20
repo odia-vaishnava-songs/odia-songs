@@ -530,7 +530,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-gitamahatmya', title_english: 'Gita Mahatmya', title_odia: 'ଗୀତା ମାହାତ୍ମ୍ୟ' },
             { id: 'song-bhajagovindam', title_english: 'Bhaja Govindam', title_odia: 'ଭଜ ଗୋବିନ୍ଦମ୍' },
-            { id: 'song-sariramsurupam', title_english: 'Gurorastakam (Sariram Surupam Tatha)', title_odia: 'ଶ୍ରୀ ଗୁରୋରଷ୍ଟକମ୍ (ଶରୀରଂ ସୁରୂପଂ ତଥା)' }
+            { id: 'song-sariramsurupam', title_english: 'Gurorastakam (Sariram Surupam Tatha)', title_odia: 'ଶ୍ରୀ ଗୁରୋରଷ୍ଟକମ୍ (ଶରୀରଂ ସୁରୂପଂ ତଥା)' },
+            { id: 'song-satyamjnanamanantam', title_english: 'Govindastakam (Satyam Jnanamanantam)', title_odia: 'ଶ୍ରୀ ଗୋବିନ୍ଦାଷ୍ଟକମ୍ (ସତ୍ୟଂ ଜ୍ଞାନମନନ୍ତଂ)' }
         ]
     },
 ];
