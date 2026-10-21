@@ -439,7 +439,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-navaniradanindita', title_english: 'Nava Nirada Nindita (Sri Sri Vrajaraja Sutastakam)', title_odia: 'ନବ ନୀରଦ ନିନ୍ଦିତ (ଶ୍ରୀ ଶ୍ରୀ ବ୍ରଜରାଜ ସୁତାଷ୍ଟକମ୍)' },
             { id: 'song-orevrndavanernandadulal', title_english: 'Ore Vrndavaner Nanda Dulal', title_odia: 'ଓରେ ବୃନ୍ଦାବନେର ନନ୍ଦ-ଦୁଲାଲ' },
             { id: 'song-pancatattvamahamantra', title_english: 'Panca Tattva Mahamantra', title_odia: 'ପଞ୍ଚତତ୍ତ୍ୱ ମହାମନ୍ତ୍ର' },
-            { id: 'song-pranamtomaighanasyam', title_english: 'Pranam Tomai Ghana Syam', title_odia: 'ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ' }
+            { id: 'song-pranamtomaighanasyam', title_english: 'Pranam Tomai Ghana Syam', title_odia: 'ପ୍ରଣାମ ତୋମାୟ ଘନଶ୍ୟାମ' },
+            { id: 'song-srigurupranama', title_english: 'Sri Guru Pranama', title_odia: 'ଶ୍ରୀ ଗୁରୁ ପ୍ରଣାମ' },
+            { id: 'song-srikrishnapranama', title_english: 'Sri Krishna Pranama', title_odia: 'ଶ୍ରୀ କୃଷ୍ଣ ପ୍ରଣାମ' },
+            { id: 'song-sripancatattvapranama', title_english: 'Sri Panca Tattva Pranama', title_odia: 'ଶ୍ରୀ ପଞ୍ଚତତ୍ତ୍ୱ ପ୍ରଣାମ' },
+            { id: 'song-sriradhapranama', title_english: 'Sri Radha Pranama', title_odia: 'ଶ୍ରୀ ରାଧା ପ୍ରଣାମ' },
+            { id: 'song-srivaishnavapranama', title_english: 'Sri Vaishnava Pranama', title_odia: 'ଶ୍ରୀ ବୈଷ୍ଣବ ପ୍ରଣାମ' },
+            { id: 'song-srilabhaktisiddhantapranati', title_english: 'Srila Bhaktisiddhanta Sarasvati Pranati', title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ପ୍ରଣତି' }
         ]
     },
     {
@@ -542,4 +548,19 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-sesubhadiner', title_english: 'Se Subha Diner', title_odia: 'ସେ ଶୁଭ ଦିନେର ଆରାଧନା କରେ' }
         ]
     },
+    {
+        name: 'Kusakratha Dasa',
+        odia: 'କୁଶକ୍ରଥ ଦାସ',
+        catalog: [
+            { id: 'song-srisrinavadvipaparapradipau', title_english: 'Sri Sri Navadvipa Para Pradipau (Srila Prabhupadevastakam)', title_odia: 'ଶ୍ରୀ ଶ୍ରୀ ନବଦ୍ୱୀପ-ପର-ପ୍ରଦୀପୌ' }
+        ]
+    },
+    {
+        name: 'Kulasekhara Alvar',
+        odia: 'କୁଳଶେଖର ଆଳୱାର',
+        catalog: [
+            { id: 'song-srivallabhetivaradeti', title_english: 'Sri Vallabheti Vara Deti (Mukunda Mala Stotra)', title_odia: 'ଶ୍ରୀ ବଲ୍ଲଭେତି ବରଦେତି (ମୁକୁନ୍ଦମାଳା ସ୍ତୋତ୍ରମ୍)' }
+        ]
+    }
 ];
+
