@@ -21716,32 +21716,60 @@ export const RESOURCES: Resource[] = [
                             },
                             {
                                     "id": 24,
-                                    "lyric": "ମା ଦ୍ରାକ୍ଷଂ କ୍ଷୀଣ-ପୁଣ୍ୟାନ୍ କ୍ଷଣମ୍ ଅପି ଭବତୋ ଭକ୍ତି-ହୀନାନ୍ ପଦାବ୍ଜେ ମା ଶ୍ରୌଷଂ ଶ୍ରାବ୍ୟ-ବନ୍ଧଂ ତବ ଚରିତ-କଥା-କୀର୍ତ୍ତନାଦ୍ ଅନ୍ୟଦ୍ ଆର୍ତ୍ତମ୍ ।\nମା ସ୍ମାର୍ଷଂ ମାଧବ ତ୍ୱାମ୍ ଅପି ଭୁବନ-ପତେ ଚେତସାପହ୍ନୁବାନଂ ମା ଭୂବଂ ତ୍ୱତ୍-ସପର୍ଯ୍ୟା-ବ୍ୟତିକର-ରହିତୋ ଜନ୍ମ-ଜନ୍ମାନ୍ତରେଽପି ॥ ୨୪ ॥",
-                                    "translation": "ହେ ପ୍ରଭୁ! ଆପଣଙ୍କ ପାଦପଦ୍ମର ଭକ୍ତିରୁ ହୀନ ପୁଣ୍ୟହୀନ ନାସ୍ତିକମାନଙ୍କ ମୁଖ ମୁଁ ଯେପରି କ୍ଷଣକ ପାଇଁ ମଧ୍ୟ ନ ଦେଖେଁ! ଆପଣଙ୍କ ପବିତ୍ର ଦିବ୍ୟ ଚରିତ୍ର ଓ କୀର୍ତ୍ତନ ବ୍ୟତୀତ ଅନ୍ୟ କୌଣସି ସାଂସାରିକ ବିଳାପ ଯେପରି ମୁଁ ଶ୍ରବଣ ନ କରେଁ! ହେ ମାଧବ, ହେ ଭୁବନପତି! ଆପଣଙ୍କ ଅସ୍ତିତ୍ୱକୁ ଅସ୍ୱୀକାର କରୁଥିବା ବିଷୟ ଯେପରି ମୋ ଚିତ୍ତରେ କେବେ ପ୍ରବେଶ ନ କରେ ଏବଂ ଜନ୍ମ-ଜନ୍ମାନ୍ତରରେ ମଧ୍ୟ ମୁଁ ଯେପରି କେବେହେଲେ ଆପଣଙ୍କ ପୂଜାର୍ଚ୍ଚନାରୁ ବଞ୍ଚିତ ନ ହୁଏଁ!",
+                                    "lyric": "ମା ଦ୍ରାକ୍ଷଂ କ୍ଷୀଣ-ପୁଣ୍ୟାନ୍ କ୍ଷଣମ୍ ଅପି ଭବତୋ ଭକ୍ତି-ହୀନାନ୍ ପଦାବ୍ଜେ ମା ଶ୍ରୌଷଂ ଶ୍ରାବ୍ୟ-ବନ୍ଧଂ ତବ ଚରିତମ୍ ଅପାସ୍ୟାନ୍ୟଦ୍-ଆଖ୍ୟାନ-ଜାତମ୍ ।\nମା ସ୍ମାର୍ଷଂ ମାଧବ ତ୍ୱାମ୍ ଅପି ଭୁବନ-ପତେ ଚେତସାପହ୍ନୁବାନାନ୍ ମା ଭୂବଂ ତ୍ୱତ୍-ସପର୍ଯ୍ୟା-ବ୍ୟତିକର-ରହିତୋ ଜନ୍ମ-ଜନ୍ମାନ୍ତରେଽପି ॥ ୨୪ ॥",
+                                    "translation": "ହେ ମାଧବ! ହେ ବିଶ୍ୱପତି! ଆପଣଙ୍କ ପାଦପଦ୍ମରେ ଭକ୍ତିହୀନ ହୋଇଥିବା ପୁଣ୍ୟହୀନ ନାସ୍ତିକମାନଙ୍କୁ ମୁଁ ଯେପରି ମୁହୂର୍ତ୍ତକ ପାଇଁ ମଧ୍ୟ ନ ଦେଖେଁ! ଆପଣଙ୍କ ପରମ ଶ୍ରବଣୀୟ ଦିବ୍ୟ ଲୀଳାଚରିତକୁ ଛାଡ଼ି ମୁଁ ଯେପରି ଅନ୍ୟ କୌଣସି ସାଂସାରିକ କଥା କଦାପି ଶ୍ରବଣ ନ କରେଁ! ଆପଣଙ୍କ ସର୍ବୋଚ୍ଚ ଅସ୍ତିତ୍ୱକୁ ଅସ୍ୱୀକାର କରୁଥିବା ଲୋକଙ୍କୁ ମୁଁ ଯେପରି କେବେ ସ୍ମରଣ ନ କରେଁ! ଏବଂ ଜନ୍ମ-ଜନ୍ମାନ୍ତରରେ ମଧ୍ୟ ମୁଁ ଯେପରି ଆପଣଙ୍କ ପୂଜାର୍ଚ୍ଚନା ଓ ଦିବ୍ୟ ସେବାରୁ କେବେହେଲେ ବଞ୍ଚିତ ନ ହୁଏଁ!",
                                     "wordMeanings": [
                                             {
-                                                    "word": "ମା ଦ୍ରାକ୍ଷଂ କ୍ଷୀଣ-ପୁଣ୍ୟାନ୍",
-                                                    "meaning": "ପୁଣ୍ୟହୀନମାନଙ୍କୁ ଯେପରି ନ ଦେଖେଁ"
+                                                    "word": "ମା ଦ୍ରାକ୍ଷମ୍",
+                                                    "meaning": "ମୁଁ ଯେପରି କେବେ ନ ଦେଖେଁ"
+                                            },
+                                            {
+                                                    "word": "କ୍ଷୀଣ-ପୁଣ୍ୟାନ୍",
+                                                    "meaning": "ପୁଣ୍ୟହୀନ ଅଭକ୍ତମାନଙ୍କୁ"
+                                            },
+                                            {
+                                                    "word": "କ୍ଷଣମ୍ ଅପି",
+                                                    "meaning": "ମୁହୂର୍ତ୍ତକ ପାଇଁ ମଧ୍ୟ"
                                             },
                                             {
                                                     "word": "ଭବତଃ ଭକ୍ତି-ହୀନାନ୍ ପଦାବ୍ଜେ",
-                                                    "meaning": "ଆପଣଙ୍କ ପାଦପଦ୍ମର ଭକ୍ତିରୁ ହୀନ ଲୋକଙ୍କୁ"
+                                                    "meaning": "ଆପଣଙ୍କ ପାଦପଦ୍ମର ଭକ୍ତିରୁ ବଞ୍ଚିତ ବ୍ୟକ୍ତିମାନଙ୍କୁ"
                                             },
                                             {
-                                                    "word": "ମା ଶ୍ରୌଷଂ ଅନ୍ୟଦ୍",
-                                                    "meaning": "ଅନ୍ୟ କିଛି ଯେପରି ନ ଶୁଣେଁ"
+                                                    "word": "ମା ଶ୍ରୌଷମ୍",
+                                                    "meaning": "ମୁଁ ଯେପରି କେବେ ନ ଶୁଣେଁ"
                                             },
                                             {
-                                                    "word": "ତବ ଚରିତ-କଥା-କୀର୍ତ୍ତନାତ୍",
-                                                    "meaning": "ଆପଣଙ୍କ ଚରିତ୍ର କଥା କୀର୍ତ୍ତନ ଛଡ଼ା"
+                                                    "word": "ଶ୍ରାବ୍ୟ-ବନ୍ଧମ୍ ତବ ଚରିତମ୍ ଅପାସ୍ୟ",
+                                                    "meaning": "ଆପଣଙ୍କ ଶ୍ରବଣଯୋଗ୍ୟ ପରମ ମଧୁର ଲୀଳାଚରିତକୁ ଛାଡ଼ି"
+                                            },
+                                            {
+                                                    "word": "ଅନ୍ୟଦ୍-ଆଖ୍ୟାନ-ଜାତମ୍",
+                                                    "meaning": "ଅନ୍ୟ କୌଣସି ସାଂସାରିକ ବାର୍ତ୍ତା ବା ଆଖ୍ୟାନ"
+                                            },
+                                            {
+                                                    "word": "ମା ସ୍ମାର୍ଷମ୍",
+                                                    "meaning": "ମୁଁ ଯେପରି କେବେ ମନେ ନ ପକାଏଁ"
                                             },
                                             {
                                                     "word": "ମାଧବ ଭୁବନ-ପତେ",
-                                                    "meaning": "ହେ ମାଧବ, ହେ ଜଗତ୍ପତି"
+                                                    "meaning": "ହେ ମାଧବ, ହେ ସମଗ୍ର ବ୍ରହ୍ମାଣ୍ଡର ପତି"
                                             },
                                             {
-                                                    "word": "ମା ଭୂବଂ ତ୍ୱତ୍-ସପର୍ଯ୍ୟା-ବ୍ୟତିକର-ରହିତଃ",
-                                                    "meaning": "ଆପଣଙ୍କ ସେବାପୂଜାରୁ ବଞ୍ଚିତ ଯେପରି ନ ହୁଏଁ"
+                                                    "word": "ଚେତସା ଅପହ୍ନୁବାନାନ୍",
+                                                    "meaning": "ଯେଉଁମାନେ ମନରେ ଆପଣଙ୍କୁ ଅସ୍ୱୀକାର କରନ୍ତି"
+                                            },
+                                            {
+                                                    "word": "ମା ଭୂବମ୍",
+                                                    "meaning": "ମୁଁ ଯେପରି ନ ହୁଏଁ"
+                                            },
+                                            {
+                                                    "word": "ତ୍ୱତ୍-ସପର୍ଯ୍ୟା-ବ୍ୟତିକର-ରହିତଃ",
+                                                    "meaning": "ଆପଣଙ୍କ ଚରଣସେବା ଓ ପୂଜାର୍ଚ୍ଚନାର ସୁଯୋଗରୁ ବଞ୍ଚିତ"
+                                            },
+                                            {
+                                                    "word": "ଜନ୍ମ-ଜନ୍ମାନ୍ତରେ ଅପି",
+                                                    "meaning": "ଜନ୍ମ-ଜନ୍ମାନ୍ତରରେ ମଧ୍ୟ"
                                             }
                                     ],
                                     "status": "COMPLETED"
@@ -21776,28 +21804,44 @@ export const RESOURCES: Resource[] = [
                             },
                             {
                                     "id": 26,
-                                    "lyric": "ତତ୍ତ୍ୱଂ ବ୍ରୁବାଣାନି ପରଂ ପରସ୍ତାନ୍ ମଧ୍ୱାଦୟଃ ଶ୍ରୋତ୍ର-ମନୋ-ହରାଣି ।\nବିଷ୍ଣୋଃ ସ୍ମରନ୍ତି ସ୍ତୁତି-ମଙ୍ଗଳାନି କେଶୋଚ୍ଛ୍ରିତା ଧନ୍ୟତମା ଭବନ୍ତି ॥ ୨୬ ॥",
-                                    "translation": "ବେଦମାନଙ୍କର ସର୍ବୋଚ୍ଚ ପରମ ତତ୍ତ୍ୱ ପ୍ରକାଶ କରୁଥିବା, କର୍ଣ୍ଣ ଓ ମନକୁ ଅମୃତତୁଲ୍ୟ ଆନନ୍ଦ ପ୍ରଦାନ କରୁଥିବା ଭଗବାନ ଶ୍ରୀବିଷ୍ଣୁଙ୍କ ମଙ୍ଗଳମୟ ସ୍ତୁତିସମୂହକୁ ଯେଉଁମାନେ ରୋମାଞ୍ଚିତ ହୋଇ ସ୍ମରଣ ଓ କୀର୍ତ୍ତନ କରନ୍ତି, ସେହି ଭକ୍ତମାନେ ହିଁ ଏହି ସଂସାରରେ ପରମ ଧନ୍ୟ ଅଟନ୍ତି ।",
+                                    "lyric": "ତତ୍ତ୍ୱଂ ବ୍ରୁବାଣାନି ପରଂ ପରସ୍ତାନ୍ ମଧୁ କ୍ଷରନ୍ତୀବ ମୁଦାବହାନି ।\nପ୍ରବର୍ତ୍ତୟ ପ୍ରାଞ୍ଜଳିର୍ ଅସ୍ମି ଜିହ୍ୱେ ନାମାନି ନାରାୟଣ-ଗୋଚରାଣି ॥ ୨୬ ॥",
+                                    "translation": "ହେ ମୋର ଜିହ୍ୱା! ମୁଁ ହାତଯୋଡ଼ି ତୁମ ଆଗରେ ବିନମ୍ର ପ୍ରାର୍ଥନା କରୁଛି—ତୁମେ ନିରନ୍ତର ପରମେଶ୍ୱର ଶ୍ରୀନାରାୟଣଙ୍କ ଦିବ୍ୟ ନାମସମୂହ ଉଚ୍ଚାରଣ କର । ଏହି ନାମସବୁ ସମସ୍ତଙ୍କ ଊର୍ଦ୍ଧ୍ୱରେ ଥିବା ପରମ ତତ୍ତ୍ୱକୁ ପ୍ରକାଶ କରନ୍ତି ଏବଂ ମହୁ ଝରାଇବା ଭଳି ହୃଦୟକୁ ଅପାର ଦିବ୍ୟ ଆନନ୍ଦ ପ୍ରଦାନ କରନ୍ତି ।",
                                     "wordMeanings": [
                                             {
-                                                    "word": "ତତ୍ତ୍ୱଂ ବ୍ରୁବାଣାନି ପରଂ ପରସ୍ତାତ୍",
-                                                    "meaning": "ସର୍ବଶ୍ରେଷ୍ଠ ପରମ ତତ୍ତ୍ୱକୁ ବର୍ଣ୍ଣନା କରୁଥିବା"
+                                                    "word": "ତତ୍ତ୍ୱମ୍ ବ୍ରୁବାଣାନି",
+                                                    "meaning": "ପରମ ତତ୍ତ୍ୱକୁ ପ୍ରକାଶ କରୁଥିବା"
                                             },
                                             {
-                                                    "word": "ଶ୍ରୋତ୍ର-ମନଃ-ହରାଣି",
-                                                    "meaning": "କାନ ଓ ମନକୁ ହରଣ କରୁଥିବା ଅମୃତମୟ"
+                                                    "word": "ପରମ୍ ପରସ୍ତାତ୍",
+                                                    "meaning": "ସମସ୍ତଙ୍କ ଊର୍ଦ୍ଧ୍ୱରେ ଥିବା ସର୍ବୋଚ୍ଚ ପରମସତ୍ୟ"
                                             },
                                             {
-                                                    "word": "ବିଷ୍ଣୋଃ ସ୍ତୁତି-ମଙ୍ଗଳାନି ସ୍ମରନ୍ତି",
-                                                    "meaning": "ଭଗବାନ ବିଷ୍ଣୁଙ୍କ ମଙ୍ଗଳମୟ ସ୍ତୁତି ସ୍ମରଣ କରନ୍ତି"
+                                                    "word": "ମଧୁ କ୍ଷରନ୍ତି ଇବ",
+                                                    "meaning": "ମଧୁ ଝରାଇବା ଭଳି ଅମୃତମୟ"
                                             },
                                             {
-                                                    "word": "କେଶ-ଉଚ୍ଛ୍ରିତାଃ",
-                                                    "meaning": "ରୋମାଞ୍ଚିତ ଶରୀର ବିଶିଷ୍ଟ ହୋଇ"
+                                                    "word": "ମୁଦା-ଆବହାନି",
+                                                    "meaning": "ପରମ ଆନନ୍ଦ ପ୍ରଦାନକାରୀ"
                                             },
                                             {
-                                                    "word": "ଧନ୍ୟତମାଃ ଭବନ୍ତି",
-                                                    "meaning": "ସେମାନେ ହିଁ ପରମ ଧନ୍ୟ ହୁଅନ୍ତି"
+                                                    "word": "ପ୍ରବର୍ତ୍ତୟ",
+                                                    "meaning": "ନିରନ୍ତର ଉଚ୍ଚାରଣ କର"
+                                            },
+                                            {
+                                                    "word": "ପ୍ରାଞ୍ଜଳିଃ ଅସ୍ମି",
+                                                    "meaning": "ମୁଁ ଯୋଡ଼ହସ୍ତରେ ପ୍ରାର୍ଥନା କରୁଛି"
+                                            },
+                                            {
+                                                    "word": "ଜିହ୍ୱେ",
+                                                    "meaning": "ହେ ମୋର ଜିହ୍ୱା"
+                                            },
+                                            {
+                                                    "word": "ନାମାନି",
+                                                    "meaning": "ଦିବ୍ୟ ନାମସମୂହକୁ"
+                                            },
+                                            {
+                                                    "word": "ନାରାୟଣ-ଗୋଚରାଣି",
+                                                    "meaning": "ଭଗବାନ ଶ୍ରୀନାରାୟଣଙ୍କ ସମ୍ବନ୍ଧିତ"
                                             }
                                     ],
                                     "status": "COMPLETED"
@@ -22745,6 +22789,354 @@ export const RESOURCES: Resource[] = [
             "published": true,
             "verified": true,
             "status": "COMPLETED"
+    },
+    {
+        id: 'song-srilabhaktivinodapranati',
+        title: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ପ୍ରଣତି (Srila Bhaktivinoda Pranati)',
+        title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ପ୍ରଣତି',
+        title_english: 'Srila Bhaktivinoda Pranati',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଅନ୍ତରଙ୍ଗ ଶକ୍ତି-ସ୍ୱରୂପ, ସପ୍ତମ ଗୋସ୍ୱାମୀ ପରମପୂଜ୍ୟପାଦ ଶ୍ରୀଳ ସଚ୍ଚିଦାନନ୍ଦ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ଦିବ୍ୟ ପ୍ରଣାମ ମନ୍ତ୍ର । ଏହି ପ୍ରଣତି ମାଧ୍ୟମରେ ତାଙ୍କୁ ମହାପ୍ରଭୁଙ୍କ ଗୌର-ଶକ୍ତିର ସ୍ୱରୂପ ଏବଂ ଶ୍ରୀଳ ରୂପ ଗୋସ୍ୱାମୀଙ୍କ ଶ୍ରେଷ୍ଠ ଅନୁଗାମୀ (ରୂପାନୁଗ-ବର) ଭାବରେ ବନ୍ଦନା କରାଯାଇଛି ।',
+        structuredContent: (Songs as any).SONG_SRILABHAKTIVINODAPRANATI_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Srila Bhaktivinoda Pranati',
+            'Bhaktivinoda Pranati',
+            'Namo Bhaktivinodaya',
+            'Pranam Mantras',
+            'Traditional',
+            'Vaishnava Acaryas',
+            'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ପ୍ରଣତି',
+            'ଭକ୍ତିବିନୋଦ ଠାକୁର',
+            'ପ୍ରଣାମ ମନ୍ତ୍ର'
+        ],
+        vocalist: 'Srila Prabhupada / HG Jai Sachinandana Prabhu / HG Vaiyasaki Prabhu',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Bhaktivinoda_Pranati/Srila_Bhaktivinoda_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'Srila Prabhupada',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Bhaktivinoda_Pranati/Srila_Bhaktivinoda_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Bhaktivinoda_Pranati/Srila_Bhaktivinoda_Pranati_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Vaiyasaki Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Bhaktivinoda_Pranati/Srila_Bhaktivinoda_Pranati_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-srilagaurakisorapranati',
+        title: 'ଶ୍ରୀଳ ଗୌରକିଶୋର ପ୍ରଣତି (Srila Gaurakisora Pranati)',
+        title_odia: 'ଶ୍ରୀଳ ଗୌରକିଶୋର ପ୍ରଣତି',
+        title_english: 'Srila Gaurakisora Pranati',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ଗୋସ୍ୱାମୀ ଠାକୁର ପ୍ରଭୁପାଦଙ୍କ ଦିବ୍ୟ ଦୀକ୍ଷାଗୁରୁ ପରମହଂସ ଶ୍ରୀଳ ଗୌରକିଶୋର ଦାସ ବାବାଜୀ ମହାରାଜାଙ୍କ ପବିତ୍ର ପ୍ରଣାମ ମନ୍ତ୍ର । ଏହି ପ୍ରଣତିରେ ତାଙ୍କର ଅଲୌକିକ ବୈରାଗ୍ୟ ଓ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ବିପ୍ରଲମ୍ଭ-ଭାବରେ ସର୍ବଦା ନିମଗ୍ନ ରହିବାର ଦିବ୍ୟ ମହିମା ପ୍ରକାଶ ପାଇଛି ।',
+        structuredContent: (Songs as any).SONG_SRILAGAURAKISORAPRANATI_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Srila Gaurakisora Pranati',
+            'Gaurakisora Pranati',
+            'Namo Gaura Kisoraya',
+            'Pranam Mantras',
+            'Traditional',
+            'Vaishnava Acaryas',
+            'ଶ୍ରୀଳ ଗୌରକିଶୋର ପ୍ରଣତି',
+            'ଗୌରକିଶୋର ଦାସ ବାବାଜୀ',
+            'ପ୍ରଣାମ ମନ୍ତ୍ର'
+        ],
+        vocalist: 'Srila Prabhupada / HG Jai Sachinandana Prabhu / HG Vaiyasaki Prabhu',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Gaurakisora_Pranati/Srila_Gaurakisora_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'Srila Prabhupada',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Gaurakisora_Pranati/Srila_Gaurakisora_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Gaurakisora_Pranati/Srila_Gaurakisora_Pranati_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Vaiyasaki Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Gaurakisora_Pranati/Srila_Gaurakisora_Pranati_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-srilajagannathapranati',
+        title: 'ଶ୍ରୀଳ ଜଗନ୍ନାଥ ପ୍ରଣତି (Srila Jagannatha Pranati)',
+        title_odia: 'ଶ୍ରୀଳ ଜଗନ୍ନାଥ ପ୍ରଣତି',
+        title_english: 'Srila Jagannatha Pranati',
+        category: 'Songs',
+        type: 'html',
+        description: 'ସମଗ୍ର ବୈଷ୍ଣବ ସମାଜର ମଉଡ଼ମଣି ‘ବୈଷ୍ଣବ-ସାର୍ବଭୌମ’ ପରମହଂସ ଶ୍ରୀଳ ଜଗନ୍ନାଥ ଦାସ ବାବାଜୀ ମହାରାଜାଙ୍କ ପବିତ୍ର ପ୍ରଣାମ ମନ୍ତ୍ର । ଏହି ପ୍ରଣତିରେ ଶ୍ରୀଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଆବିର୍ଭାବ ସ୍ଥଳ ପ୍ରକଟନରେ ତାଙ୍କର ପ୍ରମାଣିକ ଅବଦାନ ଏବଂ ସମସ୍ତ ଭକ୍ତମାନଙ୍କ ପ୍ରତି ତାଙ୍କର ଅପାର ସ୍ନେହ-ସମ୍ମାନ ପ୍ରକାଶ ପାଇଛି ।',
+        structuredContent: (Songs as any).SONG_SRILAJAGANNATHAPRANATI_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Srila Jagannatha Pranati',
+            'Jagannatha Pranati',
+            'Gauravirbhava Bhumes Tvam',
+            'Pranam Mantras',
+            'Traditional',
+            'Vaishnava Acaryas',
+            'ଶ୍ରୀଳ ଜଗନ୍ନାଥ ପ୍ରଣତି',
+            'ଜଗନ୍ନାଥ ଦାସ ବାବାଜୀ',
+            'ପ୍ରଣାମ ମନ୍ତ୍ର'
+        ],
+        vocalist: 'Srila Prabhupada / HG Jai Sachinandana Prabhu / HG Vaiyasaki Prabhu',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Jagannatha_Pranati/Srila_Jagannatha_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'Srila Prabhupada',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Jagannatha_Pranati/Srila_Jagannatha_Pranati_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Jagannatha_Pranati/Srila_Jagannatha_Pranati_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Vaiyasaki Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Jagannatha_Pranati/Srila_Jagannatha_Pranati_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-srilaprabhupadapranati',
+        title: 'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି (Srila Prabhupada Pranati)',
+        title_odia: 'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି',
+        title_english: 'Srila Prabhupada Pranati',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଇସ୍କନ୍ର ସଂସ୍ଥାପକ-ଆଚାର୍ଯ୍ୟ ଜଗଦ୍‌ଗୁରୁ ଶ୍ରୀଳ ଏ.ସି. ଭକ୍ତିବେଦାନ୍ତ ସ୍ୱାମୀ ପ୍ରଭୁପାଦଙ୍କ ପରମ ଦିବ୍ୟ ପ୍ରଣାମ ମନ୍ତ୍ର । ଏହି ପ୍ରଣତିରେ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ପ୍ରତି ତାଙ୍କର ପରମ ପ୍ରିୟତା, ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ଠାକୁରଙ୍କ ସେବାରେ ସମର୍ପଣ, ଶ୍ରୀ ଚୈତନ୍ୟ ମହାପ୍ରଭୁଙ୍କ ଗୌର-ବାଣୀର ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରଚାର ତଥା ପାଶ୍ଚାତ୍ୟ ଜଗତକୁ ନିର୍ବିଶେଷବାଦ ଓ ଶୂନ୍ୟବାଦରୁ ଉଦ୍ଧାର କରିବାର ଅଲୌକିକ ମହିମା ପ୍ରକାଶିତ ହୋଇଛି ।',
+        structuredContent: (Songs as any).SONG_SRILAPRABHUPADAPRANATI_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Srila Prabhupada Pranati',
+            'Prabhupada Pranati',
+            'Nama Om Vishnu Padaya',
+            'Namas Te Sarasvate Deve',
+            'Pranam Mantras',
+            'Traditional',
+            'Vaishnava Acaryas',
+            'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି',
+            'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ',
+            'ପ୍ରଣାମ ମନ୍ତ୍ର'
+        ],
+        vocalist: 'HG Jai Sachinandana Prabhu / HG Vaiyasaki Prabhu / HH Gopal Krishna Goswami / HH Bhakti Rasamrita Swami / HH Vishnu Jana Swami',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Prabhupada_Pranati/Srila_Prabhupada_Pranati_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Prabhupada_Pranati/Srila_Prabhupada_Pranati_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Vaiyasaki Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Prabhupada_Pranati/Srila_Prabhupada_Pranati_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HH Gopal Krishna Goswami',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/2552_VS_S%CC%81ri%CC%84la%20Prabhupa%CC%84da%20Pranati_06.01.mp3'
+            },
+            {
+                label: 'HH Bhakti Rasamrita Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Prabhupada_Pranati/Srila_Prabhupada_Pranati_-_Sung_by_HH_Bhakti_Rasamrita_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Vishnu Jana Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Pranam_Mantras/Srila_Prabhupada_Pranati/Srila_Prabhupada_Pranati_-_Sung_by_HH_Vishnu_Jana_Swami_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sritakamala',
+        title: 'ଶ୍ରିତ କମଳା (Srita Kamala)',
+        title_odia: 'ଶ୍ରିତ କମଳା',
+        title_english: 'Srita Kamala',
+        category: 'Songs',
+        type: 'html',
+        description: 'ମହାକବି ଶ୍ରୀ ଜୟଦେବ ଗୋସ୍ୱାମୀଙ୍କ ପ୍ରସିଦ୍ଧ ‘ଗୀତଗୋବିନ୍ଦମ୍’ ମହାକାବ୍ୟର ପ୍ରଥମ ସର୍ଗ ଅନ୍ତର୍ଗତ ପରମ ମଙ୍ଗଳମୟ ସ୍ତୋତ୍ର ‘ମଙ୍ଗଳ ଗୀତମ୍’ (ଶ୍ରିତ କମଳା କୁଚ ମଣ୍ଡଳ) । ଏହି ଦିବ୍ୟ ଗୀତିରେ ଭଗବାନ ଶ୍ରୀହରିଙ୍କର ବିଭିନ୍ନ ଅବତାର, ଅସୁର-ବିନାଶକାରୀ ଲୀଳା, ପରମ ମନୋହର ରୂପ-ଶୋଭା ଓ ଶ୍ରୀରାଧାଙ୍କ ସହିତ ପ୍ରେମମୟ ସମ୍ବନ୍ଧର ଅପୂର୍ବ ବନ୍ଦନା କରାଯାଇଛି ।',
+        structuredContent: (Songs as any).SONG_SRITAKAMALA_STRUCTURED,
+        author: 'Jayadeva Goswami',
+        tags: [
+            'Srita Kamala',
+            'Mangala Gitam',
+            'Gita Govinda',
+            'Gitagovindam',
+            'Jayadeva Goswami',
+            'Jaya Jaya Deva Hare',
+            'ଶ୍ରିତ କମଳା',
+            'ଜୟଦେବ ଗୋସ୍ୱାମୀ',
+            'ଗୀତଗୋବିନ୍ଦ',
+            'ମଙ୍ଗଳ ଗୀତମ୍'
+        ],
+        vocalist: 'HG Amarendra Prabhu / HG Jai Sachinandana Prabhu / HH Bhakti Swarupa Damodara Swami / HH Bhakti Bringa Govinda Swami / HH Vedavyasa Priya Swami',
+        audioUrl: 'https://pub-e5330c78ced14d50b34c4b05df016674.r2.dev/uploads/Eka%CC%84das%CC%81i%CC%84%20Bhajans%20_%20ISKCON%20Atlanta%20_%20Amarendra%20Da%CC%84sa%20(1).mp3',
+        audioVersions: [
+            {
+                label: 'HG Amarendra Prabhu',
+                url: 'https://pub-e5330c78ced14d50b34c4b05df016674.r2.dev/uploads/Eka%CC%84das%CC%81i%CC%84%20Bhajans%20_%20ISKCON%20Atlanta%20_%20Amarendra%20Da%CC%84sa%20(1).mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Jayadeva_Goswami/Srita_Kamala/Srita_Kamala_-_Sung_by_HH_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HH Bhakti Swarupa Damodara Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Jayadeva_Goswami/Srita_Kamala/Srita_Kamala-01_-_Sung_by_HH_Bhakti_Swarupa_Damodar_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Bhakti Bringa Govinda Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Jayadeva_Goswami/Srita_Kamala/Srita_Kamala_-_Sung_by_HH_Bhakti_Bringa_Govinda_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Vedavyasa Priya Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Jayadeva_Goswami/Srita_Kamala/Srita_Kamala_-_Sung_by_HH_Vedavyasa_Priya_Swami_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sucaruvakrtamandalam',
+        title: 'ସୁଚାରୁ ବକ୍ତ୍ର ମଣ୍ଡଳଂ (Sucaru Vakrta Mandalam - Sri Nanda Nandanastakam)',
+        title_odia: 'ସୁଚାରୁ ବକ୍ତ୍ର ମଣ୍ଡଳଂ',
+        title_english: 'Sucaru Vakrta Mandalam',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀମଦ୍ ବଲ୍ଲଭାଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ବିରଚିତ ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କର ପରମ ମଧୁର ରୂପ, ଗୁଣ ଓ ଲୀଳା ମହିମାପୂର୍ଣ୍ଣ ‘ଶ୍ରୀ ନନ୍ଦନନ୍ଦନାଷ୍ଟକମ୍’ (ସୁଚାରୁ ବକ୍ତ୍ର ମଣ୍ଡଳଂ) । ଏହି ଅଷ୍ଟକ ନିୟମିତ ପାଠ କଲେ ସମସ୍ତ ସଂସାର ବନ୍ଧନ ଦୂର ହୋଇ ଭଗବାନଙ୍କ ନିତ୍ୟ ଚରଣସେବା ପ୍ରାପ୍ତ ହୁଏ ।',
+        structuredContent: (Songs as any).SONG_SUCARUVAKRTAMANDALAM_STRUCTURED,
+        author: 'Vallabhacarya',
+        tags: [
+            'Sucaru Vakrta Mandalam',
+            'Nanda Nandanastakam',
+            'Sri Nanda Nandanastakam',
+            'Vallabhacarya',
+            'Astakam',
+            'Namami Nanda Nandanam',
+            'ସୁଚାରୁ ବକ୍ତ୍ର ମଣ୍ଡଳଂ',
+            'ନନ୍ଦନନ୍ଦନାଷ୍ଟକମ୍',
+            'ବଲ୍ଲଭାଚାର୍ଯ୍ୟ',
+            'ଅଷ୍ଟକମ୍'
+        ],
+        vocalist: 'HG Naru Gopal Prabhu / HG Chakrini Mataji / Vaishnavas / HG Gauranga Darshan Prabhu',
+        audioUrl: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri_Nanda_Nandanastakam_otk3am.mp3',
+        audioVersions: [
+            {
+                label: 'HG Naru Gopal Prabhu',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri_Nanda_Nandanastakam_otk3am.mp3'
+            },
+            {
+                label: 'HG Chakrini Mataji',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri_Nanda_Nandanastakam_chakrini_vmo3da.mp3'
+            },
+            {
+                label: 'Vaishnavas',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri_Nanda_Nandanastakam_rjz1br.mp3'
+            },
+            {
+                label: 'HG Gauranga Darshan Prabhu',
+                url: 'https://res.cloudinary.com/dmyooeqdu/video/upload/v1760269372/WhatsApp_Audio_2025-10-12_at_16.20.53_bzuygf.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sudarshanaashtakam',
+        title: 'ସୁଦର୍ଶନାଷ୍ଟକମ୍ (Sudarshana Ashtakam)',
+        title_odia: 'ସୁଦର୍ଶନାଷ୍ଟକମ୍',
+        title_english: 'Sudarshana Ashtakam',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀ ବୈଷ୍ଣବ ସମ୍ପ୍ରଦାୟର ମହାନ ଆଚାର୍ଯ୍ୟ ସ୍ୱାମୀ ଶ୍ରୀ ବେଦାନ୍ତ ଦେଶିକଙ୍କ ଦ୍ୱାରା ବିରଚିତ ଭଗବାନ ଶ୍ରୀମନ୍ନାରାୟଣଙ୍କ ଦିବ୍ୟ ଆୟୁଧ ସୁଦର୍ଶନ ଚକ୍ରଙ୍କ ପରମ ଶକ୍ତିଶାଳୀ ଓ ମଙ୍ଗଳମୟ ‘ଶ୍ରୀ ସୁଦର୍ଶନାଷ୍ଟକମ୍’ ସ୍ତୋତ୍ର । ଏହି ଅଷ୍ଟକ ନିୟମିତ ପାଠ କଲେ ସମସ୍ତ ଶତ୍ରୁଭୟ, ଦୁଃଖ-ବ୍ୟାଧି, ନକାରାତ୍ମକ ପ୍ରଭାବ ଓ ଅଜ୍ଞାନତା ବିନାଶ ହୋଇ ପରମ ସୁରକ୍ଷା ଓ ଶୁଭ ଫଳ ପ୍ରାପ୍ତ ହୁଏ ।',
+        structuredContent: (Songs as any).SONG_SUDARSHANAASHTAKAM_STRUCTURED,
+        author: 'Vedanta Desika',
+        tags: [
+            'Sudarshana Ashtakam',
+            'Sudarshanastakam',
+            'Vedanta Desika',
+            'Pratibhata Sreni Bhisana',
+            'Jaya Jaya Sri Sudarsana',
+            'Astakam',
+            'Stotram',
+            'ସୁଦର୍ଶନାଷ୍ଟକମ୍',
+            'ବେଦାନ୍ତ ଦେଶିକ',
+            'ସୁଦର୍ଶନ ଚକ୍ର',
+            'ଅଷ୍ଟକମ୍'
+        ],
+        vocalist: 'HG Yasoda Kumara Prabhu / Vaishnavas',
+        audioUrl: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri%20Sudarshana%20Ashtakam%20with%20Lyrics%20Powerful%20Mantra%20to%20Remove%20Obstacles.mp3',
+        audioVersions: [
+            {
+                label: 'HG Yasoda Kumara Prabhu',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri%20Sudarshana%20Ashtakam%20with%20Lyrics%20Powerful%20Mantra%20to%20Remove%20Obstacles.mp3'
+            },
+            {
+                label: 'Vaishnavas',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Divine%20recitation%20Dushyant%20Sridhar%20Recites%20Sudarshana%20Ashtakam%20by%20Vedanta%20Desika%20RamayanaForUs.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
+    },
+    {
+        id: 'song-sujanarbudaradhita',
+        title: 'ସୁଜନାର୍ବୁଦ ରାଧିତ ପାଦ ଯୁଗଂ (Sujanarbuda Radhita Pada - Sri Prabhupada Padma Stavaka)',
+        title_odia: 'ସୁଜନାର୍ବୁଦ ରାଧିତ ପାଦ ଯୁଗଂ',
+        title_english: 'Sujanarbuda Radhita Pada Yugam (Sri Prabhupada Padma Stavaka)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ପୂଜ୍ୟପାଦ ଶ୍ରୀଳ ଭକ୍ତି ରକ୍ଷକ ଶ୍ରୀଧର ଦେବ ଗୋସ୍ୱାମୀ ମହାରାଜଙ୍କ ଦ୍ୱାରା ବିରଚିତ ନିଜ ଗୁରୁଦେବ ଜଗଦ୍ଗୁରୁ ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ଗୋସ୍ୱାମୀ ଠାକୁର ପ୍ରଭୁପାଦଙ୍କ ପରମ ଦିବ୍ୟ ଗୁଣମହିମା ଓ ଚରଣ କମଳର ଅପୂର୍ବ ସ୍ତୁତି ‘ଶ୍ରୀ ପ୍ରଭୁପାଦ ପଦ୍ମସ୍ତବକଃ’ (ସୁଜନାର୍ବୁଦ ରାଧିତ ପାଦ ଯୁଗଂ) ।',
+        structuredContent: (Songs as any).SONG_SUJANARBUDARADHITA_STRUCTURED,
+        author: 'B.R. Sridhara Deva Goswami',
+        tags: [
+            'Sujanarbuda Radhita Pada',
+            'Sujanarbuda Radhita Pada Yugam',
+            'Sri Prabhupada Padma Stavaka',
+            'Prabhupada Padma Stavaka',
+            'B.R. Sridhara Deva Goswami',
+            'Bhaktisiddhanta Sarasvati Thakura',
+            'Pranama',
+            'Stotram',
+            'ସୁଜନାର୍ବୁଦ ରାଧିତ ପାଦ ଯୁଗଂ',
+            'ଶ୍ରୀ ପ୍ରଭୁପାଦ ପଦ୍ମସ୍ତବକଃ',
+            'ଶ୍ରୀଧର ଦେବ ଗୋସ୍ୱାମୀ',
+            'ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ'
+        ],
+        vocalist: 'HG Agnidev Prabhu / HH Radhanath Swami',
+        audioUrl: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Agnidev_Prabhu/Smaranam-A_Garland_of_Kirtan/01_-_ADP_Bhajans_-_Sri_Prabhupada_Padmastavaka.mp3',
+        audioVersions: [
+            {
+                label: 'HG Agnidev Prabhu',
+                url: 'https://audio.iskcondesiretree.com/03_-_ISKCON_Prabhujis/ISKCON_Prabhujis_-_A_to_J/His_Grace_Agnidev_Prabhu/Smaranam-A_Garland_of_Kirtan/01_-_ADP_Bhajans_-_Sri_Prabhupada_Padmastavaka.mp3'
+            },
+            {
+                label: 'HH Radhanath Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Sujanarbuda_Radhita_Pada_Yugam/Sujanarbuda_Radhita_Pada_Yugam_-_Sung_by_HH_Radhanath_Swami_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 

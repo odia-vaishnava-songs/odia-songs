@@ -207,7 +207,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { title_english: 'He Govinda He Gopal Kesava Madhava', title_odia: 'ହେ ଗୋବିନ୍ଦ ହେ ଗୋପାଳ କେଶବ ମାଧବ' },
             { id: 'song-pralayapayodhijale', title_english: 'Pralaya Payodhi Jale', title_odia: 'ପ୍ରଳୟ ପୟୋଧି ଜଳେ' },
-            { title_english: 'Srita Kamala', title_odia: 'ଶ୍ରୀତ କମଳା' },
+            { id: 'song-sritakamala', title_english: 'Srita Kamala', title_odia: 'ଶ୍ରିତ କମଳା' },
         ]
     },
     {
@@ -345,7 +345,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'B.R. Sridhara Deva Goswami',
         odia: 'ବି. ଆର. ଶ୍ରୀଧର ଦେବ ଗୋସ୍ୱାମୀ',
         catalog: [
-            { id: 'song-jayasacinandanasuramunivandana', title_english: 'Jaya Sacinandana Sura Muni Vandana', title_odia: 'ଜୟ ଶଚୀନନ୍ଦନ ସୁର ମୁନି ବନ୍ଦନ' }
+            { id: 'song-jayasacinandanasuramunivandana', title_english: 'Jaya Sacinandana Sura Muni Vandana', title_odia: 'ଜୟ ଶଚୀନନ୍ଦନ ସୁର ମୁନି ବନ୍ଦନ' },
+            { id: 'song-sujanarbudaradhita', title_english: 'Sujanarbuda Radhita Pada Yugam (Sri Prabhupada Padma Stavaka)', title_odia: 'ସୁଜନାର୍ବୁଦ ରାଧିତ ପାଦ ଯୁଗଂ' }
         ]
     },
     {
@@ -396,7 +397,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Vallabhacarya',
         odia: 'ବଲ୍ଲଭାଚାର୍ଯ୍ୟ',
         catalog: [
-            { id: 'song-madhurashtakam', title_english: 'Adharam Madhuram' }
+            { id: 'song-madhurashtakam', title_english: 'Adharam Madhuram' },
+            { id: 'song-sucaruvakrtamandalam', title_english: 'Sucaru Vakrta Mandalam', title_odia: 'ସୁଚାରୁ ବକ୍ତ୍ର ମଣ୍ଡଳଂ' }
         ]
     },
     {
@@ -445,7 +447,11 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-sripancatattvapranama', title_english: 'Sri Panca Tattva Pranama', title_odia: 'ଶ୍ରୀ ପଞ୍ଚତତ୍ତ୍ୱ ପ୍ରଣାମ' },
             { id: 'song-sriradhapranama', title_english: 'Sri Radha Pranama', title_odia: 'ଶ୍ରୀ ରାଧା ପ୍ରଣାମ' },
             { id: 'song-srivaishnavapranama', title_english: 'Sri Vaishnava Pranama', title_odia: 'ଶ୍ରୀ ବୈଷ୍ଣବ ପ୍ରଣାମ' },
-            { id: 'song-srilabhaktisiddhantapranati', title_english: 'Srila Bhaktisiddhanta Sarasvati Pranati', title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ପ୍ରଣତି' }
+            { id: 'song-srilabhaktisiddhantapranati', title_english: 'Srila Bhaktisiddhanta Sarasvati Pranati', title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିସିଦ୍ଧାନ୍ତ ସରସ୍ୱତୀ ପ୍ରଣତି' },
+            { id: 'song-srilabhaktivinodapranati', title_english: 'Srila Bhaktivinoda Pranati', title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ପ୍ରଣତି' },
+            { id: 'song-srilagaurakisorapranati', title_english: 'Srila Gaurakisora Pranati', title_odia: 'ଶ୍ରୀଳ ଗୌରକିଶୋର ପ୍ରଣତି' },
+            { id: 'song-srilajagannathapranati', title_english: 'Srila Jagannatha Pranati', title_odia: 'ଶ୍ରୀଳ ଜଗନ୍ନାଥ ପ୍ରଣତି' },
+            { id: 'song-srilaprabhupadapranati', title_english: 'Srila Prabhupada Pranati', title_odia: 'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି' }
         ]
     },
     {
@@ -560,6 +566,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'କୁଳଶେଖର ଆଳୱାର',
         catalog: [
             { id: 'song-srivallabhetivaradeti', title_english: 'Sri Vallabheti Vara Deti (Mukunda Mala Stotra)', title_odia: 'ଶ୍ରୀ ବଲ୍ଲଭେତି ବରଦେତି (ମୁକୁନ୍ଦମାଳା ସ୍ତୋତ୍ରମ୍)' }
+        ]
+    },
+    {
+        name: 'Vedanta Desika',
+        odia: 'ବେଦାନ୍ତ ଦେଶିକ',
+        catalog: [
+            { id: 'song-sudarshanaashtakam', title_english: 'Sudarshana Ashtakam', title_odia: 'ସୁଦର୍ଶନାଷ୍ଟକମ୍' }
         ]
     }
 ];
