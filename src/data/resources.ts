@@ -28064,6 +28064,51 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-vrndavanavasijata',
+        title: 'ବୃନ୍ଦାବନ-ବାସୀ ଯତ ବୈଷ୍ଣବେର ଗଣ (Vrndavana Vasi Jata Vaisnavera Gana)',
+        title_odia: 'ବୃନ୍ଦାବନ-ବାସୀ ଯତ ବୈଷ୍ଣବେର ଗଣ (ବୈଷ୍ଣବ ବନ୍ଦନା)',
+        title_english: 'Vrndavana Vasi Jata Vaisnavera Gana (Vaisnava Vandana)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଦେବକୀନନ୍ଦନ ଦାସ ଠାକୁରଙ୍କ ଦ୍ୱାରା ବିରଚିତ ପ୍ରସିଦ୍ଧ ବୈଷ୍ଣବ ବନ୍ଦନା । ଏଥିରେ ବୃନ୍ଦାବନ, ନୀଳାଚଳ, ନବଦ୍ୱୀପ ଓ ସମଗ୍ର ବିଶ୍ୱର ସମସ୍ତ ବୈଷ୍ଣବଗଣଙ୍କ ଶ୍ରୀଚରଣକମଳରେ ପରମ ଦୈନ୍ୟପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା ଅର୍ପଣ କରାଯାଇଛି ।',
+        structuredContent: (Songs as any).SONG_VRNDAVANAVASIJATA_STRUCTURED,
+        author: 'Devakinandana Dasa Thakura',
+        tags: [
+            'Devakinandana Dasa Thakura',
+            'Vaisnava Vandana',
+            'Vrndavana Vasi Jata',
+            'ଦେବକୀନନ୍ଦନ ଦାସ ଠାକୁର',
+            'ବୈଷ୍ଣବ ବନ୍ଦନା'
+        ],
+        vocalist: 'HG Jai Sachinandana Prabhu',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Devakinandan_Das_Thakur/Vrndavana_Vasi_Jata_Vaisnavera_Gana/Vrndavana_Vasi_Jata_Vaisnavera_Gana_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Devakinandan_Das_Thakur/Vrndavana_Vasi_Jata_Vaisnavera_Gana/Vrndavana_Vasi_Jata_Vaisnavera_Gana_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Sivarama Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Devakinandan_Das_Thakur/Vrndavana_Vasi_Jata_Vaisnavera_Gana/Vrndavana_Vasi_Jata_Vaisnavera_Gana_-_Sung_by_HG_Sivarama_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HH Haladhara Swami',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/vaishnava%20vandana%20haladar%20swami%20maharaj.mp3'
+            },
+            {
+                label: 'HG Radheshyam Prabhu',
+                url: 'https://pub-4f8c24b1c935435d9e3b959e0886ebf6.r2.dev/uploads/Vrindavana%20Vasi%20Jata%20Vaisnavera.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu (01)',
+                url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads/80%20Vrindawanvasi%20Jata%20P-141.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 

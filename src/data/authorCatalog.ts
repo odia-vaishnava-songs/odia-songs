@@ -309,7 +309,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Devakinandana Dasa Thakura',
         odia: 'ଦେବକୀନନ୍ଦନ ଦାସ ଠାକୁର',
         catalog: [
-            { title_english: 'Vrndavana Vasi Jata Vaisnavera Gana', title_odia: 'ବୃନ୍ଦାବନ ବାସୀ ଯତ ବୈଷ୍ଣବେର ଗଣ' },
+            { id: 'song-vrndavanavasijata', title_english: 'Vrndavana Vasi Jata Vaisnavera Gana', title_odia: 'ବୃନ୍ଦାବନ-ବାସୀ ଯତ ବୈଷ୍ଣବେର ଗଣ (ବୈଷ୍ଣବ ବନ୍ଦନା)' },
         ]
     },
     {
