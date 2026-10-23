@@ -27851,6 +27851,41 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-tumitomaribejare',
+        title: 'ତୁମି ତୋ\' ମାରିବେ ଯାରେ (Tumi To\' Maribe Jare)',
+        title_odia: 'ତୁମି ତୋ\' ମାରିବେ ଯାରେ',
+        title_english: 'Tumi To Maribe Jare',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ଠାକୁରଙ୍କ ପ୍ରଣୀତ \'ଶରଣାଗତି\' ଗ୍ରନ୍ଥର ଗୋପ୍ତୃତ୍ୱେ ବରଣ ଅନ୍ତର୍ଗତ ପରମ ବିଶ୍ୱାସମୟ ପ୍ରସିଦ୍ଧ ଭଜନ । ଭଗବାନ ଯାହାକୁ ରକ୍ଷା କରନ୍ତି ତାହାକୁ କେହି ମାରିପାରିବେ ନାହିଁ ଏବଂ ଯାହାକୁ ମାରିବାକୁ ଇଚ୍ଛା କରନ୍ତି ତାହାକୁ କେହି ରକ୍ଷା କରିପାରିବେ ନାହିଁ—ଏହି ଅଚଳ ଶରଣାଗତି ତତ୍ତ୍ୱ ଏଥିରେ ବର୍ଣ୍ଣିତ ।',
+        structuredContent: (Songs as any).SONG_TUMITOMARIBEJARE_STRUCTURED,
+        author: 'Bhaktivinoda Thakura',
+        tags: [
+            'Bhaktivinoda Thakura',
+            'Saranagati',
+            'Tumi To Maribe Jare',
+            'Goptrtve Varana',
+            'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ଠାକୁର',
+            'ଶରଣାଗତି',
+            'ତୁମି ତୋ ମାରିବେ ଯାରେ'
+        ],
+        vocalist: 'HH Bhakti Caru Swami',
+        audioUrl: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_A_to_C/His_Holiness_Bhakti_Charu_Swami/Bhajans/Vaishnava_Bhajans/BCS_Bhajans_-_Tumito_Maribe_Jare.mp3',
+        audioVersions: [
+            {
+                label: 'HH Bhakti Caru Swami',
+                url: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_A_to_C/His_Holiness_Bhakti_Charu_Swami/Bhajans/Vaishnava_Bhajans/BCS_Bhajans_-_Tumito_Maribe_Jare.mp3'
+            },
+            {
+                label: 'HH Gour Govinda Swami',
+                url: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_D_to_P/His_Holiness_Gour_Govinda_Swami/Bhajans/GGM_Bhajans_-_Tumita.maribe.yare.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 

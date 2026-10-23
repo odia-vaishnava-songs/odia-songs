@@ -93,7 +93,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-hariboloharibolo', title_english: 'Hari bolo Hari bolo', title_odia: 'ହରି ବୋଲ ହରି ବୋଲ' },
             { id: 'song-satakotigopimadhabamana', title_english: 'Sata Koti Gopi Madhaba Mana', title_odia: 'ଶତ କୋଟି ଗୋପୀ ମାଧବ ମନ' },
             { id: 'song-nakorolunkarama', title_english: 'Na Korolun Karama', title_odia: 'ନା କୋରୋଲୁଁ କରମ' },
-            { id: 'song-ohepremerathakuragora', title_english: 'Ohe Premera Thakura Gora', title_odia: 'ଓହେ ପ୍ରେମେର ଠାକୁର ଗୋରା' }
+            { id: 'song-ohepremerathakuragora', title_english: 'Ohe Premera Thakura Gora', title_odia: 'ଓହେ ପ୍ରେମେର ଠାକୁର ଗୋରା' },
+            { id: 'song-tumitomaribejare', title_english: 'Tumi To Maribe Jare', title_odia: 'ତୁମି ତୋ\' ମାରିବେ ଯାରେ' }
         ]
     },
     {
