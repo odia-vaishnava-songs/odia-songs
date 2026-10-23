@@ -642,6 +642,166 @@ export const SongsPage: React.FC = () => {
         { id: 'pranama', odia: 'ପ୍ରଣାମ ମନ୍ତ୍ରାବଳୀ', eng: 'Pranama Mantras', author: 'Various Acaryas', query: 'Pranama', color: '#4f46e5' }
     ];
 
+    // vsnectar Temple Songs canonical daily liturgical schedule
+    const VSNECTAR_TEMPLE_SONGS = useMemo(() => [
+        {
+            order: 1,
+            key: 'Mangal Arati',
+            eng: 'Mangal Arati (Samsara Davanala Lidha Loka)',
+            odia: 'ମଙ୍ଗଳ ଆରତି (ଶ୍ରୀ ଗୁର୍ବଷ୍ଟକମ୍)',
+            author: 'Srila Visvanatha Cakravarti Thakura',
+            id: 'song-gurvastakam'
+        },
+        {
+            order: 2,
+            key: 'Prema Dhvani Prayers',
+            eng: 'Prema Dhvani Prayers',
+            odia: 'ପ୍ରେମ ଧ୍ୱନି ପ୍ରାର୍ଥନା (ଜୟ ଧ୍ୱନି)',
+            author: 'Traditional',
+            id: 'song-premadhvani'
+        },
+        {
+            order: 3,
+            key: 'Narasimha Aarati',
+            eng: 'Narasimha Aarati (Namaste Narasimhaya)',
+            odia: 'ନରସିଂହ ଆରତି (ନମସ୍ତେ ନରସିଂହାୟ)',
+            author: 'Traditional / Vyasadeva',
+            id: 'song-namastenarasimhaya'
+        },
+        {
+            order: 4,
+            key: 'Tulasi Arati',
+            eng: 'Tulasi Arati (Namo Namah Tulasi Krsna Preyasi)',
+            odia: 'ତୁଳସୀ ଆରତି (ନମୋ ନମଃ ତୁଲସୀ)',
+            author: 'Traditional',
+            id: 'song-namonamahtulasi'
+        },
+        {
+            order: 5,
+            key: 'Sri Sri Shikshashtakam',
+            eng: 'Sri Sri Shikshashtakam (Ceto Darpana Marjanam)',
+            odia: 'ଶ୍ରୀ ଶିକ୍ଷାଷ୍ଟକମ୍ (ଚେତୋ-ଦର୍ପଣ ମାର୍ଜନଂ)',
+            author: 'Sri Caitanya Mahaprabhu',
+            id: 'song-shikshashtakam'
+        },
+        {
+            order: 6,
+            key: 'The Ten Offenses to the Holy Name',
+            eng: 'The Ten Offenses to the Holy Name',
+            odia: 'ଦଶବିଧ ନାମାପରାଧ',
+            author: 'Padma Purana',
+            id: null
+        },
+        {
+            order: 7,
+            key: 'Govindam Prayers',
+            eng: 'Govindam Prayers (Darshana Arati)',
+            odia: 'ଗୋବିନ୍ଦମ୍ ପ୍ରାର୍ଥନା (ଦର୍ଶନ ଆରତୀ)',
+            author: 'Lord Brahma',
+            id: 'song-govindamprayers'
+        },
+        {
+            order: 8,
+            key: 'Guru Puja',
+            eng: 'Guru Puja (Sri Guru Carana Padma)',
+            odia: 'ଶ୍ରୀ ଗୁରୁ ଚରଣ ପଦ୍ମ (ଗୁରୁ ପୂଜା)',
+            author: 'Srila Narottama Dasa Thakura',
+            id: 'song-gurupuja'
+        },
+        {
+            order: 9,
+            key: 'Jaya Radha Madhava',
+            eng: 'Jaya Radha Madhava',
+            odia: 'ଜୟ ରାଧା-ମାଧବ',
+            author: 'Srila Bhaktivinoda Thakura',
+            id: 'song-jayaradhadhava'
+        },
+        {
+            order: 10,
+            key: 'Mangalacarana',
+            eng: 'Mangalacarana (Full)',
+            odia: 'ମଙ୍ଗଳାଚରଣ (ପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା)',
+            author: 'Traditional',
+            id: null
+        },
+        {
+            order: 11,
+            key: 'Gaura Arati',
+            eng: 'Gaura Arati (Jaya Jaya Goracander Arotik)',
+            odia: 'ଗୌର ଆରତି (ଜୟ ଜୟ ଗୋରାଚାନ୍ଦେର)',
+            author: 'Srila Bhaktivinoda Thakura',
+            id: 'song-gauraarati'
+        },
+        {
+            order: 12,
+            key: 'Hari Haraye Namah Krsna',
+            eng: 'Hari Haraye Namah Krsna Yadavaya',
+            odia: 'ହରି ହରୟେ ନମଃ କୃଷ୍ଣ ଯାଦବାୟ',
+            author: 'Srila Narottama Dasa Thakura',
+            id: 'song-hariharayenamah'
+        },
+        {
+            order: 13,
+            key: 'Vibhavari Sesa',
+            eng: 'Vibhavari Sesa',
+            odia: 'ବିଭାବରୀ ଶେଷ',
+            author: 'Srila Bhaktivinoda Thakura',
+            id: 'song-vibhavarisesa'
+        },
+        {
+            order: 14,
+            key: 'Yasomati Nandana',
+            eng: 'Yasomati Nandana',
+            odia: 'ଯଶୋମତି ନନ୍ଦନ (ନାମ କୀର୍ତ୍ତନ)',
+            author: 'Srila Bhaktivinoda Thakura',
+            id: 'song-yasomatinandana'
+        },
+        {
+            order: 15,
+            key: 'Bhoga Arati',
+            eng: 'Bhoga Arati (Bhaja Bhakata Vatsala)',
+            odia: 'ଭୋଗ ଆରତି (ଭଜ ଭକତ-ବତ୍ସଲ)',
+            author: 'Srila Bhaktivinoda Thakura',
+            id: 'song-bhajabhakatavatsala'
+        },
+        {
+            order: 16,
+            key: 'Prasadam Honoring Prayers',
+            eng: 'Prasadam Honoring Prayers (Maha Prasade Govinde)',
+            odia: 'ମହାପ୍ରସାଦେ ଗୋବିନ୍ଦେ (ପ୍ରସାଦ ସେବା)',
+            author: 'Traditional / Bhaktivinoda Thakura',
+            id: 'song-mahaprasadegovinde'
+        },
+        {
+            order: 17,
+            key: 'Damodara Ashtakam',
+            eng: 'Damodara Ashtakam (Namamisvaram Saccidananda)',
+            odia: 'ଶ୍ରୀ ଦାମୋଦରାଷ୍ଟକମ୍ (ନମାମୀଶ୍ୱରଂ)',
+            author: 'Satyavrata Muni',
+            id: 'song-damodarastakam'
+        },
+        {
+            order: 18,
+            key: 'Sri Sri Sad Goswami Ashtaka',
+            eng: 'Sri Sri Sad Goswami Ashtaka (Krsnotkirtana)',
+            odia: 'ଶ୍ରୀ ଷଡ୍‌ଗୋସ୍ୱାମୀ ଅଷ୍ଟକମ୍',
+            author: 'Srila Srinivasa Acarya',
+            id: 'song-sadgoswamyastakam'
+        }
+    ], []);
+
+    const templeSongsResolved = useMemo(() => {
+        return VSNECTAR_TEMPLE_SONGS.map(item => {
+            const foundSong = item.id ? songResources.find(s => s.id === item.id) : null;
+            return {
+                ...item,
+                song: foundSong || null,
+                isAvailable: Boolean(foundSong)
+            };
+        });
+    }, [VSNECTAR_TEMPLE_SONGS, songResources]);
+
+
     const gitaChapters = useMemo(() => {
         return songResources
             .filter(s => {
@@ -1429,6 +1589,266 @@ export const SongsPage: React.FC = () => {
                             <div style={engTitleStyle}>Settings</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        );
+    };
+
+    const renderTempleSongsList = () => {
+        return (
+            <div style={{ maxWidth: '800px', margin: '0 auto', paddingBottom: '3rem' }}>
+                {/* Header Banner */}
+                <div style={{
+                    background: isNightMode
+                        ? 'linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(30, 41, 59, 0.7) 100%)'
+                        : 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
+                    borderRadius: '16px',
+                    padding: '1.1rem 1.3rem',
+                    marginBottom: '1.25rem',
+                    border: isNightMode ? '1px solid rgba(234, 88, 12, 0.3)' : '1px solid #fed7aa',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '0.75rem'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                        <div style={{
+                            width: '46px',
+                            height: '46px',
+                            borderRadius: '12px',
+                            background: '#ea580c',
+                            color: '#fff',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 10px rgba(234, 88, 12, 0.35)'
+                        }}>
+                            <TempleIcons.TempleShikhara size={28} />
+                        </div>
+                        <div>
+                            <div style={{
+                                fontSize: '1.2rem',
+                                fontWeight: 900,
+                                fontFamily: 'var(--font-odia-sans)',
+                                color: isNightMode ? '#ffedd5' : '#7c2d12',
+                                lineHeight: 1.2
+                            }}>
+                                ମନ୍ଦିର ନିତ୍ୟ ଆରତି ଓ ପ୍ରାର୍ଥନା
+                            </div>
+                            <div style={{
+                                fontSize: '0.78rem',
+                                color: isNightMode ? '#fdba74' : '#c2410c',
+                                fontWeight: 700,
+                                fontFamily: "'Outfit', sans-serif"
+                            }}>
+                                Daily Temple Songs (vsnectar Schedule)
+                            </div>
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{
+                            padding: '4px 10px',
+                            borderRadius: '20px',
+                            fontSize: '0.75rem',
+                            fontWeight: 700,
+                            backgroundColor: isNightMode ? 'rgba(34, 197, 94, 0.2)' : '#dcfce7',
+                            color: isNightMode ? '#4ade80' : '#15803d',
+                            fontFamily: "'Outfit', sans-serif"
+                        }}>
+                            16 ଉପଲବ୍ଧ
+                        </span>
+                        <span style={{
+                            padding: '4px 10px',
+                            borderRadius: '20px',
+                            fontSize: '0.75rem',
+                            fontWeight: 700,
+                            backgroundColor: isNightMode ? 'rgba(239, 68, 68, 0.2)' : '#fee2e2',
+                            color: isNightMode ? '#f87171' : '#b91c1c',
+                            fontFamily: "'Outfit', sans-serif"
+                        }}>
+                            2 ଅନୁପଲବ୍ଧ
+                        </span>
+                        <button
+                            onClick={() => setSearchQuery('')}
+                            style={{
+                                border: 'none',
+                                background: isNightMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.06)',
+                                color: isNightMode ? '#cbd5e1' : '#475569',
+                                padding: '5px 10px',
+                                borderRadius: '8px',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                cursor: 'pointer'
+                            }}
+                        >
+                            ✕ Clear
+                        </button>
+                    </div>
+                </div>
+
+                {/* 18 Songs List */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+                    {templeSongsResolved.map(item => {
+                        const isAvailable = item.isAvailable && item.song;
+                        const song = item.song;
+
+                        return (
+                            <div
+                                key={item.order}
+                                onClick={() => {
+                                    if (isAvailable && song) {
+                                        handleSelectSong(song);
+                                    }
+                                }}
+                                style={{
+                                    padding: '0.7rem 0.95rem',
+                                    borderRadius: '12px',
+                                    backgroundColor: !isAvailable
+                                        ? (isNightMode ? 'rgba(30, 41, 59, 0.4)' : '#f8fafc')
+                                        : (isNightMode ? '#1e293b' : '#ffffff'),
+                                    opacity: isAvailable ? 1 : 0.52,
+                                    cursor: isAvailable ? 'pointer' : 'not-allowed',
+                                    border: !isAvailable
+                                        ? (isNightMode ? '1px dashed rgba(255,255,255,0.12)' : '1px dashed #cbd5e1')
+                                        : (isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.06)'),
+                                    boxShadow: isAvailable
+                                        ? (isNightMode ? '0 3px 8px rgba(0,0,0,0.35)' : '0 2px 4px rgba(0,0,0,0.05)')
+                                        : 'none',
+                                    transition: isAvailable ? 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+                                    position: 'relative',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.85rem',
+                                    userSelect: !isAvailable ? 'none' : 'auto'
+                                }}
+                                onMouseEnter={(e) => {
+                                    if (isAvailable) {
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = isNightMode
+                                            ? '0 8px 20px rgba(0,0,0,0.5)'
+                                            : '0 4px 12px rgba(0,0,0,0.1)';
+                                    }
+                                }}
+                                onMouseLeave={(e) => {
+                                    if (isAvailable) {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = isNightMode
+                                            ? '0 3px 8px rgba(0,0,0,0.35)'
+                                            : '0 2px 4px rgba(0,0,0,0.05)';
+                                    }
+                                }}
+                            >
+                                {/* Order Number Badge */}
+                                <div style={{
+                                    width: '32px',
+                                    height: '32px',
+                                    borderRadius: '8px',
+                                    background: isAvailable
+                                        ? (isNightMode ? 'rgba(234, 88, 12, 0.2)' : '#fff7ed')
+                                        : (isNightMode ? 'rgba(255,255,255,0.05)' : '#e2e8f0'),
+                                    color: isAvailable ? '#ea580c' : (isNightMode ? '#64748b' : '#94a3b8'),
+                                    fontSize: '0.85rem',
+                                    fontWeight: 900,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    fontFamily: "'Outfit', sans-serif"
+                                }}>
+                                    {String(item.order).padStart(2, '0')}
+                                </div>
+
+                                {/* Song Info */}
+                                <div style={{ flex: 1, minWidth: 0 }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                                        <div style={{
+                                            fontSize: '1.05rem',
+                                            fontWeight: 900,
+                                            color: isAvailable
+                                                ? (isNightMode ? '#f8fafc' : '#0f172a')
+                                                : (isNightMode ? '#94a3b8' : '#64748b'),
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            lineHeight: '1.35',
+                                            whiteSpace: 'nowrap',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis'
+                                        }}>
+                                            {song ? getOdiaTitle(song) : item.odia}
+                                        </div>
+                                        {song?.verified && <CheckCircle2 size={15} color="#00a38d" style={{ flexShrink: 0 }} />}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '0.76rem',
+                                        color: isAvailable
+                                            ? (isNightMode ? '#38bdf8' : '#0284c7')
+                                            : (isNightMode ? '#64748b' : '#94a3b8'),
+                                        fontWeight: 600,
+                                        fontFamily: "'Outfit', sans-serif",
+                                        marginTop: '1px',
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                    }}>
+                                        {item.eng}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '0.68rem',
+                                        color: isNightMode ? '#64748b' : '#94a3b8',
+                                        fontFamily: 'var(--font-odia-sans)',
+                                        marginTop: '1px'
+                                    }}>
+                                        {song?.author || item.author}
+                                    </div>
+                                </div>
+
+                                {/* Status / Audio Badge */}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
+                                    {isAvailable ? (
+                                        <>
+                                            {((song?.audioVersions?.length ?? 0) > 0 || song?.audioUrl) && (
+                                                <div style={{
+                                                    padding: '4px',
+                                                    borderRadius: '6px',
+                                                    backgroundColor: isNightMode ? 'rgba(168, 85, 247, 0.2)' : '#f3e8ff',
+                                                    color: isNightMode ? '#d8b4fe' : '#7e22ce',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center'
+                                                }}>
+                                                    <Mic size={13} strokeWidth={2.5} />
+                                                </div>
+                                            )}
+                                            <span style={{
+                                                fontSize: '0.72rem',
+                                                padding: '2px 8px',
+                                                borderRadius: '12px',
+                                                background: isNightMode ? 'rgba(34, 197, 94, 0.15)' : '#dcfce7',
+                                                color: isNightMode ? '#4ade80' : '#16a34a',
+                                                fontWeight: 700,
+                                                fontFamily: 'var(--font-odia-sans)'
+                                            }}>
+                                                ଉପଲବ୍ଧ
+                                            </span>
+                                        </>
+                                    ) : (
+                                        <span style={{
+                                            fontSize: '0.7rem',
+                                            padding: '2px 8px',
+                                            borderRadius: '12px',
+                                            background: isNightMode ? 'rgba(239, 68, 68, 0.15)' : '#fee2e2',
+                                            color: isNightMode ? '#f87171' : '#dc2626',
+                                            fontWeight: 700,
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            border: isNightMode ? '1px solid rgba(239, 68, 68, 0.3)' : '1px solid #fecaca'
+                                        }}>
+                                            ଅନୁପଲବ୍ଧ (Missing)
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );
@@ -3347,8 +3767,11 @@ export const SongsPage: React.FC = () => {
                 )}
 
                 {activeTab === 'songs' && (
-                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.75rem', paddingRight: '48px' }}>
-                        {sortedGroups.map(letter => (
+                    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 0.75rem', paddingRight: searchQuery === 'Temple' ? '0.75rem' : '48px' }}>
+                        {searchQuery === 'Temple' ? (
+                            renderTempleSongsList()
+                        ) : (
+                            sortedGroups.map(letter => (
                             <div
                                 key={letter}
                                 ref={(el) => { sectionRefs.current[letter] = el; }}
@@ -3467,25 +3890,27 @@ export const SongsPage: React.FC = () => {
                                     ))}
                                 </div>
                             </div>
-                        ))}
+                        ))
+                    )}
                     </div>
                 )}
             </main>
             {/* Alphabet Sidebar - Only showing letters with songs for a clean list */}
-            <div style={{
-                position: 'fixed',
-                right: '12px',
-                top: '100px',
-                bottom: '100px',
-                width: '32px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                background: 'transparent',
-                zIndex: 100,
-                pointerEvents: 'auto',
-                gap: '2px'
-            }}>
+            {activeTab === 'songs' && searchQuery !== 'Temple' && (
+                <div style={{
+                    position: 'fixed',
+                    right: '12px',
+                    top: '100px',
+                    bottom: '100px',
+                    width: '32px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    background: 'transparent',
+                    zIndex: 100,
+                    pointerEvents: 'auto',
+                    gap: '2px'
+                }}>
                 {sortedGroups.map(letter => {
                     return (
                         <div
@@ -3518,6 +3943,7 @@ export const SongsPage: React.FC = () => {
                     );
                 })}
             </div>
+            )}
 
             {/* FRIENDLY ODIA VOICE SEARCH OVERLAY */}
             {isListening && (
