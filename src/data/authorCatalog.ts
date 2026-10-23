@@ -197,7 +197,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-goragunagaosuni', title_english: 'Gora Guna Gao Suni', title_odia: 'ଗୋରା ଗୁଣ ଗାଓ ଶୁନି' },
             { title_english: 'Jaya Jaya Jagannatha Sacira Nandana', title_odia: 'ଜୟ ଜୟ ଜଗନ୍ନାଥ ଶଚୀର ନନ୍ଦନ' },
             { id: 'song-saciraanginayanace', title_english: 'Sacira Anginaya Nace', title_odia: 'ଶଚୀର ଆଙ୍ଗିନାୟ ନାଚେ' },
-            { title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୟନା' },
+            { id: 'song-sundarakundalanaina', title_english: 'Sundara Kundala Naina', title_odia: 'ସୁନ୍ଦର କୁଣ୍ଡଳ ନୈନ ବିଶାଳା' },
             { title_english: 'Yadi Gaura Na Hoito', title_odia: 'ଯଦି ଗୌର ନା ହୋଇତୋ' },
         ]
     },
@@ -573,6 +573,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         odia: 'ବେଦାନ୍ତ ଦେଶିକ',
         catalog: [
             { id: 'song-sudarshanaashtakam', title_english: 'Sudarshana Ashtakam', title_odia: 'ସୁଦର୍ଶନାଷ୍ଟକମ୍' }
+        ]
+    },
+    {
+        name: 'Shani Deva',
+        odia: 'ଶ୍ରୀ ଶନିଦେବ',
+        catalog: [
+            { id: 'song-sulabhobhakti', title_english: 'Sulabho Bhakti Yuktanam (Sri Narasimha Stuti)', title_odia: 'ସୁଲଭୋ ଭକ୍ତି ଯୁକ୍ତାନାଂ (ଶ୍ରୀ ନୃସିଂହ ସ୍ତୁତି)' }
         ]
     }
 ];

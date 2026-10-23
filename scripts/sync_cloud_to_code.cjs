@@ -203,7 +203,19 @@ async function syncCloudToCode() {
     }
 
     console.log(`4. Writing to ${OUTPUT_PATH}...`);
-    fs.writeFileSync(OUTPUT_PATH, finalContent, 'utf8');
+    let written = false;
+    for (let attempt = 1; attempt <= 5; attempt++) {
+        try {
+            fs.writeFileSync(OUTPUT_PATH, finalContent, 'utf8');
+            written = true;
+            break;
+        } catch (err) {
+            if (attempt === 5) throw err;
+            console.warn(`⚠️ Write attempt ${attempt} failed, retrying in 300ms...`);
+            const end = Date.now() + 300;
+            while (Date.now() < end) {}
+        }
+    }
 
     console.log('✅ Local Sync Complete: Source code is up-to-date with remote phone edits.');
     return true;
