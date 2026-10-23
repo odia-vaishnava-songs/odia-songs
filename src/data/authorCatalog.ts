@@ -600,6 +600,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-ujjvalavarana', title_english: 'Ujjvala Varana (Sri Sacitanayastakam)', title_odia: 'ଉଜ୍ଜ୍ୱଳ-ବରଣ (ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍)' }
         ]
+    },
+    {
+        name: 'Jayapataka Swami',
+        odia: 'ଜୟପତାକା ସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-yadiprabhupadanahoito', title_english: 'Yadi Prabhupada Na Hoito', title_odia: 'ଯଦି ପ୍ରଭୁପାଦ ନା ହଇତ' }
+        ]
     }
 ];
 

@@ -28109,6 +28109,40 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-yadiprabhupadanahoito',
+        title: 'ଯଦି ପ୍ରଭୁପାଦ ନା ହଇତ (Yadi Prabhupada Na Hoito)',
+        title_odia: 'ଯଦି ପ୍ରଭୁପାଦ ନା ହଇତ',
+        title_english: 'Yadi Prabhupada Na Hoito',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଜୟପତାକା ସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ବିରଚିତ ପରମପୂଜ୍ୟ ଜଗଦ୍‌ଗୁରୁ ଶ୍ରୀଳ ଏ.ସି. ଭକ୍ତିବେଦାନ୍ତ ସ୍ୱାମୀ ପ୍ରଭୁପାଦଙ୍କ ଅଲୌକିକ କୃପା ଓ ମହିମାପୂର୍ଣ୍ଣ ପ୍ରସିଦ୍ଧ ଗୁରୁବନ୍ଦନା ।',
+        structuredContent: (Songs as any).SONG_YADIPRABHUPADANAHOITO_STRUCTURED,
+        author: 'Jayapataka Swami',
+        tags: [
+            'Jayapataka Swami',
+            'Srila Prabhupada',
+            'Prabhupada',
+            'Yadi Prabhupada Na Hoito',
+            'ଜୟପତାକା ସ୍ୱାମୀ',
+            'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ'
+        ],
+        vocalist: 'Vaishnavas',
+        audioUrl: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Yadi%20Prabhupada%20Na%20Hoito%20(feat.%20Vanita%20Siddharth).mp3',
+        audioVersions: [
+            {
+                label: 'Vaishnavas (feat. Vanita Siddharth)',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Yadi%20Prabhupada%20Na%20Hoito%20(feat.%20Vanita%20Siddharth).mp3'
+            },
+            {
+                label: 'Vaishnavas (01)',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Yadi%20Prabhupad%20Na%20Hote%20_%20Srila%20Prabhupada%20Disappearance%20Day%20Offering%20(Hindi%20Bhajan)%20_%20IBC%20Media.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
