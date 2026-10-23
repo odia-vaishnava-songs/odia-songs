@@ -27956,6 +27956,53 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-vandekrsnanandakumara',
+        title: 'ବନ୍ଦେ କୃଷ୍ଣ ନନ୍ଦ-କୁମାର (Vande Krsna Nanda Kumara)',
+        title_odia: 'ବନ୍ଦେ କୃଷ୍ଣ ନନ୍ଦ-କୁମାର (ଗୋବିନ୍ଦ ହରି ଗୋପାଳ ହରି)',
+        title_english: 'Vande Krsna Nanda Kumara (Govinda Hari Gopala Hari)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ନନ୍ଦନନ୍ଦନ ଶ୍ରୀକୃଷ୍ଣ, ମଦନଗୋପାଳ ଏବଂ ଶଚୀନନ୍ଦନ ଗୌରହରିଙ୍କ ପରମ ଦିବ୍ୟ ନାମସଂକୀର୍ତ୍ତନ ଓ ବନ୍ଦନାମୟ ପ୍ରସିଦ୍ଧ ପାରମ୍ପରିକ ବୈଷ୍ଣବ କୀର୍ତ୍ତନ ।',
+        structuredContent: (Songs as any).SONG_VANDEKRSNANANDAKUMARA_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Traditional',
+            'Vande Krsna Nanda Kumara',
+            'Govinda Hari Gopala Hari',
+            'Madana Gopala',
+            'Gaura Hari',
+            'ପାରମ୍ପରିକ',
+            'ବନ୍ଦେ କୃଷ୍ଣ ନନ୍ଦ-କୁମାର'
+        ],
+        vocalist: 'HG Vaiyasaki Prabhu',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vande_Krsna_Nanda_Kumara/Vande_Krsna_Nanda_Kumara_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'HG Vaiyasaki Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vande_Krsna_Nanda_Kumara/Vande_Krsna_Nanda_Kumara_-_Sung_by_HG_Vaiyasaki_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HH Radhanath Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vande_Krsna_Nanda_Kumara/Vande_Krsna_Nanda_Kumara_-_Sung_by_HH_Radhanath_Swami_IDT.mp3.mp3'
+            },
+            {
+                label: 'HH Vedavyasa Priya Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vande_Krsna_Nanda_Kumara/Vande_Krsna_Nanda_Kumara_-_Sung_by_HH_Vedavyasa_Priya_Swami_IDT.mp3.mp3'
+            },
+            {
+                label: 'HG Amarendra Prabhu',
+                url: 'https://pub-e5330c78ced14d50b34c4b05df016674.r2.dev/uploads/Vande%20Krishna%20Nanda%20Kumara%20Kirtan%20_%20Bali%20June%202017%20_%20Amarendra%20Da%CC%84sa.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://pub-70c3993609294898b53b2d3de11bb484.r2.dev/uploads/58%20Bande%20Krishna%20Nanda%20Kumara%20P-111.MP3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
