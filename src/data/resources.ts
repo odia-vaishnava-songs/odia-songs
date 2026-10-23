@@ -27771,6 +27771,47 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-svabhaktiyogalasinam',
+        title: 'ସ୍ୱ ଭକ୍ତି ଯୋଗ ଲାସିନଂ - ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍ (Sva Bhakti Yoga Lasinam - Sri Gadadharastakam)',
+        title_odia: 'ସ୍ୱ ଭକ୍ତି ଯୋଗ ଲାସିନଂ (ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍)',
+        title_english: 'Sva Bhakti Yoga Lasinam (Sri Gadadharastakam)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଲ ସ୍ୱରୂପ ଦାମୋଦର ଗୋସ୍ୱାମୀଙ୍କ ଦ୍ୱାରା ବିରଚିତ ଶ୍ରୀମନ୍ ମହାପ୍ରଭୁଙ୍କ ପରମ ପ୍ରିୟ ପାର୍ଷଦ ଶ୍ରୀ ଗଦାଧର ପଣ୍ଡିତ ଗୋସ୍ୱାମୀଙ୍କ ଅଲୌକିକ ମହିମାମୟ ପରମ ଦିବ୍ୟ ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍ ।',
+        structuredContent: (Songs as any).SONG_SVABHAKTIYOGALASINAM_STRUCTURED,
+        author: 'Svarupa Damodara Goswami',
+        tags: [
+            'Svarupa Damodara Goswami',
+            'Gadadharastakam',
+            'Sva Bhakti Yoga Lasinam',
+            'Gadadhara Pandita',
+            'Stotram',
+            'ସ୍ୱରୂପ ଦାମୋଦର ଗୋସ୍ୱାମୀ',
+            'ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍',
+            'ସ୍ୱ ଭକ୍ତି ଯୋଗ ଲାସିନଂ',
+            'ଗଦାଧର ପଣ୍ଡିତ'
+        ],
+        vocalist: 'HG Yasoda Kumara Prabhu',
+        audioUrl: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri%20Gadadhara%20Ashtakam%20Srila%20Svarupa%20Damodara%20Gosvami%20Gadadhar%20pandit.mp3',
+        audioVersions: [
+            {
+                label: 'HG Yasoda Kumara Prabhu',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri%20Gadadhara%20Ashtakam%20Srila%20Svarupa%20Damodara%20Gosvami%20Gadadhar%20pandit.mp3'
+            },
+            {
+                label: 'Vaishnavas (01)',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/S%CC%81ri%CC%84%20Gada%CC%84dhara%CC%84s%CC%A3t%CC%A3akam%CC%87%20Svaru%CC%84pa%20Da%CC%84modara%20Gosva%CC%84mi%CC%84%20sung%20by%20Kr%CC%A3s%CC%A3n%CC%A3a%20Candra%20Prabhu%20friends.mp3'
+            },
+            {
+                label: 'Vaishnavas (02)',
+                url: 'https://pub-f9b96835f83a46c1b90f545dabc7d596.r2.dev/uploads/Sri%20Gadadharashtakam.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 

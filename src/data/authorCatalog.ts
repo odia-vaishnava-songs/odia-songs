@@ -581,6 +581,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-sulabhobhakti', title_english: 'Sulabho Bhakti Yuktanam (Sri Narasimha Stuti)', title_odia: 'ସୁଲଭୋ ଭକ୍ତି ଯୁକ୍ତାନାଂ (ଶ୍ରୀ ନୃସିଂହ ସ୍ତୁତି)' }
         ]
+    },
+    {
+        name: 'Svarupa Damodara Goswami',
+        odia: 'ସ୍ୱରୂପ ଦାମୋଦର ଗୋସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-svabhaktiyogalasinam', title_english: 'Sva Bhakti Yoga Lasinam (Sri Gadadharastakam)', title_odia: 'ସ୍ୱ ଭକ୍ତି ଯୋଗ ଲାସିନଂ (ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍)' }
+        ]
     }
 ];
 
