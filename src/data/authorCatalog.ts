@@ -590,6 +590,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-svabhaktiyogalasinam', title_english: 'Sva Bhakti Yoga Lasinam (Sri Gadadharastakam)', title_odia: 'ସ୍ୱ ଭକ୍ତି ଯୋଗ ଲାସିନଂ (ଶ୍ରୀ ଗଦାଧରାଷ୍ଟକମ୍)' }
         ]
+    },
+    {
+        name: 'Sarvabhauma Bhattacharya',
+        odia: 'ସାର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟ',
+        catalog: [
+            { id: 'song-ujjvalavarana', title_english: 'Ujjvala Varana (Sri Sacitanayastakam)', title_odia: 'ଉଜ୍ଜ୍ୱଳ-ବରଣ (ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍)' }
+        ]
     }
 ];
 

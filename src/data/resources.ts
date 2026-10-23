@@ -27886,6 +27886,46 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-ujjvalavarana',
+        title: 'ଉଜ୍ଜ୍ୱଳ-ବରଣ - ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍ (Ujjvala Varana - Sri Sacitanayastakam)',
+        title_odia: 'ଉଜ୍ଜ୍ୱଳ-ବରଣ (ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍)',
+        title_english: 'Ujjvala Varana (Sri Sacitanayastakam)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ପରମ ପଣ୍ଡିତ ଶ୍ରୀ ସାର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟଙ୍କ ଦ୍ୱାରା ବିରଚିତ ଶ୍ରୀମନ୍ ମହାପ୍ରଭୁ ଶ୍ରୀଚୈତନ୍ୟଦେବଙ୍କ ଅଲୌକିକ ରୂପମାଧୁରୀ ଓ ପ୍ରେମାବେଶର ଦିବ୍ୟ ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍ ।',
+        structuredContent: (Songs as any).SONG_UJJVALAVARANA_STRUCTURED,
+        author: 'Sarvabhauma Bhattacharya',
+        tags: [
+            'Sarvabhauma Bhattacharya',
+            'Sacitanayastakam',
+            'Ujjvala Varana',
+            'Chaitanya Mahaprabhu',
+            'Stotram',
+            'ସାର୍ବଭୌମ ଭଟ୍ଟାଚାର୍ଯ୍ୟ',
+            'ଶ୍ରୀ ଶଚୀତନୟାଷ୍ଟକମ୍',
+            'ଉଜ୍ଜ୍ୱଳ-ବରଣ'
+        ],
+        vocalist: 'HH Bhakti Caru Swami',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Sarvabhaum_Bhattacharya/Ujjavala_Varana/Ujjavala_Varana_-_Sung_by_HH_Bhakti_Caru_Swami_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'HH Bhakti Caru Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Sarvabhaum_Bhattacharya/Ujjavala_Varana/Ujjavala_Varana_-_Sung_by_HH_Bhakti_Caru_Swami_IDT.mp3'
+            },
+            {
+                label: 'HG Jai Sachinandana Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Sarvabhaum_Bhattacharya/Ujjavala_Varana/Ujjavala_Varana_-_Sung_by_HG_Jai_Sachinanadana_Prabhu_IDT.mp3'
+            },
+            {
+                label: 'HG Vaisesika Prabhu',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_Sarvabhaum_Bhattacharya/Ujjavala_Varana/Ujjavala_Varana_-_Sung_by_HG_Vaisesika_Prabhu_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
