@@ -531,7 +531,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         name: 'Radha Mohana Dasa',
         odia: 'ରାଧାମୋହନ ଦାସ',
         catalog: [
-            { id: 'song-sakhekalayagauramudaram', title_english: 'Sakhe Kalaya Gauram Udaram', title_odia: 'ସଖେ କଳୟ ଗୌରମ୍ ଉଦାରମ୍' }
+            { id: 'song-sakhekalayagauramudaram', title_english: 'Sakhe Kalaya Gauram Udaram', title_odia: 'ସଖେ କଳୟ ଗୌରମ୍ ଉଦାରମ୍' },
+            { id: 'song-vandevisvambharapada', title_english: 'Vande Visvambhara Pada Kamalam', title_odia: 'ବନ୍ଦେ ବିଶ୍ୱମ୍ଭର-ପଦ-କମଳଂ' }
         ]
     },
     {

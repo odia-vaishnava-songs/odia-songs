@@ -28003,6 +28003,37 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-vandevisvambharapada',
+        title: 'ବନ୍ଦେ ବିଶ୍ୱମ୍ଭର-ପଦ-କମଳଂ (Vande Visvambhara Pada Kamalam)',
+        title_odia: 'ବନ୍ଦେ ବିଶ୍ୱମ୍ଭର-ପଦ-କମଳଂ',
+        title_english: 'Vande Visvambhara Pada Kamalam',
+        category: 'Songs',
+        type: 'html',
+        description: 'କବି ରାଧାମୋହନ ଦାସଙ୍କ ଦ୍ୱାରା ବିରଚିତ ଶ୍ରୀମନ୍ ମହାପ୍ରଭୁ ଶ୍ରୀବିଶ୍ୱମ୍ଭରଙ୍କ ଦିବ୍ୟ ଚରଣକମଳର ଅଲୌକିକ ମହିମା ଓ କୃପାମୟୀ ବନ୍ଦନା ।',
+        structuredContent: (Songs as any).SONG_VANDEVISVAMBHARAPADA_STRUCTURED,
+        author: 'Radha Mohana Dasa',
+        tags: [
+            'Radha Mohana Dasa',
+            'Vande Visvambhara',
+            'Visvambhara',
+            'Chaitanya Mahaprabhu',
+            'Stotram',
+            'ରାଧାମୋହନ ଦାସ',
+            'ବନ୍ଦେ ବିଶ୍ୱମ୍ଭର'
+        ],
+        vocalist: 'HG Amarendra Prabhu',
+        audioUrl: 'https://pub-e5330c78ced14d50b34c4b05df016674.r2.dev/uploads/Eka%CC%84das%CC%81i%CC%84%20Bhajans%20_%20ISKCON%20Atlanta%20_%20Amarendra%20Da%CC%84sa%20(3).mp3',
+        audioVersions: [
+            {
+                label: 'HG Amarendra Prabhu',
+                url: 'https://pub-e5330c78ced14d50b34c4b05df016674.r2.dev/uploads/Eka%CC%84das%CC%81i%CC%84%20Bhajans%20_%20ISKCON%20Atlanta%20_%20Amarendra%20Da%CC%84sa%20(3).mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
