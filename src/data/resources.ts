@@ -27812,6 +27812,45 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-tatalasaikate',
+        title: 'ତାତଲ ସୈକତେ - କହେ ବିଷୟ ମନ (Tatala Saikate - Kahe Visaya Mana)',
+        title_odia: 'ତାତଲ ସୈକତେ (କହେ ବିଷୟ ମନ)',
+        title_english: 'Tatala Saikate (Kahe Visaya Mana)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ମହାକବି ବିଦ୍ୟାପତିଙ୍କ ଦ୍ୱାରା ବିରଚିତ ପରମ ବୈରାଗ୍ୟମୟ ପ୍ରସିଦ୍ଧ ଭଜନ । ସାଂସାରିକ ସୁଖର କ୍ଷଣଭଙ୍ଗୁରତା ଏବଂ ପ୍ରଭୁ ଶ୍ରୀମାଧବଙ୍କ ଶ୍ରୀଚରଣକମଳରେ ଏକାନ୍ତ ଆତ୍ମସମର୍ପଣର ମହିମା ଏହି ଗୀତରେ ବର୍ଣ୍ଣିତ ।',
+        structuredContent: (Songs as any).SONG_TATALASAIKATE_STRUCTURED,
+        author: 'Vidyapati',
+        tags: [
+            'Vidyapati',
+            'Tatala Saikate',
+            'Kahe Visaya Mana',
+            'Srila Prabhupada',
+            'ବିଦ୍ୟାପତି',
+            'ତାତଲ ସୈକତେ',
+            'କହେ ବିଷୟ ମନ'
+        ],
+        vocalist: 'Srila Prabhupada',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Tatala_Saikate/Tatala_Saikate_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3.mp3',
+        audioVersions: [
+            {
+                label: 'Srila Prabhupada',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Tatala_Saikate/Tatala_Saikate_-_Sung_by_A_C_Bhaktivedanta_Swami_Prabhupada_IDT.mp3.mp3'
+            },
+            {
+                label: 'HH Bhakti Caru Swami',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Tatala_Saikate/Tatala_Saikate_01_-_Sung_by_HH_Bhakti_Caru_Swami_IDT.mp3'
+            },
+            {
+                label: 'HH Bhakti Prema Swami',
+                url: 'https://audio.iskcondesiretree.com/02_-_ISKCON_Swamis/ISKCON_Swamis_-_A_to_C/His_Holiness_Bhakti_Prema_Swami/Bhajans/BPremaSw_Bhajans_-_Tatala_Saikate.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
