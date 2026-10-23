@@ -133,6 +133,9 @@ export const SongsPage: React.FC = () => {
     const [authorStats, setAuthorStats] = useState<{ author: string; count: number; total: number }[]>([]);
     const [isAuthorPanelOpen, setIsAuthorPanelOpen] = useState(false);
     const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
+    const [isSingerPanelOpen, setIsSingerPanelOpen] = useState(false);
+    const [isListsPanelOpen, setIsListsPanelOpen] = useState(false);
+    const [singerSearch, setSingerSearch] = useState('');
     const [isSpinWheelOpen, setIsSpinWheelOpen] = useState(false);
     const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'songs' | 'gita' | 'authors'>('songs');
@@ -598,6 +601,47 @@ export const SongsPage: React.FC = () => {
 
     // songsOnly removed since we use songResources everywhere.
 
+    const singerStats = useMemo(() => {
+        const counts: Record<string, number> = {};
+        songResources.forEach(s => {
+            if (s.vocalist) {
+                const parts = s.vocalist.split(/\s*[\/,]\s*/);
+                parts.forEach(p => {
+                    const cleaned = p.trim();
+                    if (cleaned && cleaned.length > 2) {
+                        counts[cleaned] = (counts[cleaned] || 0) + 1;
+                    }
+                });
+            }
+            if (s.audioVersions && Array.isArray(s.audioVersions)) {
+                s.audioVersions.forEach(av => {
+                    if (av.label) {
+                        const cleaned = av.label.replace(/\s*\(\d+\)$/, '').trim();
+                        if (cleaned && cleaned.length > 2 && !counts[cleaned]) {
+                            counts[cleaned] = (counts[cleaned] || 0) + 1;
+                        }
+                    }
+                });
+            }
+        });
+
+        return Object.entries(counts)
+            .map(([singer, count]) => ({ singer, count }))
+            .sort((a, b) => b.count - a.count);
+    }, [songResources]);
+
+    const VAISHNAVA_LISTS = [
+        { id: 'saranagati', odia: 'ଶରଣାଗତି', eng: 'Saranagati', author: 'Bhaktivinoda Thakura', query: 'Saranagati', color: '#16a34a' },
+        { id: 'gitavali', odia: 'ଗୀତାବଳୀ', eng: 'Gitavali', author: 'Bhaktivinoda Thakura', query: 'Gitavali', color: '#0284c7' },
+        { id: 'kalyana', odia: 'କଲ୍ୟାଣ କଲ୍ପତରୁ', eng: 'Kalyana Kalpataru', author: 'Bhaktivinoda Thakura', query: 'Kalyana Kalpataru', color: '#7c3aed' },
+        { id: 'gitamala', odia: 'ଗୀତମାଳା', eng: 'Gitamala', author: 'Bhaktivinoda Thakura', query: 'Gitamala', color: '#ea580c' },
+        { id: 'prarthana', odia: 'ପ୍ରାର୍ଥନା', eng: 'Prarthana', author: 'Narottama Dasa Thakura', query: 'Prarthana', color: '#dc2626' },
+        { id: 'premabhakti', odia: 'ପ୍ରେମଭକ୍ତି ଚନ୍ଦ୍ରିକା', eng: 'Prema Bhakti Candrika', author: 'Narottama Dasa Thakura', query: 'Prema Bhakti Candrika', color: '#d97706' },
+        { id: 'temple-daily', odia: 'ମନ୍ଦିର ନିତ୍ୟ ଆରତି', eng: 'Temple Arati & Kirtan', author: 'Traditional', query: 'Temple', color: '#e11d48' },
+        { id: 'ashtakams', odia: 'ଅଷ୍ଟକମ୍ ଓ ସ୍ତୋତ୍ରାବଳୀ', eng: 'Ashtakams & Stotras', author: 'Various Acaryas', query: 'Astakam', color: '#0891b2' },
+        { id: 'pranama', odia: 'ପ୍ରଣାମ ମନ୍ତ୍ରାବଳୀ', eng: 'Pranama Mantras', author: 'Various Acaryas', query: 'Pranama', color: '#4f46e5' }
+    ];
+
     const gitaChapters = useMemo(() => {
         return songResources
             .filter(s => {
@@ -625,15 +669,43 @@ export const SongsPage: React.FC = () => {
             return activeTab === 'gita' ? [] : pool;
         }
 
+        // 1. History filter (shows recently played/viewed songs)
+        if (searchQuery === 'Recent') {
+            const recents = songResources.filter(s => recentIds.includes(s.id));
+            return recents.length > 0 ? recents : songResources.slice(0, 10);
+        }
+
+        const isTempleFilter = query === 'temple';
+        const isPranamaFilter = query === 'pranama';
+        const isAstakamFilter = query === 'astakam' || query === 'ashtakam';
+
         const tokens = searchQuery.trim().split(/\s+/).filter(t => t.length > 1);
 
         return pool.filter(s => {
+            if (isTempleFilter) {
+                return s.tags?.some(tag => /temple|arati/i.test(tag || '')) ||
+                    /arati|kirtan|temple/i.test(s.title_english || '') ||
+                    /ଆରତି|ମନ୍ଦିର/i.test(s.title_odia || '');
+            }
+            if (isPranamaFilter) {
+                return s.tags?.some(tag => /pranama|mantra/i.test(tag || '')) ||
+                    /pranama|mantra/i.test(s.title_english || '') ||
+                    /ପ୍ରଣାମ|ମନ୍ତ୍ର/i.test(s.title_odia || '');
+            }
+            if (isAstakamFilter) {
+                return s.tags?.some(tag => /as[h]?takam|stotra/i.test(tag || '')) ||
+                    /as[h]?takam|stotra/i.test(s.title_english || '') ||
+                    /ଅଷ୍ଟକ|ସ୍ତୋତ୍ର/i.test(s.title_odia || '');
+            }
+
             const normTitleOdia = normalizeForSearch(s.title_odia || s.title || '');
             const normTitleEng = normalizeForSearch(s.title_english || '');
             const normAuthor = normalizeForSearch(s.author || '');
             const normDesc = normalizeForSearch(s.description || '');
+            const inVocalist = normalizeForSearch(s.vocalist || '').includes(query) ||
+                s.audioVersions?.some(av => normalizeForSearch(av.label || '').includes(query));
 
-            // 1. Direct match on whole query
+            // Direct match on whole query
             const inTitle = normTitleOdia.includes(query) || normTitleEng.includes(query);
             const inAuthor = normAuthor.includes(query);
             const inDescription = normDesc.includes(query);
@@ -644,16 +716,16 @@ export const SongsPage: React.FC = () => {
                 normalizeForSearch(v.lyric || '').includes(query) || normalizeForSearch(v.translation || '').includes(query)
             );
 
-            if (inTitle || inAuthor || inDescription || inLyrics || inTags) return true;
+            if (inTitle || inAuthor || inDescription || inLyrics || inTags || inVocalist) return true;
 
-            // 2. Aggressive (vowel-neutral) match for queries with at least 3 consonants
+            // Aggressive (vowel-neutral) match for queries with at least 3 consonants
             if (queryAgg.length >= 3) {
                 const inTitleAgg = normalizeForSearch(s.title_english || '', true).includes(queryAgg);
                 const inTagsAgg = s.tags?.some(tag => normalizeForSearch(tag || '', true).includes(queryAgg));
                 if (inTitleAgg || inTagsAgg) return true;
             }
 
-            // 3. Multi-word / Token matching (every word in search query matches title, tags, or author)
+            // Multi-word / Token matching
             if (tokens.length > 1) {
                 const allTokensMatch = tokens.every(token => {
                     const tNorm = normalizeForSearch(token);
@@ -663,14 +735,15 @@ export const SongsPage: React.FC = () => {
                     const matchTags = s.tags?.some(tag => normalizeForSearch(tag || '').includes(tNorm) ||
                         (tAgg.length >= 3 && normalizeForSearch(tag || '', true).includes(tAgg)));
                     const matchAuthor = normAuthor.includes(tNorm);
-                    return matchTitle || matchTags || matchAuthor;
+                    const matchVocalist = inVocalist;
+                    return matchTitle || matchTags || matchAuthor || matchVocalist;
                 });
                 if (allTokensMatch) return true;
             }
 
             return false;
         });
-    }, [songResources, gitaChapters, activeTab, searchQuery]);
+    }, [songResources, gitaChapters, activeTab, searchQuery, recentIds]);
 
     // Alphabet navigation logic removed unused array
     const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -1086,111 +1159,39 @@ export const SongsPage: React.FC = () => {
                     flexWrap: 'wrap',
                     padding: '10px 5px 20px',
                 }}>
-                    {/* CARD 1: TEMPLE SONGS */}
+                    {/* CARD 1: ALPHABETICAL */}
                     <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
-                            setSearchQuery('Temple');
+                            setSearchQuery('');
+                            setSelectedAuthor(null);
                         }}
                         style={{
-                            background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
+                            background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)',
                         }}
                     >
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#ff7e0015',
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#0284c718',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
-                            <div style={{ color: '#ff7e00' }}>
-                                <TempleIcons.TempleShikhara size={36} />
+                            <div style={{ color: '#0284c7' }}>
+                                <BookA size={30} />
                             </div>
                         </div>
                         <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ମନ୍ଦିର ଗୀତ</div>
-                            <div style={engTitleStyle}>Temple Songs</div>
-                        </div>
-                        <div style={{
-                            position: 'absolute',
-                            top: '8px',
-                            right: '8px',
-                            background: '#ef4444',
-                            color: '#fff',
-                            fontSize: '0.5rem',
-                            fontWeight: 900,
-                            padding: '2px 6px',
-                            borderRadius: '4px'
-                        }}>NEW</div>
-                    </div>
-
-                    {/* CARD 2: PRANAMA MANTRAS */}
-                    <div
-                        className="category-card"
-                        onClick={() => {
-                            setActiveTab('songs');
-                            setSearchQuery('Pranama');
-                        }}
-                        style={{
-                            background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-                        }}
-                    >
-                        <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#0084ff15',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexShrink: 0
-                        }}>
-                            <div style={{ color: '#0084ff' }}>
-                                <TempleIcons.NamasteIcon size={36} />
-                            </div>
-                        </div>
-                        <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
-                            <div style={engTitleStyle}>Pranama Mantras</div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ବର୍ଣ୍ଣମାଳା ଅନୁସାରେ</div>
+                            <div style={engTitleStyle}>Alphabetical</div>
                         </div>
                     </div>
 
-                    {/* CARD 3: ASTAKAM (New) */}
-                    <div
-                        className="category-card"
-                        onClick={() => {
-                            setActiveTab('songs');
-                            setSearchQuery('Astakam');
-                        }}
-                        style={{
-                            background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
-                        }}
-                    >
-                        <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#e11d4815',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexShrink: 0
-                        }}>
-                            <div style={{ color: '#e11d48' }}>
-                                <TempleIcons.SacredLotus size={36} />
-                            </div>
-                        </div>
-                        <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଅଷ୍ଟକମ୍</div>
-                            <div style={engTitleStyle}>Astakam</div>
-                        </div>
-                    </div>
-
-                    {/* CARD 3: SEARCH BY AUTHOR */}
+                    {/* CARD 2: AUTHORS */}
                     <div
                         className="category-card"
                         onClick={() => {
@@ -1202,117 +1203,230 @@ export const SongsPage: React.FC = () => {
                         }}
                     >
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#16a34a15',
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#16a34a18',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
                             <div style={{ color: '#16a34a' }}>
-                                <Users size={36} />
+                                <Users size={30} />
                             </div>
                         </div>
                         <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଲେଖକ ଅନୁସାରେ</div>
-                            <div style={engTitleStyle}>By Author</div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ଲେଖକ ଅନୁସାରେ</div>
+                            <div style={engTitleStyle}>Authors</div>
                         </div>
                     </div>
 
-                    {/* CARD 4: ALL SONGS */}
+                    {/* CARD 3: TEMPLE SONGS */}
                     <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
-                            setSearchQuery('');
+                            setSearchQuery('Temple');
                         }}
                         style={{
-                            background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+                            background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
                         }}
                     >
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#8b5cf615',
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#ea580c18',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
-                            <div style={{ color: '#8b5cf6' }}>
-                                <TempleIcons.LotusIcon size={36} />
+                            <div style={{ color: '#ea580c' }}>
+                                <TempleIcons.TempleShikhara size={34} />
                             </div>
                         </div>
                         <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ସମସ୍ତ ଗୀତ</div>
-                            <div style={engTitleStyle}>All Songs</div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ମନ୍ଦିର ଗୀତ</div>
+                            <div style={engTitleStyle}>Temple Songs</div>
                         </div>
                     </div>
 
-                    {/* CARD 5: RECENTLY VIEWED (On new row if 4 cards per row) */}
+                    {/* CARD 4: PRANAMA MANTRAS */}
                     <div
                         className="category-card"
                         onClick={() => {
                             setActiveTab('songs');
-                            // Maybe set a query for recent? Or just scroll to a section
-                            setSearchQuery('Recent');
+                            setSearchQuery('Pranama');
+                        }}
+                        style={{
+                            background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+                        }}
+                    >
+                        <div style={{
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#0284c718',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#0284c7' }}>
+                                <TempleIcons.NamasteIcon size={34} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ପ୍ରଣାମ ମନ୍ତ୍ର</div>
+                            <div style={engTitleStyle}>Pranama Mantras</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 5: ASHTAKAMS */}
+                    <div
+                        className="category-card"
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery('Astakam');
                         }}
                         style={{
                             background: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
                         }}
                     >
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: '#fb718515',
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#e11d4818',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             flexShrink: 0
                         }}>
-                            <div style={{ color: '#fb7185' }}>
-                                <Sparkles size={36} />
+                            <div style={{ color: '#e11d48' }}>
+                                <TempleIcons.SacredLotus size={34} />
                             </div>
                         </div>
                         <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem' }}>ଏବେ ପଢ଼ାହୋଇଛି</div>
-                            <div style={engTitleStyle}>Recently Viewed</div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ଅଷ୍ଟକମ୍</div>
+                            <div style={engTitleStyle}>Ashtakams</div>
                         </div>
                     </div>
 
-                    {/* CARD 6: SPIN TO WIN WHEEL */}
+                    {/* CARD 6: LISTS */}
                     <div
                         className="category-card"
-                        onClick={() => setIsSpinWheelOpen(true)}
+                        onClick={() => setIsListsPanelOpen(true)}
                         style={{
-                            background: 'linear-gradient(135deg, #FFFDE7 0%, #FFF8E1 100%)',
-                            border: '1.5px solid #FFD54F',
-                            boxShadow: '0 4px 15px rgba(255, 193, 7, 0.25)',
-                            cursor: 'pointer'
+                            background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
                         }}
                     >
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            borderRadius: '12px',
-                            background: 'linear-gradient(135deg, #FFD54F 0%, #FF8F00 100%)',
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#9333ea18',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            flexShrink: 0,
-                            boxShadow: '0 2px 8px rgba(255, 143, 0, 0.35)'
+                            flexShrink: 0
                         }}>
-                            <div style={{ color: '#4A148C' }}>
-                                <TempleIcons.BlessingChakra size={32} color="#4A148C" />
+                            <div style={{ color: '#9333ea' }}>
+                                <List size={30} />
                             </div>
                         </div>
                         <div>
-                            <div style={{ ...titleStyle, fontSize: '1rem', color: '#B45309' }}>ଆଶୀର୍ବାଦ ଚକ୍ର</div>
-                            <div style={{ ...engTitleStyle, color: '#D97706', fontWeight: 700 }}>Acharya Blessing Wheel 🪷</div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ତାଲିକା</div>
+                            <div style={engTitleStyle}>Lists</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 7: SINGERS */}
+                    <div
+                        className="category-card"
+                        onClick={() => setIsSingerPanelOpen(true)}
+                        style={{
+                            background: 'linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)',
+                        }}
+                    >
+                        <div style={{
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#0d948818',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#0d9488' }}>
+                                <Mic size={30} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ଗାୟକ / କଣ୍ଠଶିଳ୍ପୀ</div>
+                            <div style={engTitleStyle}>Singers</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 8: HISTORY */}
+                    <div
+                        className="category-card"
+                        onClick={() => {
+                            setActiveTab('songs');
+                            setSearchQuery('Recent');
+                        }}
+                        style={{
+                            background: 'linear-gradient(135deg, #fefce8 0%, #fef08a 100%)',
+                        }}
+                    >
+                        <div style={{
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#ca8a0418',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#ca8a04' }}>
+                                <History size={30} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ଶ୍ରବଣ ଇତିହାସ</div>
+                            <div style={engTitleStyle}>History</div>
+                        </div>
+                    </div>
+
+                    {/* CARD 9: SETTINGS */}
+                    <div
+                        className="category-card"
+                        onClick={() => setIsSettingsPanelOpen(true)}
+                        style={{
+                            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+                        }}
+                    >
+                        <div style={{
+                            width: '48px',
+                            height: '48px',
+                            borderRadius: '14px',
+                            background: '#47556918',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0
+                        }}>
+                            <div style={{ color: '#475569' }}>
+                                <Settings size={30} />
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ସେଟିଂସ୍</div>
+                            <div style={engTitleStyle}>Settings</div>
                         </div>
                     </div>
                 </div>
@@ -2620,26 +2734,47 @@ export const SongsPage: React.FC = () => {
                 }
 
                 .category-card {
-                    padding: 1rem 1.25rem;
-                    border-radius: 20px;
+                    padding: 0.9rem 1.15rem;
+                    border-radius: 18px;
                     display: flex;
-                    alignItems: center;
-                    gap: 16px;
-                    minWidth: '220px';
-                    width: 220px;
-                    height: 100px;
+                    align-items: center;
+                    gap: 14px;
+                    min-width: 190px;
+                    flex: 1 1 calc(33.333% - 16px);
+                    max-width: calc(33.333% - 11px);
+                    height: 90px;
                     cursor: pointer;
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+                    transition: all 0.25s ease;
                     position: relative;
                     overflow: hidden;
-                    border: 1px solid #f1f5f9;
+                    border: 1px solid rgba(241, 245, 249, 0.9);
                     flex-shrink: 0;
+                    box-sizing: border-box;
+                }
+
+                @media (max-width: 820px) {
+                    .category-card {
+                        flex: 1 1 calc(50% - 12px);
+                        max-width: calc(50% - 8px);
+                        min-width: 140px;
+                        padding: 0.8rem 1rem;
+                        gap: 12px;
+                        height: 84px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .category-card {
+                        flex: 1 1 100%;
+                        max-width: 100%;
+                        height: 78px;
+                    }
                 }
 
                 .category-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
                 }
             `}</style>
             <header style={{
@@ -3863,6 +3998,273 @@ export const SongsPage: React.FC = () => {
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </>
+            )}
+
+            {/* ===== SINGERS EXPLORER PANEL ===== */}
+            {isSingerPanelOpen && (
+                <>
+                    <div
+                        onClick={() => {
+                            setIsSingerPanelOpen(false);
+                            popBackHandler('singer-panel');
+                        }}
+                        style={{
+                            position: 'fixed', inset: 0,
+                            background: 'rgba(0,0,0,0.35)',
+                            backdropFilter: 'blur(3px)',
+                            zIndex: 2000,
+                            animation: 'fadeIn 0.2s ease'
+                        }}
+                    />
+                    <div style={{
+                        position: 'fixed',
+                        top: 0, right: 0, bottom: 0,
+                        width: 'min(380px, 96vw)',
+                        background: 'white',
+                        zIndex: 2001,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        boxShadow: '-8px 0 40px rgba(0,0,0,0.18)',
+                        animation: 'slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}>
+                        <div style={{
+                            display: 'flex', alignItems: 'center', gap: '12px',
+                            padding: '1.25rem 1.25rem 1rem',
+                            background: 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)',
+                            color: 'white',
+                            flexShrink: 0
+                        }}>
+                            <div style={{
+                                width: '40px', height: '40px', borderRadius: '12px',
+                                background: 'rgba(255,255,255,0.2)', display: 'flex',
+                                alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                            }}>
+                                <Mic size={22} />
+                            </div>
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: '1.1rem', fontWeight: 900, lineHeight: 1.2 }}>Singers Explorer</div>
+                                <div style={{ fontSize: '0.75rem', opacity: 0.85, fontFamily: 'var(--font-odia-sans)' }}>କଣ୍ଠଶିଳ୍ପୀ ଅନୁସାରେ ଖୋଜନ୍ତୁ</div>
+                            </div>
+                            <button
+                                onClick={() => {
+                                    setIsSingerPanelOpen(false);
+                                    popBackHandler('singer-panel');
+                                }}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)', border: 'none',
+                                    color: 'white', width: '34px', height: '34px',
+                                    borderRadius: '10px', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', cursor: 'pointer', flexShrink: 0
+                                }}
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
+
+                        {/* Search Input for Singers */}
+                        <div style={{ padding: '0.75rem 1rem 0.5rem' }}>
+                            <div style={{
+                                display: 'flex', alignItems: 'center',
+                                background: '#f8fafc', borderRadius: '12px',
+                                padding: '0 0.75rem', border: '1px solid #e2e8f0'
+                            }}>
+                                <Search size={16} color="#94a3b8" />
+                                <input
+                                    type="text"
+                                    placeholder="ଗାୟକ ଖୋଜନ୍ତୁ (Search singer)..."
+                                    value={singerSearch}
+                                    onChange={(e) => setSingerSearch(e.target.value)}
+                                    style={{
+                                        width: '100%', padding: '0.65rem 0.5rem',
+                                        background: 'transparent', border: 'none',
+                                        outline: 'none', fontSize: '0.88rem'
+                                    }}
+                                />
+                                {singerSearch && (
+                                    <button onClick={() => setSingerSearch('')} style={{ background: 'transparent', border: 'none', color: '#94a3b8' }}>
+                                        <X size={15} />
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Singers List */}
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '0 1rem 1rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                {singerStats
+                                    .filter(s => !singerSearch || s.singer.toLowerCase().includes(singerSearch.toLowerCase()))
+                                    .map((stat, idx) => (
+                                        <div
+                                            key={idx}
+                                            onClick={() => {
+                                                setSearchQuery(stat.singer);
+                                                setActiveTab('songs');
+                                                setIsSingerPanelOpen(false);
+                                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                                padding: '1rem',
+                                                background: 'white',
+                                                borderRadius: '16px',
+                                                cursor: 'pointer',
+                                                border: '1px solid #f1f5f9',
+                                                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                                                transition: 'all 0.2s ease'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(13, 148, 136, 0.12)';
+                                                e.currentTarget.style.borderColor = '#0d948840';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.03)';
+                                                e.currentTarget.style.borderColor = '#f1f5f9';
+                                            }}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                                <div style={{
+                                                    width: '36px', height: '36px', borderRadius: '10px',
+                                                    background: '#ccfbf1', color: '#0d9488',
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                    fontSize: '0.85rem', fontWeight: 800, flexShrink: 0
+                                                }}>
+                                                    <Mic size={18} />
+                                                </div>
+                                                <div>
+                                                    <div style={{ fontSize: '0.92rem', fontWeight: 800, color: '#1e293b' }}>{stat.singer}</div>
+                                                    <div style={{ fontSize: '0.72rem', color: '#0d9488', fontWeight: 700 }}>
+                                                        {toOdiaNumber(stat.count)} Songs with Audio
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ChevronRight size={16} color="#cbd5e1" />
+                                        </div>
+                                    ))}
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )}
+
+            {/* ===== LISTS / COLLECTIONS PANEL ===== */}
+            {isListsPanelOpen && (
+                <>
+                    <div
+                        onClick={() => {
+                            setIsListsPanelOpen(false);
+                            popBackHandler('lists-panel');
+                        }}
+                        style={{
+                            position: 'fixed', inset: 0,
+                            background: 'rgba(0,0,0,0.35)',
+                            backdropFilter: 'blur(3px)',
+                            zIndex: 2000,
+                            animation: 'fadeIn 0.2s ease'
+                        }}
+                    />
+                    <div style={{
+                        position: 'fixed',
+                        top: 0, right: 0, bottom: 0,
+                        width: 'min(380px, 96vw)',
+                        background: 'white',
+                        zIndex: 2001,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        boxShadow: '-8px 0 40px rgba(0,0,0,0.18)',
+                        animation: 'slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}>
+                        <div style={{
+                            display: 'flex', alignItems: 'center', gap: '12px',
+                            padding: '1.25rem 1.25rem 1rem',
+                            background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
+                            color: 'white',
+                            flexShrink: 0
+                        }}>
+                            <div style={{
+                                width: '40px', height: '40px', borderRadius: '12px',
+                                background: 'rgba(255,255,255,0.2)', display: 'flex',
+                                alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                            }}>
+                                <List size={22} />
+                            </div>
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: '1.1rem', fontWeight: 900, lineHeight: 1.2 }}>Vaishnava Song Lists</div>
+                                <div style={{ fontSize: '0.75rem', opacity: 0.85, fontFamily: 'var(--font-odia-sans)' }}>ବୈଷ୍ଣବ ଭଜନ ସଂଗ୍ରହ ଓ ତାଲିକା</div>
+                            </div>
+                            <button
+                                onClick={() => {
+                                    setIsListsPanelOpen(false);
+                                    popBackHandler('lists-panel');
+                                }}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)', border: 'none',
+                                    color: 'white', width: '34px', height: '34px',
+                                    borderRadius: '10px', display: 'flex', alignItems: 'center',
+                                    justifyContent: 'center', cursor: 'pointer', flexShrink: 0
+                                }}
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
+
+                        {/* Lists Collection */}
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '1rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                {VAISHNAVA_LISTS.map((list) => (
+                                    <div
+                                        key={list.id}
+                                        onClick={() => {
+                                            setSearchQuery(list.query);
+                                            setActiveTab('songs');
+                                            setIsListsPanelOpen(false);
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }}
+                                        style={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                            padding: '1.1rem',
+                                            background: 'white',
+                                            borderRadius: '16px',
+                                            cursor: 'pointer',
+                                            border: '1px solid #f1f5f9',
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                                            transition: 'all 0.2s ease'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = 'translateY(-2px)';
+                                            e.currentTarget.style.boxShadow = `0 6px 18px ${list.color}20`;
+                                            e.currentTarget.style.borderColor = `${list.color}40`;
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                            e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.03)';
+                                            e.currentTarget.style.borderColor = '#f1f5f9';
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <div style={{
+                                                width: '38px', height: '38px', borderRadius: '12px',
+                                                background: `${list.color}15`, color: list.color,
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                flexShrink: 0
+                                            }}>
+                                                <BookOpen size={20} />
+                                            </div>
+                                            <div>
+                                                <div style={{ fontSize: '0.98rem', fontWeight: 900, color: '#1e293b', fontFamily: 'var(--font-odia-sans)' }}>{list.odia}</div>
+                                                <div style={{ fontSize: '0.72rem', color: '#64748b', fontWeight: 700 }}>
+                                                    {list.eng} • {list.author}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ChevronRight size={16} color="#cbd5e1" />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </>
