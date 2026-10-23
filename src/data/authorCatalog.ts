@@ -145,7 +145,7 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-sambandhajaniyayebajivanayuddhakore', title_english: 'Sambandha Janiya Yeba Jivana Yuddha Kore', title_odia: 'ସମ୍ବନ୍ଧ ଜାନିୟା ଯେବା ଜୀବନ ଯୁଦ୍ଧ କରେ' },
             { id: 'song-samudrenaphenayena', title_english: 'Samudrena Phena Yena', title_odia: 'ସମୁଦ୍ରେର ଫେନା ଯେନ' },
             { id: 'song-sisyahoiya', title_english: 'Sisya Hoiya Kore Yei Gitar Sravana', title_odia: 'ଶିଷ୍ୟ ହୋଇୟା କରେ ଯେଇ ଗୀତାର ଶ୍ରବଣ' },
-            { title_english: 'Vrndavana Dhame Ami Boseyachi Eka' }
+            { id: 'song-vrndavanadhameamiboseyachieka', title_english: 'Vrndavana Dhame Ami Boseyachi Eka', title_odia: 'ବୃନ୍ଦାବନ ଧାମେ ଆମି ବସେ’ଆଛି ଏକା' }
         ]
     },
     {

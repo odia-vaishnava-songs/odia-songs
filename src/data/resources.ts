@@ -28034,6 +28034,36 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-vrndavanadhameamiboseyachieka',
+        title: 'ବୃନ୍ଦାବନ ଧାମେ ଆମି ବସେ’ଆଛି ଏକା (Vrndavana Dhame Ami Boseyachi Eka)',
+        title_odia: 'ବୃନ୍ଦାବନ ଧାମେ ଆମି ବସେ’ଆଛି ଏକା (ବୃନ୍ଦାବନେ ଭଜନ)',
+        title_english: 'Vrndavana Dhame Ami Boseyachi Eka (Vrindavane Bhajan)',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀଳ ଏ.ସି. ଭକ୍ତିବେଦାନ୍ତ ସ୍ୱାମୀ ପ୍ରଭୁପାଦଙ୍କ ଦ୍ୱାରା ୧୯୫୮ ମସିହାରେ ପବିତ୍ର ବୃନ୍ଦାବନ ଧାମରେ ବିରଚିତ ପ୍ରସିଦ୍ଧ ଭଜନ (ବୃନ୍ଦାବନେ ଭଜନ, ଅଂଶ ୧) ।',
+        structuredContent: (Songs as any).SONG_VRNDAVANADHAMEAMIBOSEYACHIEKA_STRUCTURED,
+        author: 'Srila Prabhupada',
+        tags: [
+            'Srila Prabhupada',
+            'Prabhupada',
+            'Vrindavane Bhajan',
+            'Vrndavana Dhame Ami Boseyachi Eka',
+            'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ',
+            'ବୃନ୍ଦାବନେ ଭଜନ'
+        ],
+        vocalist: 'HG Ananda Radhe Mataji',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_A_C_Bhaktivedanta_Swami_Prabhupada/Vrindavana_Dhame_Ami_Bose_Achi_Eka/Vrindavana_Dhame_Ami_Bose_Achi_Eka_-_Sung_by_HG_Ananda_Radhe_Mataji_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'HG Ananda Radhe Mataji',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_A_C_Bhaktivedanta_Swami_Prabhupada/Vrindavana_Dhame_Ami_Bose_Achi_Eka/Vrindavana_Dhame_Ami_Bose_Achi_Eka_-_Sung_by_HG_Ananda_Radhe_Mataji_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
