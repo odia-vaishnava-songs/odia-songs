@@ -452,7 +452,8 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
             { id: 'song-srilabhaktivinodapranati', title_english: 'Srila Bhaktivinoda Pranati', title_odia: 'ଶ୍ରୀଳ ଭକ୍ତିବିନୋଦ ପ୍ରଣତି' },
             { id: 'song-srilagaurakisorapranati', title_english: 'Srila Gaurakisora Pranati', title_odia: 'ଶ୍ରୀଳ ଗୌରକିଶୋର ପ୍ରଣତି' },
             { id: 'song-srilajagannathapranati', title_english: 'Srila Jagannatha Pranati', title_odia: 'ଶ୍ରୀଳ ଜଗନ୍ନାଥ ପ୍ରଣତି' },
-            { id: 'song-srilaprabhupadapranati', title_english: 'Srila Prabhupada Pranati', title_odia: 'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି' }
+            { id: 'song-srilaprabhupadapranati', title_english: 'Srila Prabhupada Pranati', title_odia: 'ଶ୍ରୀଳ ପ୍ରଭୁପାଦ ପ୍ରଣତି' },
+            { id: 'song-vamsidharikrsnamurari', title_english: 'Vamsi Dhari Krsna Murari', title_odia: 'ବଂଶୀଧାରୀ କୃଷ୍ଣ ମୁରାରି' }
         ]
     },
     {

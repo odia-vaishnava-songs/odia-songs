@@ -27926,6 +27926,36 @@ export const RESOURCES: Resource[] = [
         published: true,
         verified: true,
         status: 'COMPLETED'
+    },
+    {
+        id: 'song-vamsidharikrsnamurari',
+        title: 'ବଂଶୀଧାରୀ କୃଷ୍ଣ ମୁରାରି (Vamsi Dhari Krsna Murari)',
+        title_odia: 'ବଂଶୀଧାରୀ କୃଷ୍ଣ ମୁରାରି',
+        title_english: 'Vamsi Dhari Krsna Murari',
+        category: 'Songs',
+        type: 'html',
+        description: 'ଶ୍ରୀକୃଷ୍ଣଙ୍କ ଅଭୟ ଚରଣକମଳର ସ୍ମରଣ ଓ ପବିତ୍ର ହରିନାମ ଜପ କରି ତାଙ୍କ ଶ୍ରୀଚରଣରେ ଶରଣାଗତି ପ୍ରାର୍ଥନା କରିବାର ଏକ ପରମ ମଧୁର ପାରମ୍ପରିକ ଭକ୍ତି ରସାମୃତ ଭଜନ ।',
+        structuredContent: (Songs as any).SONG_VAMSIDHARIKRSNAMURARI_STRUCTURED,
+        author: 'Traditional',
+        tags: [
+            'Traditional',
+            'Vamsi Dhari Krsna Murari',
+            'Krsna Murari',
+            'Giridhari',
+            'ପାରମ୍ପରିକ',
+            'ବଂଶୀଧାରୀ କୃଷ୍ଣ ମୁରାରି'
+        ],
+        vocalist: 'Vaishnavas',
+        audioUrl: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vamsi_Dhari_Krsna_Murari/Vamsi_Dhari_Krsna_Murari_-_IDT.mp3',
+        audioVersions: [
+            {
+                label: 'Vaishnavas',
+                url: 'https://audio.iskcondesiretree.com/06_-_More/10_-_Bhajans_and_Kirtans_-_Categories/Bhajans_by_others/Vamsi_Dhari_Krsna_Murari/Vamsi_Dhari_Krsna_Murari_-_IDT.mp3'
+            }
+        ],
+        published: true,
+        verified: true,
+        status: 'COMPLETED'
     }
 ];
 
