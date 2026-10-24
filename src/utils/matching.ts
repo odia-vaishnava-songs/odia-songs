@@ -151,7 +151,20 @@ export function standardizeAuthorName(name: string): string {
     if (n.includes('nilakanta') || n.includes('nilakantha')) return 'Nilakanta Goswami';
     if (n.includes('narahari') || n.includes('sarakara')) return 'Narahari Sarakara';
     if (n.includes('madhva') || n.includes('anandatirtha')) return 'Madhvacharya';
-    // Trigger deployment refresh
-    
+    if (n.includes('candrasekhara') || n.includes('chandrashekhara')) return 'Candrasekhara Kavi';
+    if (n.includes('kusakratha')) return 'Kusakratha Dasa';
+    if (n.includes('kulasekhara')) return 'Kulasekhara Alvar';
+    if (n.includes('vedanta desika')) return 'Vedanta Desika';
+    if (n.includes('shani deva')) return 'Shani Deva';
+    if (n.includes('svarupa damodara')) return 'Svarupa Damodara Goswami';
+    if (n.includes('radha mohana')) return 'Radha Mohana Dasa';
+    if (n.includes('prabodhananda')) return 'Prabodhananda Sarasvati';
+    if (n.includes('bhakti caru')) return 'Bhakti Caru Swami';
+    if (n.includes('jayapataka')) return 'Jayapataka Swami';
+    if (n.includes('vaishnava acaryas') || n.includes('vaishnava')) return 'Vaishnava Acaryas';
+    if (n.includes('unknown') || n === 'other' || n === 'other authors') return 'Other Authors';
+
+    // Preserve new author names dynamically so any future added songs automatically get their own card
+    if (name.trim()) return name.trim();
     return 'Other Authors';
 }
