@@ -5979,10 +5979,12 @@ export const SongsPage: React.FC = () => {
                                                 fontFamily: 'var(--font-odia-sans)',
                                                 lineHeight: '1.7'
                                             }}>
-                                                {lyricText}{' '}
-                                                <span style={{ whiteSpace: 'nowrap' }}>
-                                                    {markerText}
-                                                </span>
+                                                {lyricText}
+                                                {markerText ? (
+                                                    <span style={{ whiteSpace: 'nowrap' }}>
+                                                        {' '}{markerText}
+                                                    </span>
+                                                ) : null}
                                             </div>
                                         );
                                     })()}
@@ -6270,10 +6272,12 @@ export const SongsPage: React.FC = () => {
                                         lineHeight: '1.7',
                                         marginBottom: (verse.translation && verse.translation.trim()) || (viewMode === 'word-to-word' && verse.wordMeanings && verse.wordMeanings.length > 0) ? '1.25rem' : '0'
                                     }}>
-                                        {lyricText}{' '}
-                                        <span style={{ whiteSpace: 'nowrap' }}>
-                                            {markerText}
-                                        </span>
+                                        {lyricText}
+                                        {markerText ? (
+                                            <span style={{ whiteSpace: 'nowrap' }}>
+                                                {' '}{markerText}
+                                            </span>
+                                        ) : null}
                                     </div>
                                 );
                             })()}

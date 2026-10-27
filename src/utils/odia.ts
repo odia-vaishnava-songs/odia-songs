@@ -49,12 +49,24 @@ export const getFormattedVerseDisplay = (lyric: string, verseId: string | number
     }
 
     // If no ending verse marker:
+    const strId = String(verseId).trim().toLowerCase();
+    const cleanId = strId.replace(/[\(\)\[\]\{\}]/g, '').trim();
+    const isGhosa = cleanId === 'ଘୋଷା' || cleanId === 'ghosa' || cleanId === 'refrain' || cleanId === '0';
+    const isPhalasruti = cleanId === 'ଫଳଶ୍ରୁତି' || cleanId === 'phalasruti';
+    const isNumeric = /^[\d୦-୯]+([-\/][\d୦-୯]+)?$/.test(cleanId);
+
+    // If verseId is NOT a number, NOT ghosa, and NOT phalasruti (e.g. named title/mantra like "ତୁଳସୀ ପ୍ରଣାମ" / "ତୁଲସୀ ପ୍ରଣାମ"):
+    // Do not append an artificial verse marker to the end of the lyric (removes B).
+    // Preserve natural trailing punctuation (such as '॥' or '।').
+    if (!isNumeric && !isGhosa && !isPhalasruti) {
+        return {
+            lyricText: trimmed,
+            markerText: ''
+        };
+    }
+
     // Clean any trailing dandas (e.g. "। ।।" or "।।") from the lyric text
     const cleanedText = trimmed.replace(/[\s।॥|]+$/g, '').trimEnd();
-
-    const strId = String(verseId).trim().toLowerCase();
-    const isGhosa = strId === 'ଘୋଷା' || strId === 'ghosa' || strId === 'refrain' || strId === '0';
-    const isPhalasruti = strId === 'ଫଳଶ୍ରୁତି' || strId === 'phalasruti';
     const marker = isGhosa ? '।। ଘୋଷା ।।' : (isPhalasruti ? '।। ଫଳଶ୍ରୁତି ।।' : `।। ${toOdiaNumber(verseId)} ।।`);
 
     return {

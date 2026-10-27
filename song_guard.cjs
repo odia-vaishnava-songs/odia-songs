@@ -68,9 +68,27 @@ function updateSong(varName, newData) {
         return false;
     }
 
-    const content = fs.readFileSync(SONGS_PATH, 'utf8');
-    const marker = `export const ${varName}: StructuredSong = `;
-    const startIndex = content.indexOf(marker);
+    let marker = `export const ${varName}: StructuredSong = `;
+    let startIndex = content.indexOf(marker);
+
+    if (startIndex === -1) {
+        const simplified = varName.toUpperCase().replace(/_/g, '');
+        const matches = content.match(/export\s+const\s+([A-Za-z0-9_]+):\s*StructuredSong\s*=/g);
+        if (matches) {
+            for (const m of matches) {
+                const name = m.replace(/export\s+const\s+/, '').replace(/:\s*StructuredSong\s*=/, '').trim();
+                const simName = name.toUpperCase().replace(/_/g, '');
+                if (simName === simplified || (simName.includes('NAMONOMAH') && simplified.includes('NAMONAMAH'))) {
+                    marker = `export const ${name}: StructuredSong = `;
+                    startIndex = content.indexOf(marker);
+                    if (startIndex !== -1) {
+                        log(`Resolved alias ${varName} -> ${name}`);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
     if (startIndex === -1) {
         log(`Could not find variable ${varName} in songsContent.ts`, 'ERROR');
