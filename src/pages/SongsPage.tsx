@@ -1592,105 +1592,113 @@ export const SongsPage: React.FC = () => {
             };
         }
         switch (activeTab) {
-            case 'songs': // ସମସ୍ତ ସଙ୍ଗୀତ: Vibrant Devotional (Follows active Pancha Tattva Theme)
+            case 'songs': { // ସମସ୍ତ ସଙ୍ଗୀତ: Vibrant Devotional (Follows active Pancha Tattva Theme)
+                const themeLightBgs: Record<string, string> = {
+                    gauranga: '#fff7ed',
+                    nityananda: '#eff6ff',
+                    gadadhara: '#fdf2f8',
+                    srivasa: '#f0fdf4',
+                    advaita: '#0f172a'
+                };
                 return {
                     headerGradient: theme.gradient,
-                    pageBg: '#f8fafc',
+                    pageBg: themeLightBgs[currentThemeKey] || '#f8fafc',
                     primaryColor: theme.color,
                     badgeBg: `${theme.color}15`
                 };
+            }
             case 'gita': // ଭଗବଦ୍ ଗୀତା: Royal Gita Gold & Deep Ochre
                 return {
                     headerGradient: 'linear-gradient(135deg, #b45309 0%, #78350f 100%)',
-                    pageBg: '#fffbeb',
+                    pageBg: '#fef3c7',
                     primaryColor: '#b45309',
-                    badgeBg: '#fef3c7'
+                    badgeBg: '#fde68a'
                 };
             case 'temple': // ମନ୍ଦିର ଗୀତ: Sacred Temple Terracotta & Saffron
                 return {
                     headerGradient: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)',
-                    pageBg: '#fff7ed',
+                    pageBg: '#ffedd5',
                     primaryColor: '#c2410c',
-                    badgeBg: '#ffedd5'
+                    badgeBg: '#fed7aa'
                 };
             case 'badadanda': { // ବଡ଼ଦାଣ୍ଡ: Dynamic color for all 9 distinct sections
                 switch (badadandaSubTab) {
                     case 'all': // 1. All 9 Cards Overview: Grand Road Emerald & Jade
                         return {
                             headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
-                            pageBg: '#f0fdf4',
+                            pageBg: '#e6f7ec',
                             primaryColor: '#064e3b',
-                            badgeBg: '#dcfce7'
+                            badgeBg: '#bbf7d0'
                         };
                     case 'gita': // 2. Bhagavad Gita (18 Ch): Golden Amber & Ochre
                         return {
                             headerGradient: 'linear-gradient(180deg, #78350f 0%, #9a3412 100%)',
-                            pageBg: '#fffbeb',
+                            pageBg: '#fef3c7',
                             primaryColor: '#ea580c',
-                            badgeBg: '#ffedd5'
+                            badgeBg: '#fde68a'
                         };
                     case 'authors': // 3. Authors: Forest Green & Emerald
                         return {
                             headerGradient: 'linear-gradient(180deg, #14532d 0%, #166534 100%)',
-                            pageBg: '#f0fdf4',
+                            pageBg: '#e6f8ec',
                             primaryColor: '#16a34a',
-                            badgeBg: '#dcfce7'
+                            badgeBg: '#bbf7d0'
                         };
                     case 'temple': // 4. Temple Songs: Saffron & Sacred Temple Terracotta
                         return {
                             headerGradient: 'linear-gradient(180deg, #7c2d12 0%, #c2410c 100%)',
-                            pageBg: '#fff7ed',
+                            pageBg: '#ffedd5',
                             primaryColor: '#ea580c',
-                            badgeBg: '#ffedd5'
+                            badgeBg: '#fed7aa'
                         };
                     case 'pranama': // 5. Pranama Mantras: Pure Sky Cyan & Ocean Blue
                         return {
                             headerGradient: 'linear-gradient(180deg, #0369a1 0%, #0284c7 100%)',
-                            pageBg: '#f0f9ff',
+                            pageBg: '#e0f2fe',
                             primaryColor: '#0284c7',
-                            badgeBg: '#e0f2fe'
+                            badgeBg: '#bae6fd'
                         };
                     case 'ashtakams': // 6. Ashtakams: Sacred Rose & Lotus Magenta
                         return {
                             headerGradient: 'linear-gradient(180deg, #881337 0%, #be123c 100%)',
-                            pageBg: '#fff1f2',
+                            pageBg: '#ffe4e6',
                             primaryColor: '#e11d48',
-                            badgeBg: '#ffe4e6'
+                            badgeBg: '#fecdd3'
                         };
                     case 'lists': // 7. Books: Royal Mystic Purple & Violet
                         return {
                             headerGradient: 'linear-gradient(180deg, #581c87 0%, #7e22ce 100%)',
-                            pageBg: '#faf5ff',
+                            pageBg: '#f3e8ff',
                             primaryColor: '#9333ea',
-                            badgeBg: '#f3e8ff'
+                            badgeBg: '#e9d5ff'
                         };
                     case 'singers': // 8. Singers: Oceanic Teal & Deep Mint
                         return {
                             headerGradient: 'linear-gradient(180deg, #134e4a 0%, #0f766e 100%)',
-                            pageBg: '#f0fdfa',
+                            pageBg: '#ccfbf1',
                             primaryColor: '#0d9488',
-                            badgeBg: '#ccfbf1'
+                            badgeBg: '#99f6e4'
                         };
                     case 'history': // 9. History: Warm Sunset Gold & Bronze
                         return {
                             headerGradient: 'linear-gradient(180deg, #713f12 0%, #a16207 100%)',
-                            pageBg: '#fefce8',
+                            pageBg: '#fef9c3',
                             primaryColor: '#ca8a04',
                             badgeBg: '#fef08a'
                         };
                     case 'settings': // Settings: Slate & Indigo
                         return {
                             headerGradient: 'linear-gradient(180deg, #1e293b 0%, #334155 100%)',
-                            pageBg: '#f8fafc',
+                            pageBg: '#e2e8f0',
                             primaryColor: '#475569',
-                            badgeBg: '#f1f5f9'
+                            badgeBg: '#cbd5e1'
                         };
                     default:
                         return {
                             headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
-                            pageBg: '#f0fdf4',
+                            pageBg: '#e6f7ec',
                             primaryColor: '#064e3b',
-                            badgeBg: '#dcfce7'
+                            badgeBg: '#bbf7d0'
                         };
                 }
             }
@@ -1702,7 +1710,7 @@ export const SongsPage: React.FC = () => {
                     badgeBg: `${theme.color}15`
                 };
         }
-    }, [activeTab, badadandaSubTab, isNightMode, theme]);
+    }, [activeTab, badadandaSubTab, isNightMode, theme, currentThemeKey]);
 
     useEffect(() => {
         const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -3938,7 +3946,8 @@ export const SongsPage: React.FC = () => {
                                         background: isNightMode ? '#1e293b' : '#ffffff',
                                         borderRadius: '16px',
                                         padding: '12px 14px',
-                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(234, 88, 12, 0.18)',
+                                        boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(194, 65, 12, 0.05)',
                                         cursor: isAvailable ? 'pointer' : 'default',
                                         opacity: isAvailable ? 1 : 0.6,
                                         display: 'flex',
@@ -3973,7 +3982,7 @@ export const SongsPage: React.FC = () => {
                                     {isAvailable && (
                                         <button
                                             style={{
-                                                background: '#064e3b',
+                                                background: '#ea580c',
                                                 color: '#ffffff',
                                                 border: 'none',
                                                 borderRadius: '50%',
@@ -4011,7 +4020,8 @@ export const SongsPage: React.FC = () => {
                                         background: isNightMode ? '#1e293b' : '#ffffff',
                                         borderRadius: '16px',
                                         padding: '12px 14px',
-                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(2, 132, 199, 0.18)',
+                                        boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(2, 132, 199, 0.05)',
                                         cursor: isAvailable ? 'pointer' : 'default',
                                         opacity: isAvailable ? 1 : 0.65,
                                         display: 'flex',
@@ -4091,7 +4101,8 @@ export const SongsPage: React.FC = () => {
                                     padding: '0.75rem 1rem',
                                     backgroundColor: isNightMode ? '#1e293b' : '#ffffff',
                                     borderRadius: '14px',
-                                    border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                    border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(225, 29, 72, 0.18)',
+                                    boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(225, 29, 72, 0.05)',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',
@@ -4987,7 +4998,8 @@ export const SongsPage: React.FC = () => {
                                     padding: '0.75rem 1rem',
                                     backgroundColor: isNightMode ? '#1e293b' : '#ffffff',
                                     borderRadius: '14px',
-                                    border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                    border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(202, 138, 4, 0.18)',
+                                    boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(202, 138, 4, 0.05)',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',
@@ -7195,7 +7207,7 @@ export const SongsPage: React.FC = () => {
     }
 
     return (
-        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: isNightMode ? '#0f172a' : '#f8fafc', overflow: 'hidden' }}>
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: isNightMode ? '#0f172a' : tabColor.pageBg, overflow: 'hidden', transition: 'background-color 0.3s ease' }}>
             <style>{`
                 /* KILL THE BIG DEFAULT BARS Globally */
                 html, body {
