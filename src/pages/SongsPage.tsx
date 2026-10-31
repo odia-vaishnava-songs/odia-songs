@@ -663,17 +663,6 @@ export const SongsPage: React.FC = () => {
     };
 
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
-        // Switch to a random different theme on each song card click
-        try {
-            const themeKeys = Object.keys(TATTVA_THEMES);
-            const otherThemes = themeKeys.filter(k => k !== currentThemeKey);
-            const pool = otherThemes.length > 0 ? otherThemes : themeKeys;
-            const randomTheme = pool[Math.floor(Math.random() * pool.length)];
-            setTheme(randomTheme);
-        } catch (e) {
-            console.error("Error setting random theme:", e);
-        }
-
         setSelectedSong(song);
         setIsDetailView(true);
 
@@ -1592,11 +1581,60 @@ export const SongsPage: React.FC = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isFilterMenuOpen]);
 
+    // Dynamic page color theme per tab (ସମସ୍ତ ସଙ୍ଗୀତ, ଭଗବଦ୍ ଗୀତା, ମନ୍ଦିର ଗୀତ, ବଡ଼ଦାଣ୍ଡ)
+    const tabColor = useMemo(() => {
+        if (isNightMode) {
+            return {
+                headerGradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+                pageBg: '#0f172a',
+                primaryColor: theme.color,
+                badgeBg: '#1e293b'
+            };
+        }
+        switch (activeTab) {
+            case 'songs': // ସମସ୍ତ ସଙ୍ଗୀତ: Vibrant Devotional (Follows active Pancha Tattva Theme)
+                return {
+                    headerGradient: theme.gradient,
+                    pageBg: '#f8fafc',
+                    primaryColor: theme.color,
+                    badgeBg: `${theme.color}15`
+                };
+            case 'gita': // ଭଗବଦ୍ ଗୀତା: Royal Gita Gold & Deep Ochre
+                return {
+                    headerGradient: 'linear-gradient(135deg, #b45309 0%, #78350f 100%)',
+                    pageBg: '#fffbeb',
+                    primaryColor: '#b45309',
+                    badgeBg: '#fef3c7'
+                };
+            case 'temple': // ମନ୍ଦିର ଗୀତ: Sacred Temple Maroon & Saffron
+                return {
+                    headerGradient: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)',
+                    pageBg: '#fff7ed',
+                    primaryColor: '#c2410c',
+                    badgeBg: '#ffedd5'
+                };
+            case 'badadanda': // ବଡ଼ଦାଣ୍ଡ: Mystic Grand Road Emerald & Jade
+                return {
+                    headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                    pageBg: '#f0fdf4',
+                    primaryColor: '#064e3b',
+                    badgeBg: '#dcfce7'
+                };
+            default:
+                return {
+                    headerGradient: theme.gradient,
+                    pageBg: '#f8fafc',
+                    primaryColor: theme.color,
+                    badgeBg: `${theme.color}15`
+                };
+        }
+    }, [activeTab, isNightMode, theme]);
+
     useEffect(() => {
         const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-        if (themeColorMeta) themeColorMeta.setAttribute('content', theme.color);
-        document.body.style.backgroundColor = selectedSong ? theme.color : 'var(--color-cream)';
-    }, [theme.color, selectedSong]);
+        if (themeColorMeta) themeColorMeta.setAttribute('content', selectedSong ? theme.color : tabColor.primaryColor);
+        document.body.style.backgroundColor = selectedSong ? theme.color : tabColor.pageBg;
+    }, [theme.color, selectedSong, tabColor]);
 
     const getOdiaTitle = (song: Resource) => {
         if (song.title_odia) return song.title_odia;
@@ -7245,7 +7283,7 @@ export const SongsPage: React.FC = () => {
                 minHeight: '56px',
                 maxHeight: '56px',
                 padding: '0 0.75rem',
-                background: theme.gradient,
+                background: tabColor.headerGradient,
                 color: '#fff',
                 gap: '0.6rem',
                 position: 'sticky',
@@ -7253,7 +7291,8 @@ export const SongsPage: React.FC = () => {
                 zIndex: 100,
                 flexShrink: 0,
                 boxSizing: 'border-box',
-                boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.22)'
+                boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.22)',
+                transition: 'background 0.3s ease'
             }}>
                 <button
                     onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
@@ -7764,7 +7803,8 @@ export const SongsPage: React.FC = () => {
                     flex: 1,
                     overflowY: 'auto',
                     padding: (activeTab === 'temple' || activeTab === 'badadanda') ? '0 0 100px' : '1rem 0 100px',
-                    backgroundColor: isNightMode ? '#0f172a' : ((activeTab === 'temple' || activeTab === 'badadanda') ? '#ffffff' : '#f8fafc')
+                    backgroundColor: tabColor.pageBg,
+                    transition: 'background-color 0.3s ease'
                 }}>
                 {activeLetter && sortedGroups.length > 0 && !searchQuery.trim() && (
                     <div
@@ -7836,15 +7876,16 @@ export const SongsPage: React.FC = () => {
                                             onClick={() => handleSelectSong(song)}
                                             style={{
                                                 padding: '0.52rem 0.85rem',
-                                                backgroundColor: isNightMode ? '#1e293b' : '#f4f5f8',
+                                                backgroundColor: isNightMode ? '#1e293b' : '#ffffff',
                                                 borderRadius: '10px',
                                                 marginBottom: '0.45rem',
                                                 boxShadow: isNightMode
                                                     ? '0 3px 8px rgba(0,0,0,0.35)'
-                                                    : '0 2px 4px -1px rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.1)',
+                                                    : '0 2px 4px -1px rgba(0,0,0,0.06), 0 1px 3px 0 rgba(0,0,0,0.04)',
                                                 border: isNightMode
                                                     ? '1px solid rgba(255,255,255,0.08)'
-                                                    : '1px solid rgba(0,0,0,0.06)',
+                                                    : `1px solid ${theme.color}25`,
+                                                borderLeft: `3px solid ${theme.color}`,
                                                 cursor: 'pointer',
                                                 transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                                                 position: 'relative',
@@ -7854,13 +7895,15 @@ export const SongsPage: React.FC = () => {
                                                 e.currentTarget.style.transform = 'translateY(-2px)';
                                                 e.currentTarget.style.boxShadow = isNightMode
                                                     ? '0 8px 20px rgba(0,0,0,0.5)'
-                                                    : '0 5px 5px -3px rgba(0,0,0,0.25), 0 4px 6px 0 rgba(0,0,0,0.18), 0 2px 10px 0 rgba(0,0,0,0.15)';
+                                                    : `0 6px 16px -2px ${theme.color}28, 0 2px 6px 0 rgba(0,0,0,0.08)`;
+                                                e.currentTarget.style.borderLeftColor = theme.accent || theme.color;
                                             }}
                                             onMouseLeave={(e) => {
                                                 e.currentTarget.style.transform = 'translateY(0)';
                                                 e.currentTarget.style.boxShadow = isNightMode
                                                     ? '0 3px 8px rgba(0,0,0,0.35)'
-                                                    : '0 2px 4px -1px rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.1)';
+                                                    : '0 2px 4px -1px rgba(0,0,0,0.06), 0 1px 3px 0 rgba(0,0,0,0.04)';
+                                                e.currentTarget.style.borderLeftColor = theme.color;
                                             }}
                                         >
                                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem' }}>
@@ -8103,7 +8146,7 @@ export const SongsPage: React.FC = () => {
                         padding: '10px 16px',
                         borderRadius: '16px',
                         border: 'none',
-                        background: activeTab === 'gita' ? theme.color : 'transparent',
+                        background: activeTab === 'gita' ? '#b45309' : 'transparent',
                         color: activeTab === 'gita' ? '#fff' : '#64748b',
                         cursor: 'pointer',
                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -8126,7 +8169,7 @@ export const SongsPage: React.FC = () => {
                         padding: '10px 16px',
                         borderRadius: '16px',
                         border: 'none',
-                        background: activeTab === 'temple' ? theme.color : 'transparent',
+                        background: activeTab === 'temple' ? '#c2410c' : 'transparent',
                         color: activeTab === 'temple' ? '#fff' : '#64748b',
                         cursor: 'pointer',
                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -8152,7 +8195,7 @@ export const SongsPage: React.FC = () => {
                         padding: '10px 16px',
                         borderRadius: '16px',
                         border: 'none',
-                        background: activeTab === 'badadanda' ? theme.color : 'transparent',
+                        background: activeTab === 'badadanda' ? '#064e3b' : 'transparent',
                         color: activeTab === 'badadanda' ? '#fff' : '#64748b',
                         cursor: 'pointer',
                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
