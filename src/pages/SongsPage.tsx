@@ -663,6 +663,17 @@ export const SongsPage: React.FC = () => {
     };
 
     const handleSelectSong = async (song: Resource, forcePlay: boolean = false) => {
+        // Switch to a random different theme on each song card click
+        try {
+            const themeKeys = Object.keys(TATTVA_THEMES);
+            const otherThemes = themeKeys.filter(k => k !== currentThemeKey);
+            const pool = otherThemes.length > 0 ? otherThemes : themeKeys;
+            const randomTheme = pool[Math.floor(Math.random() * pool.length)];
+            setTheme(randomTheme);
+        } catch (e) {
+            console.error("Error setting random theme:", e);
+        }
+
         setSelectedSong(song);
         setIsDetailView(true);
 
