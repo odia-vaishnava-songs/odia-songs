@@ -1581,7 +1581,7 @@ export const SongsPage: React.FC = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isFilterMenuOpen]);
 
-    // Dynamic page color theme per tab (ସମସ୍ତ ସଙ୍ଗୀତ, ଭଗବଦ୍ ଗୀତା, ମନ୍ଦିର ଗୀତ, ବଡ଼ଦାଣ୍ଡ)
+    // Dynamic page color theme per tab & per section (All Songs, Gita, Temple Songs, and All 9 Badadanda Sections)
     const tabColor = useMemo(() => {
         if (isNightMode) {
             return {
@@ -1606,20 +1606,94 @@ export const SongsPage: React.FC = () => {
                     primaryColor: '#b45309',
                     badgeBg: '#fef3c7'
                 };
-            case 'temple': // ମନ୍ଦିର ଗୀତ: Sacred Temple Maroon & Saffron
+            case 'temple': // ମନ୍ଦିର ଗୀତ: Sacred Temple Terracotta & Saffron
                 return {
                     headerGradient: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)',
                     pageBg: '#fff7ed',
                     primaryColor: '#c2410c',
                     badgeBg: '#ffedd5'
                 };
-            case 'badadanda': // ବଡ଼ଦାଣ୍ଡ: Mystic Grand Road Emerald & Jade
-                return {
-                    headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
-                    pageBg: '#f0fdf4',
-                    primaryColor: '#064e3b',
-                    badgeBg: '#dcfce7'
-                };
+            case 'badadanda': { // ବଡ଼ଦାଣ୍ଡ: Dynamic color for all 9 distinct sections
+                switch (badadandaSubTab) {
+                    case 'all': // 1. All 9 Cards Overview: Grand Road Emerald & Jade
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                            pageBg: '#f0fdf4',
+                            primaryColor: '#064e3b',
+                            badgeBg: '#dcfce7'
+                        };
+                    case 'gita': // 2. Bhagavad Gita (18 Ch): Golden Amber & Ochre
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #78350f 0%, #9a3412 100%)',
+                            pageBg: '#fffbeb',
+                            primaryColor: '#ea580c',
+                            badgeBg: '#ffedd5'
+                        };
+                    case 'authors': // 3. Authors: Forest Green & Emerald
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #14532d 0%, #166534 100%)',
+                            pageBg: '#f0fdf4',
+                            primaryColor: '#16a34a',
+                            badgeBg: '#dcfce7'
+                        };
+                    case 'temple': // 4. Temple Songs: Saffron & Sacred Temple Terracotta
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #7c2d12 0%, #c2410c 100%)',
+                            pageBg: '#fff7ed',
+                            primaryColor: '#ea580c',
+                            badgeBg: '#ffedd5'
+                        };
+                    case 'pranama': // 5. Pranama Mantras: Pure Sky Cyan & Ocean Blue
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #0369a1 0%, #0284c7 100%)',
+                            pageBg: '#f0f9ff',
+                            primaryColor: '#0284c7',
+                            badgeBg: '#e0f2fe'
+                        };
+                    case 'ashtakams': // 6. Ashtakams: Sacred Rose & Lotus Magenta
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #881337 0%, #be123c 100%)',
+                            pageBg: '#fff1f2',
+                            primaryColor: '#e11d48',
+                            badgeBg: '#ffe4e6'
+                        };
+                    case 'lists': // 7. Books: Royal Mystic Purple & Violet
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #581c87 0%, #7e22ce 100%)',
+                            pageBg: '#faf5ff',
+                            primaryColor: '#9333ea',
+                            badgeBg: '#f3e8ff'
+                        };
+                    case 'singers': // 8. Singers: Oceanic Teal & Deep Mint
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #134e4a 0%, #0f766e 100%)',
+                            pageBg: '#f0fdfa',
+                            primaryColor: '#0d9488',
+                            badgeBg: '#ccfbf1'
+                        };
+                    case 'history': // 9. History: Warm Sunset Gold & Bronze
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #713f12 0%, #a16207 100%)',
+                            pageBg: '#fefce8',
+                            primaryColor: '#ca8a04',
+                            badgeBg: '#fef08a'
+                        };
+                    case 'settings': // Settings: Slate & Indigo
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #1e293b 0%, #334155 100%)',
+                            pageBg: '#f8fafc',
+                            primaryColor: '#475569',
+                            badgeBg: '#f1f5f9'
+                        };
+                    default:
+                        return {
+                            headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                            pageBg: '#f0fdf4',
+                            primaryColor: '#064e3b',
+                            badgeBg: '#dcfce7'
+                        };
+                }
+            }
             default:
                 return {
                     headerGradient: theme.gradient,
@@ -1628,7 +1702,7 @@ export const SongsPage: React.FC = () => {
                     badgeBg: `${theme.color}15`
                 };
         }
-    }, [activeTab, isNightMode, theme]);
+    }, [activeTab, badadandaSubTab, isNightMode, theme]);
 
     useEffect(() => {
         const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -2870,7 +2944,7 @@ export const SongsPage: React.FC = () => {
 
         return (
             <div style={{
-                background: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                background: tabColor.headerGradient,
                 color: '#ffffff',
                 position: 'sticky',
                 top: 0,
@@ -2879,7 +2953,8 @@ export const SongsPage: React.FC = () => {
                 padding: '0.65rem 0.85rem 0',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.65rem'
+                gap: '0.65rem',
+                transition: 'background 0.35s ease'
             }}>
                 {/* Top Row: Location & Status */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
@@ -3105,7 +3180,7 @@ export const SongsPage: React.FC = () => {
                                     flexShrink: 0,
                                     padding: isActive ? '8px 18px 8px' : '8px 14px 8px',
                                     background: isActive ? (isNightMode ? '#0f172a' : '#ffffff') : 'transparent',
-                                    color: isActive ? (isNightMode ? '#38bdf8' : '#064e3b') : '#ffffff',
+                                    color: isActive ? (isNightMode ? '#38bdf8' : tabColor.primaryColor) : '#ffffff',
                                     borderRadius: isActive ? '18px 18px 0 0' : '12px',
                                     boxShadow: isActive ? '0 -4px 14px rgba(0,0,0,0.08)' : 'none',
                                     transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -3118,7 +3193,7 @@ export const SongsPage: React.FC = () => {
                                     <div style={{
                                         position: 'absolute',
                                         top: '-4px',
-                                        background: isActive ? '#064e3b' : '#000000',
+                                        background: isActive ? tabColor.primaryColor : '#000000',
                                         color: '#ffffff',
                                         fontSize: '0.55rem',
                                         fontWeight: 900,
