@@ -1614,12 +1614,12 @@ export const SongsPage: React.FC = () => {
                     primaryColor: '#b45309',
                     badgeBg: '#fde68a'
                 };
-            case 'temple': // ମନ୍ଦିର ଗୀତ: Sacred Temple Terracotta & Saffron
+            case 'temple': // ମନ୍ଦିର ଗୀତ: Bright Sacred Saffron & Marigold
                 return {
-                    headerGradient: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)',
-                    pageBg: '#ffedd5',
-                    primaryColor: '#c2410c',
-                    badgeBg: '#fed7aa'
+                    headerGradient: 'linear-gradient(135deg, #92400e 0%, #b45309 45%, #d97706 100%)',
+                    pageBg: '#fffbeb',
+                    primaryColor: '#d97706',
+                    badgeBg: '#fde68a'
                 };
             case 'badadanda': { // ବଡ଼ଦାଣ୍ଡ: Dynamic color for all 9 distinct sections
                 switch (badadandaSubTab) {
@@ -1644,12 +1644,12 @@ export const SongsPage: React.FC = () => {
                             primaryColor: '#16a34a',
                             badgeBg: '#bbf7d0'
                         };
-                    case 'temple': // 4. Temple Songs: Saffron & Sacred Temple Terracotta
+                    case 'temple': // 4. Temple Songs: Bright Sacred Saffron & Marigold
                         return {
-                            headerGradient: 'linear-gradient(180deg, #7c2d12 0%, #c2410c 100%)',
-                            pageBg: '#ffedd5',
-                            primaryColor: '#ea580c',
-                            badgeBg: '#fed7aa'
+                            headerGradient: 'linear-gradient(180deg, #92400e 0%, #b45309 45%, #d97706 100%)',
+                            pageBg: '#fffbeb',
+                            primaryColor: '#d97706',
+                            badgeBg: '#fde68a'
                         };
                     case 'pranama': // 5. Pranama Mantras: Pure Sky Cyan & Ocean Blue
                         return {
@@ -2445,7 +2445,7 @@ export const SongsPage: React.FC = () => {
                         <div style={{
                             fontSize: '1.25rem',
                             fontWeight: 900,
-                            color: '#7c2d12',
+                            color: '#92400e',
                             fontFamily: 'var(--font-odia-sans)',
                             lineHeight: 1.2,
                             marginBottom: '4px'
@@ -2454,7 +2454,7 @@ export const SongsPage: React.FC = () => {
                         </div>
                         <div style={{
                             fontSize: '0.78rem',
-                            color: '#9a3412',
+                            color: '#b45309',
                             fontWeight: 600,
                             lineHeight: 1.35,
                             marginBottom: '10px'
@@ -2467,7 +2467,7 @@ export const SongsPage: React.FC = () => {
                                 if (first) handleSelectSong(first);
                             }}
                             style={{
-                                background: '#ea580c',
+                                background: '#d97706',
                                 color: '#ffffff',
                                 border: 'none',
                                 borderRadius: '12px',
@@ -3331,15 +3331,15 @@ export const SongsPage: React.FC = () => {
                             className="category-card"
                             onClick={() => setBadadandaSubTab('temple')}
                             style={{
-                                background: 'linear-gradient(135deg, #fffcf5 0%, #fff5e6 100%)',
+                                background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
                                 cursor: 'pointer'
                             }}
                         >
                             <div style={{
                                 width: '48px', height: '48px', borderRadius: '14px',
-                                background: '#ea580c18', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                                background: '#d9770618', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                             }}>
-                                <TempleIcons.TempleShikhara size={34} color="#ea580c" />
+                                <TempleIcons.TempleShikhara size={34} color="#d97706" />
                             </div>
                             <div>
                                 <div style={{ fontSize: '1rem', fontWeight: 900, color: '#1e293b', fontFamily: 'var(--font-odia-sans)' }}>ମନ୍ଦିର ଗୀତ</div>
@@ -3946,8 +3946,8 @@ export const SongsPage: React.FC = () => {
                                         background: isNightMode ? '#1e293b' : '#ffffff',
                                         borderRadius: '16px',
                                         padding: '12px 14px',
-                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(234, 88, 12, 0.18)',
-                                        boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(194, 65, 12, 0.05)',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(217, 119, 6, 0.22)',
+                                        boxShadow: isNightMode ? '0 2px 8px rgba(0,0,0,0.2)' : '0 2px 10px rgba(217, 119, 6, 0.08)',
                                         cursor: isAvailable ? 'pointer' : 'default',
                                         opacity: isAvailable ? 1 : 0.6,
                                         display: 'flex',
@@ -3959,7 +3959,7 @@ export const SongsPage: React.FC = () => {
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flex: 1 }}>
                                         <div style={{
                                             width: '38px', height: '38px', borderRadius: '10px',
-                                            background: '#ea580c18', color: '#ea580c',
+                                            background: '#d9770618', color: '#b45309',
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                                             fontWeight: 900, fontSize: '0.82rem', flexShrink: 0
                                         }}>
@@ -3982,7 +3982,7 @@ export const SongsPage: React.FC = () => {
                                     {isAvailable && (
                                         <button
                                             style={{
-                                                background: '#ea580c',
+                                                background: '#d97706',
                                                 color: '#ffffff',
                                                 border: 'none',
                                                 borderRadius: '50%',
@@ -3992,7 +3992,8 @@ export const SongsPage: React.FC = () => {
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
                                                 cursor: 'pointer',
-                                                flexShrink: 0
+                                                flexShrink: 0,
+                                                boxShadow: '0 2px 8px rgba(217, 119, 6, 0.3)'
                                             }}
                                         >
                                             <Play size={13} fill="#ffffff" />
