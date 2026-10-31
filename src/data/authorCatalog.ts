@@ -607,6 +607,13 @@ export const AUTHOR_CATALOG: AuthorCatalog[] = [
         catalog: [
             { id: 'song-yadiprabhupadanahoito', title_english: 'Yadi Prabhupada Na Hoito', title_odia: 'ଯଦି ପ୍ରଭୁପାଦ ନା ହଇତ' }
         ]
+    },
+    {
+        name: 'Sukadeva Gosvami',
+        odia: 'ଶ୍ରୀ ଶୁକଦେବ ଗୋସ୍ୱାମୀ',
+        catalog: [
+            { id: 'song-gopigitam', title_english: "Jayati Te 'Dhikam Janmana Vrajah (Gopi Gitam)", title_odia: 'ଜୟତି ତେଽଧିକଂ ଜନ୍ମନା ବ୍ରଜଃ (ଗୋପୀ ଗୀତମ୍)' }
+        ]
     }
 ];
 
