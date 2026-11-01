@@ -1382,7 +1382,7 @@ export const SongsPage: React.FC = () => {
     const filteredSongs = useMemo(() => {
         const query = normalizeForSearch(searchQuery);
         const queryAgg = normalizeForSearch(searchQuery, true);
-        const pool = activeTab === 'gita' ? gitaChapters : activeTab === 'temple' ? (templeSongsResolved.map(t => t.song).filter(Boolean) as Resource[]) : activeTab === 'badadanda' ? [] : songResources;
+        const pool = activeTab === 'gita' ? gitaChapters : activeTab === 'temple' ? (templeSongsResolved.map(t => t.song).filter(Boolean) as Resource[]) : songResources;
 
         if (!query) {
             // In the Gita, Temple, or Badadanda tab, if there is no search, we don't want the alphabetical song list.
@@ -1623,79 +1623,79 @@ export const SongsPage: React.FC = () => {
                 };
             case 'badadanda': { // ବଡ଼ଦାଣ୍ଡ: Dynamic color for all 9 distinct sections
                 switch (badadandaSubTab) {
-                    case 'all': // 1. All 9 Cards Overview: Grand Road Emerald & Jade
+                    case 'all': // 1. All 8 Cards Overview: Grand Road Deep Emerald & Jade Shimmer
                         return {
-                            headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                            headerGradient: 'linear-gradient(135deg, #022c22 0%, #064e3b 45%, #047857 75%, #059669 100%)',
                             pageBg: '#e6f7ec',
                             primaryColor: '#064e3b',
                             badgeBg: '#bbf7d0'
                         };
-                    case 'gita': // 2. Bhagavad Gita (18 Ch): Golden Amber & Ochre
+                    case 'gita': // 2. Bhagavad Gita: Sacred Divine Saffron & Celestial Fire
                         return {
-                            headerGradient: 'linear-gradient(180deg, #78350f 0%, #9a3412 100%)',
-                            pageBg: '#fef3c7',
+                            headerGradient: 'linear-gradient(135deg, #431407 0%, #7c2d12 35%, #c2410c 70%, #ea580c 100%)',
+                            pageBg: '#f8fafc',
                             primaryColor: '#ea580c',
                             badgeBg: '#fde68a'
                         };
                     case 'authors': // 3. Authors: Forest Green & Emerald
                         return {
-                            headerGradient: 'linear-gradient(180deg, #14532d 0%, #166534 100%)',
+                            headerGradient: 'linear-gradient(135deg, #052e16 0%, #14532d 40%, #16a34a 75%, #22c55e 100%)',
                             pageBg: '#e6f8ec',
                             primaryColor: '#16a34a',
                             badgeBg: '#bbf7d0'
                         };
-                    case 'temple': // 4. Temple Songs: Sacred Royal Plum / Wine (Kumbh Mela Theme)
+                    case 'temple': // 4. Temple Songs: Sacred Royal Plum & Amethyst
                         return {
-                            headerGradient: 'linear-gradient(180deg, #752a4c 0%, #692544 100%)',
+                            headerGradient: 'linear-gradient(135deg, #4a044e 0%, #701a75 40%, #a21caf 75%, #c026d3 100%)',
                             pageBg: '#fdf2f6',
                             primaryColor: '#752a4d',
                             badgeBg: '#fce7f0'
                         };
-                    case 'pranama': // 5. Pranama Mantras: Pure Sky Cyan & Ocean Blue
+                    case 'pranama': // 5. Pranama Mantras: Celestial Yamuna Cyan & Blue
                         return {
-                            headerGradient: 'linear-gradient(180deg, #0369a1 0%, #0284c7 100%)',
+                            headerGradient: 'linear-gradient(135deg, #082f49 0%, #0369a1 40%, #0284c7 75%, #38bdf8 100%)',
                             pageBg: '#e0f2fe',
                             primaryColor: '#0284c7',
                             badgeBg: '#bae6fd'
                         };
-                    case 'ashtakams': // 6. Ashtakams: Sacred Rose & Lotus Magenta
+                    case 'ashtakams': // 6. Ashtakams: Sacred Lotus Ruby Rose
                         return {
-                            headerGradient: 'linear-gradient(180deg, #881337 0%, #be123c 100%)',
+                            headerGradient: 'linear-gradient(135deg, #4c0519 0%, #881337 40%, #be123c 75%, #fb7185 100%)',
                             pageBg: '#ffe4e6',
                             primaryColor: '#e11d48',
                             badgeBg: '#fecdd3'
                         };
-                    case 'lists': // 7. Books: Royal Mystic Purple & Violet
+                    case 'lists': // 7. Books: Royal Mystic Scriptures Violet
                         return {
-                            headerGradient: 'linear-gradient(180deg, #581c87 0%, #7e22ce 100%)',
+                            headerGradient: 'linear-gradient(135deg, #2e1065 0%, #581c87 40%, #7e22ce 75%, #a855f7 100%)',
                             pageBg: '#f3e8ff',
                             primaryColor: '#9333ea',
                             badgeBg: '#e9d5ff'
                         };
-                    case 'singers': // 8. Singers: Oceanic Teal & Deep Mint
+                    case 'singers': // 8. Singers: Oceanic Deep Teal & Mint
                         return {
-                            headerGradient: 'linear-gradient(180deg, #134e4a 0%, #0f766e 100%)',
+                            headerGradient: 'linear-gradient(135deg, #042f2e 0%, #115e59 40%, #0d9488 75%, #2dd4bf 100%)',
                             pageBg: '#ccfbf1',
                             primaryColor: '#0d9488',
                             badgeBg: '#99f6e4'
                         };
-                    case 'history': // 9. History: Warm Sunset Gold & Bronze
+                    case 'history': // 9. History: Warm Sunset Amber & Pure Gold
                         return {
-                            headerGradient: 'linear-gradient(180deg, #713f12 0%, #a16207 100%)',
+                            headerGradient: 'linear-gradient(135deg, #422006 0%, #713f12 40%, #b45309 75%, #f59e0b 100%)',
                             pageBg: '#fef9c3',
                             primaryColor: '#ca8a04',
                             badgeBg: '#fef08a'
                         };
                     case 'settings': // Settings: Slate & Indigo
                         return {
-                            headerGradient: 'linear-gradient(180deg, #1e293b 0%, #334155 100%)',
+                            headerGradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
                             pageBg: '#e2e8f0',
                             primaryColor: '#475569',
                             badgeBg: '#cbd5e1'
                         };
                     default:
                         return {
-                            headerGradient: 'linear-gradient(180deg, #04362a 0%, #064e3b 100%)',
+                            headerGradient: 'linear-gradient(135deg, #022c22 0%, #064e3b 45%, #047857 75%, #059669 100%)',
                             pageBg: '#e6f7ec',
                             primaryColor: '#064e3b',
                             badgeBg: '#bbf7d0'
@@ -2136,11 +2136,16 @@ export const SongsPage: React.FC = () => {
                 top: 0,
                 zIndex: 120,
                 boxShadow: '0 8px 24px rgba(0, 0, 0, 0.22)',
-                padding: '0.65rem 0.85rem 0',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.65rem'
+                padding: '0.65rem 0.85rem 0'
             }}>
+                <div style={{
+                    maxWidth: '1000px',
+                    margin: '0 auto',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.65rem'
+                }}>
                 {/* Top Row: Location & Status */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', flex: 1, minWidth: 0 }}>
@@ -2403,6 +2408,7 @@ export const SongsPage: React.FC = () => {
                             </div>
                         );
                     })}
+                </div>
                 </div>
             </div>
         );
@@ -2936,213 +2942,231 @@ export const SongsPage: React.FC = () => {
         });
     };
 
+    const BADADANDA_TABS = [
+        { id: 'all', odia: 'ସମସ୍ତ', eng: 'All Cards', icon: Landmark, badge: '୮ କାର୍ଡ' },
+        { id: 'gita', odia: 'ଭଗବଦ୍ ଗୀତା', eng: 'Bhagavad Gita', icon: BookOpen, badge: '୧୮ ଅଧ୍ୟାୟ' },
+        { id: 'authors', odia: 'ଲେଖକ', eng: 'Authors', icon: Users, badge: 'କବି' },
+        { id: 'temple', odia: 'ମନ୍ଦିର ଗୀତ', eng: 'Temple Songs', icon: TempleIcons.TempleShikhara, badge: 'ଆରତି' },
+        { id: 'pranama', odia: 'ପ୍ରଣାମ ମନ୍ତ୍ର', eng: 'Pranama', icon: TempleIcons.NamasteIcon, badge: 'ମନ୍ତ୍ର' },
+        { id: 'ashtakams', odia: 'ଅଷ୍ଟକମ୍', eng: 'Ashtakams', icon: TempleIcons.SacredLotus, badge: 'ସ୍ତୋତ୍ର' },
+        { id: 'lists', odia: 'ପୁସ୍ତକ', eng: 'Books', icon: BookOpen, badge: 'ଗ୍ରନ୍ଥ' },
+        { id: 'singers', odia: 'ଗାୟକ', eng: 'Singers', icon: Mic, badge: 'କଣ୍ଠ' },
+        { id: 'history', odia: 'ଶ୍ରବଣ ଇତିହାସ', eng: 'History', icon: History, badge: 'ଇତିହାସ' }
+    ];
+
     const renderBadadandaHeader = () => {
-        const BADADANDA_TABS = [
-            { id: 'all', odia: 'ସମସ୍ତ', eng: 'All Cards', icon: Landmark, badge: '୯ କାର୍ଡ' },
-            { id: 'gita', odia: 'ଭଗବଦ୍ ଗୀତା', eng: 'Bhagavad Gita', icon: BookOpen, badge: '୧୮ ଅଧ୍ୟାୟ' },
-            { id: 'authors', odia: 'ଲେଖକ', eng: 'Authors', icon: Users, badge: 'କବି' },
-            { id: 'temple', odia: 'ମନ୍ଦିର ଗୀତ', eng: 'Temple Songs', icon: TempleIcons.TempleShikhara, badge: 'ଆରତି' },
-            { id: 'pranama', odia: 'ପ୍ରଣାମ ମନ୍ତ୍ର', eng: 'Pranama', icon: TempleIcons.NamasteIcon, badge: 'ମନ୍ତ୍ର' },
-            { id: 'ashtakams', odia: 'ଅଷ୍ଟକମ୍', eng: 'Ashtakams', icon: TempleIcons.SacredLotus, badge: 'ସ୍ତୋତ୍ର' },
-            { id: 'lists', odia: 'ପୁସ୍ତକ', eng: 'Books', icon: BookOpen, badge: 'ଗ୍ରନ୍ଥ' },
-            { id: 'singers', odia: 'ଗାୟକ', eng: 'Singers', icon: Mic, badge: 'କଣ୍ଠ' },
-            { id: 'history', odia: 'ଶ୍ରବଣ ଇତିହାସ', eng: 'History', icon: History, badge: 'ଇତିହାସ' },
-            { id: 'settings', odia: 'ସେଟିଂସ୍', eng: 'Settings', icon: Settings, badge: 'ଥିମ୍' }
-        ];
 
         return (
             <div style={{
                 background: tabColor.headerGradient,
+                backgroundImage: `${tabColor.headerGradient}, radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.22) 0%, transparent 65%)`,
                 color: '#ffffff',
                 position: 'sticky',
                 top: 0,
                 zIndex: 120,
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.22)',
-                padding: '0.65rem 0.85rem 0',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.65rem',
-                transition: 'background 0.35s ease'
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.28), inset 0 -1px 0 rgba(255, 255, 255, 0.15)',
+                padding: '0.75rem 1rem 0',
+                transition: 'all 0.35s ease'
             }}>
-                {/* Top Row: Location & Status */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', flex: 1, minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                            <div style={{
-                                background: '#ffffff',
-                                color: '#064e3b',
-                                fontSize: '0.72rem',
-                                fontWeight: 900,
-                                padding: '2px 8px',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '3px',
-                                letterSpacing: '0.3px'
-                            }}>
-                                <span>⚡</span> ୯ ବିଭାଗ
-                            </div>
-                            <div style={{
-                                border: '1px solid rgba(255, 255, 255, 0.45)',
-                                color: '#ffffff',
-                                fontSize: '0.72rem',
-                                fontWeight: 700,
-                                padding: '1px 8px',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '3px'
-                            }}>
-                                <span>⏱️</span> ବଡ଼ଦାଣ୍ଡ ସେବା
-                            </div>
-                        </div>
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '5px',
-                            color: '#ffffff',
-                            fontSize: '0.86rem',
-                            fontWeight: 800,
-                            fontFamily: 'var(--font-odia-sans)',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis'
-                        }}>
-                            <span>🏛️</span>
-                            <span>ବଡ଼ଦାଣ୍ଡ - ଶ୍ରୀକ୍ଷେତ୍ର ପୁରୀ ଧାମ</span>
-                            <span style={{ fontSize: '0.7rem', opacity: 0.8 }}>▼</span>
-                        </div>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-                        <button
-                            onClick={() => setIsSpinWheelOpen(true)}
-                            title="ଦୈନିକ ଆଶୀର୍ବାଦ ଚକ୍ର (Blessing Chakra)"
-                            style={{
-                                width: '38px',
-                                height: '38px',
-                                borderRadius: '50%',
-                                background: 'linear-gradient(135deg, #FFF176 0%, #FFB300 100%)',
-                                border: '1.5px solid rgba(255,255,255,0.8)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-                            }}
-                        >
-                            <TempleIcons.BlessingChakra size={22} color="#4A148C" />
-                        </button>
-                        <button
-                            onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
-                            title="ପ୍ରୋଫାଇଲ୍ ଓ ମୁଖ୍ୟ ମେନୁ (Profile / Menu)"
-                            style={{
-                                width: '38px',
-                                height: '38px',
-                                borderRadius: '50%',
-                                background: '#ffffff',
-                                border: 'none',
-                                color: '#1e293b',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
-                            }}
-                        >
-                            <Users size={19} color="#1e293b" />
-                        </button>
-                    </div>
-                </div>
-
-                {/* Row 2: Search Bar & Action Button */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div style={{
-                        flex: 1,
-                        height: '44px',
-                        background: '#ffffff',
-                        borderRadius: '24px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '0 12px 0 14px',
-                        gap: '8px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
-                    }}>
-                        <Search size={18} color="#64748b" style={{ flexShrink: 0 }} />
-                        <input
-                            type="text"
-                            placeholder="Search 'ଜଗନ୍ନାଥ', 'ଲେଖକ', 'ଭଜନ'..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            style={{
-                                flex: 1,
-                                border: 'none',
-                                outline: 'none',
-                                fontSize: '0.88rem',
-                                color: '#1e293b',
-                                background: 'transparent',
-                                fontFamily: 'var(--font-odia-sans)'
-                            }}
-                        />
-                        {searchQuery && (
-                            <button
-                                onClick={() => setSearchQuery('')}
-                                style={{
-                                    border: 'none',
-                                    background: 'transparent',
-                                    color: '#94a3b8',
-                                    cursor: 'pointer',
-                                    padding: '4px',
+                <div style={{
+                    maxWidth: '1000px',
+                    margin: '0 auto',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.7rem'
+                }}>
+                    {/* Top Row: Location & Status */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, minWidth: 0 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                                <div style={{
+                                    background: 'linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)',
+                                    color: '#78350F',
+                                    fontSize: '0.72rem',
+                                    fontWeight: 900,
+                                    padding: '3px 10px',
+                                    borderRadius: '16px',
                                     display: 'flex',
-                                    alignItems: 'center'
+                                    alignItems: 'center',
+                                    gap: '4px',
+                                    letterSpacing: '0.3px',
+                                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+                                    border: '1px solid rgba(251, 191, 36, 0.6)'
+                                }}>
+                                    <span style={{ fontSize: '0.78rem' }}>⚡</span> ୮ ବିଭାଗ
+                                </div>
+                                <div style={{
+                                    background: 'rgba(255, 255, 255, 0.16)',
+                                    backdropFilter: 'blur(8px)',
+                                    border: '1px solid rgba(255, 255, 255, 0.32)',
+                                    color: '#ffffff',
+                                    fontSize: '0.72rem',
+                                    fontWeight: 700,
+                                    padding: '2px 10px',
+                                    borderRadius: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '4px',
+                                    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.12)'
+                                }}>
+                                    <span>⏱️</span> ବଡ଼ଦାଣ୍ଡ ସେବା
+                                </div>
+                            </div>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                color: '#ffffff',
+                                fontSize: '0.94rem',
+                                fontWeight: 900,
+                                fontFamily: 'var(--font-odia-sans)',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                textShadow: '0 2px 6px rgba(0, 0, 0, 0.35)',
+                                letterSpacing: '0.2px'
+                            }}>
+                                <span style={{ fontSize: '1rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>🏛️</span>
+                                <span style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                    ବଡ଼ଦାଣ୍ଡ - ଶ୍ରୀକ୍ଷେତ୍ର ପୁରୀ ଧାମ
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
+                            <button
+                                onClick={() => setIsSpinWheelOpen(true)}
+                                title="ଦୈନିକ ଆଶୀର୍ବାଦ ଚକ୍ର (Blessing Chakra)"
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '50%',
+                                    background: 'linear-gradient(135deg, #FFF59D 0%, #FFD54F 50%, #FFB300 100%)',
+                                    border: '2px solid rgba(255,255,255,0.9)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 0 16px rgba(255, 179, 0, 0.45), 0 3px 8px rgba(0,0,0,0.25)',
+                                    transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)'
                                 }}
                             >
-                                <X size={16} />
+                                <TempleIcons.BlessingChakra size={24} color="#3E115B" />
                             </button>
-                        )}
+                            <button
+                                onClick={() => window.dispatchEvent(new CustomEvent('toggle-drawer'))}
+                                title="ପ୍ରୋଫାଇଲ୍ ଓ ମୁଖ୍ୟ ମେନୁ (Profile / Menu)"
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '50%',
+                                    background: 'rgba(255, 255, 255, 0.94)',
+                                    border: '1.5px solid rgba(255, 255, 255, 0.8)',
+                                    color: '#0f172a',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 3px 10px rgba(0,0,0,0.18)',
+                                    backdropFilter: 'blur(8px)',
+                                    transition: 'transform 0.2s ease'
+                                }}
+                            >
+                                <Users size={20} color="#0f172a" />
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Row 2: Search Bar & Action Button */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{
+                            flex: 1,
+                            height: '46px',
+                            background: '#ffffff',
+                            borderRadius: '26px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            padding: '0 14px',
+                            gap: '10px',
+                            boxShadow: '0 4px 16px rgba(0,0,0,0.18), inset 0 1px 1px rgba(255,255,255,0.9)',
+                            border: '1px solid rgba(255, 255, 255, 0.5)'
+                        }}>
+                            <Search size={18} color="#64748b" style={{ flexShrink: 0 }} />
+                            <input
+                                type="text"
+                                placeholder="Search 'ଜଗନ୍ନାଥ', 'ଲେଖକ', 'ଭଜନ'..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                style={{
+                                    flex: 1,
+                                    border: 'none',
+                                    outline: 'none',
+                                    fontSize: '0.88rem',
+                                    color: '#1e293b',
+                                    background: 'transparent',
+                                    fontFamily: 'var(--font-odia-sans)'
+                                }}
+                            />
+                            {searchQuery && (
+                                <button
+                                    onClick={() => setSearchQuery('')}
+                                    style={{
+                                        border: 'none',
+                                        background: 'transparent',
+                                        color: '#94a3b8',
+                                        cursor: 'pointer',
+                                        padding: '4px',
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}
+                                >
+                                    <X size={16} />
+                                </button>
+                            )}
+                            <button
+                                onClick={handleVoiceSearch}
+                                title="ଭଏସ୍ ସର୍ଚ୍ଚ"
+                                style={{
+                                    border: 'none',
+                                    background: isListening ? '#fef2f2' : 'transparent',
+                                    color: isListening ? '#ef4444' : '#064e3b',
+                                    cursor: 'pointer',
+                                    padding: '4px',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    flexShrink: 0
+                                }}
+                            >
+                                <Mic size={18} />
+                            </button>
+                        </div>
+
                         <button
-                            onClick={handleVoiceSearch}
-                            title="ଭଏସ୍ ସର୍ଚ୍ଚ"
+                            onClick={() => {
+                                setBadadandaSubTab('lists');
+                                setSelectedBadadandaList(null);
+                            }}
+                            title="ପୁସ୍ତକ ଓ ଗ୍ରନ୍ଥ (Books)"
                             style={{
-                                border: 'none',
-                                background: isListening ? '#fef2f2' : 'transparent',
-                                color: isListening ? '#ef4444' : '#064e3b',
-                                cursor: 'pointer',
-                                padding: '4px',
+                                width: '46px',
+                                height: '46px',
                                 borderRadius: '50%',
+                                background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                                color: '#064e3b',
+                                border: '1.5px solid rgba(255, 255, 255, 0.8)',
                                 display: 'flex',
                                 alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
                                 flexShrink: 0
                             }}
                         >
-                            <Mic size={18} />
+                            <BookOpen size={20} />
                         </button>
                     </div>
-
-                    <button
-                        onClick={() => {
-                            setBadadandaSubTab('lists');
-                            setSelectedBadadandaList(null);
-                        }}
-                        title="ପୁସ୍ତକ ଓ ଗ୍ରନ୍ଥ (Books)"
-                        style={{
-                            width: '44px',
-                            height: '44px',
-                            borderRadius: '50%',
-                            background: '#ffffff',
-                            color: '#064e3b',
-                            border: 'none',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            cursor: 'pointer',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-                            flexShrink: 0
-                        }}
-                    >
-                        <BookOpen size={20} />
-                    </button>
-                </div>
 
                 {/* Row 3: Blinkit-style Docked Tab Notch Bar (ALL 9 CARDS AS SUB-TABS) */}
                 <div
@@ -3239,18 +3263,449 @@ export const SongsPage: React.FC = () => {
                         );
                     })}
                 </div>
+                </div>
+            </div>
+        );
+    };
+
+    const renderBadadandaSearchResults = () => {
+        const queryLower = searchQuery.toLowerCase().trim();
+        const queryNorm = normalizeForSearch(searchQuery);
+
+        // Matching Badadanda Sub-tabs / Sections
+        const matchingTabs = BADADANDA_TABS.filter(tab => {
+            if (tab.id === 'all') return false;
+            return tab.odia.includes(searchQuery) ||
+                tab.eng.toLowerCase().includes(queryLower) ||
+                normalizeForSearch(tab.odia).includes(queryNorm);
+        });
+
+        // Matching Authors in Badadanda
+        const matchingAuthors = badadandaAuthors.filter(a => {
+            const aName = a.name.toLowerCase();
+            const aOdia = a.odia || '';
+            return aName.includes(queryLower) || aOdia.includes(searchQuery) || normalizeForSearch(aOdia).includes(queryNorm);
+        }).slice(0, 4);
+
+        // Matching Books in Badadanda
+        const matchingBooks = VAISHNAVA_LISTS.filter(b => {
+            const bEng = b.eng.toLowerCase();
+            const bOdia = b.odia || '';
+            return bEng.includes(queryLower) || bOdia.includes(searchQuery) || normalizeForSearch(bOdia).includes(queryNorm);
+        }).slice(0, 4);
+
+        const totalResultsCount = filteredSongs.length + matchingTabs.length + matchingAuthors.length + matchingBooks.length;
+
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', padding: '0.5rem 0' }}>
+                {/* Search Results Summary Header */}
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '10px',
+                    padding: '0.85rem 1.15rem',
+                    background: isNightMode ? '#1e293b' : '#ffffff',
+                    borderRadius: '16px',
+                    border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                        <Search size={18} color="#059669" />
+                        <span style={{
+                            fontSize: '0.98rem',
+                            fontWeight: 900,
+                            fontFamily: 'var(--font-odia-sans)',
+                            color: isNightMode ? '#f8fafc' : '#1e293b'
+                        }}>
+                            ସନ୍ଧାନ ଫଳାଫଳ: &quot;{searchQuery}&quot;
+                        </span>
+                        <span style={{
+                            background: '#10b98115',
+                            color: '#059669',
+                            fontSize: '0.74rem',
+                            fontWeight: 800,
+                            padding: '3px 10px',
+                            borderRadius: '12px'
+                        }}>
+                            {toOdiaNumber(filteredSongs.length)} ଟି ଗୀତ ମିଳିଲା
+                        </span>
+                    </div>
+                    <button
+                        onClick={() => setSearchQuery('')}
+                        style={{
+                            background: isNightMode ? '#334155' : '#f1f5f9',
+                            color: isNightMode ? '#f8fafc' : '#64748b',
+                            border: 'none',
+                            borderRadius: '12px',
+                            padding: '5px 12px',
+                            fontSize: '0.78rem',
+                            fontWeight: 800,
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5px'
+                        }}
+                    >
+                        <X size={14} /> ସଫା କରନ୍ତୁ
+                    </button>
+                </div>
+
+                {/* Section Matches (Badadanda Sub-tabs) */}
+                {matchingTabs.length > 0 && (
+                    <div>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            ପ୍ରମୁଖ ବିଭାଗ (Categories)
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '8px' }}>
+                            {matchingTabs.map(tab => {
+                                const TabIcon = tab.icon;
+                                return (
+                                    <div
+                                        key={tab.id}
+                                        onClick={() => {
+                                            setBadadandaSubTab(tab.id as any);
+                                            setSearchQuery('');
+                                        }}
+                                        style={{
+                                            background: isNightMode ? '#1e293b' : '#ffffff',
+                                            borderRadius: '14px',
+                                            padding: '10px 12px',
+                                            border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '10px',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.15s ease'
+                                        }}
+                                    >
+                                        <div style={{
+                                            width: '36px',
+                                            height: '36px',
+                                            borderRadius: '10px',
+                                            background: '#ea580c15',
+                                            color: '#ea580c',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            flexShrink: 0
+                                        }}>
+                                            <TabIcon size={18} />
+                                        </div>
+                                        <div style={{ minWidth: 0, flex: 1 }}>
+                                            <div style={{ fontSize: '0.92rem', fontWeight: 800, fontFamily: 'var(--font-odia-sans)', color: isNightMode ? '#f8fafc' : '#1e293b' }}>
+                                                {tab.odia}
+                                            </div>
+                                            <div style={{ fontSize: '0.68rem', color: '#64748b', textTransform: 'uppercase' }}>
+                                                {tab.eng}
+                                            </div>
+                                        </div>
+                                        <ChevronRight size={16} color="#94a3b8" />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {/* Matching Authors */}
+                {matchingAuthors.length > 0 && (
+                    <div>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            ବୈଷ୍ଣବ ଲେଖକ (Authors)
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '8px' }}>
+                            {matchingAuthors.map(author => (
+                                <div
+                                    key={author.name}
+                                    onClick={() => {
+                                        setSelectedBadadandaAuthor(author.name);
+                                        setBadadandaSubTab('authors');
+                                        setSearchQuery('');
+                                    }}
+                                    style={{
+                                        background: isNightMode ? '#1e293b' : '#ffffff',
+                                        borderRadius: '14px',
+                                        padding: '10px 12px',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '10px',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    <div style={{
+                                        width: '36px',
+                                        height: '36px',
+                                        borderRadius: '50%',
+                                        background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                                        color: '#ffffff',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontWeight: 900,
+                                        fontSize: '0.95rem',
+                                        flexShrink: 0
+                                    }}>
+                                        {(author.name || 'A').charAt(0).toUpperCase()}
+                                    </div>
+                                    <div style={{ minWidth: 0, flex: 1 }}>
+                                        <div style={{ fontSize: '0.92rem', fontWeight: 800, fontFamily: 'var(--font-odia-sans)', color: isNightMode ? '#f8fafc' : '#1e293b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                            {author.odia || author.name}
+                                        </div>
+                                        <div style={{ fontSize: '0.7rem', color: '#059669', fontWeight: 700 }}>
+                                            {toOdiaNumber(author.count)} ଉପଲବ୍ଧ ଗୀତ
+                                        </div>
+                                    </div>
+                                    <ChevronRight size={16} color="#94a3b8" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Matching Books */}
+                {matchingBooks.length > 0 && (
+                    <div>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            ପୁସ୍ତକ ଓ ଗ୍ରନ୍ଥ (Books)
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '8px' }}>
+                            {matchingBooks.map(book => (
+                                <div
+                                    key={book.id}
+                                    onClick={() => {
+                                        setSelectedBadadandaList(book);
+                                        setBadadandaSubTab('lists');
+                                        setSearchQuery('');
+                                    }}
+                                    style={{
+                                        background: isNightMode ? '#1e293b' : '#ffffff',
+                                        borderRadius: '14px',
+                                        padding: '10px 12px',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '10px',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    <div style={{
+                                        width: '36px',
+                                        height: '36px',
+                                        borderRadius: '10px',
+                                        background: `${book.color || '#0284c7'}18`,
+                                        color: book.color || '#0284c7',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        <BookOpen size={18} />
+                                    </div>
+                                    <div style={{ minWidth: 0, flex: 1 }}>
+                                        <div style={{ fontSize: '0.92rem', fontWeight: 800, fontFamily: 'var(--font-odia-sans)', color: isNightMode ? '#f8fafc' : '#1e293b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                            {book.odia}
+                                        </div>
+                                        <div style={{ fontSize: '0.7rem', color: '#64748b' }}>
+                                            {book.eng}
+                                        </div>
+                                    </div>
+                                    <ChevronRight size={16} color="#94a3b8" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Song Results */}
+                {filteredSongs.length > 0 ? (
+                    <div>
+                        <div style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            ଗୀତ ସମୂହ ({toOdiaNumber(filteredSongs.length)})
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {filteredSongs.slice(0, 50).map((song, sIdx) => (
+                                <div
+                                    key={song.id}
+                                    onClick={() => handleSelectSong(song)}
+                                    style={{
+                                        background: isNightMode ? '#1e293b' : '#ffffff',
+                                        borderRadius: '14px',
+                                        padding: '10px 14px',
+                                        border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                                        boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        gap: '12px',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.18s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(-1px)';
+                                        e.currentTarget.style.borderColor = '#10b98150';
+                                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.06)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.borderColor = isNightMode ? 'rgba(255,255,255,0.08)' : '#e2e8f0';
+                                        e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.03)';
+                                    }}
+                                >
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, minWidth: 0 }}>
+                                        <div style={{
+                                            width: '38px',
+                                            height: '38px',
+                                            borderRadius: '12px',
+                                            background: song.audioUrl ? '#10b98115' : (isNightMode ? '#334155' : '#f1f5f9'),
+                                            color: song.audioUrl ? '#059669' : '#64748b',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            fontSize: '0.85rem',
+                                            fontWeight: 900,
+                                            flexShrink: 0
+                                        }}>
+                                            {song.audioUrl ? <Play size={16} fill="#059669" /> : (sIdx + 1)}
+                                        </div>
+                                        <div style={{ flex: 1, minWidth: 0 }}>
+                                            <div style={{
+                                                fontSize: '0.98rem',
+                                                fontWeight: 800,
+                                                fontFamily: 'var(--font-odia-sans)',
+                                                color: isNightMode ? '#f8fafc' : '#1e293b',
+                                                lineHeight: 1.35,
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis'
+                                            }}>
+                                                {song.title_odia || song.title}
+                                            </div>
+                                            <div style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '8px',
+                                                marginTop: '3px',
+                                                fontSize: '0.72rem',
+                                                color: '#64748b',
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis'
+                                            }}>
+                                                <span style={{ fontWeight: 600 }}>{song.title_english || song.title}</span>
+                                                {song.author && (
+                                                    <>
+                                                        <span>•</span>
+                                                        <span style={{ color: '#059669', fontWeight: 700 }}>
+                                                            {getAuthorOdiaName(song.author)}
+                                                        </span>
+                                                    </>
+                                                )}
+                                                {song.category && (
+                                                    <>
+                                                        <span>•</span>
+                                                        <span style={{
+                                                            background: isNightMode ? '#334155' : '#f1f5f9',
+                                                            padding: '1px 6px',
+                                                            borderRadius: '6px',
+                                                            fontSize: '0.65rem',
+                                                            fontWeight: 800
+                                                        }}>
+                                                            {song.category}
+                                                        </span>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                                        <ChevronRight size={18} color="#94a3b8" />
+                                    </div>
+                                </div>
+                            ))}
+                            {filteredSongs.length > 50 && (
+                                <div style={{ textAlign: 'center', padding: '0.75rem', fontSize: '0.8rem', color: '#64748b' }}>
+                                    ଆହୁରି {toOdiaNumber(filteredSongs.length - 50)} ଟି ଗୀତ ଅଛି... ଅଧିକ ନିର୍ଦ୍ଦିଷ୍ଟ ଶବ୍ଦ ଖୋଜନ୍ତୁ
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    totalResultsCount === 0 && (
+                        <div style={{
+                            textAlign: 'center',
+                            padding: '3rem 1rem',
+                            background: isNightMode ? '#1e293b' : '#ffffff',
+                            borderRadius: '20px',
+                            border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
+                            boxShadow: '0 4px 14px rgba(0,0,0,0.03)'
+                        }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🪷</div>
+                            <div style={{
+                                fontSize: '1.15rem',
+                                fontWeight: 900,
+                                fontFamily: 'var(--font-odia-sans)',
+                                color: isNightMode ? '#f8fafc' : '#1e293b',
+                                marginBottom: '0.5rem'
+                            }}>
+                                &quot;{searchQuery}&quot; ପାଇଁ କୌଣସି ଫଳାଫଳ ମିଳିଲା ନାହିଁ
+                            </div>
+                            <div style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '1.5rem' }}>
+                                ଅନ୍ୟ କୌଣସି ଶବ୍ଦ କିମ୍ବା ତଳେ ଥିବା ଲୋକପ୍ରିୟ ବିଷୟ ଖୋଜନ୍ତୁ:
+                            </div>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px', maxWidth: '500px', margin: '0 auto' }}>
+                                {['ଜଗନ୍ନାଥ', 'ଭଜନ', 'ଭକ୍ତି ବିନୋଦ', 'ଗୀତା', 'ମନ୍ଦିର ଆରତି', 'ହରେ କୃଷ୍ଣ', 'ପ୍ରଣାମ ମନ୍ତ୍ର', 'ଅଷ୍ଟକମ୍'].map((chip) => (
+                                    <button
+                                        key={chip}
+                                        onClick={() => setSearchQuery(chip)}
+                                        style={{
+                                            background: isNightMode ? '#334155' : '#f1f5f9',
+                                            color: isNightMode ? '#f8fafc' : '#0f172a',
+                                            border: '1px solid rgba(0,0,0,0.06)',
+                                            borderRadius: '16px',
+                                            padding: '6px 14px',
+                                            fontSize: '0.82rem',
+                                            fontWeight: 800,
+                                            fontFamily: 'var(--font-odia-sans)',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.15s ease'
+                                        }}
+                                    >
+                                        🔍 {chip}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                )}
             </div>
         );
     };
 
     const renderBadadandaBody = () => {
+        const isBadadandaSearching = Boolean(searchQuery.trim());
+
+        if (isBadadandaSearching) {
+            return (
+                <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 0.75rem 2rem' }}>
+                    {renderBadadandaSearchResults()}
+                </div>
+            );
+        }
+
         return (
             <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 0.75rem 2rem' }}>
                 {/* SUB-SECTION HEADER */}
                 <div style={{
                     marginBottom: '1rem',
-                    padding: '1.2rem 4px 0.25rem'
+                    padding: '1.2rem 4px 0.25rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
                 }}>
+                    {badadandaSubTab === 'gita' && <BookOpen size={24} color={isNightMode ? '#38bdf8' : '#ea580c'} style={{ flexShrink: 0 }} />}
                     <div style={{
                         fontSize: '1.25rem',
                         fontWeight: 900,
@@ -3258,7 +3713,7 @@ export const SongsPage: React.FC = () => {
                         fontFamily: 'var(--font-odia-sans)',
                         lineHeight: 1.45
                     }}>
-                        {badadandaSubTab === 'all' && 'ସମସ୍ତ ୯ ପ୍ରମୁଖ ବିଭାଗ'}
+                        {badadandaSubTab === 'all' && 'ସମସ୍ତ ୮ ପ୍ରମୁଖ ବିଭାଗ'}
                         {badadandaSubTab === 'gita' && 'ଶ୍ରୀମଦ୍ ଭଗବଦ୍ ଗୀତା - ସମସ୍ତ ଅଧ୍ୟାୟ (୧୮)'}
                         {badadandaSubTab === 'authors' && (selectedBadadandaAuthor ? `${selectedBadadandaAuthor} (ଲେଖକଙ୍କ ଗୀତ)` : 'ବୈଷ୍ଣବ ଆଚାର୍ଯ୍ୟ ଓ କବି ସମୂହ')}
                         {badadandaSubTab === 'temple' && 'ଇସ୍କନ ମନ୍ଦିର ନିତ୍ୟ ଆରତି (୧୮ ଗୀତ)'}
@@ -3457,30 +3912,6 @@ export const SongsPage: React.FC = () => {
                                 <div style={{ fontSize: '0.65rem', fontWeight: 700, color: 'rgba(30, 41, 59, 0.55)', textTransform: 'uppercase', marginTop: '2px' }}>HISTORY</div>
                             </div>
                         </div>
-
-                        {/* 9. Settings */}
-                        <div
-                            className="category-card"
-                            onClick={() => {
-                                setBadadandaSubTab('settings');
-                                setIsSettingsPanelOpen(true);
-                            }}
-                            style={{
-                                background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            <div style={{
-                                width: '48px', height: '48px', borderRadius: '14px',
-                                background: '#47556918', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
-                            }}>
-                                <Settings size={30} color="#475569" />
-                            </div>
-                            <div>
-                                <div style={{ fontSize: '1rem', fontWeight: 900, color: '#1e293b', fontFamily: 'var(--font-odia-sans)' }}>ସେଟିଂସ୍</div>
-                                <div style={{ fontSize: '0.65rem', fontWeight: 700, color: 'rgba(30, 41, 59, 0.55)', textTransform: 'uppercase', marginTop: '2px' }}>SETTINGS</div>
-                            </div>
-                        </div>
                     </div>
                 )}
 
@@ -3488,114 +3919,108 @@ export const SongsPage: React.FC = () => {
                 {badadandaSubTab === 'gita' && (
                     <div style={{ padding: '0.5rem 0' }}>
                         <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            marginBottom: '1rem',
-                            padding: '0 4px'
-                        }}>
-                            <BookOpen size={22} color="#064e3b" />
-                            <h2 style={{
-                                fontSize: '1.25rem',
-                                fontWeight: 900,
-                                color: isNightMode ? '#f8fafc' : '#1e293b',
-                                fontFamily: 'var(--font-odia-sans)',
-                                letterSpacing: '-0.3px',
-                                margin: 0
-                            }}>ଶ୍ରୀମଦ୍ ଭଗବଦ୍ ଗୀତା - ସମସ୍ତ ଅଧ୍ୟାୟ (୧୮)</h2>
-                        </div>
-                        <div style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                            gap: '12px',
-                            padding: '0 4px 1.5rem'
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+                            gap: '10px',
+                            marginBottom: '2rem'
                         }}>
-                            {badadandaGitaSections.map((sec, index) => {
+                            {badadandaGitaSections.map((sec) => {
                                 const song = songResources.find(s => s.id === sec.id);
                                 const chNum = sec.id.match(/\d+/)?.[0] || '';
-                                const avatarGradients = [
-                                    'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
-                                    'linear-gradient(135deg, #14532d 0%, #16a34a 100%)',
-                                    'linear-gradient(135deg, #7c2d12 0%, #ea580c 100%)',
-                                    'linear-gradient(135deg, #701a75 0%, #c026d3 100%)',
-                                    'linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%)',
-                                    'linear-gradient(135deg, #0e7490 0%, #0891b2 100%)',
-                                    'linear-gradient(135deg, #831843 0%, #db2777 100%)',
-                                    'linear-gradient(135deg, #064e3b 0%, #059669 100%)',
-                                    'linear-gradient(135deg, #713f12 0%, #d97706 100%)',
-                                    'linear-gradient(135deg, #1e293b 0%, #475569 100%)'
-                                ];
-                                const bgGradient = avatarGradients[index % avatarGradients.length];
-                                const SecIcon = sec.icon;
+                                const chapterCleanTitle = sec.label.replace(/^[\d୧-୯0-9]+\.\s*/, '');
+                                const subText = chNum ? `ଅଧ୍ୟାୟ ${toOdiaNumber(chNum)}` : 'ମାହାତ୍ମ୍ୟ';
 
                                 return (
                                     <div
                                         key={sec.id}
-                                        className="gita-card"
                                         onClick={() => {
                                             if (song) handleSelectSong(song);
                                         }}
                                         style={{
-                                            background: bgGradient,
-                                            borderRadius: '18px',
-                                            padding: '1rem 1.25rem',
-                                            color: '#ffffff',
+                                            background: isNightMode ? '#1e293b' : '#ffffff',
+                                            borderRadius: '16px',
+                                            padding: '11px 14px',
+                                            border: isNightMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0',
                                             cursor: 'pointer',
-                                            boxShadow: '0 4px 14px rgba(0,0,0,0.12)',
+                                            boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
                                             display: 'flex',
                                             alignItems: 'center',
-                                            gap: '14px',
-                                            position: 'relative',
-                                            overflow: 'hidden'
+                                            gap: '12px',
+                                            minHeight: '62px',
+                                            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.transform = 'translateY(-1px)';
+                                            e.currentTarget.style.borderColor = '#ea580c50';
+                                            e.currentTarget.style.boxShadow = '0 6px 16px rgba(234, 88, 12, 0.12)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                            e.currentTarget.style.borderColor = isNightMode ? 'rgba(255,255,255,0.08)' : '#e2e8f0';
+                                            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0,0,0,0.03)';
                                         }}
                                     >
-                                        <div className="icon-badge" style={{
+                                        <div style={{
                                             width: '44px',
                                             height: '44px',
-                                            borderRadius: '12px',
-                                            background: 'rgba(255,255,255,0.22)',
+                                            borderRadius: '50%',
+                                            background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                                            color: '#ffffff',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            flexShrink: 0
+                                            flexShrink: 0,
+                                            boxShadow: '0 3px 10px rgba(234, 88, 12, 0.28)'
                                         }}>
-                                            <SecIcon size={22} color="#ffffff" strokeWidth={2.2} />
+                                            {chNum ? (
+                                                <span style={{
+                                                    fontSize: chNum.length > 1 ? '1.1rem' : '1.25rem',
+                                                    fontWeight: 900,
+                                                    fontFamily: 'var(--font-odia-sans)',
+                                                    lineHeight: 1,
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    transform: 'translateY(1px)'
+                                                }}>
+                                                    {toOdiaNumber(chNum)}
+                                                </span>
+                                            ) : (
+                                                <BookOpen size={20} color="#ffffff" />
+                                            )}
                                         </div>
-                                        <div className="text-content" style={{ flex: 1, minWidth: 0 }}>
-                                            <div className="chapter-overline" style={{
-                                                fontSize: '0.68rem',
+                                        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                                            <div style={{
+                                                fontSize: '1.02rem',
                                                 fontWeight: 800,
-                                                letterSpacing: '0.6px',
-                                                color: 'rgba(255,255,255,0.85)',
-                                                textTransform: 'uppercase'
-                                            }}>
-                                                {chNum ? `ଅଧ୍ୟାୟ ${toOdiaNumber(chNum)} • CHAPTER ${chNum}` : 'ମାହାତ୍ମ୍ୟ • MAHATMYA'}
-                                            </div>
-                                            <div className="chapter-title" style={{
-                                                fontSize: '1.08rem',
-                                                fontWeight: 900,
                                                 fontFamily: 'var(--font-odia-sans)',
-                                                color: '#ffffff',
-                                                lineHeight: 1.25,
+                                                color: isNightMode ? '#f8fafc' : '#1e293b',
                                                 whiteSpace: 'nowrap',
                                                 overflow: 'hidden',
-                                                textOverflow: 'ellipsis'
+                                                textOverflow: 'ellipsis',
+                                                lineHeight: 1.5,
+                                                paddingTop: '3px',
+                                                paddingBottom: '2px'
                                             }}>
-                                                {sec.label}
+                                                {chapterCleanTitle}
                                             </div>
                                             <div style={{
-                                                fontSize: '0.72rem',
-                                                color: 'rgba(255,255,255,0.8)',
-                                                whiteSpace: 'nowrap',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis'
+                                                fontSize: '0.76rem',
+                                                color: '#ea580c',
+                                                fontWeight: 800,
+                                                fontFamily: 'var(--font-odia-sans)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px',
+                                                lineHeight: 1.3
                                             }}>
-                                                {sec.eng}
+                                                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#ea580c', display: 'inline-block', flexShrink: 0 }} />
+                                                <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                    {subText}
+                                                </span>
                                             </div>
                                         </div>
-                                        <div className="arrow-icon" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                                            <ChevronRight size={22} />
-                                        </div>
+                                        <ChevronRight size={18} color="#94a3b8" />
                                     </div>
                                 );
                             })}
@@ -5466,9 +5891,9 @@ export const SongsPage: React.FC = () => {
         return (
             <div style={{ padding: '0 1.25rem 2.5rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{
-                    display: 'flex',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
                     gap: '16px',
-                    flexWrap: 'wrap',
                     padding: '10px 5px 20px',
                 }}>
                     {/* CARD 1: ALPHABETICAL */}
@@ -5711,34 +6136,6 @@ export const SongsPage: React.FC = () => {
                         <div>
                             <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ଶ୍ରବଣ ଇତିହାସ</div>
                             <div style={engTitleStyle}>History</div>
-                        </div>
-                    </div>
-
-                    {/* CARD 9: SETTINGS */}
-                    <div
-                        className="category-card"
-                        onClick={() => setIsSettingsPanelOpen(true)}
-                        style={{
-                            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                        }}
-                    >
-                        <div style={{
-                            width: '48px',
-                            height: '48px',
-                            borderRadius: '14px',
-                            background: '#47556918',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexShrink: 0
-                        }}>
-                            <div style={{ color: '#475569' }}>
-                                <Settings size={30} />
-                            </div>
-                        </div>
-                        <div>
-                            <div style={{ ...titleStyle, fontSize: '0.98rem' }}>ସେଟିଂସ୍</div>
-                            <div style={engTitleStyle}>Settings</div>
                         </div>
                     </div>
                 </div>
@@ -7321,36 +7718,34 @@ export const SongsPage: React.FC = () => {
                     display: flex;
                     align-items: center;
                     gap: 14px;
-                    min-width: 190px;
-                    flex: 1 1 calc(33.333% - 16px);
-                    max-width: calc(33.333% - 11px);
-                    height: 90px;
+                    width: 100%;
+                    min-width: 0;
+                    min-height: 86px;
                     cursor: pointer;
                     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
                     transition: all 0.25s ease;
                     position: relative;
-                    overflow: hidden;
                     border: 1px solid rgba(241, 245, 249, 0.9);
-                    flex-shrink: 0;
                     box-sizing: border-box;
+                }
+
+                .category-card > div:last-child {
+                    min-width: 0;
+                    flex: 1;
                 }
 
                 @media (max-width: 820px) {
                     .category-card {
-                        flex: 1 1 calc(50% - 12px);
-                        max-width: calc(50% - 8px);
-                        min-width: 140px;
                         padding: 0.8rem 1rem;
                         gap: 12px;
-                        height: 84px;
+                        min-height: 80px;
                     }
                 }
 
                 @media (max-width: 480px) {
                     .category-card {
-                        flex: 1 1 100%;
-                        max-width: 100%;
-                        height: 78px;
+                        padding: 0.75rem 0.9rem;
+                        min-height: 74px;
                     }
                 }
 
